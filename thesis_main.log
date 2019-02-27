@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6930 64-bit) (preloaded format=pdflatex 2019.2.15)  27 FEB 2019 13:37
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6930 64-bit) (preloaded format=pdflatex 2019.2.15)  27 FEB 2019 17:21
 entering extended mode
 **./thesis_main.tex
 (thesis_main.tex
@@ -449,20 +449,20 @@ Writing index file thesis_main.idx
 (text/append-momDist.aux))
 \openout1 = `thesis_main.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 82.
-LaTeX Font Info:    ... okay on input line 82.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 82.
-LaTeX Font Info:    ... okay on input line 82.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 82.
-LaTeX Font Info:    ... okay on input line 82.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 82.
-LaTeX Font Info:    ... okay on input line 82.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 82.
-LaTeX Font Info:    ... okay on input line 82.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 82.
-LaTeX Font Info:    ... okay on input line 82.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 82.
-LaTeX Font Info:    ... okay on input line 82.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 83.
+LaTeX Font Info:    ... okay on input line 83.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 83.
+LaTeX Font Info:    ... okay on input line 83.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 83.
+LaTeX Font Info:    ... okay on input line 83.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 83.
+LaTeX Font Info:    ... okay on input line 83.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 83.
+LaTeX Font Info:    ... okay on input line 83.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 83.
+LaTeX Font Info:    ... okay on input line 83.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 83.
+LaTeX Font Info:    ... okay on input line 83.
 
 ("C:\Users\Jim\AppData\Local\Programs\MiKTeX 2.9\tex/context/base\supp-pdf.mkii
 "
@@ -483,7 +483,7 @@ Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: subfig package v1.3 is loaded.
 Package caption Info: End \AtBeginDocument code.
 \AtBeginShipoutBox=\box39
-Package hyperref Info: Link coloring ON on input line 82.
+Package hyperref Info: Link coloring ON on input line 83.
 
 ("C:\Users\Jim\AppData\Local\Programs\MiKTeX 2.9\tex/latex/hyperref\nameref.sty
 "
@@ -495,9 +495,9 @@ Package: gettitlestring 2016/05/16 v1.5 Cleanup title references (HO)
 )
 \c@section@level=\count147
 )
-LaTeX Info: Redefining \ref on input line 82.
-LaTeX Info: Redefining \pageref on input line 82.
-LaTeX Info: Redefining \nameref on input line 82.
+LaTeX Info: Redefining \ref on input line 83.
+LaTeX Info: Redefining \pageref on input line 83.
+LaTeX Info: Redefining \nameref on input line 83.
  (thesis_main.out) (thesis_main.out)
 \@outlinefile=\write5
 \openout5 = `thesis_main.out'.
@@ -574,7 +574,7 @@ LaTeX Font Info:    Font shape `U/lasy/b/n' in size <7> not available
 
  (text/chap1.tex
 Chapter 1.
-<./figures/strontium_properties.pdf, id=461, 2379.0017pt x 800.6605pt>
+<./figures/strontium_properties.pdf, id=471, 2379.0017pt x 800.6605pt>
 File: ./figures/strontium_properties.pdf Graphic file (type pdf)
 <use ./figures/strontium_properties.pdf>
 Package pdftex.def Info: ./figures/strontium_properties.pdf  used on input line
@@ -635,12 +635,33 @@ Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 
 
 
-] [8] [9] [10] [11]) [12]
+] [8] [9] [10] [11]
+Overfull \hbox (4.98708pt too wide) in paragraph at lines 141--142
+[]\OT1/cmr/m/n/12 The case of PA us-ing nar-row in-ter-com-bi-na-tion line tran
+-si-tions found in alkaline-
+ []
+
+[12]
+Overfull \hbox (8.25093pt too wide) in paragraph at lines 173--174
+[]\OT1/cmr/m/n/12 typical PAS ex-per-i-ments uti-lize dipole al-lowed tran-si-t
+ions which have linewidths
+ []
+
+
+LaTeX Warning: Reference `eq:com_frame_defs' on page 13 undefined on input line
+ 177.
+
+[13]
+Overfull \hbox (70.23004pt too wide) detected at line 198
+[]
+ []
+
+) [14]
 \openout2 = `./text/chap5.aux'.
 
  (text/chap5.tex
 Chapter 5.
-) [13
+) [15
 
 
 
@@ -661,23 +682,23 @@ Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 (hyperref)                removing `math shift' on input line 33.
 
-[14
+[16
 
 
 
-]) [15]
+]) [17]
 \openout2 = `./text/chap7.aux'.
 
  (text/chap7.tex
 Chapter 7.
-) [16
+) [18
 
 
 
-] (thesis_main.bbl) [17
+] (thesis_main.bbl) [19
 
 
-] [18
+] [20
 
 
 ]
@@ -685,7 +706,7 @@ Chapter 7.
 
  (text/append-922.tex
 Appendix A.
-) [19
+) [21
 
 
 ]
@@ -693,7 +714,7 @@ Appendix A.
 
  (text/append-imagefit.tex
 Appendix B.
-) [20
+) [22
 
 
 
@@ -702,16 +723,16 @@ Appendix B.
 
  (text/append-neuklein.tex
 Appendix C.
-[21
+[23
 
 
 
-]) [22]
+]) [24]
 \openout2 = `./text/append-expHW.aux'.
 
  (text/append-expHW.tex
 Appendix D.
-) [23
+) [25
 
 
 
@@ -724,7 +745,7 @@ No file ./text/append-gaussBeam.tex.
 
 (text/append-circuits.tex
 Appendix E.
-) [24
+) [26
 
 
 
@@ -735,7 +756,7 @@ Appendix E.
 
  (text/append-misc.tex
 Appendix F.
-) [25
+) [27
 
 
 
@@ -744,33 +765,37 @@ Appendix F.
 
  (text/append-momDist.tex
 Appendix G.
-) [26
+) [28
 
 
 
 ]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 132.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 132.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 133.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 133.
  (thesis_main.aux (text/abstract.aux) (text/acknowledgements.aux)
 (text/chap1.aux) (text/chap2.aux) (text/chap3.aux) (text/chap4.aux)
 (text/chap5.aux) (text/chap6.aux) (text/chap7.aux) (text/append-922.aux)
 (text/append-imagefit.aux) (text/append-neuklein.aux) (text/append-expHW.aux)
 (text/append-gaussBeam.aux) (text/append-circuits.aux) (text/append-misc.aux)
 (text/append-momDist.aux))
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 132.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 132.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 133.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 133.
 Package rerunfilecheck Info: File `thesis_main.out' has not changed.
-(rerunfilecheck)             Checksum: C0C3F1EAF781D5058504DAA0F7BD5D61;5981.
+(rerunfilecheck)             Checksum: E4A86C311170696A48B756BFAE64FBFC;6114.
+
+
+LaTeX Warning: There were undefined references.
+
  )
 (\end occurred when \ifx on line 161 was incomplete) 
 Here is how much of TeX's memory you used:
- 9512 strings out of 492946
- 139313 string characters out of 3127154
- 252337 words of memory out of 3000000
- 12977 multiletter control sequences out of 15000+200000
+ 9524 strings out of 492946
+ 139492 string characters out of 3127154
+ 252518 words of memory out of 3000000
+ 12984 multiletter control sequences out of 15000+200000
  21601 words of font info for 86 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 36i,16n,43p,829b,478s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 36i,17n,43p,829b,478s stack positions out of 5000i,500n,10000p,200000b,50000s
 <C:/Users/Jim/AppData/Local
 /Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/Jim/Ap
 pData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx8.pfb><C:/Us
@@ -790,9 +815,9 @@ e1/public/amsfonts/cm/cmsy10.pfb><C:/Users/Jim/AppData/Local/Programs/MiKTeX 2.
 9/fonts/type1/public/amsfonts/cm/cmsy6.pfb><C:/Users/Jim/AppData/Local/Programs
 /MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Users/Jim/AppData/Loca
 l/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmti12.pfb>
-Output written on thesis_main.pdf (35 pages, 390875 bytes).
+Output written on thesis_main.pdf (37 pages, 400737 bytes).
 PDF statistics:
- 681 PDF objects out of 1000 (max. 8388607)
- 132 named destinations out of 1000 (max. 500000)
- 662 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 705 PDF objects out of 1000 (max. 8388607)
+ 137 named destinations out of 1000 (max. 500000)
+ 678 words of extra memory for PDF output out of 10000 (max. 10000000)
 

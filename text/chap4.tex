@@ -17,7 +17,7 @@ Describe and introduce halo molecules here
 \subsection{Consideration of the trap depth}
 \label{sec:trunc_trap}
 
-From the formula for the line shape we can see that it depends on the spatial distribution of the atoms. The standard approximation made when measuring these types of systems is to ensure loss does not cause heating of the atoms during photoassocaiton. Heating results in re-equilibration of the atomic density distribition, which in turn effects the rate of loss creation. Without independent controls to keep the system in thermal (and therefore spatial density) equlibrium.
+From the formula for the line shape we can see that it depends on the spatial distribution of the atoms. The standard approximation made when measuring these types of systems is to ensure loss does not cause heating of the atoms during photoassociation. Heating results in re-equilibration of the atomic density distribition, which in turn effects the rate of loss creation. Without independent controls to keep the system in thermal (and therefore spatial density) equlibrium.
 
 What are the things the rate equation deals with?
 
@@ -106,7 +106,7 @@ The two particle distribution for a homegeneous system is then
 \label{eq:two_particle_prob}
 \begin{split}
 		 f^2( \vec{p}_1, \vec{p}_2 ) &= f^1( \vec{p}_1 ) f^1( \vec{p}_2 ) \\
-		  &= \left(\frac{1}{2 \pi k_B T}\right)^3 \exp\left(\frac{-(p_1^2 + p_2^2)}{2 m k_B T}\right)
+		  &= \left(\frac{1}{2 \pi m k_B T}\right)^3 \exp\left(\frac{-(p_1^2 + p_2^2)}{2 m k_B T}\right)
 \end{split}
 \end{equation}
 
@@ -114,19 +114,65 @@ Next, we'd like to consider a center-of-mass frame for the distribution. So we'l
 
  we define the relative and center-of-mass momenta of the two particles by defining
 
-\begin{align}
-\label{eq:com_frame_defs}
-	\vec{P}_c & = \vec{p}_1 + \vec{p}_2             &	M &= m_1 + m_2 = 2m \\
+\begin{align*}
+	\vec{P}_c & = \vec{p}_1 + \vec{p}_2             &	M   &= m_1 + m_2 = 2m \\
 	\vec{p}_r & = \frac{\vec{p}_1 - \vec{p}_2}{2}   &   \mu &= \frac{m_1 m_2}{m_1 + m_2} = \frac{m}{2}
-\end{align}
+\end{align*}
 
 from these equations we can use conservation of energy to determine the quadrature sum of the two momenta
 
-\begin{align}
-\label{eq:energy_conserve}
-	\frac{p_1^2}{2m} + \frac{p_2^2}{2m} &= \frac{P_c^2}{2M} + \frac{p_r^2}{2\mu}
+\begin{align*}
+	\frac{p_1^2}{2m} + \frac{p_2^2}{2m} &= \frac{P_c^2}{2M} + \frac{p_r^2}{2\mu} \\
 	p_1^2 + p_2^2 &= \frac{P_c^2}{2} + 2 p_r^2
-\end{align}
+\end{align*}
+
+thus the momentum probability distribution take the form
+
+\begin{equation}
+\label{eq:two_particle_prob_inf_atomFrame}
+		 f^2( \vec{P}_c, \vec{p}_r ) = \left(\frac{1}{2 \pi M k_B T}\right)^{3/2} \left(\frac{1}{2 \pi \mu k_B T}\right)^{3/2} 
+		 \exp\left(\frac{-P_c^2}{2 M k_B T}\right) \exp\left(\frac{-p_r^2}{2 \mu k_B T}\right)
+\end{equation}
+
+Lastly, we note that in the context of photoassociation, the center-of-mass component of Eq.\ref{eq:two_particle_prob_inf_atomFrame} is not typically considered as typical PAS experiments are performed utilizing broad dipole allowed transitions which have linewidhts much greater than the doppler width thus only the relative momentum between particles is important for determining the loss rate coefficeint K discussed in \hl(somewhere). 
+
+
+
+The case of PA using narrow intercombination line transitions found in alkaline-earth-metal atoms 
+
+
+In general K is considered as a boltzmann average over a single loss rate constant
+This can be seen in \cite{Ciuryo2004} Eq. 1 where the loss rate constant is given by
+
+\begin{equation}
+\begin{split}
+\label{eq:ciuryo04_eq1}
+		 K(\Delta,T) &= \left\langle\mathcal{K}(\Delta,\vec{P}_c,\vec{p}_r)\right\rangle \\
+		 &= \int d^3\vec{P}_c \; f_M(\vec{P}_c) \int d^3\vec{p}_r \; f_{\mu}(\vec{p}_r) \; \mathcal{K}(\Delta,\vec{P}_c,\vec{p}_r)
+\end{split}
+\end{equation}
+
+
+
+To this end we can integrate out the center of mass component to obtain the distribution most typically relevant to photoassociation.
+
+By the time I've gotten to this I have already introduced K and that is not what I wanted to do. 
+
+conclusion
+here is the modified version of K we need for a trap that has a truncated energy disttribution
+
+to get there
+normal version of K is \hl{given in ch3}
+this K can be given in terms of f? 
+this ver4sion of f is given in the appendix
+	why do I integrate out the com component?
+
+
+
+
+typical PAS experiments utilize dipole allowed transitions which have linewidths many times larger than the 
+
+
 
 We now perform a change of variables using Eq.\ref{eq:com_frame_defs} and Eq.\ref{eq:two_particle_prob} can be rewritten as 
 
@@ -143,3 +189,10 @@ Ok, so need to reference \cite{Ciuryo2004} to motivate usage of center of mass. 
 
 
 what is the throughline I want to make? Develop K$_{in}$ $\rightarrow$ recast in terms of P distribution $\rightarrow$ show how we can replace the normal dist with a truncated dist $\rightarrow$ explore the effects of that truncation
+
+Two particle distribution
+\begin{equation}
+\begin{split}
+	f^2_{\vec{r},trunc} (\vec{p}_1, \vec{p}_2) = A^2 \left(\frac{1}{2 \pi m k_B T}\right)^3 \exp \left( \frac{-(p_1^2 + p_2^2)}{2 m k_B T} \right) \heaviside{\epsilon_{max} - U(\vec{r}) - \frac{p_1^2}{2m}} \heaviside{\epsilon_{max} - U(\vec{r}) - \frac{p_2^2}{2m}}
+\end{split}
+\end{equation}
