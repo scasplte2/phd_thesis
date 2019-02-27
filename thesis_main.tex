@@ -1,0 +1,132 @@
+\documentclass[12pt]{ruthesis}
+\usepackage{latexsym}
+%\usepackage{theorem}
+%\newtheorem{proposition}{Proposition}
+
+\usepackage{graphicx}	% adds graphics into documents
+	\graphicspath{{./figures/}}
+\usepackage{grffile}	% allows spaces in figures names
+\usepackage{epstopdf}	% converts eps images
+\usepackage{bm}			% bold math
+\usepackage{amssymb}	% math package
+\usepackage{amsmath}	% math package
+\usepackage{parskip}	% helps tidy up paragraphs
+	\setlength{\parindent}{40pt}
+\usepackage{multirow}	% mutliline cells in tables
+\usepackage[usenames,dvipsnames]{xcolor}   % add color to text
+\usepackage[caption=false]{subfig}   	   % Creates subfigures
+\usepackage[numbers]{natbib}		   % Formats references
+	\setcitestyle{square}
+\usepackage[colorlinks,citecolor=darkgray,linkcolor=.]{hyperref} % Hyperlinks references
+\usepackage[normalem]{ulem} % allows for highlighting, use normalem to protect \emph
+
+% this stuff came with the RU thesis template
+\usepackage[toc,page]{appendix}
+%\usepackage{cite}
+\usepackage{pictex}
+\usepackage{fancyhdr}
+	\fancypagestyle{frontmatterStyle}{
+	\fancyhf{} % clear all header and footer fields
+	%\fancyhead[l]{\bfseries \nouppercase \rightmark} % except the center
+	\fancyfoot[C]{\thepage} % except the center
+	\renewcommand{\headrulewidth}{0pt}
+	\renewcommand{\footrulewidth}{0pt}}
+
+%\usepackage{amsmath}
+%\usepackage{amssymb}
+%\usepackage{graphics}
+%\usepackage{epsfig,epsf,rotating}
+%\usepackage{subfigure}
+
+%\theoremheaderfont{\itshape} {\theoremstyle{break}
+%\newtheorem{Fact}{Fact}[chapter]} \theoremstyle{break}
+%\newtheorem{Lem}{Lemma}[chapter] \theoremstyle{break}
+%\newtheorem{Thm}{Theorem}[chapter] {\theoremstyle{plain}
+%  \theorembodyfont{\rmfamily}  \newtheorem{Prf}{Proof}[chapter]}
+%{\theoremstyle{plain}
+%  \theorembodyfont{\rmfamily}  \newtheorem{Def}{Definition}[chapter]}
+
+% Custom macros
+\newcommand{\hl}{\bgroup\markoverwith
+  {\textcolor{yellow}{\rule[-.5ex]{2pt}{2.5ex}}}\ULon} % creates a highlight command \hl
+\providecommand{\degree}{\ensuremath{^\circ}}  % degree symbol
+\providecommand{\e}[1]{\ensuremath{\times 10^{#1}}} % scientific notation
+\providecommand{\peakDens}[2]{\ensuremath{n_0 = #1 \times 10^{#2} cm^{-3}}} % shorthand for densities
+\providecommand{\abs}[1]{\ensuremath{\lvert {#1} \rvert}} % notation for absolute value
+\let\vec\mathbf % changing \vec from over arrow to bold font
+\newcommand{\ket}[1]{\ensuremath{\left| {#1} \right>}} % for Dirac kets
+\newcommand{\bra}[1]{\ensuremath{\left< {#1} \right|}} % for Dirac bras  
+  
+
+\title{Studies of one- and two-photon photoassociative spectroscopy using ultracold strontium}
+\ctitle{Studies of one- and two-photon photoassociative spectroscopy using ultracold strontium}
+\author{James Allen Aman}
+\department{Physics and Astronomy}
+\school{Rice University}
+\degree{Doctor of Philosophy}
+
+\committee {
+        Thomas C. Killian, Chair \\
+        Professor of Physics and Astronomy \and
+        Randall G. Hulet \\
+        Fayez Sarofim Professor of Physics and Astronomy \and
+        Kevin F. Kelly\\
+        Associate Professor of Electrical and Computer Engineering
+}
+
+\address{Houston, Texas}
+\donemonth{April} \doneyear{2019} 
+
+\makeindex
+
+\begin{document}
+  \begin{frontmatter}
+  \pagestyle{frontmatterStyle}
+   \pagenumbering{roman}
+   \maketitle
+   
+   \phantomsection
+   \include{./text/abstract}
+   
+   \phantomsection
+   \include{./text/acknowledgements}
+   
+   \tableofcontents
+   \listoffigures
+   \listoftables
+  \end{frontmatter}
+  
+\pagenumbering{arabic}
+\linespacing{1.8}
+
+%Main chapters
+\include{./text/chap1}
+\include{./text/chap2}
+\include{./text/chap3}
+\include{./text/chap4}
+\include{./text/chap5}
+\include{./text/chap6}
+\include{./text/chap7}
+
+% Bibliography
+%\cleardoublepage
+\bibliographystyle{ieeetr}
+\refstepcounter{chapter}
+\addcontentsline{toc}{chapter}{\bibname}
+\bibliography{library}
+
+
+% Appendices
+\begin{appendices}
+\include{./text/append-922}
+\include{./text/append-imagefit}
+\include{./text/append-neuklein}
+\include{./text/append-expHW}
+\include{./text/append-gaussBeam}
+\include{./text/append-circuits}
+\include{./text/append-misc}
+\include{./text/append-momDist}
+\end{appendices}
+
+
+\end{document}

@@ -1,0 +1,82 @@
+\BOOKMARK [0][-]{section*.1}{Abstract}{}% 1
+\BOOKMARK [0][-]{chapter*.3}{Acknowledgments}{}% 2
+\BOOKMARK [0][-]{chapter*.5}{List of Illustrations}{}% 3
+\BOOKMARK [0][-]{chapter*.6}{List of Tables}{}% 4
+\BOOKMARK [0][-]{chapter.1}{Introduction}{}% 5
+\BOOKMARK [1][-]{section.1.1}{Few-body physics}{chapter.1}% 6
+\BOOKMARK [1][-]{section.1.2}{Halo molecules}{chapter.1}% 7
+\BOOKMARK [1][-]{section.1.3}{Properties of strontium}{chapter.1}% 8
+\BOOKMARK [1][-]{section.1.4}{Thesis Outline}{chapter.1}% 9
+\BOOKMARK [0][-]{chapter.2}{The Neutral apparatus}{}% 10
+\BOOKMARK [1][-]{section.2.1}{Vacuum system}{chapter.2}% 11
+\BOOKMARK [1][-]{section.2.2}{Laser systems}{chapter.2}% 12
+\BOOKMARK [2][-]{subsection.2.2.1}{Wideband cooling stage: 461 nm}{section.2.2}% 13
+\BOOKMARK [2][-]{subsection.2.2.2}{Narrowband cooling stage: 689 nm}{section.2.2}% 14
+\BOOKMARK [2][-]{subsection.2.2.3}{Repumping: 481 nm}{section.2.2}% 15
+\BOOKMARK [2][-]{subsection.2.2.4}{Optical dipole trap: 1064 nm}{section.2.2}% 16
+\BOOKMARK [2][-]{subsection.2.2.5}{Optical toolbox}{section.2.2}% 17
+\BOOKMARK [1][-]{section.2.3}{Electronics}{chapter.2}% 18
+\BOOKMARK [2][-]{subsection.2.3.1}{Computer control system}{section.2.3}% 19
+\BOOKMARK [2][-]{subsection.2.3.2}{Standalone systems}{section.2.3}% 20
+\BOOKMARK [1][-]{section.2.4}{Apparatus benchmarks}{chapter.2}% 21
+\BOOKMARK [0][-]{chapter.3}{Photoassociation spectroscopy: theory and setup}{}% 22
+\BOOKMARK [1][-]{section.3.1}{Introduction}{chapter.3}% 23
+\BOOKMARK [2][-]{subsection.3.1.1}{Low energy two-body scattering}{section.3.1}% 24
+\BOOKMARK [2][-]{subsection.3.1.2}{Modifying interactions}{section.3.1}% 25
+\BOOKMARK [2][-]{subsection.3.1.3}{PAS in atomic physics}{section.3.1}% 26
+\BOOKMARK [1][-]{section.3.2}{Semi-classical treatment of lineshapes}{chapter.3}% 27
+\BOOKMARK [1][-]{section.3.3}{Observing photoassociative loss}{chapter.3}% 28
+\BOOKMARK [0][-]{chapter.4}{Binding energy of the 86Sr2 halo molecule}{}% 29
+\BOOKMARK [1][-]{section.4.1}{Experimental methods}{chapter.4}% 30
+\BOOKMARK [1][-]{section.4.2}{Theoretical description}{chapter.4}% 31
+\BOOKMARK [1][-]{section.4.3}{Spectral fitting and determination of the binding energy}{chapter.4}% 32
+\BOOKMARK [2][-]{subsection.4.3.1}{Consideration of the trap depth}{section.4.3}% 33
+\BOOKMARK [1][-]{section.4.4}{Discussion of binding energy}{chapter.4}% 34
+\BOOKMARK [1][-]{section.4.5}{Calculating the bound-bound Frank-Condon factor}{chapter.4}% 35
+\BOOKMARK [0][-]{chapter.5}{Strongly coupled PAS of a weakly bound molecule}{}% 36
+\BOOKMARK [1][-]{section.5.1}{Introduction}{chapter.5}% 37
+\BOOKMARK [1][-]{section.5.2}{Experimental methods}{chapter.5}% 38
+\BOOKMARK [1][-]{section.5.3}{Three level model}{chapter.5}% 39
+\BOOKMARK [1][-]{section.5.4}{Resonance positions}{chapter.5}% 40
+\BOOKMARK [1][-]{section.5.5}{Lineshape}{chapter.5}% 41
+\BOOKMARK [1][-]{section.5.6}{Emergence of multi-photon Raman coupling}{chapter.5}% 42
+\BOOKMARK [0][-]{chapter.6}{Progress towards studies of quantum magnetism}{}% 43
+\BOOKMARK [1][-]{section.6.1}{Optical lattice: installation and characterization}{chapter.6}% 44
+\BOOKMARK [2][-]{subsection.6.1.1}{Background}{section.6.1}% 45
+\BOOKMARK [2][-]{subsection.6.1.2}{Setup}{section.6.1}% 46
+\BOOKMARK [2][-]{subsection.6.1.3}{Measurement and results}{section.6.1}% 47
+\BOOKMARK [1][-]{section.6.2}{Spin manipulation of 87Sr}{chapter.6}% 48
+\BOOKMARK [1][-]{section.6.3}{Search for narrowline PA molecules using various spin mixtures}{chapter.6}% 49
+\BOOKMARK [0][-]{chapter.7}{Conclusion}{}% 50
+\BOOKMARK [0][-]{chapter.8}{Bibliography}{}% 51
+\BOOKMARK [0][-]{section*.8}{Appendices}{}% 52
+\BOOKMARK [0][-]{Appendix.1.A}{Repair of 922 Lynx master}{}% 53
+\BOOKMARK [0][-]{Appendix.1.B}{Imagefit analysis routine}{}% 54
+\BOOKMARK [1][-]{section.1.B.1}{Background removal}{Appendix.1.B}% 55
+\BOOKMARK [2][-]{subsection.1.B.1.1}{Principal component analysis}{section.1.B.1}% 56
+\BOOKMARK [1][-]{section.1.B.2}{Fitting the spatial distribution}{Appendix.1.B}% 57
+\BOOKMARK [1][-]{section.1.B.3}{Evaluating fit parameters}{Appendix.1.B}% 58
+\BOOKMARK [2][-]{subsection.1.B.3.1}{How to write a new plugin}{section.1.B.3}% 59
+\BOOKMARK [0][-]{Appendix.1.C}{neuKLEIN - Killian lab experimental interface}{}% 60
+\BOOKMARK [1][-]{section.1.C.1}{Labview code}{Appendix.1.C}% 61
+\BOOKMARK [1][-]{section.1.C.2}{FPGA code}{Appendix.1.C}% 62
+\BOOKMARK [1][-]{section.1.C.3}{Possible future improvements}{Appendix.1.C}% 63
+\BOOKMARK [0][-]{Appendix.1.D}{Experimental control computer hardware}{}% 64
+\BOOKMARK [1][-]{section.1.D.1}{Overview of status}{Appendix.1.D}% 65
+\BOOKMARK [1][-]{section.1.D.2}{Migration to a new machine}{Appendix.1.D}% 66
+\BOOKMARK [0][-]{Appendix.1.E}{Custom circuitry}{}% 67
+\BOOKMARK [1][-]{section.1.E.1}{AC line zero crossing trigger}{Appendix.1.E}% 68
+\BOOKMARK [1][-]{section.1.E.2}{Hard drive shutters}{Appendix.1.E}% 69
+\BOOKMARK [1][-]{section.1.E.3}{Power locks}{Appendix.1.E}% 70
+\BOOKMARK [1][-]{section.1.E.4}{Photodiodes}{Appendix.1.E}% 71
+\BOOKMARK [1][-]{section.1.E.5}{Infinite sample and hold}{Appendix.1.E}% 72
+\BOOKMARK [2][-]{subsection.1.E.5.1}{Reduced intensity fluctuations for sub-hertz exposures}{section.1.E.5}% 73
+\BOOKMARK [0][-]{Appendix.1.F}{Miscellaneous tips and tricks}{}% 74
+\BOOKMARK [1][-]{section.1.F.1}{Alignment of GHz AOM}{Appendix.1.F}% 75
+\BOOKMARK [1][-]{section.1.F.2}{Using the Picoscope in Labview\(TM\)}{Appendix.1.F}% 76
+\BOOKMARK [1][-]{section.1.F.3}{Liquid crystal retarder}{Appendix.1.F}% 77
+\BOOKMARK [1][-]{section.1.F.4}{Newport\(TM\) optomotion control}{Appendix.1.F}% 78
+\BOOKMARK [1][-]{section.1.F.5}{Fast analog lock for 689 nm}{Appendix.1.F}% 79
+\BOOKMARK [1][-]{section.1.F.6}{Porta CoM technique}{Appendix.1.F}% 80
+\BOOKMARK [1][-]{section.1.F.7}{Measuring Rabi frequencies}{Appendix.1.F}% 81
+\BOOKMARK [0][-]{Appendix.1.G}{Two-particle momentum probability distribution}{}% 82

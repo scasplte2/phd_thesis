@@ -1,0 +1,82 @@
+\contentsline {frontmatter}{\numberline {\hfil }Abstract}{ii}{section*.1}% 
+\contentsline {frontmatter}{\numberline {\hfil }Acknowledgments}{iii}{chapter*.3}% 
+\contentsline {frontmatter}{\numberline {\hfil }List of Illustrations}{viii}{chapter*.5}% 
+\contentsline {frontmatter}{\numberline {\hfil }List of Tables}{ix}{chapter*.6}% 
+\contentsline {chapter}{\numberline {1}Introduction}{1}{chapter.1}% 
+\contentsline {section}{\numberline {1.1}Few-body physics}{1}{section.1.1}% 
+\contentsline {section}{\numberline {1.2}Halo molecules}{1}{section.1.2}% 
+\contentsline {section}{\numberline {1.3}Properties of strontium}{1}{section.1.3}% 
+\contentsline {section}{\numberline {1.4}Thesis Outline}{1}{section.1.4}% 
+\contentsline {chapter}{\numberline {2}The Neutral apparatus}{3}{chapter.2}% 
+\contentsline {section}{\numberline {2.1}Vacuum system}{3}{section.2.1}% 
+\contentsline {section}{\numberline {2.2}Laser systems}{3}{section.2.2}% 
+\contentsline {subsection}{\numberline {2.2.1}Wideband cooling stage: 461 nm}{3}{subsection.2.2.1}% 
+\contentsline {subsection}{\numberline {2.2.2}Narrowband cooling stage: 689 nm}{3}{subsection.2.2.2}% 
+\contentsline {subsection}{\numberline {2.2.3}Repumping: 481 nm}{3}{subsection.2.2.3}% 
+\contentsline {subsection}{\numberline {2.2.4}Optical dipole trap: 1064 nm}{3}{subsection.2.2.4}% 
+\contentsline {subsection}{\numberline {2.2.5}Optical toolbox}{3}{subsection.2.2.5}% 
+\contentsline {section}{\numberline {2.3}Electronics}{3}{section.2.3}% 
+\contentsline {subsection}{\numberline {2.3.1}Computer control system}{3}{subsection.2.3.1}% 
+\contentsline {subsection}{\numberline {2.3.2}Standalone systems}{3}{subsection.2.3.2}% 
+\contentsline {section}{\numberline {2.4}Apparatus benchmarks}{3}{section.2.4}% 
+\contentsline {chapter}{\numberline {3}Photoassociation spectroscopy: theory and setup}{4}{chapter.3}% 
+\contentsline {section}{\numberline {3.1}Introduction}{4}{section.3.1}% 
+\contentsline {subsection}{\numberline {3.1.1}Low energy two-body scattering}{4}{subsection.3.1.1}% 
+\contentsline {subsection}{\numberline {3.1.2}Modifying interactions}{6}{subsection.3.1.2}% 
+\contentsline {subsection}{\numberline {3.1.3}PAS in atomic physics}{6}{subsection.3.1.3}% 
+\contentsline {section}{\numberline {3.2}Semi-classical treatment of lineshapes}{6}{section.3.2}% 
+\contentsline {section}{\numberline {3.3}Observing photoassociative loss}{6}{section.3.3}% 
+\contentsline {chapter}{\numberline {4}Binding energy of the $^{86}$Sr$_2$ halo molecule}{7}{chapter.4}% 
+\contentsline {section}{\numberline {4.1}Experimental methods}{7}{section.4.1}% 
+\contentsline {section}{\numberline {4.2}Theoretical description}{7}{section.4.2}% 
+\contentsline {section}{\numberline {4.3}Spectral fitting and determination of the binding energy}{7}{section.4.3}% 
+\contentsline {subsection}{\numberline {4.3.1}Consideration of the trap depth}{7}{subsection.4.3.1}% 
+\contentsline {section}{\numberline {4.4}Discussion of binding energy}{10}{section.4.4}% 
+\contentsline {section}{\numberline {4.5}Calculating the bound-bound Frank-Condon factor}{10}{section.4.5}% 
+\contentsline {chapter}{\numberline {5}Strongly coupled PAS of a weakly bound molecule}{13}{chapter.5}% 
+\contentsline {section}{\numberline {5.1}Introduction}{13}{section.5.1}% 
+\contentsline {section}{\numberline {5.2}Experimental methods}{13}{section.5.2}% 
+\contentsline {section}{\numberline {5.3}Three level model}{13}{section.5.3}% 
+\contentsline {section}{\numberline {5.4}Resonance positions}{13}{section.5.4}% 
+\contentsline {section}{\numberline {5.5}Lineshape}{13}{section.5.5}% 
+\contentsline {section}{\numberline {5.6}Emergence of multi-photon Raman coupling}{13}{section.5.6}% 
+\contentsline {chapter}{\numberline {6}Progress towards studies of quantum magnetism}{14}{chapter.6}% 
+\contentsline {section}{\numberline {6.1}Optical lattice: installation and characterization}{15}{section.6.1}% 
+\contentsline {subsection}{\numberline {6.1.1}Background}{15}{subsection.6.1.1}% 
+\contentsline {subsection}{\numberline {6.1.2}Setup}{15}{subsection.6.1.2}% 
+\contentsline {subsection}{\numberline {6.1.3}Measurement and results}{15}{subsection.6.1.3}% 
+\contentsline {section}{\numberline {6.2}Spin manipulation of $^{87}$Sr}{15}{section.6.2}% 
+\contentsline {section}{\numberline {6.3}Search for narrowline PA molecules using various spin mixtures}{15}{section.6.3}% 
+\contentsline {chapter}{\numberline {7}Conclusion}{16}{chapter.7}% 
+\contentsline {chapter}{Bibliography}{17}{chapter.8}% 
+\contentsline {chapter}{Appendices}{18}{section*.8}% 
+\contentsline {chapter}{\numberline {A}Repair of 922 Lynx master}{19}{Appendix.1.A}% 
+\contentsline {chapter}{\numberline {B}Imagefit analysis routine}{20}{Appendix.1.B}% 
+\contentsline {section}{\numberline {B.1}Background removal}{20}{section.1.B.1}% 
+\contentsline {subsection}{\numberline {B.1.1}Principal component analysis}{20}{subsection.1.B.1.1}% 
+\contentsline {section}{\numberline {B.2}Fitting the spatial distribution}{20}{section.1.B.2}% 
+\contentsline {section}{\numberline {B.3}Evaluating fit parameters}{20}{section.1.B.3}% 
+\contentsline {subsection}{\numberline {B.3.1}How to write a new plugin}{20}{subsection.1.B.3.1}% 
+\contentsline {chapter}{\numberline {C}neuKLEIN - Killian lab experimental interface}{21}{Appendix.1.C}% 
+\contentsline {section}{\numberline {C.1}Labview code}{21}{section.1.C.1}% 
+\contentsline {section}{\numberline {C.2}FPGA code}{22}{section.1.C.2}% 
+\contentsline {section}{\numberline {C.3}Possible future improvements}{22}{section.1.C.3}% 
+\contentsline {chapter}{\numberline {D}Experimental control computer hardware}{23}{Appendix.1.D}% 
+\contentsline {section}{\numberline {D.1}Overview of status}{23}{section.1.D.1}% 
+\contentsline {section}{\numberline {D.2}Migration to a new machine}{23}{section.1.D.2}% 
+\contentsline {chapter}{\numberline {E}Custom circuitry}{24}{Appendix.1.E}% 
+\contentsline {section}{\numberline {E.1}AC line zero crossing trigger}{24}{section.1.E.1}% 
+\contentsline {section}{\numberline {E.2}Hard drive shutters}{24}{section.1.E.2}% 
+\contentsline {section}{\numberline {E.3}Power locks}{24}{section.1.E.3}% 
+\contentsline {section}{\numberline {E.4}Photodiodes}{24}{section.1.E.4}% 
+\contentsline {section}{\numberline {E.5}Infinite sample and hold}{24}{section.1.E.5}% 
+\contentsline {subsection}{\numberline {E.5.1}Reduced intensity fluctuations for sub-hertz exposures}{24}{subsection.1.E.5.1}% 
+\contentsline {chapter}{\numberline {F}Miscellaneous tips and tricks}{25}{Appendix.1.F}% 
+\contentsline {section}{\numberline {F.1}Alignment of GHz AOM}{25}{section.1.F.1}% 
+\contentsline {section}{\numberline {F.2}Using the Picoscope in Labview(TM)}{25}{section.1.F.2}% 
+\contentsline {section}{\numberline {F.3}Liquid crystal retarder}{25}{section.1.F.3}% 
+\contentsline {section}{\numberline {F.4}Newport(TM) optomotion control}{25}{section.1.F.4}% 
+\contentsline {section}{\numberline {F.5}Fast analog lock for 689 nm}{25}{section.1.F.5}% 
+\contentsline {section}{\numberline {F.6}Porta CoM technique}{25}{section.1.F.6}% 
+\contentsline {section}{\numberline {F.7}Measuring Rabi frequencies}{25}{section.1.F.7}% 
+\contentsline {chapter}{\numberline {G}Two-particle momentum probability distribution}{26}{Appendix.1.G}% 

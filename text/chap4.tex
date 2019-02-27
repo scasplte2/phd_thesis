@@ -1,0 +1,145 @@
+\chapter{Binding energy of the $^{86}$Sr$_2$ halo molecule}
+\label{ch:chap4}
+
+Describe and introduce halo molecules here
+
+\section{Experimental methods}
+\label{sec:lowE_methods}
+
+\section{Theoretical description}
+\label{sec:lowE_theory}
+
+\section{Spectral fitting and determination of the binding energy}
+\label{sec:lowE_Eb2}
+
+
+
+\subsection{Consideration of the trap depth}
+\label{sec:trunc_trap}
+
+From the formula for the line shape we can see that it depends on the spatial distribution of the atoms. The standard approximation made when measuring these types of systems is to ensure loss does not cause heating of the atoms during photoassocaiton. Heating results in re-equilibration of the atomic density distribition, which in turn effects the rate of loss creation. Without independent controls to keep the system in thermal (and therefore spatial density) equlibrium.
+
+What are the things the rate equation deals with?
+
+We need the desnity distribution.
+
+In a harmonic trap, there if a simp[le anayltic form to the density distribution of a thermal gas. From Mi's work (and others) we know that this is only an approximation that is valid when eta is approx greater than 4. When greater than 4 we can apply the high-eta approx and the trap frequencies along a particular direction reduce to <eq>.
+
+However, the trap we did this experiment in were at eta's of 1 or less so we don't have an analytic solution to the spatial distribution. Since this could be a problem we need to know what the trap looks like.
+
+We measure trap oscillation freq. at several different powers and model the trap using the utility outlined somewhere else.
+
+From the numeric model, we can define a spatially depedent eta which is determined by the local trap depth which is simply the difference between the local potential energy and the global depth. This is illustrated in fig something.
+
+The spatial information is not only important for the density determination, but also for the range of available thermal energies. Consider two atoms near the local bottom of the trap. By definition, in equilibrium, a single atom may only have up to the trap depths worth of energy since any additional energy would result in its expulsion from the trap. In this case, in a relative momentum frame, the allowed collision energies range from zero to two times the trap depth. Similarly, as we move towards the edge of the trap the range of accessible collision energies shrinks. This additional weighting factor may be viewed as having a local truncasted Boltzmann ditribution at every point in space. 
+
+Normally the BZ dist goes to infinity but here we have a cutoff at 2 trap depeth. The most naive approx would be to simply consider the BZ and harshly truncate at 2 trap depth. We tried this
+
+We know this is unphysical since we should expect that the probability of observing a certain momenta at a certain point in space, should smoothly tend zero towards as we approach the edge of the trap. To see what this looks like we (and determine how important the effect is) we rederive the relative momentum distribution.
+
+<Some stuff about center of mass and relative>
+
+What were all the cases and conclusions of having done this? Remember to consider what the different cases are. If the total relative energy can be X then how does that get split up? Use the plots to show this limiting behavior. Like if particle 1 has all the energy then there is only one possible value for particle 2 (and vice versa).
+
+
+DERIVATION for truncated trap below
+
+Need to lookup references for this molecular chaos assumption. What about egodicity? How to discuss that we may not be completely ergodic?
+
+What does my potential look like? Can I make it a piecewise function? How should I introduce this part?
+
+Where does the f equation come from? I believe this is just the normalized boltzmann factor for probability to occupy a particlar state.
+
+\noindent
+We can truncate this single particle distribution by 
+\begin{equation}
+\label{eq:trun_single_particle_prob}
+		 f_{ \vec{r} }( \vec{p} ) = A \left(\frac{1}{2 \pi k_B T}\right)^{3/2} e^{\left(\frac{-p^2}{2 m k_B T}\right)} \Theta \left( \epsilon_{max} - U( \vec{r} ) - \frac{p^2}{2 m} \right)
+\end{equation}
+
+\noindent
+where A is a normalization constant which ensures $\int_0^\infty f_{ \vec{r} }( \vec{p} )\,d \vec{p} = 1 $ and $\Theta(x)$ is the Heaviside function defined by
+
+\begin{equation}
+\label{eq:heaviside}
+	\Theta(x)=
+	\begin{cases}
+		1 &\text{if } x \geq 0, \\
+		0 &\text{if } x < 0
+	\end{cases}
+\end{equation}
+
+
+\section{Discussion of binding energy}
+\label{sec:lowE_alt}
+
+We got a certain answer with the way shown in the paper.
+
+We can also use a completely different method that ignores all the consdierations of the last few sections. As was done in the calcium paper, we could simply fit the blue edge of the feature using a model function which can capture the high level features of the lineshape. Get the same answer. SHOW PLOTS TO THIS AFFECT AND COMPARE
+
+\section{Calculating the bound-bound Frank-Condon factor}
+\label{sec:lowE_coupling}
+
+Maybe go a little into the isolated resonance model (or at least recall), then tie into how we can measure the susceptibility across several different detunings which can give us the coupling to intermediate level. The first order analysis of this data suggest a bound-bound rabi freuqnecy of \hl{BLAH}. 
+
+Point out the curling up at the end and say how the simple isolated resonacne model cannot predict. A full coupled channel calculation probably could but in the spirit of the Bohn and Julienne semi-classical approach, we set out to derive an approximate analytic expression to determine the binding energies. THis is presented in the next chapter.
+
+
+
+
+
+
+Typical derivation of relative momentum probability distribution function
+
+We begin by considering the single particle momentum probability distritbuion function (gotten how)? 
+Single particle momentum probability distribution
+\begin{equation} 
+\label{eq:single_particle_prob}
+		 f^1( \vec{p} ) = \left(\frac{1}{2 \pi k_B T}\right)^{3/2} e^{\left(\frac{-p^2}{2 m k_B T}\right)}
+\end{equation}
+
+\noindent
+Extension of this simple Boltzmann equation into the two-particle regime is complicated due to dependence of each particle on the others. If however, we make the assumption that particle collisions are rapid (on some timescale) we can approximate the two particle momentum distribtuion as the product of two single particle functions. This is known as the moleculear chaos assumption and is important for \hl{what???}
+
+The two particle distribution for a homegeneous system is then
+\begin{equation}
+\label{eq:two_particle_prob}
+\begin{split}
+		 f^2( \vec{p}_1, \vec{p}_2 ) &= f^1( \vec{p}_1 ) f^1( \vec{p}_2 ) \\
+		  &= \left(\frac{1}{2 \pi k_B T}\right)^3 \exp\left(\frac{-(p_1^2 + p_2^2)}{2 m k_B T}\right)
+\end{split}
+\end{equation}
+
+Next, we'd like to consider a center-of-mass frame for the distribution. So we'll define
+
+ we define the relative and center-of-mass momenta of the two particles by defining
+
+\begin{align}
+\label{eq:com_frame_defs}
+	\vec{P}_c & = \vec{p}_1 + \vec{p}_2             &	M &= m_1 + m_2 = 2m \\
+	\vec{p}_r & = \frac{\vec{p}_1 - \vec{p}_2}{2}   &   \mu &= \frac{m_1 m_2}{m_1 + m_2} = \frac{m}{2}
+\end{align}
+
+from these equations we can use conservation of energy to determine the quadrature sum of the two momenta
+
+\begin{align}
+\label{eq:energy_conserve}
+	\frac{p_1^2}{2m} + \frac{p_2^2}{2m} &= \frac{P_c^2}{2M} + \frac{p_r^2}{2\mu}
+	p_1^2 + p_2^2 &= \frac{P_c^2}{2} + 2 p_r^2
+\end{align}
+
+We now perform a change of variables using Eq.\ref{eq:com_frame_defs} and Eq.\ref{eq:two_particle_prob} can be rewritten as 
+
+
+
+
+Need to make a connection between dipole matrix element, wigner threshold, and infinite squarer step potential. This infiinite square step can be viewed as a dilute ideal gas. 
+
+To prove this assumption I want to show that using the square step I can get the same equations like in Eq. 1 of the 99 paper. Then once we know the infinite energy behavior (valid for only a particular portion of energy due to s-wave constraint) then we can ask what happens if f(p) is truncated. 
+
+In the s-wave limit I need to write K as a function of f(p) (should do this in the appendix proof and reference in body). Given the form of the loss rate constant K, our problem reduces to determining the form of f(p) when eta is finite.
+
+Ok, so need to reference \cite{Ciuryo2004} to motivate usage of center of mass. Then use \cite{Nicholson2015a} Eq. 43 to reference the particular form 
+
+
+what is the throughline I want to make? Develop K$_{in}$ $\rightarrow$ recast in terms of P distribution $\rightarrow$ show how we can replace the normal dist with a truncated dist $\rightarrow$ explore the effects of that truncation

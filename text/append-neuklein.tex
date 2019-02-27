@@ -1,0 +1,35 @@
+\chapter{neuKLEIN - Killian lab experimental interface}
+During my time working on the neutral apparatus, Joe Whalen began a rewrite of the Labview based experimental control software which had grown organically through the first decade of the neutral apparatus' existence. Following this refactor, the user interface was also revamped to help reduce human errors and improve overall data collection efficiency. This chapter will outline the major components of the neuKLEIN software package and how this system integrates with the hardware control system and the software analysis algorithm.
+
+\section{Labview code}
+Need to have description of state machine.
+
+Need to 
+
+Use of references for updating front panel
+
+Need to get references for LV documentation for this stuff
+
+Discuss triggered waveform oddity (retriggerable setup)
+
+
+
+
+\section{FPGA code}
+The versatility of FPGA led us to want to simple system for setting static voltages and switching them at will. We built such a system using an National Instrument FPGA device (Xlinix something). The hardware details and circuitry are available in \hl{appendix blah}. This section will focus on the software side of programming and using the FPGA system.
+
+This was originally a project started by a summer student named Weixuan Li in summer 2018. He did a good job.
+
+Talk about special programs (the custom operation builder specifically)
+
+\section{Possible future improvements}
+Specifically thinking about the ability to do network shared variables. Then we could dedicate a mahcine to an instrument and share the data using a networking layer instead of a hard connection.
+
+Movement to full state machine
+
+Standardization of the triggered waveform VI
+
+implementation of coupled scanning mechanism (how is this currently handled)
+
+
+

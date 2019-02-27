@@ -1,0 +1,59 @@
+\documentclass[aps,pra,preprint,notitlepage]{revtex4}
+
+\usepackage{graphicx}	% adds graphics into documents
+	\graphicspath{{./figures/}}
+\usepackage{grffile}	% allows spaces in figures names
+\usepackage{epstopdf}	% converts eps images
+\usepackage{bm}			% bold math
+\usepackage{amssymb}	% math package
+\usepackage{amsmath}	% math package
+\usepackage{parskip}	% helps tidy up paragraphs
+	\setlength{\parindent}{40pt}
+\usepackage{multirow}	% mutliline cells in tables
+\usepackage[usenames,dvipsnames]{xcolor}   % add color to text
+\usepackage[caption=false]{subfig}   	   % Creates subfigures
+\usepackage[sort&compress]{natbib}		   % Formats references
+	\setcitestyle{square}
+\usepackage[colorlinks,citecolor=Rhodamine]{hyperref} % Hyperlinks references
+\usepackage[normalem]{ulem} % allows for highlighting, use normalem to protect \emph
+
+% Custom macros
+\newcommand{\hl}{\bgroup\markoverwith
+  {\textcolor{yellow}{\rule[-.5ex]{2pt}{2.5ex}}}\ULon} % creates a highlight command \hl
+\providecommand{\degree}{\ensuremath{^\circ}}  % degree symbol
+\providecommand{\e}[1]{\ensuremath{\times 10^{#1}}} % scientific notation
+\providecommand{\peakDens}[2]{\ensuremath{n_0 = #1 \times 10^{#2} cm^{-3}}} % shorthand for densities
+\providecommand{\abs}[1]{\ensuremath{\lvert {#1} \rvert}} % notation for absolute value
+\newcommand{\ket}[1]{\ensuremath{\left| {#1} \right>}} % for Dirac kets
+\newcommand{\bra}[1]{\ensuremath{\left< {#1} \right|}} % for Dirac bras
+
+%\includeonly{./chapters/chap4_lowE_PAS}
+
+\begin{report}
+
+\bibliographystyle{naturemag}
+
+\title{TITLE}
+\author{J. A. Aman}
+\affiliation{Department of Physics and Astronomy, Rice University, Houston, TX 77005, USA}
+\date{\today}
+
+%\begin{abstract}
+%\end{abstract}
+
+\maketitle
+
+\include{./chapters/chap3_PAS_intro}
+\include{./chapters/chap4_lowE_PAS}
+\include{./chapters/chap5_highE_PAS}
+
+
+
+	
+
+\begingroup
+    \setlength{\bibsep}{10pt}
+    \linespread{1}\selectfont
+    \bibliography{library}
+\endgroup
+\end{document}
