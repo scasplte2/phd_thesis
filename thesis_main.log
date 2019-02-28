@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6930 64-bit) (preloaded format=pdflatex 2019.2.15)  27 FEB 2019 17:21
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6930 64-bit) (preloaded format=pdflatex 2019.2.15)  27 FEB 2019 20:01
 entering extended mode
 **./thesis_main.tex
 (thesis_main.tex
@@ -652,16 +652,33 @@ LaTeX Warning: Reference `eq:com_frame_defs' on page 13 undefined on input line
  177.
 
 [13]
-Overfull \hbox (70.23004pt too wide) detected at line 198
+Overfull \hbox (41.05531pt too wide) detected at line 207
 []
  []
 
-) [14]
+
+Overfull \hbox (61.13966pt too wide) detected at line 216
+[]
+ []
+
+[14]
+Overfull \hbox (31.4623pt too wide) detected at line 232
+[]
+ []
+
+[15])
+Overfull \hbox (10.99968pt too wide) in paragraph at lines 263--107
+[]\OT1/cmr/m/n/12 Now in-tro-duce two di-men-sion-less vari-ables $[] = \OML/cm
+m/m/it/12 p[]=\OT1/cmr/m/n/12 2\OML/cmm/m/it/12 k[]T$ \OT1/cmr/m/n/12 and $[] 
+= \OML/cmm/m/it/12 P[]=\OT1/cmr/m/n/12 2\OML/cmm/m/it/12 Mk[]T$ 
+ []
+
+[16]
 \openout2 = `./text/chap5.aux'.
 
  (text/chap5.tex
 Chapter 5.
-) [15
+) [17
 
 
 
@@ -682,23 +699,23 @@ Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 (hyperref)                removing `math shift' on input line 33.
 
-[16
+[18
 
 
 
-]) [17]
+]) [19]
 \openout2 = `./text/chap7.aux'.
 
  (text/chap7.tex
 Chapter 7.
-) [18
+) [20
 
 
 
-] (thesis_main.bbl) [19
+] (thesis_main.bbl) [21
 
 
-] [20
+] [22
 
 
 ]
@@ -706,7 +723,7 @@ Chapter 7.
 
  (text/append-922.tex
 Appendix A.
-) [21
+) [23
 
 
 ]
@@ -714,7 +731,7 @@ Appendix A.
 
  (text/append-imagefit.tex
 Appendix B.
-) [22
+) [24
 
 
 
@@ -723,16 +740,16 @@ Appendix B.
 
  (text/append-neuklein.tex
 Appendix C.
-[23
+[25
 
 
 
-]) [24]
+]) [26]
 \openout2 = `./text/append-expHW.aux'.
 
  (text/append-expHW.tex
 Appendix D.
-) [25
+) [27
 
 
 
@@ -745,7 +762,7 @@ No file ./text/append-gaussBeam.tex.
 
 (text/append-circuits.tex
 Appendix E.
-) [26
+) [28
 
 
 
@@ -756,7 +773,7 @@ Appendix E.
 
  (text/append-misc.tex
 Appendix F.
-) [27
+) [29
 
 
 
@@ -765,7 +782,7 @@ Appendix F.
 
  (text/append-momDist.tex
 Appendix G.
-) [28
+) [30
 
 
 
@@ -789,13 +806,13 @@ LaTeX Warning: There were undefined references.
  )
 (\end occurred when \ifx on line 161 was incomplete) 
 Here is how much of TeX's memory you used:
- 9524 strings out of 492946
- 139492 string characters out of 3127154
- 252518 words of memory out of 3000000
+ 9532 strings out of 492946
+ 139594 string characters out of 3127154
+ 254519 words of memory out of 3000000
  12984 multiletter control sequences out of 15000+200000
  21601 words of font info for 86 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 36i,17n,43p,829b,478s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 36i,18n,43p,829b,478s stack positions out of 5000i,500n,10000p,200000b,50000s
 <C:/Users/Jim/AppData/Local
 /Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/Jim/Ap
 pData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx8.pfb><C:/Us
@@ -815,9 +832,9 @@ e1/public/amsfonts/cm/cmsy10.pfb><C:/Users/Jim/AppData/Local/Programs/MiKTeX 2.
 9/fonts/type1/public/amsfonts/cm/cmsy6.pfb><C:/Users/Jim/AppData/Local/Programs
 /MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Users/Jim/AppData/Loca
 l/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmti12.pfb>
-Output written on thesis_main.pdf (37 pages, 400737 bytes).
+Output written on thesis_main.pdf (39 pages, 411931 bytes).
 PDF statistics:
- 705 PDF objects out of 1000 (max. 8388607)
- 137 named destinations out of 1000 (max. 500000)
+ 722 PDF objects out of 1000 (max. 8388607)
+ 145 named destinations out of 1000 (max. 500000)
  678 words of extra memory for PDF output out of 10000 (max. 10000000)
 

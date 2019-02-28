@@ -193,6 +193,71 @@ what is the throughline I want to make? Develop K$_{in}$ $\rightarrow$ recast in
 Two particle distribution
 \begin{equation}
 \begin{split}
-	f^2_{\vec{r},trunc} (\vec{p}_1, \vec{p}_2) = A^2 \left(\frac{1}{2 \pi m k_B T}\right)^3 \exp \left( \frac{-(p_1^2 + p_2^2)}{2 m k_B T} \right) \heaviside{\epsilon_{max} - U(\vec{r}) - \frac{p_1^2}{2m}} \heaviside{\epsilon_{max} - U(\vec{r}) - \frac{p_2^2}{2m}}
+	f^2_{\vec{r},trunc} (\vec{p}_1, \vec{p}_2) &= A^2 \left(\frac{1}{2 \pi m k_B T}\right)^3 \exp \left( \frac{-(p_1^2 + p_2^2)}{2 m k_B T} \right) \\ &\quad \times \heaviside{\epsilon_{max} - U(\vec{r}) - \frac{p_1^2}{2m}} \heaviside{\epsilon_{max} - U(\vec{r}) - \frac{p_2^2}{2m}}
 \end{split}
 \end{equation}
+
+We have introduced a normalization constant $A$ here to ensure the that integration over the truncated probability distribution remains equal to one.
+
+Want distribution of relative momenta so integrate out center of mass. Going to drop the two and trunc for now
+\begin{equation}
+\begin{split}
+	 \tilde{f}_{\vec{r}}(\vec{p}_{rel}) & = \int d^3 \vec{P}_c \; f_{\vec{r}} (\vec{p}_1, \vec{p}_2) \\
+	 &= \left(\frac{1}{2 \pi M k_B T}\right)^{3/2} \left(\frac{1}{2 \pi \mu k_B T}\right)^{3/2} A^2 \int d^3 \vec{P}_c \; e^{\left(\frac{-P_c^2}{2 M k_B T}\right)} e^{\left(\frac{-p_r^2}{2 \mu k_B T}\right)} \\ 
+	 &\quad \times \; \heaviside{\epsilon_{max} - U(\vec{r}) - \frac{P_c^2}{8m} - \frac{p^2}{2m} - \frac{\vec{P}_c \cdot \vec{p}}{2m}} \heaviside{\epsilon_{max} - U(\vec{r}) - \frac{P_c^2}{8m} - \frac{p^2}{2m} + \frac{\vec{P}_c \cdot \vec{p}}{2m}} 
+\end{split}
+\end{equation}
+
+Spherically symetrix collisions so can integrate by transforming into spherical coordinates with the radius aligned along the interatomic axis
+
+\begin{equation}
+\begin{split}
+	 \tilde{f}_{\vec{r}}(\vec{p}) &= \left(\frac{1}{2 \pi M k_B T}\right)^{3/2} \left(\frac{1}{2 \pi \mu k_B T}\right)^{3/2} e^{\left(\frac{-p_r^2}{2 \mu k_B T}\right)} A^2 \int_0^{\infty} dP_c \int_0^{\pi} \sin \theta d\theta \int_0^{2\pi} d\phi \; P_c^2 \; e^{\left(\frac{-P_c^2}{2 M k_B T}\right)} \\ 
+	 &\quad \times \; \heaviside{\epsilon_{max} - U(\vec{r}) - \frac{P_c^2}{8m} - \frac{p^2}{2m} - \frac{P_c \, p \cos \theta}{2m}} \heaviside{\epsilon_{max} - U(\vec{r}) - \frac{P_c^2}{8m} - \frac{p^2}{2m} + \frac{P_c \, p \cos \theta}{2m}} 
+\end{split}
+\end{equation}
+
+\begin{equation*}
+\begin{split}
+	X  &= \cos \theta \\
+	dX &= - \sin \theta d \theta
+\end{split}
+\end{equation*}
+
+Substitute and integrate over $\phi$
+
+\begin{equation}
+\begin{split}
+	 \tilde{f}_{\vec{r}}(\vec{p}) &= \left(\frac{1}{2 \pi M k_B T}\right)^{3/2} \left(\frac{1}{2 \pi \mu k_B T}\right)^{3/2} e^{\left(\frac{-p_r^2}{2 \mu k_B T}\right)} 2 \pi A^2 \int_0^{\infty} dP_c \int_{-1}^1 dX \; P_c^2 \; e^{\left(\frac{-P_c^2}{2 M k_B T}\right)} \\ 
+	 &\quad \times \; \heaviside{\epsilon_{max} - U(\vec{r}) - \frac{P_c^2}{8m} - \frac{p^2}{2m} - \frac{P_c \, p X}{2m}} \heaviside{\epsilon_{max} - U(\vec{r}) - \frac{P_c^2}{8m} - \frac{p^2}{2m} + \frac{P_c \, p X}{2m}} 
+\end{split}
+\end{equation}
+
+Recognize that the Heaviside functions cancel each other out on either side of zero, so can eliminate one of the Heavisides and multiply by 2
+
+\begin{equation}
+\begin{split}
+	 \tilde{f}_{\vec{r}}(\vec{p}) &= \left(\frac{1}{2 \pi M k_B T}\right)^{3/2} \left(\frac{1}{2 \pi \mu k_B T}\right)^{3/2} e^{\left(\frac{-p_r^2}{2 \mu k_B T}\right)} 4 \pi A^2 \int_0^{\infty} dP_c \int_0^1 dX \; P_c^2 \; e^{\left(\frac{-P_c^2}{2 M k_B T}\right)} \\ 
+	 &\quad \times \; \heaviside{\epsilon_{max} - U(\vec{r}) - \frac{P_c^2}{8m} - \frac{p^2}{2m} - \frac{P_c \, p X}{2m}} 
+\end{split}
+\end{equation}
+
+From here we can rewrite using the infinite relative momentum probability distribution $f_{\vec{r}, \infty} (\vec{p})$ from \hl{some equation}
+
+\begin{equation}
+\begin{split}
+	 \tilde{f}_{\vec{r}}(\vec{p}) &= \left(\frac{1}{2 \pi \mu k_B T}\right)^{3/2} e^{\left(\frac{-p_r^2}{2 \mu k_B T}\right)} \mathcal{G}(T, \epsilon_{max}, p_{rel}) \\
+	 &= f_{\vec{r}, \infty} (\vec{p}) \mathcal{G}(T, \epsilon_{max}, p_{rel})
+\end{split}
+\end{equation}
+
+where $\mathcal{G}(T, \epsilon_{max}, p_{rel})$ is given by
+
+\begin{equation}
+\begin{split}
+	\mathcal{G}(T, \epsilon_{max}, p_{rel}) &= A^2 \left(\frac{4 \pi}{2 \pi M k_B T}\right)^{3/2} \int_0^{\infty} dP_c \int_0^1 dX \; P_c^2 \; e^{\left(\frac{-P_c^2}{2 M k_B T}\right)} \\ 
+	 &\quad \times \; \heaviside{\epsilon_{max} - U(\vec{r}) - \frac{P_c^2}{8m} - \frac{p^2}{2m} - \frac{P_c \, p X}{2m}} 
+\end{split}
+\end{equation}
+
+Now introduce two dimensionless variables $\tilde{\epsilon} = p_{rel}^2/2 \mu k_B T$ and $\tilde{E} = P_c^2/2 M k_B T$
