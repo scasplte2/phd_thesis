@@ -1,8 +1,6 @@
 \chapter{Binding energy of the $^{86}$Sr$_2$ halo molecule}
 \label{ch:chap4}
 
-Describe and introduce halo molecules here
-
 \section{Experimental methods}
 \label{sec:lowE_methods}
 
@@ -12,10 +10,28 @@ Describe and introduce halo molecules here
 \section{Spectral fitting and determination of the binding energy}
 \label{sec:lowE_Eb2}
 
-
-
 \subsection{Consideration of the trap depth}
 \label{sec:trunc_trap}
+
+\section{Discussion of binding energy}
+\label{sec:lowE_alt}
+
+\section{Calculating the bound-bound Frank-Condon factor}
+\label{sec:lowE_coupling}
+
+Strontium is a nice atom to work with because of the various properties of all of it's isotopes but access to such a variety of properties also comes with it share of complications. The most abundant isotope, 88, has a nearly vanishing scattering length but served as the workhorse for many of our previous stuides and those of other labs. The known scattering properties of strontium are mass scaled from 88 \hl{is this somehow not as good for 86? Also, where are the most up to date scattering lengths for Sr from? - The '10 Fourier paper}
+
+
+
+As described in previous chapters, two-photon PAS can be used to directly populate low-lying molecular levels. Applying this technique to strontium 86 we can explore a similar regime
+
+
+
+conclusion of chapter 4 is that we measured the binding energy more accurately which can be directly related to a more precious value of the scattering length for 86. Also there is a straightforward experiment available to use to attempt to measure the efimov paramter for strontium.
+
+how did we determine the binding energy? how did we measure spectra?
+
+
 
 From the formula for the line shape we can see that it depends on the spatial distribution of the atoms. The standard approximation made when measuring these types of systems is to ensure loss does not cause heating of the atoms during photoassociation. Heating results in re-equilibration of the atomic density distribition, which in turn effects the rate of loss creation. Without independent controls to keep the system in thermal (and therefore spatial density) equlibrium.
 
@@ -69,16 +85,11 @@ where A is a normalization constant which ensures $\int_0^\infty f_{ \vec{r} }( 
 	\end{cases}
 \end{equation}
 
-
-\section{Discussion of binding energy}
-\label{sec:lowE_alt}
-
 We got a certain answer with the way shown in the paper.
 
 We can also use a completely different method that ignores all the consdierations of the last few sections. As was done in the calcium paper, we could simply fit the blue edge of the feature using a model function which can capture the high level features of the lineshape. Get the same answer. SHOW PLOTS TO THIS AFFECT AND COMPARE
 
-\section{Calculating the bound-bound Frank-Condon factor}
-\label{sec:lowE_coupling}
+
 
 Maybe go a little into the isolated resonance model (or at least recall), then tie into how we can measure the susceptibility across several different detunings which can give us the coupling to intermediate level. The first order analysis of this data suggest a bound-bound rabi freuqnecy of \hl{BLAH}. 
 
@@ -89,50 +100,7 @@ Point out the curling up at the end and say how the simple isolated resonacne mo
 
 
 
-Typical derivation of relative momentum probability distribution function
 
-We begin by considering the single particle momentum probability distritbuion function (gotten how)? 
-Single particle momentum probability distribution
-\begin{equation} 
-\label{eq:single_particle_prob}
-		 f^1( \vec{p} ) = \left(\frac{1}{2 \pi k_B T}\right)^{3/2} e^{\left(\frac{-p^2}{2 m k_B T}\right)}
-\end{equation}
-
-\noindent
-Extension of this simple Boltzmann equation into the two-particle regime is complicated due to dependence of each particle on the others. If however, we make the assumption that particle collisions are rapid (on some timescale) we can approximate the two particle momentum distribtuion as the product of two single particle functions. This is known as the moleculear chaos assumption and is important for \hl{what???}
-
-The two particle distribution for a homegeneous system is then
-\begin{equation}
-\label{eq:two_particle_prob}
-\begin{split}
-		 f^2( \vec{p}_1, \vec{p}_2 ) &= f^1( \vec{p}_1 ) f^1( \vec{p}_2 ) \\
-		  &= \left(\frac{1}{2 \pi m k_B T}\right)^3 \exp\left(\frac{-(p_1^2 + p_2^2)}{2 m k_B T}\right)
-\end{split}
-\end{equation}
-
-Next, we'd like to consider a center-of-mass frame for the distribution. So we'll define
-
- we define the relative and center-of-mass momenta of the two particles by defining
-
-\begin{align*}
-	\vec{P}_c & = \vec{p}_1 + \vec{p}_2             &	M   &= m_1 + m_2 = 2m \\
-	\vec{p}_r & = \frac{\vec{p}_1 - \vec{p}_2}{2}   &   \mu &= \frac{m_1 m_2}{m_1 + m_2} = \frac{m}{2}
-\end{align*}
-
-from these equations we can use conservation of energy to determine the quadrature sum of the two momenta
-
-\begin{align*}
-	\frac{p_1^2}{2m} + \frac{p_2^2}{2m} &= \frac{P_c^2}{2M} + \frac{p_r^2}{2\mu} \\
-	p_1^2 + p_2^2 &= \frac{P_c^2}{2} + 2 p_r^2
-\end{align*}
-
-thus the momentum probability distribution take the form
-
-\begin{equation}
-\label{eq:two_particle_prob_inf_atomFrame}
-		 f^2( \vec{P}_c, \vec{p}_r ) = \left(\frac{1}{2 \pi M k_B T}\right)^{3/2} \left(\frac{1}{2 \pi \mu k_B T}\right)^{3/2} 
-		 \exp\left(\frac{-P_c^2}{2 M k_B T}\right) \exp\left(\frac{-p_r^2}{2 \mu k_B T}\right)
-\end{equation}
 
 Lastly, we note that in the context of photoassociation, the center-of-mass component of Eq.\ref{eq:two_particle_prob_inf_atomFrame} is not typically considered as typical PAS experiments are performed utilizing broad dipole allowed transitions which have linewidhts much greater than the doppler width thus only the relative momentum between particles is important for determining the loss rate coefficeint K discussed in \hl(somewhere). 
 
@@ -174,7 +142,7 @@ typical PAS experiments utilize dipole allowed transitions which have linewidths
 
 
 
-We now perform a change of variables using Eq.\ref{eq:com_frame_defs} and Eq.\ref{eq:two_particle_prob} can be rewritten as 
+We now perform a change of variables using Eq. and Eq.\ref{eq:two_particle_prob} can be rewritten as 
 
 
 
@@ -188,76 +156,4 @@ In the s-wave limit I need to write K as a function of f(p) (should do this in t
 Ok, so need to reference \cite{Ciuryo2004} to motivate usage of center of mass. Then use \cite{Nicholson2015a} Eq. 43 to reference the particular form 
 
 
-what is the throughline I want to make? Develop K$_{in}$ $\rightarrow$ recast in terms of P distribution $\rightarrow$ show how we can replace the normal dist with a truncated dist $\rightarrow$ explore the effects of that truncation
-
-Two particle distribution
-\begin{equation}
-\begin{split}
-	f^2_{\vec{r},trunc} (\vec{p}_1, \vec{p}_2) &= A^2 \left(\frac{1}{2 \pi m k_B T}\right)^3 \exp \left( \frac{-(p_1^2 + p_2^2)}{2 m k_B T} \right) \\ &\quad \times \heaviside{\epsilon_{max} - U(\vec{r}) - \frac{p_1^2}{2m}} \heaviside{\epsilon_{max} - U(\vec{r}) - \frac{p_2^2}{2m}}
-\end{split}
-\end{equation}
-
-We have introduced a normalization constant $A$ here to ensure the that integration over the truncated probability distribution remains equal to one.
-
-Want distribution of relative momenta so integrate out center of mass. Going to drop the two and trunc for now
-\begin{equation}
-\begin{split}
-	 \tilde{f}_{\vec{r}}(\vec{p}_{rel}) & = \int d^3 \vec{P}_c \; f_{\vec{r}} (\vec{p}_1, \vec{p}_2) \\
-	 &= \left(\frac{1}{2 \pi M k_B T}\right)^{3/2} \left(\frac{1}{2 \pi \mu k_B T}\right)^{3/2} A^2 \int d^3 \vec{P}_c \; e^{\left(\frac{-P_c^2}{2 M k_B T}\right)} e^{\left(\frac{-p_r^2}{2 \mu k_B T}\right)} \\ 
-	 &\quad \times \; \heaviside{\epsilon_{max} - U(\vec{r}) - \frac{P_c^2}{8m} - \frac{p^2}{2m} - \frac{\vec{P}_c \cdot \vec{p}}{2m}} \heaviside{\epsilon_{max} - U(\vec{r}) - \frac{P_c^2}{8m} - \frac{p^2}{2m} + \frac{\vec{P}_c \cdot \vec{p}}{2m}} 
-\end{split}
-\end{equation}
-
-Spherically symetrix collisions so can integrate by transforming into spherical coordinates with the radius aligned along the interatomic axis
-
-\begin{equation}
-\begin{split}
-	 \tilde{f}_{\vec{r}}(\vec{p}) &= \left(\frac{1}{2 \pi M k_B T}\right)^{3/2} \left(\frac{1}{2 \pi \mu k_B T}\right)^{3/2} e^{\left(\frac{-p_r^2}{2 \mu k_B T}\right)} A^2 \int_0^{\infty} dP_c \int_0^{\pi} \sin \theta d\theta \int_0^{2\pi} d\phi \; P_c^2 \; e^{\left(\frac{-P_c^2}{2 M k_B T}\right)} \\ 
-	 &\quad \times \; \heaviside{\epsilon_{max} - U(\vec{r}) - \frac{P_c^2}{8m} - \frac{p^2}{2m} - \frac{P_c \, p \cos \theta}{2m}} \heaviside{\epsilon_{max} - U(\vec{r}) - \frac{P_c^2}{8m} - \frac{p^2}{2m} + \frac{P_c \, p \cos \theta}{2m}} 
-\end{split}
-\end{equation}
-
-\begin{equation*}
-\begin{split}
-	X  &= \cos \theta \\
-	dX &= - \sin \theta d \theta
-\end{split}
-\end{equation*}
-
-Substitute and integrate over $\phi$
-
-\begin{equation}
-\begin{split}
-	 \tilde{f}_{\vec{r}}(\vec{p}) &= \left(\frac{1}{2 \pi M k_B T}\right)^{3/2} \left(\frac{1}{2 \pi \mu k_B T}\right)^{3/2} e^{\left(\frac{-p_r^2}{2 \mu k_B T}\right)} 2 \pi A^2 \int_0^{\infty} dP_c \int_{-1}^1 dX \; P_c^2 \; e^{\left(\frac{-P_c^2}{2 M k_B T}\right)} \\ 
-	 &\quad \times \; \heaviside{\epsilon_{max} - U(\vec{r}) - \frac{P_c^2}{8m} - \frac{p^2}{2m} - \frac{P_c \, p X}{2m}} \heaviside{\epsilon_{max} - U(\vec{r}) - \frac{P_c^2}{8m} - \frac{p^2}{2m} + \frac{P_c \, p X}{2m}} 
-\end{split}
-\end{equation}
-
-Recognize that the Heaviside functions cancel each other out on either side of zero, so can eliminate one of the Heavisides and multiply by 2
-
-\begin{equation}
-\begin{split}
-	 \tilde{f}_{\vec{r}}(\vec{p}) &= \left(\frac{1}{2 \pi M k_B T}\right)^{3/2} \left(\frac{1}{2 \pi \mu k_B T}\right)^{3/2} e^{\left(\frac{-p_r^2}{2 \mu k_B T}\right)} 4 \pi A^2 \int_0^{\infty} dP_c \int_0^1 dX \; P_c^2 \; e^{\left(\frac{-P_c^2}{2 M k_B T}\right)} \\ 
-	 &\quad \times \; \heaviside{\epsilon_{max} - U(\vec{r}) - \frac{P_c^2}{8m} - \frac{p^2}{2m} - \frac{P_c \, p X}{2m}} 
-\end{split}
-\end{equation}
-
-From here we can rewrite using the infinite relative momentum probability distribution $f_{\vec{r}, \infty} (\vec{p})$ from \hl{some equation}
-
-\begin{equation}
-\begin{split}
-	 \tilde{f}_{\vec{r}}(\vec{p}) &= \left(\frac{1}{2 \pi \mu k_B T}\right)^{3/2} e^{\left(\frac{-p_r^2}{2 \mu k_B T}\right)} \mathcal{G}(T, \epsilon_{max}, p_{rel}) \\
-	 &= f_{\vec{r}, \infty} (\vec{p}) \mathcal{G}(T, \epsilon_{max}, p_{rel})
-\end{split}
-\end{equation}
-
-where $\mathcal{G}(T, \epsilon_{max}, p_{rel})$ is given by
-
-\begin{equation}
-\begin{split}
-	\mathcal{G}(T, \epsilon_{max}, p_{rel}) &= A^2 \left(\frac{4 \pi}{2 \pi M k_B T}\right)^{3/2} \int_0^{\infty} dP_c \int_0^1 dX \; P_c^2 \; e^{\left(\frac{-P_c^2}{2 M k_B T}\right)} \\ 
-	 &\quad \times \; \heaviside{\epsilon_{max} - U(\vec{r}) - \frac{P_c^2}{8m} - \frac{p^2}{2m} - \frac{P_c \, p X}{2m}} 
-\end{split}
-\end{equation}
-
-Now introduce two dimensionless variables $\tilde{\epsilon} = p_{rel}^2/2 \mu k_B T$ and $\tilde{E} = P_c^2/2 M k_B T$
+what is the throughline I want to make? Develop K$_{in}$ $\rightarrow$ recast in terms of P distribution $\rightarrow$ show how we can replace the normal dist with a truncated dist $\rightarrow$ explore the effects of that truncation 

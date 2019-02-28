@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6930 64-bit) (preloaded format=pdflatex 2019.2.15)  27 FEB 2019 20:01
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6930 64-bit) (preloaded format=pdflatex 2019.2.15)  28 FEB 2019 13:31
 entering extended mode
 **./thesis_main.tex
 (thesis_main.tex
@@ -635,50 +635,24 @@ Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 
 
 
-] [8] [9] [10] [11]
-Overfull \hbox (4.98708pt too wide) in paragraph at lines 141--142
+] [8] [9] [10]
+Overfull \hbox (4.98708pt too wide) in paragraph at lines 98--99
 []\OT1/cmr/m/n/12 The case of PA us-ing nar-row in-ter-com-bi-na-tion line tran
 -si-tions found in alkaline-
  []
 
-[12]
-Overfull \hbox (8.25093pt too wide) in paragraph at lines 173--174
+
+Overfull \hbox (8.25093pt too wide) in paragraph at lines 130--131
 []\OT1/cmr/m/n/12 typical PAS ex-per-i-ments uti-lize dipole al-lowed tran-si-t
 ions which have linewidths
  []
 
-
-LaTeX Warning: Reference `eq:com_frame_defs' on page 13 undefined on input line
- 177.
-
-[13]
-Overfull \hbox (41.05531pt too wide) detected at line 207
-[]
- []
-
-
-Overfull \hbox (61.13966pt too wide) detected at line 216
-[]
- []
-
-[14]
-Overfull \hbox (31.4623pt too wide) detected at line 232
-[]
- []
-
-[15])
-Overfull \hbox (10.99968pt too wide) in paragraph at lines 263--107
-[]\OT1/cmr/m/n/12 Now in-tro-duce two di-men-sion-less vari-ables $[] = \OML/cm
-m/m/it/12 p[]=\OT1/cmr/m/n/12 2\OML/cmm/m/it/12 k[]T$ \OT1/cmr/m/n/12 and $[] 
-= \OML/cmm/m/it/12 P[]=\OT1/cmr/m/n/12 2\OML/cmm/m/it/12 Mk[]T$ 
- []
-
-[16]
+[11]) [12]
 \openout2 = `./text/chap5.aux'.
 
  (text/chap5.tex
 Chapter 5.
-) [17
+) [13
 
 
 
@@ -699,23 +673,23 @@ Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 (hyperref)                removing `math shift' on input line 33.
 
-[18
+[14
 
 
 
-]) [19]
+]) [15]
 \openout2 = `./text/chap7.aux'.
 
  (text/chap7.tex
 Chapter 7.
-) [20
+) [16
 
 
 
-] (thesis_main.bbl) [21
+] (thesis_main.bbl) [17
 
 
-] [22
+] [18
 
 
 ]
@@ -723,7 +697,7 @@ Chapter 7.
 
  (text/append-922.tex
 Appendix A.
-) [23
+) [19
 
 
 ]
@@ -731,7 +705,7 @@ Appendix A.
 
  (text/append-imagefit.tex
 Appendix B.
-) [24
+) [20
 
 
 
@@ -740,16 +714,16 @@ Appendix B.
 
  (text/append-neuklein.tex
 Appendix C.
-[25
+[21
 
 
 
-]) [26]
+]) [22]
 \openout2 = `./text/append-expHW.aux'.
 
  (text/append-expHW.tex
 Appendix D.
-) [27
+) [23
 
 
 
@@ -762,7 +736,7 @@ No file ./text/append-gaussBeam.tex.
 
 (text/append-circuits.tex
 Appendix E.
-) [28
+) [24
 
 
 
@@ -773,7 +747,7 @@ Appendix E.
 
  (text/append-misc.tex
 Appendix F.
-) [29
+) [25
 
 
 
@@ -782,11 +756,31 @@ Appendix F.
 
  (text/append-momDist.tex
 Appendix G.
-) [30
+[26
 
 
 
-]
+] [27]
+Overfull \hbox (41.05531pt too wide) detected at line 75
+[]
+ []
+
+
+Overfull \hbox (61.13966pt too wide) detected at line 84
+[]
+ []
+
+[28]
+Overfull \hbox (31.4623pt too wide) detected at line 100
+[]
+ []
+
+[29] [30]
+Overfull \hbox (12.43536pt too wide) detected at line 177
+[]\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 []; []\OT1/cmr/m/n/12 ) = []
+ []
+
+[31]) [32]
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 133.
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 133.
  (thesis_main.aux (text/abstract.aux) (text/acknowledgements.aux)
@@ -799,17 +793,13 @@ Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 133.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 133.
 Package rerunfilecheck Info: File `thesis_main.out' has not changed.
 (rerunfilecheck)             Checksum: E4A86C311170696A48B756BFAE64FBFC;6114.
-
-
-LaTeX Warning: There were undefined references.
-
  )
 (\end occurred when \ifx on line 161 was incomplete) 
 Here is how much of TeX's memory you used:
- 9532 strings out of 492946
- 139594 string characters out of 3127154
- 254519 words of memory out of 3000000
- 12984 multiletter control sequences out of 15000+200000
+ 9539 strings out of 492946
+ 139710 string characters out of 3127154
+ 255521 words of memory out of 3000000
+ 12985 multiletter control sequences out of 15000+200000
  21601 words of font info for 86 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
  36i,18n,43p,829b,478s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -832,9 +822,9 @@ e1/public/amsfonts/cm/cmsy10.pfb><C:/Users/Jim/AppData/Local/Programs/MiKTeX 2.
 9/fonts/type1/public/amsfonts/cm/cmsy6.pfb><C:/Users/Jim/AppData/Local/Programs
 /MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Users/Jim/AppData/Loca
 l/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmti12.pfb>
-Output written on thesis_main.pdf (39 pages, 411931 bytes).
+Output written on thesis_main.pdf (41 pages, 422286 bytes).
 PDF statistics:
- 722 PDF objects out of 1000 (max. 8388607)
- 145 named destinations out of 1000 (max. 500000)
+ 736 PDF objects out of 1000 (max. 8388607)
+ 151 named destinations out of 1000 (max. 500000)
  678 words of extra memory for PDF output out of 10000 (max. 10000000)
 
