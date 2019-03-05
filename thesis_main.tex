@@ -11,7 +11,7 @@
 \usepackage{amssymb}	% math package
 \usepackage{amsmath}	% math package
 \usepackage{parskip}	% helps tidy up paragraphs
-	\setlength{\parindent}{40pt}
+	\setlength{\parindent}{35pt}
 \usepackage{multirow}	% mutliline cells in tables
 \usepackage[usenames,dvipsnames]{xcolor}   % add color to text
 \usepackage[caption=false]{subfig}   	   % Creates subfigures
@@ -51,12 +51,15 @@
   {\textcolor{yellow}{\rule[-.5ex]{2pt}{2.5ex}}}\ULon} % creates a highlight command \hl
 \providecommand{\degree}{\ensuremath{^\circ}}  % degree symbol
 \providecommand{\e}[1]{\ensuremath{\times 10^{#1}}} % scientific notation
-\providecommand{\peakDens}[2]{\ensuremath{n_0 = #1 \times 10^{#2} cm^{-3}}} % shorthand for densities
+\providecommand{\peakDens}[2]{\ensuremath{n_0 = #1 \times 10^{#2} \, \text{cm}^{-3}}} % shorthand for densities
 \providecommand{\abs}[1]{\ensuremath{\lvert {#1} \rvert}} % notation for absolute value
 \let\vec\mathbf % changing \vec from over arrow to bold font
 \newcommand{\ket}[1]{\ensuremath{\left| {#1} \right>}} % for Dirac kets
 \newcommand{\bra}[1]{\ensuremath{\left< {#1} \right|}} % for Dirac bras
 \newcommand{\heaviside}[1]{\ensuremath{\Theta \left( {#1} \right)}} % shortcut for writing the Heaviside function  
+\newcommand{\intPot}[2]{\ensuremath{ {#1} + {#2} }}
+\newcommand{\gs}{\ensuremath{^1S_0}}
+\newcommand{\ex}{\ensuremath{^3P_1}}
   
 
 \title{Studies of one- and two-photon photoassociative spectroscopy using ultracold strontium}
