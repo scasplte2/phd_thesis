@@ -35,6 +35,14 @@ how do we determine
 
 Show plots of the trap and how we determined what the trap depth was
 
+Our previous discussion of the rate loss constant assumed we could describe the spatial distribution of the atomic density profile analytically. This is a valid supposition given two key assumptions, 1) the sample termperature remains constant during the PA exposure and 2) the trap is of sufficient depth that we can reasonably approximate it as a harmonic trap. \hl{cite Mi's trap paper}.
+
+Analysis of the trapping conditions after acquisition of the data revealed that this second assumption was not maintained during our experiment. In some figure we can see that we only have an eta of 2. This is troublesome as it means we must numerically consider the density distribution over space when solvinf for the rate loss constant K. 
+
+In addition to the modified spatial distribution, we must also consider the effect of the trap depth on the energy profile of the trapped gas. In a typical high-eta trap, a typical Boltzmann profile is sufficient to describe the velocity distribution of the atoms and when we consider the distribution of relative energies that is important for PAS expeirments, we recover a simple bolztmann weighting for the distribution of energy probabilities. This is shown in \hl{sopme app}.
+
+However, the case of a low-eta trap we must define a local cutoff energy at each point in space within the trap as atoms that have an energy higher than the local eta value are assumed to be lost from the trap. Derivation of this truncated relative energy probabillity distribution is given in \hl{some app} and results in a stronger weighting of the coldest atoms near the bottom of the trap.
+
 
 
 \section{Theoretical description}
