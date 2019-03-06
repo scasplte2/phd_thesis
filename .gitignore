@@ -1,1 +1,12 @@
 *.pdf
+*.aux
+*.bbl
+*.blg
+*.idx
+*.lof
+*.log
+*.lot
+*.out
+*.synctex
+*.toc
+*.synctex(busy)
