@@ -83,8 +83,49 @@ Also the Chin '10 review on feshbach resonances
 
 Follow the Nicholson 15 paper method of introing the elastic and inelastic cross sections
 
-\section{Semi-classical treatment of lineshapes}
-\label{sec:bohn_and_julienne}
+The use of a laser field as the coupling scheme in a Feshbach resonance introduces several advantages and complexities that must be considered when determining the expected properties of optical Feshbach molecules. In order to understand these differences, we will briefly outline the key concepts behind Feshbach resonances and the distinctions between optical and magnetic Feshbach resonances.
+	\begin{figure}
+		\centerline{
+		\includegraphics[height=0.25\textheight]{Fig4_feshbachCartoon.pdf}}
+		\caption{Schematic representation of a Feshbach resonance. (a) Potentials for the open ($^1S_0\!+\!^1S_0$) and closed ($^3P_1\!+\!^1S_0$) channel of an optically coupled Feshbach resonance in strontium. (b) The same coupling shown in (a) in the dressed state model. Tuning of the excited potential is achieved by varying the laser frequency detuning, $\delta = \omega_p - \omega_{bound}$, and $\omega_{free}$ is the $^1S_0\!\rightarrow\!^3P_1$ atomic transition frequency. Adapted from Ref. \cite{Nicholson2015a}}
+		\label{fig:FeshbachCartoon}
+	\end{figure} 
+
+The basic idea of a Feshbach resonance is outlined in Fig.\;\ref{fig:FeshbachCartoon}. Consider a simple two channel system, denoted by the open channel and the closed channel. The open channel is generally a ground state potential for two free atoms near threshold. Atoms occupying this state can undergo elastic collisions and, in the absence of any external perturbation, will remain in the open channel. Conversely, the closed channel is a bound state of a higher lying potential who's energy can be tuned relative to the open channel. In the absence of coupling between the states, the open and closed channel remain eigenstates of the system as the tuning parameter, and therefore the energy of the closed channel, is changed. However, in the presence of coupling between the channels, the original eigenstates are mixed and develop an avoided crossing between the bare open and closed channels, when tuned across the resonance. The power of Feshbach resonances comes from the ability to externally manipulate the degree of state mixing, which results in control of the s-wave scattering length and the creation of low energy Feshbach molecules.
+
+Magnetic Feshbach resonances (MFR) are used extensively in alkali metal systems to tune the scattering properties of ultracold gases since the ground states of these systems feature a magnetic moment due to an unpaired electron in the valence shell. Thus, MFRs utilize interactions between low lying ground state molecular potentials via spin-dependent couplings. Since both the open and closed channel are ground state potentials, MFRs often exhibit extraordinarily long lifetimes \cite{Chin2010,Kohler2006}. Conversely, in strontium the ground state is a $^1S_0$ state, as shown in Fig.\;\ref{fig:energy_level_diagram}. This state is not magnetically sensitive, so no MFRs exist near the $^1S_0\!+\!^1S_0$ interatomic potential. Fortunately, optical Feshbach resonances (OFR) serve as another method to introduce coupling between the ground state potential (open channel) and a molecular state of an electronically excited potential (closed channel). Our work has utilized coupling between the $^1S_0\!+\!^1S_0$ and  $^3P_1\!+\!^1S_0$ two-body potentials via the narrow $^1S_0\!\rightarrow\!^3P_1$ atomic transition at 689nm. Fig.\;\ref{fig:FeshbachCartoon} shows a schematic of the potentials involved in the OFR of strontium in both the bare atomic and dressed state pictures. In the dressed basis we consider the combined atom + photon field system such that the channels become $\ket{^1S_0\!+\!^1S_0\!+\!n_p\hbar\omega_p}$ as the open channel and $\ket{^3P_1\!+\!^1S_0\!+\!(n_p-1)\hbar\omega_p}$ for the closed channel. As the light field frequency, $\omega_p$, is varied the excited closed channel potential will experience an energy shift relative to the open channel, resulting in resonant coupling between the open and closed channels. \cite{Ciuryo2005,Bohn1997,Fedichev1996a}
+
+Both MFRs and OFRs can be treated by the same theoretical formalism, as a modification of the collisional properties between two particles \cite{Nicholson2015a,Chin2010}. One of the hallmarks of ultracold physics is the simplicity of atomic collisions. As bosonic atoms get colder they can only collide via $\ell=0$ partial waves and thus the elastic collision rate between two atoms becomes energy independent and can be parameterized by a single fixed quantity, $a_s$. This parameter is known as the s-wave scattering length and is determined by the short range molecular potential between two colliding atoms. Through a similar approach, collisions near Feshbach resonances can be modeled by introducing a complex s-wave scattering length, $\tilde{\alpha}$. In this model, the magnitude of $\tilde{\alpha}$ influences the elastic scattering rate between particles while the imaginary part describes losses through inelastic scattering. Under an isolated Feshbach resonance model at low energies, this complex scattering length is given by \cite{Chin2010}
+	\begin{equation} \label{eq:complexScatter_constant}
+		\tilde{\alpha} = a - ib = \frac{a_s \Gamma_0}{-E_0 + \imath (\gamma/2)}
+	\end{equation}
+where $E_0$ and $\Gamma_0$ are the energy independent parameters for, respectively, the resonance position and coupling strength between channels, and $\gamma$ is a general decay term associated with loss from the closed channel. Using Eq.\;\ref{eq:complexScatter_constant}, we can note the two main differences between MFRs and OFRs. Most experimentally useful MFRs, such as in Li and K, have negligible closed channel decay, $\gamma = 0$, and a fixed coupling strength between the open and closed channels. Thus, the change in the s-wave scattering length takes on a particularly simple form, 
+	\begin{equation} \label{eq:MFRscatter}
+		\tilde{\alpha} = a_s \left( 1- \frac{\Delta}{B - B_0} \right)
+	\end{equation}
+where $B_0$ is the resonance position and the coupling strength is parameterized by a magnetic width $\Delta$, such that $\Gamma_0 = \delta \mu \Delta$ with $\delta \mu$ the difference in magnetic moments between the open and closed channel. 
+
+Conversely, OFRs offer the possibility to tune the coupling strength between the open and closed channel, since the coupling depends on the transition matrix element which varies with the square root of laser intensity. Furthermore, since OFRs utilize electronically excited states which have a natural lifetime, $\gamma$ is nonzero. This results in inelastic loss processes for OFRs. Similar to MFRs, we can define the change in scattering length as \cite{Nicholson2015a,Yan2013c,Blatt}
+	\begin{equation} \label{eq:OFRscatter}
+		\tilde{\alpha} = a_s \left( 1 - \frac{w \delta}{\delta^2 + \gamma^2/4} + \frac{i}{2} \frac{w \gamma}{\delta^2 + \gamma^2/4} \right)
+	\end{equation}
+where $\delta=\omega - \omega_0$ is the detuning from the chosen photoassociation resonance at $\omega_0$ as shown in Fig.\;\ref{fig:FeshbachCartoon}, and the width of the resonance is defined by $w = -\ell_{opt} \, \gamma / a_s$. Typically, the strength of OFRs are characterized by their optical length \cite{Nicholson2015a,Chin2010} given by $\ell_{opt} = a_s \Gamma_0 / \gamma = \frac{\lambda_{OFR}^3}{16 \pi c} \frac{ \left| \left< n | E \right> \right|^2}{k} I$. Here $c$ is the speed of light, $\lambda_{OFR}$ is the wavelength of the coupling laser, and $\left| \left< n | E \right> \right|^2$ is the free-bound Frank-Condon factor between the bound state $\bra{n}$ and scattering state $\ket{E}$. Additionally, it is useful to identify the real and imaginary parts of Eq.\;\ref{eq:OFRscatter} as defined in Eq.\;\ref{eq:complexScatter_constant}.
+	\begin{equation} \label{eq:OFRparts}
+		 a_{\scriptscriptstyle OFR} = a_s + \ell_{opt} \gamma \frac{\delta}{\delta^2+\gamma^2/4} \qquad
+		 b_{\scriptscriptstyle OFR} = \frac{\ell_{opt}}{2} \frac{\gamma^2}{\delta^2+\gamma^2/4}
+	\end{equation}
+
+Our previous work exploring the use of an optical Feshbach resonance took advantage of photoassociation transitions with large optical lengths to control the scattering length of an $^{88}$Sr BEC as described by Eq.\;\ref{eq:OFRscatter}. However, all studies of OFR to date have been limited by large atom loss rates \cite{Thalhammer2005,Theis2004,Fatemi2000,Blatt,Yan2013c} which can be modeled as a density evolution, $\dot{n} = -K_{in}n^2$, where $K_{in}$ is the two-body inelastic loss rate constant. In the low energy limit, $k\!\rightarrow\!0$, the inelastic loss rate is given by
+	\begin{equation} \label{eq:K_in}
+		K_{in} = \frac{8 \pi \hbar}{\mu_{r}} b_{\scriptscriptstyle OFR} = \frac{4 \pi \hbar}{\mu_r} \frac{\ell_{opt} \gamma^2}{\delta^2 + \gamma^2 / 4}
+	\end{equation}
+where $\mu_r$ is the reduced mass, $\delta$ is the laser detuning as shown in Fig.\;\ref{fig:FeshbachCartoon}.
+
+\section{Description of ultracold atomic gases} \label{sec:atom_theory}
+
+Essentailly first part of chapter 2 from Res
+
+\subsection{Semi-classical treatment of lineshapes} \label{sec:bohn_and_julienne}
 
 Now that we have the theory of PAS covered. PA can come in many forms (in a lattice, in a bulk gas, via dissociating molecules) Experimentally we observe PA by looking for trap loss \hl{doublon paper}.
 
@@ -172,7 +213,7 @@ For  $\Omega_{01}\ll \Omega_{12} \ll \Delta_{1}\equiv E_{b1}/\hbar-\omega_1$, wh
 
 , the shift of the two-photon resonance condition follows $\delta={\Omega_{12}^{2}}/{2\Delta_{1}}$ in agreement with Eq. \ref{Eq:ACStarkFullModel}.
 
-\section{Observing photoassociative loss}
+\section{Experimental realization of near-frequency bichromatic PA in strontium}
 \label{sec:pa_methods}
 
 In this work, we probe the halo state in 86Sr using two-photon Raman photoassociation (PA) \hl{cite 16 from halo paper}, in which two laser fields couple colliding atoms to the least-bound state of the ground molecular potential. We tune near resonance with an intermediate state that is bound in the 0u potential corresponding to the \intPot{\gs}{\ex} asymptote at long range as shown in Fig.\ref{fig:ch3_sr_pas}.

@@ -307,7 +307,7 @@ $\Delta_1/2\pi=-9$\,MHz . Sample temperature and average trapping laser intensit
 $\epsilon_{\text{max}}$ equal to $2[U_{\text{depth}}-U(\mathbf{r})]$ and $U_{\text{depth}}-U(\mathbf{r})$.}
 \end{figure}
 
-\section{Spectral fitting and determination of the binding energy}
+\section{Spectral fitting and determination of energy shifts}
 \label{sec:lowE_Eb2}
 
 %% paper
@@ -321,7 +321,7 @@ Figure \ref{Fig:Spectraminus9MHzVaryTrapCold} shows a series of spectra for diff
 We fit atom-loss spectra with Eq.\ (\ref{number}) for the evolution of atom number with time, using the phenomenological expression Eq.\ (\ref{equationApproxLorentzian}) for the scattering probability and Eq.\ (\ref{equationKeffective}) for the average of the collision event rate constant over the trap volume and collision energy. The sample temperature, perturbed resonance frequency $E'_{b2}$, $\eta$, and $\gamma_{\text{eff}}$ are taken as fit parameters. In the final analysis, temperatures are set to values determined from time-of-flight imaging of the atoms, but when they are allowed to vary, the fit values differ by no more than 10\%. Approximately 10 spectra are recorded for each set of experimental parameters, and the spread of resulting fit values are used to determine best values and uncertainties.
 
 
-\subsection{AC Stark Shift due to Excitation Lasers}
+\subsection{AC Stark shift due to excitation lasers}
 
 \begin{figure} \label{Fig:SpectraVarying689Intensity}
 \centerline{
@@ -343,7 +343,7 @@ will be discussed in Sec.\ \ref{sectionACStark}.
 
 Broadening to the red of the spectrum reflects the distribution of atom-atom collision energies, while broadening to the blue is most sensitive to decay of the intermediate state ($\Gamma_L$) and the phenomenological broadening term $\gamma_{\text{eff}}$ [Eqs.\ (\ref{ApproxLorentzianQuantities-2Main}) and (\ref{equationApproxLorentzian})]. The long lifetime of the excited state and the significant detuning $\Delta_1$ result in a width $\Gamma_L(\epsilon)$ less than 5\,Hz for all conditions. This is extremely small compared to observed width, which yields values of $\gamma_{\text{eff}}$ on the order of 300\,Hz. We hypothesize that this width reflects decay of molecules in the electronic ground-state due to collisions with background atoms.
 
-\subsection{Density-dependent Frequency Shift}
+\subsection{Density-dependent frequency shift}
 A shift of the two-photon resonance position is possible due to differing mean-field shifts of initial atomic and final molecular states arising from interaction with the background of ground-state atoms. Such a shift would be proportional to the atom density and depend upon the $s$-wave scattering lengths for atom-atom and atom-dimer collisions, $a_{86}$ and $a_{\text{ad}}$ respectively. This was observed in a Rb Bose-Einstein condensate (BEC) in \cite{wfh00}. For a non-degenerate gas, this effect yields $\chi_n=\hbar (\frac{a_{\text{ad}}}{\mu_{\text{ad}}}-4\frac{a_{86}}{\mu_{\text{aa}}})=\frac{\hbar}{m} (\frac{3 }{2}a_{\text{ad}}-8 a_{86})$, where $\mu_{\text{ad}}$ and $\mu_{\text{aa}}$ are the reduced masses for molecule-atom and atom-atom collisions respectively. Note that the shift would vanish for $a_{\text{ad}}=(16/3) a_{86}$.
 
 The largest density used in our experiment ($\sim 1\times 10^{12}\,\mathrm{cm}^{-3}$) is relatively low compared to typical BEC densities, and at this time we are unable to accurately measure a variation of resonance position with density. However, the atom-atom scattering is close to resonance and thus Efimov physics can provide information on $a_{\text{ad}}$ \cite{bha07,nen17} and an estimate of the systematic error introduced by any residual density-dependent frequency shifts. For a zero-range interaction, the atom-dimer scattering length is related to the atom-atom scattering length through the three-body Efimov parameter $\kappa_*$ according to \cite{bha07}
@@ -362,7 +362,7 @@ In principle, the atom-dimer scattering length can take any value. However, for 
 %The density in the experiments presented here is approximately 100 times less than in \cite{wfh00}, which precludes us from placing useful limits on $a_{ma}$ based on our measurements.
 
 
-\subsection{Unperturbed Halo Binding Energy and AC Stark Shift due to Trapping Lasers}
+\subsection{AC Stark Shift due to Trapping Lasers}
 
 \begin{figure} \label{Fig:ShiftWithTrapIntensity}
  \centerline{
@@ -373,9 +373,9 @@ In principle, the atom-dimer scattering length can take any value. However, for 
 With an accurate determination of $\chi_{689}$ and a value for $\chi_n$, we use the data shown in Fig. \ref{Fig:Spectraminus9MHzVaryTrapCold} to determine the susceptibility for the AC Stark shift from the trapping laser, $\chi_{1064}$, and the unperturbed halo binding energy $E_{b2}$. Figure \ref{Fig:ShiftWithTrapIntensity} shows a plot of $E_{b2}'-\chi_{689}I_{689} - \chi_{\text{n}}\langle n\rangle$ versus $\langle I_{1064} \rangle $, where $E_{b2}'$ is the resonance position from each fit and $\langle ... \rangle $ indicates a weighted average of the quantity over the trapped sample, with a weighting given by the square of atom density. This weighting reflects the contribution to photoassociative loss, a two-body process. The plotted uncertainties in $E_{b2}'-\chi_{689}I_{689} - \chi_{\text{n}}\langle n\rangle$ are from statistical variation in the fit parameters. The typical average density is $\langle n\rangle\approx 1\times 10^{12}$\,cm$^{-3}$. The linear fit function is to $E_{b2}+\chi_{1064}\langle I_{1064} \rangle $. In addition to statistical uncertainty, we have systematic uncertainty from $\chi_{\text{n}}$ and treatment of the truncation of the collision-energy integral [Eq.\ (\ref{equationKeffective})]. The dashed lines shown in Fig. \ref{Fig:ShiftWithTrapIntensity} are resulting fits when the values of $E_{b2}'-\chi_{689}I_{689} - \chi_{\text{n}}\langle n\rangle$ are shifted by the sum of these systematic uncertainties. The resulting value for the unperturbed binding energy is $E_{b2}/h=-83.00(7)(20)$\,kHz, where the first uncertainty is statistical, and the second is systematic. We observe a susceptibility to $I_{1064}$ of $\chi_{1064}=0\pm 10$\,Hz/(kW/cm$^2$).
 
 
-%For two-photon spectroscopy to a weakly bound dimer, it is typical to neglect any potential AC Stark shift due to far-off-resonant trapping lasers because the atoms contribute to the overall polarizability approximately as free atoms. But the high precision of our measurement allows us to detect a small shift. This corresponds to a relative differential polarizability of ${\chi_{1064}}/{2\chi_{1064,\text{g}}g}}={(\chi_{1064,b2}-2\chi_{1064,\text{g}}g})}/{2\chi_{1064,\text{g}}g}}\approx xx$\%.
+For two-photon spectroscopy to a weakly bound dimer, it is typical to neglect any potential AC Stark shift due to far-off-resonant trapping lasers because the atoms contribute to the overall polarizability approximately as free atoms. But the high precision of our measurement allows us to detect a small shift. This corresponds to a relative differential polarizability of ${\chi_{1064}}/{2\chi_{1064,\text{g}}g}={(\chi_{1064,b2}-2\chi_{1064,\text{g}}g}/{2\chi_{1064,\text{g}}g}\approx xx$.
 
-\section{Discussion of binding energy}
+\section{Unperturbed halo binding energy}
 \label{sec:lowE_alt}
 
 %% paper
