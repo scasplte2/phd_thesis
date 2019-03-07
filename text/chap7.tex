@@ -1,4 +1,103 @@
 \chapter{Conclusion}
 \label{ch:conclusion}
 
-"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+%% conclusion from halo paper
+We have measured the binding energy of the least-bound vibrational level of the ground electronic state of the $^{86}$Sr$_2$ molecule with two-photon photoassociative spectroscopy. Using the universal prediction for the binding energy of a halo state including corrections derived for a van der Waals potential [Eq.\ (\ref{Eq:BindingEnergyGao})] \cite{gfl93,gao01,gao04}, we extract an improved value of the $s$-wave scattering length.
+
+We also characterized the AC Stark shift of the halo-state binding energy due to light near resonant with the single-photon photoassociation transition. A model only accounting for a single excited-state channel \cite{bju96} cannot explain the observed frequency dependence of the AC Stark shift, which can be attributed to the proximity of other excited states.
+
+Large AC Stark shifts of the halo state point to the possibility of optically tuning the $^{86}$Sr scattering length, similar to recent demonstrations of optical tuning of magnetic Feshbach resonances \cite{blv09,chx15}. This is attractive because ground-state strontium lacks magnetic Feshbach resonances. With improved measurement of the photoassociation resonance frequency and its dependence on background atom density, perhaps combined with optical manipulation of the scattering length, it may also be possible to study the landscape of Efimov trimers associated with this naturally occurring scattering resonance. This work also points to the need for improved theory, such as an improved calculation of the Sr ground-state molecular potential and $C_6$ coefficient, which could be compared with this high-accuracy measurement of the halo binding energy.
+
+%internal state transfer combined with optical Feshbach resonance.
+
+%strong transition and large AC Stark shift suggests optical manipulation of the scattering resonance might be promising in this system.
+
+%Efficient optical production of weakly bound Sr$_2$ molecules \cite{cbc17} %Schreck paper
+%is also of interest for metrology \cite{zky08}.
+
+This work was supported by the Welch Foundation (C-1844 and C-1872) and the National Science Foundation (PHY-1607665). We thank Chris Greene for helpful discussions on Efimov physics.
+
+%\appendix
+%
+%\section{Details of the Model of the Photoassociation Lineshape}
+%\label{sectionappendix}
+%
+%%\begin{equation}\label{number}
+%%   N(t)={N_0 \rm{e}^{-\Gamma t} \over 1+
+%%   {2 N_0 \langle K \rangle V_2\over \Gamma V_1^2}(1-\rm{e}^{-\Gamma t})}
+%%\end{equation}
+%%where  $N_0$  is the number  at the beginning of the PAS interaction
+%%time, and $\langle K \rangle$ indicates a spatial average of collision event rate constant $K$ (Eq.\ \ref{equationKeffective}). The one-body loss rate, $\Gamma$, is due to background
+%%collisions and off-resonant scattering from the PA lasers.
+%
+%PA loss is described with a local equation for the evolution of the atomic density [Eq.~(\ref{densitydecay})]. Integrating Eq.~(\ref{densitydecay}) over the trap volume yields the time evolution of the number of trapped atoms [Eq.~(\ref{number})]. The effective volumes used throughout this analysis are defined by
+%\begin{equation}\label{eq:effectivevolumes}
+%	V_{\text{q}}=\int_{\mathrm{V}} d^3r \, e^{-\frac{qU(\mathbf{r})}{k_{B}T}},
+%\end{equation}
+%for trapping potential $U(\mathbf{r})$. The collision event rate constant can be expressed as a thermal average of the scattering probability for loss, $\vert S(\epsilon,\omega_1,\omega_2,...,\mathbf{r})\vert^2$, over the collision energy $\epsilon$. We also average over the trap volume to allow for the possibility that the scattering probability can vary with position in the trap due to inhomogeneity of laser intensity profiles and the density distribution [Eq.~(\ref{equationKeffective})].
+%
+%%This yields
+%%\begin{eqnarray}\label{equationKeffective}
+%%% \nonumber to remove numbering (before each equation)
+%%  \langle K \rangle&=& \frac{1}{V_{2}}\int_{\mathrm{V}}
+%%d^3r \,
+%%          e^{-\frac{2U(\vec{r})}{k_{B}T}} \nonumber \\
+%%         &&\times \frac{1}{h\,Q_{T}}
+%%\int_{0}^{U_{max}-U(r)}d\epsilon \vert S\vert^2
+%%   \,e^{-\epsilon/k_{B}T}.
+%%\end{eqnarray}
+%%%\begin{equation}\label{Kintegral}
+%%%   K=\frac{1}{h\,Q_{T}} \int \vert S(\epsilon,\omega_1,\omega_2,...)\vert^2
+%%%   \,e^{-\epsilon/k_{B}T} \; d\epsilon,
+%%%\end{equation}
+%%where the partition function is $Q_{T}=\left({2\pi k_{B}T \mu \over
+%%h^2}\right) ^{3/2}$ for reduced mass $\mu$.
+%
+%
+%Bohn and Julienne \cite{bju96} provide an expression for $\vert S(\epsilon,\omega_1,\omega_2,...)\vert^2$ for a collision on the open channel of two ground state atoms (g) with total energy $\epsilon$ leading to loss-producing decay from the excited state $b_1$ with rate $\gamma_1$. (See Fig.\ \ref{PASDiagram}.) It yields
+%\begin{eqnarray}\label{equationSprob}
+%  \vert S\vert^2 =   \hspace{2.5in}&&\\
+%  {(\Delta_2+\epsilon/\hbar)^2{\gamma}_1{\gamma}_s \over
+%  	\left[(\Delta_1+\epsilon/\hbar)(\Delta_2+\epsilon/\hbar)-\frac{\Omega_{12}^{2}}{4}\right]^2+\left[ \frac{\gamma_1+\gamma_s}{2}\right]^2(\Delta_2+		 	\epsilon/\hbar)^2}, &&\nonumber
+%\end{eqnarray}
+%where all quantities are defined in the main text. For simplicity, we have omitted the light shift of $b_1$ due to coupling to the scattering continuum \cite{bju99}. Equation (\ref{equationSprob}) neglects all light shifts due to the trapping laser. Light shifts due to the photoassociation lasers coupling to states outside our model (Fig.\ \ref{PASDiagram}) are also neglected. The thermal energy is much greater than the zero-point energy for trap motion, $T\gg h\nu_{\text{trap}}/k_B$, so confinement effects are negligible \cite{zbl06}.
+%
+%%$\Delta_1=\omega_1-E_{b1}/\hbar$ and $\Delta_2=\omega_1-\omega_2-E_{b2}/\hbar$ are the one-photon detuning from state $b_1$ and two-photon detuning from state $b_2$ respectively for initial scattering state with $\epsilon=0$.
+%
+%%, which is a good approximation for our experiment because the light shift of state 1 is small compared to the detuning $\hbar \Delta_1$,
+%%and lights shifts of states 0 and 2 are approximately equal and will cancel in the determination of the binding energy of the halo state, $E_2$ \cite{rbm04,rfk87}. Neglecting
+%
+%%We record spectra by varying $\Delta_2$ at fixed detuning from the intermediate state $\Delta_1$
+%
+%For the experiments reported here, we maintain significant intermediate-state detuning, $|\Delta_1|\gg |\Omega_{12}|$. Thus we are in a Raman configuration, and near two-photon resonance the expression for the scattering probability for a given initial scattering energy Eq.~(\ref{equationSprob}) can be approximated as a Lorentzian
+%\begin{eqnarray}\label{equationSprobLorentzian}
+% \vert S\vert^2 \approx {A(\epsilon) \over
+% \left(\Delta_2+\epsilon/\hbar-\frac{\Omega_{12}^{2}}{4(\Delta_1+\epsilon/\hbar)}\right)^2+\left[ {\Gamma_L(\epsilon)}/{2}\right]^2},
+%\end{eqnarray}
+%where $A$ and $\Gamma_L$ are defined in Eqs.\ (\ref{ApproxLorentzianQuantitiesMain}) and (\ref{ApproxLorentzianQuantities-2Main}).
+%
+%As discussed in the text, we analyze loss spectra using the effective expression, Eq.\ (\ref{equationApproxLorentzian}) to account for possible deviations from the single-channel theory \cite{bju96}.
+
+%\section{AC Stark shift due to excitation lasers}
+%\label{App:ACStark}
+%The total 689-nm intensity oscillates with 100\% contrast according to
+%$I_{total}=I_1+I_2+2\sqrt{I_1I_2}\cos \left[(\omega_1-\omega_2)t \right]=2I\left\{1+\cos \left[(\omega_1-\omega_2)t \right]\right\}$.
+%%Equation \ref{Eq:ACStarkFullModel}
+%The form of the AC Stark shift
+%due to excitation lasers in Eq.\ \ref{Eq:GlobalFit}
+% reflects the time average of the intensity and neglects the interference term. To confirm that this is the correct description, we numerically solved the time-evolution for a three-level system with similar optical couplings and oscillating optical intensity as present during halo photoassociation. The Hamiltonian is
+%\begin{eqnarray}\label{Eq:ThreeLevelHamiltonian}
+%H= \hspace{3in} \\
+% \nonumber\\
+%\left(
+%    \begin{array}{ccc}
+%      0 & \Omega_{01}\left[\mathrm{cos}(\omega_1 t)+ \mathrm{cos}(\omega_2 t)\right] & 0 \\
+%      . & E_{b1} & \Omega_{12}\left[\mathrm{cos}(\omega_1 t)+ \mathrm{cos}(\omega_2 t)\right] \\
+%      . & . & E_{b2} \\
+%    \end{array}
+%  \right)
+%\nonumber
+%\end{eqnarray}
+%For  $\Omega_{01}\ll \Omega_{12} \ll \Delta_{1}\equiv E_{b1}/\hbar-\omega_1$, which is analogous to the  experimental conditions used here
+%
+%, the shift of the two-photon resonance condition follows $\delta={\Omega_{12}^{2}}/{2\Delta_{1}}$ in agreement with Eq. \ref{Eq:ACStarkFullModel}.

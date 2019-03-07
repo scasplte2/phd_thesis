@@ -1,4 +1,4 @@
-*.pdf
+# File types
 *.aux
 *.bbl
 *.blg
@@ -11,3 +11,6 @@
 *.toc
 *.synctex(busy)
 *.gz
+
+# Directories
+generators/
