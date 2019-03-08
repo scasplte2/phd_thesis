@@ -1,4 +1,4 @@
-\chapter{Photoassociation spectroscopy: theory and methods}
+\chapter{Photoassociation in ultracold gases}
 \label{ch:chap3}
 
 \section{Introduction}
@@ -16,8 +16,7 @@ Definitely need some BS about how simple scattering theory has been a hallmark o
 
 What about the history of scattering? Most of what we know about quantum mechanics comes from either scattering experiments of spectroscopy. Photoassociation spectroscopy is an important field which relies on both of these properties.
 
-\subsection{PAS in atomic physics}
-\label{ssec:pas_amo}
+ideas of limiting cases that can be explored with PAS \cite{Ciuryo2004}
 
 PA is not unique to atomic physics, chemists have been using light to interrogate molecular structure for a long time
 
@@ -25,14 +24,31 @@ physicists molecule, short-range PA, rabi oscilations between atomic and molecul
 
 Pioneering work done in the early 90's used PA to interrogate the sturucture of interatomic potentials to deduce the scattering lengths between atoms. 
 
+a photoassociation experiment can be used to map the square of the scattering wave function in the ground electronic state at the Condon points corresponding to the different excited bound levels. \cite{Borkowski2009}
+
 Can even be used to modify the scattering length of atoms through mixing of atomic eigenstates.
 
-This work is focused on long-range PA but in recent years groups have also developed short-range PA techniques for the creation of ro-vibrational ground state molecules. These techniques rely heavily on favorable overlap integrals betwwen molecular wavefunctions and typically searching for favorable intermediate states is a pain (that is why our large FCF might be useful)
+This work is focused on long-range PA but in recent years groups have also developed short-range PA techniques for the creation of rovibrational ground state molecules. These techniques rely heavily on favorable overlap integrals betwwen molecular wavefunctions and typically searching for favorable intermediate states is a pain (that is why our large FCF might be useful)
 
 There are multiple flavors of PAS. Can do one-photon or two-photon. 
 
-\subsection{Low energy two-body scattering}
-\label{ssec:scattering}
+PA can come in many forms (in a lattice, in a bulk gas, via dissociating molecules) Experimentally we observe PA by looking for trap loss \hl{doublon paper}.
+
+\section{Theoretical description of trapped thermal gases} \label{sec:trapped_gases}
+
+Essentailly first part of chapter 2 from Res
+
+\subsection{Extracting data from column densities} \label{ssec:tof}
+
+Density profile expands self-similarly 
+
+Time of flight is essentially a Fourier transform which turns the initial momentum information into spatial information.
+
+
+
+\section{Characterizing cold collisions} \label{sec:cold_collisions}
+
+\subsection{Low energy scattering} \label{ssec:scattering}
 
 consider the two particle system as a single entagled particle
 	long range part of this quasi-particle is just the eigenstates of the separate particles themselves (only composed of two parts)
@@ -76,20 +92,21 @@ Once we have the ground state wavefunction of our new particle we can construct 
 	\caption{Strontium interatomic wavefunctions}{Res 6.3}
 \end{figure} 
 
-\subsection{Modifying interactions}
-\label{ssec:mod_int}
+\subsection{Modifying interactions with external fields} \label{ssec:mod_int}
 
 Also the Chin '10 review on feshbach resonances
 
 Follow the Nicholson 15 paper method of introing the elastic and inelastic cross sections
 
 The use of a laser field as the coupling scheme in a Feshbach resonance introduces several advantages and complexities that must be considered when determining the expected properties of optical Feshbach molecules. In order to understand these differences, we will briefly outline the key concepts behind Feshbach resonances and the distinctions between optical and magnetic Feshbach resonances.
-	\begin{figure}
-		\centerline{
-		\includegraphics[height=0.25\textheight]{Fig4_feshbachCartoon.pdf}}
-		\caption{Schematic representation of a Feshbach resonance. (a) Potentials for the open ($^1S_0\!+\!^1S_0$) and closed ($^3P_1\!+\!^1S_0$) channel of an optically coupled Feshbach resonance in strontium. (b) The same coupling shown in (a) in the dressed state model. Tuning of the excited potential is achieved by varying the laser frequency detuning, $\delta = \omega_p - \omega_{bound}$, and $\omega_{free}$ is the $^1S_0\!\rightarrow\!^3P_1$ atomic transition frequency. Adapted from Ref. \cite{Nicholson2015a}}
-		\label{fig:FeshbachCartoon}
-	\end{figure} 
+
+
+\begin{figure} \label{fig:ch3_FeshbachCartoon}
+	\centerline{
+	\includegraphics[width=\textwidth]{Fig4_feshbachCartoon.pdf}}
+	\caption{Schematic representation of a Feshbach resonance}{(a) Potentials for the open ($^1S_0\!+\!^1S_0$) and closed ($^3P_1\!+\!^1S_0$) channel of an optically coupled Feshbach resonance in strontium. (b) The same coupling shown in (a) in the dressed state model. Tuning of the excited potential is achieved by varying the laser frequency detuning, $\delta = \omega_p - \omega_{bound}$, and $\omega_{free}$ is the $^1S_0\!\rightarrow\!^3P_1$ atomic transition frequency.
+\end{figure} 
+	
 
 The basic idea of a Feshbach resonance is outlined in Fig.\;\ref{fig:FeshbachCartoon}. Consider a simple two channel system, denoted by the open channel and the closed channel. The open channel is generally a ground state potential for two free atoms near threshold. Atoms occupying this state can undergo elastic collisions and, in the absence of any external perturbation, will remain in the open channel. Conversely, the closed channel is a bound state of a higher lying potential who's energy can be tuned relative to the open channel. In the absence of coupling between the states, the open and closed channel remain eigenstates of the system as the tuning parameter, and therefore the energy of the closed channel, is changed. However, in the presence of coupling between the channels, the original eigenstates are mixed and develop an avoided crossing between the bare open and closed channels, when tuned across the resonance. The power of Feshbach resonances comes from the ability to externally manipulate the degree of state mixing, which results in control of the s-wave scattering length and the creation of low energy Feshbach molecules.
 
@@ -121,19 +138,16 @@ Our previous work exploring the use of an optical Feshbach resonance took advant
 	\end{equation}
 where $\mu_r$ is the reduced mass, $\delta$ is the laser detuning as shown in Fig.\;\ref{fig:FeshbachCartoon}.
 
-\section{Description of ultracold atomic gases} \label{sec:atom_theory}
 
-Essentailly first part of chapter 2 from Res
+\section{Semi-classical treatment of lineshapes} \label{sec:bohn_and_julienne}
 
-\subsection{Semi-classical treatment of lineshapes} \label{sec:bohn_and_julienne}
-
-Now that we have the theory of PAS covered. PA can come in many forms (in a lattice, in a bulk gas, via dissociating molecules) Experimentally we observe PA by looking for trap loss \hl{doublon paper}.
+Now that we have the theory of PAS covered. 
 
 This section will cover the theory of lineshapes in PAS.
 
 Somewhere I read about three regimes of PAS as a comparison of relevant energy scales. Should explore that here
 
-\begin{equation}\label{number}
+\begin{equation}\label{eq:number}
    N(t)={N_0 \rm{e}^{-\Gamma t} \over 1+
    {2 N_0 \langle K \rangle V_2\over \Gamma V_1^2}(1-\rm{e}^{-\Gamma t})}
 \end{equation}
@@ -148,7 +162,7 @@ PA loss is described with a local equation for the evolution of the atomic densi
 for trapping potential $U(\mathbf{r})$. The collision event rate constant can be expressed as a thermal average of the scattering probability for loss, $\vert S(\epsilon,\omega_1,\omega_2,...,\mathbf{r})\vert^2$, over the collision energy $\epsilon$. We also average over the trap volume to allow for the possibility that the scattering probability can vary with position in the trap due to inhomogeneity of laser intensity profiles and the density distribution [Eq.~(\ref{equationKeffective})].
 
 %This yields
-\begin{eqnarray}\label{equationKeffective}
+\begin{eqnarray} \label{equationKeffective}
 % \nonumber to remove numbering (before each equation)
   \langle K \rangle&=& \frac{1}{V_{2}}\int_{\mathrm{V}}
 d^3r \,
@@ -213,70 +227,5 @@ For  $\Omega_{01}\ll \Omega_{12} \ll \Delta_{1}\equiv E_{b1}/\hbar-\omega_1$, wh
 
 , the shift of the two-photon resonance condition follows $\delta={\Omega_{12}^{2}}/{2\Delta_{1}}$ in agreement with Eq. \ref{Eq:ACStarkFullModel}.
 
-\section{Experimental realization of near-frequency bichromatic PA in strontium}
-\label{sec:pa_methods}
 
-In this work, we probe the halo state in 86Sr using two-photon Raman photoassociation (PA) \hl{cite 16 from halo paper}, in which two laser fields couple colliding atoms to the least-bound state of the ground molecular potential. We tune near resonance with an intermediate state that is bound in the 0u potential corresponding to the \intPot{\gs}{\ex} asymptote at long range as shown in Fig.\ref{fig:ch3_sr_pas}.
-
-\begin{figure} \label{fig:ch3_sr_pas}
-	\centerline{
-	\includegraphics[height=0.25\textheight]{strontium_properties.pdf}}
-	\caption{Strontium two-photon photoassociation}{fig 1 from the halo paper}
-\end{figure} 
-
-Photoassociation experiments follow the same general presciprtion. We start by trapping through the normal sequence as outlined in \hl{some section}. Then we evaporate down to the final trap depth. After evaporation 
-
-The two-photon PAS experiments described in the following chapters are performed under similar conditions but due to complications with the neutral vaccuum system we performed the binding energy experiemtns using the Rydberg apparatus. While non-ideal from a consistency point of view, this did allow us to replicate and validate our previous findings which gives us great confidence in the robustness of this experimental appraoch. 
-
-The most significant difference between the two apparatus' is the trapping characteristics of the optical dipole traps and the beam parameters of the photoassociation beam. These differences are noted in the corresponding chapters but here we will outline the timing and generic characteristics that are shared between the two experiments. 
-
-Table \hl{something} shows the relevant experimental parameters and typical values for our photoassociation experiments. 
-
-Specific details of the optical dipole traps, PA beam parameters, and using a completely different a 
-
- performed on ultracold Sr atoms in a single-beam optical dipole trap (ODT) generated from a 1064-nm laser propagating perpendicular to gravity. Typical atom numbers are several hundred thousand and peak densities are $\approx \peakDens{1}{12}$. The number of atoms and sample temperature are measured using time-of-flight absorption imaging described in \hl{some section}. Trap oscillation frequencies are determined by measuring dipole and breathing collective mode frequencies, which allow determination of trap volume and sample density
-
-
-
-For experiments done on our apparatus we generate the two photon source as shown in Fig\ref{fig:pas_light_gen}. Light comes from an injection locked slave diode which follows the frequency stablized 689 master laser described in \hl{some section}. THis light is modulated via a single acousto-optic modulator (AOM) driven with two frequencies and coupled into a single-mode polarization maintaining optical fiber. THis fiber output is luanched near the science chamber and the light output level is continuously monitored via a beam sampler and photodiode placed between the fiber output and the chamber.
-
-\begin{figure} \label{fig:ch3_pas_light_gen}
-	\centerline{
-	\includegraphics[height=0.25\textheight]{strontium_properties.pdf}}
-	\caption{Schematic of PAS light generation}{Properties of strontium. Left: Natural abundances and s-wave scattering lengths for all mixtures of Sr. Right: Simplified energy level diagram of Sr showing the relevant states used for trapping and cooling of the atomic gas}
-\end{figure} 
-
-Primary reasons why we can't scan large distances. There will be a slight misalignment of the beams into the fiber and the RF may start to fall off. For these experiments an AOM with a center frequecny of 90 MHz was used. 
-
-This simple system has many advantages and a couple of drawbacks. Since both photons are aligned into the same fiber then they are gauranteed to have the same output wavevector and therefore the two photon process will be doppler free (since the absorption and emission processes will exactly cancel each other out).
-
-This is a simple system for generating multiple frequencies which are gauranteed to share the same wavevector, phase coherence, and gross frequency stability. Use of the AOM provides highly accurate control of the difference frequency with RF precision. 
-
-While versatile and simple, we are worried about the balnace of the RF power onto the AOM. THese devices are narrowband modulators (simple ones) 
-
-We see a reduction in contrast when the two drive frequencies differ by more than $\approx$250 kHz. 
-
-Since the modulator is a narrowband device, scann
-
-great care is taken to ensure the maximum amount of contrast is visible on the photodiode. This 
-
-As described in \hl{some section} the slave laser is frequency stabiliezed at +42 MHz of the 86Sr $\gs\,\rightarrow\,\ex$ atomic transition. The AOM then shifts the light the remaining $\approx$ 86 MHz to set the detuning around the $\nu=-2$ bound state of the \intPot{\gs}{\ex} potential. Setting of $\Delta_1$ is done by removing one of the frequencies, peaking up the diffraction angle and alignment into the fiber. 
-
-During the course of our experiments we found that mild environmental perturbations (loud noises, air currents due to fans, etc.) to the fiber resulted in slow variation of the light coupling through the fiber. Such amplitude modulations are not uncommon in laser systems and can typically be  compensated for by using a closed loop locking mechanism. However, after construction of such a power lock the compoenets did not react quickly enough and there was a significant overshoot which resulted in an uncontrolled amount of light illuminating the atoms during short exposures. This led us to implement a digital based sample and hold mechanism for reduced intensity variability. This system is described in detail in \hl{some section}. The sample and hold system in combination with the power lock provided intensity stability with a standard 5\% standard deviation during a typical experiment. Fig shows a typical histogram of the recorded intensities. 
-
-Make sure to discuss how I scanned the rf frequencies since there is a difference to increasing the freq difference. Since we used the -1 order of the AOM, increasing the frequency of the drive relative to the gross actually lowered the amount of energy in the system, resulting in effectively scanning $\Delta_1$ instead of keeping it fixed. This resulted in a slight variation of the AC stark shift from the intermediate state that can be seen in the strong coupling experiments that are discussed in \hl{some section}. 
-
-\begin{figure} \label{fig:ch3_pas_histogram}
-	\centerline{
-	\includegraphics[height=0.25\textheight]{strontium_properties.pdf}}
-	\caption{Histogram of PAS beam intensity variation}{One of the histograms from onenote. There are separate histograms for each experimental run (I should combine this so I don't have to disucss)}
-\end{figure} 
-
-The beat signal of the two light fields after the fiber is monitored on a photodiode and the rf powers are adjusted to ensure matched intensities for the two frequency components ($I_1 = I_2 \equiv I$).
-
-\begin{figure} \label{fig:ch3_pas_light_balance}
-	\centerline{
-	\includegraphics[height=0.25\textheight]{strontium_properties.pdf}}
-	\caption{Characteristic view of the PA beatnote}{This is the picoscope plot of the beatnote}
-\end{figure} 
 

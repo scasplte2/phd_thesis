@@ -59,6 +59,70 @@ In this work, we probe the halo state in $^{86}$Sr using two-photon Raman photoa
 \section{Experimental setup}
 \label{sec:lowE_setup}
 
+In this work, we probe the halo state in 86Sr using two-photon Raman photoassociation (PA) \hl{cite 16 from halo paper}, in which two laser fields couple colliding atoms to the least-bound state of the ground molecular potential. We tune near resonance with an intermediate state that is bound in the 0u potential corresponding to the \intPot{\gs}{\ex} asymptote at long range as shown in Fig.\ref{fig:ch3_sr_pas}.
+
+\begin{figure} \label{fig:ch3_sr_pas}
+	\centerline{
+	\includegraphics[height=0.25\textheight]{strontium_properties.pdf}}
+	\caption{Strontium two-photon photoassociation}{fig 1 from the halo paper}
+\end{figure} 
+
+Photoassociation experiments follow the same general presciprtion. We start by trapping through the normal sequence as outlined in \hl{some section}. Then we evaporate down to the final trap depth. After evaporation 
+
+The two-photon PAS experiments described in the following chapters are performed under similar conditions but due to complications with the neutral vaccuum system we performed the binding energy experiemtns using the Rydberg apparatus. While non-ideal from a consistency point of view, this did allow us to replicate and validate our previous findings which gives us great confidence in the robustness of this experimental appraoch. 
+
+The most significant difference between the two apparatus' is the trapping characteristics of the optical dipole traps and the beam parameters of the photoassociation beam. These differences are noted in the corresponding chapters but here we will outline the timing and generic characteristics that are shared between the two experiments. 
+
+Table \hl{something} shows the relevant experimental parameters and typical values for our photoassociation experiments. 
+
+Specific details of the optical dipole traps, PA beam parameters, and using a completely different a 
+
+ performed on ultracold Sr atoms in a single-beam optical dipole trap (ODT) generated from a 1064-nm laser propagating perpendicular to gravity. Typical atom numbers are several hundred thousand and peak densities are $\approx \peakDens{1}{12}$. The number of atoms and sample temperature are measured using time-of-flight absorption imaging described in \hl{some section}. Trap oscillation frequencies are determined by measuring dipole and breathing collective mode frequencies, which allow determination of trap volume and sample density
+
+
+
+For experiments done on our apparatus we generate the two photon source as shown in Fig\ref{fig:pas_light_gen}. Light comes from an injection locked slave diode which follows the frequency stablized 689 master laser described in \hl{some section}. THis light is modulated via a single acousto-optic modulator (AOM) driven with two frequencies and coupled into a single-mode polarization maintaining optical fiber. THis fiber output is luanched near the science chamber and the light output level is continuously monitored via a beam sampler and photodiode placed between the fiber output and the chamber.
+
+\begin{figure} \label{fig:ch3_pas_light_gen}
+	\centerline{
+	\includegraphics[height=0.25\textheight]{strontium_properties.pdf}}
+	\caption{Schematic of PAS light generation}{Properties of strontium. Left: Natural abundances and s-wave scattering lengths for all mixtures of Sr. Right: Simplified energy level diagram of Sr showing the relevant states used for trapping and cooling of the atomic gas}
+\end{figure} 
+
+Primary reasons why we can't scan large distances. There will be a slight misalignment of the beams into the fiber and the RF may start to fall off. For these experiments an AOM with a center frequecny of 90 MHz was used. 
+
+This simple system has many advantages and a couple of drawbacks. Since both photons are aligned into the same fiber then they are gauranteed to have the same output wavevector and therefore the two photon process will be doppler free (since the absorption and emission processes will exactly cancel each other out).
+
+This is a simple system for generating multiple frequencies which are gauranteed to share the same wavevector, phase coherence, and gross frequency stability. Use of the AOM provides highly accurate control of the difference frequency with RF precision. 
+
+While versatile and simple, we are worried about the balnace of the RF power onto the AOM. THese devices are narrowband modulators (simple ones) 
+
+We see a reduction in contrast when the two drive frequencies differ by more than $\approx$250 kHz. 
+
+Since the modulator is a narrowband device, scann
+
+great care is taken to ensure the maximum amount of contrast is visible on the photodiode. This 
+
+As described in \hl{some section} the slave laser is frequency stabiliezed at +42 MHz of the 86Sr $\gs\,\rightarrow\,\ex$ atomic transition. The AOM then shifts the light the remaining $\approx$ 86 MHz to set the detuning around the $\nu=-2$ bound state of the \intPot{\gs}{\ex} potential. Setting of $\Delta_1$ is done by removing one of the frequencies, peaking up the diffraction angle and alignment into the fiber. 
+
+During the course of our experiments we found that mild environmental perturbations (loud noises, air currents due to fans, etc.) to the fiber resulted in slow variation of the light coupling through the fiber. Such amplitude modulations are not uncommon in laser systems and can typically be  compensated for by using a closed loop locking mechanism. However, after construction of such a power lock the compoenets did not react quickly enough and there was a significant overshoot which resulted in an uncontrolled amount of light illuminating the atoms during short exposures. This led us to implement a digital based sample and hold mechanism for reduced intensity variability. This system is described in detail in \hl{some section}. The sample and hold system in combination with the power lock provided intensity stability with a standard 5\% standard deviation during a typical experiment. Fig shows a typical histogram of the recorded intensities. 
+
+Make sure to discuss how I scanned the rf frequencies since there is a difference to increasing the freq difference. Since we used the -1 order of the AOM, increasing the frequency of the drive relative to the gross actually lowered the amount of energy in the system, resulting in effectively scanning $\Delta_1$ instead of keeping it fixed. This resulted in a slight variation of the AC stark shift from the intermediate state that can be seen in the strong coupling experiments that are discussed in \hl{some section}. 
+
+\begin{figure} \label{fig:ch3_pas_histogram}
+	\centerline{
+	\includegraphics[height=0.25\textheight]{strontium_properties.pdf}}
+	\caption{Histogram of PAS beam intensity variation}{One of the histograms from onenote. There are separate histograms for each experimental run (I should combine this so I don't have to disucss)}
+\end{figure} 
+
+The beat signal of the two light fields after the fiber is monitored on a photodiode and the rf powers are adjusted to ensure matched intensities for the two frequency components ($I_1 = I_2 \equiv I$).
+
+\begin{figure} \label{fig:ch3_pas_light_balance}
+	\centerline{
+	\includegraphics[height=0.25\textheight]{strontium_properties.pdf}}
+	\caption{Characteristic view of the PA beatnote}{This is the picoscope plot of the beatnote}
+\end{figure} 
+
 Regarding the general process 
 
 Using the \intPot{\gs}{\ex} interatomic potential, we perform a raman process using the $\nu=-2$ bound state which has a binding energy of E$_b=-44 \text{MHz}$ \hl{cite improved binding en}. Sample pre 
