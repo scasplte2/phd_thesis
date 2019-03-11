@@ -80,6 +80,8 @@ x=\frac{p^2}{2mk_BT} \\
 z(\vec{r}) = e^{\mu - V(\vec{r})/k_BT}
 \end{equation}
 
+\hl{define $\xi$}
+
 then performing a change of variables and plugging into \hl{above eq} we find
 \begin{equation}
 n(\vec{r}) = \frac{2}{\sqrt{\pi} \lambda_T^3}\int dx \frac{\sqrt{x}}{z^{-1}e^x-1}
@@ -87,18 +89,69 @@ n(\vec{r}) = \frac{2}{\sqrt{\pi} \lambda_T^3}\int dx \frac{\sqrt{x}}{z^{-1}e^x-1
 where $\lambda_T = \sqrt{\frac{2 \pi \hbar^2}{m k_B T}}$ is the de Broglie wavelength \hl{cite}?. This integral is of a certain form and can be rewritten using \hl{cite Demarco pg 237 footnote}
 
 \hl{need to put bound on these integrals from 0 to inf}
+\hl{where does the 3/2 come from?}
 
 \begin{equation}
-\int_0^{\inf}
+\int_0^{\inf}dx\frac{x^{\gamma-1}}{z^{-1}e^x-1} = \sum_{n=1}^{\inf}\int_0^{\inf}dx x^{\gamma-1}e^{-nx}z^n\\
+=\Gamma(\gamma)g_{\gamma}[z]
+\end{equation}
+where $g_{\gamma}[z]$ is the polylogarithm function defined by
+\begin{equation}
+g_{\gamma}[z] = \sum_{n=1}^{\inf}\frac{z^n}{n\gamma}
+\end{equation}
+This function is also known as the bose enhancement function \hl{cite ketterle} and describes the bunching of bosonic particles near degeneracy
+
+Using this identity we can write the thermal distribution as
+\begin{equation}
+n(\vec{r}) = \frac{g_{3/2}[z(\vec{r})}{\lambda_T^3} \\
+= \frac{1}{\lambda_T^3	}g_{3/2}[\exp{\mu-V(\vec{r})/k_BT}]
 \end{equation}
 
+For harmonic traps $V(\vec{r}) = \frac{m}{2}\sum_i\omega_i^2r_i^2$ where $r_i$ represents the cartesian cooridnates. Plugging this into \hl{previous eq} then the \textit{in-situ} density profile is given by
+\begin{equation}
+n(\vec{r}) = \frac{1}{\lambda_T^3}g_{3/2}\left[\xi \exp\left(\sum_i\frac{-m\omega_i^2r_i^2}{2 k_B T} \right)\right]
+\end{equation}
+
+In the classical, or high-temperature, limit $g_{3/2}[z(\vec{r})] \approx z(\vec{r})$. From Eq. we see that this that in the limiting case we get the expected Maxwell-Boltzmann density profile \hl{what happens with $\xi$}
+
+\hl{this can be simplified}
+\begin{equation}
+n(\vec{r}) = \frac{\xi}{\lambda_T^3}\exp{\sum_i\frac{-m\omega_i^2r_i^2}{2 k_B T}}
+\end{equation}
+
+\hl{I'd like to put in something about the momentum distribution}
+
 \subsection{Extracting data from column densities} \label{ssec:tof}
+
+This description of the atoms in the trapping potential is useful but we need to go a step further because we use absorption imaging to determine properties of the atom after a time of flight.
+
+Maybe put in something about different measurement techniques and refernce the ketterle and pethick and smith again.
+
+Removeing the trap results in ballistic expansion with the above spatial density profile as the initial conditions. 
+To derive how we find the properties of the atoms, consider the above spatial density profile as the initial conditions.
+
+Atoms expand ballistically according to
+\begin{equation}
+\frac{d\vec{r}}{dt}=\frac{\vec{p}}{m} \text{and} \frac{d\vec{p}}{dt}=0
+\end{equation}
+Thus, an atom measured at position $\vec{r}$ after the time-of-flight will have moved a distance $\vec{\mathcal{r}} = \frac{\vec{p}t}{m}=\vec{r} - \vec{r}_0$ from its initial position $\vec{r}_0$
+
+\begin{figure} 
+	\centerline{
+	\includegraphics[width=\textwidth]{ballistic_expansion.png}}
+	\caption{Ballistic expansion of particles}{Schematic representation particle displacement vectors used to determine how time-of-flight expansion transforms the initial density distibution}
+\end{figure}
+
+
+
 
 All of our information comes from taking pictures of our atomic clouds and inferring the physical properties of the gas before the time-of-flight expansion. This is possible since we know the density profile of the gas in-situ. In the absence of external fields, other than gravity, turning off the trapping potential results in ballistic expansion described by $\vec{r} = \vec{r}_0 + \frac{p^2}{2m}t$, where $\vec{r}_0$ and $p$ are the position and momentum at the moment of release from the trap and $t$ is the expansion time. Neglecting the center-of-mass motion due to gravity and assuming long expansion times, then we can easily find a regime where $\frac{p^2}{2m}t \gg \vec{r}_0$ and therefore
 	\begin{equation}
 		\vec{r} \approx \frac{p^2}{2m}t
 	\end{equation}
 This 
+
+
 
 
 
