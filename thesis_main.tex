@@ -47,24 +47,32 @@
 %  \theorembodyfont{\rmfamily}  \newtheorem{Def}{Definition}[chapter]}
 
 % Custom macros
+\let\vec\mathbf % changing \vec from over arrow to bold font
+
+\def\rcurs{{\mbox{$\resizebox{.09in}{.08in}{\includegraphics[trim= 1em 0 14em 0,clip]{ScriptR}}$}}}
+\def\brcurs{{\mbox{$\resizebox{.09in}{.08in}{\includegraphics[trim= 1em 0 14em 0,clip]{BoldR}}$}}} 
+
 \newcommand{\hl}{\bgroup\markoverwith
   {\textcolor{yellow}{\rule[-.5ex]{2pt}{2.5ex}}}\ULon} % creates a highlight command \hl
-\providecommand{\degree}{\ensuremath{^\circ}}  % degree symbol
-\providecommand{\e}[1]{\ensuremath{\times 10^{#1}}} % scientific notation
-\providecommand{\peakDens}[2]{\ensuremath{n_0 = #1 \times 10^{#2} \, \text{cm}^{-3}}} % shorthand for densities
-\providecommand{\abs}[1]{\ensuremath{\lvert {#1} \rvert}} % notation for absolute value
-\let\vec\mathbf % changing \vec from over arrow to bold font
 \newcommand{\ket}[1]{\ensuremath{\left| {#1} \right>}} % for Dirac kets
 \newcommand{\bra}[1]{\ensuremath{\left< {#1} \right|}} % for Dirac bras
 \newcommand{\innerProd}[2]{\ensuremath{\left< {#1} | {#2} \right>}} % for writing the inner product between states
 \newcommand{\heaviside}[1]{\ensuremath{\Theta \left( {#1} \right)}} % shortcut for writing the Heaviside function  
-\newcommand{\intPot}[2]{\ensuremath{ {#1} + {#2} }}
-\newcommand{\gs}{\ensuremath{^1S_0}}
-\newcommand{\ex}{\ensuremath{^3P_1}}
-\newcommand{\sqr}[1]{\ensuremath{\sqrt{ #1 }}}
-\renewcommand{\inf}{\ensuremath{\infty}}
-  
+\newcommand{\intPot}[2]{\ensuremath{ {#1} + {#2} }} % for writing interatomic potentials
+\newcommand{\gs}{\ensuremath{^1S_0}} % saving keystrokes on ground state
+\newcommand{\ex}{\ensuremath{^3P_1}} % saving keystrokes on excited state
+\newcommand{\sqr}[1]{\ensuremath{\sqrt{ #1 }}} %texmaker auto-completes to sqrt{}{} so I want a custom command for fast typing
+\newcommand{\Li}[3]{\ensuremath{\text{Li}_{\scriptscriptstyle\frac{#1}{#2}}\!\left[ #3 \right]}} %texmaker auto-completes to sqrt{}{} so I want a custom command for fast typing 
+ 
+\providecommand{\degree}{\ensuremath{^\circ}}  % degree symbol
+\providecommand{\e}[1]{\ensuremath{\times 10^{#1}}} % scientific notation
+\providecommand{\peakDens}[2]{\ensuremath{n_0 = #1 \times 10^{#2} \, \text{cm}^{-3}}} % shorthand for densities
+\providecommand{\abs}[1]{\ensuremath{\lvert {#1} \rvert}} % notation for absolute value
 
+\renewcommand{\inf}{\ensuremath{\infty}} % don't care for \infty, rather \inf for symbol
+\renewcommand{\exp}[1]{\ensuremath{\text{exp}\left( {#1} \right)}} % simplify writing exp(x)
+  
+%%%---%%%---%%%---%%%---%%%---%%%---%%%---%%%---%%%---%%%---%%%---%%%---%%%---%%%---%%%---%%%---%%%---%%%---%%%---
 \title{Studies of one- and two-photon photoassociative spectroscopy using ultracold strontium}
 \ctitle{Studies of one- and two-photon photoassociative spectroscopy using ultracold strontium}
 \author{James Allen Aman}

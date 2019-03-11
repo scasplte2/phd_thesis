@@ -83,36 +83,45 @@ z(\vec{r}) = e^{\mu - V(\vec{r})/k_BT}
 \hl{define $\xi$}
 
 then performing a change of variables and plugging into \hl{above eq} we find
-\begin{equation}
-n(\vec{r}) = \frac{2}{\sqrt{\pi} \lambda_T^3}\int dx \frac{\sqrt{x}}{z^{-1}e^x-1}
-\end{equation}
+	\begin{equation}
+	n(\vec{r}) = \frac{2}{\sqrt{\pi} \lambda_T^3}\int dx \frac{\sqrt{x}}{z^{-1}e^x-1}
+	\end{equation}
 where $\lambda_T = \sqrt{\frac{2 \pi \hbar^2}{m k_B T}}$ is the de Broglie wavelength \hl{cite}?. This integral is of a certain form and can be rewritten using \hl{cite Demarco pg 237 footnote}
 
 \hl{need to put bound on these integrals from 0 to inf}
 \hl{where does the 3/2 come from?}
 
-\begin{equation}
-\int_0^{\inf}dx\frac{x^{\gamma-1}}{z^{-1}e^x-1} = \sum_{n=1}^{\inf}\int_0^{\inf}dx x^{\gamma-1}e^{-nx}z^n\\
-=\Gamma(\gamma)g_{\gamma}[z]
-\end{equation}
-where $g_{\gamma}[z]$ is the polylogarithm function defined by
-\begin{equation}
-g_{\gamma}[z] = \sum_{n=1}^{\inf}\frac{z^n}{n\gamma}
-\end{equation}
+	\begin{equation}
+	\begin{split}
+	\int_0^{\inf}dx\frac{x^{\gamma-1}}{z^{-1}e^x-1} &= \sum_{n=1}^{\inf}\int_0^{\inf}dx x^{\gamma-1}e^{-nx}z^n \\
+	&=\Gamma(\gamma)\text{Li}_{\gamma}[z]
+	\end{split}
+	\end{equation}
+where $\text{Li}_{\gamma}[z]$ is the polylogarithm function defined by \hl{cite something}
+	\begin{equation} \label{eq:polylog_def}
+	\text{Li}_{\gamma}[z] = \sum_{n=1}^{\inf}\frac{z^n}{n^{\gamma}}
+	\end{equation}
 This function is also known as the bose enhancement function \hl{cite ketterle} and describes the bunching of bosonic particles near degeneracy
 
 Using this identity we can write the thermal distribution as
+	\begin{equation}
+	\begin{split}
+	n(\vec{r}) &= \frac{\Li{3}{2}{z(\vec{r})}}{\lambda_T^3} \\
+				 &= \frac{1}{\lambda_T^3}\Li{3}{2}{\exp{\mu-V(\vec{r})/k_BT}}
+	\end{split}
+	\end{equation}
+
+For harmonic traps $V(\vec{r}) = \frac{m}{2}\displaystyle\sum_i\omega_i^2r_i^2$ where $r_i$ represents the cartesian cooridnates. Plugging this into \hl{previous eq} then the \textit{in-situ} density profile is given by
 \begin{equation}
-n(\vec{r}) = \frac{g_{3/2}[z(\vec{r})}{\lambda_T^3} \\
-= \frac{1}{\lambda_T^3	}g_{3/2}[\exp{\mu-V(\vec{r})/k_BT}]
+n(\vec{r}) = \frac{1}{\lambda_T^3}\Li{3}{2}{\xi\,\exp{\sum_i\frac{-m\omega_i^2r_i^2}{2 k_B T}}}
 \end{equation}
 
-For harmonic traps $V(\vec{r}) = \frac{m}{2}\sum_i\omega_i^2r_i^2$ where $r_i$ represents the cartesian cooridnates. Plugging this into \hl{previous eq} then the \textit{in-situ} density profile is given by
-\begin{equation}
-n(\vec{r}) = \frac{1}{\lambda_T^3}g_{3/2}\left[\xi \exp\left(\sum_i\frac{-m\omega_i^2r_i^2}{2 k_B T} \right)\right]
-\end{equation}
-
-In the classical, or high-temperature, limit $g_{3/2}[z(\vec{r})] \approx z(\vec{r})$. From Eq. we see that this that in the limiting case we get the expected Maxwell-Boltzmann density profile \hl{what happens with $\xi$}
+Argue what z is \hl{what is it's range?}, then say that it is small when T is large. Therefore, writing the first few terms of the series expansion of Eq.\ref{eq:polylog_def}
+	\begin{equation}
+	\text{Li}_{\gamma}[z] = z + \frac{z^2}{2^{\gamma}} + \frac{z^3}{3^{\gamma}} + \cdots
+	\end{equation}
+we see that Li$_{\gamma}[z] \approx z$ for $z \ll 1$. This corresponds to the high temperature limit which should result in recovery of the MB solution and indeed it does.
+In the classical, or high-temperature, limit $\Li{3}{2}{z(\vec{r})} \approx z(\vec{r})$. From Eq. we see that this that in the limiting case we get the expected Maxwell-Boltzmann density profile \hl{what happens with $\xi$}
 
 \hl{this can be simplified}
 \begin{equation}
@@ -134,13 +143,37 @@ Atoms expand ballistically according to
 \begin{equation}
 \frac{d\vec{r}}{dt}=\frac{\vec{p}}{m} \text{and} \frac{d\vec{p}}{dt}=0
 \end{equation}
-Thus, an atom measured at position $\vec{r}$ after the time-of-flight will have moved a distance $\vec{\mathcal{r}} = \frac{\vec{p}t}{m}=\vec{r} - \vec{r}_0$ from its initial position $\vec{r}_0$
+Thus, an atom measured at position $\vec{r}$ after the time-of-flight, $t$, will have moved a distance $\brcurs = \frac{\vec{p}t}{m}=\vec{r} - \vec{r}_0$ from its initial position $\vec{r}_0$
 
 \begin{figure} 
 	\centerline{
 	\includegraphics[width=\textwidth]{ballistic_expansion.png}}
 	\caption{Ballistic expansion of particles}{Schematic representation particle displacement vectors used to determine how time-of-flight expansion transforms the initial density distibution}
 \end{figure}
+
+\hl{make the tof density n'}
+the spatial density evolves then \hl{double check $2\pi \hbar$ denom}
+\begin{equation}
+\begin{split}
+n(\vec{r},t) &= \int \frac{d^3\vec{r}\,d^3\vec{p}}{(2\pi\hbar)^3}\frac{1}{\exp{\left[\frac{p^2}{2m} + V(\vec{r}') - \mu\right]\frac{1}{k_BT}}-1}\delta^3\left(\vec{r}-\frac{\vec{p}t}{m}-\vec{r}'\right) \\
+&= \int \frac{d^3\vec{p}}{(2\pi\hbar)^3}\frac{1}{\exp{\left[\frac{p^2}{2m} + V\left(\vec{r}-\frac{\vec{p}t}{m}\right)) - \mu\right]\frac{1}{k_BT}}-1} 
+\end{split}
+\end{equation}
+
+Plugging in the harmonic potential we find that free expansion after release from a harmonic trap is self-similar and amounts to rescaling the the spatial coordinates by \hl{check Demarco's thesis}. Thus the scaled spatial profile is given by
+\begin{equation}
+n_{th}'(\vec{r},t) = \frac{1}{\lambda_T^3} 
+\left(\, \prod_{j=1}^3 \frac{1}{1+\omega_j^2 t^2} \right) 
+\Li{3}{2}{ \xi \, \exp{\sum_{i=1}^3 \frac{-m\omega_i^2r_i^2}{2k_BT} \frac{1}{1+\omega_i^2t^2}} }
+\end{equation}
+
+Using this description of the spatial distribution after time-of-flight expansion, we must now consider how to relate our absorption measurement to the physically relevant variables of the gas.
+
+Finally we must consider the column density along one direction since we are taking absorption images of the atoms. A description of the imaging system used for this process is given in \hl{some sec}. 
+
+Simply stated, absorption imaging is the process of illuminating a gas of atoms with resonant (or near resonant) laser light and taking a spatially resolved image of the laser beam. As the light is tuned near a resonant transition, the atoms will absorb and scatter photons out of the original laser beam resulting in a "shadow" which is proportional to the number of scatters within a certain spatial region. This shadow image is then normalized by taking another picture of the laser after the atoms have fallen out of the imaging region. This relation of the light attenuation to the number density of scattering particles is known as Beer's law and results 
+
+Using Beer's law \hl{cite}, we can relate the total absorption of photons to the number density of scattering particles multiplied by the absorption cross section. This results in a measurement of the "optical depth" of the gas. 
 
 
 

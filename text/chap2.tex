@@ -40,6 +40,26 @@ Discuss how our only method for evaporative cooling is through light traps since
 
 Discuss time of flight pixel calibration as well as the optical magnification system put in place by Mi
 
+Give timing diagram, name the first pulse the atom pulse and the second the background pulse.
+
+Give reference to section with theory but discuss the technical limitations 
+We must consider the bit depth of the camera's pixels, which in turn influences the number of photons (the intensity) we can illuminate the cloud with over a certain time. \hl{this must be related to the thinness of the sample right? Thick clouds also mean multiple scatters? Find someone that discusses this idea}.  The number of photons needs to be in a certain range, not to little but not too much. \hl{perhaps discuss the real world implication of counting photons (changing the exposure time)} 
+This consideration means we generally aim for an optical depth around unity which is an order of magnitude difference the atom and background pulse. 
+
+We use \hl{such and such} camera \hl{include datasheet in appendix since it is hard to find} which has a double shutter function. More details can be found in the appendix \hl{some sec}. We care about the timing since the laser intensity and frequency might drift between the atom and background images. Variations in intensity have straightforward implications for errors since the measurement of the atomic number density assumes the only difference between the images is due to the presence of scatters, Sec.\hl{some sec}, and does not account for fluctuating photon number. Very occasionally, the Neutral apparatus will experience an underexposed shot (of either the atom or background image) that must be discarded due to large, noticeable, fluctuations. We hypothesize that these occurrences are the result of environmental perturbations (acoustic noise, vibrations through the table, spurious ground or electrical noise). However, the precise cause is unknown as the absorption imaging happens very quickly at the end of the experimental cycle when multiple systems begin to reset for the next sequence and in practice, these fluctuations do not occur often enough to be a major cause for concern.
+
+The more insidious source of error in absorption imaging is variation of the optical frequency. Coherent, frequency stabilized radiation is used to illuminate the atom cloud so that we may control the optical absorption cross section and accurately measure the atomic number density. However, this laser light is passed through many optical components on it's path to the atoms and ultimately the imaging camera. Small reflections along this path result in a multitude of interferometers which causes small scale spatial intensity variation across the beam. Exacerbating this problem are short time frequency drifts that may occur between the atom and background images which result in slightly different fringe patterns in the atom and background images. Fringes patterns are a well known nuisance in experimental AMO images and it has become routine to use linear algebra techniques to create a composite background image for each atom image during analysis \cite{Segal2009}. A detailed discussion of the principal component analysis (PCA) algorithm employed by the Neutral analysis routine can be found in Sec. \hl{some sec}. Briefly, this approach is as follows:
+\begin{enumerate}
+\item Find a basis set of background images from a large set of raw background images.
+\item For a single atom image, construct an initial guess at a composite background image using coefficients to weight each basis image resulting in a superposition of the basis images.
+\item Segment the atom image into multiple regions by separating out the region of interest around the atom cloud.
+\item Comparing similar regions between the composite background and the atom background region, perform a least-squares minimization by tweaking the weighting coefficients of the composite background.
+\item Once a suitable composite background has been found, calculate the optical depth using the atomic region of interest and the corresponding region of the minimized composite background image.
+\end{enumerate}
+This procedure may be numerically intensive as it is done for each atom image but the results have proven remarkable for even modest computational resources. 
+
+\hl{add picture showing the fringe removal}
+
 \subsubsection{Chirped blow away pulser}
 
 Reference Josh's master for construction

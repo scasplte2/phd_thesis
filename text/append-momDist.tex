@@ -21,7 +21,7 @@ The two particle distribution for a homegeneous system is then
 \label{eq:two_particle_prob}
 \begin{split}
 		 f^2( \vec{p}_1, \vec{p}_2 ) &= f^1( \vec{p}_1 ) f^1( \vec{p}_2 ) \\
-		  &= \left(\frac{1}{2 \pi m k_B T}\right)^3 \exp\left(\frac{-(p_1^2 + p_2^2)}{2 m k_B T}\right)
+		  &= \left(\frac{1}{2 \pi m k_B T}\right)^3 \exp{\frac{-(p_1^2 + p_2^2)}{2 m k_B T}}
 \end{split}
 \end{equation}
 
@@ -46,7 +46,7 @@ thus the momentum probability distribution take the form
 \begin{equation}
 \label{eq:two_particle_prob_inf_atomFrame}
 		 f^2( \vec{P}_c, \vec{p}_r ) = \left(\frac{1}{2 \pi M k_B T}\right)^{3/2} \left(\frac{1}{2 \pi \mu k_B T}\right)^{3/2} 
-		 \exp\left(\frac{-P_c^2}{2 M k_B T}\right) \exp\left(\frac{-p_r^2}{2 \mu k_B T}\right)
+		 \exp{\frac{-P_c^2}{2 M k_B T}} \exp{\frac{-p_r^2}{2 \mu k_B T}}
 \end{equation}
 
 \section{Truncated form}
@@ -57,7 +57,7 @@ Here I will derive, motivate, and test limiting cases. Plots showing the effects
 Two particle distribution (for correcting notation, use C and R when denoting CoM and Rel)
 \begin{equation}
 \begin{split}
-	f^2_{\vec{r},trunc} (\vec{p}_1, \vec{p}_2) &= A^2 \left(\frac{1}{2 \pi m k_B T}\right)^3 \exp \left( \frac{-(p_1^2 + p_2^2)}{2 m k_B T} \right) \\ &\quad \times \heaviside{\epsilon_{max} - U(\vec{r}) - \frac{p_1^2}{2m}} \heaviside{\epsilon_{max} - U(\vec{r}) - \frac{p_2^2}{2m}}
+	f^2_{\vec{r},trunc} (\vec{p}_1, \vec{p}_2) &= A^2 \left(\frac{1}{2 \pi m k_B T}\right)^3 \exp{ \frac{-(p_1^2 + p_2^2)}{2 m k_B T}} \\ &\quad \times \heaviside{\epsilon_{max} - U(\vec{r}) - \frac{p_1^2}{2m}} \heaviside{\epsilon_{max} - U(\vec{r}) - \frac{p_2^2}{2m}}
 \end{split}
 \end{equation}
 

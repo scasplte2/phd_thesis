@@ -1,10 +1,19 @@
 \chapter{Imagefit analysis routine}
 "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
 
+General procedure, should probably suggest moving to Github and warn about software migration breaking older versions of code.
+
+Currently everything is working in 2015b? Can it work in a newer version?
+
 \section{Background removal}
+
+Covers \emph{imagefit\_Background\_PCA}
+
 Would like to remove noisy fringes to fit more easily
 
 \subsection{Principal component analysis}
+
+be sure to discuss tradeoffs such as matrix size, basis size, and number of images
 
 The Anderson and Cornell groups have adapted two statistical techniques used in astronomical data processing to the analysis of images of ultracold atom gases. Image analysis is necessary for obtaining quantitative information about the behavior of an ultracold gas under different experimental conditions. Until now, the preferred method has been to find a shape (such as a Gaussian) that looks like the results and write an image-fitting routine to probe a series of photographs. The drawback is that information extracted this way will be biased by the model chosen.
 
@@ -18,6 +27,16 @@ Segal thinks physicists in the ultracold atomic physics field will be intrigued 
 
 \section{Fitting the spatial distribution}
 
+Covers \emph{imagefit\_NumDistFit}
+
 \section{Evaluating fit parameters}
 
+Covers \emph{imagefit\_ParamEval}
+
 \subsection{Writing new plug-ins}
+
+\subsection{Suggested improvement}
+
+Move all data structures (or at least the experimental plugin ones) to be table based so that everything is held at the same level. This would make it much easier to be flexible with different analyses (since you're not imposing a structure that might be restrictive later)
+
+One of the key lessons I've learned is to be flexible when starting new projects. You don't know where the data is going to take you or what may come up as an interesting/useful perspective for developing and questioning hypotheses. Tables are a scheme that I've have realized are very common in data management and analysis. The popular python package Pandas, uses datatables exclusively and was the impetus for my interest in the data structure. Tables also make it easy to export and share your data via spreadsheet applications (assuming you use simple datatypes within each cell) Lastly, this is a warning that no matter what you end up doing with the data, you will inevitably have to spend time organizing and reorganizing it at times. With less structure imposed on the data you'll be able to manipulate things more easily and (most importantly to Tom) more quickly.
