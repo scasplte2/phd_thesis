@@ -40,7 +40,7 @@ In the following sections we will cover the statistical mechanics linking the at
 Next we'll move to cold collisions and see the importance of the scattering wavefunction and how external fields can lead to tunable properties.
 Finally, we'll pull it all together and develop analytic expressions which can be used to fit spectral lineshapes and extract meaningful information from these experiments.
 
-\section{Theoretical description of trapped thermal gases} \label{sec:trapped_gases}
+\section{Theoretical description of trapped bosonic gases} \label{sec:trapped_gases}
 
 Additiona
 
@@ -55,6 +55,42 @@ Essentailly first part of chapter 2 from Res
 We need 
 
 Since photoassociation is a two-body process, an accurate description of the spatial
+
+\hl{Ben}
+This chapter will briefly cover the statistical mechanics of trapped atomic gases,
+both both at thermal temperatures and at near-zero temperatures for bosons and fermions. In our experiment, we typically acquire data by imaging the atomic density profile either in-situ or after releasing the atoms and allowing them to freely expand for a variable time-of-flight (TOF). I will discuss the expected density profiles for these various regimes and the related fit functions that we use to extract physical information from our samples. To illustrate the properties of trapped atomic gases, let us first consider a system
+in the grand canonical ensemble. For non-interacting particles at a temperature T, the average occupation of the state i with energy Ei is
+
+Typically our samples have a fixed number of particles, N, so the chemical potential, $\mu$, is constrained such that
+
+In the limit of large particle number we can describe the gas semi-classically asssuming that the occupation of the ground state is negligble.
+
+The semi-classical distribution is defined such that the average number of particles in the phase-space volume dpdr is given by f(r, p)dpdr/(2$\pi$)3 and
+
+\hl{check the equation numbers in pethick and smith}
+Consider the number density of atoms per phase space volume $(2 \pi \hbar)^3$ integrated from $\epsilon > 0$
+\begin{equation}
+	n(\vec{r}) = \int \frac{d\vec{p}}{2\pi\hbar^3}\frac{1}{\exp(E_r(\vec{r} - \mu/k_BT) - 1}
+\end{equation}
+where we are neglecting the full quantum nature of the atoms and considering them as point masses with free particle energy $E_r(\vec{r}) = \frac{p^2}{2m} + V(\vec{r})$
+
+next we define the quantities 
+\begin{equation}
+x=\frac{p^2}{2mk_BT} \\
+z(\vec{r}) = e^{\mu - V(\vec{r})/k_BT}
+\end{equation}
+
+then performing a change of variables and plugging into \hl{above eq} we find
+\begin{equation}
+n(\vec{r}) = \frac{2}{\sqrt{\pi} \lambda_T^3}\int dx \frac{\sqrt{x}}{z^{-1}e^x-1}
+\end{equation}
+where $\lambda_T = \sqrt{\frac{2 \pi \hbar^2}{m k_B T}}$ is the de Broglie wavelength \hl{cite}?. This integral is of a certain form and can be rewritten using \hl{cite Demarco pg 237 footnote}
+
+\hl{need to put bound on these integrals from 0 to inf}
+
+\begin{equation}
+\int_0^{\inf}
+\end{equation}
 
 \subsection{Extracting data from column densities} \label{ssec:tof}
 
