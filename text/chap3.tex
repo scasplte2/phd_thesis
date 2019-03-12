@@ -33,16 +33,19 @@ rabi oscilations between atomic and molecular condensates (cite ours and the lat
 short-range PA
 This work is focused on long-range PA but in recent years groups have also developed short-range PA techniques for the creation of rovibrational ground state molecules. These techniques rely heavily on favorable overlap integrals betwwen molecular wavefunctions and typically searching for favorable intermediate states is a pain (that is why our large FCF might be useful)
 
-% Segue
-While the general idea of photoassociation is incredibly straightforward, a rigorous theoretical understanding of the process requires discussion of several key topics related to the behavior of ultracold gases. \hl{fix this segue}
+% Summary
+While the general idea of photoassociation is straightforward, a rigorous theoretical understanding of the process requires discussion of several key topics related to the behavior of ultracold gases. \hl{fix this segue}
 The photoassociation process is effected by the residual kinetic energy of the atoms, external potential energy from trapping potentials, and the internal potential energy due to inter-particle scattering between atoms.
-In the following sections we will cover the statistical mechanics linking the atom temperature and distribution in parabolic potentials.
-Next we'll move to cold collisions and see the importance of the scattering wavefunction and how external fields can lead to tunable properties.
-Finally, we'll pull it all together and develop analytic expressions which can be used to fit spectral lineshapes and extract meaningful information from these experiments.
+In the following sections we will introduce how to determine the spatial and momentum density distributions of bulk atomic gases using a statistical mechanics approach. Next, we'll explore the two-body problem of cold collisions physics which is essential to understanding the photoassociation process. This approach will develop a quantum mechanical model describing interacting atomic particles. Finally, we'll extend this fully quantum theory with the addition of external fields and subsequently apply simplifying assumptions to formulate analytic expressions for modeling photoassociation spectra.
 
-\section{Theoretical description of trapped bosonic gases} \label{sec:trapped_gases}
 
-Additiona
+%In the following sections we will cover the statistical mechanics linking the atom temperature and distribution in parabolic potentials.
+%Next we'll move to cold collisions and see the importance of the scattering wavefunction and how external fields can lead to tunable properties.
+%Finally, we'll pull it all together and develop analytic expressions which can be used to fit spectral lineshapes and extract meaningful information from these experiments.
+
+\section{Theoretical description of trapped boson gases} \label{sec:trapped_gases}
+
+Add equations Itrans from page 51 of natali's thesis
 
 This section will briefly discuss the 
 
@@ -61,6 +64,7 @@ This chapter will briefly cover the statistical mechanics of trapped atomic gase
 both both at thermal temperatures and at near-zero temperatures for bosons and fermions. In our experiment, we typically acquire data by imaging the atomic density profile either in-situ or after releasing the atoms and allowing them to freely expand for a variable time-of-flight (TOF). I will discuss the expected density profiles for these various regimes and the related fit functions that we use to extract physical information from our samples. To illustrate the properties of trapped atomic gases, let us first consider a system
 in the grand canonical ensemble. For non-interacting particles at a temperature T, the average occupation of the state i with energy Ei is
 
+\hl{James}
 Typically our samples have a fixed number of particles, N, so the chemical potential, $\mu$, is constrained such that
 
 In the limit of large particle number we can describe the gas semi-classically asssuming that the occupation of the ground state is negligble.
@@ -111,7 +115,7 @@ Using this identity we can write the thermal distribution as
 	\end{split}
 	\end{equation}
 
-For harmonic traps $V(\vec{r}) = \frac{m}{2}\displaystyle\sum_i\omega_i^2r_i^2$ where $r_i$ represents the cartesian cooridnates. Plugging this into \hl{previous eq} then the \textit{in-situ} density profile is given by
+For harmonic traps $V(\vec{r}) = \frac{m}{2}\displaystyle\sum_i\omega_i^2r_i^2$ where $r_i$ represents the Cartesian coordinates. Plugging this into \hl{previous eq} then the \textit{in-situ} density profile is given by
 \begin{equation}
 n(\vec{r}) = \frac{1}{\lambda_T^3}\Li{\ssfrac{3}{2}}{\xi \,\exp{\sum_i\frac{-m\omega_i^2r_i^2}{2 k_B T}}}
 \end{equation}
@@ -134,9 +138,9 @@ n(\vec{r}) = \frac{\xi}{\lambda_T^3}\exp{\sum_i\frac{-m\omega_i^2r_i^2}{2 k_B T}
 
 This description of the atoms in the trapping potential is useful but we need to go a step further because we use absorption imaging to determine properties of the atom after a time of flight.
 
-Maybe put in something about different measurement techniques and refernce the ketterle and pethick and smith again.
+Maybe put in something about different measurement techniques and reference the ketterle and pethick and smith again.
 
-Removeing the trap results in ballistic expansion with the above spatial density profile as the initial conditions. 
+Removing the trap results in ballistic expansion with the above spatial density profile as the initial conditions. 
 To derive how we find the properties of the atoms, consider the above spatial density profile as the initial conditions.
 
 Atoms expand ballistically according to
@@ -245,10 +249,6 @@ All of our information comes from taking pictures of our atomic clouds and infer
 	\end{equation}
 This 
 
-
-
-
-
  \cite{Ketterle1999} \hl{get demarco thesis?}. Thus, for atoms 
 
 Thus, for atoms starting at a position $\vec{r_0}$ 
@@ -261,12 +261,23 @@ Time of flight is essentially a Fourier transform which turns the initial moment
 
 \section{Characterizing cold collisions} \label{sec:cold_collisions}
 
+Collisions are one of the key ways we learn things about atoms 
+
+In atomic physics, our low density gases are mainly within the regime of small interactions. 
+
+Here is where I cite sources of some of the original PA work, feshbach stuff
+
+Discuss some of the newer 
+
+I want the reader to know that PA dis concerning the scattering wavefunction, that it comes from the overlap integral of the tweo wavefunctions (why do I need to know this? nbecause this means that it is sensitive to positions of the nodes and can be used to map out the potentials. \hl{this will motivate discussing low energy physics}
 
 
 \subsection{Low energy scattering} \label{ssec:scattering}
 
 this results in a poitential that supports bound states. 
-In atomic physics, our low density gases are mainly within the regime of small interactions. 
+
+
+
 This spatial dependence is mapped onto the internal energy levels of each atom. I want to say dressed state model here (review atom-photon coupling, atomic physics book).
 
 consider the two particle system as a single entagled particle
