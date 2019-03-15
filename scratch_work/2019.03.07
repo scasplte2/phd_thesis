@@ -265,7 +265,10 @@ So.   uhhhhh
 	no no
 	
 	rather,
-	
+
+Ch. 4
+Progression
+-------------------------------------------------------------	
 Ecperimental methods
 	expeeriments in this chapter adn the following are very similar. biggest scientific differnece is that we explored different regimes of intensity
 	experiments in this chapter were done on rydberg apparatus
@@ -299,12 +302,63 @@ Specifics of the low e experiment
 			Leads to a strong modification of the momentum distribution and will effect the energy integral due to large variation in the available energy range
 			
 ------------------------------------------------------------
+Questions
+
 Not sure where to get the isotropy from
 	there is some description of this in sakurai and I think Hutson discusses it as well
+	
+Is the generic quantum approach the same for any two particles of similar mass?
+	I mean, solving the SE is but I guess I mean do all scattered particles break down into the
+		1. plane wave + spherical wave asymptotoe
+		2. pick a basis set and expand the asymp form
+		3. Get the SE in terms of basis set and solve making sure to connect to asymptotic form?
+		4. Rinse repeat
+	This is basically the algorithm for solving a time-independent quantum problem so it must be the same
+		boundary conditions, basis set, potential in terms of basis set, solve SE
+		
+What is the coupling mechanism for say a shape resonance? 
+	the multiple channels all must interact somehow
+	- I think this is just the short range coupling stuff. The closed channel exists at short range and even tiny coupling between the eigenstates can change the long-range scattering properties due to the background scattering length representing the entirety of the inner well
+	
+Where to put in that PA can help map out the ground state potential through reflection approximation
 
-			
+What is that picture in Jones about reflection? I assumed reflection was because the result of the overlap integral "reflected" the stucture of the wavefunction so you could figure out the ground state wavefunction by coupling to various condon points and seeing the change in amplitude
+	That picture has reflections from the inner wall though. Maybe he is trying to get at the fact that the wavefunction itself is due to interference of the incoming and outgoing waves bouncing off?
+	
+So is this coriolis mixing and other stuff just didn't types of couplings between bare eigenstates?
+	god dammit, it must be
+	What are all the types of mixing that we have found?
+	I'll settle for physical interpretation of the mixings we know about for strontium
+	
+Is it correct to say that the canonical scattering length isn't actually useful to be interpreted as a physical length?
+	It doesn't define any physical length scale that is of consequence to the atoms. 
+	To better illustrate this, consider the (call it condon point for now), there is a physical interpretation of this length scale as the most probable distance between the constituents of a diatomic molecule. However, this point in the collisional wavefunction of two atoms is given by aBar 
+
+aBar must be defined as the probability at zero energy right?
+	because the wavefunction changes as a function of energy
+	
+oh wait, maybe aBar is the distinguishing point between long-range and short-range?
+	what is the difference in aBar and avdW?
+
+So then what is the physical interpretation of a? Is there one? Why do we represent the phase shift in terms of a length then?
+	I think the answer here is that it gives a nice easy formula for the mean field energy in a degenerate gas.
+	I hope there is a better answer.
+	Can a somehow be thought of as a coupling strength between degenerate particles?
+	
+If the above bit is true, it makes it really easy to introduce the optical length as just a length scale unit that describes the coupling strength between open and closed channels.
+	We choose a length scale representation though because there is an easy physical interpretation in terms of changing the elastic scattering length
+	
+What is the physical interpretation of a?
+	
+I slightly recall that the condon point is not actually defined to be the outer turning point. It just tends to overlap with it.
+	Is the condon point then the most probable distance between the constituent atoms of a diatomic molecule, or something else?
+
+Progression
+-----------------------------------------------------------------			
 Clasical collisions
+
 Quantum utructured particle in free space
+	motivate why this (be careful always call these particles)
 	kinetic energy basis used to describe particles
 	transform into center-of-mass components
 	simple hamiltonian
@@ -318,11 +372,35 @@ expansion in terms of partial waves
 	criteria for needing waves
 Result of solving the SE using partial wave basis
 connecting of short range and long range form
-dropping out of scattering length
+deriving of the scattering length as phase shift
+	sensitivity of the scattering length to specifics of the short-range physics
+	this is why it is so hard to do ab initio calculations.
+		we don't necessarily know what the details of the inner potential are
 physical interpretation of variation of scattering length
+	this is the zero energy limit
+connection to bound states
+
+Multi-channel extension apparent once you add internal structure (or the particles are really atoms)
+	here is where I call the above the single channel theory and describe why
+		namely that the atoms in the ground state represent a single channel out of the many possible internal configurations of the constituent atoms
+	still have all the consequences from single-channel theory but now with lots of other potentials around as well
+this would be the end of the story if all of these potentials were "separable" (or independent)
+	you'd find your configuration, describe the potential, solve it, and you're done
+of course this isn't actually the case because the eigenstates of the separate potentials couple to one another.
+Even understanding the natural coupling between coupling between potentials is not easy
+	tie back to complexity of understanding short range physics
+		We don't really know what coupling exist and which energy levels are most important
+	mostly effects the bound states of the system
+	strontium example of the D state coupling in the 3P1 potential
+		references to Res and other work
+huge simplifying thing in cold AMO, we mostly care about the the long-range wavefunctions 
+	which are mostly determined by the leading order term for how the potential falls off at infinity with an added phase shift
+	the phase shift is what gives us the scattering length
+		it is the phase shift that is the important bit! 
+The scattering length is not 
 
 
-Multi-channel extension
+			There is a nice physical interpretation in units of length since it can he
+		a single number can represent all of that inner detail and the we are concerned with 
 
-			
-			
+Adding interaction
