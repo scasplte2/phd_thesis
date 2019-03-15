@@ -319,11 +319,13 @@ Is the generic quantum approach the same for any two particles of similar mass?
 What is the coupling mechanism for say a shape resonance? 
 	the multiple channels all must interact somehow
 	- I think this is just the short range coupling stuff. The closed channel exists at short range and even tiny coupling between the eigenstates can change the long-range scattering properties due to the background scattering length representing the entirety of the inner well
+	- also, I think it is the wavefuntions mixing that shift the eigenenergies of the bare wavefunctions. This is why BJ approach works to take WKB like wavefunctions for closed channel and use them to couple with long range scattering wfs (with boundary conditions). Resulting in a manageable form of the K matrix
 	
 Where to put in that PA can help map out the ground state potential through reflection approximation
 
 What is that picture in Jones about reflection? I assumed reflection was because the result of the overlap integral "reflected" the stucture of the wavefunction so you could figure out the ground state wavefunction by coupling to various condon points and seeing the change in amplitude
 	That picture has reflections from the inner wall though. Maybe he is trying to get at the fact that the wavefunction itself is due to interference of the incoming and outgoing waves bouncing off?
+	- I think the part I was missing here is that he is probably illustrating higher order partial waves as reflecting at different point since this is also part of the interference (all incoming and outgoing waves interfere)
 	
 So is this coriolis mixing and other stuff just didn't types of couplings between bare eigenstates?
 	god dammit, it must be
@@ -386,7 +388,100 @@ What then is the origin of the unitarity limit?
 	
 Ben had single lorentzians which would make this more important but what was the temp of their gas?
 
-Progression
+Oscillation frequency at R = inf is given by the de Broglie wavelength
+If true, Where is this from?
+
+Hutson questions
+
+1.19 - scattering amplitude for each partial wave, f_L
+How to get this?
+
+1.26 - k-dependent scattering length
+1.27 - s-wave cross section dependent on scattering length
+How to connect 1.27, 1.26, and 1.21?
+
+Gribakin and Flambaum showed that is V(r) behaves at long range as V(r) = C_n/r^n, the zero-energy scattering length is given semiclasically by 1.29
+1.30 - Mean scattering length
+Physical interpretation of this?
+
+Relation of S to W?
+
+1.49 - Form of S matrix in terms of open-open part of K matrix
+What is the K matrix? Where does it come from and 
+
+Dakubard
+
+ potentials and partial wave expansion
+Consider case of spherically sym potential to simplify SE
+How does that relate to parital wave expansion?
+
+Use LP basis set
+Origin of asymp wf form in LP basis expansion
+How to get eq. 10?
+
+Different form of solving the SE
+How does this connect to the form given in COld molescules?
+
+Important for excited state potentials with r^-3 fall off
+References discussing this in cold atoms?
+	- I recall reading this in CM Jullienne I think, though I am sure it is in Chin 10 as well
+
+Find another citation for how fast the potential needs to fall off
+
+
+Bohn and Julienne
+WF given by F(R) which must be regular at origin and satisfy BC’s - 2.7
+Why is this a tilde in the equation?
+	- I think it is because they are foregoing normalizations so these aren't the full eqs
+
+Somehow the construction of Kred makes the closed solutions vanish at large R?
+Another form of scattering matrix
+Unsure how or why this is differnet
+
+Also easily get scattering matrix element and reproduce the complex scattering length
+Complex scattering length discussed in 15 and 14. What were their approaches?
+
+CM ch 6
+how is S motivated? Maybe Mies discusses it
+	oh, I think Julienne said it in CM. 
+	The S-matrix is the generalization of the phase shift relation across all the channels. It is what is needed to understand the interactions because the interactions lead to coupling phase shifts which will change the cross section!!!
+
+Energy of the last bound state goes to universal form
+Universal because a is infinite and when this happens the cross section approaches its maximum?
+Origin of max cross section?
+
+Simple model with interaction of a single BO potential
+What is a BO potential? The BO approx was to say that single scattering matters right? Where does the isotropy come in? Are these related?
+
+difference between a, avdW, and aBar
+
+Strontium de Broglie at 1uK?
+
+Have to justify eta -> -ka. Easy though, everyone says this. I need to understand it though
+	Still a little fuzzy on how to get eta=-ka
+
+6.16 - collision rate in general form
+Really good insight discussing the contributions of the factors
+Not sure what f_D is though
+
+pproach to discussing coupling potentials
+Kinda confusing but I think is similar to the Chin ‘10 arguments
+Is this my short-range coupling mechanisms?
+
+6.18 & 6.19 - main difference betwwen a threshold resonance and a normal resonance is that we can usually evaluate at one energy and is independet of E. But here there is explicit generally explicit energy depedence.
+Recover e-indepedent in s-wave limit
+Confused by this idea where the reflection approximation breaks down
+
+
+
+
+
+
+
+
+
+
+Ch. 3 Progression
 -----------------------------------------------------------------
 	
 characterizing cold collisions
@@ -525,6 +620,79 @@ Integration over both degrees of freedom will be an important discussion in the 
 ----------------------
 Two-photon PA
 
+--------------------------------------------------------
 
+Outline from sources
+-----------------------------------
+# Cold collisions
+	understand how to treat quantum two-body problem with external field coupling
+	
+	## Low energy scattering
+
+		classical
+			cross sections and their origin
+			centrifugal barrier
+			center of mass coordinates
+			
+		quantum
+			solve time0independent SE
+			just need potential, basis set, and boundary conditions
+			
+		structureless pasrticles scattering
+			assume some r-dependent potential (say toy model)
+			solution of SE in partial wave expansion (and all the stuff around that)
+			total cross section as sum over all partial waves
+			
+		bound states
+			normal bound states and quasi bounad states
+			generally hard but can gain insight using WKB approx
+				referecnes to WKB
+		
+		low energy collisions
+			a goes to a constant but is generally energy dependent
+				can also go to infinity
+			GF fixed it for vdW potentials
+			scattering length is very sensitive to details of potential
+		
+	## Modifying interaction with external fields
+		mutli-channel model
+		
+		coupled equations
+			define open and close channels
+			symcptotic form of matrix equations
+			Relation of K & S
+		
+		Quasi-bound states
+			coupling seen as sharp change in plahse shift
+			
+		lw energy scattering
+			complex form of phase shift
+	
+###################################################################
+2019.03.15
+-------------------------------------------------------------------
+
+So the biggest questions I feel ar still remaining are
+	is S matrix the generalization os the phase shift formula to may channels
+	what are some of the coupling mechanisms betwwn closed and open channels?
+	what is the relation between universality and unitarity?
+	what is the physical interpretation of a?
+		also what are the relations of a, avdW, and aBar?
+	
+should try to be obnoxious about how the mutli-channel version has all the same analogs as the single channel theory
+	point out the important bits
+	
+obviously, I need to go back and reread the questions but those are the ones that remain at the front of my mind currently. Ok, so next up. I have a couple things I want to do
+	finish annotating the rest of the source material
+		could be long and arduous for reviews. I don't want to lose momentum but I do want to read them. I may not do the entire outline thing but I should at least read them and highlight them
+	could actually compile the list of questions I have before reading (probably better)
+	keep trying to write a progression or an outline
+		but I need to at least read GF and annotate
+		if I am going to read GF then I might s well read eveything so that I can just get it over with.
+		
+so that is my plan. I'll compile the list, read through the last couple sources, then come back to the progression.
+
+I need to decide on a narrative thread so that I can choose the plots which paint that picture. Tried building narrative by doing the summary sentences but that kinda got out of hand. Should force myself to outline and try to put summaries. 
+	Key ideas that need to go together!!
 	
 	
