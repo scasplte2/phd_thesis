@@ -331,8 +331,10 @@ So is this coriolis mixing and other stuff just didn't types of couplings betwee
 	I'll settle for physical interpretation of the mixings we know about for strontium
 	
 Is it correct to say that the canonical scattering length isn't actually useful to be interpreted as a physical length?
-	It doesn't define any physical length scale that is of consequence to the atoms. 
-	To better illustrate this, consider the (call it condon point for now), there is a physical interpretation of this length scale as the most probable distance between the constituents of a diatomic molecule. However, this point in the collisional wavefunction of two atoms is given by aBar 
+	- It doesn't define any physical length scale that is of consequence to the atoms. 
+	- Remember that it does define a length scale relevant to scattering though because it defines the cross-section
+		- This is why I would call it a scattering length
+	- To better illustrate this, consider the (call it condon point for now), there is a physical interpretation of this length scale as the most probable distance between the constituents of a diatomic molecule. However, this point in the collisional wavefunction of two atoms is given by aBar 
 
 aBar must be defined as the probability at zero energy right?
 	because the wavefunction changes as a function of energy
@@ -352,10 +354,46 @@ What is the physical interpretation of a?
 	
 I slightly recall that the condon point is not actually defined to be the outer turning point. It just tends to overlap with it.
 	Is the condon point then the most probable distance between the constituent atoms of a diatomic molecule, or something else?
+	
+Still unsure exactly what the Born approximation is other than assuming a single scattering event
+	basically say that we're only concerned about two-body collisions
+	maybe that is what is meant by BO potential, the potential formed between two atoms and not more
+		What would that look like?
+		
+How do you connect the idea of scattering to resonance?
+	I thought the MFR resonance looked different than PA resonances but they have to come from the same thing
+	I mean, embedding a level is embedding a level. hmm
+	I don't think this is correct but maybe the S matrix defines a flux hmm... cross sections
+	cross-section is rate loss constant times relative velocity and K is defined in terms of S. 
+	S is the scattering matrix in multi-channel, so does it somehow define the phase shift for each channel?
+		what then are the off diagonal terms in S? Are they couplings of some sort?
+		what are the off diagonal terms in K?
+	
+What is the physical interpretation of cross section?
+	gives likelihood of particles colliding?
+	I'm missing something dumb here
+	
+should I discuss the formulas in the isolated resonance model from nicholson or like how bohn and julienne derived them?
+
+How does the energy of the scattering state come into play with feshbach resonances?
+	I bet that the energy of open channel is defined by the temperature of the atoms.
+	This is why you can have a shape resonance at certain temperatures.
+	
+What then is the origin of the unitarity limit?
+	Energy is so high that all the particles see is the delta function at 0!!! fucking A, why am I so dumb. I can't believe I never got that, bahh.
+	Hot damn
+	So the limits of cross section are the unitarity limit at incoming energy high enough that the particles only see a delta function and the zero energy scattering length due to the phase shift of the molecular potential.
+	
+Ben had single lorentzians which would make this more important but what was the temp of their gas?
 
 Progression
------------------------------------------------------------------			
+-----------------------------------------------------------------
+	
+characterizing cold collisions
+--------------------
+		
 Clasical collisions
+	point of studying collisions is to determine cross sections
 
 Quantum utructured particle in free space
 	motivate why this (be careful always call these particles)
@@ -380,6 +418,8 @@ physical interpretation of variation of scattering length
 	this is the zero energy limit
 connection to bound states
 
+somewhere want to give the limits of the cross sections as difference between unitarity and zero-energy scattering
+
 Multi-channel extension apparent once you add internal structure (or the particles are really atoms)
 	here is where I call the above the single channel theory and describe why
 		namely that the atoms in the ground state represent a single channel out of the many possible internal configurations of the constituent atoms
@@ -397,10 +437,94 @@ huge simplifying thing in cold AMO, we mostly care about the the long-range wave
 	which are mostly determined by the leading order term for how the potential falls off at infinity with an added phase shift
 	the phase shift is what gives us the scattering length
 		it is the phase shift that is the important bit! 
-The scattering length is not 
+Possible discussion about phase shift in terms of length
+
+define open and close channel somewhere
+
+address somewhere that these types of problems are generally solved via coupled-channel methods which follow the same recipe for the scattering problem as in the single channel case but does so considering all channels simultaneously through matricies defining potentials and their couplings to one another.
+
+Remember that the phase shift encapsulates all the information of the inner potential and is very sensitive
+	this was shown in the above sections (?)
+Additionally, these potentials are effected by couplings to other potentials.
+	Mixing of potentials is determined by how far apart in energy the potentials are and how strong the coupling between them is
+	some reference like landau-zener or something?
+So what if we could change the relative energy spacing between potentials?
+	This could lead to mixing of potentials and perturb the phase shift that gives us the scattering length
+this is the origin of scattering resonances in ultracold atoms and can provide a rigorous theoretical description of photoassociation
+
+scattering resonances are due to off diagonal coupling between bound closed channels and scattering open channels
+	give picture
+hand wavy expalanation is that bringing a bound state close will modify the open channel (potential?)
+	this results in a tweak of the phase shift which results in a change in scattering length
+can describe this as a change in the elastic cross section of the incoming open channel
+in general there is also an inelastic cross section that may contribute if the bound state has a finite lifetime.
+
+somehow need to introduce the complex scattering length here to acount for the elastic and inelastic parts
+	
+Most common example of scattering resonance is MFR in alkali atoms
+	other potentials are due to different combinations of atoms in hyperfine states
+	these potentials can have different magnetic moments
+		means that addition of a magnetic field can tune them relative to one another
+MFR has been extensively studied and is a common tool used in atomic physics
+
+While MFR is most common, resonance scattering is also the cause for shape resonances due to centrifugal barriers
+	when the incoming energy in the open channel happens to line up with a quasi-bound state at E>0
+
+Though the details of these phenomena are slightly different they are both due to wavefunctions in open channels being modified by bound states in closed ones.
+	- There is another subtle similarity though, as the energy difference of these two processes are also similar.
+	- The energy splitting between various hyperfine configurations of MFR's is typically BLAH and shape resonances are generally most important at energies below 1K as scattering cross sections move away from the unitarity limit
+
+How then can resonace scattering describe photoassociation when the optical potentials are TeV (how many K?) apart?
+	The answer is to consider the process in a field-dressed basis, where the quantum state of the photon field and two-particle wavefunction are considered as one.
+		Side note: In the context of a single atom's internal structure being combined with a photon field, this idea is known as the dressed atom model. We specifically choose to distinguish this approach in the two-particle scattering context by referring to it as a field dressed approach.
+With this new picture, we can essentially follow the theoretical recipe pioneered by magnetic feshbach resonances and define their optical analogs.
+There is one big difference between MFR's and OFR's though and that is that most common MFR's utilize bound states with extremely long lifetimes. 
+	This means that the inelastic contribution to the complex scattering length is neglibile.
+In OFR's however, the closed channel bound state is a from a potential with a finite lifetime.
+	This can lead to significant loss and heating of the gas as photons are absorbed and emitted by the colliding atoms and energy is pumped into the system.
+This property practically precludes such OFR's from working in alkali metal systems since the most accessible transitions are very wide and have short lifetimes. Although, fast detection processes did allow for the first observation of OFR's to occur in a Rb BEC.
+
+Alkaline earth atoms, such as Sr, were hypothesized to take advantage of OFR's since there is a narrow transition easily accessible which could provide large changes in the elastic cross section while minimizing the losses due to the inelastic contribution. This was thought to be possible by controllable detuning the closed channel from the incoming open channel and balancing the loss rate (check this). While there were observations of a strontium OFR, notably work done on this very apparatus (citations), they were accompanied by unexpectedly high loss rates. Recent work by Nicholson et. al. were able to explain some of this behavior through a quantum interference effect whereby the elastic loss rate returns to zero between bound states as the effects of bound states cancel each other out. They used a coupled-channel description to describe the physics.
+	I want to clean up the wording there a little
+	
+A consequence of this coupled channel model is the reproduction of the seminal relations describing photoassociation when the coupled-channel model is simplified by assuming close proximity to a single resonance.
+
+Not sure how easy it is to tie BJ and Nicholson together. If I can do it in a couple sentences I will. 
 
 
-			There is a nice physical interpretation in units of length since it can he
-		a single number can represent all of that inner detail and the we are concerned with 
 
-Adding interaction
+--------------------
+one photon PA
+
+show picture with all the terms defined
+
+give loss rate (will need to have introduced before)
+	define terms
+		gamma_stim as overlap
+		gamma as molecular lifetime
+		delta as detuning
+		A as coupling strength
+	
+introduce reflection approximation
+	evaluation of overlap	
+	
+give relative momentum distribution
+	this results in an asymmetric profile
+
+segue to narrow lines
+	
+----------------------
+PA on narrow lines
+
+quick note on the usage of the relative momentum distribution
+usually this is all we care about since the CoM part results in doppler shifts which would be neglible on the energy scales of broad dipole-allowed transtions
+using narrow intercombinations lines, the photon recoil energy is comparable to the bound state lifetime
+	this means that indivual lorentzians might be shifted (each by a different amount) in addition to the total line shape being asymmetric
+Integration over both degrees of freedom will be an important discussion in the next chapter as we fit spectra and determine the halo binding energy
+
+----------------------
+Two-photon PA
+
+
+	
+	
