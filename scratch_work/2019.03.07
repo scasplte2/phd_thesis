@@ -266,6 +266,8 @@ So.   uhhhhh
 	
 	rather,
 
+	
+	
 Ch. 4
 Progression
 -------------------------------------------------------------	
@@ -304,34 +306,53 @@ Specifics of the low e experiment
 ------------------------------------------------------------
 Questions
 
+FORM OF INTERACTION POTENTIAL
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^	
 Not sure where to get the isotropy from
 	there is some description of this in sakurai and I think Hutson discusses it as well
 	
-Is the generic quantum approach the same for any two particles of similar mass?
-	I mean, solving the SE is but I guess I mean do all scattered particles break down into the
-		1. plane wave + spherical wave asymptotoe
-		2. pick a basis set and expand the asymp form
-		3. Get the SE in terms of basis set and solve making sure to connect to asymptotic form?
-		4. Rinse repeat
-	This is basically the algorithm for solving a time-independent quantum problem so it must be the same
-		boundary conditions, basis set, potential in terms of basis set, solve SE
+What is that picture in Jones about reflection? I assumed reflection was because the result of the overlap integral "reflected" the stucture of the wavefunction so you could figure out the ground state wavefunction by coupling to various condon points and seeing the change in amplitude
+	That picture has reflections from the inner wall though. Maybe he is trying to get at the fact that the wavefunction itself is due to interference of the incoming and outgoing waves bouncing off?
+	- I think the part I was missing here is that he is probably illustrating higher order partial waves as reflecting at different point since this is also part of the interference (all incoming and outgoing waves interfere)	
+	
+Still unsure exactly what the Born approximation is other than assuming a single scattering event
+	basically say that we're only concerned about two-body collisions
+	maybe that is what is meant by BO potential, the potential formed between two atoms and not more
+		What would that look like?
+	- answer is in the burke thesis, 2.2.1 I think
+	
+I slightly recall that the condon point is not actually defined to be the outer turning point. It just tends to overlap with it.
+	Is the condon point then the most probable distance between the constituent atoms of a diatomic molecule, or something else?
+	- answered in Blatt thesis, it is the point the potentials cross. How come we talk about the outer turning point then?
+	
+Simple model with interaction of a single BO potential
+What is a BO potential? The BO approx was to say that single scattering matters right? Where does the isotropy come in? Are these related?
+- Burke thesis 2.2.1, I think. Isotropy is not a part of this. 
+	BO potential comes from averaging over the electron dynamics. Essentially, put atoms at a fixed distance apart and see what the potential energy does due to electron cloud overlap
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^		
 		
+COUPLING MECHANISM FOR RESONANCE SCATTERING
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^	
 What is the coupling mechanism for say a shape resonance? 
 	the multiple channels all must interact somehow
 	- I think this is just the short range coupling stuff. The closed channel exists at short range and even tiny coupling between the eigenstates can change the long-range scattering properties due to the background scattering length representing the entirety of the inner well
 	- also, I think it is the wavefuntions mixing that shift the eigenenergies of the bare wavefunctions. This is why BJ approach works to take WKB like wavefunctions for closed channel and use them to couple with long range scattering wfs (with boundary conditions). Resulting in a manageable form of the K matrix
 	
-Where to put in that PA can help map out the ground state potential through reflection approximation
-
-What is that picture in Jones about reflection? I assumed reflection was because the result of the overlap integral "reflected" the stucture of the wavefunction so you could figure out the ground state wavefunction by coupling to various condon points and seeing the change in amplitude
-	That picture has reflections from the inner wall though. Maybe he is trying to get at the fact that the wavefunction itself is due to interference of the incoming and outgoing waves bouncing off?
-	- I think the part I was missing here is that he is probably illustrating higher order partial waves as reflecting at different point since this is also part of the interference (all incoming and outgoing waves interfere)
-	
 So is this coriolis mixing and other stuff just didn't types of couplings between bare eigenstates?
 	god dammit, it must be
 	What are all the types of mixing that we have found?
 	I'll settle for physical interpretation of the mixings we know about for strontium
+	- Coriolis mixing is electronic and nuclear (rovibrational) dynamics (LJ coupling, I think this is molecule orbital angular momentum L and J?), also zeeman effects from LS (electronic orbital and spin angular momenta) \cite{McGuyer2013}
+	- so you have a new type of hyperfine coupling in the molecule because of the combined electron clouds interacting with the combined nucleus. Also new zeeman shift for the composite electron and nucleus \cite{Stoof1988}
+	- Coriolis coupling, i.e. a coupling between the vibration and rotation of a molecule, mcdonald thesis	
 	
+How does the energy of the scattering state come into play with shape resonances?
+	I bet that the energy of open channel is defined by the temperature of the atoms.
+	This is why you can have a shape resonance at certain temperatures.
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^		
+	
+SCATTERING LENGTH
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^		
 Is it correct to say that the canonical scattering length isn't actually useful to be interpreted as a physical length?
 	- It doesn't define any physical length scale that is of consequence to the atoms. 
 	- Remember that it does define a length scale relevant to scattering though because it defines the cross-section
@@ -353,15 +374,32 @@ If the above bit is true, it makes it really easy to introduce the optical lengt
 	We choose a length scale representation though because there is an easy physical interpretation in terms of changing the elastic scattering length
 	
 What is the physical interpretation of a?
+
+What is the physical interpretation of cross section?
+	gives likelihood of particles colliding?
+	I'm missing something dumb here
 	
-I slightly recall that the condon point is not actually defined to be the outer turning point. It just tends to overlap with it.
-	Is the condon point then the most probable distance between the constituent atoms of a diatomic molecule, or something else?
+What then is the origin of the unitarity limit?
+	- Energy is so high that all the particles see is the delta function at 0!!! fucking A, why am I so dumb. I can't believe I never got that, bahh.
+	Hot damn
+	So the limits of cross section are the unitarity limit at incoming energy high enough that the particles only see a delta function and the zero energy scattering length due to the phase shift of the molecular potential.
 	
-Still unsure exactly what the Born approximation is other than assuming a single scattering event
-	basically say that we're only concerned about two-body collisions
-	maybe that is what is meant by BO potential, the potential formed between two atoms and not more
-		What would that look like?
-		
+Gribakin and Flambaum showed that is V(r) behaves at long range as V(r) = C_n/r^n, the zero-energy scattering length is given semiclasically by 1.29
+1.30 - Mean scattering length
+Physical interpretation of this?
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^	
+
+THEORETICAL APPROACH
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Is the generic quantum approach the same for any two particles of similar mass?
+	I mean, solving the SE is but I guess I mean do all scattered particles break down into the
+		1. plane wave + spherical wave asymptotoe
+		2. pick a basis set and expand the asymp form
+		3. Get the SE in terms of basis set and solve making sure to connect to asymptotic form?
+		4. Rinse repeat
+	This is basically the algorithm for solving a time-independent quantum problem so it must be the same
+		boundary conditions, basis set, potential in terms of basis set, solve SE
+
 How do you connect the idea of scattering to resonance?
 	I thought the MFR resonance looked different than PA resonances but they have to come from the same thing
 	I mean, embedding a level is embedding a level. hmm
@@ -370,29 +408,19 @@ How do you connect the idea of scattering to resonance?
 	S is the scattering matrix in multi-channel, so does it somehow define the phase shift for each channel?
 		what then are the off diagonal terms in S? Are they couplings of some sort?
 		what are the off diagonal terms in K?
-	
-What is the physical interpretation of cross section?
-	gives likelihood of particles colliding?
-	I'm missing something dumb here
-	
+
 should I discuss the formulas in the isolated resonance model from nicholson or like how bohn and julienne derived them?
 
-How does the energy of the scattering state come into play with feshbach resonances?
-	I bet that the energy of open channel is defined by the temperature of the atoms.
-	This is why you can have a shape resonance at certain temperatures.
-	
-What then is the origin of the unitarity limit?
-	Energy is so high that all the particles see is the delta function at 0!!! fucking A, why am I so dumb. I can't believe I never got that, bahh.
-	Hot damn
-	So the limits of cross section are the unitarity limit at incoming energy high enough that the particles only see a delta function and the zero energy scattering length due to the phase shift of the molecular potential.
-	
-Ben had single lorentzians which would make this more important but what was the temp of their gas?
+Where to put in that PA can help map out the ground state potential through reflection approximation
 
-Oscillation frequency at R = inf is given by the de Broglie wavelength
-If true, Where is this from?
+CM ch 6
+how is S motivated? Maybe Mies discusses it
+	oh, I think Julienne said it in CM. 
+	- The S-matrix is the generalization of the phase shift relation across all the channels. It is what is needed to understand the interactions because the interactions lead to coupling phase shifts which will change the cross section!!!
+
 
 Hutson questions
-
+$$$$$$$$$$$$$$$$$$$
 1.19 - scattering amplitude for each partial wave, f_L
 How to get this?
 
@@ -400,14 +428,20 @@ How to get this?
 1.27 - s-wave cross section dependent on scattering length
 How to connect 1.27, 1.26, and 1.21?
 
-Gribakin and Flambaum showed that is V(r) behaves at long range as V(r) = C_n/r^n, the zero-energy scattering length is given semiclasically by 1.29
-1.30 - Mean scattering length
-Physical interpretation of this?
-
 Relation of S to W?
 
 1.49 - Form of S matrix in terms of open-open part of K matrix
 What is the K matrix? Where does it come from and 
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+
+UNSORTED
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Something to do with seeing how the doppler shift might effect the individual lorentzians of the whole profile	
+	Ben had single lorentzians which would make this more important but what was the temp of their gas?
+
+Oscillation frequency at R = inf is given by the de Broglie wavelength
+If true, Where is this from?
 
 Dakubard
 
@@ -441,17 +475,13 @@ Unsure how or why this is differnet
 Also easily get scattering matrix element and reproduce the complex scattering length
 Complex scattering length discussed in 15 and 14. What were their approaches?
 
-CM ch 6
-how is S motivated? Maybe Mies discusses it
-	oh, I think Julienne said it in CM. 
-	The S-matrix is the generalization of the phase shift relation across all the channels. It is what is needed to understand the interactions because the interactions lead to coupling phase shifts which will change the cross section!!!
+
 
 Energy of the last bound state goes to universal form
 Universal because a is infinite and when this happens the cross section approaches its maximum?
 Origin of max cross section?
 
-Simple model with interaction of a single BO potential
-What is a BO potential? The BO approx was to say that single scattering matters right? Where does the isotropy come in? Are these related?
+
 
 difference between a, avdW, and aBar
 
@@ -471,10 +501,13 @@ Is this my short-range coupling mechanisms?
 6.18 & 6.19 - main difference betwwen a threshold resonance and a normal resonance is that we can usually evaluate at one energy and is independet of E. But here there is explicit generally explicit energy depedence.
 Recover e-indepedent in s-wave limit
 Confused by this idea where the reflection approximation breaks down
+- this is discussed in Chin 10 I think. Basically 
 
 
-
-
+-----------------
+ Don't rmemeber where it is but S being unitary does amount to particle conservation ref. https://journals.aps.org/prb/pdf/10.1103/PhysRevB.38.4688
+ 
+ 
 
 
 
