@@ -1,6 +1,8 @@
 \chapter{Binding energy of the $^{86}$Sr$_2$ halo molecule}
 \label{ch:chap4}
 
+Here we study the least-bound vibrational level of the X$^1\Sigma_g^+$ electronic ground state of the $^{86}$Sr$_2$ dimer (Fig.\ \ref{PASDiagram}), which is a naturally occurring halo molecule, meaning it exists in the absence of tuning with a magnetic Feshbach resonance. A well-known example of a naturally occurring halo molecule is the $^4$He$_2$ dimer \cite{lmk93,sto94,kgj06}. The least-bound vibrational level of the ground state of $^{40}$Ca$_2$, which was recently studied using similar methods \cite{Pachomow2017a}, is also very close to this regime.
+
 \section{Probing the ground state potential}
 \label{sec:lowE_intro}
 
@@ -9,8 +11,6 @@ Strontium is a nice atom to work with because of the various properties of all o
 Additionally, by utilizing the narrow intercombination potential we are able to detune many linewidths from the intermediate state, thereby 
 
 Two-photon photoassociation 
-
-umm, I want to write something about the narrow line letting us probe this but 
 
 As described in previous chapters, two-photon PAS can be used to directly populate low-lying molecular levels. Applying this technique to strontium 86 we can explore a similar regime
 
@@ -27,8 +27,6 @@ Weakly bound ground-state dimers are of great interest in ultracold atomic and m
 %Here, we perform two-photon photoassociation to a naturally occurring halo molecule state in
 %$^{86}$Sr. We accurately determine its binding energy and calculate the scattering length using the universal theory for a weakly bound molecule \cite{gfl93,gao04}.
 %perform two-photon photoassociation (PA) \cite{jtl06} to
-
-Here we study the least-bound vibrational level of the X$^1\Sigma_g^+$ electronic ground state of the $^{86}$Sr$_2$ dimer (Fig.\ \ref{PASDiagram}), which is a naturally occurring halo molecule, meaning it exists in the absence of tuning with a magnetic Feshbach resonance. A well-known example of a naturally occurring halo molecule is the $^4$He$_2$ dimer \cite{lmk93,sto94,kgj06}. The least-bound vibrational level of the ground state of $^{40}$Ca$_2$, which was recently studied using similar methods \cite{Pachomow2017a}, is also very close to this regime.
 
 
 %Most studies of halo molecules have been with states associated with a magnetic Feshbach resonance (refs).
@@ -58,6 +56,38 @@ In this work, we probe the halo state in $^{86}$Sr using two-photon Raman photoa
 
 \section{Experimental setup}
 \label{sec:lowE_setup}
+
+Ecperimental methods
+	expeeriments in this chapter adn the following are very similar. biggest scientific differnece is that we explored different regimes of intensity
+	experiments in this chapter were done on rydberg apparatus
+		nearly identical machine to ours 
+			sample prep is the same but they have different ODT configurations
+			specifics of general trapping procedure and characteristics can be found in some location
+		used the PA light from my apparatus coupled through a long fiber
+			pa generation talked abot below
+		For the low E exp the general parameters were such and such
+	generic timinf diagram (denote where physics is different)
+generation of photoassociation light
+Specifics of the low e experiment
+	discuss optical setup
+		propagation, polarization
+	B field?
+	ODT configurartion
+		consideration of the trap depth
+			during experiment we took a lot of data over a wide range of parameters and asumed we were in a deeply trapped regime
+				took data all the way down at 30nK and thought it was normal to not have a BEC at this point because it is 86
+			determined trap frequencies after we did the experiment
+			during analysis we found a problem with the model not agreeing
+				30nK data did not fit well if we made the typical assumptions about a deep trap
+				show plot of fit
+			decided to model the trap numerically
+				trap frequencies were measured at higher temps and extrapolated using model (reason to believe modeling)
+			modeling found that the lowest point of the trap was an odd trajectory and was much lower than we naively thought
+				show plot of fit
+				hypothesized that the sample may not have been thermalized completely (non-ergodic) and thus was fooling us
+				this is supported by the better fitting of 30 nK data over time
+			Brings into questions the use of temperature, but will persist with that data where there is at least reaonsable agreement
+			Leads to a strong modification of the momentum distribution and will effect the energy integral due to large variation in the available energy range
 
 In this work, we probe the halo state in 86Sr using two-photon Raman photoassociation (PA) \hl{cite 16 from halo paper}, in which two laser fields couple colliding atoms to the least-bound state of the ground molecular potential. We tune near resonance with an intermediate state that is bound in the 0u potential corresponding to the \intPot{\gs}{\ex} asymptote at long range as shown in Fig.\ref{fig:ch3_sr_pas}.
 

@@ -26,6 +26,8 @@ What about the history of scattering?
 Most of what we know about quantum mechanics comes from either scattering experiments of spectroscopy. 
 Definitely need some BS about how simple scattering theory has been a hallmark of atomic physics and 
 Photoassociation spectroscopy is an important field which relies on both of these properties.
+
+Alkaline earth atoms, such as Sr, were hypothesized to take advantage of OFR's since there is a narrow transition easily accessible which could provide large changes in the elastic cross section while minimizing the losses due to the inelastic contribution. This was thought to be possible by controllable detuning the closed channel from the incoming open channel and balancing the loss rate (check this). While there were observations of a strontium OFR, notably work done on this very apparatus (citations), they were accompanied by unexpectedly high loss rates. Recent work by Nicholson et. al. were able to explain some of this behavior through a quantum interference effect whereby the elastic loss rate returns to zero between bound states as the effects of bound states cancel each other out. They used a coupled-channel description to describe the physics.
  
 % recent experiments
 rabi oscilations between atomic and molecular condensates (cite ours and the lattice experiment that followed)
@@ -259,7 +261,8 @@ Time of flight is essentially a Fourier transform which turns the initial moment
 
 
 
-\section{Characterizing cold collisions} \label{sec:cold_collisions}
+\section{Characterizing collisions} \label{sec:cold_collisions}
+understand how to treat quantum two-body problem with external field coupling
 
 Collisions are one of the key ways we learn things about atoms 
 
@@ -267,18 +270,71 @@ In atomic physics, our low density gases are mainly within the regime of small i
 
 Here is where I cite sources of some of the original PA work, feshbach stuff
 
-Discuss some of the newer 
+collisions as an interferometer of the incoming and outgoing off the barrier, but also of different partial waves.
 
 I want the reader to know that PA dis concerning the scattering wavefunction, that it comes from the overlap integral of the tweo wavefunctions (why do I need to know this? nbecause this means that it is sensitive to positions of the nodes and can be used to map out the potentials. \hl{this will motivate discussing low energy physics}
 
-
-\subsection{Low energy scattering} \label{ssec:scattering}
-
-this results in a poitential that supports bound states. 
-
-
-
 This spatial dependence is mapped onto the internal energy levels of each atom. I want to say dressed state model here (review atom-photon coupling, atomic physics book).
+
+
+\subsection{Classical} \label{ssec:classical}
+cross sections
+			as a measure of the time between collisions
+			
+		potentials
+			where they come from
+		centrifugal barrier
+			analog - slide 16 Julienne
+			just rxp of particles
+			
+		center of mass coordinates
+			only care  about relative (generally)
+			simplifies calculations
+
+\subsection{Single channel scattering} \label{ssec:single_chan}
+quantum
+	solve time0independent SE
+	just need potential, basis set, and boundary conditions
+		
+structureless pasrticles scattering
+	free space
+		plane waves
+		de Broglie wavelength
+			strontium de Broglie at 1uK
+	
+	delta function
+		unitarity limit
+		supports one bound state - the true halo state
+		where the wavefunction comes from
+
+	r-dependent potential
+		show 1.1 from Hutson
+		gneerally very complicated between atoms
+			long-range part is typically has a power law drop off
+			important that V->0 as R-> inf
+		for ground state atoms dominant long-range part is R6
+		
+	scattering states (E>0)
+		replusive barrier - particle scatter
+		attrative well - particles accelerate
+		
+	bound states
+		boundary conditions dictate
+		might have quasibound states (shape resonances)
+		
+	wavefunctions
+		General appraoch is incoming plane wave plus spherical wave
+			
+		common appraoch to expansion of wavefunction in partial wave expansion
+			redefine SE in terms of partial waves
+				Asymtotic solution from WKB
+					V->0 so must go to plane wave
+					See phase shift
+					
+		total cross section as sum over all partial waves
+
+%%%%%%%%%%%%%
+this results in a poitential that supports bound states. 
 
 consider the two particle system as a single entagled particle
 	long range part of this quasi-particle is just the eigenstates of the separate particles themselves (only composed of two parts)
@@ -286,15 +342,40 @@ consider the two particle system as a single entagled particle
 		the vdW point is the boundary distance?
 		coupling is due to the interatomic potential, there is at least the long-range part falling off as R6, what are the types of interactions which make up the internal wall?
 
+\subsubsection{Low energy results} \label{sssec:sold_single_chan}
 
-Think I want to introduce the photoassocation by talking about the collisional wavefunction
+Simple form for scattering length
+	gives limits on cross sections
+	slide 24 (not sure I get the upper bound bit)
 
-what will that do?
+scattering length is a phase accumulation
+	scattering length is very sensitive to details of potential
+		can't really calculate ab initio
+		
+	a number that represent all the complex physics within the interaction region
+	
+	simple interpretation as peak shift at long range
+		slide 12 julienne
+	
+Another way of seeing the origin of a is as the collisional E goes to zero
+	wavefunction should go to a straight line
+		plot from bertlett
+	a is the intercept of that line on the internuclear axis
+		this is one of the methods of actually determining a
 
-I want to build up ideas about the FCF and need the wf for that
-	to get qf I have to go back to scattering theory
+the scattering length as a coupling parameter in length units
+	The mean field energy (I think I had a reference on this)
+	slide 26
 
-ideas of the wavefunction become that basis for how you want to talk about interacting potentials
+Determmining a is not so easy because the interatomic potential is not known
+	this was one of the pioneering use for photoassociation
+	PA is sensitive to the collisional wavefunction and therefore can help to map out the spatial distribution of the ground state
+Simple WKB estimation predicts zero-energy bound state as E->0
+	every atom would have infinite scattering length at low energy
+	obviously not the case, GF first to determine analytic corrections due to long-range vdW interaction
+		comes about because of phase contribution from the long-range part
+This is the regime we explored with our work in chapter 4
+	probing a bound state just near the dissociation threshold makes us extremely sensitive to the entire phase of the well
 
 
 free atoms
@@ -322,7 +403,52 @@ Once we have the ground state wavefunction of our new particle we can construct 
 	\caption{Strontium interatomic wavefunctions}{Res 6.3}
 \end{figure} 
 
-\subsection{Modifying interactions with external fields} \label{ssec:mod_int}
+\subsection{Multichannel scattering} \label{ssec:multi_chan}
+Everything we discussed was for unstructured particles
+	this is the power of the scattering length
+	
+this would be the end of the story if all of these potentials were "separable" (or independent)
+	you'd find your configuration, describe the potential, solve it, and you're done
+of course this isn't actually the case because the eigenstates of the separate potentials couple to one another.
+Even understanding the natural coupling between coupling between potentials is not easy
+	tie back to complexity of understanding short range physics
+		We don't really know what coupling exist and which energy levels are most important
+	mostly effects the bound states of the system
+	strontium example of the D state coupling in the 3P1 potential
+		references to Res and other work
+
+address somewhere that these types of problems are generally solved via coupled-channel methods which follow the same recipe for the scattering problem as in the single channel case but does so considering all channels simultaneously through matricies defining potentials and their couplings to one another.
+coupled equations are complicated
+	point out references from Julienne, Mies, Bao, Hutson
+	
+But can match at aymptotic wavefunction again and get a lot of insight
+	
+example: multichannel use to describe atom-diatom coupling
+	mutli-channel model (normal MFR diagram)
+		other potentials are due to different combinations of atoms in hyperfine states
+	these potentials can have different magnetic moments
+		means that addition of a magnetic field can tune them relative to one another
+MFR has been extensively studied and is a common tool used in atomic physics
+	
+scattering resonances are due to off diagonal coupling between bound closed channels and scattering open channels
+	give picture
+hand wavy expalanation is that bringing a bound state close will modify the open channel (potential?)
+	this results in a tweak of the phase shift which results in a change in scattering length
+can describe this as a change in the elastic cross section of the incoming open channel
+in general there is also an inelastic cross section that may contribute if the bound state has a finite lifetime.
+	
+define open and close channels		
+
+S matrix - defines scattering phases and ampltiudes due to couplings between various open and closed channels
+	S found from the asymptotic solutions
+
+if single channel then S reprodcues above results
+if inelastic then get complex scattering length (need better way to segue, Julienne 2014 slide 19 - unitarity argument maybe)
+complex scat
+	Real part is the elastic cross section
+	Imag part if the inelastic
+
+
 
 Also the Chin '10 review on feshbach resonances
 
@@ -373,22 +499,75 @@ where $\mu_r$ is the reduced mass, $\delta$ is the laser detuning as shown in Fi
 
 This section will concern the general theory used to describe photoassociative spectra. While a full quantum close-coupling calculation is the most complete and rigorous method for analyzing cold quantum scattering problems, useful approximations can be applied to realize relatively more "simple" closed analytic formulas describing photoassociation spectra. 
 
-ideas of limiting cases that can be explored with PAS \cite{Ciuryo2004}
+This section will cover the theory of lineshapes in PAS.
+
+Somewhere I read about three regimes of PAS as a comparison of relevant energy scales. Should explore that here
+
+Pretty much have everything needed from our previous section.
+Relation of rate constant to cross sections is nice and simple
+		Julienne 14 - slide 21
+These fully coupled-channel models are not straightforward to evaluate.
+	Can make assumption to simplify
+
+
+
 
 \subsection{One-photon excitation of free to bound transitions} \label{ssec:one_color_pa}
 
+Can recreate the type of model for MFR in a field dressed approach
+	plot showing photon + potential
+	
+
+	
+ANalytic forms for modeling
+	compare all the forms of K
+		the crazy one from BJ 99
+		the simple one with f(p)
+		nicholson 42
+	
+
+show plot with all the terms defined
+
+give loss rate (will need to have introduced before)
+	define terms
+		gammaStim as overlap
+		gamma as molecular lifetime
+		delta as detuning
+		A as coupling strength
+	
+introduce reflection approximation
+	evaluation of overlap
+	reference BJ 99
+	
+give relative momentum distribution
+	this results in an asymmetric profile
+	give plot
+	
+Number equation vs. time
+
+segue to narrow lines
+
+
 \subsubsection{PAS near narrow intercombination transitions} \label{sssec:narrow_pa}
+
+quick note on the usage of the relative momentum distribution
+			usually this is all we care about since the CoM part results in doppler shifts which would be neglible on the energy scales of broad dipole-allowed transtions
+			using narrow intercombinations lines, the photon recoil energy is comparable to the bound state lifetime
+				this means that indivual lorentzians might be shifted (each by a different amount) in addition to the total line shape being asymmetric
+			Integration over both degrees of freedom will be an important discussion in the next chapter as we fit spectra and determine the halo binding energy
+
+ideas of limiting cases that can be explored with PAS \cite{Ciuryo2004}
 
 \subsection{Extension to two-color spectra} \label{ssec:two_color_pa}
 
-
+Pretty much the same things
+		
+Show new picture with all the couplings defined
 
 
 Now that we have the theory of PAS covered. 
 
-This section will cover the theory of lineshapes in PAS.
 
-Somewhere I read about three regimes of PAS as a comparison of relevant energy scales. Should explore that here
 
 \begin{equation}\label{eq:number}
    N(t)={N_0 \rm{e}^{-\Gamma t} \over 1+
@@ -471,4 +650,13 @@ For  $\Omega_{01}\ll \Omega_{12} \ll \Delta_{1}\equiv E_{b1}/\hbar-\omega_1$, wh
 , the shift of the two-photon resonance condition follows $\delta={\Omega_{12}^{2}}/{2\Delta_{1}}$ in agreement with Eq. \ref{Eq:ACStarkFullModel}.
 
 
+%% ARCHIVE
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%Think I want to introduce the photoassocation by talking about the collisional wavefunction
 
+%what will that do?
+
+%I want to build up ideas about the FCF and need the wf for that
+%	to get qf I have to go back to scattering theory
+
+%ideas of the wavefunction become that basis for how you want to talk about interacting potentials
