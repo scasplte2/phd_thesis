@@ -56,6 +56,9 @@ what about writing K witht the center of mass frame?
 [1] J. M. Hutson, “Theory of cold atomic and molecular collisions,” in Cold molecules : theory, experiment, applications, 1st ed., R. V Krems, B. Friedrich, and W. C. Stwalley, Eds. Boca Raton, Fla.: CRC Press, 2009, pp. 3–38.
 
 [1] Nicoguaro, “GaussianScatterPCA.svg [Image].” [Online]. Available: https://en.wikipedia.org/wiki/Principal_component_analysis.
+
+[1] P. S. Julienne, “Ultracold molecules from ultracold atoms: a case study with the KRb molecule,” Faraday Discuss., vol. 142, no. 0, pp. 361–388, 2009.
+[1] P. S. Julienne, “Understanding cold atomic and molecular collisions.” Williamsburg, 2014.
 		
 		tomorrow is focused on scattering theory, modifying interactions, and semi-classical treatment of lineshapes
 
@@ -505,7 +508,7 @@ Confused by this idea where the reflection approximation breaks down
 
 
 -----------------
- Don't rmemeber where it is but S being unitary does amount to particle conservation ref. https://journals.aps.org/prb/pdf/10.1103/PhysRevB.38.4688
+Don't rmemeber where it is but S being unitary does amount to particle conservation ref. https://journals.aps.org/prb/pdf/10.1103/PhysRevB.38.4688
  
  
 
@@ -522,6 +525,7 @@ characterizing cold collisions
 		
 Clasical collisions
 	point of studying collisions is to determine cross sections
+	non-interactin wf sin(kR)/sqrt(k) -from Julieene lecture, he cites Jones 06
 
 Quantum utructured particle in free space
 	motivate why this (be careful always call these particles)
@@ -534,6 +538,7 @@ Add in r-dependent potential
 	tese potentials have special properties
 schrodinger equation
 asympttic wavefunctions
+	sin(k(r-A))/sqrt(k) - julienne lecture, cites Jones 06
 expansion in terms of partial waves
 	criteria for needing waves
 Result of solving the SE using partial wave basis
@@ -660,46 +665,171 @@ Outline from sources
 # Cold collisions
 	understand how to treat quantum two-body problem with external field coupling
 	
-	## Low energy scattering
+	## Classical
+		cross sections
+			as a measure of the time between collisions
+			
+		potentials
+			where they come from
+		centrifugal barrier
+			analog - slide 16 Julienne
+			just rxp of particles
+			
+		center of mass coordinates
+			only care  about relative (generally)
+			simplifies calculations
+	
+	## Single channel scattering
+quantum
+	solve time0independent SE
+	just need potential, basis set, and boundary conditions
+		
+structureless pasrticles scattering
+	free space
+		plane waves
+		de Broglie wavelength
+	
+	delta function
+		unitarity limit
+		supports one bound state - the true halo state
+		where the wavefunction comes from
 
-		classical
-			cross sections and their origin
-			centrifugal barrier
-			center of mass coordinates
-			
-		quantum
-			solve time0independent SE
-			just need potential, basis set, and boundary conditions
-			
-		structureless pasrticles scattering
-			assume some r-dependent potential (say toy model)
-			solution of SE in partial wave expansion (and all the stuff around that)
-			total cross section as sum over all partial waves
-			
-		bound states
-			normal bound states and quasi bounad states
-			generally hard but can gain insight using WKB approx
-				referecnes to WKB
+	r-dependent potential
+		show 1.1 from Hutson
+		gneerally very complicated between atoms
+			long-range part is typically has a power law drop off
+			important that V->0 as R-> inf
+		for ground state atoms dominant long-range part is R6
 		
-		low energy collisions
-			a goes to a constant but is generally energy dependent
-				can also go to infinity
-			GF fixed it for vdW potentials
-			scattering length is very sensitive to details of potential
+	scattering states (E>0)
+		replusive barrier - particle scatter
+		attrative well - particles accelerate
 		
-	## Modifying interaction with external fields
-		mutli-channel model
+	bound states
+		boundary conditions dictate
+		might have quasibound states (shape resonances)
 		
-		coupled equations
-			define open and close channels
-			symcptotic form of matrix equations
-			Relation of K & S
-		
-		Quasi-bound states
-			coupling seen as sharp change in plahse shift
+	wavefunctions
+		General appraoch is incoming plane wave plus spherical wave
 			
-		lw energy scattering
-			complex form of phase shift
+		common appraoch to expansion of wavefunction in partial wave expansion
+			redefine SE in terms of partial waves
+				Asymtotic solution from WKB
+					V->0 so must go to plane wave
+					See phase shift
+					
+		total cross section as sum over all partial waves
+
+		### Low energy results
+Simple form for scattering length
+	gives limits on cross sections
+	slide 24 (not sure I get the upper bound bit)
+
+scattering length is a phase accumulation
+	scattering length is very sensitive to details of potential
+		can't really calculate ab initio
+		
+	a number that represent all the complex physics within the interaction region
+	
+	simple interpretation as peak shift at long range
+		slide 12 julienne
+	
+Another way of seeing the origin of a is as the collisional E goes to zero
+	wavefunction should go to a straight line
+		plot from bertlett
+	a is the intercept of that line on the internuclear axis
+		this is one of the methods of actually determining a
+
+the scattering length as a coupling parameter in length units
+	The mean field energy (I think I had a reference on this)
+	slide 26
+
+Determmining a is not so easy because the interatomic potential is not known
+	this was one of the pioneering use for photoassociation
+	PA is sensitive to the collisional wavefunction and therefore can help to map out the spatial distribution of the ground state
+Simple WKB estimation predicts zero-energy bound state as E->0
+	every atom would have infinite scattering length at low energy
+	obviously not the case, GF first to determine analytic corrections due to long-range vdW interaction
+		comes about because of phase contribution from the long-range part
+This is the regime we explored with our work in chapter 4
+	probing a bound state just near the dissociation threshold makes us extremely sensitive to the entire phase of the well
+			
+		
+	## Multichannel scattering
+Everything we discussed was for unstructured particles
+	this is the power of the scattering length
+	
+coupled equations are complicated
+	point out references from Julienne, Mies, Bao, Hutson
+	
+multichannel use to describe atom-datom coupling
+	mutli-channel model (normal MFR diagram)
+	
+define open and close channels	
+	
+these interaction can lead to phase resonances and inelastic loss in open channels
+	MFR as example
+
+S matrix - defines scattering phases and ampltiudes due to couplings between various open and closed channels
+	S found from the asymptotic solutions
+
+if single channel then S reprodcues above results
+if inelastic then get complex scattering length (need better way to segue, Julienne 2014 slide 19 - unitarity argument maybe)
+complex scat
+	Real part is the elastic cross section
+	Imag part if the inelastic
+
+			
+#Photoassocaition
+Pretty much have everything needed from our previous section.
+Relation of rate constant to cross sections is nice and simple
+		Julienne 14 - slide 21
+These fully coupled-channel models are not straightforward to evaluate.
+	Can make assumption to simplify
+			
+	# One photon PAS
+Can recreate the type of model for MFR in a field dressed approach
+	plot showing photon + potential
+	
+ANalytic forms for modeling
+	compare all the forms of K
+		the crazy one from BJ 99
+		the simple one with f(p)
+		nicholson 42
+	
+
+show plot with all the terms defined
+
+give loss rate (will need to have introduced before)
+	define terms
+		gamma_stim as overlap
+		gamma as molecular lifetime
+		delta as detuning
+		A as coupling strength
+	
+introduce reflection approximation
+	evaluation of overlap
+	reference BJ 99
+	
+give relative momentum distribution
+	this results in an asymmetric profile
+	
+Number equation vs. time
+
+segue to narrow lines
+	
+		## PA on narrow lines
+
+			quick note on the usage of the relative momentum distribution
+			usually this is all we care about since the CoM part results in doppler shifts which would be neglible on the energy scales of broad dipole-allowed transtions
+			using narrow intercombinations lines, the photon recoil energy is comparable to the bound state lifetime
+				this means that indivual lorentzians might be shifted (each by a different amount) in addition to the total line shape being asymmetric
+			Integration over both degrees of freedom will be an important discussion in the next chapter as we fit spectra and determine the halo binding energy
+		
+	## Two photon PAS
+		Pretty much the same things
+		
+		Show new picture with all the couplings defined
 	
 ###################################################################
 2019.03.15
@@ -728,4 +858,7 @@ so that is my plan. I'll compile the list, read through the last couple sources,
 I need to decide on a narrative thread so that I can choose the plots which paint that picture. Tried building narrative by doing the summary sentences but that kinda got out of hand. Should force myself to outline and try to put summaries. 
 	Key ideas that need to go together!!
 	
-	
+###################################################################
+2019.03.18
+-------------------------------------------------------------------
+All I need from Nicholson is that multi chan generalizes, the S matrix is the extension of the scatterig length, and then you can get the K formula pretty esily. Much asier way to present then to aruge the original method from the BJ paper
