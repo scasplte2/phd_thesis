@@ -1,0 +1,2673 @@
+(* Content-type: application/mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 6.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       145,          7]
+NotebookDataLength[    118226,       2664]
+NotebookOptionsPosition[    113744,       2526]
+NotebookOutlinePosition[    115362,       2576]
+CellTagsIndexPosition[    115026,       2564]
+WindowFrame->Normal
+ContainsDynamic->True *)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell["Scattering by a Square-Well Potential", "DemoTitle",
+ CellChangeTimes->{
+  3.35696210375764*^9, 3.407530043894394*^9, {3.411752523719401*^9, 
+   3.41175252546939*^9}}],
+
+Cell[CellGroupData[{
+
+Cell["", "InitializationSection"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{
+   RowBox[{"V", "[", 
+    RowBox[{"x_", ",", "V0_", ",", "a_"}], "]"}], ":=", 
+   RowBox[{"V0", 
+    RowBox[{"(", 
+     RowBox[{
+      RowBox[{"UnitStep", "[", 
+       RowBox[{"x", "+", 
+        RowBox[{"a", "/", "2"}]}], "]"}], "-", 
+      RowBox[{"UnitStep", "[", 
+       RowBox[{"x", "-", 
+        RowBox[{"a", "/", "2"}]}], "]"}]}], ")"}]}]}], "\[IndentingNewLine]", 
+  
+  RowBox[{"(*", 
+   RowBox[{
+   "The", " ", "\"\<amplitude\>\"", " ", "of", " ", "the", " ", "reflected", 
+    " ", "wave"}], " ", "*)"}]}], "\n", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"RR", "[", 
+    RowBox[{"k_", ",", "q_"}], "]"}], ":=", 
+   FractionBox[
+    RowBox[{
+     SuperscriptBox["\[ExponentialE]", 
+      RowBox[{
+       RowBox[{"-", "\[ImaginaryI]"}], " ", "k"}]], " ", 
+     RowBox[{"(", 
+      RowBox[{
+       SuperscriptBox["k", "2"], "-", 
+       SuperscriptBox["q", "2"]}], ")"}], " ", 
+     RowBox[{"Sin", "[", "q", "]"}]}], 
+    RowBox[{
+     RowBox[{"2", " ", "\[ImaginaryI]", " ", "k", " ", "q", " ", 
+      RowBox[{"Cos", "[", "q", "]"}]}], "+", 
+     RowBox[{
+      RowBox[{"(", 
+       RowBox[{
+        SuperscriptBox["k", "2"], "+", 
+        SuperscriptBox["q", "2"]}], ")"}], " ", 
+      RowBox[{"Sin", "[", "q", "]"}]}]}]]}], "\[IndentingNewLine]", 
+  RowBox[{"(*", 
+   RowBox[{
+   "The", " ", "\"\<amplitude\>\"", " ", "of", " ", "the", " ", "transmitted",
+     " ", 
+    RowBox[{"wave", "."}]}], "*)"}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"TT", "[", 
+    RowBox[{"k_", ",", "q_"}], "]"}], ":=", 
+   FractionBox[
+    RowBox[{" ", 
+     RowBox[{"\[ImaginaryI]", " ", "2", " ", "k", " ", "q", " ", 
+      SuperscriptBox["\[ExponentialE]", 
+       RowBox[{
+        RowBox[{"-", "\[ImaginaryI]"}], " ", "k"}]], " "}]}], 
+    RowBox[{
+     RowBox[{"2", " ", "\[ImaginaryI]", " ", "k", " ", "q", " ", 
+      RowBox[{"Cos", "[", "q", "]"}]}], "+", 
+     RowBox[{
+      RowBox[{"(", 
+       RowBox[{
+        SuperscriptBox["k", "2"], "+", 
+        SuperscriptBox["q", "2"]}], ")"}], " ", 
+      RowBox[{"Sin", "[", "q", "]"}]}]}]]}], "\[IndentingNewLine]", 
+  RowBox[{"(*", " ", 
+   RowBox[{
+   "The", " ", "amplitudes", " ", "of", " ", "the", " ", "waves", " ", 
+    "inside", " ", "the", " ", "well"}], " ", 
+   "*)"}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"AA", "[", 
+   RowBox[{"k_", ",", "q_"}], "]"}], ":=", 
+  RowBox[{
+   RowBox[{"TT", "[", 
+    RowBox[{"k", ",", "q"}], "]"}], " ", 
+   RowBox[{
+    RowBox[{"(", 
+     RowBox[{"q", "+", "k"}], ")"}], "/", 
+    RowBox[{"(", 
+     RowBox[{"2", "q"}], ")"}]}], 
+   RowBox[{"Exp", "[", 
+    RowBox[{"I", " ", 
+     RowBox[{
+      RowBox[{"(", 
+       RowBox[{"k", "-", "q"}], ")"}], "/", "2"}]}], 
+    "]"}]}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"BB", "[", 
+   RowBox[{"k_", ",", "q_"}], "]"}], ":=", 
+  RowBox[{
+   RowBox[{"TT", "[", 
+    RowBox[{"k", ",", "q"}], "]"}], 
+   RowBox[{
+    RowBox[{"(", 
+     RowBox[{"q", "-", "k"}], ")"}], "/", 
+    RowBox[{"(", 
+     RowBox[{"2", "q"}], ")"}]}], 
+   RowBox[{"Exp", "[", 
+    RowBox[{"I", " ", 
+     RowBox[{
+      RowBox[{"(", 
+       RowBox[{"k", "+", "q"}], ")"}], "/", "2"}]}], "]"}]}]}], "\n", 
+ RowBox[{
+  RowBox[{"\[Psi]", "[", 
+   RowBox[{"x_", ",", "En_", ",", "V0_", ",", "a_"}], "]"}], ":=", 
+  RowBox[{"Module", "[", "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"z", "=", 
+       RowBox[{"x", "/", "a"}]}], ",", 
+      RowBox[{"k", "=", 
+       RowBox[{"a", " ", 
+        RowBox[{"Sqrt", "[", 
+         RowBox[{"2", " ", "En"}], "]"}]}]}], ",", 
+      RowBox[{"q", "=", 
+       RowBox[{"a", " ", 
+        RowBox[{"Sqrt", "[", 
+         RowBox[{"2", 
+          RowBox[{"(", 
+           RowBox[{"En", "-", "V0"}], ")"}]}], "]"}]}]}], ",", "Rv", ",", 
+      "Tv", ",", "Av", ",", "Bv"}], "}"}], ",", "\[IndentingNewLine]", 
+    RowBox[{
+     RowBox[{"Rv", "=", 
+      RowBox[{"RR", "[", 
+       RowBox[{"k", ",", "q"}], "]"}]}], ";", "\[IndentingNewLine]", 
+     RowBox[{"Tv", "=", 
+      RowBox[{"TT", "[", 
+       RowBox[{"k", ",", "q"}], "]"}]}], ";", "\[IndentingNewLine]", 
+     RowBox[{"Av", "=", 
+      RowBox[{"AA", "[", 
+       RowBox[{"k", ",", "q"}], "]"}]}], ";", "\[IndentingNewLine]", 
+     RowBox[{"Bv", "=", 
+      RowBox[{"BB", "[", 
+       RowBox[{"k", ",", "q"}], "]"}]}], ";", "\[IndentingNewLine]", 
+     RowBox[{"Which", "[", "\[IndentingNewLine]", 
+      RowBox[{
+       RowBox[{"z", "<", 
+        RowBox[{
+         RowBox[{"-", "1"}], "/", "2"}]}], ",", 
+       RowBox[{
+        RowBox[{"Exp", "[", 
+         RowBox[{"I", " ", "k", " ", "z"}], "]"}], "+", 
+        RowBox[{"Rv", "*", 
+         RowBox[{"Exp", "[", 
+          RowBox[{
+           RowBox[{"-", "I"}], " ", "k", " ", "z"}], "]"}]}]}], ",", 
+       "\[IndentingNewLine]", 
+       RowBox[{
+        RowBox[{"Abs", "[", "z", "]"}], "\[LessEqual]", 
+        RowBox[{"1", "/", "2"}]}], ",", 
+       RowBox[{
+        RowBox[{"Av", "*", 
+         RowBox[{"Exp", "[", 
+          RowBox[{"I", " ", "q", " ", 
+           RowBox[{"x", "/", "a"}]}], "]"}]}], "+", 
+        RowBox[{"Bv", "*", 
+         RowBox[{"Exp", "[", 
+          RowBox[{
+           RowBox[{"-", "I"}], " ", "q", " ", "z"}], "]"}]}]}], ",", 
+       "\[IndentingNewLine]", 
+       RowBox[{"z", ">", 
+        RowBox[{"1", "/", "2"}]}], ",", 
+       RowBox[{"Tv", "*", 
+        RowBox[{"Exp", "[", 
+         RowBox[{"I", " ", "k", " ", "z"}], "]"}]}]}], "]"}]}]}], 
+   "\[IndentingNewLine]", "]"}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"TransmitanceAndReflectance", "[", 
+   RowBox[{"En_", ",", " ", "V0_", ",", " ", "a_"}], "]"}], " ", ":=", " ", 
+  RowBox[{"Module", "[", "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"k", "=", 
+       RowBox[{"a", " ", 
+        RowBox[{"Sqrt", "[", 
+         RowBox[{"2", " ", "En"}], "]"}]}]}], ",", 
+      RowBox[{"q", "=", 
+       RowBox[{"a", " ", 
+        RowBox[{"Sqrt", "[", 
+         RowBox[{"2", 
+          RowBox[{"(", 
+           RowBox[{"En", "-", "V0"}], ")"}]}], "]"}]}]}], ",", "Rv", ",", 
+      "Tv", ",", "Av", ",", "Bv"}], "}"}], ",", "\[IndentingNewLine]", 
+    RowBox[{
+     RowBox[{"Rv", "=", 
+      RowBox[{"Abs", "[", 
+       RowBox[{"RR", "[", 
+        RowBox[{"k", ",", "q"}], "]"}], "]"}]}], ";", "\[IndentingNewLine]", 
+     RowBox[{"Tv", "=", 
+      RowBox[{"Abs", "[", 
+       RowBox[{"TT", "[", 
+        RowBox[{"k", ",", "q"}], "]"}], "]"}]}], ";", "\[IndentingNewLine]", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"Rv", "^", "2"}], ",", " ", 
+       RowBox[{"Tv", "^", "2"}]}], "}"}]}]}], 
+   "                                             ", 
+   "]"}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"xmax", "            ", "=", " ", "10.5"}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"ymax", "            ", "=", " ", "5.0"}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"energyMax", " ", "=", " ", "5.0"}], ";"}]}], "Input",
+ CellChangeTimes->{{3.3962159356117563`*^9, 3.396215971193563*^9}, 
+   3.396443883953125*^9, {3.397248033977664*^9, 3.397248039447957*^9}, {
+   3.400263874789119*^9, 3.400263888173911*^9}, {3.400263970409988*^9, 
+   3.400264013241404*^9}, {3.400264055395938*^9, 3.400264069489381*^9}, {
+   3.400265174977899*^9, 3.4002651779549437`*^9}, {3.4002863542441063`*^9, 
+   3.400286367685034*^9}, {3.4003669979546223`*^9, 3.400367060399909*^9}, {
+   3.400367116807486*^9, 3.40036712225233*^9}, {3.400388216942498*^9, 
+   3.4003882186697807`*^9}, 3.400390599882655*^9, {3.400390721288044*^9, 
+   3.40039072817482*^9}, {3.40049758522867*^9, 3.400497587486614*^9}, 
+   3.407455357082629*^9, {3.407455524054922*^9, 3.407455533515131*^9}, {
+   3.4074555649296*^9, 3.407455565439172*^9}, {3.407455779943369*^9, 
+   3.407455828891638*^9}, {3.4074560132501307`*^9, 3.4074561080312977`*^9}, {
+   3.407456149646379*^9, 3.407456325408495*^9}, {3.407456426304055*^9, 
+   3.407456449205248*^9}, {3.4074564835716248`*^9, 3.4074565602725487`*^9}, {
+   3.407456762701936*^9, 3.407456808262669*^9}, {3.407456841140286*^9, 
+   3.407457022693967*^9}, {3.4074575744936333`*^9, 3.407457578112176*^9}, {
+   3.407457742422124*^9, 3.4074578071380987`*^9}, {3.407457838761512*^9, 
+   3.407457880142152*^9}, {3.407457910972068*^9, 3.4074579269436417`*^9}, 
+   3.407458220056099*^9, 3.407458743672571*^9, {3.4074587738420057`*^9, 
+   3.407458793452783*^9}, 3.407459164599717*^9, {3.4074592229665947`*^9, 
+   3.407459238404025*^9}, {3.407459402626788*^9, 3.4074595296731777`*^9}, {
+   3.407459566831327*^9, 3.4074595728153276`*^9}, {3.4075077093570538`*^9, 
+   3.4075077173452168`*^9}, {3.4075081045835953`*^9, 3.40750811568524*^9}, {
+   3.407528549035184*^9, 3.4075285987793007`*^9}, {3.407529203176705*^9, 
+   3.407529216167498*^9}},
+ CellID->1549168418]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell["", "ManipulateSection"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Manipulate", "[", "\[IndentingNewLine]", 
+  RowBox[{
+   RowBox[{"Column", "[", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"Plot", "[", 
+        RowBox[{
+         RowBox[{
+          RowBox[{"TransmitanceAndReflectance", "[", 
+           RowBox[{"z", " ", 
+            RowBox[{"(*", "Energy", "*)"}], ",", " ", "V0", ",", " ", "a"}], 
+           "]"}], "//", "Evaluate"}], ",", "\[IndentingNewLine]", 
+         RowBox[{"{", 
+          RowBox[{"z", ",", " ", "0", ",", " ", "energyMax"}], "}"}], ",", 
+         "\[IndentingNewLine]", 
+         RowBox[{"PlotRange", " ", "\[Rule]", " ", 
+          RowBox[{"{", 
+           RowBox[{"0", ",", " ", "1.02"}], "}"}]}], ",", 
+         "\[IndentingNewLine]", 
+         RowBox[{"BaseStyle", "\[Rule]", 
+          RowBox[{"Directive", "[", "Thick", "]"}]}], ",", 
+         "\[IndentingNewLine]", 
+         RowBox[{"Ticks", " ", "\[Rule]", " ", 
+          RowBox[{"{", 
+           RowBox[{"Automatic", ",", " ", 
+            RowBox[{"{", 
+             RowBox[{
+              RowBox[{"{", 
+               RowBox[{"0.5", ",", " ", "\"\<0.5\>\""}], "}"}], ",", " ", 
+              RowBox[{"{", 
+               RowBox[{"1.0", ",", " ", "\"\<1.0\>\""}], "}"}]}], "}"}]}], 
+           "}"}]}], ",", "\[IndentingNewLine]", 
+         RowBox[{"AxesLabel", " ", "\[Rule]", " ", 
+          RowBox[{"{", 
+           RowBox[{
+            RowBox[{"Style", "[", 
+             RowBox[{"\"\<E\>\"", ",", "Italic"}], "]"}], ",", "  ", 
+            "\"\<\>\""}], "}"}]}], ",", "\[IndentingNewLine]", 
+         RowBox[{"AspectRatio", " ", "\[Rule]", 
+          RowBox[{"1", "/", "5.5"}]}], ",", "\[IndentingNewLine]", 
+         RowBox[{"ImageSize", "\[Rule]", 
+          RowBox[{"{", 
+           RowBox[{"490", ",", "100"}], "}"}]}], ",", "\[IndentingNewLine]", 
+         RowBox[{"Exclusions", "\[Rule]", "None"}], ",", 
+         "\[IndentingNewLine]", 
+         RowBox[{"Epilog", " ", "\[Rule]", " ", 
+          RowBox[{"{", 
+           RowBox[{
+            RowBox[{"ColorData", "[", 
+             RowBox[{"1", ",", "1"}], "]"}], ",", 
+            RowBox[{"Text", "[", 
+             RowBox[{
+              RowBox[{"Style", "[", 
+               RowBox[{"\"\<R\>\"", ",", "Italic"}], "]"}], ",", " ", 
+              RowBox[{"{", 
+               RowBox[{"0.1", ",", " ", "0.95"}], "}"}], ",", " ", 
+              RowBox[{"{", 
+               RowBox[{
+                RowBox[{"-", "1"}], ",", " ", 
+                RowBox[{"+", "1"}]}], "}"}]}], "]"}], ",", 
+            "\[IndentingNewLine]", 
+            RowBox[{"ColorData", "[", 
+             RowBox[{"1", ",", "2"}], "]"}], ",", " ", 
+            RowBox[{"Text", "[", 
+             RowBox[{
+              RowBox[{"Style", "[", 
+               RowBox[{"\"\<T\>\"", ",", "Italic"}], "]"}], ",", " ", 
+              RowBox[{"{", 
+               RowBox[{"0.1", ",", " ", "0.05"}], "}"}], ",", " ", 
+              RowBox[{"{", 
+               RowBox[{
+                RowBox[{"-", "1"}], ",", " ", 
+                RowBox[{"-", "1"}]}], "}"}]}], "]"}]}], "}"}]}]}], 
+        "\[IndentingNewLine]", "     ", "]"}], ",", "\[IndentingNewLine]", 
+       RowBox[{"Plot", "[", "\[IndentingNewLine]", 
+        RowBox[{
+         RowBox[{
+          RowBox[{"With", "[", 
+           RowBox[{
+            RowBox[{"{", 
+             RowBox[{"val", "=", 
+              RowBox[{"\[Psi]", "[", 
+               RowBox[{"x", ",", "En", ",", "V0", ",", "a"}], "]"}]}], "}"}], 
+            ",", "\[IndentingNewLine]", 
+            RowBox[{"{", 
+             RowBox[{
+              RowBox[{
+               RowBox[{"Abs", "[", "val", "]"}], "^", "2"}], ",", 
+              RowBox[{"Re", "[", "val", "]"}], ",", 
+              RowBox[{"Im", "[", "val", "]"}], ",", "En", ",", 
+              RowBox[{"V", "[", 
+               RowBox[{"x", ",", "V0", ",", "a"}], "]"}]}], "}"}]}], 
+           "\[IndentingNewLine]", "    ", "]"}], "//", "Evaluate"}], ",", 
+         "\[IndentingNewLine]", 
+         RowBox[{"{", 
+          RowBox[{"x", ",", 
+           RowBox[{"-", "xmax"}], ",", "xmax"}], "}"}], ",", 
+         "\[IndentingNewLine]", 
+         RowBox[{"PlotRange", "\[Rule]", 
+          RowBox[{"{", 
+           RowBox[{
+            RowBox[{"-", "ymax"}], ",", "ymax"}], "}"}]}], ",", 
+         "\[IndentingNewLine]", 
+         RowBox[{"PlotPoints", " ", "\[Rule]", " ", "75"}], ",", 
+         "\[IndentingNewLine]", 
+         RowBox[{"PlotStyle", "\[Rule]", "\[IndentingNewLine]", 
+          RowBox[{"{", 
+           RowBox[{
+            RowBox[{"RGBColor", "[", 
+             RowBox[{"1", ",", ".47", ",", "0"}], "]"}], ",", 
+            "\[IndentingNewLine]", 
+            RowBox[{"RGBColor", "[", 
+             RowBox[{".38", ",", ".61", ",", ".51"}], "]"}], ",", 
+            "\[IndentingNewLine]", 
+            RowBox[{"RGBColor", "[", 
+             RowBox[{".1", ",", ".1", ",", ".51"}], "]"}], ",", 
+            "\[IndentingNewLine]", "Gray", ",", "\[IndentingNewLine]", 
+            RowBox[{"Lighter", "[", 
+             RowBox[{"Orange", ",", ".75"}], "]"}]}], "\[IndentingNewLine]", 
+           " ", "}"}]}], ",", "\[IndentingNewLine]", 
+         RowBox[{"Filling", "\[Rule]", 
+          RowBox[{"{", 
+           RowBox[{"5", "\[Rule]", "Bottom"}], "}"}]}], ",", 
+         "\[IndentingNewLine]", 
+         RowBox[{"FillingStyle", "\[Rule]", 
+          RowBox[{"Lighter", "[", 
+           RowBox[{"Orange", ",", ".75"}], "]"}]}], ",", 
+         "\[IndentingNewLine]", 
+         RowBox[{"BaseStyle", "\[Rule]", 
+          RowBox[{"Directive", "[", "Thick", "]"}]}], ",", 
+         "\[IndentingNewLine]", 
+         RowBox[{"ImageSize", "\[Rule]", 
+          RowBox[{"{", 
+           RowBox[{"490", ",", "250"}], "}"}]}], ",", "\[IndentingNewLine]", 
+         RowBox[{"Exclusions", "\[Rule]", "None"}], ",", 
+         "\[IndentingNewLine]", 
+         RowBox[{"Epilog", " ", "\[Rule]", 
+          RowBox[{"{", 
+           RowBox[{
+            RowBox[{"Text", "[", 
+             RowBox[{
+              RowBox[{"Row", "[", 
+               RowBox[{"{", 
+                RowBox[{
+                 RowBox[{"Style", "[", 
+                  RowBox[{"\"\<E\>\"", ",", "Italic"}], "]"}], ",", 
+                 "\"\<  =   \>\""}], "}"}], "]"}], ",", " ", 
+              RowBox[{"{", 
+               RowBox[{
+                RowBox[{"0.6", "xmax"}], ",", " ", 
+                RowBox[{"0.9", "ymax"}]}], "}"}], ",", " ", 
+              RowBox[{"{", 
+               RowBox[{
+                RowBox[{"+", "1"}], ",", " ", "0"}], "}"}]}], "]"}], ",", 
+            "\[IndentingNewLine]", 
+            RowBox[{"Text", "[", 
+             RowBox[{
+              RowBox[{"ToString", "[", "En", "]"}], ",", " ", 
+              RowBox[{"{", 
+               RowBox[{
+                RowBox[{"0.6", "xmax"}], ",", " ", 
+                RowBox[{"0.9", " ", "ymax"}]}], "}"}], ",", " ", 
+              RowBox[{"{", 
+               RowBox[{
+                RowBox[{"-", "1"}], ",", " ", "0"}], "}"}]}], "]"}], ",", 
+            "\[IndentingNewLine]", 
+            RowBox[{"Text", "[", 
+             RowBox[{
+              RowBox[{"Row", "[", 
+               RowBox[{"{", 
+                RowBox[{
+                 RowBox[{"Subscript", "[", 
+                  RowBox[{
+                   RowBox[{"Style", "[", 
+                    RowBox[{"\"\<V\>\"", ",", "Italic"}], "]"}], ",", "0"}], 
+                  "]"}], ",", "\"\<  =   \>\""}], "}"}], "]"}], ",", " ", 
+              RowBox[{"{", 
+               RowBox[{
+                RowBox[{"0.6", "xmax"}], ",", " ", 
+                RowBox[{"0.8", "ymax"}]}], "}"}], ",", " ", 
+              RowBox[{"{", 
+               RowBox[{
+                RowBox[{"+", "1"}], ",", " ", "0"}], "}"}]}], "]"}], ",", 
+            "\[IndentingNewLine]", 
+            RowBox[{"Text", "[", 
+             RowBox[{
+              RowBox[{"ToString", "[", "V0", "]"}], ",", " ", 
+              RowBox[{"{", 
+               RowBox[{
+                RowBox[{"0.6", "xmax"}], ",", " ", 
+                RowBox[{"0.8", " ", "ymax"}]}], "}"}], ",", " ", 
+              RowBox[{"{", 
+               RowBox[{
+                RowBox[{"-", "1"}], ",", " ", "0"}], "}"}]}], "]"}], ",", 
+            "\[IndentingNewLine]", 
+            RowBox[{"Text", "[", 
+             RowBox[{
+              RowBox[{"Style", "[", 
+               RowBox[{
+                RowBox[{"Row", "[", 
+                 RowBox[{"{", 
+                  RowBox[{
+                   RowBox[{"Style", "[", 
+                    RowBox[{"\"\<a\>\"", ",", "Italic"}], "]"}], ",", 
+                   "\"\<  =   \>\""}], "}"}], "]"}], ",", "Italic"}], "]"}], 
+              ",", " ", 
+              RowBox[{"{", 
+               RowBox[{
+                RowBox[{"0.6", "xmax"}], ",", " ", 
+                RowBox[{"0.7", "ymax"}]}], "}"}], ",", " ", 
+              RowBox[{"{", 
+               RowBox[{
+                RowBox[{"+", "1"}], ",", " ", "0"}], "}"}]}], "]"}], ",", 
+            "\[IndentingNewLine]", 
+            RowBox[{"Text", "[", 
+             RowBox[{
+              RowBox[{"ToString", "[", "a", "]"}], ",", " ", 
+              RowBox[{"{", 
+               RowBox[{
+                RowBox[{"0.6", "xmax"}], ",", " ", 
+                RowBox[{"0.7", "ymax"}]}], "}"}], ",", " ", 
+              RowBox[{"{", 
+               RowBox[{
+                RowBox[{"-", "1"}], ",", " ", "0"}], "}"}]}], "]"}]}], 
+           "\[IndentingNewLine]", "                ", "}"}]}]}], 
+        "\[IndentingNewLine]", "         ", "]"}]}], "\[IndentingNewLine]", 
+      "}"}], ",", "Center"}], "]"}], ",", "\[IndentingNewLine]", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"En", ",", "1.5", ",", "\"\<particle energy E\>\""}], "}"}], 
+     ",", "0", ",", "5", ",", 
+     RowBox[{"Appearance", "\[Rule]", "\"\<Labeled\>\""}]}], "}"}], ",", 
+   "\[IndentingNewLine]", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"V0", ",", 
+       RowBox[{"-", "1"}], ",", 
+       RowBox[{"Row", "[", 
+        RowBox[{"{", 
+         RowBox[{"\"\<potential well depth \>\"", ",", 
+          RowBox[{"Subscript", "[", 
+           RowBox[{"\"\<V\>\"", ",", "0"}], "]"}]}], "}"}], "]"}]}], "}"}], 
+     ",", 
+     RowBox[{"-", "5"}], ",", 
+     RowBox[{"-", "1"}], ",", 
+     RowBox[{"Appearance", "\[Rule]", "\"\<Labeled\>\""}]}], "}"}], ",", 
+   "\[IndentingNewLine]", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"a", ",", "5", ",", "\"\<potential well width a\>\""}], "}"}], 
+     ",", "0.5", ",", "5", ",", 
+     RowBox[{"Appearance", "\[Rule]", "\"\<Labeled\>\""}]}], "}"}], ",", 
+   "\[IndentingNewLine]", 
+   RowBox[{"SaveDefinitions", "\[Rule]", "True"}]}], "\[IndentingNewLine]", 
+  "                          ", "]"}]], "Input",
+ CellChangeTimes->{{3.3962159356117563`*^9, 3.396215971193563*^9}, 
+   3.396443883953125*^9, {3.397248033977664*^9, 3.397248039447957*^9}, {
+   3.400263874789119*^9, 3.400263888173911*^9}, {3.400263970409988*^9, 
+   3.400264013241404*^9}, {3.400264055395938*^9, 3.400264069489381*^9}, {
+   3.400265174977899*^9, 3.4002651779549437`*^9}, {3.4002863542441063`*^9, 
+   3.400286367685034*^9}, {3.4003669979546223`*^9, 3.400367060399909*^9}, {
+   3.400367116807486*^9, 3.40036712225233*^9}, {3.400388216942498*^9, 
+   3.4003882186697807`*^9}, 3.400390599882655*^9, {3.400390721288044*^9, 
+   3.40039072817482*^9}, {3.40049758522867*^9, 3.400497587486614*^9}, 
+   3.407455357082629*^9, {3.407455524054922*^9, 3.407455533515131*^9}, {
+   3.4074555649296*^9, 3.407455565439172*^9}, {3.407455779943369*^9, 
+   3.407455828891638*^9}, {3.4074560132501307`*^9, 3.4074561080312977`*^9}, {
+   3.407456149646379*^9, 3.407456325408495*^9}, {3.407456426304055*^9, 
+   3.407456449205248*^9}, {3.4074564835716248`*^9, 3.4074565602725487`*^9}, {
+   3.407456762701936*^9, 3.407456808262669*^9}, {3.407456841140286*^9, 
+   3.407457022693967*^9}, {3.4074575744936333`*^9, 3.407457578112176*^9}, {
+   3.407457742422124*^9, 3.4074578071380987`*^9}, {3.407457838761512*^9, 
+   3.407457880142152*^9}, {3.407457910972068*^9, 3.4074579269436417`*^9}, 
+   3.407458220056099*^9, 3.407458743672571*^9, {3.4074587738420057`*^9, 
+   3.407458793452783*^9}, 3.407459164599717*^9, {3.4074592631429653`*^9, 
+   3.407459267435994*^9}, {3.407507726669346*^9, 3.407507742953246*^9}, {
+   3.4075077901001596`*^9, 3.40750779321762*^9}, {3.4075080672528152`*^9, 
+   3.4075080960941896`*^9}, {3.40752860598419*^9, 3.407528643368753*^9}, {
+   3.407528734879569*^9, 3.407528857281579*^9}, {3.40752893754319*^9, 
+   3.407528976433464*^9}, {3.407529060636094*^9, 3.40752908802699*^9}, {
+   3.411059955676928*^9, 3.411059961560935*^9}, {3.411060046013633*^9, 
+   3.4110600806209383`*^9}, {3.4111304285453234`*^9, 
+   3.4111306018098392`*^9}, {3.4111306443720665`*^9, 
+   3.4111306452470613`*^9}, {3.411130681684328*^9, 3.411130684746808*^9}, {
+   3.4111309000579305`*^9, 3.411131006104127*^9}, {3.4111310530569515`*^9, 
+   3.411131057603797*^9}, {3.411131321055236*^9, 3.411131321273985*^9}, {
+   3.4111702699758973`*^9, 3.411170282589872*^9}, 3.41117031560077*^9, {
+   3.4111703874987698`*^9, 3.4111703928286*^9}, 3.411844037434417*^9},
+ CellID->1043661014],
+
+Cell[BoxData[
+ TagBox[
+  StyleBox[
+   DynamicModuleBox[{$CellContext`a$$ = 5, $CellContext`En$$ = 
+    1.5, $CellContext`V0$$ = -1, Typeset`show$$ = True, 
+    Typeset`bookmarkList$$ = {}, Typeset`bookmarkMode$$ = "Menu", 
+    Typeset`animator$$, Typeset`animvar$$ = 1, Typeset`name$$ = 
+    "\"untitled\"", Typeset`specs$$ = {{{
+       Hold[$CellContext`En$$], 1.5, "particle energy E"}, 0, 5}, {{
+       Hold[$CellContext`V0$$], -1, 
+       Row[{"potential well depth ", 
+         Subscript["V", 0]}]}, -5, -1}, {{
+       Hold[$CellContext`a$$], 5, "potential well width a"}, 0.5, 5}}, 
+    Typeset`size$$ = {490., {175., 180.}}, Typeset`update$$ = 0, 
+    Typeset`initDone$$, Typeset`skipInitDone$$ = 
+    False, $CellContext`En$15947$$ = 0, $CellContext`V0$15948$$ = 
+    0, $CellContext`a$15949$$ = 0}, 
+    DynamicBox[Manipulate`ManipulateBoxes[
+     1, StandardForm, 
+      "Variables" :> {$CellContext`a$$ = 5, $CellContext`En$$ = 
+        1.5, $CellContext`V0$$ = -1}, "ControllerVariables" :> {
+        Hold[$CellContext`En$$, $CellContext`En$15947$$, 0], 
+        Hold[$CellContext`V0$$, $CellContext`V0$15948$$, 0], 
+        Hold[$CellContext`a$$, $CellContext`a$15949$$, 0]}, 
+      "OtherVariables" :> {
+       Typeset`show$$, Typeset`bookmarkList$$, Typeset`bookmarkMode$$, 
+        Typeset`animator$$, Typeset`animvar$$, Typeset`name$$, 
+        Typeset`specs$$, Typeset`size$$, Typeset`update$$, Typeset`initDone$$,
+         Typeset`skipInitDone$$}, "Body" :> Column[{
+         Plot[
+          Evaluate[
+           $CellContext`TransmitanceAndReflectance[$CellContext`z, \
+$CellContext`V0$$, $CellContext`a$$]], {$CellContext`z, 
+           0, $CellContext`energyMax}, PlotRange -> {0, 1.02}, BaseStyle -> 
+          Directive[Thick], Ticks -> {Automatic, {{0.5, "0.5"}, {1., "1.0"}}},
+           AxesLabel -> {
+            Style["E", Italic], ""}, AspectRatio -> 1/5.5, 
+          ImageSize -> {490, 100}, Exclusions -> None, Epilog -> {
+            ColorData[1, 1], 
+            Text[
+             Style["R", Italic], {0.1, 0.95}, {-1, 
+              Plus[1]}], 
+            ColorData[1, 2], 
+            Text[
+             Style["T", Italic], {0.1, 0.05}, {-1, -1}]}], 
+         Plot[
+          Evaluate[
+           
+           With[{$CellContext`val$ = $CellContext`\[Psi][$CellContext`x, \
+$CellContext`En$$, $CellContext`V0$$, $CellContext`a$$]}, {
+            Abs[$CellContext`val$]^2, 
+             Re[$CellContext`val$], 
+             Im[$CellContext`val$], $CellContext`En$$, 
+             $CellContext`V[$CellContext`x, $CellContext`V0$$, \
+$CellContext`a$$]}]], {$CellContext`x, -$CellContext`xmax, $CellContext`xmax},
+           PlotRange -> {-$CellContext`ymax, $CellContext`ymax}, PlotPoints -> 
+          75, PlotStyle -> {
+            RGBColor[1, 0.47, 0], 
+            RGBColor[0.38, 0.61, 0.51], 
+            RGBColor[0.1, 0.1, 0.51], Gray, 
+            Lighter[Orange, 0.75]}, Filling -> {5 -> Bottom}, FillingStyle -> 
+          Lighter[Orange, 0.75], BaseStyle -> Directive[Thick], 
+          ImageSize -> {490, 250}, Exclusions -> None, Epilog -> {
+            Text[
+             Row[{
+               Style["E", Italic], "  =   "}], {
+             0.6 $CellContext`xmax, 0.9 $CellContext`ymax}, {
+              Plus[1], 0}], 
+            Text[
+             ToString[$CellContext`En$$], {
+             0.6 $CellContext`xmax, 0.9 $CellContext`ymax}, {-1, 0}], 
+            Text[
+             Row[{
+               Subscript[
+                Style["V", Italic], 0], "  =   "}], {
+             0.6 $CellContext`xmax, 0.8 $CellContext`ymax}, {
+              Plus[1], 0}], 
+            Text[
+             ToString[$CellContext`V0$$], {
+             0.6 $CellContext`xmax, 0.8 $CellContext`ymax}, {-1, 0}], 
+            Text[
+             Style[
+              Row[{
+                Style["a", Italic], "  =   "}], Italic], {
+             0.6 $CellContext`xmax, 0.7 $CellContext`ymax}, {
+              Plus[1], 0}], 
+            Text[
+             ToString[$CellContext`a$$], {
+             0.6 $CellContext`xmax, 0.7 $CellContext`ymax}, {-1, 0}]}]}, 
+        Center], 
+      "Specifications" :> {{{$CellContext`En$$, 1.5, "particle energy E"}, 0, 
+         5, Appearance -> "Labeled"}, {{$CellContext`V0$$, -1, 
+          Row[{"potential well depth ", 
+            Subscript["V", 0]}]}, -5, -1, Appearance -> 
+         "Labeled"}, {{$CellContext`a$$, 5, "potential well width a"}, 0.5, 5,
+          Appearance -> "Labeled"}}, "Options" :> {}, 
+      "DefaultOptions" :> {ControllerLinking -> True}],
+     ImageSizeCache->{536., {246., 251.}},
+     SingleEvaluation->True],
+    Deinitialization:>None,
+    DynamicModuleValues:>{},
+    Initialization:>({$CellContext`TransmitanceAndReflectance[
+         Pattern[$CellContext`En, 
+          Blank[]], 
+         Pattern[$CellContext`V0, 
+          Blank[]], 
+         Pattern[$CellContext`a, 
+          Blank[]]] := 
+       Module[{$CellContext`k = $CellContext`a 
+           Sqrt[2 $CellContext`En], $CellContext`q = $CellContext`a 
+           Sqrt[2 ($CellContext`En - $CellContext`V0)], $CellContext`Rv, \
+$CellContext`Tv, $CellContext`Av, $CellContext`Bv}, $CellContext`Rv = Abs[
+            $CellContext`RR[$CellContext`k, $CellContext`q]]; $CellContext`Tv = 
+          Abs[
+            $CellContext`TT[$CellContext`k, $CellContext`q]]; \
+{$CellContext`Rv^2, $CellContext`Tv^2}], $CellContext`RR[
+         Pattern[$CellContext`k, 
+          Blank[]], 
+         Pattern[$CellContext`q, 
+          Blank[]]] := (($CellContext`k^2 - $CellContext`q^2) 
+         Sin[$CellContext`q])/(
+        E^(I $CellContext`k) (
+         2 I $CellContext`k $CellContext`q 
+          Cos[$CellContext`q] + ($CellContext`k^2 + $CellContext`q^2) 
+          Sin[$CellContext`q])), $CellContext`TT[
+         Pattern[$CellContext`k, 
+          Blank[]], 
+         Pattern[$CellContext`q, 
+          Blank[]]] := (I 2 $CellContext`k $CellContext`q)/(
+        E^(I $CellContext`k) (
+         2 I $CellContext`k $CellContext`q 
+          Cos[$CellContext`q] + ($CellContext`k^2 + $CellContext`q^2) 
+          Sin[$CellContext`q])), $CellContext`energyMax = 5., 
+       Attributes[PlotRange] = {ReadProtected}, $CellContext`\[Psi][
+         Pattern[$CellContext`x, 
+          Blank[]], 
+         Pattern[$CellContext`En, 
+          Blank[]], 
+         Pattern[$CellContext`V0, 
+          Blank[]], 
+         Pattern[$CellContext`a, 
+          Blank[]]] := 
+       Module[{$CellContext`z = $CellContext`x/$CellContext`a, $CellContext`k = \
+$CellContext`a Sqrt[2 $CellContext`En], $CellContext`q = $CellContext`a 
+           Sqrt[2 ($CellContext`En - $CellContext`V0)], $CellContext`Rv, \
+$CellContext`Tv, $CellContext`Av, $CellContext`Bv}, $CellContext`Rv = \
+$CellContext`RR[$CellContext`k, $CellContext`q]; $CellContext`Tv = \
+$CellContext`TT[$CellContext`k, $CellContext`q]; $CellContext`Av = \
+$CellContext`AA[$CellContext`k, $CellContext`q]; $CellContext`Bv = \
+$CellContext`BB[$CellContext`k, $CellContext`q]; 
+         Which[$CellContext`z < (-1)/2, 
+           Exp[I $CellContext`k $CellContext`z] + $CellContext`Rv 
+            Exp[(-I) $CellContext`k $CellContext`z], Abs[$CellContext`z] <= 
+           1/2, $CellContext`Av 
+            Exp[I $CellContext`q ($CellContext`x/$CellContext`a)] + \
+$CellContext`Bv Exp[(-I) $CellContext`q $CellContext`z], $CellContext`z > 
+           1/2, $CellContext`Tv 
+           Exp[I $CellContext`k $CellContext`z]]], $CellContext`AA[
+         Pattern[$CellContext`k, 
+          Blank[]], 
+         Pattern[$CellContext`q, 
+          
+          Blank[]]] := $CellContext`TT[$CellContext`k, $CellContext`q] \
+(($CellContext`q + $CellContext`k)/(2 $CellContext`q)) 
+        Exp[I (($CellContext`k - $CellContext`q)/2)], $CellContext`BB[
+         Pattern[$CellContext`k, 
+          Blank[]], 
+         Pattern[$CellContext`q, 
+          
+          Blank[]]] := $CellContext`TT[$CellContext`k, $CellContext`q] \
+(($CellContext`q - $CellContext`k)/(2 $CellContext`q)) 
+        Exp[I (($CellContext`k + $CellContext`q)/2)], $CellContext`V[
+         Pattern[$CellContext`x, 
+          Blank[]], 
+         Pattern[$CellContext`V0, 
+          Blank[]], 
+         Pattern[$CellContext`a, 
+          Blank[]]] := $CellContext`V0 (
+         UnitStep[$CellContext`x + $CellContext`a/2] - 
+         UnitStep[$CellContext`x - $CellContext`a/2]), $CellContext`xmax = 
+       10.5, $CellContext`ymax = 5., Attributes[Subscript] = {NHoldRest}, 
+       Subscript[$CellContext`CA$6411, 0][
+         Pattern[$CellContext`t$, 
+          Blank[]]] := 
+       Subscript[$CellContext`CA$6411, $CellContext`init$6411] (
+         UnitStep[$CellContext`t$] - UnitStep[$CellContext`t$ - 10]), 
+       Subscript[$CellContext`CB$6411, 0][
+         Pattern[$CellContext`t$, 
+          Blank[]]] := 
+       Subscript[$CellContext`CB$6411, $CellContext`init$6411] (
+         UnitStep[$CellContext`t$] - UnitStep[$CellContext`t$ - 10]), 
+       Subscript[$CellContext`CA$8867, 0][
+         Pattern[$CellContext`t$, 
+          Blank[]]] := 
+       Subscript[$CellContext`CA$8867, $CellContext`init$8867] (
+         UnitStep[$CellContext`t$] - UnitStep[$CellContext`t$ - 10]), 
+       Subscript[$CellContext`CB$8867, 0][
+         Pattern[$CellContext`t$, 
+          Blank[]]] := 
+       Subscript[$CellContext`CB$8867, $CellContext`init$8867] (
+         UnitStep[$CellContext`t$] - UnitStep[$CellContext`t$ - 10]), 
+       Subscript[$CellContext`CA$11314, 0][
+         Pattern[$CellContext`t$, 
+          Blank[]]] := 
+       Subscript[$CellContext`CA$11314, $CellContext`init$11314] (
+         UnitStep[$CellContext`t$] - UnitStep[$CellContext`t$ - 10]), 
+       Subscript[$CellContext`CB$11314, 0][
+         Pattern[$CellContext`t$, 
+          Blank[]]] := 
+       Subscript[$CellContext`CB$11314, $CellContext`init$11314] (
+         UnitStep[$CellContext`t$] - UnitStep[$CellContext`t$ - 10]), 
+       Subscript[$CellContext`CA$13776, 0][
+         Pattern[$CellContext`t$, 
+          Blank[]]] := 
+       Subscript[$CellContext`CA$13776, $CellContext`init$13776] (
+         UnitStep[$CellContext`t$] - UnitStep[$CellContext`t$ - 10]), 
+       Subscript[$CellContext`CB$13776, 0][
+         Pattern[$CellContext`t$, 
+          Blank[]]] := 
+       Subscript[$CellContext`CB$13776, $CellContext`init$13776] (
+         UnitStep[$CellContext`t$] - UnitStep[$CellContext`t$ - 10]), 
+       Subscript[$CellContext`CA$16223, 0][
+         Pattern[$CellContext`t$, 
+          Blank[]]] := 
+       Subscript[$CellContext`CA$16223, $CellContext`init$16223] (
+         UnitStep[$CellContext`t$] - UnitStep[$CellContext`t$ - 10]), 
+       Subscript[$CellContext`CB$16223, 0][
+         Pattern[$CellContext`t$, 
+          Blank[]]] := 
+       Subscript[$CellContext`CB$16223, $CellContext`init$16223] (
+         UnitStep[$CellContext`t$] - UnitStep[$CellContext`t$ - 10]), 
+       Subscript[$CellContext`CA$18662, 0][
+         Pattern[$CellContext`t$, 
+          Blank[]]] := 
+       Subscript[$CellContext`CA$18662, $CellContext`init$18662] (
+         UnitStep[$CellContext`t$] - UnitStep[$CellContext`t$ - 10]), 
+       Subscript[$CellContext`CB$18662, 0][
+         Pattern[$CellContext`t$, 
+          Blank[]]] := 
+       Subscript[$CellContext`CB$18662, $CellContext`init$18662] (
+         UnitStep[$CellContext`t$] - UnitStep[$CellContext`t$ - 10]), 
+       Subscript[$CellContext`CA$11314, $CellContext`init$11314] = 0.23, 
+       Subscript[$CellContext`CA$13776, $CellContext`init$13776] = 0.23, 
+       Subscript[$CellContext`CA$16223, $CellContext`init$16223] = 0.23, 
+       Subscript[$CellContext`CA$18662, $CellContext`init$18662] = 0.23, 
+       Subscript[$CellContext`CA$6411, $CellContext`init$6411] = 0.23, 
+       Subscript[$CellContext`CA$8867, $CellContext`init$8867] = 0.23, 
+       Subscript[$CellContext`CB$11314, $CellContext`init$11314] = 0.23, 
+       Subscript[$CellContext`CB$13776, $CellContext`init$13776] = 0.23, 
+       Subscript[$CellContext`CB$16223, $CellContext`init$16223] = 0.23, 
+       Subscript[$CellContext`CB$18662, $CellContext`init$18662] = 0.23, 
+       Subscript[$CellContext`CB$6411, $CellContext`init$6411] = 0.23, 
+       Subscript[$CellContext`CB$8867, $CellContext`init$8867] = 0.23, 
+       Subscript[$CellContext`V$11314, $CellContext`stage$11314] = 
+       1.5707963267948966`, 
+       Subscript[$CellContext`V$11314, $CellContext`tot$11314] = 
+       314.1592653589793, 
+       Subscript[$CellContext`V$13776, $CellContext`stage$13776] = 
+       1.5707963267948966`, 
+       Subscript[$CellContext`V$13776, $CellContext`tot$13776] = 
+       314.1592653589793, 
+       Subscript[$CellContext`V$16223, $CellContext`stage$16223] = 
+       1.5707963267948966`, 
+       Subscript[$CellContext`V$16223, $CellContext`tot$16223] = 
+       314.1592653589793, 
+       Subscript[$CellContext`V$18662, $CellContext`stage$18662] = 
+       1.5707963267948966`, 
+       Subscript[$CellContext`V$18662, $CellContext`tot$18662] = 
+       314.1592653589793, 
+       Subscript[$CellContext`V$6411, $CellContext`stage$6411] = 
+       1.5707963267948966`, 
+       Subscript[$CellContext`V$6411, $CellContext`tot$6411] = 
+       314.1592653589793, 
+       Subscript[$CellContext`V$8867, $CellContext`stage$8867] = 
+       1.5707963267948966`, 
+       Subscript[$CellContext`V$8867, $CellContext`tot$8867] = 
+       314.1592653589793, 
+       Subscript[$CellContext`w, $CellContext`opt] = {2.706, 3.686}, 
+       Attributes[$CellContext`CA$6411] = {Temporary}, 
+       Attributes[$CellContext`init$6411] = {Temporary}, 
+       Attributes[$CellContext`CB$6411] = {Temporary}, 
+       Attributes[$CellContext`CA$8867] = {Temporary}, 
+       Attributes[$CellContext`init$8867] = {Temporary}, 
+       Attributes[$CellContext`CB$8867] = {Temporary}, 
+       Attributes[$CellContext`CA$11314] = {Temporary}, 
+       Attributes[$CellContext`init$11314] = {Temporary}, 
+       Attributes[$CellContext`CB$11314] = {Temporary}, 
+       Attributes[$CellContext`CA$13776] = {Temporary}, 
+       Attributes[$CellContext`init$13776] = {Temporary}, 
+       Attributes[$CellContext`CB$13776] = {Temporary}, 
+       Attributes[$CellContext`CA$16223] = {Temporary}, 
+       Attributes[$CellContext`init$16223] = {Temporary}, 
+       Attributes[$CellContext`CB$16223] = {Temporary}, 
+       Attributes[$CellContext`CA$18662] = {Temporary}, 
+       Attributes[$CellContext`init$18662] = {Temporary}, 
+       Attributes[$CellContext`CB$18662] = {Temporary}, 
+       Attributes[$CellContext`V$18662] = {Temporary}, 
+       Attributes[$CellContext`stage$18662] = {Temporary}, 
+       Attributes[$CellContext`V$16223] = {Temporary}, 
+       Attributes[$CellContext`tot$16223] = {Temporary}, 
+       Attributes[$CellContext`V$8867] = {Temporary}, 
+       Attributes[$CellContext`tot$8867] = {Temporary}, 
+       Attributes[$CellContext`tot$18662] = {Temporary}, 
+       Attributes[$CellContext`V$13776] = {Temporary}, 
+       Attributes[$CellContext`tot$13776] = {Temporary}, 
+       Attributes[$CellContext`stage$13776] = {Temporary}, 
+       Attributes[$CellContext`stage$8867] = {Temporary}, 
+       Attributes[$CellContext`V$11314] = {Temporary}, 
+       Attributes[$CellContext`stage$11314] = {Temporary}, 
+       Attributes[$CellContext`V$6411] = {Temporary}, 
+       Attributes[$CellContext`tot$6411] = {Temporary}, 
+       Attributes[$CellContext`stage$16223] = {Temporary}, 
+       Attributes[$CellContext`stage$6411] = {Temporary}, 
+       Attributes[$CellContext`tot$11314] = {Temporary}}; 
+     Typeset`initDone$$ = True),
+    SynchronousInitialization->True,
+    UnsavedVariables:>{Typeset`initDone$$},
+    UntrackedVariables:>{Typeset`size$$}], "Manipulate",
+   Deployed->True,
+   StripOnInput->False],
+  Manipulate`InterpretManipulate[1]]], "Output",
+ CellID->26788140]
+}, {2}]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["", "ManipulateCaptionSection"],
+
+Cell[TextData[{
+ "A beam of particles of unit amplitude moves across a well from the left. \
+After scattering, a fraction ",
+ Cell[BoxData[
+  FormBox["T", TraditionalForm]], "InlineMath"],
+ " of the incident beam is transmitted through the well and the remaining \
+fraction ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"R", "=", 
+    RowBox[{"1", "-", "T"}]}], TraditionalForm]], "InlineMath"],
+ " is reflected. The interference of the reflected and incident beams shows a \
+characteristic interference pattern to the left of the scattering region. To \
+the right of the scattering region, only the transmitted wave appears, and \
+there is no interference. Only in exceptional circumstances is the well \
+transparent to the incident beam.The energy\[LongDash]real part (green), \
+imaginary part (blue), and square of the wavefunction (orange)\[LongDash]is \
+shown as functions of position in the lower graphic."
+}], "ManipulateCaption",
+ CellChangeTimes->{
+  3.35696210375764*^9, {3.4111311112909536`*^9, 3.411131149181336*^9}, {
+   3.411170041455063*^9, 3.411170134614035*^9}, {3.411170200919464*^9, 
+   3.411170205092861*^9}, {3.411752544609892*^9, 3.411752576000316*^9}},
+ CellID->613131512]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["", "ThumbnailSection"],
+
+Cell[BoxData[
+ TagBox[
+  StyleBox[
+   DynamicModuleBox[{$CellContext`a$$ = 4.5, $CellContext`En$$ = 
+    1., $CellContext`V0$$ = -3.73, Typeset`show$$ = True, 
+    Typeset`bookmarkList$$ = {}, Typeset`bookmarkMode$$ = "Menu", 
+    Typeset`animator$$, Typeset`animvar$$ = 1, Typeset`name$$ = 
+    "\"untitled\"", Typeset`specs$$ = {{{
+       Hold[$CellContext`En$$], 1., "particle energy E"}, 0, 5}, {{
+       Hold[$CellContext`V0$$], -3.73, 
+       Row[{"potential well depth ", 
+         Subscript["V", 0]}]}, -5, -1}, {{
+       Hold[$CellContext`a$$], 4.5, "potential well width a"}, 0.5, 5}}, 
+    Typeset`size$$ = {490., {175., 180.}}, Typeset`update$$ = 0, 
+    Typeset`initDone$$, Typeset`skipInitDone$$ = 
+    False, $CellContext`En$16010$$ = 0, $CellContext`V0$16011$$ = 
+    0, $CellContext`a$16012$$ = 0}, 
+    DynamicBox[Manipulate`ManipulateBoxes[
+     1, StandardForm, 
+      "Variables" :> {$CellContext`a$$ = 4.5, $CellContext`En$$ = 
+        1., $CellContext`V0$$ = -3.73}, "ControllerVariables" :> {
+        Hold[$CellContext`En$$, $CellContext`En$16010$$, 0], 
+        Hold[$CellContext`V0$$, $CellContext`V0$16011$$, 0], 
+        Hold[$CellContext`a$$, $CellContext`a$16012$$, 0]}, 
+      "OtherVariables" :> {
+       Typeset`show$$, Typeset`bookmarkList$$, Typeset`bookmarkMode$$, 
+        Typeset`animator$$, Typeset`animvar$$, Typeset`name$$, 
+        Typeset`specs$$, Typeset`size$$, Typeset`update$$, Typeset`initDone$$,
+         Typeset`skipInitDone$$}, "Body" :> Column[{
+         Plot[
+          Evaluate[
+           $CellContext`TransmitanceAndReflectance[$CellContext`z, \
+$CellContext`V0$$, $CellContext`a$$]], {$CellContext`z, 
+           0, $CellContext`energyMax}, PlotRange -> {0, 1.02}, BaseStyle -> 
+          Directive[Thick], Ticks -> {Automatic, {{0.5, "0.5"}, {1., "1.0"}}},
+           AxesLabel -> {
+            Style["E", Italic], ""}, AspectRatio -> 1/5.5, 
+          ImageSize -> {490, 100}, Exclusions -> None, Epilog -> {
+            ColorData[1, 1], 
+            Text[
+             Style["R", Italic], {0.1, 0.95}, {-1, 
+              Plus[1]}], 
+            ColorData[1, 2], 
+            Text[
+             Style["T", Italic], {0.1, 0.05}, {-1, -1}]}], 
+         Plot[
+          Evaluate[
+           
+           With[{$CellContext`val$ = $CellContext`\[Psi][$CellContext`x, \
+$CellContext`En$$, $CellContext`V0$$, $CellContext`a$$]}, {
+            Abs[$CellContext`val$]^2, 
+             Re[$CellContext`val$], 
+             Im[$CellContext`val$], $CellContext`En$$, 
+             $CellContext`V[$CellContext`x, $CellContext`V0$$, \
+$CellContext`a$$]}]], {$CellContext`x, -$CellContext`xmax, $CellContext`xmax},
+           PlotRange -> {-$CellContext`ymax, $CellContext`ymax}, PlotPoints -> 
+          75, PlotStyle -> {
+            RGBColor[1, 0.47, 0], 
+            RGBColor[0.38, 0.61, 0.51], 
+            RGBColor[0.1, 0.1, 0.51], Gray, 
+            Lighter[Orange, 0.75]}, Filling -> {5 -> Bottom}, FillingStyle -> 
+          Lighter[Orange, 0.75], BaseStyle -> Directive[Thick], 
+          ImageSize -> {490, 250}, Exclusions -> None, Epilog -> {
+            Text[
+             Row[{
+               Style["E", Italic], "  =   "}], {
+             0.6 $CellContext`xmax, 0.9 $CellContext`ymax}, {
+              Plus[1], 0}], 
+            Text[
+             ToString[$CellContext`En$$], {
+             0.6 $CellContext`xmax, 0.9 $CellContext`ymax}, {-1, 0}], 
+            Text[
+             Row[{
+               Subscript[
+                Style["V", Italic], 0], "  =   "}], {
+             0.6 $CellContext`xmax, 0.8 $CellContext`ymax}, {
+              Plus[1], 0}], 
+            Text[
+             ToString[$CellContext`V0$$], {
+             0.6 $CellContext`xmax, 0.8 $CellContext`ymax}, {-1, 0}], 
+            Text[
+             Style[
+              Row[{
+                Style["a", Italic], "  =   "}], Italic], {
+             0.6 $CellContext`xmax, 0.7 $CellContext`ymax}, {
+              Plus[1], 0}], 
+            Text[
+             ToString[$CellContext`a$$], {
+             0.6 $CellContext`xmax, 0.7 $CellContext`ymax}, {-1, 0}]}]}, 
+        Center], 
+      "Specifications" :> {{{$CellContext`En$$, 1., "particle energy E"}, 0, 
+         5, Appearance -> "Labeled"}, {{$CellContext`V0$$, -3.73, 
+          Row[{"potential well depth ", 
+            Subscript["V", 0]}]}, -5, -1, Appearance -> 
+         "Labeled"}, {{$CellContext`a$$, 4.5, "potential well width a"}, 0.5, 
+         5, Appearance -> "Labeled"}}, "Options" :> {}, 
+      "DefaultOptions" :> {ControllerLinking -> True}],
+     ImageSizeCache->{536., {246., 251.}},
+     SingleEvaluation->True],
+    Deinitialization:>None,
+    DynamicModuleValues:>{},
+    Initialization:>({$CellContext`TransmitanceAndReflectance[
+         Pattern[$CellContext`En, 
+          Blank[]], 
+         Pattern[$CellContext`V0, 
+          Blank[]], 
+         Pattern[$CellContext`a, 
+          Blank[]]] := 
+       Module[{$CellContext`k = $CellContext`a 
+           Sqrt[2 $CellContext`En], $CellContext`q = $CellContext`a 
+           Sqrt[2 ($CellContext`En - $CellContext`V0)], $CellContext`Rv, \
+$CellContext`Tv, $CellContext`Av, $CellContext`Bv}, $CellContext`Rv = Abs[
+            $CellContext`RR[$CellContext`k, $CellContext`q]]; $CellContext`Tv = 
+          Abs[
+            $CellContext`TT[$CellContext`k, $CellContext`q]]; \
+{$CellContext`Rv^2, $CellContext`Tv^2}], $CellContext`RR[
+         Pattern[$CellContext`k, 
+          Blank[]], 
+         Pattern[$CellContext`q, 
+          Blank[]]] := (($CellContext`k^2 - $CellContext`q^2) 
+         Sin[$CellContext`q])/(
+        E^(I $CellContext`k) (
+         2 I $CellContext`k $CellContext`q 
+          Cos[$CellContext`q] + ($CellContext`k^2 + $CellContext`q^2) 
+          Sin[$CellContext`q])), $CellContext`TT[
+         Pattern[$CellContext`k, 
+          Blank[]], 
+         Pattern[$CellContext`q, 
+          Blank[]]] := (I 2 $CellContext`k $CellContext`q)/(
+        E^(I $CellContext`k) (
+         2 I $CellContext`k $CellContext`q 
+          Cos[$CellContext`q] + ($CellContext`k^2 + $CellContext`q^2) 
+          Sin[$CellContext`q])), $CellContext`energyMax = 5., 
+       Attributes[PlotRange] = {ReadProtected}, $CellContext`\[Psi][
+         Pattern[$CellContext`x, 
+          Blank[]], 
+         Pattern[$CellContext`En, 
+          Blank[]], 
+         Pattern[$CellContext`V0, 
+          Blank[]], 
+         Pattern[$CellContext`a, 
+          Blank[]]] := 
+       Module[{$CellContext`z = $CellContext`x/$CellContext`a, $CellContext`k = \
+$CellContext`a Sqrt[2 $CellContext`En], $CellContext`q = $CellContext`a 
+           Sqrt[2 ($CellContext`En - $CellContext`V0)], $CellContext`Rv, \
+$CellContext`Tv, $CellContext`Av, $CellContext`Bv}, $CellContext`Rv = \
+$CellContext`RR[$CellContext`k, $CellContext`q]; $CellContext`Tv = \
+$CellContext`TT[$CellContext`k, $CellContext`q]; $CellContext`Av = \
+$CellContext`AA[$CellContext`k, $CellContext`q]; $CellContext`Bv = \
+$CellContext`BB[$CellContext`k, $CellContext`q]; 
+         Which[$CellContext`z < (-1)/2, 
+           Exp[I $CellContext`k $CellContext`z] + $CellContext`Rv 
+            Exp[(-I) $CellContext`k $CellContext`z], Abs[$CellContext`z] <= 
+           1/2, $CellContext`Av 
+            Exp[I $CellContext`q ($CellContext`x/$CellContext`a)] + \
+$CellContext`Bv Exp[(-I) $CellContext`q $CellContext`z], $CellContext`z > 
+           1/2, $CellContext`Tv 
+           Exp[I $CellContext`k $CellContext`z]]], $CellContext`AA[
+         Pattern[$CellContext`k, 
+          Blank[]], 
+         Pattern[$CellContext`q, 
+          
+          Blank[]]] := $CellContext`TT[$CellContext`k, $CellContext`q] \
+(($CellContext`q + $CellContext`k)/(2 $CellContext`q)) 
+        Exp[I (($CellContext`k - $CellContext`q)/2)], $CellContext`BB[
+         Pattern[$CellContext`k, 
+          Blank[]], 
+         Pattern[$CellContext`q, 
+          
+          Blank[]]] := $CellContext`TT[$CellContext`k, $CellContext`q] \
+(($CellContext`q - $CellContext`k)/(2 $CellContext`q)) 
+        Exp[I (($CellContext`k + $CellContext`q)/2)], $CellContext`V[
+         Pattern[$CellContext`x, 
+          Blank[]], 
+         Pattern[$CellContext`V0, 
+          Blank[]], 
+         Pattern[$CellContext`a, 
+          Blank[]]] := $CellContext`V0 (
+         UnitStep[$CellContext`x + $CellContext`a/2] - 
+         UnitStep[$CellContext`x - $CellContext`a/2]), $CellContext`xmax = 
+       10.5, $CellContext`ymax = 5., Attributes[Subscript] = {NHoldRest}, 
+       Subscript[$CellContext`CA$6411, 0][
+         Pattern[$CellContext`t$, 
+          Blank[]]] := 
+       Subscript[$CellContext`CA$6411, $CellContext`init$6411] (
+         UnitStep[$CellContext`t$] - UnitStep[$CellContext`t$ - 10]), 
+       Subscript[$CellContext`CB$6411, 0][
+         Pattern[$CellContext`t$, 
+          Blank[]]] := 
+       Subscript[$CellContext`CB$6411, $CellContext`init$6411] (
+         UnitStep[$CellContext`t$] - UnitStep[$CellContext`t$ - 10]), 
+       Subscript[$CellContext`CA$8867, 0][
+         Pattern[$CellContext`t$, 
+          Blank[]]] := 
+       Subscript[$CellContext`CA$8867, $CellContext`init$8867] (
+         UnitStep[$CellContext`t$] - UnitStep[$CellContext`t$ - 10]), 
+       Subscript[$CellContext`CB$8867, 0][
+         Pattern[$CellContext`t$, 
+          Blank[]]] := 
+       Subscript[$CellContext`CB$8867, $CellContext`init$8867] (
+         UnitStep[$CellContext`t$] - UnitStep[$CellContext`t$ - 10]), 
+       Subscript[$CellContext`CA$11314, 0][
+         Pattern[$CellContext`t$, 
+          Blank[]]] := 
+       Subscript[$CellContext`CA$11314, $CellContext`init$11314] (
+         UnitStep[$CellContext`t$] - UnitStep[$CellContext`t$ - 10]), 
+       Subscript[$CellContext`CB$11314, 0][
+         Pattern[$CellContext`t$, 
+          Blank[]]] := 
+       Subscript[$CellContext`CB$11314, $CellContext`init$11314] (
+         UnitStep[$CellContext`t$] - UnitStep[$CellContext`t$ - 10]), 
+       Subscript[$CellContext`CA$13776, 0][
+         Pattern[$CellContext`t$, 
+          Blank[]]] := 
+       Subscript[$CellContext`CA$13776, $CellContext`init$13776] (
+         UnitStep[$CellContext`t$] - UnitStep[$CellContext`t$ - 10]), 
+       Subscript[$CellContext`CB$13776, 0][
+         Pattern[$CellContext`t$, 
+          Blank[]]] := 
+       Subscript[$CellContext`CB$13776, $CellContext`init$13776] (
+         UnitStep[$CellContext`t$] - UnitStep[$CellContext`t$ - 10]), 
+       Subscript[$CellContext`CA$16223, 0][
+         Pattern[$CellContext`t$, 
+          Blank[]]] := 
+       Subscript[$CellContext`CA$16223, $CellContext`init$16223] (
+         UnitStep[$CellContext`t$] - UnitStep[$CellContext`t$ - 10]), 
+       Subscript[$CellContext`CB$16223, 0][
+         Pattern[$CellContext`t$, 
+          Blank[]]] := 
+       Subscript[$CellContext`CB$16223, $CellContext`init$16223] (
+         UnitStep[$CellContext`t$] - UnitStep[$CellContext`t$ - 10]), 
+       Subscript[$CellContext`CA$18662, 0][
+         Pattern[$CellContext`t$, 
+          Blank[]]] := 
+       Subscript[$CellContext`CA$18662, $CellContext`init$18662] (
+         UnitStep[$CellContext`t$] - UnitStep[$CellContext`t$ - 10]), 
+       Subscript[$CellContext`CB$18662, 0][
+         Pattern[$CellContext`t$, 
+          Blank[]]] := 
+       Subscript[$CellContext`CB$18662, $CellContext`init$18662] (
+         UnitStep[$CellContext`t$] - UnitStep[$CellContext`t$ - 10]), 
+       Subscript[$CellContext`CA$11314, $CellContext`init$11314] = 0.23, 
+       Subscript[$CellContext`CA$13776, $CellContext`init$13776] = 0.23, 
+       Subscript[$CellContext`CA$16223, $CellContext`init$16223] = 0.23, 
+       Subscript[$CellContext`CA$18662, $CellContext`init$18662] = 0.23, 
+       Subscript[$CellContext`CA$6411, $CellContext`init$6411] = 0.23, 
+       Subscript[$CellContext`CA$8867, $CellContext`init$8867] = 0.23, 
+       Subscript[$CellContext`CB$11314, $CellContext`init$11314] = 0.23, 
+       Subscript[$CellContext`CB$13776, $CellContext`init$13776] = 0.23, 
+       Subscript[$CellContext`CB$16223, $CellContext`init$16223] = 0.23, 
+       Subscript[$CellContext`CB$18662, $CellContext`init$18662] = 0.23, 
+       Subscript[$CellContext`CB$6411, $CellContext`init$6411] = 0.23, 
+       Subscript[$CellContext`CB$8867, $CellContext`init$8867] = 0.23, 
+       Subscript[$CellContext`V$11314, $CellContext`stage$11314] = 
+       1.5707963267948966`, 
+       Subscript[$CellContext`V$11314, $CellContext`tot$11314] = 
+       314.1592653589793, 
+       Subscript[$CellContext`V$13776, $CellContext`stage$13776] = 
+       1.5707963267948966`, 
+       Subscript[$CellContext`V$13776, $CellContext`tot$13776] = 
+       314.1592653589793, 
+       Subscript[$CellContext`V$16223, $CellContext`stage$16223] = 
+       1.5707963267948966`, 
+       Subscript[$CellContext`V$16223, $CellContext`tot$16223] = 
+       314.1592653589793, 
+       Subscript[$CellContext`V$18662, $CellContext`stage$18662] = 
+       1.5707963267948966`, 
+       Subscript[$CellContext`V$18662, $CellContext`tot$18662] = 
+       314.1592653589793, 
+       Subscript[$CellContext`V$6411, $CellContext`stage$6411] = 
+       1.5707963267948966`, 
+       Subscript[$CellContext`V$6411, $CellContext`tot$6411] = 
+       314.1592653589793, 
+       Subscript[$CellContext`V$8867, $CellContext`stage$8867] = 
+       1.5707963267948966`, 
+       Subscript[$CellContext`V$8867, $CellContext`tot$8867] = 
+       314.1592653589793, 
+       Subscript[$CellContext`w, $CellContext`opt] = {2.706, 3.686}, 
+       Attributes[$CellContext`CA$6411] = {Temporary}, 
+       Attributes[$CellContext`init$6411] = {Temporary}, 
+       Attributes[$CellContext`CB$6411] = {Temporary}, 
+       Attributes[$CellContext`CA$8867] = {Temporary}, 
+       Attributes[$CellContext`init$8867] = {Temporary}, 
+       Attributes[$CellContext`CB$8867] = {Temporary}, 
+       Attributes[$CellContext`CA$11314] = {Temporary}, 
+       Attributes[$CellContext`init$11314] = {Temporary}, 
+       Attributes[$CellContext`CB$11314] = {Temporary}, 
+       Attributes[$CellContext`CA$13776] = {Temporary}, 
+       Attributes[$CellContext`init$13776] = {Temporary}, 
+       Attributes[$CellContext`CB$13776] = {Temporary}, 
+       Attributes[$CellContext`CA$16223] = {Temporary}, 
+       Attributes[$CellContext`init$16223] = {Temporary}, 
+       Attributes[$CellContext`CB$16223] = {Temporary}, 
+       Attributes[$CellContext`CA$18662] = {Temporary}, 
+       Attributes[$CellContext`init$18662] = {Temporary}, 
+       Attributes[$CellContext`CB$18662] = {Temporary}, 
+       Attributes[$CellContext`V$18662] = {Temporary}, 
+       Attributes[$CellContext`stage$18662] = {Temporary}, 
+       Attributes[$CellContext`V$16223] = {Temporary}, 
+       Attributes[$CellContext`tot$16223] = {Temporary}, 
+       Attributes[$CellContext`V$8867] = {Temporary}, 
+       Attributes[$CellContext`tot$8867] = {Temporary}, 
+       Attributes[$CellContext`tot$18662] = {Temporary}, 
+       Attributes[$CellContext`V$13776] = {Temporary}, 
+       Attributes[$CellContext`tot$13776] = {Temporary}, 
+       Attributes[$CellContext`stage$13776] = {Temporary}, 
+       Attributes[$CellContext`stage$8867] = {Temporary}, 
+       Attributes[$CellContext`V$11314] = {Temporary}, 
+       Attributes[$CellContext`stage$11314] = {Temporary}, 
+       Attributes[$CellContext`V$6411] = {Temporary}, 
+       Attributes[$CellContext`tot$6411] = {Temporary}, 
+       Attributes[$CellContext`stage$16223] = {Temporary}, 
+       Attributes[$CellContext`stage$6411] = {Temporary}, 
+       Attributes[$CellContext`tot$11314] = {Temporary}}; 
+     Typeset`initDone$$ = True),
+    SynchronousInitialization->True,
+    UnsavedVariables:>{Typeset`initDone$$},
+    UntrackedVariables:>{Typeset`size$$}], "Manipulate",
+   Deployed->True,
+   StripOnInput->False],
+  Manipulate`InterpretManipulate[1]]], "Output",
+ CellID->130027856]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["", "SnapshotsSection"],
+
+Cell[BoxData[
+ TagBox[
+  StyleBox[
+   DynamicModuleBox[{$CellContext`a$$ = 4.5, $CellContext`En$$ = 
+    4.64, $CellContext`V0$$ = -2.62, Typeset`show$$ = True, 
+    Typeset`bookmarkList$$ = {}, Typeset`bookmarkMode$$ = "Menu", 
+    Typeset`animator$$, Typeset`animvar$$ = 1, Typeset`name$$ = 
+    "\"untitled\"", Typeset`specs$$ = {{{
+       Hold[$CellContext`En$$], 4.64, "particle energy E"}, 0, 5}, {{
+       Hold[$CellContext`V0$$], -2.62, 
+       Row[{"potential well depth ", 
+         Subscript["V", 0]}]}, -5, -1}, {{
+       Hold[$CellContext`a$$], 4.5, "potential well width a"}, 0.5, 5}}, 
+    Typeset`size$$ = {490., {175., 180.}}, Typeset`update$$ = 0, 
+    Typeset`initDone$$, Typeset`skipInitDone$$ = 
+    False, $CellContext`En$16073$$ = 0, $CellContext`V0$16074$$ = 
+    0, $CellContext`a$16075$$ = 0}, 
+    DynamicBox[Manipulate`ManipulateBoxes[
+     1, StandardForm, 
+      "Variables" :> {$CellContext`a$$ = 4.5, $CellContext`En$$ = 
+        4.64, $CellContext`V0$$ = -2.62}, "ControllerVariables" :> {
+        Hold[$CellContext`En$$, $CellContext`En$16073$$, 0], 
+        Hold[$CellContext`V0$$, $CellContext`V0$16074$$, 0], 
+        Hold[$CellContext`a$$, $CellContext`a$16075$$, 0]}, 
+      "OtherVariables" :> {
+       Typeset`show$$, Typeset`bookmarkList$$, Typeset`bookmarkMode$$, 
+        Typeset`animator$$, Typeset`animvar$$, Typeset`name$$, 
+        Typeset`specs$$, Typeset`size$$, Typeset`update$$, Typeset`initDone$$,
+         Typeset`skipInitDone$$}, "Body" :> Column[{
+         Plot[
+          Evaluate[
+           $CellContext`TransmitanceAndReflectance[$CellContext`z, \
+$CellContext`V0$$, $CellContext`a$$]], {$CellContext`z, 
+           0, $CellContext`energyMax}, PlotRange -> {0, 1.02}, BaseStyle -> 
+          Directive[Thick], Ticks -> {Automatic, {{0.5, "0.5"}, {1., "1.0"}}},
+           AxesLabel -> {
+            Style["E", Italic], ""}, AspectRatio -> 1/5.5, 
+          ImageSize -> {490, 100}, Exclusions -> None, Epilog -> {
+            ColorData[1, 1], 
+            Text[
+             Style["R", Italic], {0.1, 0.95}, {-1, 
+              Plus[1]}], 
+            ColorData[1, 2], 
+            Text[
+             Style["T", Italic], {0.1, 0.05}, {-1, -1}]}], 
+         Plot[
+          Evaluate[
+           
+           With[{$CellContext`val$ = $CellContext`\[Psi][$CellContext`x, \
+$CellContext`En$$, $CellContext`V0$$, $CellContext`a$$]}, {
+            Abs[$CellContext`val$]^2, 
+             Re[$CellContext`val$], 
+             Im[$CellContext`val$], $CellContext`En$$, 
+             $CellContext`V[$CellContext`x, $CellContext`V0$$, \
+$CellContext`a$$]}]], {$CellContext`x, -$CellContext`xmax, $CellContext`xmax},
+           PlotRange -> {-$CellContext`ymax, $CellContext`ymax}, PlotPoints -> 
+          75, PlotStyle -> {
+            RGBColor[1, 0.47, 0], 
+            RGBColor[0.38, 0.61, 0.51], 
+            RGBColor[0.1, 0.1, 0.51], Gray, 
+            Lighter[Orange, 0.75]}, Filling -> {5 -> Bottom}, FillingStyle -> 
+          Lighter[Orange, 0.75], BaseStyle -> Directive[Thick], 
+          ImageSize -> {490, 250}, Exclusions -> None, Epilog -> {
+            Text[
+             Row[{
+               Style["E", Italic], "  =   "}], {
+             0.6 $CellContext`xmax, 0.9 $CellContext`ymax}, {
+              Plus[1], 0}], 
+            Text[
+             ToString[$CellContext`En$$], {
+             0.6 $CellContext`xmax, 0.9 $CellContext`ymax}, {-1, 0}], 
+            Text[
+             Row[{
+               Subscript[
+                Style["V", Italic], 0], "  =   "}], {
+             0.6 $CellContext`xmax, 0.8 $CellContext`ymax}, {
+              Plus[1], 0}], 
+            Text[
+             ToString[$CellContext`V0$$], {
+             0.6 $CellContext`xmax, 0.8 $CellContext`ymax}, {-1, 0}], 
+            Text[
+             Style[
+              Row[{
+                Style["a", Italic], "  =   "}], Italic], {
+             0.6 $CellContext`xmax, 0.7 $CellContext`ymax}, {
+              Plus[1], 0}], 
+            Text[
+             ToString[$CellContext`a$$], {
+             0.6 $CellContext`xmax, 0.7 $CellContext`ymax}, {-1, 0}]}]}, 
+        Center], 
+      "Specifications" :> {{{$CellContext`En$$, 4.64, "particle energy E"}, 0,
+          5, Appearance -> "Labeled"}, {{$CellContext`V0$$, -2.62, 
+          Row[{"potential well depth ", 
+            Subscript["V", 0]}]}, -5, -1, Appearance -> 
+         "Labeled"}, {{$CellContext`a$$, 4.5, "potential well width a"}, 0.5, 
+         5, Appearance -> "Labeled"}}, "Options" :> {}, 
+      "DefaultOptions" :> {ControllerLinking -> True}],
+     ImageSizeCache->{536., {246., 251.}},
+     SingleEvaluation->True],
+    Deinitialization:>None,
+    DynamicModuleValues:>{},
+    Initialization:>({$CellContext`TransmitanceAndReflectance[
+         Pattern[$CellContext`En, 
+          Blank[]], 
+         Pattern[$CellContext`V0, 
+          Blank[]], 
+         Pattern[$CellContext`a, 
+          Blank[]]] := 
+       Module[{$CellContext`k = $CellContext`a 
+           Sqrt[2 $CellContext`En], $CellContext`q = $CellContext`a 
+           Sqrt[2 ($CellContext`En - $CellContext`V0)], $CellContext`Rv, \
+$CellContext`Tv, $CellContext`Av, $CellContext`Bv}, $CellContext`Rv = Abs[
+            $CellContext`RR[$CellContext`k, $CellContext`q]]; $CellContext`Tv = 
+          Abs[
+            $CellContext`TT[$CellContext`k, $CellContext`q]]; \
+{$CellContext`Rv^2, $CellContext`Tv^2}], $CellContext`RR[
+         Pattern[$CellContext`k, 
+          Blank[]], 
+         Pattern[$CellContext`q, 
+          Blank[]]] := (($CellContext`k^2 - $CellContext`q^2) 
+         Sin[$CellContext`q])/(
+        E^(I $CellContext`k) (
+         2 I $CellContext`k $CellContext`q 
+          Cos[$CellContext`q] + ($CellContext`k^2 + $CellContext`q^2) 
+          Sin[$CellContext`q])), $CellContext`TT[
+         Pattern[$CellContext`k, 
+          Blank[]], 
+         Pattern[$CellContext`q, 
+          Blank[]]] := (I 2 $CellContext`k $CellContext`q)/(
+        E^(I $CellContext`k) (
+         2 I $CellContext`k $CellContext`q 
+          Cos[$CellContext`q] + ($CellContext`k^2 + $CellContext`q^2) 
+          Sin[$CellContext`q])), $CellContext`energyMax = 5., 
+       Attributes[PlotRange] = {ReadProtected}, $CellContext`\[Psi][
+         Pattern[$CellContext`x, 
+          Blank[]], 
+         Pattern[$CellContext`En, 
+          Blank[]], 
+         Pattern[$CellContext`V0, 
+          Blank[]], 
+         Pattern[$CellContext`a, 
+          Blank[]]] := 
+       Module[{$CellContext`z = $CellContext`x/$CellContext`a, $CellContext`k = \
+$CellContext`a Sqrt[2 $CellContext`En], $CellContext`q = $CellContext`a 
+           Sqrt[2 ($CellContext`En - $CellContext`V0)], $CellContext`Rv, \
+$CellContext`Tv, $CellContext`Av, $CellContext`Bv}, $CellContext`Rv = \
+$CellContext`RR[$CellContext`k, $CellContext`q]; $CellContext`Tv = \
+$CellContext`TT[$CellContext`k, $CellContext`q]; $CellContext`Av = \
+$CellContext`AA[$CellContext`k, $CellContext`q]; $CellContext`Bv = \
+$CellContext`BB[$CellContext`k, $CellContext`q]; 
+         Which[$CellContext`z < (-1)/2, 
+           Exp[I $CellContext`k $CellContext`z] + $CellContext`Rv 
+            Exp[(-I) $CellContext`k $CellContext`z], Abs[$CellContext`z] <= 
+           1/2, $CellContext`Av 
+            Exp[I $CellContext`q ($CellContext`x/$CellContext`a)] + \
+$CellContext`Bv Exp[(-I) $CellContext`q $CellContext`z], $CellContext`z > 
+           1/2, $CellContext`Tv 
+           Exp[I $CellContext`k $CellContext`z]]], $CellContext`AA[
+         Pattern[$CellContext`k, 
+          Blank[]], 
+         Pattern[$CellContext`q, 
+          
+          Blank[]]] := $CellContext`TT[$CellContext`k, $CellContext`q] \
+(($CellContext`q + $CellContext`k)/(2 $CellContext`q)) 
+        Exp[I (($CellContext`k - $CellContext`q)/2)], $CellContext`BB[
+         Pattern[$CellContext`k, 
+          Blank[]], 
+         Pattern[$CellContext`q, 
+          
+          Blank[]]] := $CellContext`TT[$CellContext`k, $CellContext`q] \
+(($CellContext`q - $CellContext`k)/(2 $CellContext`q)) 
+        Exp[I (($CellContext`k + $CellContext`q)/2)], $CellContext`V[
+         Pattern[$CellContext`x, 
+          Blank[]], 
+         Pattern[$CellContext`V0, 
+          Blank[]], 
+         Pattern[$CellContext`a, 
+          Blank[]]] := $CellContext`V0 (
+         UnitStep[$CellContext`x + $CellContext`a/2] - 
+         UnitStep[$CellContext`x - $CellContext`a/2]), $CellContext`xmax = 
+       10.5, $CellContext`ymax = 5., Attributes[Subscript] = {NHoldRest}, 
+       Subscript[$CellContext`CA$6411, 0][
+         Pattern[$CellContext`t$, 
+          Blank[]]] := 
+       Subscript[$CellContext`CA$6411, $CellContext`init$6411] (
+         UnitStep[$CellContext`t$] - UnitStep[$CellContext`t$ - 10]), 
+       Subscript[$CellContext`CB$6411, 0][
+         Pattern[$CellContext`t$, 
+          Blank[]]] := 
+       Subscript[$CellContext`CB$6411, $CellContext`init$6411] (
+         UnitStep[$CellContext`t$] - UnitStep[$CellContext`t$ - 10]), 
+       Subscript[$CellContext`CA$8867, 0][
+         Pattern[$CellContext`t$, 
+          Blank[]]] := 
+       Subscript[$CellContext`CA$8867, $CellContext`init$8867] (
+         UnitStep[$CellContext`t$] - UnitStep[$CellContext`t$ - 10]), 
+       Subscript[$CellContext`CB$8867, 0][
+         Pattern[$CellContext`t$, 
+          Blank[]]] := 
+       Subscript[$CellContext`CB$8867, $CellContext`init$8867] (
+         UnitStep[$CellContext`t$] - UnitStep[$CellContext`t$ - 10]), 
+       Subscript[$CellContext`CA$11314, 0][
+         Pattern[$CellContext`t$, 
+          Blank[]]] := 
+       Subscript[$CellContext`CA$11314, $CellContext`init$11314] (
+         UnitStep[$CellContext`t$] - UnitStep[$CellContext`t$ - 10]), 
+       Subscript[$CellContext`CB$11314, 0][
+         Pattern[$CellContext`t$, 
+          Blank[]]] := 
+       Subscript[$CellContext`CB$11314, $CellContext`init$11314] (
+         UnitStep[$CellContext`t$] - UnitStep[$CellContext`t$ - 10]), 
+       Subscript[$CellContext`CA$13776, 0][
+         Pattern[$CellContext`t$, 
+          Blank[]]] := 
+       Subscript[$CellContext`CA$13776, $CellContext`init$13776] (
+         UnitStep[$CellContext`t$] - UnitStep[$CellContext`t$ - 10]), 
+       Subscript[$CellContext`CB$13776, 0][
+         Pattern[$CellContext`t$, 
+          Blank[]]] := 
+       Subscript[$CellContext`CB$13776, $CellContext`init$13776] (
+         UnitStep[$CellContext`t$] - UnitStep[$CellContext`t$ - 10]), 
+       Subscript[$CellContext`CA$16223, 0][
+         Pattern[$CellContext`t$, 
+          Blank[]]] := 
+       Subscript[$CellContext`CA$16223, $CellContext`init$16223] (
+         UnitStep[$CellContext`t$] - UnitStep[$CellContext`t$ - 10]), 
+       Subscript[$CellContext`CB$16223, 0][
+         Pattern[$CellContext`t$, 
+          Blank[]]] := 
+       Subscript[$CellContext`CB$16223, $CellContext`init$16223] (
+         UnitStep[$CellContext`t$] - UnitStep[$CellContext`t$ - 10]), 
+       Subscript[$CellContext`CA$18662, 0][
+         Pattern[$CellContext`t$, 
+          Blank[]]] := 
+       Subscript[$CellContext`CA$18662, $CellContext`init$18662] (
+         UnitStep[$CellContext`t$] - UnitStep[$CellContext`t$ - 10]), 
+       Subscript[$CellContext`CB$18662, 0][
+         Pattern[$CellContext`t$, 
+          Blank[]]] := 
+       Subscript[$CellContext`CB$18662, $CellContext`init$18662] (
+         UnitStep[$CellContext`t$] - UnitStep[$CellContext`t$ - 10]), 
+       Subscript[$CellContext`CA$11314, $CellContext`init$11314] = 0.23, 
+       Subscript[$CellContext`CA$13776, $CellContext`init$13776] = 0.23, 
+       Subscript[$CellContext`CA$16223, $CellContext`init$16223] = 0.23, 
+       Subscript[$CellContext`CA$18662, $CellContext`init$18662] = 0.23, 
+       Subscript[$CellContext`CA$6411, $CellContext`init$6411] = 0.23, 
+       Subscript[$CellContext`CA$8867, $CellContext`init$8867] = 0.23, 
+       Subscript[$CellContext`CB$11314, $CellContext`init$11314] = 0.23, 
+       Subscript[$CellContext`CB$13776, $CellContext`init$13776] = 0.23, 
+       Subscript[$CellContext`CB$16223, $CellContext`init$16223] = 0.23, 
+       Subscript[$CellContext`CB$18662, $CellContext`init$18662] = 0.23, 
+       Subscript[$CellContext`CB$6411, $CellContext`init$6411] = 0.23, 
+       Subscript[$CellContext`CB$8867, $CellContext`init$8867] = 0.23, 
+       Subscript[$CellContext`V$11314, $CellContext`stage$11314] = 
+       1.5707963267948966`, 
+       Subscript[$CellContext`V$11314, $CellContext`tot$11314] = 
+       314.1592653589793, 
+       Subscript[$CellContext`V$13776, $CellContext`stage$13776] = 
+       1.5707963267948966`, 
+       Subscript[$CellContext`V$13776, $CellContext`tot$13776] = 
+       314.1592653589793, 
+       Subscript[$CellContext`V$16223, $CellContext`stage$16223] = 
+       1.5707963267948966`, 
+       Subscript[$CellContext`V$16223, $CellContext`tot$16223] = 
+       314.1592653589793, 
+       Subscript[$CellContext`V$18662, $CellContext`stage$18662] = 
+       1.5707963267948966`, 
+       Subscript[$CellContext`V$18662, $CellContext`tot$18662] = 
+       314.1592653589793, 
+       Subscript[$CellContext`V$6411, $CellContext`stage$6411] = 
+       1.5707963267948966`, 
+       Subscript[$CellContext`V$6411, $CellContext`tot$6411] = 
+       314.1592653589793, 
+       Subscript[$CellContext`V$8867, $CellContext`stage$8867] = 
+       1.5707963267948966`, 
+       Subscript[$CellContext`V$8867, $CellContext`tot$8867] = 
+       314.1592653589793, 
+       Subscript[$CellContext`w, $CellContext`opt] = {2.706, 3.686}, 
+       Attributes[$CellContext`CA$6411] = {Temporary}, 
+       Attributes[$CellContext`init$6411] = {Temporary}, 
+       Attributes[$CellContext`CB$6411] = {Temporary}, 
+       Attributes[$CellContext`CA$8867] = {Temporary}, 
+       Attributes[$CellContext`init$8867] = {Temporary}, 
+       Attributes[$CellContext`CB$8867] = {Temporary}, 
+       Attributes[$CellContext`CA$11314] = {Temporary}, 
+       Attributes[$CellContext`init$11314] = {Temporary}, 
+       Attributes[$CellContext`CB$11314] = {Temporary}, 
+       Attributes[$CellContext`CA$13776] = {Temporary}, 
+       Attributes[$CellContext`init$13776] = {Temporary}, 
+       Attributes[$CellContext`CB$13776] = {Temporary}, 
+       Attributes[$CellContext`CA$16223] = {Temporary}, 
+       Attributes[$CellContext`init$16223] = {Temporary}, 
+       Attributes[$CellContext`CB$16223] = {Temporary}, 
+       Attributes[$CellContext`CA$18662] = {Temporary}, 
+       Attributes[$CellContext`init$18662] = {Temporary}, 
+       Attributes[$CellContext`CB$18662] = {Temporary}, 
+       Attributes[$CellContext`V$18662] = {Temporary}, 
+       Attributes[$CellContext`stage$18662] = {Temporary}, 
+       Attributes[$CellContext`V$16223] = {Temporary}, 
+       Attributes[$CellContext`tot$16223] = {Temporary}, 
+       Attributes[$CellContext`V$8867] = {Temporary}, 
+       Attributes[$CellContext`tot$8867] = {Temporary}, 
+       Attributes[$CellContext`tot$18662] = {Temporary}, 
+       Attributes[$CellContext`V$13776] = {Temporary}, 
+       Attributes[$CellContext`tot$13776] = {Temporary}, 
+       Attributes[$CellContext`stage$13776] = {Temporary}, 
+       Attributes[$CellContext`stage$8867] = {Temporary}, 
+       Attributes[$CellContext`V$11314] = {Temporary}, 
+       Attributes[$CellContext`stage$11314] = {Temporary}, 
+       Attributes[$CellContext`V$6411] = {Temporary}, 
+       Attributes[$CellContext`tot$6411] = {Temporary}, 
+       Attributes[$CellContext`stage$16223] = {Temporary}, 
+       Attributes[$CellContext`stage$6411] = {Temporary}, 
+       Attributes[$CellContext`tot$11314] = {Temporary}}; 
+     Typeset`initDone$$ = True),
+    SynchronousInitialization->True,
+    UnsavedVariables:>{Typeset`initDone$$},
+    UntrackedVariables:>{Typeset`size$$}], "Manipulate",
+   Deployed->True,
+   StripOnInput->False],
+  Manipulate`InterpretManipulate[1]]], "Output",
+ CellID->499473640],
+
+Cell[BoxData[
+ TagBox[
+  StyleBox[
+   DynamicModuleBox[{$CellContext`a$$ = 4.5, $CellContext`En$$ = 
+    1., $CellContext`V0$$ = -3.73, Typeset`show$$ = True, 
+    Typeset`bookmarkList$$ = {}, Typeset`bookmarkMode$$ = "Menu", 
+    Typeset`animator$$, Typeset`animvar$$ = 1, Typeset`name$$ = 
+    "\"untitled\"", Typeset`specs$$ = {{{
+       Hold[$CellContext`En$$], 1., "particle energy E"}, 0, 5}, {{
+       Hold[$CellContext`V0$$], -3.73, 
+       Row[{"potential well depth ", 
+         Subscript["V", 0]}]}, -5, -1}, {{
+       Hold[$CellContext`a$$], 4.5, "potential well width a"}, 0.5, 5}}, 
+    Typeset`size$$ = {490., {175., 180.}}, Typeset`update$$ = 0, 
+    Typeset`initDone$$, Typeset`skipInitDone$$ = 
+    False, $CellContext`En$16136$$ = 0, $CellContext`V0$16137$$ = 
+    0, $CellContext`a$16138$$ = 0}, 
+    DynamicBox[Manipulate`ManipulateBoxes[
+     1, StandardForm, 
+      "Variables" :> {$CellContext`a$$ = 4.5, $CellContext`En$$ = 
+        1., $CellContext`V0$$ = -3.73}, "ControllerVariables" :> {
+        Hold[$CellContext`En$$, $CellContext`En$16136$$, 0], 
+        Hold[$CellContext`V0$$, $CellContext`V0$16137$$, 0], 
+        Hold[$CellContext`a$$, $CellContext`a$16138$$, 0]}, 
+      "OtherVariables" :> {
+       Typeset`show$$, Typeset`bookmarkList$$, Typeset`bookmarkMode$$, 
+        Typeset`animator$$, Typeset`animvar$$, Typeset`name$$, 
+        Typeset`specs$$, Typeset`size$$, Typeset`update$$, Typeset`initDone$$,
+         Typeset`skipInitDone$$}, "Body" :> Column[{
+         Plot[
+          Evaluate[
+           $CellContext`TransmitanceAndReflectance[$CellContext`z, \
+$CellContext`V0$$, $CellContext`a$$]], {$CellContext`z, 
+           0, $CellContext`energyMax}, PlotRange -> {0, 1.02}, BaseStyle -> 
+          Directive[Thick], Ticks -> {Automatic, {{0.5, "0.5"}, {1., "1.0"}}},
+           AxesLabel -> {
+            Style["E", Italic], ""}, AspectRatio -> 1/5.5, 
+          ImageSize -> {490, 100}, Exclusions -> None, Epilog -> {
+            ColorData[1, 1], 
+            Text[
+             Style["R", Italic], {0.1, 0.95}, {-1, 
+              Plus[1]}], 
+            ColorData[1, 2], 
+            Text[
+             Style["T", Italic], {0.1, 0.05}, {-1, -1}]}], 
+         Plot[
+          Evaluate[
+           
+           With[{$CellContext`val$ = $CellContext`\[Psi][$CellContext`x, \
+$CellContext`En$$, $CellContext`V0$$, $CellContext`a$$]}, {
+            Abs[$CellContext`val$]^2, 
+             Re[$CellContext`val$], 
+             Im[$CellContext`val$], $CellContext`En$$, 
+             $CellContext`V[$CellContext`x, $CellContext`V0$$, \
+$CellContext`a$$]}]], {$CellContext`x, -$CellContext`xmax, $CellContext`xmax},
+           PlotRange -> {-$CellContext`ymax, $CellContext`ymax}, PlotPoints -> 
+          75, PlotStyle -> {
+            RGBColor[1, 0.47, 0], 
+            RGBColor[0.38, 0.61, 0.51], 
+            RGBColor[0.1, 0.1, 0.51], Gray, 
+            Lighter[Orange, 0.75]}, Filling -> {5 -> Bottom}, FillingStyle -> 
+          Lighter[Orange, 0.75], BaseStyle -> Directive[Thick], 
+          ImageSize -> {490, 250}, Exclusions -> None, Epilog -> {
+            Text[
+             Row[{
+               Style["E", Italic], "  =   "}], {
+             0.6 $CellContext`xmax, 0.9 $CellContext`ymax}, {
+              Plus[1], 0}], 
+            Text[
+             ToString[$CellContext`En$$], {
+             0.6 $CellContext`xmax, 0.9 $CellContext`ymax}, {-1, 0}], 
+            Text[
+             Row[{
+               Subscript[
+                Style["V", Italic], 0], "  =   "}], {
+             0.6 $CellContext`xmax, 0.8 $CellContext`ymax}, {
+              Plus[1], 0}], 
+            Text[
+             ToString[$CellContext`V0$$], {
+             0.6 $CellContext`xmax, 0.8 $CellContext`ymax}, {-1, 0}], 
+            Text[
+             Style[
+              Row[{
+                Style["a", Italic], "  =   "}], Italic], {
+             0.6 $CellContext`xmax, 0.7 $CellContext`ymax}, {
+              Plus[1], 0}], 
+            Text[
+             ToString[$CellContext`a$$], {
+             0.6 $CellContext`xmax, 0.7 $CellContext`ymax}, {-1, 0}]}]}, 
+        Center], 
+      "Specifications" :> {{{$CellContext`En$$, 1., "particle energy E"}, 0, 
+         5, Appearance -> "Labeled"}, {{$CellContext`V0$$, -3.73, 
+          Row[{"potential well depth ", 
+            Subscript["V", 0]}]}, -5, -1, Appearance -> 
+         "Labeled"}, {{$CellContext`a$$, 4.5, "potential well width a"}, 0.5, 
+         5, Appearance -> "Labeled"}}, "Options" :> {}, 
+      "DefaultOptions" :> {ControllerLinking -> True}],
+     ImageSizeCache->{536., {246., 251.}},
+     SingleEvaluation->True],
+    Deinitialization:>None,
+    DynamicModuleValues:>{},
+    Initialization:>({$CellContext`TransmitanceAndReflectance[
+         Pattern[$CellContext`En, 
+          Blank[]], 
+         Pattern[$CellContext`V0, 
+          Blank[]], 
+         Pattern[$CellContext`a, 
+          Blank[]]] := 
+       Module[{$CellContext`k = $CellContext`a 
+           Sqrt[2 $CellContext`En], $CellContext`q = $CellContext`a 
+           Sqrt[2 ($CellContext`En - $CellContext`V0)], $CellContext`Rv, \
+$CellContext`Tv, $CellContext`Av, $CellContext`Bv}, $CellContext`Rv = Abs[
+            $CellContext`RR[$CellContext`k, $CellContext`q]]; $CellContext`Tv = 
+          Abs[
+            $CellContext`TT[$CellContext`k, $CellContext`q]]; \
+{$CellContext`Rv^2, $CellContext`Tv^2}], $CellContext`RR[
+         Pattern[$CellContext`k, 
+          Blank[]], 
+         Pattern[$CellContext`q, 
+          Blank[]]] := (($CellContext`k^2 - $CellContext`q^2) 
+         Sin[$CellContext`q])/(
+        E^(I $CellContext`k) (
+         2 I $CellContext`k $CellContext`q 
+          Cos[$CellContext`q] + ($CellContext`k^2 + $CellContext`q^2) 
+          Sin[$CellContext`q])), $CellContext`TT[
+         Pattern[$CellContext`k, 
+          Blank[]], 
+         Pattern[$CellContext`q, 
+          Blank[]]] := (I 2 $CellContext`k $CellContext`q)/(
+        E^(I $CellContext`k) (
+         2 I $CellContext`k $CellContext`q 
+          Cos[$CellContext`q] + ($CellContext`k^2 + $CellContext`q^2) 
+          Sin[$CellContext`q])), $CellContext`energyMax = 5., 
+       Attributes[PlotRange] = {ReadProtected}, $CellContext`\[Psi][
+         Pattern[$CellContext`x, 
+          Blank[]], 
+         Pattern[$CellContext`En, 
+          Blank[]], 
+         Pattern[$CellContext`V0, 
+          Blank[]], 
+         Pattern[$CellContext`a, 
+          Blank[]]] := 
+       Module[{$CellContext`z = $CellContext`x/$CellContext`a, $CellContext`k = \
+$CellContext`a Sqrt[2 $CellContext`En], $CellContext`q = $CellContext`a 
+           Sqrt[2 ($CellContext`En - $CellContext`V0)], $CellContext`Rv, \
+$CellContext`Tv, $CellContext`Av, $CellContext`Bv}, $CellContext`Rv = \
+$CellContext`RR[$CellContext`k, $CellContext`q]; $CellContext`Tv = \
+$CellContext`TT[$CellContext`k, $CellContext`q]; $CellContext`Av = \
+$CellContext`AA[$CellContext`k, $CellContext`q]; $CellContext`Bv = \
+$CellContext`BB[$CellContext`k, $CellContext`q]; 
+         Which[$CellContext`z < (-1)/2, 
+           Exp[I $CellContext`k $CellContext`z] + $CellContext`Rv 
+            Exp[(-I) $CellContext`k $CellContext`z], Abs[$CellContext`z] <= 
+           1/2, $CellContext`Av 
+            Exp[I $CellContext`q ($CellContext`x/$CellContext`a)] + \
+$CellContext`Bv Exp[(-I) $CellContext`q $CellContext`z], $CellContext`z > 
+           1/2, $CellContext`Tv 
+           Exp[I $CellContext`k $CellContext`z]]], $CellContext`AA[
+         Pattern[$CellContext`k, 
+          Blank[]], 
+         Pattern[$CellContext`q, 
+          
+          Blank[]]] := $CellContext`TT[$CellContext`k, $CellContext`q] \
+(($CellContext`q + $CellContext`k)/(2 $CellContext`q)) 
+        Exp[I (($CellContext`k - $CellContext`q)/2)], $CellContext`BB[
+         Pattern[$CellContext`k, 
+          Blank[]], 
+         Pattern[$CellContext`q, 
+          
+          Blank[]]] := $CellContext`TT[$CellContext`k, $CellContext`q] \
+(($CellContext`q - $CellContext`k)/(2 $CellContext`q)) 
+        Exp[I (($CellContext`k + $CellContext`q)/2)], $CellContext`V[
+         Pattern[$CellContext`x, 
+          Blank[]], 
+         Pattern[$CellContext`V0, 
+          Blank[]], 
+         Pattern[$CellContext`a, 
+          Blank[]]] := $CellContext`V0 (
+         UnitStep[$CellContext`x + $CellContext`a/2] - 
+         UnitStep[$CellContext`x - $CellContext`a/2]), $CellContext`xmax = 
+       10.5, $CellContext`ymax = 5., Attributes[Subscript] = {NHoldRest}, 
+       Subscript[$CellContext`CA$6411, 0][
+         Pattern[$CellContext`t$, 
+          Blank[]]] := 
+       Subscript[$CellContext`CA$6411, $CellContext`init$6411] (
+         UnitStep[$CellContext`t$] - UnitStep[$CellContext`t$ - 10]), 
+       Subscript[$CellContext`CB$6411, 0][
+         Pattern[$CellContext`t$, 
+          Blank[]]] := 
+       Subscript[$CellContext`CB$6411, $CellContext`init$6411] (
+         UnitStep[$CellContext`t$] - UnitStep[$CellContext`t$ - 10]), 
+       Subscript[$CellContext`CA$8867, 0][
+         Pattern[$CellContext`t$, 
+          Blank[]]] := 
+       Subscript[$CellContext`CA$8867, $CellContext`init$8867] (
+         UnitStep[$CellContext`t$] - UnitStep[$CellContext`t$ - 10]), 
+       Subscript[$CellContext`CB$8867, 0][
+         Pattern[$CellContext`t$, 
+          Blank[]]] := 
+       Subscript[$CellContext`CB$8867, $CellContext`init$8867] (
+         UnitStep[$CellContext`t$] - UnitStep[$CellContext`t$ - 10]), 
+       Subscript[$CellContext`CA$11314, 0][
+         Pattern[$CellContext`t$, 
+          Blank[]]] := 
+       Subscript[$CellContext`CA$11314, $CellContext`init$11314] (
+         UnitStep[$CellContext`t$] - UnitStep[$CellContext`t$ - 10]), 
+       Subscript[$CellContext`CB$11314, 0][
+         Pattern[$CellContext`t$, 
+          Blank[]]] := 
+       Subscript[$CellContext`CB$11314, $CellContext`init$11314] (
+         UnitStep[$CellContext`t$] - UnitStep[$CellContext`t$ - 10]), 
+       Subscript[$CellContext`CA$13776, 0][
+         Pattern[$CellContext`t$, 
+          Blank[]]] := 
+       Subscript[$CellContext`CA$13776, $CellContext`init$13776] (
+         UnitStep[$CellContext`t$] - UnitStep[$CellContext`t$ - 10]), 
+       Subscript[$CellContext`CB$13776, 0][
+         Pattern[$CellContext`t$, 
+          Blank[]]] := 
+       Subscript[$CellContext`CB$13776, $CellContext`init$13776] (
+         UnitStep[$CellContext`t$] - UnitStep[$CellContext`t$ - 10]), 
+       Subscript[$CellContext`CA$16223, 0][
+         Pattern[$CellContext`t$, 
+          Blank[]]] := 
+       Subscript[$CellContext`CA$16223, $CellContext`init$16223] (
+         UnitStep[$CellContext`t$] - UnitStep[$CellContext`t$ - 10]), 
+       Subscript[$CellContext`CB$16223, 0][
+         Pattern[$CellContext`t$, 
+          Blank[]]] := 
+       Subscript[$CellContext`CB$16223, $CellContext`init$16223] (
+         UnitStep[$CellContext`t$] - UnitStep[$CellContext`t$ - 10]), 
+       Subscript[$CellContext`CA$18662, 0][
+         Pattern[$CellContext`t$, 
+          Blank[]]] := 
+       Subscript[$CellContext`CA$18662, $CellContext`init$18662] (
+         UnitStep[$CellContext`t$] - UnitStep[$CellContext`t$ - 10]), 
+       Subscript[$CellContext`CB$18662, 0][
+         Pattern[$CellContext`t$, 
+          Blank[]]] := 
+       Subscript[$CellContext`CB$18662, $CellContext`init$18662] (
+         UnitStep[$CellContext`t$] - UnitStep[$CellContext`t$ - 10]), 
+       Subscript[$CellContext`CA$11314, $CellContext`init$11314] = 0.23, 
+       Subscript[$CellContext`CA$13776, $CellContext`init$13776] = 0.23, 
+       Subscript[$CellContext`CA$16223, $CellContext`init$16223] = 0.23, 
+       Subscript[$CellContext`CA$18662, $CellContext`init$18662] = 0.23, 
+       Subscript[$CellContext`CA$6411, $CellContext`init$6411] = 0.23, 
+       Subscript[$CellContext`CA$8867, $CellContext`init$8867] = 0.23, 
+       Subscript[$CellContext`CB$11314, $CellContext`init$11314] = 0.23, 
+       Subscript[$CellContext`CB$13776, $CellContext`init$13776] = 0.23, 
+       Subscript[$CellContext`CB$16223, $CellContext`init$16223] = 0.23, 
+       Subscript[$CellContext`CB$18662, $CellContext`init$18662] = 0.23, 
+       Subscript[$CellContext`CB$6411, $CellContext`init$6411] = 0.23, 
+       Subscript[$CellContext`CB$8867, $CellContext`init$8867] = 0.23, 
+       Subscript[$CellContext`V$11314, $CellContext`stage$11314] = 
+       1.5707963267948966`, 
+       Subscript[$CellContext`V$11314, $CellContext`tot$11314] = 
+       314.1592653589793, 
+       Subscript[$CellContext`V$13776, $CellContext`stage$13776] = 
+       1.5707963267948966`, 
+       Subscript[$CellContext`V$13776, $CellContext`tot$13776] = 
+       314.1592653589793, 
+       Subscript[$CellContext`V$16223, $CellContext`stage$16223] = 
+       1.5707963267948966`, 
+       Subscript[$CellContext`V$16223, $CellContext`tot$16223] = 
+       314.1592653589793, 
+       Subscript[$CellContext`V$18662, $CellContext`stage$18662] = 
+       1.5707963267948966`, 
+       Subscript[$CellContext`V$18662, $CellContext`tot$18662] = 
+       314.1592653589793, 
+       Subscript[$CellContext`V$6411, $CellContext`stage$6411] = 
+       1.5707963267948966`, 
+       Subscript[$CellContext`V$6411, $CellContext`tot$6411] = 
+       314.1592653589793, 
+       Subscript[$CellContext`V$8867, $CellContext`stage$8867] = 
+       1.5707963267948966`, 
+       Subscript[$CellContext`V$8867, $CellContext`tot$8867] = 
+       314.1592653589793, 
+       Subscript[$CellContext`w, $CellContext`opt] = {2.706, 3.686}, 
+       Attributes[$CellContext`CA$6411] = {Temporary}, 
+       Attributes[$CellContext`init$6411] = {Temporary}, 
+       Attributes[$CellContext`CB$6411] = {Temporary}, 
+       Attributes[$CellContext`CA$8867] = {Temporary}, 
+       Attributes[$CellContext`init$8867] = {Temporary}, 
+       Attributes[$CellContext`CB$8867] = {Temporary}, 
+       Attributes[$CellContext`CA$11314] = {Temporary}, 
+       Attributes[$CellContext`init$11314] = {Temporary}, 
+       Attributes[$CellContext`CB$11314] = {Temporary}, 
+       Attributes[$CellContext`CA$13776] = {Temporary}, 
+       Attributes[$CellContext`init$13776] = {Temporary}, 
+       Attributes[$CellContext`CB$13776] = {Temporary}, 
+       Attributes[$CellContext`CA$16223] = {Temporary}, 
+       Attributes[$CellContext`init$16223] = {Temporary}, 
+       Attributes[$CellContext`CB$16223] = {Temporary}, 
+       Attributes[$CellContext`CA$18662] = {Temporary}, 
+       Attributes[$CellContext`init$18662] = {Temporary}, 
+       Attributes[$CellContext`CB$18662] = {Temporary}, 
+       Attributes[$CellContext`V$18662] = {Temporary}, 
+       Attributes[$CellContext`stage$18662] = {Temporary}, 
+       Attributes[$CellContext`V$16223] = {Temporary}, 
+       Attributes[$CellContext`tot$16223] = {Temporary}, 
+       Attributes[$CellContext`V$8867] = {Temporary}, 
+       Attributes[$CellContext`tot$8867] = {Temporary}, 
+       Attributes[$CellContext`tot$18662] = {Temporary}, 
+       Attributes[$CellContext`V$13776] = {Temporary}, 
+       Attributes[$CellContext`tot$13776] = {Temporary}, 
+       Attributes[$CellContext`stage$13776] = {Temporary}, 
+       Attributes[$CellContext`stage$8867] = {Temporary}, 
+       Attributes[$CellContext`V$11314] = {Temporary}, 
+       Attributes[$CellContext`stage$11314] = {Temporary}, 
+       Attributes[$CellContext`V$6411] = {Temporary}, 
+       Attributes[$CellContext`tot$6411] = {Temporary}, 
+       Attributes[$CellContext`stage$16223] = {Temporary}, 
+       Attributes[$CellContext`stage$6411] = {Temporary}, 
+       Attributes[$CellContext`tot$11314] = {Temporary}}; 
+     Typeset`initDone$$ = True),
+    SynchronousInitialization->True,
+    UnsavedVariables:>{Typeset`initDone$$},
+    UntrackedVariables:>{Typeset`size$$}], "Manipulate",
+   Deployed->True,
+   StripOnInput->False],
+  Manipulate`InterpretManipulate[1]]], "Output",
+ CellID->137169358],
+
+Cell[BoxData[
+ TagBox[
+  StyleBox[
+   DynamicModuleBox[{$CellContext`a$$ = 4.5, $CellContext`En$$ = 
+    2.38, $CellContext`V0$$ = -3.73, Typeset`show$$ = True, 
+    Typeset`bookmarkList$$ = {}, Typeset`bookmarkMode$$ = "Menu", 
+    Typeset`animator$$, Typeset`animvar$$ = 1, Typeset`name$$ = 
+    "\"untitled\"", Typeset`specs$$ = {{{
+       Hold[$CellContext`En$$], 2.38, "particle energy E"}, 0, 5}, {{
+       Hold[$CellContext`V0$$], -3.73, 
+       Row[{"potential well depth ", 
+         Subscript["V", 0]}]}, -5, -1}, {{
+       Hold[$CellContext`a$$], 4.5, "potential well width a"}, 0.5, 5}}, 
+    Typeset`size$$ = {490., {175., 180.}}, Typeset`update$$ = 0, 
+    Typeset`initDone$$, Typeset`skipInitDone$$ = 
+    False, $CellContext`En$16199$$ = 0, $CellContext`V0$16200$$ = 
+    0, $CellContext`a$16201$$ = 0}, 
+    DynamicBox[Manipulate`ManipulateBoxes[
+     1, StandardForm, 
+      "Variables" :> {$CellContext`a$$ = 4.5, $CellContext`En$$ = 
+        2.38, $CellContext`V0$$ = -3.73}, "ControllerVariables" :> {
+        Hold[$CellContext`En$$, $CellContext`En$16199$$, 0], 
+        Hold[$CellContext`V0$$, $CellContext`V0$16200$$, 0], 
+        Hold[$CellContext`a$$, $CellContext`a$16201$$, 0]}, 
+      "OtherVariables" :> {
+       Typeset`show$$, Typeset`bookmarkList$$, Typeset`bookmarkMode$$, 
+        Typeset`animator$$, Typeset`animvar$$, Typeset`name$$, 
+        Typeset`specs$$, Typeset`size$$, Typeset`update$$, Typeset`initDone$$,
+         Typeset`skipInitDone$$}, "Body" :> Column[{
+         Plot[
+          Evaluate[
+           $CellContext`TransmitanceAndReflectance[$CellContext`z, \
+$CellContext`V0$$, $CellContext`a$$]], {$CellContext`z, 
+           0, $CellContext`energyMax}, PlotRange -> {0, 1.02}, BaseStyle -> 
+          Directive[Thick], Ticks -> {Automatic, {{0.5, "0.5"}, {1., "1.0"}}},
+           AxesLabel -> {
+            Style["E", Italic], ""}, AspectRatio -> 1/5.5, 
+          ImageSize -> {490, 100}, Exclusions -> None, Epilog -> {
+            ColorData[1, 1], 
+            Text[
+             Style["R", Italic], {0.1, 0.95}, {-1, 
+              Plus[1]}], 
+            ColorData[1, 2], 
+            Text[
+             Style["T", Italic], {0.1, 0.05}, {-1, -1}]}], 
+         Plot[
+          Evaluate[
+           
+           With[{$CellContext`val$ = $CellContext`\[Psi][$CellContext`x, \
+$CellContext`En$$, $CellContext`V0$$, $CellContext`a$$]}, {
+            Abs[$CellContext`val$]^2, 
+             Re[$CellContext`val$], 
+             Im[$CellContext`val$], $CellContext`En$$, 
+             $CellContext`V[$CellContext`x, $CellContext`V0$$, \
+$CellContext`a$$]}]], {$CellContext`x, -$CellContext`xmax, $CellContext`xmax},
+           PlotRange -> {-$CellContext`ymax, $CellContext`ymax}, PlotPoints -> 
+          75, PlotStyle -> {
+            RGBColor[1, 0.47, 0], 
+            RGBColor[0.38, 0.61, 0.51], 
+            RGBColor[0.1, 0.1, 0.51], Gray, 
+            Lighter[Orange, 0.75]}, Filling -> {5 -> Bottom}, FillingStyle -> 
+          Lighter[Orange, 0.75], BaseStyle -> Directive[Thick], 
+          ImageSize -> {490, 250}, Exclusions -> None, Epilog -> {
+            Text[
+             Row[{
+               Style["E", Italic], "  =   "}], {
+             0.6 $CellContext`xmax, 0.9 $CellContext`ymax}, {
+              Plus[1], 0}], 
+            Text[
+             ToString[$CellContext`En$$], {
+             0.6 $CellContext`xmax, 0.9 $CellContext`ymax}, {-1, 0}], 
+            Text[
+             Row[{
+               Subscript[
+                Style["V", Italic], 0], "  =   "}], {
+             0.6 $CellContext`xmax, 0.8 $CellContext`ymax}, {
+              Plus[1], 0}], 
+            Text[
+             ToString[$CellContext`V0$$], {
+             0.6 $CellContext`xmax, 0.8 $CellContext`ymax}, {-1, 0}], 
+            Text[
+             Style[
+              Row[{
+                Style["a", Italic], "  =   "}], Italic], {
+             0.6 $CellContext`xmax, 0.7 $CellContext`ymax}, {
+              Plus[1], 0}], 
+            Text[
+             ToString[$CellContext`a$$], {
+             0.6 $CellContext`xmax, 0.7 $CellContext`ymax}, {-1, 0}]}]}, 
+        Center], 
+      "Specifications" :> {{{$CellContext`En$$, 2.38, "particle energy E"}, 0,
+          5, Appearance -> "Labeled"}, {{$CellContext`V0$$, -3.73, 
+          Row[{"potential well depth ", 
+            Subscript["V", 0]}]}, -5, -1, Appearance -> 
+         "Labeled"}, {{$CellContext`a$$, 4.5, "potential well width a"}, 0.5, 
+         5, Appearance -> "Labeled"}}, "Options" :> {}, 
+      "DefaultOptions" :> {ControllerLinking -> True}],
+     ImageSizeCache->{536., {246., 251.}},
+     SingleEvaluation->True],
+    Deinitialization:>None,
+    DynamicModuleValues:>{},
+    Initialization:>({$CellContext`TransmitanceAndReflectance[
+         Pattern[$CellContext`En, 
+          Blank[]], 
+         Pattern[$CellContext`V0, 
+          Blank[]], 
+         Pattern[$CellContext`a, 
+          Blank[]]] := 
+       Module[{$CellContext`k = $CellContext`a 
+           Sqrt[2 $CellContext`En], $CellContext`q = $CellContext`a 
+           Sqrt[2 ($CellContext`En - $CellContext`V0)], $CellContext`Rv, \
+$CellContext`Tv, $CellContext`Av, $CellContext`Bv}, $CellContext`Rv = Abs[
+            $CellContext`RR[$CellContext`k, $CellContext`q]]; $CellContext`Tv = 
+          Abs[
+            $CellContext`TT[$CellContext`k, $CellContext`q]]; \
+{$CellContext`Rv^2, $CellContext`Tv^2}], $CellContext`RR[
+         Pattern[$CellContext`k, 
+          Blank[]], 
+         Pattern[$CellContext`q, 
+          Blank[]]] := (($CellContext`k^2 - $CellContext`q^2) 
+         Sin[$CellContext`q])/(
+        E^(I $CellContext`k) (
+         2 I $CellContext`k $CellContext`q 
+          Cos[$CellContext`q] + ($CellContext`k^2 + $CellContext`q^2) 
+          Sin[$CellContext`q])), $CellContext`TT[
+         Pattern[$CellContext`k, 
+          Blank[]], 
+         Pattern[$CellContext`q, 
+          Blank[]]] := (I 2 $CellContext`k $CellContext`q)/(
+        E^(I $CellContext`k) (
+         2 I $CellContext`k $CellContext`q 
+          Cos[$CellContext`q] + ($CellContext`k^2 + $CellContext`q^2) 
+          Sin[$CellContext`q])), $CellContext`energyMax = 5., 
+       Attributes[PlotRange] = {ReadProtected}, $CellContext`\[Psi][
+         Pattern[$CellContext`x, 
+          Blank[]], 
+         Pattern[$CellContext`En, 
+          Blank[]], 
+         Pattern[$CellContext`V0, 
+          Blank[]], 
+         Pattern[$CellContext`a, 
+          Blank[]]] := 
+       Module[{$CellContext`z = $CellContext`x/$CellContext`a, $CellContext`k = \
+$CellContext`a Sqrt[2 $CellContext`En], $CellContext`q = $CellContext`a 
+           Sqrt[2 ($CellContext`En - $CellContext`V0)], $CellContext`Rv, \
+$CellContext`Tv, $CellContext`Av, $CellContext`Bv}, $CellContext`Rv = \
+$CellContext`RR[$CellContext`k, $CellContext`q]; $CellContext`Tv = \
+$CellContext`TT[$CellContext`k, $CellContext`q]; $CellContext`Av = \
+$CellContext`AA[$CellContext`k, $CellContext`q]; $CellContext`Bv = \
+$CellContext`BB[$CellContext`k, $CellContext`q]; 
+         Which[$CellContext`z < (-1)/2, 
+           Exp[I $CellContext`k $CellContext`z] + $CellContext`Rv 
+            Exp[(-I) $CellContext`k $CellContext`z], Abs[$CellContext`z] <= 
+           1/2, $CellContext`Av 
+            Exp[I $CellContext`q ($CellContext`x/$CellContext`a)] + \
+$CellContext`Bv Exp[(-I) $CellContext`q $CellContext`z], $CellContext`z > 
+           1/2, $CellContext`Tv 
+           Exp[I $CellContext`k $CellContext`z]]], $CellContext`AA[
+         Pattern[$CellContext`k, 
+          Blank[]], 
+         Pattern[$CellContext`q, 
+          
+          Blank[]]] := $CellContext`TT[$CellContext`k, $CellContext`q] \
+(($CellContext`q + $CellContext`k)/(2 $CellContext`q)) 
+        Exp[I (($CellContext`k - $CellContext`q)/2)], $CellContext`BB[
+         Pattern[$CellContext`k, 
+          Blank[]], 
+         Pattern[$CellContext`q, 
+          
+          Blank[]]] := $CellContext`TT[$CellContext`k, $CellContext`q] \
+(($CellContext`q - $CellContext`k)/(2 $CellContext`q)) 
+        Exp[I (($CellContext`k + $CellContext`q)/2)], $CellContext`V[
+         Pattern[$CellContext`x, 
+          Blank[]], 
+         Pattern[$CellContext`V0, 
+          Blank[]], 
+         Pattern[$CellContext`a, 
+          Blank[]]] := $CellContext`V0 (
+         UnitStep[$CellContext`x + $CellContext`a/2] - 
+         UnitStep[$CellContext`x - $CellContext`a/2]), $CellContext`xmax = 
+       10.5, $CellContext`ymax = 5., Attributes[Subscript] = {NHoldRest}, 
+       Subscript[$CellContext`CA$6411, 0][
+         Pattern[$CellContext`t$, 
+          Blank[]]] := 
+       Subscript[$CellContext`CA$6411, $CellContext`init$6411] (
+         UnitStep[$CellContext`t$] - UnitStep[$CellContext`t$ - 10]), 
+       Subscript[$CellContext`CB$6411, 0][
+         Pattern[$CellContext`t$, 
+          Blank[]]] := 
+       Subscript[$CellContext`CB$6411, $CellContext`init$6411] (
+         UnitStep[$CellContext`t$] - UnitStep[$CellContext`t$ - 10]), 
+       Subscript[$CellContext`CA$8867, 0][
+         Pattern[$CellContext`t$, 
+          Blank[]]] := 
+       Subscript[$CellContext`CA$8867, $CellContext`init$8867] (
+         UnitStep[$CellContext`t$] - UnitStep[$CellContext`t$ - 10]), 
+       Subscript[$CellContext`CB$8867, 0][
+         Pattern[$CellContext`t$, 
+          Blank[]]] := 
+       Subscript[$CellContext`CB$8867, $CellContext`init$8867] (
+         UnitStep[$CellContext`t$] - UnitStep[$CellContext`t$ - 10]), 
+       Subscript[$CellContext`CA$11314, 0][
+         Pattern[$CellContext`t$, 
+          Blank[]]] := 
+       Subscript[$CellContext`CA$11314, $CellContext`init$11314] (
+         UnitStep[$CellContext`t$] - UnitStep[$CellContext`t$ - 10]), 
+       Subscript[$CellContext`CB$11314, 0][
+         Pattern[$CellContext`t$, 
+          Blank[]]] := 
+       Subscript[$CellContext`CB$11314, $CellContext`init$11314] (
+         UnitStep[$CellContext`t$] - UnitStep[$CellContext`t$ - 10]), 
+       Subscript[$CellContext`CA$13776, 0][
+         Pattern[$CellContext`t$, 
+          Blank[]]] := 
+       Subscript[$CellContext`CA$13776, $CellContext`init$13776] (
+         UnitStep[$CellContext`t$] - UnitStep[$CellContext`t$ - 10]), 
+       Subscript[$CellContext`CB$13776, 0][
+         Pattern[$CellContext`t$, 
+          Blank[]]] := 
+       Subscript[$CellContext`CB$13776, $CellContext`init$13776] (
+         UnitStep[$CellContext`t$] - UnitStep[$CellContext`t$ - 10]), 
+       Subscript[$CellContext`CA$16223, 0][
+         Pattern[$CellContext`t$, 
+          Blank[]]] := 
+       Subscript[$CellContext`CA$16223, $CellContext`init$16223] (
+         UnitStep[$CellContext`t$] - UnitStep[$CellContext`t$ - 10]), 
+       Subscript[$CellContext`CB$16223, 0][
+         Pattern[$CellContext`t$, 
+          Blank[]]] := 
+       Subscript[$CellContext`CB$16223, $CellContext`init$16223] (
+         UnitStep[$CellContext`t$] - UnitStep[$CellContext`t$ - 10]), 
+       Subscript[$CellContext`CA$18662, 0][
+         Pattern[$CellContext`t$, 
+          Blank[]]] := 
+       Subscript[$CellContext`CA$18662, $CellContext`init$18662] (
+         UnitStep[$CellContext`t$] - UnitStep[$CellContext`t$ - 10]), 
+       Subscript[$CellContext`CB$18662, 0][
+         Pattern[$CellContext`t$, 
+          Blank[]]] := 
+       Subscript[$CellContext`CB$18662, $CellContext`init$18662] (
+         UnitStep[$CellContext`t$] - UnitStep[$CellContext`t$ - 10]), 
+       Subscript[$CellContext`CA$11314, $CellContext`init$11314] = 0.23, 
+       Subscript[$CellContext`CA$13776, $CellContext`init$13776] = 0.23, 
+       Subscript[$CellContext`CA$16223, $CellContext`init$16223] = 0.23, 
+       Subscript[$CellContext`CA$18662, $CellContext`init$18662] = 0.23, 
+       Subscript[$CellContext`CA$6411, $CellContext`init$6411] = 0.23, 
+       Subscript[$CellContext`CA$8867, $CellContext`init$8867] = 0.23, 
+       Subscript[$CellContext`CB$11314, $CellContext`init$11314] = 0.23, 
+       Subscript[$CellContext`CB$13776, $CellContext`init$13776] = 0.23, 
+       Subscript[$CellContext`CB$16223, $CellContext`init$16223] = 0.23, 
+       Subscript[$CellContext`CB$18662, $CellContext`init$18662] = 0.23, 
+       Subscript[$CellContext`CB$6411, $CellContext`init$6411] = 0.23, 
+       Subscript[$CellContext`CB$8867, $CellContext`init$8867] = 0.23, 
+       Subscript[$CellContext`V$11314, $CellContext`stage$11314] = 
+       1.5707963267948966`, 
+       Subscript[$CellContext`V$11314, $CellContext`tot$11314] = 
+       314.1592653589793, 
+       Subscript[$CellContext`V$13776, $CellContext`stage$13776] = 
+       1.5707963267948966`, 
+       Subscript[$CellContext`V$13776, $CellContext`tot$13776] = 
+       314.1592653589793, 
+       Subscript[$CellContext`V$16223, $CellContext`stage$16223] = 
+       1.5707963267948966`, 
+       Subscript[$CellContext`V$16223, $CellContext`tot$16223] = 
+       314.1592653589793, 
+       Subscript[$CellContext`V$18662, $CellContext`stage$18662] = 
+       1.5707963267948966`, 
+       Subscript[$CellContext`V$18662, $CellContext`tot$18662] = 
+       314.1592653589793, 
+       Subscript[$CellContext`V$6411, $CellContext`stage$6411] = 
+       1.5707963267948966`, 
+       Subscript[$CellContext`V$6411, $CellContext`tot$6411] = 
+       314.1592653589793, 
+       Subscript[$CellContext`V$8867, $CellContext`stage$8867] = 
+       1.5707963267948966`, 
+       Subscript[$CellContext`V$8867, $CellContext`tot$8867] = 
+       314.1592653589793, 
+       Subscript[$CellContext`w, $CellContext`opt] = {2.706, 3.686}, 
+       Attributes[$CellContext`CA$6411] = {Temporary}, 
+       Attributes[$CellContext`init$6411] = {Temporary}, 
+       Attributes[$CellContext`CB$6411] = {Temporary}, 
+       Attributes[$CellContext`CA$8867] = {Temporary}, 
+       Attributes[$CellContext`init$8867] = {Temporary}, 
+       Attributes[$CellContext`CB$8867] = {Temporary}, 
+       Attributes[$CellContext`CA$11314] = {Temporary}, 
+       Attributes[$CellContext`init$11314] = {Temporary}, 
+       Attributes[$CellContext`CB$11314] = {Temporary}, 
+       Attributes[$CellContext`CA$13776] = {Temporary}, 
+       Attributes[$CellContext`init$13776] = {Temporary}, 
+       Attributes[$CellContext`CB$13776] = {Temporary}, 
+       Attributes[$CellContext`CA$16223] = {Temporary}, 
+       Attributes[$CellContext`init$16223] = {Temporary}, 
+       Attributes[$CellContext`CB$16223] = {Temporary}, 
+       Attributes[$CellContext`CA$18662] = {Temporary}, 
+       Attributes[$CellContext`init$18662] = {Temporary}, 
+       Attributes[$CellContext`CB$18662] = {Temporary}, 
+       Attributes[$CellContext`V$18662] = {Temporary}, 
+       Attributes[$CellContext`stage$18662] = {Temporary}, 
+       Attributes[$CellContext`V$16223] = {Temporary}, 
+       Attributes[$CellContext`tot$16223] = {Temporary}, 
+       Attributes[$CellContext`V$8867] = {Temporary}, 
+       Attributes[$CellContext`tot$8867] = {Temporary}, 
+       Attributes[$CellContext`tot$18662] = {Temporary}, 
+       Attributes[$CellContext`V$13776] = {Temporary}, 
+       Attributes[$CellContext`tot$13776] = {Temporary}, 
+       Attributes[$CellContext`stage$13776] = {Temporary}, 
+       Attributes[$CellContext`stage$8867] = {Temporary}, 
+       Attributes[$CellContext`V$11314] = {Temporary}, 
+       Attributes[$CellContext`stage$11314] = {Temporary}, 
+       Attributes[$CellContext`V$6411] = {Temporary}, 
+       Attributes[$CellContext`tot$6411] = {Temporary}, 
+       Attributes[$CellContext`stage$16223] = {Temporary}, 
+       Attributes[$CellContext`stage$6411] = {Temporary}, 
+       Attributes[$CellContext`tot$11314] = {Temporary}}; 
+     Typeset`initDone$$ = True),
+    SynchronousInitialization->True,
+    UnsavedVariables:>{Typeset`initDone$$},
+    UntrackedVariables:>{Typeset`size$$}], "Manipulate",
+   Deployed->True,
+   StripOnInput->False],
+  Manipulate`InterpretManipulate[1]]], "Output",
+ CellID->340988526]
+}, Open  ]],
+
+Cell["", "DetailsSection"],
+
+Cell[CellGroupData[{
+
+Cell["", "ControlSuggestionsSection"],
+
+Cell[BoxData[
+ TooltipBox[
+  RowBox[{
+   CheckboxBox[True], Cell[" Resize Images"]}],
+  "\"Click inside an image to reveal its orange resize frame.\\nDrag any of \
+the orange resize handles to resize the image.\"",
+  ActionDelay->0.35]], "ControlSuggestions",
+ CellChangeTimes->{3.35696210375764*^9, 3.40753027299081*^9},
+ FontFamily->"Verdana",
+ CellTags->"ResizeImages"],
+
+Cell[BoxData[
+ TooltipBox[
+  RowBox[{
+   CheckboxBox[False], Cell[" Rotate and Zoom in 3D"]}],
+  RowBox[{
+   "\"Drag a 3D graphic to rotate it. Starting the drag near the center \
+tumbles\\nthe graphic; starting near a corner turns it parallel to the plane \
+of the screen.\\nHold down \"", 
+    FrameBox[
+    "Ctrl", Background -> GrayLevel[0.9], FrameMargins -> 2, FrameStyle -> 
+     GrayLevel[0.9]], "\" (or \"", 
+    FrameBox[
+    "Cmd", Background -> GrayLevel[0.9], FrameMargins -> 2, FrameStyle -> 
+     GrayLevel[0.9]], "\" on Mac) and drag up and down to zoom.\""}],
+  ActionDelay->0.35]], "ControlSuggestions",
+ FontFamily->"Verdana",
+ CellTags->"RotateAndZoomIn3D"],
+
+Cell[BoxData[
+ TooltipBox[
+  RowBox[{
+   CheckboxBox[False], Cell[" Drag Locators"]}],
+  RowBox[{"\"Drag any locator (\"", 
+    GraphicsBox[
+     LocatorBox[
+      Scaled[{0.5, 0.5}]], ImageSize -> 20], 
+    "\", etc.) to move it around.\""}],
+  ActionDelay->0.35]], "ControlSuggestions",
+ FontFamily->"Verdana",
+ CellTags->"DragLocators"],
+
+Cell[BoxData[
+ TooltipBox[
+  RowBox[{
+   CheckboxBox[False], Cell[" Create and Delete Locators"]}],
+  RowBox[{"\"Insert a new locator in the graphic by holding down the \"", 
+    FrameBox[
+    "Alt", Background -> GrayLevel[0.9], FrameMargins -> 2, FrameStyle -> 
+     GrayLevel[0.9]], 
+    "\" key\\nand clicking where you want it to be. Delete a locator by \
+clicking it\\nwhile holding down the \"", 
+    FrameBox[
+    "Alt", Background -> GrayLevel[0.9], FrameMargins -> 2, FrameStyle -> 
+     GrayLevel[0.9]], "\" key.\""}],
+  ActionDelay->0.35]], "ControlSuggestions",
+ FontFamily->"Verdana",
+ CellTags->"CreateAndDeleteLocators"],
+
+Cell[BoxData[
+ TooltipBox[
+  RowBox[{
+   CheckboxBox[True], Cell[" Slider Zoom"]}],
+  RowBox[{"\"Hold down the \"", 
+    FrameBox[
+    "Alt", Background -> GrayLevel[0.9], FrameMargins -> 2, FrameStyle -> 
+     GrayLevel[0.9]], 
+    "\" key while moving a slider to make fine adjustments in the slider \
+value.\\nHold \"", 
+    FrameBox[
+    "Ctrl", Background -> GrayLevel[0.9], FrameMargins -> 2, FrameStyle -> 
+     GrayLevel[0.9]], "\" and/or \"", 
+    FrameBox[
+    "Shift", Background -> GrayLevel[0.9], FrameMargins -> 2, FrameStyle -> 
+     GrayLevel[0.9]], "\" at the same time as \"", 
+    FrameBox[
+    "Alt", Background -> GrayLevel[0.9], FrameMargins -> 2, FrameStyle -> 
+     GrayLevel[0.9]], "\" to make ever finer adjustments.\""}],
+  ActionDelay->0.35]], "ControlSuggestions",
+ CellChangeTimes->{3.35696210375764*^9, 3.4075302757000093`*^9},
+ FontFamily->"Verdana",
+ CellTags->"SliderZoom"],
+
+Cell[BoxData[
+ TooltipBox[
+  RowBox[{
+   CheckboxBox[False], Cell[" Gamepad Controls"]}],
+  "\"Control this Demonstration with a gamepad or other\\nhuman interface \
+device connected to your computer.\"",
+  ActionDelay->0.35]], "ControlSuggestions",
+ CellChangeTimes->{3.35696210375764*^9, 3.3895522232313623`*^9},
+ FontFamily->"Verdana",
+ CellTags->"GamepadControls"],
+
+Cell[BoxData[
+ TooltipBox[
+  RowBox[{
+   CheckboxBox[True], Cell[" Automatic Animation"]}],
+  RowBox[{"\"Animate a slider in this Demonstration by clicking the\"", 
+    AdjustmentBox[
+     Cell[
+      GraphicsData[
+      "CompressedBitmap", 
+       "eJzzTSzJSM1NLMlMTlRwL0osyMhMLlZwyy8CCjEzMjAwcIKwAgOI/R/IhBKc\n\
+/4EAyGAG0f+nTZsGwgysIJIRKsWKLAXGIHFmEpUgLADxWUAkI24jZs+eTaEt\n\
+IG+wQKRmzJgBlYf5lhEA30OqWA=="], "Graphics", ImageSize -> {9, 9}, ImageMargins -> 
+      0], BoxBaselineShift -> 0.1839080459770115, 
+     BoxMargins -> {{0., 0.}, {-0.1839080459770115, 0.1839080459770115}}], 
+    "\"button\\nnext to the slider, and then clicking the play button that \
+appears.\\nAnimate all controls by selecting \"", 
+    StyleBox["Autorun", FontWeight -> "Bold"], "\" from the\"", 
+    AdjustmentBox[
+     Cell[
+      GraphicsData[
+      "CompressedBitmap", 
+       "eJyNULENwyAQfEySIlMwTVJlCGRFsosokeNtqBmDBagoaZjAI1C8/8GUUUC6\n\
+57h7cQ8PvU7Pl17nUav7oj/TPH7V7b2QJAUAXBkKmCPRowxICy64bRvGGNF7\n\
+X8CctGoDSN4xhIDGGDhzFXwUh3/ClBKrDQPmnGXtI6u0OOd+tZBVUqy1xSaH\n\
+UqiK6pPe4XdEdAz6563tx/gejuORGMxJaz8mdpJn7hc="], "Graphics", 
+      ImageSize -> {10, 10}, ImageMargins -> 0], BoxBaselineShift -> 
+     0.1839080459770115, 
+     BoxMargins -> {{0., 0.}, {-0.1839080459770115, 0.1839080459770115}}], 
+    "\"menu.\""}],
+  ActionDelay->0.35]], "ControlSuggestions",
+ CellChangeTimes->{3.35696210375764*^9, 3.407530279188044*^9},
+ FontFamily->"Verdana",
+ CellTags->"AutomaticAnimation"],
+
+Cell[BoxData[
+ TooltipBox[
+  RowBox[{
+   CheckboxBox[False], Cell[" Bookmark Animation"]}],
+  RowBox[{
+   "\"See a prepared animation of this Demonstration by selecting\\n\"", 
+    StyleBox["Animate Bookmarks", FontWeight -> "Bold"], "\" from the\"", 
+    AdjustmentBox[
+     Cell[
+      GraphicsData[
+      "CompressedBitmap", 
+       "eJyNULENwyAQfEySIlMwTVJlCGRFsosokeNtqBmDBagoaZjAI1C8/8GUUUC6\n\
+57h7cQ8PvU7Pl17nUav7oj/TPH7V7b2QJAUAXBkKmCPRowxICy64bRvGGNF7\n\
+X8CctGoDSN4xhIDGGDhzFXwUh3/ClBKrDQPmnGXtI6u0OOd+tZBVUqy1xSaH\n\
+UqiK6pPe4XdEdAz6563tx/gejuORGMxJaz8mdpJn7hc="], "Graphics", 
+      ImageSize -> {10, 10}, ImageMargins -> 0], BoxBaselineShift -> 
+     0.1839080459770115, 
+     BoxMargins -> {{0., 0.}, {-0.1839080459770115, 0.1839080459770115}}], 
+    "\"menu.\""}],
+  ActionDelay->0.35]], "ControlSuggestions",
+ FontFamily->"Verdana",
+ CellTags->"BookmarkAnimation"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["", "SearchTermsSection"],
+
+Cell["transmittance", "SearchTerms",
+ CellChangeTimes->{
+  3.35696210375764*^9, {3.4075046035468187`*^9, 3.407504607386015*^9}, 
+   3.411059578070136*^9, 3.411063864609282*^9, {3.4111313544925222`*^9, 
+   3.4111313546018963`*^9}},
+ CellID->1007128191],
+
+Cell["reflectance", "SearchTerms",
+ CellChangeTimes->{
+  3.35696210375764*^9, {3.4075045931939573`*^9, 3.4075046012097073`*^9}, 
+   3.4110638671224117`*^9, {3.4111313556331396`*^9, 3.411131355711264*^9}},
+ CellID->679940954],
+
+Cell["transmission coefficient", "SearchTerms",
+ CellChangeTimes->{
+  3.35696210375764*^9, {3.407504334351583*^9, 3.4075043390737333`*^9}, 
+   3.411063870249305*^9, {3.411131356664383*^9, 3.411131357242504*^9}},
+ CellID->909692439],
+
+Cell["reflection coefficient", "SearchTerms",
+ CellChangeTimes->{
+  3.35696210375764*^9, {3.407504323312546*^9, 3.407504331777726*^9}, 
+   3.411063874873788*^9, {3.4111313588987436`*^9, 3.411131359320616*^9}},
+ CellID->453776648],
+
+Cell["finite square well", "SearchTerms",
+ CellChangeTimes->{
+  3.35696210375764*^9, {3.407504295207963*^9, 3.407504300200481*^9}, 
+   3.411063876582445*^9, {3.411131360586233*^9, 3.4111313606643577`*^9}},
+ CellID->548812759],
+
+Cell["scattering", "SearchTerms",
+ CellChangeTimes->{
+  3.35696210375764*^9, {3.407504278699156*^9, 3.4075042820482388`*^9}, 
+   3.4110638788188667`*^9, {3.4111313620393486`*^9, 3.411131362117473*^9}},
+ CellID->93307067]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["", "RelatedLinksSection"],
+
+Cell[TextData[ButtonBox["Scattering over a Square Potential Well",
+ BaseStyle->"Hyperlink",
+ ButtonData->{
+   URL["http://demonstrations.wolfram.com/ScatteringOverASquarePotentialWell/\
+"], None}]], "RelatedLinks",
+ CellChangeTimes->{
+  3.35696210375764*^9, {3.4111311842436113`*^9, 3.411131199790387*^9}},
+ CellID->104445355]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["", "AuthorSection"],
+
+Cell[TextData[{
+ "Contributed by: ",
+ ButtonBox["M. Hanson",
+  BaseStyle->"Hyperlink",
+  ButtonData->{
+    URL["http://demonstrations.wolfram.com/author.html?author=M.+Hanson"], 
+    None},
+  ButtonNote->
+   "http://demonstrations.wolfram.com/author.html?author=M.+Hanson"]
+}], "Author",
+ CellChangeTimes->{
+  3.35696210375764*^9, {3.407504169300604*^9, 3.407504171812992*^9}, {
+   3.407504487413603*^9, 3.407504487525096*^9}},
+ CellID->164233602],
+
+Cell[TextData[{
+ "Based on a program by: ",
+ ButtonBox["Mahn-Soo Choi",
+  BaseStyle->"Hyperlink",
+  ButtonData->{
+    URL["http://demonstrations.wolfram.com/author.html?author=Mahn-Soo+Choi"],
+     None},
+  ButtonNote->
+   "http://demonstrations.wolfram.com/author.html?author=Mahn-Soo+Choi"]
+}], "Author",
+ CellChangeTimes->{
+  3.35696210375764*^9, {3.407504488311558*^9, 3.4075044976226597`*^9}, {
+   3.407504569635869*^9, 3.407504574626532*^9}},
+ CellID->1264739280],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"Plot", "::", "\<\"plln\"\>"}], 
+  RowBox[{
+  ":", " "}], "\<\"Limiting value \\!\\(Global`energyMax\\) in \
+\\!\\({Global`z, 0, Global`energyMax}\\) is not a machine-size real number. \
+\\!\\(\\*ButtonBox[\\\"\[RightSkeleton]\\\", ButtonStyle->\\\"Link\\\", \
+ButtonFrame->None, ButtonData:>\\\"paclet:ref/message/General/plln\\\", \
+ButtonNote -> \\\"Plot::plln\\\"]\\)\"\>"}]], "Message", "MSG",
+ CellChangeTimes->{3.35696210375764*^9, 3.4118440338874965`*^9},
+ CellID->29967105],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"Plot", "::", "\<\"plln\"\>"}], 
+  RowBox[{
+  ":", " "}], "\<\"Limiting value \\!\\(-Global`xmax\\) in \\!\\({Global`x, \
+\\(\\(-Global`xmax\\)\\), Global`xmax}\\) is not a machine-size real number. \
+\\!\\(\\*ButtonBox[\\\"\[RightSkeleton]\\\", ButtonStyle->\\\"Link\\\", \
+ButtonFrame->None, ButtonData:>\\\"paclet:ref/message/General/plln\\\", \
+ButtonNote -> \\\"Plot::plln\\\"]\\)\"\>"}]], "Message", "MSG",
+ CellChangeTimes->{3.35696210375764*^9, 3.4118440339656224`*^9},
+ CellID->387607513],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"Plot", "::", "\<\"plln\"\>"}], 
+  RowBox[{
+  ":", " "}], "\<\"Limiting value \\!\\(Global`energyMax\\) in \
+\\!\\({Global`z, 0, Global`energyMax}\\) is not a machine-size real number. \
+\\!\\(\\*ButtonBox[\\\"\[RightSkeleton]\\\", ButtonStyle->\\\"Link\\\", \
+ButtonFrame->None, ButtonData:>\\\"paclet:ref/message/General/plln\\\", \
+ButtonNote -> \\\"Plot::plln\\\"]\\)\"\>"}]], "Message", "MSG",
+ CellChangeTimes->{3.35696210375764*^9, 3.4118440339656224`*^9},
+ CellID->258695736],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"General", "::", "\<\"stop\"\>"}], 
+  RowBox[{
+  ":", " "}], "\<\"Further output of \\!\\(Plot :: \\\"plln\\\"\\) will be \
+suppressed during this calculation. \\!\\(\\*ButtonBox[\\\"\[RightSkeleton]\\\
+\", ButtonStyle->\\\"Link\\\", ButtonFrame->None, \
+ButtonData:>\\\"paclet:ref/message/General/stop\\\", ButtonNote -> \
+\\\"General::stop\\\"]\\)\"\>"}]], "Message", "MSG",
+ CellChangeTimes->{3.35696210375764*^9, 3.411844034074999*^9},
+ CellID->398250927]
+}, Open  ]]
+}, Open  ]]
+},
+WindowSize->{700, 907},
+WindowMargins->{{27, Automatic}, {Automatic, 5}},
+FrontEndVersion->"6.0 for Microsoft Windows (32-bit) (February 11, 2008)",
+StyleDefinitions->FrontEnd`FileName[{"Wolfram"}, "Demonstration.nb", 
+  CharacterEncoding -> "WindowsANSI"]
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{
+ "ResizeImages"->{
+  Cell[103127, 2234, 372, 9, 22, "ControlSuggestions",
+   CellTags->"ResizeImages"]},
+ "RotateAndZoomIn3D"->{
+  Cell[103502, 2245, 677, 16, 22, "ControlSuggestions",
+   CellTags->"RotateAndZoomIn3D"]},
+ "DragLocators"->{
+  Cell[104182, 2263, 339, 11, 22, "ControlSuggestions",
+   CellTags->"DragLocators"]},
+ "CreateAndDeleteLocators"->{
+  Cell[104524, 2276, 636, 15, 22, "ControlSuggestions",
+   CellTags->"CreateAndDeleteLocators"]},
+ "SliderZoom"->{
+  Cell[105163, 2293, 907, 22, 22, "ControlSuggestions",
+   CellTags->"SliderZoom"]},
+ "GamepadControls"->{
+  Cell[106073, 2317, 368, 9, 22, "ControlSuggestions",
+   CellTags->"GamepadControls"]},
+ "AutomaticAnimation"->{
+  Cell[106444, 2328, 1473, 32, 22, "ControlSuggestions",
+   CellTags->"AutomaticAnimation"]},
+ "BookmarkAnimation"->{
+  Cell[107920, 2362, 881, 21, 22, "ControlSuggestions",
+   CellTags->"BookmarkAnimation"]}
+ }
+*)
+(*CellTagsIndex
+CellTagsIndex->{
+ {"ResizeImages", 114119, 2537},
+ {"RotateAndZoomIn3D", 114229, 2540},
+ {"DragLocators", 114340, 2543},
+ {"CreateAndDeleteLocators", 114457, 2546},
+ {"SliderZoom", 114572, 2549},
+ {"GamepadControls", 114679, 2552},
+ {"AutomaticAnimation", 114793, 2555},
+ {"BookmarkAnimation", 114911, 2558}
+ }
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[590, 23, 173, 3, 74, "DemoTitle"],
+Cell[CellGroupData[{
+Cell[788, 30, 33, 0, 156, "InitializationSection"],
+Cell[824, 32, 8752, 235, 605, "Input",
+ CellID->1549168418]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[9613, 272, 29, 0, 188, "ManipulateSection"],
+Cell[CellGroupData[{
+Cell[9667, 276, 13136, 293, 1008, "Input",
+ CellID->1043661014],
+Cell[22806, 571, 15743, 321, 509, "Output",
+ CellID->26788140]
+}, {2}]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[38595, 898, 36, 0, 136, "ManipulateCaptionSection"],
+Cell[38634, 900, 1189, 23, 129, "ManipulateCaption",
+ CellID->613131512]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[39860, 928, 28, 0, 168, "ThumbnailSection"],
+Cell[39891, 930, 15760, 321, 509, "Output",
+ CellID->130027856]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[55688, 1256, 28, 0, 138, "SnapshotsSection"],
+Cell[55719, 1258, 15768, 321, 509, "Output",
+ CellID->499473640],
+Cell[71490, 1581, 15760, 321, 509, "Output",
+ CellID->137169358],
+Cell[87253, 1904, 15768, 321, 509, "Output",
+ CellID->340988526]
+}, Open  ]],
+Cell[103036, 2228, 26, 0, 232, "DetailsSection"],
+Cell[CellGroupData[{
+Cell[103087, 2232, 37, 0, 108, "ControlSuggestionsSection"],
+Cell[103127, 2234, 372, 9, 22, "ControlSuggestions",
+ CellTags->"ResizeImages"],
+Cell[103502, 2245, 677, 16, 22, "ControlSuggestions",
+ CellTags->"RotateAndZoomIn3D"],
+Cell[104182, 2263, 339, 11, 22, "ControlSuggestions",
+ CellTags->"DragLocators"],
+Cell[104524, 2276, 636, 15, 22, "ControlSuggestions",
+ CellTags->"CreateAndDeleteLocators"],
+Cell[105163, 2293, 907, 22, 22, "ControlSuggestions",
+ CellTags->"SliderZoom"],
+Cell[106073, 2317, 368, 9, 22, "ControlSuggestions",
+ CellTags->"GamepadControls"],
+Cell[106444, 2328, 1473, 32, 22, "ControlSuggestions",
+ CellTags->"AutomaticAnimation"],
+Cell[107920, 2362, 881, 21, 22, "ControlSuggestions",
+ CellTags->"BookmarkAnimation"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[108838, 2388, 30, 0, 152, "SearchTermsSection"],
+Cell[108871, 2390, 251, 5, 22, "SearchTerms",
+ CellID->1007128191],
+Cell[109125, 2397, 224, 4, 22, "SearchTerms",
+ CellID->679940954],
+Cell[109352, 2403, 231, 4, 22, "SearchTerms",
+ CellID->909692439],
+Cell[109586, 2409, 229, 4, 22, "SearchTerms",
+ CellID->453776648],
+Cell[109818, 2415, 225, 4, 22, "SearchTerms",
+ CellID->548812759],
+Cell[110046, 2421, 220, 4, 22, "SearchTerms",
+ CellID->93307067]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[110303, 2430, 31, 0, 138, "RelatedLinksSection"],
+Cell[110337, 2432, 326, 7, 22, "RelatedLinks",
+ CellID->104445355]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[110700, 2444, 25, 0, 136, "AuthorSection"],
+Cell[110728, 2446, 447, 13, 22, "Author",
+ CellID->164233602],
+Cell[111178, 2461, 469, 13, 22, "Author",
+ CellID->1264739280],
+Cell[111650, 2476, 516, 10, 37, "Message",
+ CellID->29967105],
+Cell[112169, 2488, 531, 10, 37, "Message",
+ CellID->387607513],
+Cell[112703, 2500, 517, 10, 37, "Message",
+ CellID->258695736],
+Cell[113223, 2512, 493, 10, 19, "Message",
+ CellID->398250927]
+}, Open  ]]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)

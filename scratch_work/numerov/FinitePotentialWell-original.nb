@@ -1,0 +1,1501 @@
+(* Content-type: application/mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 7.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       145,          7]
+NotebookDataLength[     59504,       1492]
+NotebookOptionsPosition[     54933,       1350]
+NotebookOutlinePosition[     56524,       1400]
+CellTagsIndexPosition[     56196,       1388]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell["Finite Potential Well", "DemoTitle",
+ CellChangeTimes->{
+  3.35696210375764*^9, {3.474062696453125*^9, 3.474062732390625*^9}}],
+
+Cell[CellGroupData[{
+
+Cell["", "InitializationSection"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"psias", "[", 
+   RowBox[{"z_", ",", " ", "\[Gamma]_", ",", " ", "xa_"}], "]"}], ":=", " ", 
+  RowBox[{"Which", "[", 
+   RowBox[{
+    RowBox[{"xa", "<", 
+     RowBox[{"-", "1"}]}], ",", " ", 
+    RowBox[{
+     RowBox[{"-", 
+      RowBox[{"Sin", "[", "z", "]"}]}], " ", 
+     SuperscriptBox["\[ExponentialE]", 
+      SqrtBox[
+       RowBox[{
+        SuperscriptBox["\[Gamma]", "2"], "-", 
+        SuperscriptBox["z", "2"]}]]], " ", 
+     SuperscriptBox["\[ExponentialE]", 
+      RowBox[{
+       SqrtBox[
+        RowBox[{
+         SuperscriptBox["\[Gamma]", "2"], " ", "-", " ", 
+         SuperscriptBox["z", "2"]}]], " ", "xa"}]]}], " ", ",", " ", 
+    RowBox[{
+     RowBox[{"-", "1"}], "\[LessEqual]", "xa", "\[LessEqual]", "1"}], ",", 
+    " ", 
+    RowBox[{"Sin", "[", 
+     RowBox[{"z", " ", "xa"}], "]"}], ",", " ", 
+    RowBox[{"xa", ">", "1"}], ",", " ", 
+    RowBox[{
+     RowBox[{"Sin", "[", "z", "]"}], " ", 
+     SuperscriptBox["\[ExponentialE]", 
+      SqrtBox[
+       RowBox[{
+        SuperscriptBox["\[Gamma]", "2"], "-", 
+        SuperscriptBox["z", "2"]}]]], " ", 
+     SuperscriptBox["\[ExponentialE]", 
+      RowBox[{
+       RowBox[{"-", 
+        SqrtBox[
+         RowBox[{
+          SuperscriptBox["\[Gamma]", "2"], " ", "-", " ", 
+          SuperscriptBox["z", "2"]}]]}], " ", "xa"}]]}]}], 
+   "]"}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"psis", "[", 
+   RowBox[{"z_", ",", " ", "\[Gamma]_", ",", " ", "xa_"}], "]"}], ":=", " ", 
+  RowBox[{"Which", "[", 
+   RowBox[{
+    RowBox[{"xa", "<", 
+     RowBox[{"-", "1"}]}], ",", " ", 
+    RowBox[{
+     RowBox[{"Cos", "[", "z", "]"}], " ", 
+     SuperscriptBox["\[ExponentialE]", 
+      SqrtBox[
+       RowBox[{
+        SuperscriptBox["\[Gamma]", "2"], "-", 
+        SuperscriptBox["z", "2"]}]]], " ", 
+     SuperscriptBox["\[ExponentialE]", 
+      RowBox[{
+       SqrtBox[
+        RowBox[{
+         SuperscriptBox["\[Gamma]", "2"], " ", "-", " ", 
+         SuperscriptBox["z", "2"]}]], " ", "xa"}]]}], " ", ",", " ", 
+    RowBox[{
+     RowBox[{"-", "1"}], "\[LessEqual]", "xa", "\[LessEqual]", "1"}], ",", 
+    " ", 
+    RowBox[{"Cos", "[", 
+     RowBox[{"z", " ", "xa"}], "]"}], ",", " ", 
+    RowBox[{"xa", ">", "1"}], ",", 
+    RowBox[{
+     RowBox[{"Cos", "[", "z", "]"}], " ", 
+     SuperscriptBox["\[ExponentialE]", 
+      SqrtBox[
+       RowBox[{
+        SuperscriptBox["\[Gamma]", "2"], "-", 
+        SuperscriptBox["z", "2"]}]]], " ", 
+     SuperscriptBox["\[ExponentialE]", 
+      RowBox[{
+       RowBox[{"-", 
+        SqrtBox[
+         RowBox[{
+          SuperscriptBox["\[Gamma]", "2"], " ", "-", " ", 
+          SuperscriptBox["z", "2"]}]]}], " ", "xa"}]]}]}], 
+   "]"}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"zed", "[", 
+   RowBox[{"er_", ",", "\[Gamma]_"}], "]"}], ":=", " ", 
+  SqrtBox[
+   RowBox[{
+    SuperscriptBox["\[Gamma]", "2"], 
+    RowBox[{"(", 
+     RowBox[{"er", " ", "+", " ", "1"}], ")"}]}]]}]}], "Input",
+ InitializationCell->True,
+ CellID->854113705]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["", "ManipulateSection"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Manipulate", "[", "\[IndentingNewLine]", 
+  RowBox[{
+   RowBox[{"Grid", "[", 
+    RowBox[{"{", "\[IndentingNewLine]", 
+     RowBox[{"{", "\[IndentingNewLine]", 
+      RowBox[{
+       RowBox[{"Show", "[", "\[IndentingNewLine]", 
+        RowBox[{
+         RowBox[{"Plot", "[", "\[IndentingNewLine]", 
+          RowBox[{
+           RowBox[{"{", 
+            RowBox[{
+             RowBox[{"Tan", "[", "z", "]"}], ",", 
+             RowBox[{"-", 
+              RowBox[{"Cot", "[", "z", "]"}]}], ",", " ", 
+             FractionBox[
+              SqrtBox[
+               RowBox[{
+                SuperscriptBox["g", "2"], " ", "-", 
+                SuperscriptBox["z", "2"]}]], "z"]}], "}"}], ",", " ", 
+           RowBox[{"{", 
+            RowBox[{"z", ",", "0", ",", "g"}], "}"}], ",", 
+           RowBox[{"PlotRange", "\[Rule]", 
+            RowBox[{"{", " ", 
+             RowBox[{
+              RowBox[{"{", 
+               RowBox[{"0", ",", 
+                RowBox[{"1.1", " ", "g"}]}], "}"}], ",", 
+              RowBox[{"{", 
+               RowBox[{
+                RowBox[{"-", "5"}], ",", "20"}], "}"}]}], "}"}]}], ",", " ", 
+           RowBox[{"Exclusions", "\[Rule]", 
+            RowBox[{"Table", "[", 
+             RowBox[{
+              RowBox[{"n", 
+               FractionBox["\[Pi]", "2"]}], ",", " ", 
+              RowBox[{"{", 
+               RowBox[{"n", ",", "1", ",", "100", ",", "1"}], "}"}]}], 
+             "]"}]}], ",", " ", 
+           RowBox[{"AxesLabel", "\[Rule]", " ", 
+            RowBox[{"{", 
+             RowBox[{"z", ",", "\"\<\>\""}], "}"}]}], ",", 
+           RowBox[{"PlotLabel", "\[Rule]", 
+            RowBox[{"Row", "[", 
+             RowBox[{"{", " ", 
+              RowBox[{
+               FractionBox[
+                SqrtBox[
+                 RowBox[{
+                  SuperscriptBox["\[Gamma]", "2"], " ", "-", 
+                  SuperscriptBox["z", "2"]}]], "z"], ",", "\"\<, \>\"", ",", 
+               RowBox[{"Tan", "[", "z", "]"}], ",", "\"\<, \>\"", ",", " ", 
+               RowBox[{"-", 
+                RowBox[{"Cot", "[", "z", "]"}]}]}], "}"}], "]"}]}]}], 
+          "\[IndentingNewLine]", "]"}], ",", "\[IndentingNewLine]", " ", 
+         RowBox[{"ListPlot", "[", 
+          RowBox[{"{", 
+           RowBox[{"{", 
+            RowBox[{
+             RowBox[{"zed", "[", 
+              RowBox[{"er", ",", "g"}], "]"}], ",", 
+             FractionBox[
+              SqrtBox[
+               RowBox[{
+                SuperscriptBox["g", "2"], " ", "-", 
+                SuperscriptBox[
+                 RowBox[{"zed", "[", 
+                  RowBox[{"er", ",", "g"}], "]"}], "2"]}]], 
+              RowBox[{"zed", "[", 
+               RowBox[{"er", ",", "g"}], "]"}]]}], "}"}], "}"}], "]"}], ",", 
+         "\[IndentingNewLine]", 
+         RowBox[{"ImageSize", "\[Rule]", 
+          RowBox[{"{", 
+           RowBox[{"275", ",", "250"}], "}"}]}]}], "\[IndentingNewLine]", 
+        "]"}], ",", "\[IndentingNewLine]", 
+       RowBox[{"Plot", "[", 
+        RowBox[{
+         RowBox[{"{", 
+          RowBox[{
+           RowBox[{"psis", "[", 
+            RowBox[{
+             RowBox[{"zed", "[", 
+              RowBox[{"er", ",", "g"}], "]"}], ",", "g", ",", " ", "xa"}], 
+            "]"}], ",", 
+           RowBox[{"psias", "[", 
+            RowBox[{
+             RowBox[{"zed", "[", 
+              RowBox[{"er", ",", "g"}], "]"}], ",", "g", ",", " ", "xa"}], 
+            "]"}]}], "}"}], ",", " ", 
+         RowBox[{"{", 
+          RowBox[{"xa", ",", "0", ",", "1.2"}], "}"}], ",", " ", 
+         RowBox[{"PlotPoints", "\[Rule]", " ", "1000"}], ",", " ", 
+         RowBox[{"PlotRange", "\[Rule]", " ", "1.1"}], ",", " ", 
+         RowBox[{"AxesLabel", "\[Rule]", " ", 
+          RowBox[{"{", 
+           RowBox[{
+           "\"\<\!\(\*FractionBox[\(x\), \(a\)]\)\>\"", ",", 
+            "\"\<\[CapitalPsi] \[LongDash] unnormalized\>\""}], "}"}]}], ",", 
+         RowBox[{"Epilog", "\[Rule]", 
+          RowBox[{"{", 
+           RowBox[{"Dashed", ",", 
+            RowBox[{"Line", "[", 
+             RowBox[{"{", 
+              RowBox[{
+               RowBox[{"{", 
+                RowBox[{"1", ",", 
+                 RowBox[{"-", "1.1"}]}], "}"}], ",", 
+               RowBox[{"{", 
+                RowBox[{"1", ",", "1.1"}], "}"}]}], "}"}], "]"}]}], "}"}]}], 
+         ",", 
+         RowBox[{"ImageSize", "\[Rule]", 
+          RowBox[{"{", 
+           RowBox[{"275", ",", "250"}], "}"}]}]}], "]"}]}], 
+      "\[IndentingNewLine]", "}"}], "}"}], "\[IndentingNewLine]", "]"}], ",", 
+   "\[IndentingNewLine]", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"g", ",", "5", ",", "\"\<\[Gamma]\>\""}], "}"}], ",", "5", ",", 
+     "20", ",", 
+     RowBox[{"Appearance", "\[Rule]", "\"\<Labeled\>\""}]}], "}"}], ",", 
+   "\[IndentingNewLine]", " ", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"er", ",", 
+       RowBox[{"-", "0.9975"}], ",", "\"\<\[Rho]\>\""}], "}"}], ",", 
+     RowBox[{"-", "0.9975"}], ",", "0", ",", 
+     RowBox[{"Appearance", "\[Rule]", "\"\<Labeled\>\""}]}], "}"}], ",", 
+   "\[IndentingNewLine]", 
+   RowBox[{"SaveDefinitions", "\[Rule]", " ", "True"}], ",", 
+   RowBox[{"TrackedSymbols", "\[Rule]", "True"}]}], "\[IndentingNewLine]", 
+  "]"}]], "Input",
+ CellChangeTimes->{
+  3.35696210375764*^9, {3.474062799953125*^9, 3.474062837296875*^9}, 
+   3.47406420371875*^9, {3.4742892520437627`*^9, 3.4742893725618134`*^9}, {
+   3.4742894291404705`*^9, 3.4742895086584215`*^9}, {3.474289693367891*^9, 
+   3.4742897309666505`*^9}, {3.474309026340786*^9, 3.4743091829804087`*^9}, {
+   3.47431012135353*^9, 3.4743101241192255`*^9}, {3.474312157674426*^9, 
+   3.474312164252509*^9}}],
+
+Cell[BoxData[
+ TagBox[
+  StyleBox[
+   DynamicModuleBox[{$CellContext`er$$ = -0.9975, $CellContext`g$$ = 5, 
+    Typeset`show$$ = True, Typeset`bookmarkList$$ = {}, 
+    Typeset`bookmarkMode$$ = "Menu", Typeset`animator$$, Typeset`animvar$$ = 
+    1, Typeset`name$$ = "\"untitled\"", Typeset`specs$$ = {{{
+       Hold[$CellContext`g$$], 5, "\[Gamma]"}, 5, 20}, {{
+       Hold[$CellContext`er$$], -0.9975, "\[Rho]"}, -0.9975, 0}}, 
+    Typeset`size$$ = {558., {122.34375, 127.65625}}, Typeset`update$$ = 0, 
+    Typeset`initDone$$, Typeset`skipInitDone$$ = 
+    False, $CellContext`g$37197$$ = 0, $CellContext`er$37198$$ = 0}, 
+    DynamicBox[Manipulate`ManipulateBoxes[
+     1, StandardForm, 
+      "Variables" :> {$CellContext`er$$ = -0.9975, $CellContext`g$$ = 5}, 
+      "ControllerVariables" :> {
+        Hold[$CellContext`g$$, $CellContext`g$37197$$, 0], 
+        Hold[$CellContext`er$$, $CellContext`er$37198$$, 0]}, 
+      "OtherVariables" :> {
+       Typeset`show$$, Typeset`bookmarkList$$, Typeset`bookmarkMode$$, 
+        Typeset`animator$$, Typeset`animvar$$, Typeset`name$$, 
+        Typeset`specs$$, Typeset`size$$, Typeset`update$$, Typeset`initDone$$,
+         Typeset`skipInitDone$$}, "Body" :> Grid[{{
+          Show[
+           Plot[{
+             Tan[$CellContext`z], -
+             Cot[$CellContext`z], ($CellContext`g$$^2 - $CellContext`z^2)^
+              Rational[1, 2]/$CellContext`z}, {$CellContext`z, 
+             0, $CellContext`g$$}, 
+            PlotRange -> {{0, 1.1 $CellContext`g$$}, {-5, 20}}, Exclusions -> 
+            Table[$CellContext`n (Pi/2), {$CellContext`n, 1, 100, 1}], 
+            AxesLabel -> {$CellContext`z, ""}, PlotLabel -> 
+            Row[{($CellContext`\[Gamma]^2 - $CellContext`z^2)^
+                Rational[1, 2]/$CellContext`z, ", ", 
+               Tan[$CellContext`z], ", ", -Cot[$CellContext`z]}]], 
+           ListPlot[{{
+              $CellContext`zed[$CellContext`er$$, $CellContext`g$$], \
+($CellContext`g$$^2 - $CellContext`zed[$CellContext`er$$, \
+$CellContext`g$$]^2)^
+               Rational[
+                1, 2]/$CellContext`zed[$CellContext`er$$, \
+$CellContext`g$$]}}], ImageSize -> {275, 250}], 
+          Plot[{
+            $CellContext`psis[
+             $CellContext`zed[$CellContext`er$$, $CellContext`g$$], \
+$CellContext`g$$, $CellContext`xa], 
+            $CellContext`psias[
+             $CellContext`zed[$CellContext`er$$, $CellContext`g$$], \
+$CellContext`g$$, $CellContext`xa]}, {$CellContext`xa, 0, 1.2}, PlotPoints -> 
+           1000, PlotRange -> 1.1, 
+           AxesLabel -> {
+            "\!\(\*FractionBox[\(x\), \(a\)]\)", 
+             "\[CapitalPsi] \[LongDash] unnormalized"}, Epilog -> {Dashed, 
+             Line[{{1, -1.1}, {1, 1.1}}]}, ImageSize -> {275, 250}]}}], 
+      "Specifications" :> {{{$CellContext`g$$, 5, "\[Gamma]"}, 5, 20, 
+         Appearance -> 
+         "Labeled"}, {{$CellContext`er$$, -0.9975, "\[Rho]"}, -0.9975, 0, 
+         Appearance -> "Labeled"}}, "Options" :> {TrackedSymbols -> True}, 
+      "DefaultOptions" :> {ControllerLinking -> True}],
+     ImageSizeCache->{601., {182.34375, 187.65625}},
+     SingleEvaluation->True],
+    Deinitialization:>None,
+    DynamicModuleValues:>{},
+    Initialization:>({
+      Attributes[PlotRange] = {ReadProtected}, $CellContext`zed[
+         Pattern[$CellContext`er, 
+          Blank[]], 
+         Pattern[$CellContext`\[Gamma], 
+          Blank[]]] := 
+       Sqrt[$CellContext`\[Gamma]^2 ($CellContext`er + 1)], $CellContext`psis[
+         Pattern[$CellContext`z, 
+          Blank[]], 
+         Pattern[$CellContext`\[Gamma], 
+          Blank[]], 
+         Pattern[$CellContext`xa, 
+          Blank[]]] := 
+       Which[$CellContext`xa < -1, (Cos[$CellContext`z] 
+          E^Sqrt[$CellContext`\[Gamma]^2 - $CellContext`z^2]) 
+         E^(Sqrt[$CellContext`\[Gamma]^2 - $CellContext`z^2] \
+$CellContext`xa), -1 <= $CellContext`xa <= 1, 
+         Cos[$CellContext`z $CellContext`xa], $CellContext`xa > 
+         1, (Cos[$CellContext`z] 
+          E^Sqrt[$CellContext`\[Gamma]^2 - $CellContext`z^2])/
+         E^(Sqrt[$CellContext`\[Gamma]^2 - $CellContext`z^2] \
+$CellContext`xa)], $CellContext`psias[
+         Pattern[$CellContext`z, 
+          Blank[]], 
+         Pattern[$CellContext`\[Gamma], 
+          Blank[]], 
+         Pattern[$CellContext`xa, 
+          Blank[]]] := 
+       Which[$CellContext`xa < -1, ((-Sin[$CellContext`z]) 
+          E^Sqrt[$CellContext`\[Gamma]^2 - $CellContext`z^2]) 
+         E^(Sqrt[$CellContext`\[Gamma]^2 - $CellContext`z^2] \
+$CellContext`xa), -1 <= $CellContext`xa <= 1, 
+         Sin[$CellContext`z $CellContext`xa], $CellContext`xa > 
+         1, (Sin[$CellContext`z] 
+          E^Sqrt[$CellContext`\[Gamma]^2 - $CellContext`z^2])/
+         E^(Sqrt[$CellContext`\[Gamma]^2 - $CellContext`z^2] \
+$CellContext`xa)]}; Typeset`initDone$$ = True),
+    SynchronousInitialization->True,
+    UnsavedVariables:>{Typeset`initDone$$},
+    UntrackedVariables:>{Typeset`size$$}], "Manipulate",
+   Deployed->True,
+   StripOnInput->False],
+  Manipulate`InterpretManipulate[1]]], "Output",
+ CellID->205692584]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["", "ManipulateCaptionSection"],
+
+Cell["\<\
+This Demonstration illustrates the solutions of the transcendental equations \
+that arise in solving for the bound-state energies and eigenfunctions of a \
+quantum-mechanical particle interacting with a one-dimensional finite \
+square-well potential. It also qualitatively shows how these solutions \
+satisfy the boundary conditions required of bound-state eigenfunctions.\
+\>", "ManipulateCaption",
+ CellChangeTimes->{
+  3.35696210375764*^9, 3.47406295128125*^9, {3.474063003203125*^9, 
+   3.47406301240625*^9}, {3.4742897258121347`*^9, 3.4742897303945932`*^9}, {
+   3.4743101788081255`*^9, 3.474310180042532*^9}, {3.474313361687661*^9, 
+   3.47431341652656*^9}, {3.4747185592072277`*^9, 3.474718559245565*^9}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["", "ThumbnailSection"],
+
+Cell[BoxData[
+ TagBox[
+  StyleBox[
+   DynamicModuleBox[{$CellContext`er$$ = -0.6910000000000001, \
+$CellContext`g$$ = 5, Typeset`show$$ = True, Typeset`bookmarkList$$ = {}, 
+    Typeset`bookmarkMode$$ = "Menu", Typeset`animator$$, Typeset`animvar$$ = 
+    1, Typeset`name$$ = "\"untitled\"", Typeset`specs$$ = {{{
+       Hold[$CellContext`g$$], 5, "\[Gamma]"}, 5, 20}, {{
+       Hold[$CellContext`er$$], -0.6910000000000001, "\[Rho]"}, -0.9975, 0}}, 
+    Typeset`size$$ = {558., {122.34375, 127.65625}}, Typeset`update$$ = 0, 
+    Typeset`initDone$$, Typeset`skipInitDone$$ = 
+    False, $CellContext`g$37253$$ = 0, $CellContext`er$37254$$ = 0}, 
+    DynamicBox[Manipulate`ManipulateBoxes[
+     1, StandardForm, 
+      "Variables" :> {$CellContext`er$$ = -0.6910000000000001, \
+$CellContext`g$$ = 5}, "ControllerVariables" :> {
+        Hold[$CellContext`g$$, $CellContext`g$37253$$, 0], 
+        Hold[$CellContext`er$$, $CellContext`er$37254$$, 0]}, 
+      "OtherVariables" :> {
+       Typeset`show$$, Typeset`bookmarkList$$, Typeset`bookmarkMode$$, 
+        Typeset`animator$$, Typeset`animvar$$, Typeset`name$$, 
+        Typeset`specs$$, Typeset`size$$, Typeset`update$$, Typeset`initDone$$,
+         Typeset`skipInitDone$$}, "Body" :> Grid[{{
+          Show[
+           Plot[{
+             Tan[$CellContext`z], -
+             Cot[$CellContext`z], ($CellContext`g$$^2 - $CellContext`z^2)^
+              Rational[1, 2]/$CellContext`z}, {$CellContext`z, 
+             0, $CellContext`g$$}, 
+            PlotRange -> {{0, 1.1 $CellContext`g$$}, {-5, 20}}, Exclusions -> 
+            Table[$CellContext`n (Pi/2), {$CellContext`n, 1, 100, 1}], 
+            AxesLabel -> {$CellContext`z, ""}, PlotLabel -> 
+            Row[{($CellContext`\[Gamma]^2 - $CellContext`z^2)^
+                Rational[1, 2]/$CellContext`z, ", ", 
+               Tan[$CellContext`z], ", ", -Cot[$CellContext`z]}]], 
+           ListPlot[{{
+              $CellContext`zed[$CellContext`er$$, $CellContext`g$$], \
+($CellContext`g$$^2 - $CellContext`zed[$CellContext`er$$, \
+$CellContext`g$$]^2)^
+               Rational[
+                1, 2]/$CellContext`zed[$CellContext`er$$, \
+$CellContext`g$$]}}], ImageSize -> {275, 250}], 
+          Plot[{
+            $CellContext`psis[
+             $CellContext`zed[$CellContext`er$$, $CellContext`g$$], \
+$CellContext`g$$, $CellContext`xa], 
+            $CellContext`psias[
+             $CellContext`zed[$CellContext`er$$, $CellContext`g$$], \
+$CellContext`g$$, $CellContext`xa]}, {$CellContext`xa, 0, 1.2}, PlotPoints -> 
+           1000, PlotRange -> 1.1, 
+           AxesLabel -> {
+            "\!\(\*FractionBox[\(x\), \(a\)]\)", 
+             "\[CapitalPsi] \[LongDash] unnormalized"}, Epilog -> {Dashed, 
+             Line[{{1, -1.1}, {1, 1.1}}]}, ImageSize -> {275, 250}]}}], 
+      "Specifications" :> {{{$CellContext`g$$, 5, "\[Gamma]"}, 5, 20, 
+         Appearance -> 
+         "Labeled"}, {{$CellContext`er$$, -0.6910000000000001, 
+          "\[Rho]"}, -0.9975, 0, Appearance -> "Labeled"}}, 
+      "Options" :> {TrackedSymbols -> True}, 
+      "DefaultOptions" :> {ControllerLinking -> True}],
+     ImageSizeCache->{601., {182.34375, 187.65625}},
+     SingleEvaluation->True],
+    Deinitialization:>None,
+    DynamicModuleValues:>{},
+    Initialization:>({
+      Attributes[PlotRange] = {ReadProtected}, $CellContext`zed[
+         Pattern[$CellContext`er, 
+          Blank[]], 
+         Pattern[$CellContext`\[Gamma], 
+          Blank[]]] := 
+       Sqrt[$CellContext`\[Gamma]^2 ($CellContext`er + 1)], $CellContext`psis[
+         Pattern[$CellContext`z, 
+          Blank[]], 
+         Pattern[$CellContext`\[Gamma], 
+          Blank[]], 
+         Pattern[$CellContext`xa, 
+          Blank[]]] := 
+       Which[$CellContext`xa < -1, (Cos[$CellContext`z] 
+          E^Sqrt[$CellContext`\[Gamma]^2 - $CellContext`z^2]) 
+         E^(Sqrt[$CellContext`\[Gamma]^2 - $CellContext`z^2] \
+$CellContext`xa), -1 <= $CellContext`xa <= 1, 
+         Cos[$CellContext`z $CellContext`xa], $CellContext`xa > 
+         1, (Cos[$CellContext`z] 
+          E^Sqrt[$CellContext`\[Gamma]^2 - $CellContext`z^2])/
+         E^(
+          Sqrt[$CellContext`\[Gamma]^2 - $CellContext`z^2] $CellContext`xa)], \
+$CellContext`psias[
+         Pattern[$CellContext`z, 
+          Blank[]], 
+         Pattern[$CellContext`\[Gamma], 
+          Blank[]], 
+         Pattern[$CellContext`xa, 
+          Blank[]]] := 
+       Which[$CellContext`xa < -1, ((-Sin[$CellContext`z]) 
+          E^Sqrt[$CellContext`\[Gamma]^2 - $CellContext`z^2]) 
+         E^(Sqrt[$CellContext`\[Gamma]^2 - $CellContext`z^2] \
+$CellContext`xa), -1 <= $CellContext`xa <= 1, 
+         Sin[$CellContext`z $CellContext`xa], $CellContext`xa > 
+         1, (Sin[$CellContext`z] 
+          E^Sqrt[$CellContext`\[Gamma]^2 - $CellContext`z^2])/
+         E^(Sqrt[$CellContext`\[Gamma]^2 - $CellContext`z^2] \
+$CellContext`xa)]}; Typeset`initDone$$ = True),
+    SynchronousInitialization->True,
+    UnsavedVariables:>{Typeset`initDone$$},
+    UntrackedVariables:>{Typeset`size$$}], "Manipulate",
+   Deployed->True,
+   StripOnInput->False],
+  Manipulate`InterpretManipulate[1]]], "Output",
+ CellID->115482670]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["", "SnapshotsSection"],
+
+Cell[BoxData[
+ TagBox[
+  StyleBox[
+   DynamicModuleBox[{$CellContext`er$$ = -0.956, $CellContext`g$$ = 5, 
+    Typeset`show$$ = True, Typeset`bookmarkList$$ = {}, 
+    Typeset`bookmarkMode$$ = "Menu", Typeset`animator$$, Typeset`animvar$$ = 
+    1, Typeset`name$$ = "\"untitled\"", Typeset`specs$$ = {{{
+       Hold[$CellContext`g$$], 5, "\[Gamma]"}, 5, 20}, {{
+       Hold[$CellContext`er$$], -0.956, "\[Rho]"}, -0.9975, 0}}, 
+    Typeset`size$$ = {558., {122.34375, 127.65625}}, Typeset`update$$ = 0, 
+    Typeset`initDone$$, Typeset`skipInitDone$$ = 
+    False, $CellContext`g$37309$$ = 0, $CellContext`er$37310$$ = 0}, 
+    DynamicBox[Manipulate`ManipulateBoxes[
+     1, StandardForm, 
+      "Variables" :> {$CellContext`er$$ = -0.956, $CellContext`g$$ = 5}, 
+      "ControllerVariables" :> {
+        Hold[$CellContext`g$$, $CellContext`g$37309$$, 0], 
+        Hold[$CellContext`er$$, $CellContext`er$37310$$, 0]}, 
+      "OtherVariables" :> {
+       Typeset`show$$, Typeset`bookmarkList$$, Typeset`bookmarkMode$$, 
+        Typeset`animator$$, Typeset`animvar$$, Typeset`name$$, 
+        Typeset`specs$$, Typeset`size$$, Typeset`update$$, Typeset`initDone$$,
+         Typeset`skipInitDone$$}, "Body" :> Grid[{{
+          Show[
+           Plot[{
+             Tan[$CellContext`z], -
+             Cot[$CellContext`z], ($CellContext`g$$^2 - $CellContext`z^2)^
+              Rational[1, 2]/$CellContext`z}, {$CellContext`z, 
+             0, $CellContext`g$$}, 
+            PlotRange -> {{0, 1.1 $CellContext`g$$}, {-5, 20}}, Exclusions -> 
+            Table[$CellContext`n (Pi/2), {$CellContext`n, 1, 100, 1}], 
+            AxesLabel -> {$CellContext`z, ""}, PlotLabel -> 
+            Row[{($CellContext`\[Gamma]^2 - $CellContext`z^2)^
+                Rational[1, 2]/$CellContext`z, ", ", 
+               Tan[$CellContext`z], ", ", -Cot[$CellContext`z]}]], 
+           ListPlot[{{
+              $CellContext`zed[$CellContext`er$$, $CellContext`g$$], \
+($CellContext`g$$^2 - $CellContext`zed[$CellContext`er$$, \
+$CellContext`g$$]^2)^
+               Rational[
+                1, 2]/$CellContext`zed[$CellContext`er$$, \
+$CellContext`g$$]}}], ImageSize -> {275, 250}], 
+          Plot[{
+            $CellContext`psis[
+             $CellContext`zed[$CellContext`er$$, $CellContext`g$$], \
+$CellContext`g$$, $CellContext`xa], 
+            $CellContext`psias[
+             $CellContext`zed[$CellContext`er$$, $CellContext`g$$], \
+$CellContext`g$$, $CellContext`xa]}, {$CellContext`xa, 0, 1.2}, PlotPoints -> 
+           1000, PlotRange -> 1.1, 
+           AxesLabel -> {
+            "\!\(\*FractionBox[\(x\), \(a\)]\)", 
+             "\[CapitalPsi] \[LongDash] unnormalized"}, Epilog -> {Dashed, 
+             Line[{{1, -1.1}, {1, 1.1}}]}, ImageSize -> {275, 250}]}}], 
+      "Specifications" :> {{{$CellContext`g$$, 5, "\[Gamma]"}, 5, 20, 
+         Appearance -> 
+         "Labeled"}, {{$CellContext`er$$, -0.956, "\[Rho]"}, -0.9975, 0, 
+         Appearance -> "Labeled"}}, "Options" :> {TrackedSymbols -> True}, 
+      "DefaultOptions" :> {ControllerLinking -> True}],
+     ImageSizeCache->{601., {182.34375, 187.65625}},
+     SingleEvaluation->True],
+    Deinitialization:>None,
+    DynamicModuleValues:>{},
+    Initialization:>({
+      Attributes[PlotRange] = {ReadProtected}, $CellContext`zed[
+         Pattern[$CellContext`er, 
+          Blank[]], 
+         Pattern[$CellContext`\[Gamma], 
+          Blank[]]] := 
+       Sqrt[$CellContext`\[Gamma]^2 ($CellContext`er + 1)], $CellContext`psis[
+         Pattern[$CellContext`z, 
+          Blank[]], 
+         Pattern[$CellContext`\[Gamma], 
+          Blank[]], 
+         Pattern[$CellContext`xa, 
+          Blank[]]] := 
+       Which[$CellContext`xa < -1, (Cos[$CellContext`z] 
+          E^Sqrt[$CellContext`\[Gamma]^2 - $CellContext`z^2]) 
+         E^(Sqrt[$CellContext`\[Gamma]^2 - $CellContext`z^2] \
+$CellContext`xa), -1 <= $CellContext`xa <= 1, 
+         Cos[$CellContext`z $CellContext`xa], $CellContext`xa > 
+         1, (Cos[$CellContext`z] 
+          E^Sqrt[$CellContext`\[Gamma]^2 - $CellContext`z^2])/
+         E^(Sqrt[$CellContext`\[Gamma]^2 - $CellContext`z^2] \
+$CellContext`xa)], $CellContext`psias[
+         Pattern[$CellContext`z, 
+          Blank[]], 
+         Pattern[$CellContext`\[Gamma], 
+          Blank[]], 
+         Pattern[$CellContext`xa, 
+          Blank[]]] := 
+       Which[$CellContext`xa < -1, ((-Sin[$CellContext`z]) 
+          E^Sqrt[$CellContext`\[Gamma]^2 - $CellContext`z^2]) 
+         E^(Sqrt[$CellContext`\[Gamma]^2 - $CellContext`z^2] \
+$CellContext`xa), -1 <= $CellContext`xa <= 1, 
+         Sin[$CellContext`z $CellContext`xa], $CellContext`xa > 
+         1, (Sin[$CellContext`z] 
+          E^Sqrt[$CellContext`\[Gamma]^2 - $CellContext`z^2])/
+         E^(Sqrt[$CellContext`\[Gamma]^2 - $CellContext`z^2] \
+$CellContext`xa)]}; Typeset`initDone$$ = True),
+    SynchronousInitialization->True,
+    UnsavedVariables:>{Typeset`initDone$$},
+    UntrackedVariables:>{Typeset`size$$}], "Manipulate",
+   Deployed->True,
+   StripOnInput->False],
+  Manipulate`InterpretManipulate[1]]], "Output",
+ CellID->611177722],
+
+Cell[BoxData[
+ TagBox[
+  StyleBox[
+   DynamicModuleBox[{$CellContext`er$$ = -0.607, $CellContext`g$$ = 5, 
+    Typeset`show$$ = True, Typeset`bookmarkList$$ = {}, 
+    Typeset`bookmarkMode$$ = "Menu", Typeset`animator$$, Typeset`animvar$$ = 
+    1, Typeset`name$$ = "\"untitled\"", Typeset`specs$$ = {{{
+       Hold[$CellContext`g$$], 5, "\[Gamma]"}, 5, 20}, {{
+       Hold[$CellContext`er$$], -0.607, "\[Rho]"}, -0.9975, 0}}, 
+    Typeset`size$$ = {558., {122.34375, 127.65625}}, Typeset`update$$ = 0, 
+    Typeset`initDone$$, Typeset`skipInitDone$$ = 
+    False, $CellContext`g$37365$$ = 0, $CellContext`er$37366$$ = 0}, 
+    DynamicBox[Manipulate`ManipulateBoxes[
+     1, StandardForm, 
+      "Variables" :> {$CellContext`er$$ = -0.607, $CellContext`g$$ = 5}, 
+      "ControllerVariables" :> {
+        Hold[$CellContext`g$$, $CellContext`g$37365$$, 0], 
+        Hold[$CellContext`er$$, $CellContext`er$37366$$, 0]}, 
+      "OtherVariables" :> {
+       Typeset`show$$, Typeset`bookmarkList$$, Typeset`bookmarkMode$$, 
+        Typeset`animator$$, Typeset`animvar$$, Typeset`name$$, 
+        Typeset`specs$$, Typeset`size$$, Typeset`update$$, Typeset`initDone$$,
+         Typeset`skipInitDone$$}, "Body" :> Grid[{{
+          Show[
+           Plot[{
+             Tan[$CellContext`z], -
+             Cot[$CellContext`z], ($CellContext`g$$^2 - $CellContext`z^2)^
+              Rational[1, 2]/$CellContext`z}, {$CellContext`z, 
+             0, $CellContext`g$$}, 
+            PlotRange -> {{0, 1.1 $CellContext`g$$}, {-5, 20}}, Exclusions -> 
+            Table[$CellContext`n (Pi/2), {$CellContext`n, 1, 100, 1}], 
+            AxesLabel -> {$CellContext`z, ""}, PlotLabel -> 
+            Row[{($CellContext`\[Gamma]^2 - $CellContext`z^2)^
+                Rational[1, 2]/$CellContext`z, ", ", 
+               Tan[$CellContext`z], ", ", -Cot[$CellContext`z]}]], 
+           ListPlot[{{
+              $CellContext`zed[$CellContext`er$$, $CellContext`g$$], \
+($CellContext`g$$^2 - $CellContext`zed[$CellContext`er$$, \
+$CellContext`g$$]^2)^
+               Rational[
+                1, 2]/$CellContext`zed[$CellContext`er$$, \
+$CellContext`g$$]}}], ImageSize -> {275, 250}], 
+          Plot[{
+            $CellContext`psis[
+             $CellContext`zed[$CellContext`er$$, $CellContext`g$$], \
+$CellContext`g$$, $CellContext`xa], 
+            $CellContext`psias[
+             $CellContext`zed[$CellContext`er$$, $CellContext`g$$], \
+$CellContext`g$$, $CellContext`xa]}, {$CellContext`xa, 0, 1.2}, PlotPoints -> 
+           1000, PlotRange -> 1.1, 
+           AxesLabel -> {
+            "\!\(\*FractionBox[\(x\), \(a\)]\)", 
+             "\[CapitalPsi] \[LongDash] unnormalized"}, Epilog -> {Dashed, 
+             Line[{{1, -1.1}, {1, 1.1}}]}, ImageSize -> {275, 250}]}}], 
+      "Specifications" :> {{{$CellContext`g$$, 5, "\[Gamma]"}, 5, 20, 
+         Appearance -> 
+         "Labeled"}, {{$CellContext`er$$, -0.607, "\[Rho]"}, -0.9975, 0, 
+         Appearance -> "Labeled"}}, "Options" :> {TrackedSymbols -> True}, 
+      "DefaultOptions" :> {ControllerLinking -> True}],
+     ImageSizeCache->{601., {182.34375, 187.65625}},
+     SingleEvaluation->True],
+    Deinitialization:>None,
+    DynamicModuleValues:>{},
+    Initialization:>({
+      Attributes[PlotRange] = {ReadProtected}, $CellContext`zed[
+         Pattern[$CellContext`er, 
+          Blank[]], 
+         Pattern[$CellContext`\[Gamma], 
+          Blank[]]] := 
+       Sqrt[$CellContext`\[Gamma]^2 ($CellContext`er + 1)], $CellContext`psis[
+         Pattern[$CellContext`z, 
+          Blank[]], 
+         Pattern[$CellContext`\[Gamma], 
+          Blank[]], 
+         Pattern[$CellContext`xa, 
+          Blank[]]] := 
+       Which[$CellContext`xa < -1, (Cos[$CellContext`z] 
+          E^Sqrt[$CellContext`\[Gamma]^2 - $CellContext`z^2]) 
+         E^(Sqrt[$CellContext`\[Gamma]^2 - $CellContext`z^2] \
+$CellContext`xa), -1 <= $CellContext`xa <= 1, 
+         Cos[$CellContext`z $CellContext`xa], $CellContext`xa > 
+         1, (Cos[$CellContext`z] 
+          E^Sqrt[$CellContext`\[Gamma]^2 - $CellContext`z^2])/
+         E^(Sqrt[$CellContext`\[Gamma]^2 - $CellContext`z^2] \
+$CellContext`xa)], $CellContext`psias[
+         Pattern[$CellContext`z, 
+          Blank[]], 
+         Pattern[$CellContext`\[Gamma], 
+          Blank[]], 
+         Pattern[$CellContext`xa, 
+          Blank[]]] := 
+       Which[$CellContext`xa < -1, ((-Sin[$CellContext`z]) 
+          E^Sqrt[$CellContext`\[Gamma]^2 - $CellContext`z^2]) 
+         E^(Sqrt[$CellContext`\[Gamma]^2 - $CellContext`z^2] \
+$CellContext`xa), -1 <= $CellContext`xa <= 1, 
+         Sin[$CellContext`z $CellContext`xa], $CellContext`xa > 
+         1, (Sin[$CellContext`z] 
+          E^Sqrt[$CellContext`\[Gamma]^2 - $CellContext`z^2])/
+         E^(Sqrt[$CellContext`\[Gamma]^2 - $CellContext`z^2] \
+$CellContext`xa)]}; Typeset`initDone$$ = True),
+    SynchronousInitialization->True,
+    UnsavedVariables:>{Typeset`initDone$$},
+    UntrackedVariables:>{Typeset`size$$}], "Manipulate",
+   Deployed->True,
+   StripOnInput->False],
+  Manipulate`InterpretManipulate[1]]], "Output",
+ CellID->392651782],
+
+Cell[BoxData[
+ TagBox[
+  StyleBox[
+   DynamicModuleBox[{$CellContext`er$$ = -0.747, $CellContext`g$$ = 5, 
+    Typeset`show$$ = True, Typeset`bookmarkList$$ = {}, 
+    Typeset`bookmarkMode$$ = "Menu", Typeset`animator$$, Typeset`animvar$$ = 
+    1, Typeset`name$$ = "\"untitled\"", Typeset`specs$$ = {{{
+       Hold[$CellContext`g$$], 5, "\[Gamma]"}, 5, 20}, {{
+       Hold[$CellContext`er$$], -0.747, "\[Rho]"}, -0.9975, 0}}, 
+    Typeset`size$$ = {558., {122.34375, 127.65625}}, Typeset`update$$ = 0, 
+    Typeset`initDone$$, Typeset`skipInitDone$$ = 
+    False, $CellContext`g$37421$$ = 0, $CellContext`er$37422$$ = 0}, 
+    DynamicBox[Manipulate`ManipulateBoxes[
+     1, StandardForm, 
+      "Variables" :> {$CellContext`er$$ = -0.747, $CellContext`g$$ = 5}, 
+      "ControllerVariables" :> {
+        Hold[$CellContext`g$$, $CellContext`g$37421$$, 0], 
+        Hold[$CellContext`er$$, $CellContext`er$37422$$, 0]}, 
+      "OtherVariables" :> {
+       Typeset`show$$, Typeset`bookmarkList$$, Typeset`bookmarkMode$$, 
+        Typeset`animator$$, Typeset`animvar$$, Typeset`name$$, 
+        Typeset`specs$$, Typeset`size$$, Typeset`update$$, Typeset`initDone$$,
+         Typeset`skipInitDone$$}, "Body" :> Grid[{{
+          Show[
+           Plot[{
+             Tan[$CellContext`z], -
+             Cot[$CellContext`z], ($CellContext`g$$^2 - $CellContext`z^2)^
+              Rational[1, 2]/$CellContext`z}, {$CellContext`z, 
+             0, $CellContext`g$$}, 
+            PlotRange -> {{0, 1.1 $CellContext`g$$}, {-5, 20}}, Exclusions -> 
+            Table[$CellContext`n (Pi/2), {$CellContext`n, 1, 100, 1}], 
+            AxesLabel -> {$CellContext`z, ""}, PlotLabel -> 
+            Row[{($CellContext`\[Gamma]^2 - $CellContext`z^2)^
+                Rational[1, 2]/$CellContext`z, ", ", 
+               Tan[$CellContext`z], ", ", -Cot[$CellContext`z]}]], 
+           ListPlot[{{
+              $CellContext`zed[$CellContext`er$$, $CellContext`g$$], \
+($CellContext`g$$^2 - $CellContext`zed[$CellContext`er$$, \
+$CellContext`g$$]^2)^
+               Rational[
+                1, 2]/$CellContext`zed[$CellContext`er$$, \
+$CellContext`g$$]}}], ImageSize -> {275, 250}], 
+          Plot[{
+            $CellContext`psis[
+             $CellContext`zed[$CellContext`er$$, $CellContext`g$$], \
+$CellContext`g$$, $CellContext`xa], 
+            $CellContext`psias[
+             $CellContext`zed[$CellContext`er$$, $CellContext`g$$], \
+$CellContext`g$$, $CellContext`xa]}, {$CellContext`xa, 0, 1.2}, PlotPoints -> 
+           1000, PlotRange -> 1.1, 
+           AxesLabel -> {
+            "\!\(\*FractionBox[\(x\), \(a\)]\)", 
+             "\[CapitalPsi] \[LongDash] unnormalized"}, Epilog -> {Dashed, 
+             Line[{{1, -1.1}, {1, 1.1}}]}, ImageSize -> {275, 250}]}}], 
+      "Specifications" :> {{{$CellContext`g$$, 5, "\[Gamma]"}, 5, 20, 
+         Appearance -> 
+         "Labeled"}, {{$CellContext`er$$, -0.747, "\[Rho]"}, -0.9975, 0, 
+         Appearance -> "Labeled"}}, "Options" :> {TrackedSymbols -> True}, 
+      "DefaultOptions" :> {ControllerLinking -> True}],
+     ImageSizeCache->{601., {182.34375, 187.65625}},
+     SingleEvaluation->True],
+    Deinitialization:>None,
+    DynamicModuleValues:>{},
+    Initialization:>({
+      Attributes[PlotRange] = {ReadProtected}, $CellContext`zed[
+         Pattern[$CellContext`er, 
+          Blank[]], 
+         Pattern[$CellContext`\[Gamma], 
+          Blank[]]] := 
+       Sqrt[$CellContext`\[Gamma]^2 ($CellContext`er + 1)], $CellContext`psis[
+         Pattern[$CellContext`z, 
+          Blank[]], 
+         Pattern[$CellContext`\[Gamma], 
+          Blank[]], 
+         Pattern[$CellContext`xa, 
+          Blank[]]] := 
+       Which[$CellContext`xa < -1, (Cos[$CellContext`z] 
+          E^Sqrt[$CellContext`\[Gamma]^2 - $CellContext`z^2]) 
+         E^(Sqrt[$CellContext`\[Gamma]^2 - $CellContext`z^2] \
+$CellContext`xa), -1 <= $CellContext`xa <= 1, 
+         Cos[$CellContext`z $CellContext`xa], $CellContext`xa > 
+         1, (Cos[$CellContext`z] 
+          E^Sqrt[$CellContext`\[Gamma]^2 - $CellContext`z^2])/
+         E^(Sqrt[$CellContext`\[Gamma]^2 - $CellContext`z^2] \
+$CellContext`xa)], $CellContext`psias[
+         Pattern[$CellContext`z, 
+          Blank[]], 
+         Pattern[$CellContext`\[Gamma], 
+          Blank[]], 
+         Pattern[$CellContext`xa, 
+          Blank[]]] := 
+       Which[$CellContext`xa < -1, ((-Sin[$CellContext`z]) 
+          E^Sqrt[$CellContext`\[Gamma]^2 - $CellContext`z^2]) 
+         E^(Sqrt[$CellContext`\[Gamma]^2 - $CellContext`z^2] \
+$CellContext`xa), -1 <= $CellContext`xa <= 1, 
+         Sin[$CellContext`z $CellContext`xa], $CellContext`xa > 
+         1, (Sin[$CellContext`z] 
+          E^Sqrt[$CellContext`\[Gamma]^2 - $CellContext`z^2])/
+         E^(Sqrt[$CellContext`\[Gamma]^2 - $CellContext`z^2] \
+$CellContext`xa)]}; Typeset`initDone$$ = True),
+    SynchronousInitialization->True,
+    UnsavedVariables:>{Typeset`initDone$$},
+    UntrackedVariables:>{Typeset`size$$}], "Manipulate",
+   Deployed->True,
+   StripOnInput->False],
+  Manipulate`InterpretManipulate[1]]], "Output",
+ CellID->376139854]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["", "DetailsSection"],
+
+Cell[TextData[{
+ "In this Demonstration, solutions of the transcendental equation for the \
+quantum mechanical bound-state energies, ",
+ Cell[BoxData[
+  FormBox["E", TraditionalForm]], "InlineMath"],
+ ", and eigenfunctions, ",
+ Cell[BoxData[
+  FormBox["\[CapitalPsi]", TraditionalForm]], "InlineMath"],
+ ", are shown for a particle in a finite one-dimensional square well. The \
+parameters of the system are the width of the square well, ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"2", "a"}], TraditionalForm]], "InlineMath"],
+ ", its depth, ",
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["V", "0"], TraditionalForm]], "InlineMath"],
+ ", and the mass of the particle, ",
+ Cell[BoxData[
+  FormBox["m", TraditionalForm]], "InlineMath"],
+ ". The solutions of this system are conveniently expressed in terms of the \
+dimensionless parameters ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"\[Gamma]", "=", 
+    SqrtBox[
+     FractionBox[
+      RowBox[{"2", " ", "m", " ", 
+       SuperscriptBox["a", "2"], " ", 
+       SubscriptBox["V", "0"]}], 
+      SuperscriptBox["\[HBar]", "2"]]]}], TraditionalForm]], "InlineMath"],
+ " and ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"z", "=", 
+    RowBox[{"\[Gamma]", 
+     SqrtBox[
+      RowBox[{
+       FractionBox["E", 
+        SubscriptBox["V", "0"]], "+", "1"}]]}]}], TraditionalForm]], 
+  "InlineMath"],
+ ".  We can think of ",
+ Cell[BoxData[
+  FormBox["\[Gamma]", TraditionalForm]], "InlineMath"],
+ " as the \"strength of the interaction\" between the particle and the well, \
+and note that ",
+ Cell[BoxData[
+  FormBox["z", TraditionalForm]], "InlineMath"],
+ " is related to the ratio of the energy of the particle to the depth of the \
+well. "
+}], "DetailNotes",
+ CellChangeTimes->{
+  3.35696210375764*^9, {3.47406314975*^9, 3.474063151578125*^9}, 
+   3.474064251046875*^9, {3.474289730751629*^9, 3.4742897309296465`*^9}, {
+   3.4742897769492483`*^9, 3.474289808504403*^9}, {3.4743102407929726`*^9, 
+   3.474310258089958*^9}, {3.474313194695994*^9, 3.4743132704319563`*^9}, {
+   3.47471875629776*^9, 3.474718761431312*^9}, {3.474718978089333*^9, 
+   3.474718986904531*^9}, {3.474719521929511*^9, 3.474719529556253*^9}},
+ CellID->43344031],
+
+Cell["\<\
+The solutions are obtained in the typical manner for a discontinuous \
+potential: functions satisfying the time-independent Schr\[ODoubleDot]dinger \
+wave equation are found for each region of the potential, and then boundary \
+conditions are applied: the symmetry of the potential requires that the \
+eigenfunctions be either symmetric or antisymmetric with respect to the \
+origin, the eigenfunctions must be normalizable, and because the \
+discontinuities in the potential are finite, the eigenfunctions and their \
+first derivatives must be continuous at the boundaries between regions.\
+\>", "DetailNotes",
+ CellChangeTimes->{
+  3.35696210375764*^9, {3.47406314975*^9, 3.474063151578125*^9}, 
+   3.474064251046875*^9, {3.474289730751629*^9, 3.4742897309296465`*^9}, {
+   3.4742897769492483`*^9, 3.474289811357689*^9}, {3.47431028337137*^9, 
+   3.4743103015277357`*^9}, {3.4747195911856613`*^9, 3.474719591240301*^9}},
+ CellID->28816658],
+
+Cell[TextData[{
+ "Applying this approach, we find that the eigenfunctions are sinusoidal in \
+the well, exponentially decreasing outside the well, and that transcendental \
+equations express the conditions that satisfy the boundary requirements \
+between regions: ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{"tan", "(", "z", ")"}], "=", 
+    FractionBox[
+     SqrtBox[
+      RowBox[{
+       SuperscriptBox["\[Gamma]", "2"], " ", "-", 
+       SuperscriptBox["z", "2"]}]], "z"]}], TraditionalForm]], "InlineMath"],
+ " for the symmetric eigenfunctions, and ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{"-", 
+     RowBox[{"cot", "(", "z", ")"}]}], "=", 
+    FractionBox[
+     SqrtBox[
+      RowBox[{
+       SuperscriptBox["\[Gamma]", "2"], " ", "-", 
+       SuperscriptBox["z", "2"]}]], "z"]}], TraditionalForm]], "InlineMath"],
+ " for the antisymmetric eigenfunctions. In the left-hand plot, ",
+ Cell[BoxData[
+  FormBox[
+   FractionBox[
+    SqrtBox[
+     RowBox[{
+      SuperscriptBox["\[Gamma]", "2"], " ", "-", 
+      SuperscriptBox["z", "2"]}]], "z"], TraditionalForm]], "InlineMath"],
+ " as a function of ",
+ Cell[BoxData[
+  FormBox["z", TraditionalForm]], "InlineMath"],
+ " is represented by the gold line, ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"tan", "(", "z", ")"}], TraditionalForm]], "InlineMath"],
+ " as a function of ",
+ Cell[BoxData[
+  FormBox["z", TraditionalForm]], "InlineMath"],
+ " by the blue lines, and ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"-", 
+    RowBox[{"cot", "(", "z", ")"}]}], TraditionalForm]], "InlineMath"],
+ " as function of ",
+ Cell[BoxData[
+  FormBox["z", TraditionalForm]], "InlineMath"],
+ " by the red lines."
+}], "DetailNotes",
+ CellChangeTimes->{
+  3.35696210375764*^9, {3.47406314975*^9, 3.474063151578125*^9}, 
+   3.474064251046875*^9, {3.474289730751629*^9, 3.4742897309296465`*^9}, {
+   3.4742897769492483`*^9, 3.474289878686421*^9}, 3.4743103273091507`*^9, {
+   3.474310469825688*^9, 3.4743104701538153`*^9}},
+ CellID->59211106],
+
+Cell[TextData[{
+ "For a particular value of ",
+ Cell[BoxData[
+  FormBox["\[Gamma]", TraditionalForm]], "InlineMath"],
+ " (remember, this can be thought of as the \"strength of the interaction\" \
+between the particle and the well), where the gold line intersects the blue \
+lines corresponds to eigenfunctions and energies that satisfy the boundary \
+conditions for symmetric eigenfunctions, and where the gold line intersects \
+the red lines corresponds to eigenfunctions and energies that satisfy the \
+boundary conditions for antisymmetric eigenfunctions. "
+}], "DetailNotes",
+ CellChangeTimes->{
+  3.35696210375764*^9, {3.47406314975*^9, 3.474063151578125*^9}, 
+   3.474064251046875*^9, {3.474289730751629*^9, 3.4742897309296465`*^9}, {
+   3.4742897769492483`*^9, 3.4742898210126543`*^9}, 3.474289881491701*^9, 
+   3.474310496278809*^9},
+ CellID->160638338],
+
+Cell[TextData[{
+ "As you adjust the ratio ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"\[Rho]", "=", 
+    FractionBox["E", 
+     SubscriptBox["V", "0"]]}], TraditionalForm]], "InlineMath"],
+ " (the ratio of the bound-state energy to the depth of the \
+well\[LongDash]its value is negative to indicate a bound state), a \
+corresponding dot moves along ",
+ Cell[BoxData[
+  FormBox[
+   FractionBox[
+    SqrtBox[
+     RowBox[{
+      SuperscriptBox["\[Gamma]", "2"], " ", "-", 
+      SuperscriptBox["z", "2"]}]], "z"], TraditionalForm]], "InlineMath"],
+ " and when it is located at one of the intersections, the value of ",
+ Cell[BoxData[
+  FormBox[
+   FractionBox["E", 
+    SubscriptBox["V", "0"]], TraditionalForm]], "InlineMath"],
+ " corresponds to an allowed bound-state energy of the system! "
+}], "DetailNotes",
+ CellChangeTimes->{
+  3.35696210375764*^9, {3.47406314975*^9, 3.474063151578125*^9}, 
+   3.474064251046875*^9, {3.474289730751629*^9, 3.4742897309296465`*^9}, {
+   3.4742897769492483`*^9, 3.4742898209986525`*^9}, {3.474289886535206*^9, 
+   3.474289928241376*^9}, {3.4743105155755606`*^9, 3.474310618465527*^9}, 
+   3.474310944291567*^9, {3.4743121397839155`*^9, 3.4743121485026093`*^9}, {
+   3.474719680972633*^9, 3.47471971038393*^9}, {3.4747197573832817`*^9, 
+   3.474719757432248*^9}, {3.4747198675113993`*^9, 3.4747198937792587`*^9}},
+ CellID->39309025],
+
+Cell[TextData[{
+ "The right-hand plot shows the unnormalized eigenfunctions as a function of \
+position (symmetric: blue; antisymmetric: red) in the region between the \
+origin and one of the boundaries of the potential well (represented with a \
+dashed vertical line). Adjust the ratio ",
+ Cell[BoxData[
+  FormBox[
+   FractionBox["E", 
+    SubscriptBox["V", "0"]], TraditionalForm]], "InlineMath"],
+ " to see that generally the sinusoid inside the well and the exponential \
+outside the well have different slopes at the boundary, showing that they do \
+not satisfy the boundary conditions, BUT the slopes match when the condition ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{"tan", "(", "z", ")"}], "=", 
+    FractionBox[
+     SqrtBox[
+      RowBox[{
+       SuperscriptBox["\[Gamma]", "2"], " ", "-", 
+       SuperscriptBox["z", "2"]}]], "z"]}], TraditionalForm]], "InlineMath"],
+ " is met for the symmetric eigenfunctions and ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{"-", 
+     RowBox[{"cot", "(", "z", ")"}]}], "=", 
+    FractionBox[
+     SqrtBox[
+      RowBox[{
+       SuperscriptBox["\[Gamma]", "2"], " ", "-", 
+       SuperscriptBox["z", "2"]}]], "z"]}], TraditionalForm]], "InlineMath"],
+ " is met for the anti-symmetric eigenfunctions!"
+}], "DetailNotes",
+ CellChangeTimes->{
+  3.35696210375764*^9, {3.47406314975*^9, 3.474063151578125*^9}, 
+   3.474064251046875*^9, {3.474289730751629*^9, 3.4742897309296465`*^9}, {
+   3.4742897769492483`*^9, 3.4742898209986525`*^9}, {3.474289886535206*^9, 
+   3.474289928241376*^9}, {3.4743105155755606`*^9, 3.474310618465527*^9}, 
+   3.474310944291567*^9, {3.4743121397839155`*^9, 3.4743121485026093`*^9}, {
+   3.474719680972633*^9, 3.47471971038393*^9}, {3.4747197573832817`*^9, 
+   3.474719757432248*^9}, {3.4747198675113993`*^9, 3.47471989688142*^9}},
+ CellID->134833712],
+
+Cell[TextData[{
+ "Some other important things to note are that increasing ",
+ Cell[BoxData[
+  FormBox["\[Gamma]", TraditionalForm]], "InlineMath"],
+ " (the \"strength of the interaction\") increases the number of bound states \
+available to the system, and that the number of antinodes of an eigenfunction \
+is qualitatively related to its energy."
+}], "DetailNotes",
+ CellChangeTimes->{
+  3.35696210375764*^9, {3.47406314975*^9, 3.474063151578125*^9}, 
+   3.474064251046875*^9, {3.474289730751629*^9, 3.4742897309296465`*^9}, {
+   3.4742897769492483`*^9, 3.4742898209986525`*^9}, {3.474289886535206*^9, 
+   3.474289928241376*^9}, {3.4743105155755606`*^9, 3.474310618465527*^9}, 
+   3.474310944291567*^9, {3.4743121397839155`*^9, 3.4743121485026093`*^9}, {
+   3.474719680972633*^9, 3.47471971038393*^9}, {3.4747197573832817`*^9, 
+   3.474719757432248*^9}, {3.4747198675113993`*^9, 3.474719896875355*^9}, {
+   3.474720330634243*^9, 3.4747203468865356`*^9}},
+ CellID->554949999],
+
+Cell[TextData[{
+ "For more information about this system see, for instance, section 2.6 and \
+problem 2.29 of D. J. Griffiths, ",
+ StyleBox["Introduction to Quantum Mechanics,",
+  FontSlant->"Italic"],
+ " 2nd ed., Upper Saddle River, NJ: Pearson/Prentice Hall, 2005."
+}], "DetailNotes",
+ CellChangeTimes->{
+  3.35696210375764*^9, {3.474310952822762*^9, 3.4743110208692017`*^9}, 
+   3.4743120601281753`*^9, {3.474720369479776*^9, 3.474720390603045*^9}, {
+   3.47472083372381*^9, 3.474720853696216*^9}},
+ CellID->511320105]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["", "ControlSuggestionsSection"],
+
+Cell[BoxData[
+ TooltipBox[
+  RowBox[{
+   CheckboxBox[True], Cell[" Resize Images"]}],
+  "\"Click inside an image to reveal its orange resize frame.\\nDrag any of \
+the orange resize handles to resize the image.\"",
+  TooltipDelay->0.35]], "ControlSuggestions",
+ CellChangeTimes->{3.35696210375764*^9, 3.474289772447798*^9},
+ FontFamily->"Verdana",
+ CellTags->"ResizeImages"],
+
+Cell[BoxData[
+ TooltipBox[
+  RowBox[{
+   CheckboxBox[False], Cell[" Rotate and Zoom in 3D"]}],
+  RowBox[{
+   "\"Drag a 3D graphic to rotate it. Starting the drag near the center \
+tumbles\\nthe graphic; starting near a corner turns it parallel to the plane \
+of the screen.\\nHold down \"", 
+    FrameBox[
+    "Ctrl", Background -> GrayLevel[0.9], FrameMargins -> 2, FrameStyle -> 
+     GrayLevel[0.9]], "\" (or \"", 
+    FrameBox[
+    "Cmd", Background -> GrayLevel[0.9], FrameMargins -> 2, FrameStyle -> 
+     GrayLevel[0.9]], "\" on Mac) and drag up and down to zoom.\""}],
+  TooltipDelay->0.35]], "ControlSuggestions",
+ FontFamily->"Verdana",
+ CellTags->"RotateAndZoomIn3D"],
+
+Cell[BoxData[
+ TooltipBox[
+  RowBox[{
+   CheckboxBox[False], Cell[" Drag Locators"]}],
+  RowBox[{"\"Drag any locator (\"", 
+    GraphicsBox[
+     LocatorBox[
+      Scaled[{0.5, 0.5}]], ImageSize -> 20], 
+    "\", etc.) to move it around.\""}],
+  TooltipDelay->0.35]], "ControlSuggestions",
+ FontFamily->"Verdana",
+ CellTags->"DragLocators"],
+
+Cell[BoxData[
+ TooltipBox[
+  RowBox[{
+   CheckboxBox[False], Cell[" Create and Delete Locators"]}],
+  RowBox[{"\"Insert a new locator in the graphic by holding down the \"", 
+    FrameBox[
+    "Alt", Background -> GrayLevel[0.9], FrameMargins -> 2, FrameStyle -> 
+     GrayLevel[0.9]], 
+    "\" key\\nand clicking where you want it to be. Delete a locator by \
+clicking it\\nwhile holding down the \"", 
+    FrameBox[
+    "Alt", Background -> GrayLevel[0.9], FrameMargins -> 2, FrameStyle -> 
+     GrayLevel[0.9]], "\" key.\""}],
+  TooltipDelay->0.35]], "ControlSuggestions",
+ FontFamily->"Verdana",
+ CellTags->"CreateAndDeleteLocators"],
+
+Cell[BoxData[
+ TooltipBox[
+  RowBox[{
+   CheckboxBox[False], Cell[" Slider Zoom"]}],
+  RowBox[{"\"Hold down the \"", 
+    FrameBox[
+    "Alt", Background -> GrayLevel[0.9], FrameMargins -> 2, FrameStyle -> 
+     GrayLevel[0.9]], 
+    "\" key while moving a slider to make fine adjustments in the slider \
+value.\\nHold \"", 
+    FrameBox[
+    "Ctrl", Background -> GrayLevel[0.9], FrameMargins -> 2, FrameStyle -> 
+     GrayLevel[0.9]], "\" and/or \"", 
+    FrameBox[
+    "Shift", Background -> GrayLevel[0.9], FrameMargins -> 2, FrameStyle -> 
+     GrayLevel[0.9]], "\" at the same time as \"", 
+    FrameBox[
+    "Alt", Background -> GrayLevel[0.9], FrameMargins -> 2, FrameStyle -> 
+     GrayLevel[0.9]], "\" to make ever finer adjustments.\""}],
+  TooltipDelay->0.35]], "ControlSuggestions",
+ FontFamily->"Verdana",
+ CellTags->"SliderZoom"],
+
+Cell[BoxData[
+ TooltipBox[
+  RowBox[{
+   CheckboxBox[False], Cell[" Gamepad Controls"]}],
+  "\"Control this Demonstration with a gamepad or other\\nhuman interface \
+device connected to your computer.\"",
+  TooltipDelay->0.35]], "ControlSuggestions",
+ CellChangeTimes->{3.35696210375764*^9, 3.3895522232313623`*^9},
+ FontFamily->"Verdana",
+ CellTags->"GamepadControls"],
+
+Cell[BoxData[
+ TooltipBox[
+  RowBox[{
+   CheckboxBox[False], Cell[" Automatic Animation"]}],
+  RowBox[{"\"Animate a slider in this Demonstration by clicking the\"", 
+    AdjustmentBox[
+     Cell[
+      GraphicsData[
+      "CompressedBitmap", 
+       "eJzzTSzJSM1NLMlMTlRwL0osyMhMLlZwyy8CCjEzMjAwcIKwAgOI/R/IhBKc\n\
+/4EAyGAG0f+nTZsGwgysIJIRKsWKLAXGIHFmEpUgLADxWUAkI24jZs+eTaEt\n\
+IG+wQKRmzJgBlYf5lhEA30OqWA=="], "Graphics", ImageSize -> {9, 9}, ImageMargins -> 
+      0, CellBaseline -> Baseline], BoxBaselineShift -> 0.1839080459770115, 
+     BoxMargins -> {{0., 0.}, {-0.1839080459770115, 0.1839080459770115}}], 
+    "\"button\\nnext to the slider, and then clicking the play button that \
+appears.\\nAnimate all controls by selecting \"", 
+    StyleBox["Autorun", FontWeight -> "Bold"], "\" from the\"", 
+    AdjustmentBox[
+     Cell[
+      GraphicsData[
+      "CompressedBitmap", 
+       "eJyNULENwyAQfEySIlMwTVJlCGRFsosokeNtqBmDBagoaZjAI1C8/8GUUUC6\n\
+57h7cQ8PvU7Pl17nUav7oj/TPH7V7b2QJAUAXBkKmCPRowxICy64bRvGGNF7\n\
+X8CctGoDSN4xhIDGGDhzFXwUh3/ClBKrDQPmnGXtI6u0OOd+tZBVUqy1xSaH\n\
+UqiK6pPe4XdEdAz6563tx/gejuORGMxJaz8mdpJn7hc="], "Graphics", 
+      ImageSize -> {10, 10}, ImageMargins -> 0, CellBaseline -> Baseline], 
+     BoxBaselineShift -> 0.1839080459770115, 
+     BoxMargins -> {{0., 0.}, {-0.1839080459770115, 0.1839080459770115}}], 
+    "\"menu.\""}],
+  TooltipDelay->0.35]], "ControlSuggestions",
+ FontFamily->"Verdana",
+ CellTags->"AutomaticAnimation"],
+
+Cell[BoxData[
+ TooltipBox[
+  RowBox[{
+   CheckboxBox[False], Cell[" Bookmark Animation"]}],
+  RowBox[{
+   "\"See a prepared animation of this Demonstration by selecting\\n\"", 
+    StyleBox["Animate Bookmarks", FontWeight -> "Bold"], "\" from the\"", 
+    AdjustmentBox[
+     Cell[
+      GraphicsData[
+      "CompressedBitmap", 
+       "eJyNULENwyAQfEySIlMwTVJlCGRFsosokeNtqBmDBagoaZjAI1C8/8GUUUC6\n\
+57h7cQ8PvU7Pl17nUav7oj/TPH7V7b2QJAUAXBkKmCPRowxICy64bRvGGNF7\n\
+X8CctGoDSN4xhIDGGDhzFXwUh3/ClBKrDQPmnGXtI6u0OOd+tZBVUqy1xSaH\n\
+UqiK6pPe4XdEdAz6563tx/gejuORGMxJaz8mdpJn7hc="], "Graphics", 
+      ImageSize -> {10, 10}, ImageMargins -> 0, CellBaseline -> Baseline], 
+     BoxBaselineShift -> 0.1839080459770115, 
+     BoxMargins -> {{0., 0.}, {-0.1839080459770115, 0.1839080459770115}}], 
+    "\"menu.\""}],
+  TooltipDelay->0.35]], "ControlSuggestions",
+ FontFamily->"Verdana",
+ CellTags->"BookmarkAnimation"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["", "SearchTermsSection"],
+
+Cell["transcendental equation", "SearchTerms",
+ CellChangeTimes->{
+  3.35696210375764*^9, {3.47406317*^9, 3.474063207484375*^9}, {
+   3.47406386559375*^9, 3.4740638846875*^9}, {3.474289761834737*^9, 
+   3.4742897623117847`*^9}},
+ CellID->413572661],
+
+Cell["quantum mechanics", "SearchTerms",
+ CellChangeTimes->{
+  3.35696210375764*^9, {3.47406317*^9, 3.474063207484375*^9}, {
+   3.47406386559375*^9, 3.4740638846875*^9}, {3.474289761834737*^9, 
+   3.474289764726026*^9}},
+ CellID->471421737],
+
+Cell["square well", "SearchTerms",
+ CellChangeTimes->{
+  3.35696210375764*^9, {3.47406317*^9, 3.474063207484375*^9}, {
+   3.47406386559375*^9, 3.4740638846875*^9}, {3.474289761834737*^9, 
+   3.4742897671662703`*^9}},
+ CellID->147842521],
+
+Cell["boundary conditions", "SearchTerms",
+ CellChangeTimes->{
+  3.35696210375764*^9, {3.47406317*^9, 3.474063207484375*^9}, {
+   3.47406386559375*^9, 3.4740638846875*^9}, {3.474289761834737*^9, 
+   3.4742897697335267`*^9}},
+ CellID->153845395],
+
+Cell["eigenfunction, energy", "SearchTerms",
+ CellChangeTimes->{
+  3.35696210375764*^9, {3.47406317*^9, 3.474063207484375*^9}, {
+   3.47406386559375*^9, 3.4740638846875*^9}, {3.474289761834737*^9, 
+   3.4742897697305264`*^9}},
+ CellID->274996058]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["", "RelatedLinksSection"],
+
+Cell[TextData[ButtonBox["Finite Square Potential Well",
+ BaseStyle->"Hyperlink",
+ ButtonData->{
+   URL["http://scienceworld.wolfram.com/physics/FiniteSquarePotentialWell.\
+html"], None},
+ ButtonNote->
+  "http://scienceworld.wolfram.com/physics/FiniteSquarePotentialWell.html"]], \
+"RelatedLinks",
+ CellChangeTimes->{
+  3.35696210375764*^9, {3.4742900052130723`*^9, 3.4742900144769983`*^9}},
+ CellID->270414546]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["", "AuthorSection"],
+
+Cell[TextData[{
+ "Contributed by: ",
+ ButtonBox["Michael R. Braunstein",
+  BaseStyle->"Hyperlink",
+  ButtonData->{
+    URL["http://demonstrations.wolfram.com/author.html?author=Michael+R.+\
+Braunstein"], None},
+  ButtonNote->
+   "http://demonstrations.wolfram.com/author.html?author=Michael+R.+\
+Braunstein"],
+ " (Central Washington University)"
+}], "Author",
+ CellChangeTimes->{
+  3.35696210375764*^9, {3.474063243078125*^9, 3.47406324884375*^9}, {
+   3.47428975566212*^9, 3.4742897579303465`*^9}, {3.4742899686054115`*^9, 
+   3.474289968606412*^9}}]
+}, Open  ]]
+}, Open  ]]
+},
+WindowSize->{858, 596},
+WindowMargins->{{0, Automatic}, {Automatic, 0}},
+FrontEndVersion->"7.0 for Mac OS X x86 (32-bit) (September 30, 2009)",
+StyleDefinitions->FrontEnd`FileName[{"Wolfram"}, "Demonstration.nb", 
+  CharacterEncoding -> "UTF-8"]
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{
+ "ResizeImages"->{
+  Cell[46877, 1120, 374, 9, 29, "ControlSuggestions",
+   CellTags->"ResizeImages"]},
+ "RotateAndZoomIn3D"->{
+  Cell[47254, 1131, 678, 16, 29, "ControlSuggestions",
+   CellTags->"RotateAndZoomIn3D"]},
+ "DragLocators"->{
+  Cell[47935, 1149, 340, 11, 29, "ControlSuggestions",
+   CellTags->"DragLocators"]},
+ "CreateAndDeleteLocators"->{
+  Cell[48278, 1162, 637, 15, 29, "ControlSuggestions",
+   CellTags->"CreateAndDeleteLocators"]},
+ "SliderZoom"->{
+  Cell[48918, 1179, 844, 21, 29, "ControlSuggestions",
+   CellTags->"SliderZoom"]},
+ "GamepadControls"->{
+  Cell[49765, 1202, 369, 9, 29, "ControlSuggestions",
+   CellTags->"GamepadControls"]},
+ "AutomaticAnimation"->{
+  Cell[50137, 1213, 1464, 31, 29, "ControlSuggestions",
+   CellTags->"AutomaticAnimation"]},
+ "BookmarkAnimation"->{
+  Cell[51604, 1246, 908, 21, 29, "ControlSuggestions",
+   CellTags->"BookmarkAnimation"]}
+ }
+*)
+(*CellTagsIndex
+CellTagsIndex->{
+ {"ResizeImages", 55297, 1361},
+ {"RotateAndZoomIn3D", 55406, 1364},
+ {"DragLocators", 55516, 1367},
+ {"CreateAndDeleteLocators", 55632, 1370},
+ {"SliderZoom", 55746, 1373},
+ {"GamepadControls", 55852, 1376},
+ {"AutomaticAnimation", 55965, 1379},
+ {"BookmarkAnimation", 56082, 1382}
+ }
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[567, 22, 132, 2, 74, "DemoTitle"],
+Cell[CellGroupData[{
+Cell[724, 28, 33, 0, 266, "InitializationSection"],
+Cell[760, 30, 2998, 93, 170, "Input",
+ InitializationCell->True,
+ CellID->854113705]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[3795, 128, 29, 0, 230, "ManipulateSection"],
+Cell[CellGroupData[{
+Cell[3849, 132, 5699, 140, 597, "Input"],
+Cell[9551, 274, 5099, 106, 382, "Output",
+ CellID->205692584]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[14699, 386, 36, 0, 166, "ManipulateCaptionSection"],
+Cell[14738, 388, 722, 11, 49, "ManipulateCaption"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[15497, 404, 28, 0, 168, "ThumbnailSection"],
+Cell[15528, 406, 5158, 108, 382, "Output",
+ CellID->115482670]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[20723, 519, 28, 0, 138, "SnapshotsSection"],
+Cell[20754, 521, 5095, 106, 506, "Output",
+ CellID->611177722],
+Cell[25852, 629, 5095, 106, 382, "Output",
+ CellID->392651782],
+Cell[30950, 737, 5095, 106, 382, "Output",
+ CellID->376139854]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[36082, 848, 26, 0, 332, "DetailsSection"],
+Cell[36111, 850, 2166, 58, 128, "DetailNotes",
+ CellID->43344031],
+Cell[38280, 910, 951, 15, 79, "DetailNotes",
+ CellID->28816658],
+Cell[39234, 927, 1987, 58, 114, "DetailNotes",
+ CellID->59211106],
+Cell[41224, 987, 861, 16, 64, "DetailNotes",
+ CellID->160638338],
+Cell[42088, 1005, 1366, 32, 84, "DetailNotes",
+ CellID->39309025],
+Cell[43457, 1039, 1840, 42, 110, "DetailNotes",
+ CellID->134833712],
+Cell[45300, 1083, 976, 17, 37, "DetailNotes",
+ CellID->554949999],
+Cell[46279, 1102, 521, 11, 35, "DetailNotes",
+ CellID->511320105]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[46837, 1118, 37, 0, 120, "ControlSuggestionsSection"],
+Cell[46877, 1120, 374, 9, 29, "ControlSuggestions",
+ CellTags->"ResizeImages"],
+Cell[47254, 1131, 678, 16, 29, "ControlSuggestions",
+ CellTags->"RotateAndZoomIn3D"],
+Cell[47935, 1149, 340, 11, 29, "ControlSuggestions",
+ CellTags->"DragLocators"],
+Cell[48278, 1162, 637, 15, 29, "ControlSuggestions",
+ CellTags->"CreateAndDeleteLocators"],
+Cell[48918, 1179, 844, 21, 29, "ControlSuggestions",
+ CellTags->"SliderZoom"],
+Cell[49765, 1202, 369, 9, 29, "ControlSuggestions",
+ CellTags->"GamepadControls"],
+Cell[50137, 1213, 1464, 31, 29, "ControlSuggestions",
+ CellTags->"AutomaticAnimation"],
+Cell[51604, 1246, 908, 21, 29, "ControlSuggestions",
+ CellTags->"BookmarkAnimation"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[52549, 1272, 30, 0, 152, "SearchTermsSection"],
+Cell[52582, 1274, 248, 5, 21, "SearchTerms",
+ CellID->413572661],
+Cell[52833, 1281, 240, 5, 21, "SearchTerms",
+ CellID->471421737],
+Cell[53076, 1288, 236, 5, 21, "SearchTerms",
+ CellID->147842521],
+Cell[53315, 1295, 244, 5, 21, "SearchTerms",
+ CellID->153845395],
+Cell[53562, 1302, 246, 5, 21, "SearchTerms",
+ CellID->274996058]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[53845, 1312, 31, 0, 138, "RelatedLinksSection"],
+Cell[53879, 1314, 410, 10, 21, "RelatedLinks",
+ CellID->270414546]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[54326, 1329, 25, 0, 136, "AuthorSection"],
+Cell[54354, 1331, 551, 15, 21, "Author"]
+}, Open  ]]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)

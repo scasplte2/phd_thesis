@@ -1,0 +1,1314 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 8.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       157,          7]
+NotebookDataLength[     50763,       1304]
+NotebookOptionsPosition[     48519,       1225]
+NotebookOutlinePosition[     49222,       1251]
+CellTagsIndexPosition[     49179,       1248]
+WindowTitle->Schr\366dinger Equation for a One-Dimensional Delta Function \
+Potential - Source
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell["\<\
+Schr\[ODoubleDot]dinger Equation for a One-Dimensional Delta Function \
+Potential\
+\>", "Section",
+ CellFrame->{{0, 0}, {0, 0}},
+ ShowCellBracket->False,
+ FontColor->RGBColor[0.597406, 0, 0.0527047]],
+
+Cell[BoxData[
+ GraphicsBox[RasterBox[CompressedData["
+1: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
+FP/69esnAAAAAAAAAAAAwM74B4thROM=
+   "], {{0, 0}, {1800, 25}}, {0, 255},
+   ColorFunction->RGBColor],
+  ImageSize->{1800, 25},
+  PlotRange->{{0, 1800}, {0, 25}}]], "Section",
+ CellFrame->{{0, 0}, {0, 0}},
+ ShowCellBracket->False],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"\[Psi]0", "[", 
+   RowBox[{"\[Lambda]_", ",", "x_"}], "]"}], ":=", 
+  RowBox[{
+   RowBox[{"-", "\[Lambda]"}], " ", 
+   SuperscriptBox["\[ExponentialE]", 
+    RowBox[{"\[Lambda]", " ", 
+     RowBox[{"Abs", "[", "x", "]"}]}]], 
+   RowBox[{"Boole", "[", 
+    RowBox[{"\[Lambda]", "<", "0"}], "]"}]}]}]], "Input",
+ InitializationCell->True,
+ CellChangeTimes->{
+  3.35696210375764*^9, {3.456937448372264*^9, 3.4569375868360567`*^9}, {
+   3.456961627752557*^9, 3.456961650401752*^9}},
+ CellID->260157452],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"\[Psi]i", "[", 
+   RowBox[{"\[Lambda]_", ",", "k_", ",", "x_"}], "]"}], ":=", 
+  RowBox[{
+   FractionBox["1", 
+    SqrtBox[
+     RowBox[{"2", "\[Pi]"}]]], 
+   RowBox[{"Cos", "[", 
+    RowBox[{"k", " ", "x"}], "]"}]}]}]], "Input",
+ InitializationCell->True,
+ CellChangeTimes->{
+  3.35696210375764*^9, {3.456955430951836*^9, 3.4569554489902887`*^9}, {
+   3.456956416500535*^9, 3.456956420716683*^9}, {3.4569570060747128`*^9, 
+   3.456957032054843*^9}, 3.456961600895151*^9, {3.456962749639719*^9, 
+   3.4569627819927692`*^9}},
+ CellID->15266936],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"\[Psi]t", "[", 
+   RowBox[{"\[Lambda]_", ",", "k_", ",", "x_"}], "]"}], ":=", 
+  RowBox[{
+   FractionBox["1", 
+    SqrtBox[
+     RowBox[{"2", "\[Pi]"}]]], 
+   FractionBox[
+    RowBox[{
+     RowBox[{
+      SuperscriptBox["k", "2"], " ", 
+      RowBox[{"Cos", "[", 
+       RowBox[{"k", " ", "x"}], "]"}]}], "+", 
+     RowBox[{"k", " ", "\[Lambda]", " ", 
+      RowBox[{"Sin", "[", 
+       RowBox[{"k", " ", "x"}], "]"}]}]}], 
+    RowBox[{
+     SuperscriptBox["k", "2"], "+", 
+     SuperscriptBox["\[Lambda]", "2"]}]]}]}]], "Input",
+ InitializationCell->True,
+ CellChangeTimes->{
+  3.35696210375764*^9, {3.456955267565504*^9, 3.456955288039864*^9}, {
+   3.456955338105111*^9, 3.456955360829651*^9}, {3.456955588868462*^9, 
+   3.456955637303878*^9}, {3.4569559845103817`*^9, 3.456955992440948*^9}, {
+   3.45695612482432*^9, 3.4569561519514093`*^9}, {3.456956405437896*^9, 
+   3.456956425541518*^9}, {3.456957060228366*^9, 3.456957074785953*^9}, 
+   3.456957105156364*^9, 3.456961742002586*^9, 3.456962814425754*^9},
+ CellID->2135090558],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"\[Psi]r", "[", 
+   RowBox[{"\[Lambda]_", ",", "k_", ",", "x_"}], "]"}], ":=", 
+  RowBox[{
+   RowBox[{"-", 
+    FractionBox["1", 
+     SqrtBox[
+      RowBox[{"2", "\[Pi]"}]]]}], 
+   FractionBox[
+    RowBox[{
+     RowBox[{
+      SuperscriptBox["\[Lambda]", "2"], " ", 
+      RowBox[{"Cos", "[", 
+       RowBox[{"k", " ", "x"}], "]"}]}], "+", 
+     RowBox[{"k", " ", "\[Lambda]", " ", 
+      RowBox[{"Sin", "[", 
+       RowBox[{"k", " ", "x"}], "]"}]}]}], 
+    RowBox[{
+     SuperscriptBox["k", "2"], "+", 
+     SuperscriptBox["\[Lambda]", "2"]}]]}]}]], "Input",
+ InitializationCell->True,
+ CellChangeTimes->{
+  3.35696210375764*^9, {3.4569559592216587`*^9, 3.456955965643021*^9}, {
+   3.456955999244666*^9, 3.456956004223995*^9}, {3.4569563890458307`*^9, 
+   3.456956395549658*^9}, 3.456957056505021*^9, 3.456961612159865*^9, 
+   3.4569617480555468`*^9, 3.456962821938511*^9},
+ CellID->1040839359],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"g", "[", 
+   RowBox[{"0", ",", "\[Lambda]_", ",", "k_"}], "]"}], ":=", 
+  RowBox[{"Plot", "[", 
+   RowBox[{
+    RowBox[{"\[Psi]0", "[", 
+     RowBox[{"\[Lambda]", ",", "x"}], "]"}], ",", 
+    RowBox[{"{", 
+     RowBox[{"x", ",", 
+      RowBox[{"-", "4"}], ",", "4"}], "}"}], ",", 
+    RowBox[{"PlotStyle", "\[Rule]", 
+     RowBox[{"Directive", "[", 
+      RowBox[{"{", 
+       RowBox[{"Thick", ",", 
+        RowBox[{"Opacity", "[", 
+         RowBox[{"Boole", "[", 
+          RowBox[{"\[Lambda]", "<", "0"}], "]"}], "]"}], ",", 
+        RowBox[{"RGBColor", "[", 
+         RowBox[{".25", ",", ".43", ",", ".82"}], "]"}]}], "}"}], "]"}]}], 
+    ",", "\[IndentingNewLine]", 
+    RowBox[{"PlotRange", "\[Rule]", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"-", ".5"}], ",", "1.5"}], "}"}]}], ",", 
+    RowBox[{"Frame", "\[Rule]", "True"}], ",", 
+    RowBox[{"FrameLabel", "\[Rule]", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"Style", "[", 
+        RowBox[{"x", ",", "18"}], "]"}], ",", 
+       RowBox[{"Style", "[", 
+        RowBox[{
+         RowBox[{"Row", "[", 
+          RowBox[{"{", 
+           RowBox[{
+            RowBox[{"Subscript", "[", 
+             RowBox[{"\[Psi]", ",", "0"}], "]"}], ",", "\"\<(\>\"", ",", "x", 
+            ",", "\"\<)\>\""}], "}"}], "]"}], ",", "18"}], "]"}]}], "}"}]}]}],
+    "]"}]}]], "Input",
+ InitializationCell->True,
+ CellChangeTimes->{
+  3.35696210375764*^9, {3.4569373632820587`*^9, 3.456937403897098*^9}, {
+   3.4569376009898567`*^9, 3.456937729985938*^9}, 3.456937791226956*^9, {
+   3.4569378750068808`*^9, 3.456937889593652*^9}, {3.456937964875175*^9, 
+   3.456937977430293*^9}, {3.456938050296854*^9, 3.456938053325927*^9}, 
+   3.456956370263097*^9, {3.456956432732688*^9, 3.456956443830131*^9}, {
+   3.4569573783510923`*^9, 3.4569575424990463`*^9}, {3.456957577532462*^9, 
+   3.456957649159053*^9}, 3.456957938455225*^9, {3.4569581803599463`*^9, 
+   3.45695822422549*^9}, 3.4569584440320463`*^9, {3.4569586746067553`*^9, 
+   3.456958675514242*^9}, {3.456958792039722*^9, 3.456958837991665*^9}, {
+   3.456961058437554*^9, 3.456961144473968*^9}, 3.456961234234353*^9, 
+   3.456961769868017*^9, {3.456961856816852*^9, 3.456961918807354*^9}, {
+   3.456961978747333*^9, 3.4569619882325287`*^9}, {3.456963702309156*^9, 
+   3.456963769928858*^9}, {3.456963834373715*^9, 3.4569638487633867`*^9}, {
+   3.456963907967551*^9, 3.456963971645742*^9}, {3.456964022051874*^9, 
+   3.456964094441497*^9}, {3.456964134455365*^9, 3.456964171652215*^9}, {
+   3.456964214135872*^9, 3.45696424995938*^9}, {3.4569642954837418`*^9, 
+   3.456964304569413*^9}, {3.457047026685459*^9, 3.4570470349572864`*^9}},
+ CellID->1708981611],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"gi", "[", 
+   RowBox[{"\[Lambda]_", ",", "k_"}], "]"}], ":=", 
+  RowBox[{"Plot", "[", 
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"\[Psi]i", "[", 
+       RowBox[{"\[Lambda]", ",", "k", ",", "x"}], "]"}], ",", 
+      RowBox[{"\[Psi]r", "[", 
+       RowBox[{"\[Lambda]", ",", "k", ",", "x"}], "]"}]}], "}"}], ",", 
+    RowBox[{"{", 
+     RowBox[{"x", ",", 
+      RowBox[{
+       RowBox[{"-", "3"}], "\[Pi]"}], ",", "0"}], "}"}], ",", 
+    RowBox[{"PlotStyle", "\[Rule]", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"Directive", "[", 
+        RowBox[{"{", 
+         RowBox[{"Thick", ",", 
+          RowBox[{"RGBColor", "[", 
+           RowBox[{".25", ",", ".43", ",", ".82"}], "]"}]}], "}"}], "]"}], 
+       ",", 
+       RowBox[{"Directive", "[", 
+        RowBox[{"{", 
+         RowBox[{"Thick", ",", 
+          RowBox[{"Opacity", "[", 
+           FormBox[
+            FractionBox[
+             SuperscriptBox["\[Lambda]", "2"], 
+             RowBox[{
+              SuperscriptBox["k", "2"], "+", 
+              SuperscriptBox["\[Lambda]", "2"]}]],
+            TraditionalForm], "]"}], ",", 
+          RowBox[{"RGBColor", "[", 
+           RowBox[{".49", ",", "0", ",", "0"}], "]"}]}], "}"}], "]"}]}], 
+      "}"}]}], ",", "\[IndentingNewLine]", 
+    RowBox[{"Frame", "\[Rule]", "True"}], ",", 
+    RowBox[{"FrameLabel", "\[Rule]", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"Style", "[", 
+        RowBox[{"x", ",", "18"}], "]"}], ",", 
+       RowBox[{"Style", "[", 
+        RowBox[{
+         RowBox[{"Row", "[", 
+          RowBox[{"{", 
+           RowBox[{"Re", ",", "\"\< \>\"", ",", 
+            RowBox[{"Subscript", "[", 
+             RowBox[{"\[Psi]", ",", 
+              RowBox[{"Style", "[", 
+               RowBox[{"\"\<k\>\"", ",", "Italic"}], "]"}]}], "]"}], ",", 
+            "\"\<(\>\"", ",", "x", ",", "\"\<)\>\""}], "}"}], "]"}], ",", 
+         "18"}], "]"}]}], "}"}]}]}], "]"}]}]], "Input",
+ InitializationCell->True,
+ CellChangeTimes->{
+  3.35696210375764*^9, {3.456961002247408*^9, 3.456961009784975*^9}, 
+   3.4569610494133472`*^9, 3.456961157492249*^9, {3.456961259087082*^9, 
+   3.45696132150154*^9}, 3.4569624569139147`*^9, 3.4569633611220512`*^9, {
+   3.4569643892055807`*^9, 3.456964428963151*^9}, {3.456964492447139*^9, 
+   3.456964501524482*^9}, {3.456964576072529*^9, 3.456964602143705*^9}, {
+   3.456964642450573*^9, 3.4569646662325983`*^9}, {3.4570470419109817`*^9, 
+   3.457047049081699*^9}},
+ CellID->774554667],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"gt", "[", 
+   RowBox[{"\[Lambda]_", ",", "k_"}], "]"}], ":=", 
+  RowBox[{"Plot", "[", 
+   RowBox[{
+    RowBox[{"\[Psi]t", "[", 
+     RowBox[{"\[Lambda]", ",", "k", ",", "x"}], "]"}], ",", 
+    RowBox[{"{", 
+     RowBox[{"x", ",", "0", ",", 
+      RowBox[{"3", "\[Pi]"}]}], "}"}], ",", 
+    RowBox[{"PlotStyle", "\[Rule]", 
+     RowBox[{"Directive", "[", 
+      RowBox[{"{", 
+       RowBox[{"Thick", ",", 
+        RowBox[{"Opacity", "[", 
+         FormBox[
+          FractionBox[
+           SuperscriptBox["k", "2"], 
+           RowBox[{
+            SuperscriptBox["k", "2"], "+", 
+            SuperscriptBox["\[Lambda]", "2"]}]],
+          TraditionalForm], "]"}], ",", 
+        RowBox[{"RGBColor", "[", 
+         RowBox[{".25", ",", ".43", ",", ".82"}], "]"}]}], "}"}], "]"}]}], 
+    ",", "\[IndentingNewLine]", 
+    RowBox[{"Frame", "\[Rule]", "True"}]}], "]"}]}]], "Input",
+ InitializationCell->True,
+ CellChangeTimes->{
+  3.35696210375764*^9, {3.45696133598455*^9, 3.4569613910876513`*^9}, 
+   3.456962449058531*^9, {3.456962982421268*^9, 3.4569630160182858`*^9}, 
+   3.456963321666479*^9, 3.457047053648155*^9},
+ CellID->2041903802],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"g", "[", 
+   RowBox[{"1", ",", "\[Lambda]_", ",", "k_"}], "]"}], ":=", 
+  RowBox[{"Show", "[", 
+   RowBox[{
+    RowBox[{"gi", "[", 
+     RowBox[{"\[Lambda]", ",", "k"}], "]"}], ",", 
+    RowBox[{"gt", "[", 
+     RowBox[{"\[Lambda]", ",", "k"}], "]"}], ",", 
+    RowBox[{"PlotRange", "\[Rule]", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{
+          RowBox[{"-", "3"}], "\[Pi]"}], ",", 
+         RowBox[{"3", "\[Pi]"}]}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{
+          RowBox[{"-", "1.5"}], "/", 
+          SqrtBox[
+           RowBox[{"2", "\[Pi]"}]]}], ",", 
+         RowBox[{"1.5", "/", 
+          SqrtBox[
+           RowBox[{"2", "\[Pi]"}]]}]}], "}"}]}], "}"}]}]}], "]"}]}]], "Input",\
+
+ InitializationCell->True,
+ CellChangeTimes->{
+  3.35696210375764*^9, {3.456961409294321*^9, 3.456961497539361*^9}, {
+   3.456962111859148*^9, 3.456962151979664*^9}, {3.456962259878236*^9, 
+   3.456962271987749*^9}, {3.456962337932184*^9, 3.4569623597012463`*^9}, {
+   3.4569624647763042`*^9, 3.456962477031514*^9}, {3.4569626302834597`*^9, 
+   3.456962673096114*^9}},
+ CellID->1488521154],
+
+Cell[BoxData[
+ RowBox[{"Manipulate", "[", "\[IndentingNewLine]", 
+  RowBox[{
+   RowBox[{"Show", "[", 
+    RowBox[{
+     RowBox[{"g", "[", 
+      RowBox[{"b", ",", "\[Lambda]", ",", "k"}], "]"}], ",", 
+     RowBox[{"ImageSize", "\[Rule]", 
+      RowBox[{"{", 
+       RowBox[{"575", ",", "350"}], "}"}]}]}], "]"}], ",", 
+   "\[IndentingNewLine]", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"b", ",", "1", ",", "\"\< \>\""}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"0", "\[Rule]", "\"\<bound state\>\""}], ",", 
+       RowBox[{"1", "\[Rule]", "\"\<continuum\>\""}]}], "}"}], ",", 
+     "Setter"}], "}"}], ",", "\[IndentingNewLine]", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"\[Lambda]", ",", "0", ",", "\"\<\[Lambda]\>\""}], "}"}], ",", 
+     RowBox[{"-", "1"}], ",", "1", ",", ".1", ",", 
+     RowBox[{"Appearance", "\[Rule]", "\"\<Labeled\>\""}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"k", ",", "1", ",", 
+       RowBox[{"Style", "[", 
+        RowBox[{"\"\<k\>\"", ",", "Italic"}], "]"}]}], "}"}], ",", ".5", ",", 
+     "2", ",", 
+     RowBox[{"Appearance", "\[Rule]", "\"\<Labeled\>\""}], ",", 
+     RowBox[{"Enabled", "\[Rule]", 
+      RowBox[{"Dynamic", "[", 
+       RowBox[{"b", "==", "1"}], "]"}]}]}], "}"}], ",", "\[IndentingNewLine]", 
+   RowBox[{"TrackedSymbols", "\[RuleDelayed]", 
+    RowBox[{"{", 
+     RowBox[{"b", ",", "\[Lambda]", ",", "k"}], "}"}]}], ",", 
+   "\[IndentingNewLine]", 
+   RowBox[{"SaveDefinitions", "\[Rule]", "True"}]}], "]"}]], "Input",
+ CellChangeTimes->{
+  3.35696210375764*^9, {3.456936691398574*^9, 3.456936841653892*^9}, {
+   3.4569369165765743`*^9, 3.456936948200341*^9}, {3.456937025368772*^9, 
+   3.456937087650095*^9}, {3.456937204452186*^9, 3.456937286826009*^9}, {
+   3.456937746594791*^9, 3.456937767730227*^9}, 3.4569378203956623`*^9, 
+   3.456957692073387*^9, {3.456957745551516*^9, 3.45695779476582*^9}, {
+   3.456958015798891*^9, 3.456958017329686*^9}, {3.456958585361039*^9, 
+   3.456958595814185*^9}, {3.456960498218869*^9, 3.4569607844234056`*^9}, {
+   3.456960828614607*^9, 3.456960945634468*^9}, {3.45696153625056*^9, 
+   3.456961543047702*^9}, {3.45696355774612*^9, 3.4569635849509697`*^9}, {
+   3.457046953731165*^9, 3.457047000550846*^9}, {3.4570470800907993`*^9, 
+   3.457047103562146*^9}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ TagBox[
+  StyleBox[
+   DynamicModuleBox[{$CellContext`b$$ = 1, $CellContext`k$$ = 
+    1, $CellContext`\[Lambda]$$ = 0, Typeset`show$$ = True, 
+    Typeset`bookmarkList$$ = {}, Typeset`bookmarkMode$$ = "Menu", 
+    Typeset`animator$$, Typeset`animvar$$ = 1, Typeset`name$$ = 
+    "\"untitled\"", Typeset`specs$$ = {{{
+       Hold[$CellContext`b$$], 1, " "}, {
+      0 -> "bound state", 1 -> "continuum"}}, {{
+       Hold[$CellContext`\[Lambda]$$], 0, "\[Lambda]"}, -1, 1, 0.1}, {{
+       Hold[$CellContext`k$$], 1, 
+       Style["k", Italic]}, 0.5, 2}}, Typeset`size$$ = {575., {173., 177.}}, 
+    Typeset`update$$ = 0, Typeset`initDone$$, Typeset`skipInitDone$$ = 
+    False, $CellContext`b$5616$$ = False, $CellContext`\[Lambda]$5617$$ = 
+    0, $CellContext`k$5618$$ = 0}, 
+    DynamicBox[Manipulate`ManipulateBoxes[
+     1, StandardForm, 
+      "Variables" :> {$CellContext`b$$ = 1, $CellContext`k$$ = 
+        1, $CellContext`\[Lambda]$$ = 0}, "ControllerVariables" :> {
+        Hold[$CellContext`b$$, $CellContext`b$5616$$, False], 
+        Hold[$CellContext`\[Lambda]$$, $CellContext`\[Lambda]$5617$$, 0], 
+        Hold[$CellContext`k$$, $CellContext`k$5618$$, 0]}, 
+      "OtherVariables" :> {
+       Typeset`show$$, Typeset`bookmarkList$$, Typeset`bookmarkMode$$, 
+        Typeset`animator$$, Typeset`animvar$$, Typeset`name$$, 
+        Typeset`specs$$, Typeset`size$$, Typeset`update$$, Typeset`initDone$$,
+         Typeset`skipInitDone$$}, "Body" :> Show[
+        $CellContext`g[$CellContext`b$$, $CellContext`\[Lambda]$$, \
+$CellContext`k$$], ImageSize -> {575, 350}], 
+      "Specifications" :> {{{$CellContext`b$$, 1, " "}, {
+         0 -> "bound state", 1 -> "continuum"}, ControlType -> 
+         Setter}, {{$CellContext`\[Lambda]$$, 0, "\[Lambda]"}, -1, 1, 0.1, 
+         Appearance -> "Labeled"}, {{$CellContext`k$$, 1, 
+          Style["k", Italic]}, 0.5, 2, Appearance -> "Labeled", Enabled -> 
+         Dynamic[$CellContext`b$$ == 1]}}, 
+      "Options" :> {
+       TrackedSymbols :> {$CellContext`b$$, $CellContext`\[Lambda]$$, \
+$CellContext`k$$}}, "DefaultOptions" :> {ControllerLinking -> True}],
+     ImageSizeCache->{620., {243., 248.}},
+     SingleEvaluation->True],
+    Deinitialization:>None,
+    DynamicModuleValues:>{},
+    Initialization:>(({$CellContext`g[
+          Pattern[$CellContext`\[Lambda], 
+           Blank[]]] := Plot[
+          $CellContext`\[Psi]0[$CellContext`\[Lambda], $CellContext`x], \
+{$CellContext`x, -5, 5}, PlotStyle -> {Thick, Blue}, PlotRange -> {-1, 2}, 
+          Frame -> True], $CellContext`g[
+          Pattern[$CellContext`\[Lambda], 
+           Blank[]], 
+          Pattern[$CellContext`k, 
+           Blank[]]] := Plot[{
+           $CellContext`\[Psi]i[$CellContext`\[Lambda], $CellContext`k, \
+$CellContext`x], 
+           $CellContext`\[Psi]t[$CellContext`\[Lambda], $CellContext`k, \
+$CellContext`x], 
+           $CellContext`\[Psi]r[$CellContext`\[Lambda], $CellContext`k, \
+$CellContext`x]}, {$CellContext`x, (-3) Pi, 3 Pi}, PlotStyle -> {
+            Directive[{Thick, Blue}], 
+            Directive[{Thick, 
+              Opacity[1 - Abs[$CellContext`\[Lambda]]], Blue}], 
+            Directive[{Thick, 
+              Opacity[
+               Abs[$CellContext`\[Lambda]]], Red}]}, PlotRange -> {-2, 2}, 
+          Frame -> True], $CellContext`g[0, 
+          Pattern[$CellContext`\[Lambda], 
+           Blank[]], 
+          Pattern[$CellContext`k, 
+           Blank[]]] := Plot[
+          $CellContext`\[Psi]0[$CellContext`\[Lambda], $CellContext`x], \
+{$CellContext`x, -4, 4}, PlotStyle -> Directive[{Thick, 
+             Opacity[
+              Boole[$CellContext`\[Lambda] < 0]], 
+             RGBColor[0.25, 0.43, 0.82]}], PlotRange -> {-0.5, 1.5}, Frame -> 
+          True, FrameLabel -> {
+            Style[$CellContext`x, 18], 
+            Style[
+             Row[{
+               Subscript[$CellContext`\[Psi], 0], "(", $CellContext`x, ")"}], 
+             18]}], $CellContext`g[1, 
+          Pattern[$CellContext`\[Lambda], 
+           Blank[]], 
+          Pattern[$CellContext`k, 
+           Blank[]]] := Show[
+          $CellContext`gi[$CellContext`\[Lambda], $CellContext`k], 
+          $CellContext`gt[$CellContext`\[Lambda], $CellContext`k], 
+          PlotRange -> {{(-3) Pi, 3 Pi}, {(-1.5)/Sqrt[2 Pi], 1.5/Sqrt[
+             2 Pi]}}], $CellContext`\[Psi]0[
+          Pattern[$CellContext`\[Lambda], 
+           Blank[]], 
+          Pattern[$CellContext`x, 
+           Blank[]]] := ((-$CellContext`\[Lambda]) 
+          E^($CellContext`\[Lambda] Abs[$CellContext`x])) 
+         Boole[$CellContext`\[Lambda] < 0], 
+        Attributes[PlotRange] = {ReadProtected}, $CellContext`\[Psi]i[
+          Pattern[$CellContext`\[Lambda], 
+           Blank[]], 
+          Pattern[$CellContext`k, 
+           Blank[]], 
+          Pattern[$CellContext`x, 
+           Blank[]]] := (1/Sqrt[2 Pi]) 
+         Cos[$CellContext`k $CellContext`x], $CellContext`\[Psi]t[
+          Pattern[$CellContext`\[Lambda], 
+           Blank[]], 
+          Pattern[$CellContext`k, 
+           Blank[]], 
+          Pattern[$CellContext`x, 
+           Blank[]]] := (1/Sqrt[
+          2 Pi]) (($CellContext`k^2 
+            Cos[$CellContext`k $CellContext`x] + ($CellContext`k \
+$CellContext`\[Lambda]) 
+            Sin[$CellContext`k $CellContext`x])/($CellContext`k^2 + \
+$CellContext`\[Lambda]^2)), $CellContext`\[Psi]r[
+          Pattern[$CellContext`\[Lambda], 
+           Blank[]], 
+          Pattern[$CellContext`k, 
+           Blank[]], 
+          Pattern[$CellContext`x, 
+           Blank[]]] := (-(1/Sqrt[
+           2 Pi])) (($CellContext`\[Lambda]^2 
+            Cos[$CellContext`k $CellContext`x] + ($CellContext`k \
+$CellContext`\[Lambda]) 
+            Sin[$CellContext`k $CellContext`x])/($CellContext`k^2 + \
+$CellContext`\[Lambda]^2)), Attributes[Subscript] = {NHoldRest}, 
+        Subscript[$CellContext`x, $CellContext`Nf][
+          Pattern[$CellContext`a, 
+           Blank[]], 
+          Pattern[$CellContext`b, 
+           Blank[]]] := -($CellContext`b/(4 $CellContext`a)), 
+        Subscript[$CellContext`y, $CellContext`Nf][
+          Pattern[$CellContext`a, 
+           Blank[]], 
+          Pattern[$CellContext`b, 
+           Blank[]], 
+          Pattern[$CellContext`c, 
+           Blank[]], 
+          Pattern[$CellContext`d, 
+           Blank[]], 
+          Pattern[$CellContext`e, 
+           
+           Blank[]]] := $CellContext`F[$CellContext`a, $CellContext`b, \
+$CellContext`c, $CellContext`d, $CellContext`e, 
+          
+          Subscript[$CellContext`x, $CellContext`Nf][$CellContext`a, \
+$CellContext`b]], Subscript[$CellContext`y, 
+          Derivative[1][$CellContext`Nf]][
+          Pattern[$CellContext`a, 
+           Blank[]], 
+          Pattern[$CellContext`b, 
+           Blank[]], 
+          Pattern[$CellContext`c, 
+           Blank[]], 
+          Pattern[$CellContext`d, 
+           Blank[]], 
+          Pattern[$CellContext`e, 
+           Blank[]]] := 
+        Derivative[
+         1][$CellContext`F][$CellContext`a, $CellContext`b, $CellContext`c, \
+$CellContext`d, 
+          
+          Subscript[$CellContext`x, $CellContext`Nf][$CellContext`a, \
+$CellContext`b]], Subscript[Notebook$$32`d2\[Theta], 1][
+          Pattern[Notebook$$32`t$, 
+           Blank[]]] := ((FE`m1$$48 (FE`l1$$48 Derivative[1][
+                  Subscript[Notebook$$32`\[Theta], 1]][Notebook$$32`t$]^2 - 
+              Notebook$$32`g) - FE`k$$48 FE`l1$$48) Sin[
+             Subscript[Notebook$$32`\[Theta], 1][Notebook$$32`t$]] + (
+            FE`k$$48 FE`l2$$48) Sin[
+             Subscript[Notebook$$32`\[Theta], 2][Notebook$$32`t$]])/((
+          FE`m1$$48 FE`l1$$48) Cos[
+           Subscript[Notebook$$32`\[Theta], 1][Notebook$$32`t$]]), 
+        Subscript[Notebook$$32`d2\[Theta], 2][
+          Pattern[Notebook$$32`t$, 
+           Blank[]]] := ((FE`m2$$48 (FE`l2$$48 Derivative[1][
+                  Subscript[Notebook$$32`\[Theta], 2]][Notebook$$32`t$]^2 - 
+              Notebook$$32`g) - FE`k$$48 FE`l2$$48) Sin[
+             Subscript[Notebook$$32`\[Theta], 2][Notebook$$32`t$]] + (
+            FE`k$$48 FE`l1$$48) Sin[
+             Subscript[Notebook$$32`\[Theta], 1][Notebook$$32`t$]])/((
+          FE`m2$$48 FE`l2$$48) Cos[
+           Subscript[Notebook$$32`\[Theta], 2][Notebook$$32`t$]]), 
+        Subscript[Notebook$$32`soln\[Theta], 1][
+          Pattern[Notebook$$32`t, 
+           Blank[]]] = 
+        InterpolatingFunction[{{0., 10.}}, {
+          3, 11, 2, {15}, {4}, 0, 0, 0, 0}, {{0., 0.13890736457450467`, 
+          0.3315367987796621, 0.8137891114671807, 1.5972786559897592`, 
+          2.4382415783395963`, 3.3318384985244087`, 4.176182169047368, 
+          5.049560798583847, 5.912260971223622, 6.765027113219048, 
+          7.66098988973863, 8.503392779857602, 9.251696389928801, 10.}}, {
+          Developer`PackedArrayForm, {0, 3, 6, 9, 12, 15, 18, 21, 24, 27, 30, 
+           33, 36, 39, 42, 45}, CompressedData["
+1:eJwBdQGK/iFib1JlAQAAAC0AAAAAAAAAAAAAAJqZmZmZmam/AAAAAAAAAAAD
+a/EDsy18v5jSAP2W36i/EvI5vSTQlD/CN3T0RxKQv5s4tO7yj6W/ldNZT3Wf
+pz8cLXwSinadvySBrTK27oK/rjPrlRfetD9SHJqh89GLv3KrcegLsqQ/XTsX
+/sRKmj/c48Rr2qaRP+V19yZRGZU/5V6kvK8Jrr+ouvrrSMeLP4dBUSQV2pa/
+LrUWtf12kr9osQAVBoduv5Wt2H8k1Ie/D7qU0rOSnj/WvIri9LR1v1TRJWAN
+imU/rh4yN2uQcb/48XSNtLx9v8Ln3fiENX2/wm5kGBtAb79iray5m2WCv9Ur
+VktpJ4M/aP5LCwQPoz9O6BonOMKHP1QXbL39vZ0/TunAcBGTh78mZYUy/0mX
+P6D1o7TPf4a/yrjs381wsb+AxVuVT65Wv1M8wsTncae/Mx/aHgNRgL+U50p+
+M0edv0bhapGaPZC/yAvj2UPusz9TEbg0
+           "]}, {Automatic}][Notebook$$32`t],
+         Subscript[Notebook$$32`soln\[Theta], 2][
+          Pattern[Notebook$$32`t, 
+           Blank[]]] = 
+        InterpolatingFunction[{{0., 10.}}, {
+          3, 11, 2, {15}, {4}, 0, 0, 0, 0}, {{0., 0.13890736457450467`, 
+          0.3315367987796621, 0.8137891114671807, 1.5972786559897592`, 
+          2.4382415783395963`, 3.3318384985244087`, 4.176182169047368, 
+          5.049560798583847, 5.912260971223622, 6.765027113219048, 
+          7.66098988973863, 8.503392779857602, 9.251696389928801, 10.}}, {
+          Developer`PackedArrayForm, {0, 3, 6, 9, 12, 15, 18, 21, 24, 27, 30, 
+           33, 36, 39, 42, 45}, CompressedData["
+1:eJxTTMoPSmVkYGDQZcANmmvtqnI8v+/70N9oaRpgv9/K5P6ibS+q97PuvrRB
+0tl4/2ffq8Vd/qn73975FSwZ07ffVnZvRbRo3n7eIK03D5+179/xY1aGVsik
+/b8n7Nu0ckfvfo+Sq/xn+5r3C/Jf+s0qMs9eYuKpP+3+9fvP7NTLNbWcY89c
+49uck7HEPjN7nVnbkmn2h/nm587xnWl/f7lBqceEVfv9e7YKtbpPtr+gHbzs
+pN3C/b3elww18tftP8zSltRXMmW/ikf+qn/5i/dHVfG8ntWz2r5js27k55cz
+928J+LApOGyOfa6IZPPXgI32F8KSdLqOt9pPWxCmIHZyif3ye873Tbcu2a/w
+78kfqbjp9nvyLKIFRSbsf+7YJZe2dM3+Aw7pgo1aXvt9mz22JKvN3b8t7KL3
+2y0z7bd9Mor6ubljv8LJlyon4x33u+3oPd44aaF9+qRapd0XqvfbT/7JnV/e
+ZM/dk75RLalxPwAC0at5
+           "]}, {Automatic}][Notebook$$32`t], 
+        Subscript[Notebook$$35`d2\[Theta], 1][
+          Pattern[Notebook$$35`t$, 
+           Blank[]]] := ((FE`m1$$72 (FE`l1$$72 Derivative[1][
+                  Subscript[Notebook$$35`\[Theta], 1]][Notebook$$35`t$]^2 - 
+              Notebook$$35`g) - FE`k$$72 FE`l1$$72) Sin[
+             Subscript[Notebook$$35`\[Theta], 1][Notebook$$35`t$]] + (
+            FE`k$$72 FE`l2$$72) Sin[
+             Subscript[Notebook$$35`\[Theta], 2][Notebook$$35`t$]])/((
+          FE`m1$$72 FE`l1$$72) Cos[
+           Subscript[Notebook$$35`\[Theta], 1][Notebook$$35`t$]]), 
+        Subscript[Notebook$$35`d2\[Theta], 2][
+          Pattern[Notebook$$35`t$, 
+           Blank[]]] := ((FE`m2$$72 (FE`l2$$72 Derivative[1][
+                  Subscript[Notebook$$35`\[Theta], 2]][Notebook$$35`t$]^2 - 
+              Notebook$$35`g) - FE`k$$72 FE`l2$$72) Sin[
+             Subscript[Notebook$$35`\[Theta], 2][Notebook$$35`t$]] + (
+            FE`k$$72 FE`l1$$72) Sin[
+             Subscript[Notebook$$35`\[Theta], 1][Notebook$$35`t$]])/((
+          FE`m2$$72 FE`l2$$72) Cos[
+           Subscript[Notebook$$35`\[Theta], 2][Notebook$$35`t$]]), 
+        Subscript[Notebook$$35`soln\[Theta], 1][
+          Pattern[Notebook$$35`t, 
+           Blank[]]] = 
+        InterpolatingFunction[{{0., 10.}}, {
+          3, 11, 2, {15}, {4}, 0, 0, 0, 0}, {{0., 0.13890736457450467`, 
+          0.3315367987796621, 0.8137891114671807, 1.5972786559897592`, 
+          2.4382415783395963`, 3.3318384985244087`, 4.176182169047368, 
+          5.049560798583847, 5.912260971223622, 6.765027113219048, 
+          7.66098988973863, 8.503392779857602, 9.251696389928801, 10.}}, {
+          Developer`PackedArrayForm, {0, 3, 6, 9, 12, 15, 18, 21, 24, 27, 30, 
+           33, 36, 39, 42, 45}, CompressedData["
+1:eJwBdQGK/iFib1JlAQAAAC0AAAAAAAAAAAAAAJqZmZmZmam/AAAAAAAAAAAD
+a/EDsy18v5jSAP2W36i/EvI5vSTQlD/CN3T0RxKQv5s4tO7yj6W/ldNZT3Wf
+pz8cLXwSinadvySBrTK27oK/rjPrlRfetD9SHJqh89GLv3KrcegLsqQ/XTsX
+/sRKmj/c48Rr2qaRP+V19yZRGZU/5V6kvK8Jrr+ouvrrSMeLP4dBUSQV2pa/
+LrUWtf12kr9osQAVBoduv5Wt2H8k1Ie/D7qU0rOSnj/WvIri9LR1v1TRJWAN
+imU/rh4yN2uQcb/48XSNtLx9v8Ln3fiENX2/wm5kGBtAb79iray5m2WCv9Ur
+VktpJ4M/aP5LCwQPoz9O6BonOMKHP1QXbL39vZ0/TunAcBGTh78mZYUy/0mX
+P6D1o7TPf4a/yrjs381wsb+AxVuVT65Wv1M8wsTncae/Mx/aHgNRgL+U50p+
+M0edv0bhapGaPZC/yAvj2UPusz9TEbg0
+           "]}, {Automatic}][Notebook$$35`t],
+         Subscript[Notebook$$35`soln\[Theta], 2][
+          Pattern[Notebook$$35`t, 
+           Blank[]]] = 
+        InterpolatingFunction[{{0., 10.}}, {
+          3, 11, 2, {15}, {4}, 0, 0, 0, 0}, {{0., 0.13890736457450467`, 
+          0.3315367987796621, 0.8137891114671807, 1.5972786559897592`, 
+          2.4382415783395963`, 3.3318384985244087`, 4.176182169047368, 
+          5.049560798583847, 5.912260971223622, 6.765027113219048, 
+          7.66098988973863, 8.503392779857602, 9.251696389928801, 10.}}, {
+          Developer`PackedArrayForm, {0, 3, 6, 9, 12, 15, 18, 21, 24, 27, 30, 
+           33, 36, 39, 42, 45}, CompressedData["
+1:eJxTTMoPSmVkYGDQZcANmmvtqnI8v+/70N9oaRpgv9/K5P6ibS+q97PuvrRB
+0tl4/2ffq8Vd/qn73975FSwZ07ffVnZvRbRo3n7eIK03D5+179/xY1aGVsik
+/b8n7Nu0ckfvfo+Sq/xn+5r3C/Jf+s0qMs9eYuKpP+3+9fvP7NTLNbWcY89c
+49uck7HEPjN7nVnbkmn2h/nm587xnWl/f7lBqceEVfv9e7YKtbpPtr+gHbzs
+pN3C/b3elww18tftP8zSltRXMmW/ikf+qn/5i/dHVfG8ntWz2r5js27k55cz
+928J+LApOGyOfa6IZPPXgI32F8KSdLqOt9pPWxCmIHZyif3ye873Tbcu2a/w
+78kfqbjp9nvyLKIFRSbsf+7YJZe2dM3+Aw7pgo1aXvt9mz22JKvN3b8t7KL3
+2y0z7bd9Mor6ubljv8LJlyon4x33u+3oPd44aaF9+qRapd0XqvfbT/7JnV/e
+ZM/dk75RLalxPwAC0at5
+           "]}, {Automatic}][
+         Notebook$$35`t], $CellContext`F[
+          Pattern[$CellContext`a, 
+           Blank[]], 
+          Pattern[$CellContext`b, 
+           Blank[]], 
+          Pattern[$CellContext`c, 
+           Blank[]], 
+          Pattern[$CellContext`d, 
+           Blank[]], 
+          Pattern[$CellContext`e, 
+           Blank[]], 
+          Pattern[$CellContext`x, 
+           
+           Blank[]]] := $CellContext`a $CellContext`x^4 + $CellContext`b \
+$CellContext`x^3 + $CellContext`c $CellContext`x^2 + $CellContext`d \
+$CellContext`x + $CellContext`e, 
+        Attributes[Derivative] = {NHoldAll, ReadProtected}, FE`m1$$48 = 1, 
+        FE`l1$$48 = 5, Notebook$$32`\[Theta] = 0.00005044018260750292, 
+        Notebook$$32`g = 9.8, FE`k$$48 = 1, FE`l2$$48 = 5, FE`m2$$48 = 1, 
+        FE`m1$$72 = 1, FE`l1$$72 = 5, Notebook$$35`\[Theta] = 
+        0.00005044018260750292, Notebook$$35`g = 9.8, FE`k$$72 = 1, FE`l2$$72 = 
+        5, FE`m2$$72 = 1, $CellContext`gi[
+          Pattern[$CellContext`\[Lambda], 
+           Blank[]], 
+          Pattern[$CellContext`k, 
+           Blank[]]] := Plot[{
+           $CellContext`\[Psi]i[$CellContext`\[Lambda], $CellContext`k, \
+$CellContext`x], 
+           $CellContext`\[Psi]r[$CellContext`\[Lambda], $CellContext`k, \
+$CellContext`x]}, {$CellContext`x, (-3) Pi, 0}, PlotStyle -> {
+            Directive[{Thick, 
+              RGBColor[0.25, 0.43, 0.82]}], 
+            Directive[{Thick, 
+              
+              Opacity[$CellContext`\[Lambda]^2/($CellContext`k^2 + \
+$CellContext`\[Lambda]^2)], 
+              RGBColor[0.49, 0, 0]}]}, Frame -> True, FrameLabel -> {
+            Style[$CellContext`x, 18], 
+            Style[
+             Row[{Re, " ", 
+               Subscript[$CellContext`\[Psi], 
+                Style["k", Italic]], "(", $CellContext`x, ")"}], 
+             18]}], $CellContext`gt[
+          Pattern[$CellContext`\[Lambda], 
+           Blank[]], 
+          Pattern[$CellContext`k, 
+           Blank[]]] := Plot[
+          $CellContext`\[Psi]t[$CellContext`\[Lambda], $CellContext`k, \
+$CellContext`x], {$CellContext`x, 0, 3 Pi}, PlotStyle -> Directive[{Thick, 
+             
+             Opacity[$CellContext`k^2/($CellContext`k^2 + $CellContext`\
+\[Lambda]^2)], 
+             RGBColor[0.25, 0.43, 0.82]}], Frame -> True]}; 
+      Typeset`initDone$$ = True); ReleaseHold[
+       HoldComplete[{$CellContext`\[Psi]0[
+           Pattern[$CellContext`\[Lambda], 
+            Blank[]], 
+           Pattern[$CellContext`x, 
+            Blank[]]] := (-$CellContext`\[Lambda]) 
+          E^($CellContext`\[Lambda] Abs[$CellContext`x]) 
+          Boole[$CellContext`\[Lambda] < 0], $CellContext`\[Psi]i[
+           Pattern[$CellContext`\[Lambda], 
+            Blank[]], 
+           Pattern[$CellContext`k, 
+            Blank[]], 
+           Pattern[$CellContext`x, 
+            Blank[]]] := (1/(2 Pi)^Rational[1, 2]) 
+          Cos[$CellContext`k $CellContext`x], $CellContext`\[Psi]t[
+           Pattern[$CellContext`\[Lambda], 
+            Blank[]], 
+           Pattern[$CellContext`k, 
+            Blank[]], 
+           Pattern[$CellContext`x, 
+            Blank[]]] := (1/(2 Pi)^
+           Rational[
+            1, 2]) (($CellContext`k^2 
+             Cos[$CellContext`k $CellContext`x] + $CellContext`k \
+$CellContext`\[Lambda] 
+             Sin[$CellContext`k $CellContext`x])/($CellContext`k^2 + \
+$CellContext`\[Lambda]^2)), $CellContext`\[Psi]r[
+           Pattern[$CellContext`\[Lambda], 
+            Blank[]], 
+           Pattern[$CellContext`k, 
+            Blank[]], 
+           Pattern[$CellContext`x, 
+            Blank[]]] := (-(1/(2 Pi)^
+            Rational[1, 2])) (($CellContext`\[Lambda]^2 
+             Cos[$CellContext`k $CellContext`x] + $CellContext`k \
+$CellContext`\[Lambda] 
+             Sin[$CellContext`k $CellContext`x])/($CellContext`k^2 + \
+$CellContext`\[Lambda]^2)), $CellContext`g[0, 
+           Pattern[$CellContext`\[Lambda], 
+            Blank[]], 
+           Pattern[$CellContext`k, 
+            Blank[]]] := Plot[
+           $CellContext`\[Psi]0[$CellContext`\[Lambda], $CellContext`x], \
+{$CellContext`x, -4, 4}, PlotStyle -> Directive[{Thick, 
+              Opacity[
+               Boole[$CellContext`\[Lambda] < 0]], 
+              RGBColor[0.25, 0.43, 0.82]}], PlotRange -> {-0.5, 1.5}, Frame -> 
+           True, FrameLabel -> {
+             Style[$CellContext`x, 18], 
+             Style[
+              Row[{
+                Subscript[$CellContext`\[Psi], 0], "(", $CellContext`x, ")"}],
+               18]}], $CellContext`gi[
+           Pattern[$CellContext`\[Lambda], 
+            Blank[]], 
+           Pattern[$CellContext`k, 
+            Blank[]]] := Plot[{
+            $CellContext`\[Psi]i[$CellContext`\[Lambda], $CellContext`k, \
+$CellContext`x], 
+            $CellContext`\[Psi]r[$CellContext`\[Lambda], $CellContext`k, \
+$CellContext`x]}, {$CellContext`x, (-3) Pi, 0}, PlotStyle -> {
+             Directive[{Thick, 
+               RGBColor[0.25, 0.43, 0.82]}], 
+             Directive[{Thick, 
+               
+               Opacity[$CellContext`\[Lambda]^2/($CellContext`k^2 + \
+$CellContext`\[Lambda]^2)], 
+               RGBColor[0.49, 0, 0]}]}, Frame -> True, FrameLabel -> {
+             Style[$CellContext`x, 18], 
+             Style[
+              Row[{Re, " ", 
+                Subscript[$CellContext`\[Psi], 
+                 Style["k", Italic]], "(", $CellContext`x, ")"}], 
+              18]}], $CellContext`gt[
+           Pattern[$CellContext`\[Lambda], 
+            Blank[]], 
+           Pattern[$CellContext`k, 
+            Blank[]]] := Plot[
+           $CellContext`\[Psi]t[$CellContext`\[Lambda], $CellContext`k, \
+$CellContext`x], {$CellContext`x, 0, 3 Pi}, PlotStyle -> Directive[{Thick, 
+              
+              Opacity[$CellContext`k^2/($CellContext`k^2 + $CellContext`\
+\[Lambda]^2)], 
+              RGBColor[0.25, 0.43, 0.82]}], Frame -> True], $CellContext`g[
+          1, 
+           Pattern[$CellContext`\[Lambda], 
+            Blank[]], 
+           Pattern[$CellContext`k, 
+            Blank[]]] := Show[
+           $CellContext`gi[$CellContext`\[Lambda], $CellContext`k], 
+           $CellContext`gt[$CellContext`\[Lambda], $CellContext`k], 
+           PlotRange -> {{(-3) Pi, 3 Pi}, {(-1.5)/(2 Pi)^Rational[1, 2], 
+              1.5/(2 Pi)^Rational[1, 2]}}]}]]; Typeset`initDone$$ = True),
+    SynchronousInitialization->True,
+    UnsavedVariables:>{Typeset`initDone$$},
+    UntrackedVariables:>{Typeset`size$$}], "Manipulate",
+   Deployed->True,
+   StripOnInput->False],
+  Manipulate`InterpretManipulate[1]]], "Output",
+ CellID->62820405],
+
+Cell[CellGroupData[{
+
+Cell["CAPTION", "Section",
+ CellFrame->{{0, 0}, {1, 0}},
+ CellFrameColor->RGBColor[0.87, 0.87, 0.87],
+ FontFamily->"Helvetica",
+ FontSize->12,
+ FontWeight->"Bold",
+ FontColor->RGBColor[0.597406, 0, 0.0527047]],
+
+Cell[TextData[{
+ "After the free particle, the most elementary example of a one-dimensional \
+time-independent Schr\[ODoubleDot]dinger equation is conceptually that of a \
+particle in a delta function potential: ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{
+     RowBox[{
+      RowBox[{"-", 
+       FractionBox["1", "2"]}], 
+      RowBox[{"\[Psi]", "''"}], 
+      RowBox[{"(", "x", ")"}]}], "+", 
+     RowBox[{"\[Lambda]", " ", 
+      RowBox[{"\[Delta]", "(", "x", ")"}], 
+      RowBox[{"\[Psi]", "(", "x", ")"}]}]}], "=", 
+    RowBox[{"E", " ", 
+     RowBox[{"\[Psi]", "(", "x", ")"}]}]}], TraditionalForm]], "InlineMath"],
+ " (in units with ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"\[HBar]", "=", 
+    RowBox[{"m", "=", "1"}]}], TraditionalForm]], "InlineMath"],
+ "). For an attractive potential, with ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"\[Lambda]", "<", "0"}], TraditionalForm]], "InlineMath"],
+ ", there is exactly one bound state, with ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    SubscriptBox["E", "0"], "=", 
+    RowBox[{"-", 
+     FractionBox[
+      SuperscriptBox["\[Lambda]", "2"], "2"]}]}], TraditionalForm]], 
+  "InlineMath"],
+ " and ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{
+     SubscriptBox["\[Psi]", "0"], "(", "x", ")"}], "=", 
+    RowBox[{"|", "\[Lambda]", "|", 
+     SuperscriptBox["\[ExponentialE]", 
+      RowBox[{"-", 
+       RowBox[{"|", 
+        RowBox[{"\[Lambda]", " ", "x"}], "|"}]}]]}]}], TraditionalForm]], 
+  "InlineMath"],
+ ". Note that ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    FractionBox["d", 
+     RowBox[{" ", 
+      RowBox[{"d", " ", "x"}]}]], "|", "x", "|", 
+    RowBox[{"=", 
+     RowBox[{"sign", 
+      RowBox[{"(", "x", ")"}]}]}]}], TraditionalForm]], "InlineMath"],
+ " and ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    FractionBox[
+     SuperscriptBox["d", "2"], 
+     RowBox[{" ", 
+      RowBox[{"d", " ", 
+       SuperscriptBox["x", "2"]}]}]], "|", "x", "|", 
+    RowBox[{"=", 
+     RowBox[{"2", " ", "\[Delta]", 
+      RowBox[{"(", "x", ")"}]}]}]}], TraditionalForm]], "InlineMath"],
+ ". Since the delta function has dimensions of ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{"1", "/"}], "|", "x", "|"}], TraditionalForm]], "InlineMath"],
+ ", this solution is considered the one-dimensional analog of a hydrogen-like \
+atom. The bound state, in fact, resembles a cross section of a 1",
+ Cell[BoxData[
+  FormBox["s", TraditionalForm]], "InlineMath"],
+ " orbital ",
+ Cell[BoxData[
+  FormBox[
+   SuperscriptBox["e", 
+    RowBox[{
+     RowBox[{"-", "Z"}], " ", "r"}]], TraditionalForm]], "InlineMath"],
+ "."
+}], "Text"]
+}, Close]]
+}, Open  ]],
+
+Cell[TextData[{
+ "For ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"E", ">", "0"}], TraditionalForm]], "InlineMath"],
+ ", free particles are scattered by a delta function potential. The \
+positive-energy solutions can be written ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{
+     SubsuperscriptBox["\[Psi]", "k", "\[PlusMinus]"], "(", "x", ")"}], "=", 
+    RowBox[{
+     FractionBox["1", 
+      SqrtBox[
+       RowBox[{"2", "\[Pi]"}]]], 
+     RowBox[{"(", 
+      RowBox[{
+       SuperscriptBox["e", 
+        RowBox[{
+         RowBox[{"\[PlusMinus]", "i"}], " ", "k", " ", "x"}]], "+", 
+       RowBox[{
+        FractionBox["\[Lambda]", 
+         RowBox[{
+          RowBox[{"i", " ", "k"}], "-", "\[Lambda]"}]], 
+        SuperscriptBox["e", 
+         RowBox[{
+          RowBox[{"\[ImaginaryI]", " ", "k"}], " ", "|", "x", "|"}]]}]}], 
+      ")"}]}]}], TraditionalForm]], "InlineMath"],
+ ", with ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"E", "=", 
+    RowBox[{
+     SuperscriptBox["k", "2"], "/", "2"}]}], TraditionalForm]], 
+  "InlineMath"],
+ ". The amplitudes of the transmitted and reflected waves are accordingly \
+given by ",
+ Cell[BoxData[
+  FormBox[
+   FractionBox[
+    SuperscriptBox["k", "2"], 
+    RowBox[{
+     SuperscriptBox["k", "2"], "+", 
+     SuperscriptBox["\[Lambda]", "2"]}]], TraditionalForm]], "InlineMath"],
+ " and ",
+ Cell[BoxData[
+  FormBox[
+   FractionBox[
+    SuperscriptBox["\[Lambda]", "2"], 
+    RowBox[{
+     SuperscriptBox["k", "2"], "+", 
+     SuperscriptBox["\[Lambda]", "2"]}]], TraditionalForm]], "InlineMath"],
+ ", respectively. Note that these are the same for attractive and repulsive \
+delta funtion potentials, independent of the sign of ",
+ Cell[BoxData[
+  FormBox["\[Lambda]", TraditionalForm]], "InlineMath"],
+ "."
+}], "Text"],
+
+Cell["\<\
+For continuum states, the graphic shows a wave incident from the left. The \
+transmitted wave is shown on the right in blue and the reflected wave, on the \
+left in red, with opacities indicating relative wave amplitudes.\
+\>", "Text"],
+
+Cell[CellGroupData[{
+
+Cell["DETAILS", "Section",
+ CellFrame->{{0, 0}, {1, 0}},
+ CellFrameColor->RGBColor[0.87, 0.87, 0.87],
+ FontFamily->"Helvetica",
+ FontSize->12,
+ FontWeight->"Bold",
+ FontColor->RGBColor[0.597406, 0, 0.0527047]],
+
+Cell["Snapshot 1: wavefunction for the single bound state", "Text"],
+
+Cell[TextData[{
+ "Snapshot 2: unperturbed continuum state, with ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"\[Lambda]", "=", "0"}], TraditionalForm]], "InlineMath"]
+}], "Text"],
+
+Cell["\<\
+Snapshot 3: scattering state, showing incident, transmitted and reflected \
+waves\
+\>", "Text"],
+
+Cell[TextData[{
+ "Reference: S. M. Blinder, \"",
+ ButtonBox["Green's Function and Propagator for the One-Dimensional Delta \
+Function Potential",
+  BaseStyle->"Hyperlink",
+  ButtonData->{
+    URL["http://www.ncbi.nlm.nih.gov/pubmed/9899742"], None},
+  ButtonNote->"http://www.ncbi.nlm.nih.gov/pubmed/9899742"],
+ ",\" ",
+ StyleBox["Phys. Rev. A",
+  FontSlant->"Italic"],
+ ", ",
+ StyleBox["37",
+  FontWeight->"Bold"],
+ "(3), 1988 pp. 973\[Dash]976."
+}], "Text"]
+}, Close]],
+
+Cell[CellGroupData[{
+
+Cell["THIS NOTEBOOK IS THE SOURCE CODE FROM", "Text",
+ CellFrame->{{0, 0}, {0, 0}},
+ CellMargins->{{48, 10}, {4, 28}},
+ CellGroupingRules->{"SectionGrouping", 25},
+ CellFrameMargins->{{48, 48}, {6, 5}},
+ CellFrameColor->RGBColor[0.87, 0.87, 0.87],
+ FontFamily->"Helvetica",
+ FontSize->10,
+ FontWeight->"Bold",
+ FontColor->RGBColor[0.597406, 0, 0.0527047]],
+
+Cell[TextData[{
+ "\"",
+ ButtonBox["Schr\[ODoubleDot]dinger Equation for a One-Dimensional Delta \
+Function Potential",
+  BaseStyle->"Hyperlink",
+  ButtonData->{
+    URL["http://demonstrations.wolfram.com/\
+SchroedingerEquationForAOneDimensionalDeltaFunctionPotential/"], None},
+  ButtonNote->
+   "http://demonstrations.wolfram.com/\
+SchroedingerEquationForAOneDimensionalDeltaFunctionPotential/"],
+ "\"",
+ " from ",
+ ButtonBox["the Wolfram Demonstrations Project",
+  BaseStyle->"Hyperlink",
+  ButtonData->{
+    URL["http://demonstrations.wolfram.com/"], None},
+  ButtonNote->"http://demonstrations.wolfram.com/"],
+ "\[ParagraphSeparator]\[NonBreakingSpace]",
+ ButtonBox["http://demonstrations.wolfram.com/\
+SchroedingerEquationForAOneDimensionalDeltaFunctionPotential/",
+  BaseStyle->"Hyperlink",
+  ButtonData->{
+    URL["http://demonstrations.wolfram.com/\
+SchroedingerEquationForAOneDimensionalDeltaFunctionPotential/"], None},
+  ButtonNote->
+   "http://demonstrations.wolfram.com/\
+SchroedingerEquationForAOneDimensionalDeltaFunctionPotential/"]
+}], "Text",
+ CellMargins->{{48, Inherited}, {0, Inherited}},
+ FontFamily->"Verdana",
+ FontSize->10,
+ FontColor->GrayLevel[0.5]],
+
+Cell[TextData[{
+ "Contributed by: ",
+ ButtonBox["S. M. Blinder",
+  BaseStyle->"Hyperlink",
+  ButtonData->{
+    URL["http://demonstrations.wolfram.com/author.html?author=S.+M.+Blinder"],
+     None},
+  ButtonNote->
+   "http://demonstrations.wolfram.com/author.html?author=S.+M.+Blinder"]
+}], "Text",
+ CellDingbat->"\[FilledSmallSquare]",
+ CellMargins->{{66, 48}, {2, 4}},
+ FontFamily->"Verdana",
+ FontSize->10,
+ FontColor->GrayLevel[0.6]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ "A full-function Wolfram ",
+ StyleBox["Mathematica",
+  FontSlant->"Italic"],
+ " system (Version 6 or higher) is required to edit this notebook.\n",
+ StyleBox[ButtonBox["GET WOLFRAM MATHEMATICA \[RightGuillemet]",
+  BaseStyle->"Hyperlink",
+  ButtonData->{
+    URL["http://www.wolfram.com/products/mathematica/"], None},
+  ButtonNote->"http://www.wolfram.com/products/mathematica/"],
+  FontFamily->"Helvetica",
+  FontWeight->"Bold",
+  FontSlant->"Italic",
+  FontColor->RGBColor[1, 0.42, 0]]
+}], "Text",
+ CellFrame->True,
+ CellMargins->{{48, 68}, {8, 28}},
+ CellFrameMargins->12,
+ CellFrameColor->RGBColor[0.87, 0.87, 0.87],
+ CellChangeTimes->{3.3750111182355957`*^9},
+ ParagraphSpacing->{1., 1.},
+ FontFamily->"Verdana",
+ FontSize->10,
+ FontColor->GrayLevel[0.411765],
+ Background->RGBColor[1, 1, 1]],
+
+Cell[TextData[{
+ "\[Copyright] ",
+ StyleBox[ButtonBox["Wolfram Demonstrations Project & Contributors",
+  BaseStyle->"Hyperlink",
+  ButtonData->{
+    URL["http://demonstrations.wolfram.com/"], None},
+  ButtonNote->"http://demonstrations.wolfram.com/"],
+  FontColor->GrayLevel[0.6]],
+ "\[ThickSpace]\[ThickSpace]\[ThickSpace]|\[ThickSpace]\[ThickSpace]\
+\[ThickSpace]",
+ StyleBox[ButtonBox["Terms of Use",
+  BaseStyle->"Hyperlink",
+  ButtonData->{
+    URL["http://demonstrations.wolfram.com/termsofuse.html"], None},
+  ButtonNote->"http://demonstrations.wolfram.com/termsofuse.html"],
+  FontColor->GrayLevel[0.6]],
+ "\[ThickSpace]\[ThickSpace]\[ThickSpace]|\[ThickSpace]\[ThickSpace]\
+\[ThickSpace]",
+ StyleBox[ButtonBox["Make a new version of this Demonstration \
+\[RightGuillemet]",
+  BaseStyle->"Hyperlink",
+  ButtonData->{
+    URL["http://demonstrations.wolfram.com/participate/upload.jsp?id=\
+SchroedingerEquationForAOneDimensionalDeltaFunctionPotential"], None},
+  ButtonNote->None],
+  FontColor->GrayLevel[0.6]]
+}], "Text",
+ CellFrame->{{0, 0}, {0, 0.5}},
+ CellMargins->{{48, 10}, {20, 50}},
+ CellFrameMargins->{{6, 0}, {6, 6}},
+ CellFrameColor->GrayLevel[0.6],
+ FontFamily->"Verdana",
+ FontSize->9,
+ FontColor->GrayLevel[0.6]]
+}, Open  ]]
+}, Open  ]]
+},
+Editable->True,
+Saveable->False,
+ScreenStyleEnvironment->"Working",
+CellInsertionPointCell->None,
+WindowSize->{780, 650},
+WindowMargins->{{Inherited, Inherited}, {Inherited, 0}},
+WindowElements->{
+ "StatusArea", "MemoryMonitor", "MagnificationPopUp", "VerticalScrollBar", 
+  "MenuBar"},
+WindowTitle->"Schr\[ODoubleDot]dinger Equation for a One-Dimensional Delta \
+Function Potential - Source",
+DockedCells->{},
+CellContext->Notebook,
+FrontEndVersion->"8.0 for Microsoft Windows (32-bit) (November 7, 2010)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[674, 24, 209, 6, 70, "Section"],
+Cell[886, 32, 3700, 64, 70, "Section"],
+Cell[4589, 98, 533, 15, 70, "Input",
+ InitializationCell->True,
+ CellID->260157452],
+Cell[5125, 115, 578, 16, 70, "Input",
+ InitializationCell->True,
+ CellID->15266936],
+Cell[5706, 133, 1067, 28, 70, "Input",
+ InitializationCell->True,
+ CellID->2135090558],
+Cell[6776, 163, 930, 27, 70, "Input",
+ InitializationCell->True,
+ CellID->1040839359],
+Cell[7709, 192, 2693, 59, 70, "Input",
+ InitializationCell->True,
+ CellID->1708981611],
+Cell[10405, 253, 2500, 65, 70, "Input",
+ InitializationCell->True,
+ CellID->774554667],
+Cell[12908, 320, 1172, 32, 70, "Input",
+ InitializationCell->True,
+ CellID->2041903802],
+Cell[14083, 354, 1191, 35, 70, "Input",
+ InitializationCell->True,
+ CellID->1488521154],
+Cell[15277, 391, 2353, 53, 70, "Input"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[17667, 449, 20816, 438, 70, "Output",
+ CellID->62820405],
+Cell[CellGroupData[{
+Cell[38508, 891, 209, 6, 70, "Section"],
+Cell[38720, 899, 2595, 86, 70, "Text"]
+}, Close]]
+}, Open  ]],
+Cell[41341, 989, 1768, 58, 70, "Text"],
+Cell[43112, 1049, 245, 4, 70, "Text"],
+Cell[CellGroupData[{
+Cell[43382, 1057, 209, 6, 70, "Section"],
+Cell[43594, 1065, 67, 0, 70, "Text"],
+Cell[43664, 1067, 173, 5, 70, "Text"],
+Cell[43840, 1074, 105, 3, 70, "Text"],
+Cell[43948, 1079, 459, 15, 70, "Text"]
+}, Close]],
+Cell[CellGroupData[{
+Cell[44443, 1099, 355, 9, 70, "Text",
+ CellGroupingRules->{"SectionGrouping", 25}],
+Cell[44801, 1110, 1176, 32, 70, "Text"],
+Cell[45980, 1144, 436, 14, 70, "Text"],
+Cell[CellGroupData[{
+Cell[46441, 1162, 815, 24, 70, "Text"],
+Cell[47259, 1188, 1232, 33, 70, "Text"]
+}, Open  ]]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)
+(* NotebookSignature rR46O1MzY#gEGDDnGm8PUwd3 *)

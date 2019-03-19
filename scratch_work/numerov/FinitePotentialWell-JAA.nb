@@ -1,0 +1,385 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 10.2' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     14312,        375]
+NotebookOptionsPosition[     13955,        358]
+NotebookOutlinePosition[     14296,        373]
+CellTagsIndexPosition[     14253,        370]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"psias", "[", 
+   RowBox[{"z_", ",", " ", "\[Gamma]_", ",", " ", "xa_"}], "]"}], ":=", " ", 
+  RowBox[{"Which", "[", 
+   RowBox[{
+    RowBox[{"xa", "<", 
+     RowBox[{"-", "1"}]}], ",", " ", 
+    RowBox[{
+     RowBox[{"-", 
+      RowBox[{"Sin", "[", "z", "]"}]}], " ", 
+     SuperscriptBox["\[ExponentialE]", 
+      SqrtBox[
+       RowBox[{
+        SuperscriptBox["\[Gamma]", "2"], "-", 
+        SuperscriptBox["z", "2"]}]]], " ", 
+     SuperscriptBox["\[ExponentialE]", 
+      RowBox[{
+       SqrtBox[
+        RowBox[{
+         SuperscriptBox["\[Gamma]", "2"], " ", "-", " ", 
+         SuperscriptBox["z", "2"]}]], " ", "xa"}]]}], " ", ",", " ", 
+    RowBox[{
+     RowBox[{"-", "1"}], "\[LessEqual]", "xa", "\[LessEqual]", "1"}], ",", 
+    " ", 
+    RowBox[{"Sin", "[", 
+     RowBox[{"z", " ", "xa"}], "]"}], ",", " ", 
+    RowBox[{"xa", ">", "1"}], ",", " ", 
+    RowBox[{
+     RowBox[{"Sin", "[", "z", "]"}], " ", 
+     SuperscriptBox["\[ExponentialE]", 
+      SqrtBox[
+       RowBox[{
+        SuperscriptBox["\[Gamma]", "2"], "-", 
+        SuperscriptBox["z", "2"]}]]], " ", 
+     SuperscriptBox["\[ExponentialE]", 
+      RowBox[{
+       RowBox[{"-", 
+        SqrtBox[
+         RowBox[{
+          SuperscriptBox["\[Gamma]", "2"], " ", "-", " ", 
+          SuperscriptBox["z", "2"]}]]}], " ", "xa"}]]}]}], 
+   "]"}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"psis", "[", 
+   RowBox[{"z_", ",", " ", "\[Gamma]_", ",", " ", "xa_"}], "]"}], ":=", " ", 
+  RowBox[{"Which", "[", 
+   RowBox[{
+    RowBox[{"xa", "<", 
+     RowBox[{"-", "1"}]}], ",", " ", 
+    RowBox[{
+     RowBox[{"Cos", "[", "z", "]"}], " ", 
+     SuperscriptBox["\[ExponentialE]", 
+      SqrtBox[
+       RowBox[{
+        SuperscriptBox["\[Gamma]", "2"], "-", 
+        SuperscriptBox["z", "2"]}]]], " ", 
+     SuperscriptBox["\[ExponentialE]", 
+      RowBox[{
+       SqrtBox[
+        RowBox[{
+         SuperscriptBox["\[Gamma]", "2"], " ", "-", " ", 
+         SuperscriptBox["z", "2"]}]], " ", "xa"}]]}], " ", ",", " ", 
+    RowBox[{
+     RowBox[{"-", "1"}], "\[LessEqual]", "xa", "\[LessEqual]", "1"}], ",", 
+    " ", 
+    RowBox[{"Cos", "[", 
+     RowBox[{"z", " ", "xa"}], "]"}], ",", " ", 
+    RowBox[{"xa", ">", "1"}], ",", 
+    RowBox[{
+     RowBox[{"Cos", "[", "z", "]"}], " ", 
+     SuperscriptBox["\[ExponentialE]", 
+      SqrtBox[
+       RowBox[{
+        SuperscriptBox["\[Gamma]", "2"], "-", 
+        SuperscriptBox["z", "2"]}]]], " ", 
+     SuperscriptBox["\[ExponentialE]", 
+      RowBox[{
+       RowBox[{"-", 
+        SqrtBox[
+         RowBox[{
+          SuperscriptBox["\[Gamma]", "2"], " ", "-", " ", 
+          SuperscriptBox["z", "2"]}]]}], " ", "xa"}]]}]}], 
+   "]"}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"zed", "[", 
+   RowBox[{"er_", ",", "\[Gamma]_"}], "]"}], ":=", " ", 
+  SqrtBox[
+   RowBox[{
+    SuperscriptBox["\[Gamma]", "2"], 
+    RowBox[{"(", 
+     RowBox[{"er", " ", "+", " ", "1"}], ")"}]}]]}]}], "Input",
+ CellChangeTimes->{{3.761785025033004*^9, 3.761785029065407*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Manipulate", "[", "\[IndentingNewLine]", 
+  RowBox[{
+   RowBox[{"Grid", "[", 
+    RowBox[{"{", "\[IndentingNewLine]", 
+     RowBox[{"{", "\[IndentingNewLine]", 
+      RowBox[{
+       RowBox[{"Show", "[", "\[IndentingNewLine]", 
+        RowBox[{
+         RowBox[{"Plot", "[", "\[IndentingNewLine]", 
+          RowBox[{
+           RowBox[{"{", 
+            RowBox[{
+             RowBox[{"Tan", "[", "z", "]"}], ",", 
+             RowBox[{"-", 
+              RowBox[{"Cot", "[", "z", "]"}]}], ",", " ", 
+             FractionBox[
+              SqrtBox[
+               RowBox[{
+                SuperscriptBox["g", "2"], " ", "-", 
+                SuperscriptBox["z", "2"]}]], "z"]}], "}"}], ",", " ", 
+           RowBox[{"{", 
+            RowBox[{"z", ",", "0", ",", "g"}], "}"}], ",", 
+           RowBox[{"PlotRange", "\[Rule]", 
+            RowBox[{"{", " ", 
+             RowBox[{
+              RowBox[{"{", 
+               RowBox[{"0", ",", 
+                RowBox[{"1.1", " ", "g"}]}], "}"}], ",", 
+              RowBox[{"{", 
+               RowBox[{
+                RowBox[{"-", "5"}], ",", "20"}], "}"}]}], "}"}]}], ",", " ", 
+           RowBox[{"Exclusions", "\[Rule]", 
+            RowBox[{"Table", "[", 
+             RowBox[{
+              RowBox[{"n", 
+               FractionBox["\[Pi]", "2"]}], ",", " ", 
+              RowBox[{"{", 
+               RowBox[{"n", ",", "1", ",", "100", ",", "1"}], "}"}]}], 
+             "]"}]}], ",", " ", 
+           RowBox[{"AxesLabel", "\[Rule]", " ", 
+            RowBox[{"{", 
+             RowBox[{"z", ",", "\"\<\>\""}], "}"}]}], ",", 
+           RowBox[{"PlotLabel", "\[Rule]", 
+            RowBox[{"Row", "[", 
+             RowBox[{"{", " ", 
+              RowBox[{
+               FractionBox[
+                SqrtBox[
+                 RowBox[{
+                  SuperscriptBox["\[Gamma]", "2"], " ", "-", 
+                  SuperscriptBox["z", "2"]}]], "z"], ",", "\"\<, \>\"", ",", 
+               RowBox[{"Tan", "[", "z", "]"}], ",", "\"\<, \>\"", ",", " ", 
+               RowBox[{"-", 
+                RowBox[{"Cot", "[", "z", "]"}]}]}], "}"}], "]"}]}]}], 
+          "\[IndentingNewLine]", "]"}], ",", "\[IndentingNewLine]", " ", 
+         RowBox[{"ListPlot", "[", 
+          RowBox[{"{", 
+           RowBox[{"{", 
+            RowBox[{
+             RowBox[{"zed", "[", 
+              RowBox[{"er", ",", "g"}], "]"}], ",", 
+             FractionBox[
+              SqrtBox[
+               RowBox[{
+                SuperscriptBox["g", "2"], " ", "-", 
+                SuperscriptBox[
+                 RowBox[{"zed", "[", 
+                  RowBox[{"er", ",", "g"}], "]"}], "2"]}]], 
+              RowBox[{"zed", "[", 
+               RowBox[{"er", ",", "g"}], "]"}]]}], "}"}], "}"}], "]"}], ",", 
+         "\[IndentingNewLine]", 
+         RowBox[{"ImageSize", "\[Rule]", 
+          RowBox[{"{", 
+           RowBox[{"275", ",", "250"}], "}"}]}]}], "\[IndentingNewLine]", 
+        "]"}], ",", "\[IndentingNewLine]", 
+       RowBox[{"Plot", "[", 
+        RowBox[{
+         RowBox[{"{", 
+          RowBox[{
+           RowBox[{"psis", "[", 
+            RowBox[{
+             RowBox[{"zed", "[", 
+              RowBox[{"er", ",", "g"}], "]"}], ",", "g", ",", " ", "xa"}], 
+            "]"}], ",", 
+           RowBox[{"psias", "[", 
+            RowBox[{
+             RowBox[{"zed", "[", 
+              RowBox[{"er", ",", "g"}], "]"}], ",", "g", ",", " ", "xa"}], 
+            "]"}]}], "}"}], ",", " ", 
+         RowBox[{"{", 
+          RowBox[{"xa", ",", "0", ",", "1.2"}], "}"}], ",", " ", 
+         RowBox[{"PlotPoints", "\[Rule]", " ", "1000"}], ",", " ", 
+         RowBox[{"PlotRange", "\[Rule]", " ", "1.1"}], ",", " ", 
+         RowBox[{"AxesLabel", "\[Rule]", " ", 
+          RowBox[{"{", 
+           RowBox[{
+           "\"\<\!\(\*FractionBox[\(x\), \(a\)]\)\>\"", ",", 
+            "\"\<\[CapitalPsi] \[LongDash] unnormalized\>\""}], "}"}]}], ",", 
+         RowBox[{"Epilog", "\[Rule]", 
+          RowBox[{"{", 
+           RowBox[{"Dashed", ",", 
+            RowBox[{"Line", "[", 
+             RowBox[{"{", 
+              RowBox[{
+               RowBox[{"{", 
+                RowBox[{"1", ",", 
+                 RowBox[{"-", "1.1"}]}], "}"}], ",", 
+               RowBox[{"{", 
+                RowBox[{"1", ",", "1.1"}], "}"}]}], "}"}], "]"}]}], "}"}]}], 
+         ",", 
+         RowBox[{"ImageSize", "\[Rule]", 
+          RowBox[{"{", 
+           RowBox[{"275", ",", "250"}], "}"}]}]}], "]"}]}], 
+      "\[IndentingNewLine]", "}"}], "}"}], "\[IndentingNewLine]", "]"}], ",", 
+   "\[IndentingNewLine]", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"g", ",", "5", ",", "\"\<\[Gamma]\>\""}], "}"}], ",", "5", ",", 
+     "20", ",", 
+     RowBox[{"Appearance", "\[Rule]", "\"\<Labeled\>\""}]}], "}"}], ",", 
+   "\[IndentingNewLine]", " ", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"er", ",", 
+       RowBox[{"-", "0.9975"}], ",", "\"\<\[Rho]\>\""}], "}"}], ",", 
+     RowBox[{"-", "0.9975"}], ",", "0", ",", 
+     RowBox[{"Appearance", "\[Rule]", "\"\<Labeled\>\""}]}], "}"}], ",", 
+   "\[IndentingNewLine]", 
+   RowBox[{"SaveDefinitions", "\[Rule]", " ", "True"}], ",", 
+   RowBox[{"TrackedSymbols", "\[Rule]", "True"}]}], "\[IndentingNewLine]", 
+  "]"}]], "Input"],
+
+Cell[BoxData[
+ TagBox[
+  StyleBox[
+   DynamicModuleBox[{$CellContext`er$$ = -0.9975, $CellContext`g$$ = 5, 
+    Typeset`show$$ = True, Typeset`bookmarkList$$ = {}, 
+    Typeset`bookmarkMode$$ = "Menu", Typeset`animator$$, Typeset`animvar$$ = 
+    1, Typeset`name$$ = "\"untitled\"", Typeset`specs$$ = {{{
+       Hold[$CellContext`g$$], 5, "\[Gamma]"}, 5, 20}, {{
+       Hold[$CellContext`er$$], -0.9975, "\[Rho]"}, -0.9975, 0}}, 
+    Typeset`size$$ = {559., {121.5, 128.5}}, Typeset`update$$ = 0, 
+    Typeset`initDone$$, Typeset`skipInitDone$$ = 
+    False, $CellContext`g$15160$$ = 0, $CellContext`er$15161$$ = 0}, 
+    DynamicBox[Manipulate`ManipulateBoxes[
+     1, StandardForm, 
+      "Variables" :> {$CellContext`er$$ = -0.9975, $CellContext`g$$ = 5}, 
+      "ControllerVariables" :> {
+        Hold[$CellContext`g$$, $CellContext`g$15160$$, 0], 
+        Hold[$CellContext`er$$, $CellContext`er$15161$$, 0]}, 
+      "OtherVariables" :> {
+       Typeset`show$$, Typeset`bookmarkList$$, Typeset`bookmarkMode$$, 
+        Typeset`animator$$, Typeset`animvar$$, Typeset`name$$, 
+        Typeset`specs$$, Typeset`size$$, Typeset`update$$, Typeset`initDone$$,
+         Typeset`skipInitDone$$}, "Body" :> Grid[{{
+          Show[
+           Plot[{
+             Tan[$CellContext`z], -Cot[$CellContext`z], 
+             Sqrt[$CellContext`g$$^2 - $CellContext`z^2]/$CellContext`z}, \
+{$CellContext`z, 0, $CellContext`g$$}, 
+            PlotRange -> {{0, 1.1 $CellContext`g$$}, {-5, 20}}, Exclusions -> 
+            Table[$CellContext`n (Pi/2), {$CellContext`n, 1, 100, 1}], 
+            AxesLabel -> {$CellContext`z, ""}, PlotLabel -> 
+            Row[{Sqrt[$CellContext`\[Gamma]^2 - \
+$CellContext`z^2]/$CellContext`z, ", ", 
+               Tan[$CellContext`z], ", ", -Cot[$CellContext`z]}]], 
+           ListPlot[{{
+              $CellContext`zed[$CellContext`er$$, $CellContext`g$$], 
+              Sqrt[$CellContext`g$$^2 - $CellContext`zed[$CellContext`er$$, \
+$CellContext`g$$]^2]/$CellContext`zed[$CellContext`er$$, $CellContext`g$$]}}],
+            ImageSize -> {275, 250}], 
+          Plot[{
+            $CellContext`psis[
+             $CellContext`zed[$CellContext`er$$, $CellContext`g$$], \
+$CellContext`g$$, $CellContext`xa], 
+            $CellContext`psias[
+             $CellContext`zed[$CellContext`er$$, $CellContext`g$$], \
+$CellContext`g$$, $CellContext`xa]}, {$CellContext`xa, 0, 1.2}, PlotPoints -> 
+           1000, PlotRange -> 1.1, 
+           AxesLabel -> {
+            "\!\(\*FractionBox[\(x\), \(a\)]\)", 
+             "\[CapitalPsi] \[LongDash] unnormalized"}, Epilog -> {Dashed, 
+             Line[{{1, -1.1}, {1, 1.1}}]}, ImageSize -> {275, 250}]}}], 
+      "Specifications" :> {{{$CellContext`g$$, 5, "\[Gamma]"}, 5, 20, 
+         Appearance -> 
+         "Labeled"}, {{$CellContext`er$$, -0.9975, "\[Rho]"}, -0.9975, 0, 
+         Appearance -> "Labeled"}}, "Options" :> {TrackedSymbols -> True}, 
+      "DefaultOptions" :> {}],
+     ImageSizeCache->{610., {183., 190.}},
+     SingleEvaluation->True],
+    Deinitialization:>None,
+    DynamicModuleValues:>{},
+    Initialization:>({
+      Attributes[PlotRange] = {ReadProtected}, $CellContext`zed[
+         Pattern[$CellContext`er, 
+          Blank[]], 
+         Pattern[$CellContext`\[Gamma], 
+          Blank[]]] := 
+       Sqrt[$CellContext`\[Gamma]^2 ($CellContext`er + 1)], $CellContext`psis[
+         Pattern[$CellContext`z, 
+          Blank[]], 
+         Pattern[$CellContext`\[Gamma], 
+          Blank[]], 
+         Pattern[$CellContext`xa, 
+          Blank[]]] := 
+       Which[$CellContext`xa < -1, Cos[$CellContext`z] 
+         E^Sqrt[$CellContext`\[Gamma]^2 - $CellContext`z^2] 
+         E^(Sqrt[$CellContext`\[Gamma]^2 - $CellContext`z^2] \
+$CellContext`xa), -1 <= $CellContext`xa <= 1, 
+         Cos[$CellContext`z $CellContext`xa], $CellContext`xa > 
+         1, (Cos[$CellContext`z] 
+          E^Sqrt[$CellContext`\[Gamma]^2 - $CellContext`z^2])/
+         E^(Sqrt[$CellContext`\[Gamma]^2 - $CellContext`z^2] \
+$CellContext`xa)], $CellContext`psias[
+         Pattern[$CellContext`z, 
+          Blank[]], 
+         Pattern[$CellContext`\[Gamma], 
+          Blank[]], 
+         Pattern[$CellContext`xa, 
+          Blank[]]] := 
+       Which[$CellContext`xa < -1, (-Sin[$CellContext`z]) 
+         E^Sqrt[$CellContext`\[Gamma]^2 - $CellContext`z^2] 
+         E^(Sqrt[$CellContext`\[Gamma]^2 - $CellContext`z^2] \
+$CellContext`xa), -1 <= $CellContext`xa <= 1, 
+         Sin[$CellContext`z $CellContext`xa], $CellContext`xa > 
+         1, (Sin[$CellContext`z] 
+          E^Sqrt[$CellContext`\[Gamma]^2 - $CellContext`z^2])/
+         E^(Sqrt[$CellContext`\[Gamma]^2 - $CellContext`z^2] \
+$CellContext`xa)]}; Typeset`initDone$$ = True),
+    SynchronousInitialization->True,
+    UndoTrackedVariables:>{Typeset`show$$, Typeset`bookmarkMode$$},
+    UnsavedVariables:>{Typeset`initDone$$},
+    UntrackedVariables:>{Typeset`size$$}], "Manipulate",
+   Deployed->True,
+   StripOnInput->False],
+  Manipulate`InterpretManipulate[1]]], "Output",
+ CellChangeTimes->{3.7617850482463245`*^9}]
+}, Open  ]]
+},
+WindowSize->{784, 1112},
+WindowMargins->{{0, Automatic}, {Automatic, 0}},
+FrontEndVersion->"10.2 for Microsoft Windows (64-bit) (July 29, 2015)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[558, 20, 3017, 92, 180, "Input"],
+Cell[CellGroupData[{
+Cell[3600, 116, 5279, 133, 648, "Input"],
+Cell[8882, 251, 5057, 104, 390, "Output"]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)
+
