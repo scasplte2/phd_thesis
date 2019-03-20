@@ -3,7 +3,7 @@ function prob5
 m = 1822;
 E = 1.7e-4;
 
-V0 = 8e-4;
+V0 = 0;
 a  = 1;
 
 x = linspace(-10, 10, 5e3)';
