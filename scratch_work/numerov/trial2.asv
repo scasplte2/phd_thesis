@@ -80,13 +80,12 @@ S_el = C(1)*k(Einc)/C(2);
 delL = real(log(S_el)/(2*1i));
 
 % Get the normalized wavefunctions
-Rasym = sum(real(fRAsym(z', k(Einc), C)), 2); 
-R     = Rasym(end)/R(end)*R;
+Rasym = @(z) real(fRAsym(z, k(Einc), C));
+R     = Rasym(z(end))/R(end)*R;
 
 figure;
 plot(z, V(z)./(-min(V(z))),...
-     z, 0.5*Rasym,...
-     z, 0.5*sum(real(fRAsym(z', k(Einc), [1 1])), 2),...
+     z, 0.5*Rasym(z),...
      z, 0.5*R)
 ylim([-1.1 1.1])
 xlim([0 25])

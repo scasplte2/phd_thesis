@@ -33,10 +33,10 @@ C12    = 1;
 
 %% Setup
 % Partial wave
-el = 5;
+el = 0;
 
 % Incoming energy
-Einc = 3;
+Einc = 1;
 
 % Choose the type of potential
 V    = @(r) V_LJ(A, C6, C12, r, el);
