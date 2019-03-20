@@ -46,9 +46,5 @@ psi2 = @(x) incPlane(A, kReg2(x), x) + outPlane(B, kFree(x), x);
 psi3 = @(x) incPlane(S, kFree(x), x);
 
 psi = [ psi1(x( x<=0 ))' psi2(x( x>0 & x<a  ))' psi3(x( x>=a ))' ];
-V   = zeros(1, length(x)); V(x>0 & x<a ) = V0;
-
-A = 2*V0/max(psi);
-
-plot(x, A*psi, x, V);
+plot(x, psi, x, []);
 end

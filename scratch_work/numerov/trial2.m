@@ -18,9 +18,6 @@ beta = 0.89305;
 % Types of potentials
 V_morse = @(r) De*(exp(-2*beta*(r-re)) - 2*exp(-beta*(r-re)));% Morse potential
 
-% Propagaotr equation
-funcR = 
-
 %Wavevector definition
 k       = @(E) sqrt(2*mu*E);
 
