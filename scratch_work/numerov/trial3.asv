@@ -20,29 +20,29 @@ numerov  = @(d, k, R) ((2 - (10*d^2/12)*k(2))*R(2) - (1 + (d^2/12)*k(1))*R(1))/(
 
 %% Problem spceifics
 % Region
-zStart = 0.01;
-zEnd   = 1000;
+zStart = 0.9;
+zEnd   = 50;
 
 % mass
-m      = 0.5;
+m      = 0.1;
 
 %Potential coefficients
-A      = 500;
+A      = 5e5;
 C6     = 1;
 C12    = 1;
 
 %% Setup
 % Partial wave
-el = 5;
+el = 0;
 
 % Incoming energy
-Einc = 3;
+Einc = 1;
 
 % Choose the type of potential
 V    = @(r) V_LJ(A, C6, C12, r, el);
 kLoc = @(r) k(m, Einc - V(r)); % local wavevector
 
-d = 0.01;
+d = 0.001;
     
 % z - the interparticle spacing
 z = zStart:d:zEnd;
@@ -55,7 +55,7 @@ yNum(2) = (1 + k(m, V(z(1)) - Einc)*d)*yNum(1); % assume linear first step
 %% Solver
 % Propagate radial function from within classically forbidden region
 for i = 3:length(z)
-    yNum(i) = numerov(d, kLoc(z([i-2 i-1 i])).^2, yNum([i-2 i-1]));
+    yNum(i) = numerov(d, k(m, Einc).^2 - el*(el+1)./z([i-2 i-1 i])2*m*V(z([i-2 i-1 i])), yNum([i-2 i-1]));
 end
 
 delL = fDelL(z([end end-1]), kLoc(z([end end-1])), el, yNum([end end-1]));
@@ -64,9 +64,9 @@ yNum = A*yNum;
 
 figure;
 plot(z, V(z),...
-     z, (-min(V(z))/(4*max(yAsym(z, k(m, Einc), el, 0))))*yAsym(z, k(m, Einc), el, 0) + Einc,...
-     z, (-min(V(z))/(4*max(yAsym(z, k(m, Einc), el, delL))))*yAsym(z, k(m, Einc), el, delL) + Einc,...
-     z, (-min(V(z))/(4*max(yNum)))*yNum + Einc)
+     z, (-min(V(z))/(4*max(yAsym(z, k(m, Einc), el, 0))))*yAsym(z, k(m, Einc), el, 0),...
+     z, (-min(V(z))/(4*max(yAsym(z, k(m, Einc), el, delL))))*yAsym(z, k(m, Einc), el, delL),...
+     z, (-min(V(z))/(4*max(yNum)))*yNum)
 ylim([min(V(z)) -min(V(z))/3]*1.1)
 xlim([0 10])
 end

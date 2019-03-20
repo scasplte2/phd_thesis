@@ -40,9 +40,6 @@ figure;
 A = 2*max(V(x))/max(max(R));
 plot(x, A*R, x, V(x))
 
-% figure;
-% plot(x, R(:,1)*C(1), x, R(:,2)*C(2), x, psi(x), x, V(x)./max(V(x)))
-
 end
 
 function out = numerov(d, k, R)
