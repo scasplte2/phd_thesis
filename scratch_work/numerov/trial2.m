@@ -62,8 +62,8 @@ z = zStart:d:zEnd;
     
 % Initialize solution vector
 R    = deal(nan(1,length(z)));
-R(1) = 1e-10/z(1); %arbitrary
-R(2) = ((1 + k(V(z(1)) - Einc)*d)*R(1))/z(2); % assume linear first step
+R(1) = 1e-10; %arbitrary
+R(2) = ((1 + k(V(z(1)) - Einc)*d)*R(1)); % assume linear first step
 
 %% Solver
 % Propagate radial function from within classically forbidden region

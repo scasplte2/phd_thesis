@@ -6,11 +6,11 @@ zStart = 5.5;
 zEnd   = 1000;  % bohr
 
 mu   = 19.974; % molecular mass
-Einc = 5e-2; % incoming energy
+Einc = 5e-4; % incoming energy
 el   = 0;    % partial wave
 
 %Potentials coeffs given in Ha a0 (Hartree Bohr)
-De   = 4.456;
+De   = 4.456e-4;
 re   = 7.1053;
 beta = 0.89305;
 
@@ -32,8 +32,8 @@ beta = 0.89305;
 
 %% Function definitions
 % Types of potentials
-V_morse = @(r) De*(exp(-2*beta*(r-re)) - 2*exp(-beta*(r-re)));% Morse potential
-V_LJ    = @(r) A*(C12./r.^12 - C6./r.^6) + el*(el + 1)./r.^2;
+V_morse = @(r) De*(exp(-2*beta*(r-re)) - 2*exp(-beta*(r-re))) + el*(el + 1)./(2*mu*r.^2);% Morse potential
+V_LJ    = @(r) A*(C12./r.^12 - C6./r.^6) + el*(el + 1)./(2*mu*r.^2);
 
 %Wavevector definition
 k       = @(E) sqrt(2*mu*E);
@@ -47,7 +47,6 @@ fRAsym   = @(x, k, C) [ (-1i)^(el+1)*posPlane(C(1), k, x) (1i)^(el+1)*negPlane(C
 % INPUTS
 %   d: grid spacing (grid must be equidistanct)
 %   k: 3 element squared wavevector, [k_n-2, k_n-1, k_n] where k_i is the position at a specified index i, and i = n is the current index
-%   z: 3 element space vector, [z_n-2, z_n-1, z_n] where z_i is the position at a specified index i
 %   R: 2 element value vector, [R_n-2, R_n-1] where R(z) is the scaled radial wavefunction being solved for
 numerov = @(d, k, z, R) ((2 - (10*d^2/12)*k(2))*R(2) - (1 + (d^2/12)*k(1))*R(1))/(1 + (d^2/12)*k(3));
 
@@ -58,16 +57,17 @@ kloc = @(r) k(Einc - V(r)); % local wavevector
 
 % Grid spacing (must be equidistant)
 rMin      = 7.1; % Position of minimum defined above
-lambdaMax = 1/(2*pi*kloc(rMin)); % fastest oscillation is at deepest point in potential
-d         = lambdaMax/10; % At least 10 points per oscillation
+lambdaMax = 2*pi/(kloc(rMin)); % fastest oscillation is at deepest point in potential
+d         = lambdaMax/100; % At least 10 points per oscillation
+d = 0.02;
 
 % z - the interparticle spacing
 z = zStart:d:zEnd;
     
 % Initialize solution vector
 R    = deal(nan(1,length(z)));
-R(1) = 1e-10/z(1); %arbitrary
-R(2) = ((1 + k(V(z(1)) - Einc)*d)*R(1))/z(2); % assume linear first step
+R(1) = eps; %arbitrary
+R(2) = ((1 + k(V(z(1)) - Einc)*d)*R(1)); % assume linear first step
 
 %% Solver
 % Propagate radial function from within classically forbidden region
@@ -81,7 +81,7 @@ C = C./norm(C);
 
 % Find the phase shift
 S_el = C(1)*k(Einc)/C(2);
-delL = real(log(S_el)/(2*1i));
+delL = real(log(S_el)/(2*1i))
 
 % Get the normalized wavefunctions
 Rasym = sum(real(fRAsym(z', k(Einc), C)), 2); 
@@ -93,5 +93,5 @@ plot(z, V(z)./(-min(V(z))),...
      z, 0.5*sum(real(fRAsym(z', k(Einc), [1 1])), 2),...
      z, 0.5*R)
 ylim([-1.1 1.1])
-xlim([5 20])
+xlim([5 25])
 end

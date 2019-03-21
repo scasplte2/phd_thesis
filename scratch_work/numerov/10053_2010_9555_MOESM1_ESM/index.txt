@@ -1,0 +1,25 @@
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
++      Supplementary material to the publication
++
++    The 1S+1S asymptote of Sr2 studied by Fourier-transform spectroscopy
++
++   
++  A. Stein, H. Knoeckel, E. Tiemann
++  Institut fuer Quantenoptik, Universitaet Hannover, Welfengarten 1,
++  30167 Hannover, Germany
++   
++
++  2006-2010 Hannover
++
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+
+
+Transitions.txt:  Fluorescense progressions used for the fit of the potentials published in the
+                  article 
+
+PointPot.txt:     Pointwise potential energy curve for the X1Sigma+g state of Sr2 calculated 
+                  from the analytical representation published in the article 
+
+PotfreeCi.txt:    Analytical potential energy curve for the X1Sigma+g state of Sr2 calculated 
+                  with freely varied long range coefficients Ci

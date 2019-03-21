@@ -1,6 +1,6 @@
 function trial3
 %% Function definitions
-V_LJ    = @(A, C6, C12, r, el) A*(C12./r.^12 - C6./r.^6) + el*(el + 1)./r.^2;
+V_LJ    = @(A, C6, C12, r, el, mu) A*(C12./r.^12 - C6./r.^6) + el*(el + 1)./(2*mu*r.^2);
 
 %Wavevector definition (with hBar = 1)
 k       = @(m, E) sqrt(2*m*E);
@@ -39,7 +39,7 @@ el = 0;
 Einc = 1;
 
 % Choose the type of potential
-V    = @(r) V_LJ(A, C6, C12, r, el);
+V    = @(r) V_LJ(A, C6, C12, r, el, m);
 kLoc = @(r) k(m, Einc - V(r)); % local wavevector
 
 d = 0.01;
@@ -59,8 +59,8 @@ for i = 3:length(z)
 end
 
 delL = fDelL(z([end end-1]), kLoc(z([end end-1])), el, yNum([end end-1]));
-A    = yAsym(z(end), k(m, Einc), el, delL)/yNum(end);
-yNum = A*yNum;
+norm = yAsym(z(end), k(m, Einc), el, delL)/yNum(end);
+yNum = norm*yNum;
 
 figure;
 plot(z, V(z),...

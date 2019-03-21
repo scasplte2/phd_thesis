@@ -3,13 +3,13 @@ function gs
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Sr-Sr scattering
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-zStart = 0.1; 
-zEnd   = 1000; %bohr
+zStart = 1; 
+zEnd   = 10000; %bohr
 mu     = 84/2; % molecular mass
 
 % incoming energy
 %Tinc = 3000;           % Kelvin
-Einc = 0.001; % Hartree
+Einc = 1e-5; % Hartree
 
 % partial wave
 el = 0;
@@ -88,7 +88,7 @@ funcV = @(r) srGSPot(r);
 % guess for range of minimum for determining the grid spacing
 zFindMin  = linspace(0, 10, 1e3);
 lambdaMax = 2*pi/k(Einc - min(funcV(zFindMin))); % fastest oscillation is at deepest point in potential
-d         = lambdaMax/25; % At least 10 points per oscillation
+d         = lambdaMax/10; % At least 10 points per oscillation
 
 % Grid spacing (must be equidistant), z - the interparticle spacing
 z    = zStart:d:zEnd;
@@ -99,7 +99,7 @@ kLoc = k(Einc - V); % local wavevector
     
 % Initialize solution vector
 R    = deal(nan(1,length(z)));
-R(1) = eps; %arbitrary
+R(1) = 1e-10; %arbitrary
 R(2) = ((1 + k(V(1) - Einc)*d)*R(1)); % assume linear first step
 
 %% Solver
@@ -128,9 +128,9 @@ pAmpScale = 0.5/max(R1((end-round((length(z)/4))):end));
 figure;
 subplot(2,1,1)
 plot(z, V./ampV ,...
-     z, pAmpScale*R1)
+     z, pAmpScale*R1 + pEnScale)
 ylim([-1.1 1.1])
-xlim([0 50])
+xlim([0 300])
 %      z, 0.5*Rasym,...
 %      z, 0.5*sum(real(fRAsym(z', k(Einc), [1 1])), 2),...
 
@@ -143,13 +143,13 @@ R2   = A*R;
 % Plot scale
 ampV      = -min(V);
 pEnScale  = Einc/ampV;
-pAmpScale = abs(0.5/max(R2((end-round((length(z)/4))):end)));
+pAmpScale = 0.5/max(R2((end-round((length(z)/4))):end));
 
 subplot(2,1,2)
 plot(z, V./ampV ,...
      z, pAmpScale*R2 + pEnScale)
-ylim([-1.1 max([pEnScale*1.5 1.1])])
-xlim([0 50])
+ylim([-1.1 1.1])
+xlim([0 300])
 %      z, 0.5*Rasym,...
 %      z, 0.5*sum(real(fRAsym(z', k(Einc), [1 1])), 2),...
 end
