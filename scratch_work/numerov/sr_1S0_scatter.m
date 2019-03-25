@@ -199,6 +199,7 @@ outVecs.r = r;
 outVecs.PEC = V;
 outVecs.numR = numR;
 outVecs.asymR = asymR;
+outVecs.asymR_noShift = asymR_noShift;
 solOut = table(masses, Tinc, el, outVecs, del_el, S_el, f_el, kAsym, asymCoeffs);
 
 %solOut.Properties.VariableNames        = {'masses', 'T_inc', 'el', 'r', 'PEC', 'numR', 'asymR', 'del_el', 'S_el', 'coeffs'};
