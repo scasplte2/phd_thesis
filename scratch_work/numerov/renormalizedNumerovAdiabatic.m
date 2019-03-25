@@ -9,7 +9,6 @@ function renormalizedNumerovAdiabatic
 tocm1=219474.6;
 % muconv converts from atomic mass units (C=12) to atomic units (m-electron=1)
 muconv = 5.48579903e-04;
-
 % reduced mass is 2.85 atomic mass units
 mu = 2.85/muconv;
 % spin-orbit constant A in cm-1
@@ -152,8 +151,7 @@ for iN=[1000:1000];
         % OMm1M contains O(N,N+1)
         % OMm2Mm1 contains O(N-1,N)
         
-        % now determine log-derivative matrix [Eq. (131)]
-        
+        % now determine log-derivative matrix [Eq. (131)]   
         YN=(XM*(0.5*unit-ttM)*inv(unit-ttM)*OMm1M'*RtM ...
             -XMm2*(0.5*unit-ttMm2)*inv(unit-ttMm2)*inv(RtMm1)*OMm2Mm1) ...
             *(unit-ttMm1)*XMm1'/h;
@@ -201,6 +199,6 @@ C2   = [  6.728e5   -7.3837e7 ];
 C3   = [ -1.2773e5   3.2149e7 ];
 C4   = [  3.4733e6   2.9743e6 ];
 
-v = [ C1(1).*exp(-lam1(1).*r) + (C2(1) + C3(1).*r).*exp(-lam2(1).*r) - C4(1)./(2.*(tanh(1.2.*(r - lam3(1)) +1)).^6)
-      C1(2).*exp(-lam1(2).*r) + (C2(2) + C3(2).*r).*exp(-lam2(2).*r) - C4(2)./(2.*(tanh(1.2.*(r - lam3(2)) +1)).^6) ];
+v = [ C1(1).*exp(-lam1(1).*r) + (C2(1) + C3(1).*r).*exp(-lam2(1).*r) - C4(1)/2.*(1 + tanh(1.2.*(r - lam3(1)))).*r.^(-6)
+      C1(2).*exp(-lam1(2).*r) + (C2(2) + C3(2).*r).*exp(-lam2(2).*r) - C4(2)/2.*(1 + tanh(1.2.*(r - lam3(2)))).*r.^(-6) ];
 end
