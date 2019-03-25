@@ -40,7 +40,7 @@ function solOut = sr_1S0_scatter(Tinc, el, rRange, masses, varargin)
 
 %% Function setup
 % Conversions
-amu2Au = 1.82289e3;  % conversion from amu to atomic units of mass (see note above)
+amu2Au = 1822.889;  % conversion from amu to atomic units of mass (see note above)
 kel2Ha = 3.16683e-6; % conversion from Kelvin to Hartree
 
 % Specify default behavior (can be modified by varargin below)
@@ -68,7 +68,7 @@ end
 % Handy numbers which probably don't need to be messed with but better to group them together
 % than to have magic numbers down below
 minGuessRange = [0 10]; % Range to expect the potential minimum in, used for setting step size
-stepsPerOsc   = 12;     % Number of points per oscillation, more points = long run time. Solution may blow up if too small
+stepsPerOsc   = 20;     % Number of points per oscillation, more points = long run time. Solution may blow up if too small
 scatRegion    = region(1); % Near-field region of scattering (only used for plotting)
 asymRegion    = region(2); % Far-field scattering region (only used for plotting)
 asymPntSkip   = 100; % In the asymptotic region, only plot every nth point (speeds up plot manipulation)
@@ -85,7 +85,7 @@ k       = @(mu, E) sqrt(2*mu*E);
 % Analytic asymptotic solution
 ricBesJ    = @(x, el)  sqrt(pi*x/2).*besselj(el+1/2, x);
 ricBesY    = @(x, el) -sqrt(pi*x/2).*bessely(el+1/2, x);
-funRicBesR = @(r, k, C, el) [ C(1)*ricBesJ(k*r, el) -C(2)*ricBesY(k*r, el) ];
+funRicBesR = @(r, k, C, el) [ C(1)*ricBesJ(k*r, el) C(2)*ricBesY(k*r, el) ];
 
 % General Numerov propagator (used for linear second order differential equations)
 % INPUTS
@@ -137,7 +137,7 @@ if calcNorm
 end
 
 % Find the phase shift
-del_el  = atan(C(2)/C(1));
+del_el  = atan(C(2)/C(1))
 % single channel S matrix
 S_el    = exp(2i*del_el);
 % scattering amplitude
@@ -156,7 +156,9 @@ if flagPlot;
     
     if flagFig; figure(figNum); else figure; end
     axHan = subplot(2,1,1); hold on
-    plot(r(scatPart), V(scatPart) , r(scatPart), numR(scatPart))
+    plot(r(scatPart), V(scatPart) ,...
+         r(scatPart), numR(scatPart))
+   
     xlim([0 scatRegion]);
     ylim([min(numR(scatPart)) max(numR(scatPart))]*1.1)
     xlabel('Interparticle distance, r [$a_0$]', 'Interpreter' , 'latex')
@@ -177,6 +179,7 @@ if flagPlot;
          r(asymInd:asymPntSkip:end)./1e3, numR(asymInd:asymPntSkip:end) ,...
          r(asymInd:asymPntSkip:end)./1e3, asymR(asymInd:asymPntSkip:end),...
          r(asymInd:asymPntSkip:end)./1e3, asymR_noShift(asymInd:asymPntSkip:end))
+     
     xlim([asymRegion r(end)]./1e3); ylim([min(numR) max(numR)]*1.1)
     xlabel('Interparticle distance, r [$a_0\times10^3$]', 'Interpreter' , 'latex')
     ylabel('Asymptotic behavior (arb.)', 'Interpreter' , 'latex')
@@ -190,16 +193,68 @@ if flagPlot;
         'Interpreter' , 'latex' ,...
         'Location'    , 'best'  )
 end
+
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Another appraoch to normalizing. Useful for debugging
+% This uses another form of the asymptotic solution
+
+% Analytic aymptotic solution (different approach)
+inTrig    = @(z, k, el) k.*z - el*pi/2;
+funTrigR  = @(z, k, el, delL) (sin(inTrig(z, k, el)) + tan(delL)*cos(inTrig(z, k, el)));
+fDelL     = @(z, k, el, numY) atan((numY(2)*sin(inTrig(z(1), k, el)) - numY(1)*sin(inTrig(z(2), k, el)))/...
+                                   (numY(1)*cos(inTrig(z(2), k, el)) - numY(2)*cos(inTrig(z(1), k, el))));
+
+del_el2 = fDelL(r([end end-1]), kAsym, el, numR2([end end-1]))
+
+% Get the normalized wavefunctions
+asymR2 = funTrigR(r, kAsym, el, del_el2);
+asymR3 = funTrigR(r, kAsym, el, 0);
+numR2  = funTrigR(r(end), kAsym, el, del_el2)/numR2(end)*numR2;
+    
+    if flagFig; figure(figNum); else figure; end
+    axHan = subplot(2,1,1); hold on
+    plot(r(scatPart), V(scatPart) , r(scatPart), numR2(scatPart))
+    xlim([0 scatRegion]);
+    ylim([min(numR2(scatPart)) max(numR2(scatPart))]*1.1)
+    xlabel('Interparticle distance, r [$a_0$]', 'Interpreter' , 'latex')
+    ylabel('Wavefunction (arb.)', 'Interpreter' , 'latex');
+    box on
+    axHan.FontSize = 22;
+    axHan.YTick    = [];
+    axHan.TickLabelInterpreter = 'latex';
+    legend({'V(r)', sprintf('$%g\\,+\\,%g, l = %g, \\frac{E_{inc}}{k_B} = %g\\times10^{%g}$ K',...
+                            masses, el, Tinc/10^(floor(log10(Tinc))), floor(log10(Tinc)))},...
+        'Interpreter' , 'latex' )
+    
+    
+    axHan = subplot(2,1,2); hold on
+    asymInd = 1; % index of the position cutoff
+    asymPntSkip = 100;
+    plot(r(asymInd:asymPntSkip:end)./1e3, V(asymInd:asymPntSkip:end) ,...
+         r(asymInd:asymPntSkip:end)./1e3, numR2(asymInd:asymPntSkip:end) ,...
+         r(asymInd:asymPntSkip:end)./1e3, asymR2(asymInd:asymPntSkip:end) ,...
+         r(asymInd:asymPntSkip:end)./1e3, asymR3(asymInd:asymPntSkip:end))
+    xlim([0 r(end)]./1e3)
+    xlabel('Interparticle distance, r [$a_0\times10^3$]', 'Interpreter' , 'latex')
+    ylabel('Asymptotic behavior (arb.)', 'Interpreter' , 'latex')
+    box on
+    axHan.FontSize = 22;
+    axHan.YTick    = [];
+    axHan.TickLabelInterpreter = 'latex';
+    legend({'V(r)', 'Numerical wavefunction', 'Asymp solution:\\$\frac{R(r)}{r} = C\left[S_{l}h_{l}^{1}(kr) + h_{l}^{2}(kr)\right]$'},...
+        'Interpreter' , 'latex' )
     
 %% Output
 % Build output table row (can be used to combine with other outputs)
 asymCoeffs = {C};
+
 % use structure here in order to combine with rows that have varying grid points
 outVecs.r = r;
 outVecs.PEC = V;
 outVecs.numR = numR;
 outVecs.asymR = asymR;
 outVecs.asymR_noShift = asymR_noShift;
+
 solOut = table(masses, Tinc, el, outVecs, del_el, S_el, f_el, kAsym, asymCoeffs);
 
 %solOut.Properties.VariableNames        = {'masses', 'T_inc', 'el', 'r', 'PEC', 'numR', 'asymR', 'del_el', 'S_el', 'coeffs'};

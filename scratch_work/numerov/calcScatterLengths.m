@@ -1,32 +1,18 @@
-function aMat = calcScatterLengths
-%% Specify units
-% default to atomic units but can specify 'cgs' to use their values
-units = 'au';
-
-aBohr = 0.52917721067; % angstroms
+function aTab = calcScatterLengths
+% Function to calculate the scattering lengths by numerically estiamting the phase accumulation
+% due to the interaction potential between two atoms. All that is needed is a form of the 
+% potential that can be evaluated at any point r from the inner turning point to infinity.
+% R_inner is defined as the point where the potentail crosses E=0.
 
 %% Setup constants
-switch units
-    case 'cgs'
-        h       = 6.626070150e-11; % gram*ang^2/s
-        c       = 299792458e10;    % ang/s
-        hBar    = h/(2*pi);
-        
-        mConv   = 1.66054e-24; % atomic mass unit to grams
-        enConv  = h*c*1e-8;    % wavenumber to erg (cgs energy unit)
-        lenConv = 1;           % keep distances in angstroms
-        
-        % Call PEC and specify cgs unit
-        funcPEC = @(x) srPEC_1S0plus1S0(x, 'cgs');
-    otherwise
-        hBar   = 1;
-        
-        mConv   = 1.82289e3;  % atomic mass units to atomic units
-        enConv  = 4.55634e-6; % wavenumber to Hartree
-        lenConv = 1/aBohr;    % angstroms to bohr radii
-        
-        funcPEC = @(x) srPEC_1S0plus1S0(x);
-end
+aBohr  = 0.52917721067; % angstroms
+hBar   = 1;
+
+mConv   = 1822.889;   % atomic mass units to atomic units
+enConv  = 4.55634e-6; % wavenumber to Hartree
+lenConv = 1/aBohr;    % angstroms to bohr radii
+
+funcPEC = @(x) srPEC_1S0plus1S0(x);
 
 % Given in Tiemann specified units: cm-1 and Angstroms
 % then converted to appropriate system for computation
@@ -56,7 +42,7 @@ aBar = @(mu) 4*pi*Rvdw(mu)/gamma(1/4)^2;
 a    = @(mu) aBar(mu)*(1-tan(pi/4)*tan(phiD(mu) - pi/8));
 
 %% Calculate scattering lengths
-aMat = zeros(length(srM));
+aMat = nan(length(srM));
 for i = 1:length(srM);
     for j = i:length(srM);
         mu = prod([srM(i) srM(j)]) / sum([srM(i) srM(j)]);
@@ -64,9 +50,8 @@ for i = 1:length(srM);
     end
 end
 
-%always give output in Bohr (just to confuse you more)
-%   ^^^ this is how Tiemann 2010 does it though so blame them
-if strcmpi(units, 'cgs')
-    aMat = aMat./aBohr;
-end
+% Save into table so that read out is easier
+aTab = table(aMat(:,1), aMat(:,2), aMat(:,3), aMat(:,4));
+aTab.Properties.VariableNames = {'sr84' 'sr86' 'sr87' 'sr88'};
+aTab.Properties.RowNames      = {'sr84' 'sr86' 'sr87' 'sr88'};
 end
