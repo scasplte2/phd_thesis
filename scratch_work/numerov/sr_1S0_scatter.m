@@ -48,6 +48,7 @@ calcNorm = 1; % Asymptotic solution will be used to normalize the numerical solu
 flagPlot = 0; % Default to no plotting
 flagFig  = 0; % Default to make a new figure
 region   = [150 500]; % Default plotting region for near-field and far-field scattering plots
+interV   = @(r) srPEC_1S0plus1S0(r)'; % Default potential energy curve for evaluation
 
 % Loop through specified optional parameters (if any)
 for i = 1:2:length(varargin)
@@ -62,6 +63,8 @@ for i = 1:2:length(varargin)
             figNum  = varargin{i+1};
         case 'region'
             region  = varargin{i+1};
+        case 'funcPEC'
+            interV  = varargin{i+1};
     end
 end
 
@@ -77,7 +80,7 @@ asymPntSkip   = 100; % In the asymptotic region, only plot every nth point (spee
 %% Function definitions
 % Types of potentials
 V_centr = @(el, m, r) el*(el + 1)./(2*m*r.^2);
-funcV   = @(el, m, r) srPEC_1S0plus1S0(r)' + V_centr(el, m, r);
+funcV   = @(el, m, r) interV(r) + V_centr(el, m, r);
 
 %Wavevector definition
 k       = @(mu, E) sqrt(2*mu*E);
@@ -108,9 +111,9 @@ d         = lambdaMax/stepsPerOsc; % At least 10 points per oscillation
 r    = rRange(1):d:rRange(2);
 
 % Get vectors of potential and local wavevector over the space of interest
-V     = funcV(el, mu, r);        % potential energy curve
-kLoc  = k(mu, Einc - V); % local wavevector
-kAsym = k(mu, Einc);     % asymptotic wavevector
+V     = funcV(el, mu, r); % potential energy curve
+kLoc  = k(mu, Einc - V);  % local wavevector
+kAsym = k(mu, Einc);      % asymptotic wavevector
     
 % Initialize solution vector
 numR    = deal(nan(1,length(r)));
@@ -123,7 +126,6 @@ for i = 3:length(r)
     % This is where the magic happens
     numR(i) = numerov(d, kLoc([i-2 i-1 i]).^2, numR([i-2 i-1]));
 end
-numR2 = numR;
 
 if calcNorm
     % See Sakurai section 6.4 for discussion (particularly eq. 6.4.52)
@@ -137,7 +139,7 @@ if calcNorm
 end
 
 % Find the phase shift
-del_el  = atan(C(2)/C(1))
+del_el  = atan(C(2)/C(1));
 % single channel S matrix
 S_el    = exp(2i*del_el);
 % scattering amplitude
@@ -193,56 +195,6 @@ if flagPlot;
         'Interpreter' , 'latex' ,...
         'Location'    , 'best'  )
 end
-
-% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Another appraoch to normalizing. Useful for debugging
-% This uses another form of the asymptotic solution
-
-% Analytic aymptotic solution (different approach)
-inTrig    = @(z, k, el) k.*z - el*pi/2;
-funTrigR  = @(z, k, el, delL) (sin(inTrig(z, k, el)) + tan(delL)*cos(inTrig(z, k, el)));
-fDelL     = @(z, k, el, numY) atan((numY(2)*sin(inTrig(z(1), k, el)) - numY(1)*sin(inTrig(z(2), k, el)))/...
-                                   (numY(1)*cos(inTrig(z(2), k, el)) - numY(2)*cos(inTrig(z(1), k, el))));
-
-del_el2 = fDelL(r([end end-1]), kAsym, el, numR2([end end-1]))
-
-% Get the normalized wavefunctions
-asymR2 = funTrigR(r, kAsym, el, del_el2);
-asymR3 = funTrigR(r, kAsym, el, 0);
-numR2  = funTrigR(r(end), kAsym, el, del_el2)/numR2(end)*numR2;
-    
-    if flagFig; figure(figNum); else figure; end
-    axHan = subplot(2,1,1); hold on
-    plot(r(scatPart), V(scatPart) , r(scatPart), numR2(scatPart))
-    xlim([0 scatRegion]);
-    ylim([min(numR2(scatPart)) max(numR2(scatPart))]*1.1)
-    xlabel('Interparticle distance, r [$a_0$]', 'Interpreter' , 'latex')
-    ylabel('Wavefunction (arb.)', 'Interpreter' , 'latex');
-    box on
-    axHan.FontSize = 22;
-    axHan.YTick    = [];
-    axHan.TickLabelInterpreter = 'latex';
-    legend({'V(r)', sprintf('$%g\\,+\\,%g, l = %g, \\frac{E_{inc}}{k_B} = %g\\times10^{%g}$ K',...
-                            masses, el, Tinc/10^(floor(log10(Tinc))), floor(log10(Tinc)))},...
-        'Interpreter' , 'latex' )
-    
-    
-    axHan = subplot(2,1,2); hold on
-    asymInd = 1; % index of the position cutoff
-    asymPntSkip = 100;
-    plot(r(asymInd:asymPntSkip:end)./1e3, V(asymInd:asymPntSkip:end) ,...
-         r(asymInd:asymPntSkip:end)./1e3, numR2(asymInd:asymPntSkip:end) ,...
-         r(asymInd:asymPntSkip:end)./1e3, asymR2(asymInd:asymPntSkip:end) ,...
-         r(asymInd:asymPntSkip:end)./1e3, asymR3(asymInd:asymPntSkip:end))
-    xlim([0 r(end)]./1e3)
-    xlabel('Interparticle distance, r [$a_0\times10^3$]', 'Interpreter' , 'latex')
-    ylabel('Asymptotic behavior (arb.)', 'Interpreter' , 'latex')
-    box on
-    axHan.FontSize = 22;
-    axHan.YTick    = [];
-    axHan.TickLabelInterpreter = 'latex';
-    legend({'V(r)', 'Numerical wavefunction', 'Asymp solution:\\$\frac{R(r)}{r} = C\left[S_{l}h_{l}^{1}(kr) + h_{l}^{2}(kr)\right]$'},...
-        'Interpreter' , 'latex' )
     
 %% Output
 % Build output table row (can be used to combine with other outputs)

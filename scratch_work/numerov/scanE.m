@@ -7,9 +7,13 @@ kel2Ha = 3.16683e-6; % conversion from Kelvin to Hartree
 amu2Au = 1.82289e3;  % conversion from amu to atomic units of mass
 
 % Input values
-T_inc  = 10.^(-1*(3:9)); % K
-masses = [84 84];
-el     = 4;
+% T_inc  = 10.^(-1*(3:9)); % K
+% masses = [84 84];
+% el     = 4;
+
+T_inc  = 100e-9; % K
+masses = [86 86];
+el     = 0;
 
 % starting radius (haven't needed to tweak)
 startRad = 5;

@@ -10,15 +10,15 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       157,          7]
-NotebookDataLength[     74387,       1409]
-NotebookOptionsPosition[     73615,       1379]
-NotebookOutlinePosition[     73987,       1395]
-CellTagsIndexPosition[     73944,       1392]
+NotebookDataLength[     74318,       1405]
+NotebookOptionsPosition[     73546,       1375]
+NotebookOutlinePosition[     73918,       1391]
+CellTagsIndexPosition[     73875,       1388]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
 Notebook[{
-Cell[TextData[StyleBox["Numerov matrix method with  SHO potential",
+Cell[TextData[StyleBox["Numerov matrix method with  Lennard-Jones potential",
  FontWeight->"Bold"]], "Text",
  CellFrame->1,
  CellFrameColor->GrayLevel[0],
@@ -26,7 +26,7 @@ Cell[TextData[StyleBox["Numerov matrix method with  SHO potential",
   3.53062819660878*^9, 3.530628199510346*^9}, {3.545474815222856*^9, 
   3.545474816660483*^9}, {3.545476693782196*^9, 3.545476694684114*^9}, {
   3.54921701044*^9, 3.54921701067*^9}, {3.5492171943640003`*^9, 
-  3.549217213554*^9}},
+  3.549217213554*^9}, {3.762483642625952*^9, 3.762483671399952*^9}},
  TextAlignment->Center,
  Background->GrayLevel[0.85]],
 
@@ -35,13 +35,8 @@ Cell[BoxData[
   RowBox[{"(*", " ", 
    RowBox[{"Potential", ",", " ", 
     RowBox[{"desired", " ", "max", " ", "energy"}]}], " ", "*)"}], 
-  "\[IndentingNewLine]", 
+  "\[IndentingNewLine]", "\[IndentingNewLine]", 
   RowBox[{
-   RowBox[{
-    RowBox[{"\[Omega]", " ", "=", " ", 
-     FractionBox["1", "10"]}], ";", " ", 
-    RowBox[{"\[HBar]", "=", "1"}], ";", " ", 
-    RowBox[{"m", "=", "1"}], ";"}], "\[IndentingNewLine]", 
    RowBox[{
     RowBox[{
      RowBox[{"V", "[", "s_", "]"}], ":=", 
@@ -178,7 +173,8 @@ Cell[BoxData[
    3.762477652461952*^9}, {3.7624776894929523`*^9, 3.7624777281799517`*^9}, {
    3.7624784226799517`*^9, 3.762478423375952*^9}, {3.762478580233952*^9, 
    3.762478584785952*^9}, {3.762478625424952*^9, 3.762478629967952*^9}, {
-   3.762478702044952*^9, 3.7624787097569523`*^9}}],
+   3.762478702044952*^9, 3.7624787097569523`*^9}, {3.7624836598819523`*^9, 
+   3.762483666336952*^9}}],
 
 Cell[BoxData[
  RowBox[{
@@ -1394,22 +1390,22 @@ CellTagsIndex->{}
 *)
 (*NotebookFileOutline
 Notebook[{
-Cell[557, 20, 498, 10, 61, "Text"],
-Cell[1058, 32, 5667, 148, 532, "Input"],
-Cell[6728, 182, 471, 12, 60, "Input"],
-Cell[7202, 196, 406, 10, 36, "Input"],
+Cell[557, 20, 554, 10, 61, "Text"],
+Cell[1114, 32, 5542, 144, 513, "Input"],
+Cell[6659, 178, 471, 12, 60, "Input"],
+Cell[7133, 192, 406, 10, 36, "Input"],
 Cell[CellGroupData[{
-Cell[7633, 210, 272, 5, 36, "Input"],
-Cell[7908, 217, 1178, 21, 83, "Output"]
+Cell[7564, 206, 272, 5, 36, "Input"],
+Cell[7839, 213, 1178, 21, 83, "Output"]
 }, Open  ]],
-Cell[9101, 241, 972, 13, 60, "Input"],
+Cell[9032, 237, 972, 13, 60, "Input"],
 Cell[CellGroupData[{
-Cell[10098, 258, 604, 14, 41, "Input"],
-Cell[10705, 274, 515, 8, 36, "Output"]
+Cell[10029, 254, 604, 14, 41, "Input"],
+Cell[10636, 270, 515, 8, 36, "Output"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[11257, 287, 4563, 126, 398, "Input"],
-Cell[15823, 415, 57776, 961, 406, "Output"]
+Cell[11188, 283, 4563, 126, 397, "Input"],
+Cell[15754, 411, 57776, 961, 406, "Output"]
 }, Open  ]]
 }
 ]
