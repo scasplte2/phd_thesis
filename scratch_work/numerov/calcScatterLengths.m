@@ -16,7 +16,8 @@ funcPEC = @(x) srPEC_1S0plus1S0(x);
 
 % Given in Tiemann specified units: cm-1 and Angstroms
 % then converted to appropriate system for computation
-C6 = 1.525e7*enConv*lenConv^6;
+C6 = 1.52701e7*enConv*lenConv^6; %using feely varying C6 to be consistent with potential used
+%C6 = 1.525e7*enConv*lenConv^6; 
 Ri = 3.963*lenConv; 
 
 m84 = 83.913425;
@@ -26,14 +27,14 @@ m88 = 87.9056122571;
 srM = [m84 m86 m87 m88].*mConv;
 
 % find PEC zero crossing (assume near R_i)
-minOpt = optimset('TolX', 1e-6); % set Tol to ensure that the integral below is negative
-r0    = fminbnd(@(x) abs(funcPEC(x)), Ri*0.99, Ri*1.01, minOpt) + 1e-6;
+minOpt = optimset('TolX', 1e-7); % set Tol to ensure that the integral below is negative
+r0     = fminbnd(@(x) abs(funcPEC(x)), Ri*0.99, Ri*1.01, minOpt);
 
 % van der Waals length
 Rvdw = @(mu) (1/2)*(2*mu*C6/hBar^2)^(1/4);
 
 % potential phase contribution
-phiD = @(mu) integral(@(x) sqrt(-2*mu*funcPEC(x)), r0, Inf, 'ArrayValued', 1, 'AbsTol', 1e-8, 'RelTol', 1e-10);
+phiD = @(mu) integral(@(x) sqrt(-2*mu*funcPEC(x)), r0, Inf, 'ArrayValued', 1, 'AbsTol', 1e-10, 'RelTol', 1e-10);
 
 % mean scattering length
 aBar = @(mu) 4*pi*Rvdw(mu)/gamma(1/4)^2;

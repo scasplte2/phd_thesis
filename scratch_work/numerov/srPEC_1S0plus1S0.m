@@ -97,6 +97,7 @@ function V = V_longRange(r, conv, coeffsToUse)
     switch coeffsToUse
         case 'free vary'
             C6  = 1.52701e7 * (conv.cm1ToH*conv.angToBohr^6);  % Ha * (aBohr)^6
+            %C6  = 1.525e7 * (conv.cm1ToH*conv.angToBohr^6);  % Ha * (aBohr)^6
             C8  = 5.0654e8  * (conv.cm1ToH*conv.angToBohr^8);  % Ha * (aBohr)^8
             C10 = 1.9752e10 * (conv.cm1ToH*conv.angToBohr^10); % Ha * (aBohr)^10
         case 'recommended'

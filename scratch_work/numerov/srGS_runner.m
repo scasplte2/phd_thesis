@@ -1,3 +1,5 @@
+% Use atomic units throughout 
+
 %% Physical definitions
 amu2Au = 1822.889;  % conversion from amu to atomic units of mass (see note above)
 kel2Ha = 3.16683e-6; % conversion from Kelvin to Hartree
@@ -23,16 +25,17 @@ mod_LJ = @(r) C(4)./r.^12 - C(1)./r.^6 - C(2)./r.^8 - C(3)./r.^10;
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 %% Problem specifics
-T    = 100e-9; 
-mass = [m84 m84];
+T    = 1e-9; 
+mass = [m86 m86];
 
 maxRad = 2*dBLambda(prod(mass)/sum(mass)*amu2Au, T*kel2Ha); 
-range1 = 400;
+range1 = 1500;
 range2 = maxRad/10;
 
 %% Evaluate wavefunction
 tic; 
-t = sr_1S0_scatter(T, 0, [5 maxRad], mass, 'plot', 1, 'region', [range1 range2], 'funcPEC', mod_LJ); 
+t = sr_1S0_scatter(T, 0, [5 maxRad], mass, 'plot', 1, 'region', [range1 range2]); 
+%t = sr_1S0_scatter(T, 0, [5 maxRad], mass, 'plot', 1, 'region', [range1 range2], 'funcPEC', mod_LJ); 
 toc
 
 %% Estimate scattering length
