@@ -11,8 +11,8 @@ coeffsToUse = 'free vary'; % valid options ['free vary' 'recommended']
 %coeffsToUse = 'recommended'; % valid options ['free vary' 'recommended']
 
 % Conversion factors
-H_cm1  = 219474.6305; % cm^{-1}, 1Ha = 27.21eV = 219474.6305cm^{-1}
-aBohr  = 0.529177;    % Ang, 1a0 = 0.528 Ang
+H_cm1  = 219474.6305;   % cm^{-1}, 1Ha = 27.21eV = 219474.6305cm^{-1}
+aBohr  = 0.52917721067; % Ang, 1a0 = 0.528 Ang
 
 % To avoid any ambiguity, these functions are named to say what is
 % converting to what

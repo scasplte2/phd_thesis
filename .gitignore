@@ -13,6 +13,7 @@
 *.gz
 *.asv
 *.fig
+*.mp4
 
 # Directories
 generators/
