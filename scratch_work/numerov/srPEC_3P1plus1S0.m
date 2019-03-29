@@ -1,6 +1,6 @@
-function [V11, V22] = srPEC_3P1plus1S0(r)
-% All values given in atomic units
-% Borkowski et al 2014
+function [V11, V22] = srPEC_3P1plus1S0(r, isotope)
+% All values given in atomic units from Borkowski et al 2014 except where noted
+%
 %%%%%%  ^3\Sigma_u^+  %% ^3\Pi_u  %%%%%%
 A0  = [  1.29406314e2   5.78723038e6  ];
 A1  = [ -7.90551852e1  -3.46113235e6  ];
@@ -10,8 +10,18 @@ A4  = [  7.88636443e-2  3.01833743e3  ];
 
 gam   = [ 7.61382806e-2  1.34967817e-3 ];
 beta  = [ 1              1.03238202    ];
-%alpha = [ 0.045690735    1.99188286    ]; % 86 value
-alpha = [ 0.045485       1.9893        ]; % 84 value (from Reschovsky thesis 2017)
+
+switch isotope
+    case 84
+        %alpha = [ 0.045485       1.9893        ]; % 84 value (from Reschovsky thesis 2017)
+        alpha = [ 0.045301189    1.99037413    ];
+    case 86
+        alpha = [ 0.045690735    1.99188286    ];
+    case 88
+        alpha = [ 0.045648282    1.99168225    ];
+    otherwise
+        error('Invalid isotope choice. Please choose either 84, 86, or 88')
+end
 
 C12 = [-5.31841848e9 -1.06415514e10 ];
 C10 = [2.20495e8      5.24064e7     ];
