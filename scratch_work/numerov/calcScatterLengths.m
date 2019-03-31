@@ -1,4 +1,4 @@
-function aTab = calcScatterLengths
+function aTab = calcScatterLengths(in)
 % Function to calculate the scattering lengths by numerically estiamting the phase accumulation
 % due to the interaction potential between two atoms. All that is needed is a form of the 
 % potential that can be evaluated at any point r from the inner turning point to infinity.
@@ -12,11 +12,14 @@ mConv   = 1822.889;   % atomic mass units to atomic units
 enConv  = 4.55634e-6; % wavenumber to Hartree
 lenConv = 1/aBohr;    % angstroms to bohr radii
 
-funcPEC = @(x) srPEC_1S0plus1S0(x);
+funcPEC = @(x) srPEC_1S0plus1S0(x, 'C6', in*1e7);
 
 % Given in Tiemann specified units: cm-1 and Angstroms
 % then converted to appropriate system for computation
-C6 = 1.52701e7*enConv*lenConv^6; %using feely varying C6 to be consistent with potential used
+%C6 = 1.52701e7*enConv*lenConv^6; %using feely varying C6 to be consistent with potential used
+
+C6 = in * 1e7 * (enConv*lenConv^6);  % Ha * (aBohr)^6
+
 %C6 = 1.525e7*enConv*lenConv^6; 
 Ri = 3.963*lenConv; 
 
@@ -47,7 +50,7 @@ aMat = nan(length(srM));
 for i = 1:length(srM);
     for j = i:length(srM);
         mu = prod([srM(i) srM(j)]) / sum([srM(i) srM(j)]);
-        aMat(i,j) = a(mu);
+        aMat(i,j) = round(a(mu), 4, 'significant');
     end
 end
 

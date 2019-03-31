@@ -13,20 +13,20 @@ beta  = [ 1              1.03238202    ];
 
 switch isotope
     case 84
-        %alpha = [ 0.045485       1.9893        ]; % 84 value (from Reschovsky thesis 2017)
-        alpha = [ 0.045301189    1.99037413    ];
+        alpha = [ 0.045485       1.9893     ]; % 84 value (from Reschovsky thesis 2017)
+        %alpha = [ 0.045301189    1.99037413 ];
     case 86
-        alpha = [ 0.045690735    1.99188286    ];
+        alpha = [ 0.045690735    1.99188286 ];
     case 88
-        alpha = [ 0.045648282    1.99168225    ];
+        alpha = [ 0.045648282    1.99168225 ];
     otherwise
         error('Invalid isotope choice. Please choose either 84, 86, or 88')
 end
 
-C12 = [-5.31841848e9 -1.06415514e10 ];
-C10 = [2.20495e8      5.24064e7     ];
-C8  = [2.3574797e6    3.4156471e5   ];
-C6  = [4.3015063e3    3.8683912e3   ];
+C12 = [ -5.31841848e9 -1.06415514e10 ];
+C10 = [ 2.20495e8      5.24064e7     ];
+C8  = [ 2.3574797e6    3.4156471e5   ];
+C6  = [ 4.3015063e3    3.8683912e3   ];
 C3  = 1.52356615e-2;
 
 % bsxfun requires a specific orientation

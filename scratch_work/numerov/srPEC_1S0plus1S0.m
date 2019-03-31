@@ -1,4 +1,4 @@
-function V = srPEC_1S0plus1S0(r)
+function V = srPEC_1S0plus1S0(r, varargin)
 % From Analytical potential energy curve for the X1Sigma+g state of Sr2 
 % calculated with freely varied long range coefficients Ci
 % Tiemann et. al (2010)
@@ -7,8 +7,8 @@ function V = srPEC_1S0plus1S0(r)
 % atomic units using the factors below
 
 % Choose whether to use the recommended value or the freely varied values
-coeffsToUse = 'free vary'; % valid options ['free vary' 'recommended']
-%coeffsToUse = 'recommended'; % valid options ['free vary' 'recommended']
+%coeffsToUse = 'free vary'; % valid options ['free vary' 'recommended']
+coeffsToUse = 'recommended'; % valid options ['free vary' 'recommended']
 
 % Conversion factors
 H_cm1  = 219474.6305;   % cm^{-1}, 1Ha = 27.21eV = 219474.6305cm^{-1}
@@ -18,6 +18,17 @@ aBohr  = 0.52917721067; % Ang, 1a0 = 0.528 Ang
 % converting to what
 conv.cm1ToH    = (1/H_cm1);
 conv.angToBohr = (1/aBohr);
+
+% set optional params
+opt = 0; % default value
+
+for i = 1:length(varargin)
+    switch varargin{i}
+        case 'C6'
+            opt = varargin{i+1};
+    end
+end
+        
 
 % Range parameters
 R_i = 3.963 * conv.angToBohr; % aBohr (7.5 Bohr)
@@ -37,7 +48,7 @@ r_long    = r( r > R_a );
 
 V = [ V_inner(r_inner,     conv, coeffsToUse) 
       V_central(r_central, conv, coeffsToUse) 
-      V_longRange(r_long,  conv, coeffsToUse) ];
+      V_longRange(r_long,  conv, coeffsToUse, opt) ];
 end
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -93,11 +104,10 @@ end
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Long-range potential (ground state asymptote defines E = 0)
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-function V = V_longRange(r, conv, coeffsToUse)
+function V = V_longRange(r, conv, coeffsToUse, opt)
     switch coeffsToUse
         case 'free vary'
             C6  = 1.52701e7 * (conv.cm1ToH*conv.angToBohr^6);  % Ha * (aBohr)^6
-            %C6  = 1.525e7 * (conv.cm1ToH*conv.angToBohr^6);  % Ha * (aBohr)^6
             C8  = 5.0654e8  * (conv.cm1ToH*conv.angToBohr^8);  % Ha * (aBohr)^8
             C10 = 1.9752e10 * (conv.cm1ToH*conv.angToBohr^10); % Ha * (aBohr)^10
         case 'recommended'
@@ -106,6 +116,11 @@ function V = V_longRange(r, conv, coeffsToUse)
             C10 = 1.91e10 * (conv.cm1ToH*conv.angToBohr^10); % Ha * (aBohr)^10
         otherwise
             error('Invalid coefficient option')
+    end
+    
+    if opt
+        % hacky way to give my own estimate of C6 (zero if want to use default)
+        C6 = opt * (conv.cm1ToH*conv.angToBohr^6); 
     end
 
     V = [];
