@@ -7,8 +7,8 @@ function V = srPEC_1S0plus1S0(r, varargin)
 % atomic units using the factors below
 
 % Choose whether to use the recommended value or the freely varied values
-%coeffsToUse = 'free vary'; % valid options ['free vary' 'recommended']
-coeffsToUse = 'recommended'; % valid options ['free vary' 'recommended']
+coeffsToUse = 'free vary'; % valid options ['free vary' 'recommended']
+%coeffsToUse = 'recommended'; % valid options ['free vary' 'recommended']
 
 % Conversion factors
 H_cm1  = 219474.6305;   % cm^{-1}, 1Ha = 27.21eV = 219474.6305cm^{-1}
