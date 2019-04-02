@@ -3,10 +3,61 @@
 
 Our experiments begin by cooling and trapping atomic strontium utilizing well-established atomic physics techniques \cite{Metcalf1999,Katori1999,Ido2000,Nagel2003,Mukaiyama2003a,Loftus2004,DeEscobar2009a,Stellmer2009,Stellmer2010,Mickelson2010,DeSalvo2010,Tey2010a}. Fig.\;\ref{fig:energy_level_diagram} shows the simplified energy level diagram employed in our cooling process. Once cooled, we typically obtain bulk samples in an optical dipole trap containing on the order of $10^6$ atoms at temperatures $<1\mu$K and densities between $10^{12} - 10^{15}\,$cm$^{-3}$ depending upon the isotope. Samples of ultracold atoms can then be directly loaded into an optical lattice potential by ramping up the intensity of the laser beams forming the optical lattice.
 
-\section{Vacuum system}
+
+Brians thesis
+refs - [27, 28, 29, 30, 31, 32] for cooling and trapping
+
+The Neutral apparatus was one of the pioneering experiments for the trapping, cooling, and creation of quantum degenerate gases of neutral strontium. As such, there is a plethora of previous theses and publications which extensively outline the details for how to achieve these goals. \hl{refs}. In particular, we refer the reader to the PhD theses of previous Killian lab students, Brian DeSalvo, Mi Yan, Pascal Mickelson, Natali Martinez de Escobar, and Sarah Nagel.
+
+Building upon this previous work, this chapter will forego an extensive review of the basic laser cooling techniques for strontium. Instead, we will briefly discuss the systems and processes which are most crucial to the operation of the experiment with an emphasis on technical findings and changes which remain, as of yet mostly, undocumented.
+
+
+\section{Vacuum system, atom source, and magnetic coils}
 \label{sec:vac}
 
-"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+The goal of this section is 
+
+The Neutral apparatus is built around a stainless steel chamber positioned so and so above the table to facilitate optical access as described \hl{somewhere}. While unchanging during the time of this phd we have learned a number of crucial 
+
+Pressuess within this chamber ar typically of the order blah
+
+The system consists of an oven source based around a custom nozzle design
+Starting from left to right we have a 6 way tee as the main body for the atom source, a 2D coliamtor, and the entry port of the 1 meter zeeman slower. Somewhere in here is a connection to an ion pump.
+There is a differential pumping tube annd needles on he atom source. Throught he zeeman slower we connect to the main chamber which is a custom 304 stainless steel body supported by a pumping tower which is the entry point for the zeeman laser beam and an additional ion pump. 
+
+In the late fall of 2017 the neutral apparatus had been under vaccuum for approx 6? years and ater extensive testing we determined that we likely ran out of elemental strontium within the atomic source. This led us to breaking vaccuum, reloading strontium, and performing a small bake down procedure to restablish our presssure. ripor to this event we enjoyed lifetimes on the ordr of 25s s measured by background lifetimes measurements within our IR optical dipole trap. Apprximately a year affter this event we have observed lifetimes on the order of approx 15s, the cause of the discrepanacy is currently unknown.
+During the time of breaking vaccuum we decided to attempt everal upgrades to the apparatus such as adding a gate valve between the pumping tower and the zeeman window and redesigning the nozzle source to incorporate a heat shield around the heating element to produce a more even heating environemnt along the nozzle
+De to timing we did not install the gate valve before re-establishing vaccuum. The hope in doing this upgrade was to provide a better method for replacing the end cap window which the atom source directly points at. During the course of our experiments this window slowly accumulates a thin layer of strontium which may act as a parital mirror and attentuate the crucially important zeeman beam. As a note of interest, it was shared through private communication with professor Killain that pulsed 532 nm light (such as from a q-locked Verdi system used in the Plasma laboratory) might vaporize the strontium off the window and restore any loss in power. Using a test appartus we were able to verify that indeed we can ablate the strontium off of a coated window, as shown in figure something.
+This promising test led us to install an optical traversal port, shown in figure, connecting the two labs. Unfortunately, while flashing the verdi on a small section of the neutral experimental window we found that the energy needed to ablate the strontium was accompanied by deformation of the optical surface of the window. We attritbute this to the thicknes of the coating as the key difference between the experiment and the Neutral machine.
+With that fun aside, we oder an extra window and the gate valve to replicate the system put in place on the Rydberg appartus so that future needs to repalce the window coul be accomplished by simply back filling the chamber with dry nitrogen or argon, closing the gate valve and simply replacing it quickly without the need to expose the main chamber body to direct atmospheric gas. 
+
+Reudction of the time the window was exposed to hot strontium led us to install a small servo motor driving the valve (model something) and integrate this mechanism into the experimental runtime. This allows the shutter to only be open during the times that we are actively trapping atoms. Details of the servo motor trigger integration into the neuKLEIN control system are available in App \hl{somewhere}.
+
+The second improvement that we attempted was to redesign the nozzle to include a heat shield. A CAD image is shown in figure. Unfortunately, due to the high tolerances of the base flange and surrounding enclosure the machining required for this custom piece was deemed prohibitvely expensive. A prototype was design following the machine drawings available in App \hl{someplace} but was abandoned due to a bend that developed in the tubing which holds the fire rod. 
+
+However, the largest constraint was due to the flange size of 2 3/8" as the basis for the design. This provides very tight confinement and w
+
+What is the model number for the firerod? What were the materials that were used? 
+
+During the course of realignment of having the vaccuum chamber open, we took the opporuntity to replace the atom source with an uncoated window to aid alignment of the zeeman beam through the entire length of the vaccuum system. While doig this we learned that there is a slight angle to the differential pumping tube which separates the atom source chamber from 2D collimation chamber. While we were not able to determine the severity of the misalignment the main symptom of its existence is the partial occlusion and loss of power in the zeeman slowing beam. With an input power of approx. 120 mW before expansion optics and entering the chamber, we measured 60 mW of power transmitted through the window during our testing. Replacement of this differential pumping tube is problematic as it is part of a copper flange held between flanges connecting the aomt source chamber and 2D collimator. This positioning necessitates a drastic and practically infeasible deconstruction of the vaccuum system to replace. Our goal here is simply to inform future students of this issue as we believe it is the primary cause of the much longer load times needed in the Neutral apparatus when compared to the newly designed Rydberg machine.
+
+
+	\begin{figure}
+		\centerline{
+		\includegraphics[width=\textwidth]{IMG_20171103_184230.jpg}}
+		\caption{Typical flourescence of Zeeman beam looking down 2D collimator}{This view is found using a 2 in mirror aligned along the path of the first pass of the 2D collimator (near mirror 3 in the diagram), looking down the collimator tube. While looking at this angle, we are able to see the Zeeman beam move across the atom column when moving the last turning mirror. Reduction in this fluorescence signal from that shown was the primary indicator of lack of strontium in the source.}
+		\label{fig:2d_coll_flourescence}
+	\end{figure} 
+	
+	\begin{figure}
+		\centerline{
+		\includegraphics[width=\textwidth]{ablated_sr2.jpg}}
+		\caption{Ablating strontium coating from window}{Comparison of the before (left) and after (right) when using a pulsed 532 nm Verdi to ablate strontium. The residue visible in the after image was due to a higher energy pulse which was reduced as we moved towards the center of the window.}
+		\label{fig:ablating_strontium}
+	\end{figure} 
+	
+
+
 
 \section{Laser systems}
 \label{sec:laser_systems}
@@ -56,7 +107,7 @@ This consideration means we generally aim for an optical depth around unity whic
 
 We use \hl{such and such} camera \hl{include datasheet in appendix since it is hard to find} which has a double shutter function. More details can be found in the appendix \hl{some sec}. We care about the timing since the laser intensity and frequency might drift between the atom and background images. Variations in intensity have straightforward implications for errors since the measurement of the atomic number density assumes the only difference between the images is due to the presence of scatters, Sec.\hl{some sec}, and does not account for fluctuating photon number. Very occasionally, the Neutral apparatus will experience an underexposed shot (of either the atom or background image) that must be discarded due to large, noticeable, fluctuations. We hypothesize that these occurrences are the result of environmental perturbations (acoustic noise, vibrations through the table, spurious ground or electrical noise). However, the precise cause is unknown as the absorption imaging happens very quickly at the end of the experimental cycle when multiple systems begin to reset for the next sequence and in practice, these fluctuations do not occur often enough to be a major cause for concern.
 
-The more insidious source of error in absorption imaging is variation of the optical frequency. Coherent, frequency stabilized radiation is used to illuminate the atom cloud so that we may control the optical absorption cross section and accurately measure the atomic number density. However, this laser light is passed through many optical components on it's path to the atoms and ultimately the imaging camera. Small reflections along this path result in a multitude of interferometers which causes small scale spatial intensity variation across the beam. Exacerbating this problem are short time frequency drifts that may occur between the atom and background images which result in slightly different fringe patterns in the atom and background images. Fringes patterns are a well known nuisance in experimental AMO images and it has become routine to use linear algebra techniques to create a composite background image for each atom image during analysis \cite{Segal2009}. A brief discussion of the principal component analysis (PCA) algorithm employed by the Neutral analysis routine is outlined below, while a more can be found in Sec. \hl{some sec}. Briefly, this approach is as follows:
+The more insidious source of error in absorption imaging is variation of the optical frequency. Coherent, frequency stabilized radiation is used to illuminate the atom cloud so that we may control the optical absorption cross section and accurately measure the atomic number density. However, this laser light is passed through many optical components on it's path to the atoms and ultimately the imaging camera. Small reflections along this path result in a multitude of interferometers which causes small scale spatial intensity variation across the beam. Exacerbating this problem are short time frequency drifts that may occur between the atom and background images which result in slightly different fringe patterns in the atom and background images. Fringes patterns are a well known nuisance in experimental AMO images and it has become routine to use linear algebra techniques to create a composite background image for each atom image during analysis \cite{Segal2009}. A brief discussion of the principal component analysis (PCA) algorithm employed by the Neutral analysis routine is outlined below, while a more discussion can be found in Sec. \hl{some sec}. Briefly, this approach is as follows:
 \begin{enumerate}
 \item Find a basis set of background images from a large set of raw background images.
 \item For a single atom image, construct an initial guess at a composite background image using coefficients to weight each basis image resulting in a superposition of the basis images.
@@ -69,6 +120,8 @@ This procedure is repeated for each atom image using a static background basis s
 \hl{add picture showing the fringe removal}
 
 \subsubsection{Chirped blow away pulser}
+
+
 
 Reference Josh's master for construction
 

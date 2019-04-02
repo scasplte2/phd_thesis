@@ -1,0 +1,28 @@
+what do I want to do?
+
+I would really like to make sure that I am getting a halo state.
+I want to see what tehe radial extent of a wavefunction that is only bound by about 100 kHz looks like. It must extend out to a vary far region
+
+Can I estimate the outer turning point just by knowing it's binding energy?
+	I would be happy with an estimate using this and then a toy picture of a halo stae using a toy potential
+	
+	My sentence would mrefer to the plot for comparison of a halo state and more deeply bound state and a scattered state. Then I would say given the 86 binding energy we can estaimte the outer turning point as blha
+	
+	
+I would really like to be able to make the bound state and scattered wavefunctions without going back and forth between 
+
+ok, 
+
+
+
+1. can I estimate the outer turning point from the energy?
+	Can I then compare this turning point to the length scale of the Sr potential?
+	
+2. can I get bound state for the excited Sr potential?
+
+3. Can I program the functional form of a potential for calculating the bound states in pydi and the scattered states in matlab?
+
+I really need to do a massive refactor on pydi to make it do what I want. (calc bound states and scattered states)
+
+
+
