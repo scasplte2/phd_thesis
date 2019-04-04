@@ -45,18 +45,67 @@ funcMu = @(m1, m2) prod([m1 m2])/sum([m1 m2]);
 
 %% Calculate scattering lengths
 % Define mass scaled vector
-muVec = linspace(83, 91, 500)*amu2au/2;
+muVec = linspace(83.5, 91.5, 500)*amu2au/2;
 
-aVec = nan(length(muVec));
-for i = 1:length(aVec);
+aVec = nan(1,length(muVec));
+for i = 1:length(muVec);
     aVec(i) = a(muVec(i));
 end
 
+srM = [ funcMu(m84, m84) funcMu(m84, m86) funcMu(m84, m87) funcMu(m84, m88) ...
+        funcMu(m86, m86) funcMu(m86, m87) funcMu(m86, m88) ...
+        funcMu(m87, m87) funcMu(m87, m88) ...
+        funcMu(m88, m88) ]*amu2au;
+homoMix   = [1 5 8 10];
+heteroMix = [2 3 4 6 7 9];
+
+srVec = nan(length(srM));
+for i = 1:length(srM);
+    srVec(i) = a(srM(i));
+end
 
 %% Plotting
-srM = []
+% Use this mask to avoid plotting the asymptotic line
+avoidAsym = aVec < -300 & aVec > 2500;
 
-figure;
-plot(muVec/amu2au, aVec);
+% Create figure
+figure1 = figure;
 
+% Create axes
+axes1 = axes('Parent',figure1);
+hold(axes1,'on');
+
+% Want to plot the x-axis in isotopic 
+plHan = plot(2*muVec(avoidAsym)/amu2au, aVec(avoidAsym));
+plHan.LineWidth = 1.5;
+
+% Create plot
+plot(2*srM(homoMix)/amu2au, srVec(homoMix),...
+    'MarkerFaceColor',[0.929411768913269 0.694117665290833 0.125490203499794],...
+    'MarkerSize',8,...
+    'Marker','o',...
+    'LineWidth',1,...
+    'LineStyle','none',...
+    'Color',[0 0 0]);
+
+% Create plot
+plot(2*srM(heteroMix)/amu2au, srVec(heteroMix),...
+    'MarkerFaceColor',[0.850980401039124 0.325490206480026 0.0980392172932625],...
+    'MarkerSize',8,...
+    'Marker','o',...
+    'LineStyle','none',...
+    'Color',[0 0 0]);
+
+% Create xlabel
+xlabel('Mass [amu]');
+
+% Create ylabel
+ylabel('s-wave scattering length [a_0]');
+
+xlim(axes1,[83.5 90.5]);
+ylim(axes1,[-250 2000]);
+box(axes1,'on');
+
+% Set the remaining axes properties
+set(axes1,'FontSize',20,'LineStyleOrderIndex',72);
 end
