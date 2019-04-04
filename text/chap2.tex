@@ -11,11 +11,42 @@ The Neutral apparatus was one of the pioneering experiments for the trapping, co
 
 Building upon this previous work, this chapter will forego an extensive review of the basic laser cooling techniques for strontium. Instead, we will briefly discuss the systems and processes which are most crucial to the operation of the experiment with an emphasis on technical findings and changes which remain, as of yet mostly, undocumented.
 
+This chapter is meant to serve as a highly technical and in-depth guide to the operation of the Neutral apparatus. We refer the reading to the extensive works for a discussion of the theory behind laser cooling and trapping.
 
-\section{Vacuum system, atom source, and magnetic coils}
+\section{Experimental Procedure} \label{sec:trapping}
+This section will 
+
+\section{Vacuum system and atom source}
 \label{sec:vac}
 
-The goal of this section is 
+Diagram
+Description
+	very good resource for design considerations of a similar experiment in Francy's masters chapter 3
+	Appendix A.10 of Natali's thesis gives specifics about the construction
+Components
+	Atom Source
+	2D collimator
+	Zeeman slower
+	main chamber
+	Cryo tower
+History
+	
+
+	
+Zeeman slower
+	constructed by Pascal
+	
+
+
+Details of the consturction of the vaccuum system are available in \hl{so and so}
+
+The goal of this section is to provide an overview of the most recent history of the vaccuum system as well as to clarify some of the slightly more ambiguous points about what the construction of the apparatus.
+
+Potentially discuss the concerns we've had about the platform and movement between the chamber and the table. THis can lead to the addition of struts tying the chamber to the platform. This remains a source of concern for heating of the atoms particularly in the optical lattice. 
+
+These concerns are exacerbated by an our finding that increased stability came when adding a partial cover over the platform optics for the optical dipole and lattice traps. Although initially meant as a proctective measure, the addition of this cover resulted in a noticable decrease in shot to shot fluctuations of the cloud position after a time of flight. We found that this stability was a result of mitigating air currents due to the closely located ventilaition system meant to mitigate dust acculation on the optical components.
+
+Drawings for the atom source currently in use on the experiment (as of March 2019) are available in the App \hl{vaccuum}. This oven design is labeled "new nozzle summer 2010", and outlines a heat shield that was ultimately abandoned due to lack of a mechanism to secure it to the base flange. This led to the heat shield falling off when attempting to secure the flange in the apparatus. We hypothesized that lack of a heat shield led to uneven distribution of the thermal energy throughout the oven so we undertook the design of a new oven design to address this issue.
 
 The Neutral apparatus is built around a stainless steel chamber positioned so and so above the table to facilitate optical access as described \hl{somewhere}. While unchanging during the time of this phd we have learned a number of crucial 
 
@@ -55,7 +86,6 @@ During the course of realignment of having the vaccuum chamber open, we took the
 		\caption{Ablating strontium coating from window}{Comparison of the before (left) and after (right) when using a pulsed 532 nm Verdi to ablate strontium. The residue visible in the after image was due to a higher energy pulse which was reduced as we moved towards the center of the window.}
 		\label{fig:ablating_strontium}
 	\end{figure} 
-	
 
 
 
@@ -67,7 +97,113 @@ The heart of any atomic physics experiment is the laser systems which can be uti
 \subsection{Wideband cooling stage: 461 nm}
 \label{ssec:461sys}
 
-"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+Generation of 461 nm
+	Overview
+	Components
+		922 Master
+		MOT light generation
+		Zeeman light generation
+		Sat Abs
+	Diagram
+	
+	
+922 master specifics
+	description
+	typical running current and temp
+	feedback characteristics
+	tips of operation
+		beware of changing temp
+		beware of using the sacher voltage control
+	Locking characteristics
+		addition of slow lock
+			reference that Josh will provide code in his thesis
+		circuit?
+		
+MOT light path
+	Description
+	Components
+		TA
+		Cavity
+		AOMs
+		Shutters
+	Tips
+		advisable to peak up alignment on a daily basis 		
+		fairly robust but must keep an eye on as power may fluctuate by as much as 15 percent over the course of a day
+	
+	MOT TA
+		Description
+			who built
+		Components
+			Mounts
+			Optics
+			Circuits
+				current control board
+				temp control board
+					note the thermistor in use
+		Typical running values
+			in power
+			out power
+			TA current
+			TA temp
+		Tips
+		
+	Cavity
+		Description
+			who built
+		Components
+			Optics
+			Circuits
+				PDH lock
+		Typical running
+		Tips
+		
+Zeeman path
+	Description
+		construction outlined in chapter 2 of AAron's Saenz's masters thesis
+	Components
+		TA
+		Cavity
+		AOMs
+		Shutters
+	
+	Zeeman TA
+		Description
+			who built
+		Components
+			Mounts
+			Optics
+			Circuits
+				current control board
+				temp control board
+					note the thermistor in use
+		Typical running values
+			in power
+			out power
+			TA current
+			TA temp
+		Tips
+			power drops occasionally, flip on and off
+			alignment can be difficult, try to stabilize in a lower mode
+		History
+			water got on TA so it might be finicky
+		
+	Cavity
+		Description
+			who built
+		Components
+			Optics
+			Circuits
+				PDH lock
+		Typical running
+		Tips
+	
+		
+	
+
+\subsubsection{Changing isotopes} \label{sssec:change_iso}
+
+Using the magnetic tunability of the sat abs as outlined in 
+
 
 \subsection{Narrowband cooling stage: 689 nm}
 \label{ssec:689sys}
@@ -83,6 +219,8 @@ The heart of any atomic physics experiment is the laser systems which can be uti
 \label{ssec:1064sys}
 
 Discuss how our only method for evaporative cooling is through light traps since we do not have a magnetically sensitive ground state.
+
+\subsection{Optical lattice trap: 532 nm} \label{ssec:532sys}
 
 \subsection{Optical toolbox}
 \label{ssec:op_tools}
