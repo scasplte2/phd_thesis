@@ -1,21 +1,31 @@
 \chapter{The Neutral apparatus}
 \label{ch:chap2}
 
+The Neutral apparatus was one of the pioneering experiments for the trapping, cooling, and creation of quantum degenerate gases of neutral strontium. As such, there is a plethora of previous theses and publications which extensively outline the details for how to achieve these goals. \hl{refs}. In particular, we refer the reader to the PhD theses of previous Killian lab students: Francisco Camargo, Brian DeSalvo, Mi Yan, Pascal Mickelson, Natali Martinez de Escobar, and Sarah Nagel.
+
+Building upon this previous work, this chapter will forego an extensive review of the basic laser cooling techniques for strontium. 
+We refer the reading to the extensive works for a formal discussion of the theory behind laser cooling and trapping.
+
+Instead, we will focus on the systems and processes which are most crucial to the operation of the experiment with an emphasis on technical findings and changes which remain, as of yet mostly, undocumented.
+
+Since it has been 7 years since the last broad apparatus overview and the experiment has grown significantly in complexity, the goal of this chapter is to serve as a reference for future work and students. As such, the following is highly technical and will provide an in-depth review of the operation and current status of the Neutral apparatus.
+
+Where appropriate we will refer the reader to the relevant thesis or published work
+
+Future experiments on the Neutral apparatus aim to explore quantum magnetism using strontium 87 and as such several key changes have been made to the 461 locking and 689 trapping systems which will be detailed below.
+
+Say something about referring to the isotopes by their number for shorthand.
+
+This chapter will begin with a brief overview of our trapping procedure in order to contextulaize the remaining sections which focus on the hardware implementations used.  
+
+\section{Experimental procedure} \label{sec:trapping}
+
 Our experiments begin by cooling and trapping atomic strontium utilizing well-established atomic physics techniques \cite{Metcalf1999,Katori1999,Ido2000,Nagel2003,Mukaiyama2003a,Loftus2004,DeEscobar2009a,Stellmer2009,Stellmer2010,Mickelson2010,DeSalvo2010,Tey2010a}. Fig.\;\ref{fig:energy_level_diagram} shows the simplified energy level diagram employed in our cooling process. Once cooled, we typically obtain bulk samples in an optical dipole trap containing on the order of $10^6$ atoms at temperatures $<1\mu$K and densities between $10^{12} - 10^{15}\,$cm$^{-3}$ depending upon the isotope. Samples of ultracold atoms can then be directly loaded into an optical lattice potential by ramping up the intensity of the laser beams forming the optical lattice.
 
+Reference stellmers thesis, natalis thesis, and pascal for strontium colling and trapping
 
 Brians thesis
 refs - [27, 28, 29, 30, 31, 32] for cooling and trapping
-
-The Neutral apparatus was one of the pioneering experiments for the trapping, cooling, and creation of quantum degenerate gases of neutral strontium. As such, there is a plethora of previous theses and publications which extensively outline the details for how to achieve these goals. \hl{refs}. In particular, we refer the reader to the PhD theses of previous Killian lab students, Brian DeSalvo, Mi Yan, Pascal Mickelson, Natali Martinez de Escobar, and Sarah Nagel.
-
-Building upon this previous work, this chapter will forego an extensive review of the basic laser cooling techniques for strontium. Instead, we will briefly discuss the systems and processes which are most crucial to the operation of the experiment with an emphasis on technical findings and changes which remain, as of yet mostly, undocumented.
-
-This chapter is meant to serve as a highly technical and in-depth guide to the operation of the Neutral apparatus. We refer the reading to the extensive works for a discussion of the theory behind laser cooling and trapping.
-
-Future experiments on the Neutral apparatus aim to explore quantum magnetism using strontium 87 and as such several key changes have been made to the 461 locking and 689 trapping systems which will be detailed below. 
-
-\section{Experimental procedure} \label{sec:trapping}
 
 This section will outline the experimental procedure followed to laser cool and trap atoms. This process has remained relatively stable throughout the years so we provide only a brief overview and reserve the detailed discussion to the relevant sections following this overview.
 
@@ -34,6 +44,55 @@ Over the time frame of this PhD, we have performed experiments using all four co
 In the case of switching 
 
 
+FRANCISCO
+The experiments described in this thesis are performed using ultracold samples of 84Sr in either a thermal or BEC phase. 
+To obtain such samples, we go through multiple stages of laser cooling and trapping. 
+First, we utilize the 461nm (5s2)1S0 - (5s5p)1P1 broad- line transition to reach 1mK (Fig. 2.1) in a Magneto-Optical Trap (MOT) in combination with a magnetic trap [48]. 
+Subsequently we load a narrow-line MOT using the 689nm (5s2)1S0 - (5s5p)3P1 transition cooling down to 2 muK [49]. 
+Finally, a recycled-beam optical dipole trap (ODT) [50, 51] is turned on, which can trap millions of atoms at 2mK. 
+We conduct experiments at this stage but may also choose to begin an evaporative cooling trajectory which results in BEC samples of several hundred thousand atoms.
+
+Room temperature strontium is a metallic solid. 
+As such, we load strontium into an ‘oven- nozzle’ which is heated to 425 C, metallic pellets sublimate resulting in gaseous strontium emitting from the nozzle with a mean velocity of about 450 m/s. 
+We achieve trapping of these atoms by employing the 461nm transition in three stages (Fig. 2.2): a 2D-Collimator, a Zeeman Slower, a broad-line MOT (all using the 461 nm, 30.5MHz wide transition). 
+Ad- ditionally, there is a decay path to the magnetically trappable 3PJ manifold from the 1P1 line. 
+These atoms are collected by the quadrupole MOT field and are repumped back to the ground state for further cooling using the 481nm (5s5p)3P2 - (5p2)3P2 transition.
+
+Immediately following the output of the oven, a 2D-Collimator cools the atoms via optical molasses in the radial direction. 
+A retro-reflected beam incident on the atoms in two orthogonal directions perpendicular to the direction of the atom-beam propagation is used. 
+By cooling in the transverse direction, we greatly increase the flux of atoms that will enter the trapping region of the MOT. 
+We observe approximately an order-of-magnitude increase in the loading rate of the MOT with the inclusion of the 2D-Collimator red-detuned by half the natural linewidth.
+
+Next, the atomic beam enters the Zeeman Slower where the mean axial velocity is reduced from about 450 m/s to about 30 m/s, slow enough for the MOT to capture. 
+Using an acousto- optical modulator (AOM), the Zeeman laser beam is red-detuned by 18 times the natural linewidth of the transition in order to avoid scattering in the region of the MOT, therefore a spin-flip configuration is implemented such that somewhere along the path of the Zeeman slower the direction of magnetic field is reversed. 
+The relative direction of Zeeman Slower fringe field compared to the on-axis field of the MOT can have a significant impact. 
+We find that an anti-parallel configuration is optimal by a factor of apprx 2.
+
+The output of the Zeeman Slower leads to the MOT region. The MOT light is set at a red-detuning of 1.8 times the linewidth of the 461nm transition. 
+A large loss channel is present due to decay from the (5s5p)1P1 state to (5s4d)1D2 and subsequently to the (5s5p)3P1,2 states. 
+However, the low-field seeking 3P2 states are trapped by the anti-Helmholtz magnetic field of the MOT. 
+These atoms can therefore be reintroduced into the main cycling transition by repumping with a 481nm laser to the (5p2)3P2 state. 
+Experimentally we find that it is optimal to repump for 50ms after having loaded the magnetic trap for several seconds instead of having the repump beam on during the whole loading procedure. 
+Details of the repumping laser can be found in Pakorn Wongwaitayakornkul’s undergraduate thesis. 
+For a 2 s load time, this scheme yields 20x106 atoms of 84Sr near the Doppler temperature limit. 
+Although 84Sr is the least abundant isotope, at 0.6 perc, and we could instead generate much larger MOT sample with the other isotopes, we chose to use 84Sr for these experiments due to the 123a0 84Sr - 84Sr scattering length, which is ideal for evaporative cooling. 
+More details on our broad-line cooling and trapping scheme, including a description of the 461nm laser system, can be found in Ref. [48].
+
+Having produced a trapped gas of ten’s of millions of atoms at about 2mK, the next stage of cooling consistes of a narrow-line MOT. 
+Utilizing the (5s2)1S0 - (5s5p)3P1 transition enables us to reach a much colder temperature because of a reduction in line-width of over three orders of magnitude compared to the broad-line MOT. 
+The theoretical temperature limits due to the Doppler limit and atom recoil are comparable at about 200 nK, however, experimentally we only cool to about 1 muK which is sufficient to subsequently transfer atoms to the ODT. 
+To bridge the gap between broadline MOT and initial ODT temperaures, the narrowline MOT must capture apprx 2mK atoms and cool them to apprx 1 muK. To achieve this, we dynamically change the trap parameters. 
+Initially, the narrow-line MOT begins with large laser intensity compared to the saturation intensity, far red-detuning compared to the transition line-width, and a dither of the laser frequency that is also large compared to the line-width. 
+This ensures that the initial range of atom velocities at the end of the broad-line MOT will experience cooling and trapping on the 689nm transition. 
+As cooling takes effect and temperature falls, these experimental parameters follow suit and are changed to address a narrower velocity distribution, ultimatly yielding apprx 1 muK samples of about two million atoms. 
+Details of our narrow-line cooling MOT can be found in Ref. [49].
+
+We load atoms from the narrow-line MOT into a 1064nm infra-red (IR) ODT with two perpendicularly crossed paths (Fig. 2.3). 
+Each path is made up of three laser beams co- propagating with 10’s of microns of separation [52], yielding a ‘Top-Hat’ laser profile. 
+After loading the Top-Hat ODT, the intensity of the outer two beams linearly decrease to zero over 400ms while maintaining constant intensity in the center. 
+At this juncture, apprx 106 atoms at apprx 2 muK are trapped in the ODT and represent a cold thermal sample which we have used for several of our measurements. 
+Further cooling via forced evaporation can be employed, which enables an increase in phase-space density sufficient enough to create Bose-Einstein condensates (BEC) of 84Sr [19, 20]. 
+We produce samples where 75 perc of trapped atoms are in the BEC phase. Several hundred thousand atoms enter the condensate phase at a peak number density of apprx 4 x 1014 cm-3.
 
 BRIAN
 For laser trapping and cooling, we need to work with gaseous Sr, so we begin by heating a sample in an oven up to approx 350C to obtain a significant vapor pressure. 
@@ -69,9 +128,14 @@ Once we have completed the experimental phase, we perform absorption imaging alo
 Typically we perform absorption imaging following a time-of-flight so as to measure both the atom number and temperature at the time of release. 
 However, this is not strictly necessary and certain experiments may result in low atomic densities which are not amenable to a time-of-flight due to their low optical depth.
 
+NATALI
+Atoms in the 3P2 state (8.3 min. lifetime [77]), however, can be trapped by the quadrupole field of the MOT [78, 79, 80, 65] where they do not scatter 461 nm light. As the 461 nm MOT cooling stage continues, atoms keep accumulating in the 3P2 dark state.
+
 \subsection{Characteristic trapping performance} \label{sec:benchmark_trapping}
 
-\subsubsection{$^{84}$Sr} \label{sec:84_trapping}
+The following subsections outline typical trapping parameters and performance for each isotope. Note, that while we have demonstrated the ability to dual trap 84 and 87, full characterization and optimization of this process is currently the subject of future research.
+
+\paragraph{$^{84}$Sr} \label{sec:84_trapping}
 
 Timing diagram
 	Blue MOT
@@ -79,15 +143,15 @@ Timing diagram
 	Broadband red MOT
 	Single Freq red MOT
 	IR loading
-	Evaporation - typically around 1 - 7s
+	Evaporation: typically around 1 to 7s
 	Time of flight
 	Imaging
 Typical settings table
 Performance table
 
-\subsubsection{$^{86}$Sr} \label{sec:86_trapping}
+\paragraph{$^{86}$Sr} \label{sec:86_trapping}
 
-\subsubsection{$^{87}$Sr} \label{sec:87_trapping}
+\paragraph{$^{87}$Sr} \label{sec:87_trapping}
 
 
 Remember the switch to single frequency
@@ -96,10 +160,11 @@ What about values for the experiments?
 
 \hl{would like to put a timing diagram here showing a typical timing sequence for 84, 86, and 87}
 
+Where the heck does that calibration for the MOT coils come from??
 
 
-\section{Vacuum system and atom source}
-\label{sec:vac}
+
+\section{Vacuum system and atom source} \label{sec:vac}
 
 Diagram
 Description
@@ -134,10 +199,10 @@ Zeeman slower
 Main chamber
 	reference
 	description
-	Table of ports
+	Table of ports with windows
 	
 	
-
+Lifetime of atoms once we got vacuum back?
 
 Details of the consturction of the vaccuum system are available in \hl{so and so}
 
@@ -190,8 +255,7 @@ During the course of realignment of having the vaccuum chamber open, we took the
 
 
 
-\section{Laser systems}
-\label{sec:laser_systems}
+\section{Laser systems}\label{sec:laser_systems}
 
 The heart of any atomic physics experiment is the laser systems which can be utilized for various studies. 
 
@@ -204,6 +268,7 @@ Our lab relies heavily upon the use of injection locked lasers \hl{ref}
 
 Generation of 461 nm
 	Overview
+		isotope shifts
 	Components
 		922 Master
 		MOT light generation
@@ -223,7 +288,9 @@ Generation of 461 nm
 	Locking characteristics
 		addition of slow lock
 			reference that Josh will provide code in his thesis
-		circuit?
+			note that addition of this slow lock enabled the experiment to stay locked for upwards of 24 hours at a time. As expected, such an increase in stability has greatly improved our ability of taking data.
+		main lock circuit
+		RF source?
 
 \subsubsection{MOT subsystem}
 
@@ -328,6 +395,9 @@ Plot from Rydberg
 
 Discuss the change with the EOM
 	Frequency center of EOM and range?
+	
+Data on picking the timescale?
+	I know I choose like 40ms (including delay, but did I take data on this)
 
 
 \subsection{Narrowband cooling stage: 689 nm} \label{ssec:689sys}
@@ -468,11 +538,45 @@ Formula for ramp
 
 Will focus on independent arm alignment of loading trap and sheet trap
 
+Also useful to imagine three orthogonal axes with their origin set at the center of the chamber.
 
-Can generally get away with centering vertically on the input windows, then doing 
+Need a figure showing the beam prop directions and the setup I'm envisioning.
+
+%% Loading
+
+From the figure, we see that the loading trap propagates primarily along the X-direction. We start by aligning loading trap since it is generally less sensitive and the ports that it goes through are equidistance from the ori
+
+Can generally get away with centering vertically on the chamber windows. 
+
+goal is to rotate about the center point, can verify this by equalizing the distance from the edge of the window on both sides of the chamber
+
 Letting the atoms extend along a single dimension of the trap. 
+
 Moving the red MOT up and down with the z-trim. Dynamic control of z-trim is useful here as you can define a loading b field value then a science b field value.
-Use a red PAS beam to overlap with
+
+Use the shortpass dichoric mirrors to counter propagate a red loss beam. Alignment of the red beam follows the usual procedure making sure to reduce the exposure time and power as low as possible while maintaining a loss signal which should maximize alignment.
+
+%%%% Scratch
+
+
+%%%% Peaking up
+
+
+%% Sheet
+
+%%%% Scratch
+
+%%%% Peaking up
+
+The sheet trap propagates primarily along the y-axis. This direction has one port extended away from the main chamber body due to the ion gauge. This can complicate the alignment. You
+
+is a little more complicated because it 
+
+
+
+For peaking up the the sheet trap alignment, hit the red MOT with the loading trap, then extinguish the red MOT away and hold in the single arm loading trap for approx 10-20ms. This allows the red MOT to fall away and the atoms caught in the ODT will expand along the arm, mapping out the spatial profile. Once the untrapped atoms have fallen away, image the the atoms in situ (i.e. without a time-of-flight). With the spatial profile outlined you should be able to scan the sheet trap vertically looking for horizontal confinement along the loading trap. As the sheet is so tight along the vertical direction, this alignment is done using the last cylindrical lens before the chamber. 
+
+Dimple trap follows the same process as the sheet alignment but there is a Newport Pico motor for finely adjusting instead of a lens.
 
 
 \subsubsection{Trap frequency calibration} \label{sssec:1064_trap_freq}
@@ -481,9 +585,34 @@ Measurement of trap frequencies had previously relied upon parametric heating vi
 
 Cover both methods, moving the laser beam itself and snapping back or using the 532 beam to pull.
 
+Primarily have used the kicking method for the measurement of trap frequencies using independent arm ODT (combination of the loading and sheet/dimple trap). 
+
+With the recent addition of the high power 532 nm for the optical lattice, we have explored an alternative method of inducing a center-of-mass oscillation. This method uses a single pass of the green light purposely misaligned to the equilibrium position of the ODT to pull the atoms and excite an oscillation.
+
+\paragraph{Kicking method}
+Primarily have used this For the loading trap. Keep the sheet the 
+
+Use the RF meter to measure the output frequency (eliminates any offset in voltage readings)
+Use a dynamic voltage output to load into a trap that is slightly misaligned. Both the 
+
+The process for measuring the horizontal is 
+For the current configurations of traps we have found an approx 1 MHz change to the overall RF frequency of 82 (?) MHz to provide a reasonable amplitude. 
+
+Vertical oscillation can be excited by flashing off the sheet trap for 1-2 ms. 
+
+Example time dynamics
+
+\paragraph{Pulling method}
+
+As alluded to above
+
+we have installed an absolute positioning pico motor mirror mount 
+
 \subsubsection{Modeling the potential} \label{sssec:1064_modeling}
 
 Need to discuss this
+
+Give formulas and then approx on harmonic potential and methods for estimating the oscillation freq
 
 \subsection{Optical lattice trap: 532 nm} \label{ssec:532sys}
 
@@ -499,6 +628,7 @@ Formula for tanh ramp
 \subsubsection{Alignment procedure} \label{sssec:532_align}
 
 Porto technique
+Lookup note in onenote
 
 Dropping through arm C
 
@@ -508,10 +638,19 @@ Cover the simple approx and the Gadway method
 
 \subsubsection{Modeling the potential} \label{sssec:532_modeling}
 
-\subsection{Optical toolbox}
-\label{ssec:op_tools}
+Give the simple forms (plane waves) and the more complete formulas
+
+\subsection{Optical toolbox} \label{ssec:op_tools}
 
 \subsubsection{Absorption imaging system}
+
+Description
+Diagram
+Components
+
+Give ref to appendix for in-depth technical discussion of image processing
+
+Ref to App A on imaging system
 
 Discuss time of flight pixel calibration as well as the optical magnification system put in place by Mi
 
@@ -619,3 +758,10 @@ Give data showing that the pulseblasters are synced (if I have it)
 
 \subsubsection{Pneumatic actuated mirror mounts}
 
+Any references?
+
+Diagram
+Description
+Components
+	Circuits
+	

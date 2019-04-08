@@ -103,7 +103,7 @@
 \def\@pnumwidth{1.55em}
 \def\@tocrmarg {2.55em plus 1fil}
 \def\@dotsep{4.5}
-\setcounter{tocdepth}{2}
+\setcounter{tocdepth}{3}
 
 \def\tableofcontents{\@restonecolfalse\if@twocolumn\@restonecoltrue\onecolumn
  \fi\chapter*{Contents\@mkboth{CONTENTS}{CONTENTS}} \thispagestyle{empty}
@@ -347,18 +347,19 @@
 \def\subsubsection{\@startsection{subsubsection}{3}{\z@}{-3.25ex plus 
  -1ex minus -.2ex}{1.5ex plus .2ex}{\normalsize\bf}}
 \def\paragraph{\@startsection
- {paragraph}{4}{\z@}{3.25ex plus 1ex minus .2ex}{-1em}{\normalsize\bf}}
+ {paragraph}{4}{\z@}{-3.25ex plus -1ex minus -.2ex}{1.5ex plus .2ex}{\normalsize\bf}} %% was -1em
 \def\subparagraph{\@startsection
  {subparagraph}{4}{\parindent}{3.25ex plus 1ex minus 
  .2ex}{-1em}{\normalsize\bf}}
 
 \def\chaptermark#1{}
 
-\setcounter{secnumdepth}{2}
+\setcounter{secnumdepth}{3}
 
 \def\appendix{\par
  \setcounter{chapter}{0}
  \setcounter{section}{0}
+ \setcounter{subsection}{0}
  \def\@chapapp{Appendix}
  \def\thechapter{\Alph{chapter}}}
 
