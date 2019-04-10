@@ -166,7 +166,47 @@ Where the heck does that calibration for the MOT coils come from??
 
 \section{Vacuum system and atom source} \label{sec:vac}
 
-Diagram
+Figs
+	Recreate A.49 but with different labels (instead show the laser directions)
+	Create an entire side view of apparatus?
+	Add assembly views of source and cryo tower
+	Nozzle pictures
+	
+Resolve
+	Needle model?
+
+	
+	
+The Neutral apparatus is built around a stainless steel chamber positioned so and so above the table to facilitate optical access as described \hl{somewhere}. While unchanging during the time of this phd we have learned a number of crucial 
+
+Pressuess within this chamber ar typically of the order blah
+
+The system consists of an oven source based around a custom nozzle design
+Starting from left to right we have a 6 way tee as the main body for the atom source, a 2D coliamtor, and the entry port of the 1 meter zeeman slower. Somewhere in here is a connection to an ion pump.
+There is a differential pumping tube annd needles on he atom source. Throught he zeeman slower we connect to the main chamber which is a custom 304 stainless steel body supported by a pumping tower which is the entry point for the zeeman laser beam and an additional ion pump. 	
+	
+
+\noindent Vacuum system is composed of several key components listed below
+\begin{enumerate}
+\item Atom source (assembly of atom oven housed within the source chamber)
+\item 2D collimator
+\item Zeeman slower
+\item Science chamber
+\item Cryo tower
+\end{enumerate}
+
+The original drawings of these components can be found in App. A.10 of \cite{MartinezdeEscolar2010} along with detailed information of the window and ion gauge placements. 
+While the source and science chamber have remained mostly unchanged since this publication, several key improvements and events have occurred over the last few years\footnote{As of April 2019, the most up to date CAD drawing for the Neutral apparatus is located at \texttt{KillianDrobo:\textbackslash Neutral\textbackslash Laboratory Systems\textbackslash Vacuum Chamber\textbackslash Neutral Chamber\textbackslash 2017.12.26\_strontiumvacuum35\_latticetable.dwg}. Additionally, please consult the README file located in this folder for further information.}.
+Firstly, when moving labs in 2011 a titantium sublimation pump (model?) was installed in the cryo tower which replaced version one of the high vacuum system shown in Fig. A43 of \cite{MartinezdeEscolar2010}. 
+Figs blah - blah show an assembled view of the current apparatus with additional views of the cryo tower and source chambers for clarity. 
+Additionally, the original atom oven was upgraded to include capillary tubes constructed from AWG-21 hypodermic needles (model??) to further collimate the atomic beam directly out of the oven \cite{Mazurenko2010}. Fig blah shows a view of the oven currently in the Neutral apparatus and the capillary tubes that were added.
+
+
+
+
+First, the atom source was upgraded to included 2$\mu$m capillary tubes \hl{model} to further collimate the atomic beam out 
+
+
 Description
 	very good resource for design considerations of a similar experiment in Francy's masters chapter 3
 	Appendix A.10 of Natali's thesis gives specifics about the construction
@@ -201,6 +241,15 @@ Main chamber
 	description
 	Table of ports with windows
 	
+All the pieces
+	Ion pump - model?
+	firerod - model?
+	atom shutter - model?
+	gate valves - model?
+	ti sub
+	
+	
+	
 	
 Lifetime of atoms once we got vacuum back?
 
@@ -213,14 +262,6 @@ Potentially discuss the concerns we've had about the platform and movement betwe
 These concerns are exacerbated by an our finding that increased stability came when adding a partial cover over the platform optics for the optical dipole and lattice traps. Although initially meant as a proctective measure, the addition of this cover resulted in a noticable decrease in shot to shot fluctuations of the cloud position after a time of flight. We found that this stability was a result of mitigating air currents due to the closely located ventilaition system meant to mitigate dust acculation on the optical components.
 
 Drawings for the atom source currently in use on the experiment (as of March 2019) are available in the App \hl{vaccuum}. This oven design is labeled "new nozzle summer 2010", and outlines a heat shield that was ultimately abandoned due to lack of a mechanism to secure it to the base flange. This led to the heat shield falling off when attempting to secure the flange in the apparatus. We hypothesized that lack of a heat shield led to uneven distribution of the thermal energy throughout the oven so we undertook the design of a new oven design to address this issue.
-
-The Neutral apparatus is built around a stainless steel chamber positioned so and so above the table to facilitate optical access as described \hl{somewhere}. While unchanging during the time of this phd we have learned a number of crucial 
-
-Pressuess within this chamber ar typically of the order blah
-
-The system consists of an oven source based around a custom nozzle design
-Starting from left to right we have a 6 way tee as the main body for the atom source, a 2D coliamtor, and the entry port of the 1 meter zeeman slower. Somewhere in here is a connection to an ion pump.
-There is a differential pumping tube annd needles on he atom source. Throught he zeeman slower we connect to the main chamber which is a custom 304 stainless steel body supported by a pumping tower which is the entry point for the zeeman laser beam and an additional ion pump. 
 
 In the late fall of 2017 the neutral apparatus had been under vaccuum for approx 6? years and ater extensive testing we determined that we likely ran out of elemental strontium within the atomic source. This led us to breaking vaccuum, reloading strontium, and performing a small bake down procedure to restablish our presssure. ripor to this event we enjoyed lifetimes on the ordr of 25s s measured by background lifetimes measurements within our IR optical dipole trap. Apprximately a year affter this event we have observed lifetimes on the order of approx 15s, the cause of the discrepanacy is currently unknown.
 During the time of breaking vaccuum we decided to attempt everal upgrades to the apparatus such as adding a gate valve between the pumping tower and the zeeman window and redesigning the nozzle source to incorporate a heat shield around the heating element to produce a more even heating environemnt along the nozzle
@@ -266,6 +307,8 @@ Our lab relies heavily upon the use of injection locked lasers \hl{ref}
 
 \subsubsection{Overview}
 
+The first stage of laser cooling happens on the 1S0 - 1P1 transition which is separated by approx 461 nm. We generate this light by amplifying and frequency doubling 922 nm light.
+
 Generation of 461 nm
 	Overview
 		isotope shifts
@@ -277,6 +320,20 @@ Generation of 461 nm
 	Diagram
 
 \subsubsection{922 nm master}
+
+The master is a Sacher Lync 922 nm IR diode laser in a Littman Metcalf ECDL configuration. 
+As shown in figure something, the light from this diode is shaped and dircted into a fiber optic cable (model?). 
+
+Light is coupled into the fiber, then on the output goes through an AOM which detunes the diffracted order by (how much?). The diffracted and zeroth order are then separated with the unshifted beam sent towards the MOT generation subsystem and the shifted light towards the Zeeman subsystem.
+
+The output of the 922 light has sideband directly on it from a high-pass filter coupled directly to the laser diode.
+
+These sidebands are used to lock perform the PDH lcoking necessary for locking the cavity length. Once 461 nm light has been generated using the MOT subsystem, a small portion is picked off and used to interrogate a saturated absorption cell. Using frequency modulated Doppler-Free saturated absorption we generate an error signal which is used to complete the feedback loop and maintain the frequency position of the complete 461 nm system.
+Figure outlines this process.
+
+
+
+
 
 922 master specifics
 	description
@@ -291,47 +348,7 @@ Generation of 461 nm
 			note that addition of this slow lock enabled the experiment to stay locked for upwards of 24 hours at a time. As expected, such an increase in stability has greatly improved our ability of taking data.
 		main lock circuit
 		RF source?
-
-\subsubsection{MOT subsystem}
-
-MOT light path
-	Description
-	Components
-		TA
-		Cavity
-		AOMs
-		Shutters
-	Tips
-		advisable to peak up alignment on a daily basis 		
-		fairly robust but must keep an eye on as power may fluctuate by as much as 15 percent over the course of a day
-	
-	MOT TA
-		Description
-			who built
-		Components
-			Mounts
-			Optics
-			Circuits
-				current control board
-				temp control board
-					note the thermistor in use
-		Typical running values
-			in power
-			out power
-			TA current
-			TA temp
-		Tips
 		
-	Cavity
-		Description
-			who built
-		Components
-			Optics
-			Circuits
-				PDH lock
-		Typical running
-		Tips
-
 \subsubsection{Zeeman subsystem}
 
 Zeeman path
@@ -373,6 +390,50 @@ Zeeman path
 				PDH lock
 		Typical running
 		Tips
+
+\subsubsection{MOT subsystem}
+
+The MOT path generates light used for a multitude of processes including the first MOT stage, the 2D collimator, the absorption imaging, and the blow away beam, as shown in fig blah. 
+
+MOT light path
+	Description
+	Components
+		TA
+		Cavity
+		AOMs
+		Shutters
+	Tips
+		advisable to peak up alignment on a daily basis 		
+		fairly robust but must keep an eye on as power may fluctuate by as much as 15 percent over the course of a day
+	
+	MOT TA
+		Description
+			who built
+		Components
+			Mounts
+			Optics
+			Circuits
+				current control board
+				temp control board
+					note the thermistor in use
+		Typical running values
+			in power
+			out power
+			TA current
+			TA temp
+		Tips
+		
+	Cavity
+		Description
+			who built
+		Components
+			Optics
+			Circuits
+				PDH lock
+		Typical running
+		Tips
+
+
 	
 	
 
@@ -534,7 +595,7 @@ The sheet/dimple arm can take two configurations as it's name suggests. The shee
 
 Formula for ramp
 
-\subsubsection{Alignment procedure} \label{sssec:1064_align}
+\subsubsection{Alignment Procedure} \label{sssec:1064_align}
 
 Will focus on independent arm alignment of loading trap and sheet trap
 
@@ -650,7 +711,7 @@ Components
 
 Give ref to appendix for in-depth technical discussion of image processing
 
-Ref to App A on imaging system
+Ref to Mi App A on imaging system
 
 Discuss time of flight pixel calibration as well as the optical magnification system put in place by Mi
 
