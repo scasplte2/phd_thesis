@@ -31,7 +31,7 @@ This section should cover band structure and refer to the types of wavefunctions
 Until recently, experiments on the Neutral apparatus were confined to work with bulk gases in an optical dipole trap. While optical dipole traps are useful for efficient evaporation and thermalization of an ultracold gas, experiments with Feshbach molecules in ODTs suffer from a high rate of inelastic collisions. \cite{Kohler2006}. The association of these molecules in an optical lattice has been shown to slow these processes since atoms must tunnel from site to site and can be pinned in sufficiently deep potentials \cite{Thalhammer2006,Syassen2007}. In order to gain a quantitative understanding of these processes we will briefly outline the relevant lattice physics for ultracold bosons in an optical lattice.
 
 An optical lattice is created by counterpropagating two laser beams to form a standing wave pattern, which for two plane waves in one dimension results in a periodic potential given by 
-	\begin{equation} \label{eq:1dlattice}
+	\begin{equation}
 		 V(x) = V_{lat} \; \sin^2(k_L x)
 	\end{equation}
 where $V_{lat}$ is the lattice depth determined by the polarizability of the atom for a given trapping wavelength $\lambda$ and laser intensity $I$, and $k_L$ is the lattice wavevector . This potential can be readily extended to three dimensions using two additional pairs of counterpropagating laser beams along the $y$ and $z$ directions which results in a 3D cubic lattice. Depth of the trapping potential, $V_{lat}$, is controlled by varying the intensity of the lattice beams. Clever arrangements of laser beam propagation, in addition to phase and polarization control of the trapping fields, can extend these standing wave potentials to a number of non-trivial geometries such as triangular, checkerboard, and dimerized lattices \cite{Greiner2003}.
@@ -41,7 +41,7 @@ Periodic potentials are powerful because they break the translational invariance
 
 \begin{figure} \label{fig:bandStructure}
 	\centerline{
-	\includegraphics[width=\textwidth]{Fig2_bandStructure.pdf}}
+	\includegraphics[width=\textwidth]{lattice_bandStructure.pdf}}
 	\caption{1D band structure as a function of lattice depth}{One dimensional band structure for an optical lattice as the lattice depth is increased. The band energies are found by solving the Schr\"{o}dinger equation using the Bloch functions of Eq.\;\ref{eq:blochFunc}.}
 \end{figure}
 	
@@ -79,7 +79,7 @@ Using Eq.\;\ref{eq:JandU} we have calculated the expected tunneling rates and in
 
 \begin{figure} \label{fig:fig_JandU}
 	\centerline{
-	\includegraphics[width=\textwidth]{Fig3_JandU.pdf}}
+	\includegraphics[width=\textwidth]{JandU.pdf}}
 	\caption{Calculated interaction energies and tunneling rates for each isotope of strontium}{The interaction energy shows a large variation because of its dependence on the s-wave scattering length. However, the tunneling rate is approximately the same for all isotopes since the change in mass is negligible between isotopes.}
 \end{figure}
 	
@@ -123,7 +123,7 @@ Fig.\;\ref{fig:KDoscillations} shows a typical Kapitza-Dirac oscillation pattern
 
 
 \begin{figure} \label{fig:KDoscillations}
-	\includegraphics[width=\textwidth]{Fig7_kdOsc.pdf}
+	\includegraphics[width=\textwidth]{lattice_kdOsc.pdf}
 	\caption{Evolution of plane wave population using Kapitza-Dirac}{Left: Time of flight slices for several realizations of Kapitza-Dirac with varying hold time in the lattice. Right: Normalized population from fits of time-of-flight images. Oscillations are fit with a decaying sinusoidal and the best-fit frequency is used to determine the lattice depth.}
 \end{figure}
 	
@@ -141,14 +141,13 @@ where $E_n(q)$ is the energy of the Bloch state at a specified $q$ and $n$ shown
 
 \begin{figure} \label{fig:heatingRates}
 \centerline{
-	\includegraphics[width=\textwidth]{Fig8_heatRates.pdf}}
+	\includegraphics[width=\textwidth]{lattice_heatRates.pdf}}
 	\caption{Evolution of condensate fraction over time after adiabatically ramping on the lattice to 9\,E$_r$. a,b) Comparison of total number and condensate fraction for a sample held in the optical dipole trap (red squares) or in a deep lattice (blue circles). c) Time of flight images after ramping on the lattice and diabatically projecting back to plane wave states. }
 \end{figure} 
 	
 
 
 \subsubsection{Heating of a quantum degenerate gas}
-\label{sssec:sideband_cooling}
 
 Creation of a Mott insulator and the results showing unacceptable heating rates
 

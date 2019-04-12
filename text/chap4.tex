@@ -298,12 +298,12 @@ where the laser-frequency dependence of the collision-event rate constant, $K$, 
    {2 N_0 \langle K \rangle V_2\over \Gamma V_1^2}(1-\rm{e}^{-\Gamma t})}
 \end{equation}
 where $N_0$ is the number of trapped atoms at the beginning of the PAS interaction time. The effective trap volumes $V_q$ are 
-\begin{equation}\label{eq:effectivevolumes}
+\begin{equation}
 	V_{\text{q}}=\int_{\mathrm{V}} d^3r \, e^{-\frac{qU(\mathbf{r})}{k_{B}T}},
 \end{equation}
 for trapping potential $U(\mathbf{r})$. 
  $\langle K \rangle$ is the trap-averaged collision event rate constant
-\begin{eqnarray}\label{equationKeffective}
+\begin{eqnarray}
   \langle K \rangle&=& \frac{1}{V_{2}}\int_{\mathrm{V}} d^3r \,e^{-\frac{2U(\mathbf{r})}{k_{B}T}} \nonumber \\
   &&\times \frac{1}{h\,Q_{T}} \int_{0}^{\epsilon_{\text{max}}({\mathbf{r}})}d\epsilon \vert S\vert^2 \,e^{-\epsilon/k_{B}T},
 \end{eqnarray}
@@ -319,7 +319,7 @@ Equation (\ref{equationKeffective}) provides the correct thermal average when th
 %More details are provided in App.\ \ref{sectionappendix}). This approach was found to be sufficient for describing two-photon spectroscopy to a more deeply bound molecular level in $^{88}$Sr \cite{mmp08}.
 
 Bohn and Julienne \cite{bju96} provide an expression for $\vert S(\epsilon,\omega_1,\omega_2,...)\vert^2$ for a collision on the open channel of two ground state atoms (g) with total energy $\epsilon$ leading to loss-producing decay from the excited state $b_1$ with rate $\gamma_1$ (Fig.\ \ref{PASDiagram}),
-\begin{eqnarray}\label{equationSprob}
+\begin{eqnarray}
   \vert S\vert^2 =   \hspace{2.5in}&&\\
   {(\Delta_2+\epsilon/\hbar)^2{\gamma}_1{\gamma}_s \over
   	\left[(\Delta_1+\epsilon/\hbar)(\Delta_2+\epsilon/\hbar)-\frac{\Omega_{12}^{2}}{4}\right]^2+\left[ \frac{\gamma_1+\gamma_s}{2}\right]^2(\Delta_2+		 	\epsilon/\hbar)^2}. &&\nonumber
@@ -332,7 +332,7 @@ ${\gamma}_{1}=2\gamma_{\text{atomic}}$, where $\gamma_{\text{atomic}}=4.7\times 
 where the optical length ($l_{\text{opt}}\propto I_1$) is related to the overlap between the initial colliding state and $b_1$, and $k=(2\mu \epsilon)^{1/2}/\hbar$. We take the intermediate state $b_1$ as the $\nu=-2$ state, for which $l_{\text{opt}}/I=(1.5\pm0.3)\times 10^4\,a_0\mathrm{/(W/cm^2)}$ \cite{bmc14}, where $a_0=5.29\times 10^{-11}$\,m is the Bohr radius.
 
 For the experiments reported here, we maintain significant intermediate-state detuning, $\Delta_1$, for which $|\Delta_1|\gg |\Omega_{2,12}|$. Thus we are in a Raman configuration, and not in the Autler-Townes regime \cite{mmp08}.  In the Raman regime, Eq.\ \ref{equationSprob} shows a maximum near two-photon resonance at $\Delta_2+\epsilon/\hbar =\Omega_{2,12}^2/4\Delta_1$. Following a treatment discussed recently for a similar experiment in calcium \cite{Pachomow2017a}, if the detuning is restricted to near two-photon resonance then $\vert S\vert^2$ can be approximated as a Lorentzian
-\begin{eqnarray}\label{equationSprobLorentzian}
+\begin{eqnarray}
  \vert S\vert^2 \approx {A(\epsilon) \over
  \left(\Delta_2+\epsilon/\hbar-\frac{\Omega_{12}^{2}}{4(\Delta_1+\epsilon/\hbar)}\right)^2+\left[ {\Gamma_L(\epsilon)}/{2}\right]^2},
 \end{eqnarray}
@@ -545,7 +545,7 @@ Figure \ref{Fig:ShiftsofLinesWithIntensity} shows
 the resulting resonance positions, $E'_{b2}$, versus twice the single-beam intensity, $2I=I_{689}$. The shift in molecular binding energy is linear with intensity over the explored range, but varies greatly in magnitude and sign. From linear fits, we extract the AC Stark shift parameter $\chi_{689}(\Delta_1)$ through $E'_{b2}\equiv E_{b2}+h\chi_{689}(\Delta_{1}) I_{689}$ (Fig.\ \ref{Fig:ACStark}).
 
 In the experiment, the total 689-nm intensity oscillates with 100\% contrast according to $I_{\text{total}}=I_1+I_2+2\sqrt{I_1I_2}\cos \left[(\omega_1-\omega_2)t \right]=2I\left\{1+\cos \left[(\omega_1-\omega_2)t \right]\right\}$. The functional form we use to fit the AC Stark shift reflects the time average of the intensity and neglects the interference term. To confirm that this is the correct description, we numerically solved the time-evolution for a three-level system with similar optical couplings and oscillating optical intensity as present during two-photon PA of a halo state. The Hamiltonian is
-\begin{eqnarray}\label{Eq:ThreeLevelHamiltonian}
+\begin{eqnarray}
 H=
 \left(
     \begin{array}{ccc}

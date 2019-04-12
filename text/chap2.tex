@@ -165,29 +165,95 @@ Where the heck does that calibration for the MOT coils come from??
 
 
 \section{Vacuum system and atom source} \label{sec:vac}
+
+\paragraph{Overview}
 	
 The Neutral apparatus is built around a stainless steel chamber positioned above the table to facilitate optical access. 
+
+Pressuess within this chamber ar typically of the order blah
+
 Details on the original construction can be found in Natali's thesis so this section is mainly devoted to covering the few changes which have occured in the intervening years.
 
-Figure \hl{something} shows a complete overview of the chamber assembly. 
-The vacuum system can be decomposed into several subcomponents. 
-From left to right, the system starts with an oven source based around a custom nozzle design, we have a 6 way tee as the main body for the atom source, a 2D coliamtor, and the entry port of the zeeman slower.
-There is a differential pumping tube annd needles on he atom source. Throught he zeeman slower we connect to the main chamber which is a custom 304 stainless steel body supported by the cryo tower which is the entry point for the zeeman laser beam and houses an titanium sublimation catridge (Model:??) .
-From left to right these we label these
+% Complete assembly
+\noindent The vacuum system can be decomposed into several subcomponents, namely
 \begin{enumerate}
 \item Atom source (assembly of atom oven housed within the source chamber)
 \item 2D collimator
 \item Zeeman slower
 \item Science chamber
-\item Cryo tower (housing a Titanium sublimation cartridge)
+\item Cryo tower
 \end{enumerate}
+Figure \ref{fig:vacuumSystem} shows a complete overview of these assemblies which form our vacuum system.
+	\begin{figure} 
+		\centerline{
+		\includegraphics[height=0.75\textheight]{strontium_properties.pdf}}
+		\caption{Complete Neutral apparatus vacuum system}
+		\label{fig:vacuumSystem}
+	\end{figure}
+Figures \ref{fig:sourceSideView} - \ref{fig:cryoTower} also show various views of the atom source \& 2D collimator and cryo tower assemblies. Note the red markers and green arrows denote the positions of heater bands and thermo-couples respectively. For more information please see App. \ref{app:breakingVacuum}.
+	\begin{figure} 
+		\centerline{
+		\includegraphics[height=0.4\textheight]{vacuum_source_assembly.png}}
+		\caption{Source assembly - side view}
+		\label{fig:sourceSideView}
+	\end{figure}
+	
+	\begin{figure} 
+		\centerline{
+		\includegraphics[height=0.4\textheight]{vacuum_source_rearView.png}}
+		\caption{Source assembly - rear view}
+		\label{fig:sourceRearView}
+	\end{figure}
+	
+	\begin{figure} 
+		\centerline{
+		\includegraphics[height=0.5\textheight]{vacuum_2D_collimator.png}}
+		\caption{2D collimator assembly}
+		\label{fig:assembly_2Dcoll}
+	\end{figure}
+	
+	\begin{figure} 
+		\centerline{
+		\includegraphics[width=1.25\textwidth]{vacuum_tower.png}}
+		\caption{Cryo tower assembly}
+		\label{fig:cryoTower}
+	\end{figure}
+From left to right, the system starts with an oven source based around a custom nozzle design which uses a rod heater to vaporize elemental strontium.
+Next, there is a 6 way tee used for the optical molasses step which we refer to as the 2D collimator. 
+From here atoms pass through a narrow differential pumping tube and into the entry port of the Zeeman slower where a majority of the laser cooling takes places. 
+Following the Zeeman slower, atoms enter the science chamber where a plethora of lasers are used to manipulate and probe their behavior.
+Chief among these are the MOT sequences and the high intensity far off-resonant optical dipole traps used for the final stage of confinement.
+Lastly, the body of the science chamber is supported by the cryo tower which houses a titanium sublimation catridge (model: \hl{somethgin}) and is the entry point for the Zeeman laser.
+It is worth explicitly noting that this Zeeman window is necessarily directly opposite the atomic source and therefore is subject to a flux of hot atomic strontium which will eventually coat the vacuum side.
 
-Additioanlly, Fig.s \hl{something and something} show different views of the Atom source \& 2D collimator and cryo tower. 
-Fig \hl{something} defines a coordinate system and directional labels used throughout this thesis. We also show the orientation of various lasers through the science chamber to orient the reader.
+While the source and science chamber have remained largely unchanged since the publication of Natali's thesis, several key improvements and events have occurred over the last few years\footnote{As of April 2019, the most up to date CAD drawing for the Neutral apparatus is located at \texttt{KillianDrobo:\textbackslash Neutral\textbackslash Laboratory Systems\textbackslash Vacuum Chamber\textbackslash Neutral Chamber\textbackslash 2017.12.26\_strontiumvacuum35\_latticetable.dwg}. Additionally, please consult the README file located in this folder for further information.}.
+These differences will be the subject of our discussion in the latter part of this section.
+
+
+% Orientation of lasers to chamber 
+Fig \hl{something} defines a coordinate system and directional labels used throughout this thesis. 
+We also show the orientation of various lasers through the science chamber to orient the reader.
 Zeeman beam enters through a certain port in the cryo tower.
 
-Companion figures to those shown in Fig hl{above} are also available in Fig \hl{something} with the positions of heater coils and thermocouples labeled and catalogued which were used for a recent bakeout performed in December 2017. 
+% Partial view of assemblies
+Companion figures to those shown in Fig \hl{above} are also available in Fig \hl{something} with the positions of heater coils and thermocouples labeled and catalogued which were used for a recent bakeout performed in December 2017. 
 Appendix \hl{something} covers the process of this bakeout in greater detail.
+
+\paragraph{Recent changes}
+% Addition of platform
+
+% Running out of strontium
+
+\paragraph{Clarifications from de Escobar thesis}
+
+% cryo tower
+Thesis references two version of the high vacuum tower. The second version is currently in use and was installed around the time the lab moved into it's new location
+Cryo tower and titantium sublimation catridge installed. This assembly is referred to as the "second version of HV chamber" in Natali's thesis. This apparatus was 
+
+% hypodermic needle nozzle
+Installation of an improved nozzle design in late 2011. The primary
+
+ incorporating an array of collimating tubes. Research and modeling of this design 
 
 \paragraph{Ablating strontium off window}
 
@@ -206,16 +272,14 @@ Resolve
 
 While unchanging during the time of this phd we have learned a number of crucial 
 
-Pressuess within this chamber ar typically of the order blah
+
 
 
 	
 
-\noindent Vacuum system is composed of several key components listed below
-
 
 The original drawings of these components can be found in App. A.10 of \cite{MartinezdeEscolar2010} along with detailed information of the window and ion gauge placements. 
-While the source and science chamber have remained mostly unchanged since this publication, several key improvements and events have occurred over the last few years\footnote{As of April 2019, the most up to date CAD drawing for the Neutral apparatus is located at \texttt{KillianDrobo:\textbackslash Neutral\textbackslash Laboratory Systems\textbackslash Vacuum Chamber\textbackslash Neutral Chamber\textbackslash 2017.12.26\_strontiumvacuum35\_latticetable.dwg}. Additionally, please consult the README file located in this folder for further information.}.
+
 Firstly, when moving labs in 2011 a titantium sublimation pump (model?) was installed in the cryo tower which replaced version one of the high vacuum system shown in Fig. A43 of \cite{MartinezdeEscolar2010}. 
 Figs blah - blah show an assembled view of the current apparatus with additional views of the cryo tower and source chambers for clarity. 
 Additionally, the original atom oven was upgraded to include capillary tubes constructed from AWG-21 hypodermic needles (model??) to further collimate the atomic beam directly out of the oven \cite{Mazurenko2010}. Fig blah shows a view of the oven currently in the Neutral apparatus and the capillary tubes that were added.
@@ -230,42 +294,7 @@ Description
 	very good resource for design considerations of a similar experiment in Francy's masters chapter 3
 	Appendix A.10 of Natali's thesis gives specifics about the construction
 		the most notable upgrade to the apparatus since Natali's description was the addition of an extensive second layer surrounding the main chamber. The primary purpose was for shaping the optical dipole and lattice traps but due to its proximity to the chamber, nearly every laser which illuminates the atoms is laucnhed from this platform. Details for the construction of this 
-Components
-	Atom Source
-	2D collimator
-	Zeeman slower
-	main chamber
-	Cryo tower
-	Pumps
-		Ion pumps
-		Ti-Sub pump
-	Gauges
-		Positions?
-History
-	
-%% Paragraphs
-Atom source
-	Reference
-	Description
-	
-	
-Zeeman slower
-	Reference
-	Description
-		constructed by Pascal
-		ask francy for refs or in masters?
-		
-Main chamber
-	reference
-	description
-	Table of ports with windows
-	
-All the pieces
-	Ion pump - model?
-	firerod - model?
-	atom shutter - model?
-	gate valves - model?
-	ti sub
+
 	
 	
 	
@@ -282,13 +311,20 @@ These concerns are exacerbated by an our finding that increased stability came w
 
 Drawings for the atom source currently in use on the experiment (as of March 2019) are available in the App \hl{vaccuum}. This oven design is labeled "new nozzle summer 2010", and outlines a heat shield that was ultimately abandoned due to lack of a mechanism to secure it to the base flange. This led to the heat shield falling off when attempting to secure the flange in the apparatus. We hypothesized that lack of a heat shield led to uneven distribution of the thermal energy throughout the oven so we undertook the design of a new oven design to address this issue.
 
-In the late fall of 2017 the neutral apparatus had been under vaccuum for approx 6? years and ater extensive testing we determined that we likely ran out of elemental strontium within the atomic source. This led us to breaking vaccuum, reloading strontium, and performing a small bake down procedure to restablish our presssure. ripor to this event we enjoyed lifetimes on the ordr of 25s s measured by background lifetimes measurements within our IR optical dipole trap. Apprximately a year affter this event we have observed lifetimes on the order of approx 15s, the cause of the discrepanacy is currently unknown.
-During the time of breaking vaccuum we decided to attempt everal upgrades to the apparatus such as adding a gate valve between the pumping tower and the zeeman window and redesigning the nozzle source to incorporate a heat shield around the heating element to produce a more even heating environemnt along the nozzle
-De to timing we did not install the gate valve before re-establishing vaccuum. The hope in doing this upgrade was to provide a better method for replacing the end cap window which the atom source directly points at. During the course of our experiments this window slowly accumulates a thin layer of strontium which may act as a parital mirror and attentuate the crucially important zeeman beam. As a note of interest, it was shared through private communication with professor Killain that pulsed 532 nm light (such as from a q-locked Verdi system used in the Plasma laboratory) might vaporize the strontium off the window and restore any loss in power. Using a test appartus we were able to verify that indeed we can ablate the strontium off of a coated window, as shown in figure something.
+In the late fall of 2017 the neutral apparatus had been under vaccuum for approx 6? years and ater extensive testing we determined that we likely ran out of elemental strontium within the atomic source. 
+This led us to breaking vaccuum, reloading strontium, and performing a small bakeout procedure to restablish our presssure. ripor to this event we enjoyed lifetimes on the ordr of 25s s measured by background lifetimes measurements within our IR optical dipole trap. 
+Apprximately a year affter this event we have observed lifetimes on the order of approx 15s, the cause of the discrepanacy is currently unknown.
+During the time of breaking vaccuum we decided to attempt everal upgrades to the apparatus such as adding a gate valve between the pumping tower and the zeeman window and redesigning the nozzle source to incorporate a heat shield around the heating element to produce a more even heating environemnt along the nozzle. 
+De to timing we did not install the gate valve before re-establishing vaccuum. 
+The hope in doing this upgrade was to provide a better method for replacing the end cap window which the atom source directly points at. 
+During the course of our experiments this window slowly accumulates a thin layer of strontium which may act as a parital mirror and attentuate the crucially important zeeman beam. 
+As a note of interest, it was shared through private communication with professor Killain that pulsed 532 nm light (such as from a q-locked Verdi system used in the Plasma laboratory) might vaporize the strontium off the window and restore any loss in power. Using a test appartus we were able to verify that indeed we can ablate the strontium off of a coated window, as shown in figure something.
 This promising test led us to install an optical traversal port, shown in figure, connecting the two labs. Unfortunately, while flashing the verdi on a small section of the neutral experimental window we found that the energy needed to ablate the strontium was accompanied by deformation of the optical surface of the window. We attritbute this to the thicknes of the coating as the key difference between the experiment and the Neutral machine.
 With that fun aside, we oder an extra window and the gate valve to replicate the system put in place on the Rydberg appartus so that future needs to repalce the window coul be accomplished by simply back filling the chamber with dry nitrogen or argon, closing the gate valve and simply replacing it quickly without the need to expose the main chamber body to direct atmospheric gas. 
 
-Reudction of the time the window was exposed to hot strontium led us to install a small servo motor driving the valve (model something) and integrate this mechanism into the experimental runtime. This allows the shutter to only be open during the times that we are actively trapping atoms. Details of the servo motor trigger integration into the neuKLEIN control system are available in App \hl{somewhere}.
+Reudction of the time the window was exposed to hot strontium led us to install a small servo motor driving the valve (model something) and integrate this mechanism into the experimental runtime. 
+This allows the shutter to only be open during the times that we are actively trapping atoms. 
+Details of the servo motor trigger integration into the neuKLEIN control system are available in App \hl{somewhere}.
 
 The second improvement that we attempted was to redesign the nozzle to include a heat shield. A CAD image is shown in figure. Unfortunately, due to the high tolerances of the base flange and surrounding enclosure the machining required for this custom piece was deemed prohibitvely expensive. A prototype was design following the machine drawings available in App \hl{someplace} but was abandoned due to a bend that developed in the tubing which holds the fire rod. 
 
@@ -301,14 +337,14 @@ During the course of realignment of having the vaccuum chamber open, we took the
 
 	\begin{figure}
 		\centerline{
-		\includegraphics[height=0.75\textheight]{ch_2vacuum_IMG_20171103_184vacuum_230.jpg}}
+		\includegraphics[height=0.75\textheight]{vacuum_IMG_20171103_184vacuum_230.jpg}}
 		\caption{Typical flourescence of Zeeman beam looking down 2D collimator}{This view is found using a 2 in mirror aligned along the path of the first pass of the 2D collimator (near mirror 3 in the diagram), looking down the collimator tube. While looking at this angle, we are able to see the Zeeman beam move across the atom column when moving the last turning mirror. Reduction in this fluorescence signal from that shown was the primary indicator of lack of strontium in the source.}
 		\label{fig:2d_coll_flourescence}
 	\end{figure} 
 	
 	\begin{figure}
 		\centerline{
-		\includegraphics[width=\textwidth]{ch2_ablated_sr2.jpg}}
+		\includegraphics[width=\textwidth]{vacuum_ablated_sr2.jpg}}
 		\caption{Ablating strontium coating from window}{Comparison of the before (left) and after (right) when using a pulsed 532 nm Verdi to ablate strontium. The residue visible in the after image was due to a higher energy pulse which was reduced as we moved towards the center of the window.}
 		\label{fig:ablating_strontium}
 	\end{figure} 
