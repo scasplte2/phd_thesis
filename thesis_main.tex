@@ -10,15 +10,18 @@
 \usepackage{bm}			% bold math
 \usepackage{amssymb}	% math package
 \usepackage{amsmath}	% math package
+\usepackage{booktabs}
+\usepackage{lscape}
 %\usepackage{parskip}	% helps tidy up paragraphs
 %	\setlength{\parindent}{35pt}
 \usepackage{multirow}	% mutliline cells in tables
 \usepackage[usenames,dvipsnames]{xcolor}   % add color to text
 %\usepackage[caption=false]{subfig}   	   % Creates subfigures
-\usepackage[numbers]{natbib}		   % Formats references
-	\setcitestyle{square}
+\usepackage[square,numbers,sort&compress]{natbib}		   % Formats references
 \usepackage[colorlinks,citecolor=darkgray,linkcolor=.]{hyperref} % Hyperlinks references
 \usepackage[normalem]{ulem} % allows for highlighting, use normalem to protect \emph
+
+\interfootnotelinepenalty=10000 % make maintaining a single footnote a higher priority, default is 100
 
 % this stuff came with the RU thesis template
 \usepackage[toc,page]{appendix}
