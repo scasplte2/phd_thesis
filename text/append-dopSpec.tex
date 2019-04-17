@@ -1,11 +1,71 @@
-\chapter{Miscellaneous tips and tricks}
-"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+\chapter{Doppler Free Spectroscopy} \label{ch:dopSpec}
+Below we will quickly outline the derivation of the resonance condition when performing Doppler free spectroscopy.
+This method is commonly used when stabilizing a laser frequency to an atomic transition.
+In short, counter-propagating laser beams in a pump-probe configuration will can "burn a hole" through an atomic sample and lead to a Lamb dip. \hl{refs}
 
-\section{Alignment of GHz AOM}
-\section{Using the Picoscope in Labview(TM)}
-\section{Liquid crystal retarder}
-\section{Newport(TM) optomotion control}
-\section{Fast analog lock for 689 nm}
-\section{Porta CoM technique}
-\section{Measuring Rabi frequencies}
-\section{CAD drawing for shallow angle Bragg setup}
+Below we'll derive the resonance condition for when the two lasers will be resonant with the same velocity class.
+When used in conjunction with frequency modulation, an error signal useful for laser locking can be derived.
+Therefore, the resonance condition effectively defines the relationship of the laser lock point and any potential offsets.
+
+The first section will cover the case where the two lasers share the same frequency as well as when one beam has an additional offset.
+Finally, for the case of the 461 nm sat. abs., we'll consider the resonance condition when using a Zeeman tunable transition. 
+
+\section{Common setup}
+Consider two laser beam at frequencies $f_1 \& f_2=f_1 + \delta$, driving a 2-level atom with $v\neq0$ and transition energy $E_0=hf_0$.
+Then the resonance condition for $f_1 \& f_2$ is given by
+\begin{equation}
+	f_1 = f_0 +  \vec{k}_1 \cdot \vec{v}_1 \qquad f_2 = f_0 +  \vec{k}_2 \cdot \vec{v}_2
+\end{equation}
+Assume the beams are counter propagating such that $k_1=-k_2=k$, then the resonance condition becomes
+\begin{equation}
+	f_1 = f_0 +  k v_1 \qquad f_2 = f_0 - k v_2
+\end{equation}
+Finally, consider the case when the 2 beams interact with the same velocity class of atoms $v_1=v_2=v$ then
+\begin{equation}
+	f_1 = f_0 +  k v \qquad f_2 = f_0 - k v
+\end{equation}
+Rearranging these equation
+\begin{equation}
+\begin{split}
+	k v = f_1 - f_0 \qquad k v &= f_0 - f_2 \\
+							  &= f_0 - f_1 - \delta
+\end{split}
+\end{equation}
+Finally, combing these equations we find
+\begin{equation}
+\begin{split}
+	f_1 - f_0 &= f_0 - f_1 - \delta \\
+		 2f_1 &= 2f_0 - \delta \\
+  f_1  &=   f_0 - \frac{\delta}{2}
+\end{split}
+\end{equation}
+Therefore, if we use a single laser where $f_{\text{laser}}=f_1$ and lock the frequency such that $f_1 \& f_2$ are resonant with the same velocity class of atoms then the laser frequency will be given by $f_{\text{laser}}=f_0 - \delta/2$.
+
+We can also see what would happen if $f_1=f_2=f+\delta$ then instead of locking to $f_0-\delta/2$ the resonance condition would become $f_{\text{laser}}=f_0-\delta$.
+
+\section{Addition of Zeeman shift}
+Expanding on the previous case we now consider the effets of adding a magnetic field.
+This additon will let us controllably tune the resonance condition and thereby change the frequency of the locked laser.
+As before we consider two laser beam, $f_1 \& f_2$ where $f_2 = f_1 + \delta$, and take the beams as counter propagating and interacting with teh same velocity class.
+With the additional Zeeman shift, the previous resonance condition becomes
+\begin{equation}
+\begin{split}
+	f_1 &= f_0 +  \vec{k}_1 \cdot \vec{v}_1 + g_j \mu_B m_1 B = f_0 + k v + g_j \mu_B m_1 B \\
+	f_2 &= f_0 +  \vec{k}_2 \cdot \vec{v}_2 + g_j \mu_B m_2 B = f_0 - k v + g_j \mu_B m_2 B \\
+\end{split}
+\end{equation}
+where $g_j$is the Lande g-factor, $\mu_B$ is the Bohr magneton, $m_i$ is a specified magnetic sub-level, and B is the magnetic field.
+Proceeding as we did previously, with the additional assumption that $m_1=m_2=m$, then we find
+\begin{equation}
+\begin{split}
+	f_1 - f_0 - g_j \mu_B mB &= f_0 - f_1 - \delta + g_j \mu_B mB \\
+		 2f_1 &= 2f_0 - \delta + 2 g_j \mu_B mB \\
+  f_1  &=   f_0 - \frac{\delta}{2} + g_j \mu_B mB
+\end{split}
+\end{equation}
+As before, the resonant frequency depends on the constant offset $\delta$ but now applying a controllable B-field we can tune the frequency $f_1$.
+Therefore, once we include feedback to maintain $f_{\text{laser}}=f_1$ then the tunability gives a know for dynamically varying the laser frequency.
+
+Note that the above case has only been considered for a simple two-level system, $m_1=m_2=m$.
+Physical systems can simulate this case if the light polarization is well determined.
+However, non-pure polarization can result in coupling to additional Zeeman sub-levels and may lead to "crossover" resonances.
