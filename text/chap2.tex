@@ -62,7 +62,11 @@ This allows us to take advantage of the long lifetime of the metastable $^3P_2$ 
 One drawback to this process is the long timescale required for a significant number of atoms to accumulate in the magnetic trap compared to the MOT.
 However, the lifetime of the magnetic trap is typically limited by background pressure (approx. 15 - 25s) and therefore the maximum number of atoms which can be held by the magnetic trap is much greater than in the MOT. \hl{plots of loading between MOT and magnetic trap?}
 On average, an atom will fall into the $^3P2$ state after scattering $10^5$ photons from the $^1S_0\,\rightarrow\,^3P_1$ transition and even then, only 2 out of 5 of the magnetic sub-levels are trappable.
-Repumping is achieved via a 481 nm transition along the $(5s5p)^3P_2\,\rightarrow\,(5p^2)^3P2$ transition for approx. 50ms. 
+Repumping is achieved via a 481 nm transition along the $(5s5p)^3P_2\,\rightarrow\,(5p^2)^3P2$ transition for approx. 50ms.
+During the repumping exposure we continue to illuminate the cloud with 461 nm light but reduce the light intensity by an order of magnitude.
+We refer to this stage as the "cold" blue MOT and find that reduction of the intensity, while maintaining consistent laser detuning, increases the transfer efficiency into the red MOT stage.
+\footnote{We have explored ramping the laser intensity closer to atomic resonance as we expected reduced intensity at farther red-detuning to result in a weakened trapping force.
+However, we did not find any improvement with the added complexity of varying the blue laser frequency during this stage.}
 
 Once the atoms have been returned to the ground state, we begin a second MOT stage using the narrow intercombination transition $^1S_0\,\rightarrow\,^3P_1$ to cool below 1 mK.
 The $(5s5p)^3P_1$ state has a reasonably long lifetime of 21 $\mu$s ($\Gamma/2\pi=7.5$ kHz).
@@ -326,17 +330,12 @@ Sat. abs. shifter & 6 & Sat. abs & $\delta_{SA}$ & +317.3 & \begin{tabular}[c]{@
 \end{table}
 \end{landscape}
 
-\begin{equation} \label{eq:461freqs}
-\begin{split}
-	f_{motSys}  &= 2f_{922} \\
-	f_{zeeSys}  &= 2(f_{922} + \delta_{zeeman}) \\
-	f_{2dColl}  &= f_{motSys} \\
-	f_{bMOT}    &= f_{motSys} + \delta_{bMOT} \\
-	f_{img}     &= f_{motSys} + \delta_{img2} + \delta_{img1} \\
-	f_{BA}      &= f_{motSys} + \delta_{img2} + \delta_{BA} \\
-	f_{SA}      &= f_{motSys} + \delta_{SA}
-\end{split}
-\end{equation}
+\begin{align} \label{eq:461freqs}
+	&f_{\text{motSys}}  = 2f_{922}          & &f_{\text{zeeSys}}  = 2(f_{922} + \delta_{\text{zeeman}}) \nonumber \\
+	&f_{\text{2dColl}}  = f_{\text{motSys}} & &f_{\text{bMOT}}    = f_{\text{motSys}} + \delta_{\text{bMOT}} \nonumber \\
+	&f_{\text{img}}     = f_{\text{motSys}} + \delta_{\text{img2}} + \delta_{\text{img1}} & &f_{\text{SA}} = f_{\text{motSys}} + \delta_{\text{SA}} \nonumber \\
+	&f_{\text{BA}} = f_{\text{motSys}} + \delta_{\text{img2}} + \delta_{\text{BA}}
+\end{align}
 
 Overall frequency control, $f_{922}$, is determined via the magnetically tunable saturated absorption cell.
 This magnetic tunability to control the 461 nm light frequency is well documented in section 2.2.1 of Natali's thesis \cite{MartinezdeEscolar2010} and section 2.1.1 of Pascal's thesis \cite{Mickelson2010b}.
@@ -344,16 +343,21 @@ A more recent undergraduate project explored optimizations of this scheme for th
 
 \paragraph{Changing isotopes} \label{para:change_iso}
 While the basic setup has not changed over the many years, we have recently moved away from the original current source based on a home built high-current FET amplifier to a Bi-polar current source (BOP) model blah. 
-This change allows for more expansive coverage of the $^1S_0\,\rightarrow\,^3P_1$ isotopes shifts. The previous current source limited our dual trapping capability to 87+88, and required an AOM to be tweaked and the sat. abs. to be realigned for trapping 84 and 86. 
-Using the BOP, we can now span the range of 84 and 87 within a single experimental cycle. 
+This change allows for more expansive coverage of the $^1S_0\,\rightarrow\,^1P_1$ isotopes shifts. The previous current source limited our dual trapping capability to 87+88, and required an AOM to be tweaked and the sat. abs. to be realigned for trapping 84 and 86. 
+Using the BOP, we can now easily shift the transition frequency over approx. $\sim$200 MHz which allows us to span the range between 84 and 87 within a single experimental cycle.
+Given the geometry of our solenoid, large currents are required to apply such large Zeeman shifts.
+This imparts a heat load 
+
+Give the direction of shift with sign of current increase
+ 
 However, trapping of 88 still requires the realignment of the sat. abs. 
 Care should be taken when adjusting this alignment as the paths are highly coupled as can be seen in Fig \hl{blah}. 
 Below we outline a straightforward algorithm for adjusting this alignment
 
 \begin{enumerate}
 \item Change the sat. abs AOM detuning using the potentiometer attached to the sat. abs. VCO. 
-\item Peak up the AOM alignment
-\item Fix alignment
+\item Peak up the AOM alignment to maximize power into the diffracted order
+\item
 \item Check depth of doppler profile
 \item Lock 922 master
 \item egin looking for atom flourescence in the chamber.
@@ -365,40 +369,116 @@ Below we outline a straightforward algorithm for adjusting this alignment
 
 
 \subsubsection{922 nm master}
+The master 922 laser is derived from Sacher Lynx 922 nm IR diode laser in a Littrow ECDL configuration.
+Fig. \hl{something}, shows a simplified optical schematic and Table \hl{some} gives typical running characteristics.
+Starting at the master output, the beam is shaped and sent through a two optical isolator before it is coupled into an optical fiber.
+The fiber output immediately goes through an AOM which detunes the diffracted order by approx. 250 MHz.
+The diffracted and zeroth order are then separated with the unshifted beam sent towards the MOT generation subsystem and the shifted light towards the Zeeman subsystem.
+We find it necessary to include dual isolators in front of the master laser and have found that inadequate alignment of these isolators can lead to significant instability in the frequency stability of the master which in turn leads the cavities to be unable to maintain a lock.
 
-The master is a Sacher Lynx 922 nm IR diode laser in a Littman Metcalf ECDL configuration. 
-As shown in figure \hl{something}, the light from this diode is shaped and directed into a fiber optic cable (model?). 
+Light out of the 922 master has sidebands added via a high bandwidth AC coupled current modulation directly to the laser diode 
+\footnote{This direct coupling means the RF must be turned on prior to enabling the DC current. 
+Conversely, the DC current should be disabled before turning off the RF source. 
+Failure to follow this order may result in destruction of the laser diode.}.
+The doubling cavities of the MOT and Zeeman sub-systems are length stabilized via these sidebands using the Pound-Drever-Hall (PDH) technique \hl{refs}.
+Currently, the RF source in use is a PTS 160 from Programmed Test Sources with an output power of 12 dbm and frequency of 39.55 MHz.
+This RF is sent to a 3-way power splitter (model: Mini Circuits ZSC-3-1) which sends roughly a third of the power ($\sim$ 4 dbm) to each of the MOT and Zeeman PDH mixers for demodulation. 
+The remaining third is attentuated by 3db before coupling directly to the laser diode.
 
-Light is coupled into the fiber, then on the output goes through an AOM which detunes the diffracted order by (how much?). The diffracted and zeroth order are then separated with the unshifted beam sent towards the MOT generation subsystem and the shifted light towards the Zeeman subsystem.
+In order to frequency stabilize the 922 nm, light from the MOT sub-system is used to interrogate a strontium heat pipe via frequency modulated Doppler-free saturated absorption from which an error signal of the $^1S_0\,\rightarrow\,^1P_1$ transition is derived.
+This error signal is sent into a homemade integrator circuit with a fast feedback path controlling the 922 nm diode current and a super low-bandwidth\footnote{This super low-bandwidth lock is based on an Arduino PID controller with a low time constant and was built by Josh Hill.
+We refer the interested reader to Josh's forthcoming thesis for details of this general purpose slow lock.} 
+path controlling for long term frequency drifts via the ECDL's internal PZT.
+We found that addition of this slow lock has significantly improved the continuous lock time of the 461 system. 
+When enabled the experiment may stay locked for upwards of 24 hours at a time. 
+As expected, such an increase in stability has greatly improved our ability to take data over long periods.
+A block diagram of this feedback path is shown in Fig. \ref{fig:922freqLock}.
+	\begin{figure}
+		\centerline{
+		\includegraphics[width=\textwidth]{922_locking_block diagram.jpg}}
+		\caption{922 nm frequency stabilization block diagram}{}
+		\label{fig:922freqLock}
+	\end{figure} 
 
-The output of the 922 light has sideband directly on it from a high-pass filter coupled directly to the laser diode.
+Additional details on the original construction of the 922 nm system can be found in App. A.8 of Natali's thesis \cite{MartinezdeEscolar2010}.
 
-These sidebands are used to lock perform the PDH lcoking necessary for locking the cavity length. Once 461 nm light has been generated using the MOT subsystem, a small portion is picked off and used to interrogate a saturated absorption cell. Using frequency modulated Doppler-Free saturated absorption we generate an error signal which is used to complete the feedback loop and maintain the frequency position of the complete 461 nm system.
-Figure outlines this process.
+\paragraph{Historical notes and tips for usage}
+\subparagraph{PZT driver and replacement:}
+The PZT driver provided by Sacher has become problematic over the laser few years.
+When varying the voltage we would occasionally hear a "clicking" noise from the Lynx laser as if the voltage was abruptly changing.
+We moved to a Thorlabs analog PZT driver (model: MDT694A) and have not had this issue since the switch.
+Note that the maximum voltage for the Sacher PZT is 100 V so the driver should be limited accordingly.
+Additionally, we attempted to use the newer Thorlabs MDT694B which incorporates an enable control on the voltage knob via a digital potentiometer instead of the analog pot of the "A" model.
+However, we quickly abandoned the "B" model as the resolution of the digitization caused the laser frequency to jump large amounts and we were unable to maintain the frequency lock.
 
+In \hl{date}, we found that the Lynx PZT was no longer responding to applied voltage.
+We believe this was caused by the afore mentioned "clicking" issue and was the motivation for changing PZT drivers.
+Details and pictures of the PZT replacement are available in App. \hl{something}.
 
+\subparagraph{Sacher temperature setpoint:}
+Unfortunately, the woes of the Sacher equipment have not been limited to their PZT controller.
+Great care must be taken when attempting to change the set temperature of the laser diode as it seems that the internal potentiometer does not maintain full contact such that when attempting to turn it ever so slightly the set point temperature may jump from approx 16 \degreeC to 11 \degreeC.
+Worse yet, we have observed that after changing the temperature there is a settling time during which the temperature setpoint may change while not be monitored.
+For these reasons we generally avoid touching this control as the present setpoint of 16.1 \degreeC is adequate and no major improvements have been found by tweaking this temperature.
 
-
-
-922 master specifics
-	description
-	typical running current and temp
-	feedback characteristics
-	tips of operation
-		beware of changing temp
-		beware of using the sacher voltage control
-	Locking characteristics
-		addition of slow lock
-			reference that Josh will provide code in his thesis
-			note that addition of this slow lock enabled the experiment to stay locked for upwards of 24 hours at a time. As expected, such an increase in stability has greatly improved our ability of taking data.
-		main lock circuit
-		RF source?
+\subparagraph{Daily alignment:}
+The input coupler for the 922 cleanup fiber is not a reliable mount and tends to drift significantly from day-to-day.
+Therefore, we find it useful to peak up the alignment into this fiber while monitoring the output power at a fixed position after the fiber.
+Importantly, the positioning of the power meter head seems to effect the amount of power measured by the device (especially as the head ages).
+Thus, we use optical mounts in an attempt to reproduce the spatial position everyday and typically acheive a coupling efficeincy of $\sim$51\% through the fiber.
+See Sec. \ref{sec:dailyStats} for more details.
 		
 \subsubsection{Zeeman subsystem}
+The Zeeman sub-system is a dedicated TA + doubling cavity for generating approx. 125 mW of 461 nm light exclusively used for the one-dimensional Zeeman cooling stage.
+There are numerous works exploring the construction and optimization of Zeeman coolers for use with strontium \hl{genetic ref, francy ref, others?}.
+Figure \hl{something} shows a simplified optical schematic of this system.
+Light from the 922 master (approx. 20 mW) is shaped and coupled into a tapered amplifier to produce nearly 300 mW of 922 nm light.
+After being shaped further and passed through dual isolators, the light is then coupled into the homemade doubling cavity where a potassium niobate crystal is held within an optical resonance cavity to produce the 461 nm light.
+For approx. 300 mW into the cavity we are able to produce approx. 125 mW of 461 nm light.
+This light is sent through a final beam expander and into the chamber where we have designed the system to focus the Zeeman beam just at the tip of the atom nozzle to maximize the spatial extent interaction time between hot atoms and Zeeman beam.
+
+This system was originally constructed by Aaron Saenz \cite{AaronDSaenz2005} with additional details available in App A.8 of Natali's thesis \cite{MartinezdeEscolar2010}.
+
+As mentioned previously, we use PDH to feedback to the length of the cavity. 
+Fig. \ref{fig:922cavityLock} shows a shcematic block diagram of the negative feedback path as well as details about the components currently in use.
+	\begin{figure}
+		\centerline{
+		\includegraphics[width=\textwidth]{461_Cavity_stabilization.jpg}}
+		\caption{922 nm doubling cavity length stabilization feedback diagram}{a) Schematic b) Component details}
+		\label{fig:922cavityLock}
+	\end{figure}
+	
+Fig. \hl{something} shows a characteristic view of the light coupled into the cavity as the resonance frequency is modulated.
+	\begin{figure}
+		\centerline{
+		\includegraphics[width=\textwidth]{461_Cavity_stabilization.jpg}}
+		\caption{922 nm doubling cavity length stabilization feedback diagram}{a) Schematic b) Component details}
+		\label{fig:922cavityLock}
+	\end{figure}
+
+Table \hl{something} provides typical running characteristics of the system \hl{note thermistor in table}
+
+\paragraph{Historical notes and tips for usage}
+\subparagraph{Mode hop:} 
+Doubling cavities at such short wavelengths are known to be finicky \hl{aaron refs} so stabilizing them can be difficult. 
+We find that this cavity tends to become stable with \hl{whatever the input power is} as increases of the input power beyond this result in an initial cavity lock producing more 461 nm light but which quickly mode hops into a lower power mode.
+Additionally, the integrated lock circuit contains an auto relock feature that can occasionally result in locking to a lower power mode, usually do to $\sim$80 mW.
+We have found that power cycling the TA current driver is the least intrusive and typically successful method to reattain the 125 mW output.
+If cycling does not work, then the TA current output may need to be adjusted up or down.
+While we have seen cavity output powers of up to 150+ mW, these are not stable modes.
+
+\subparagraph{Beam quality:}
+Great care has been taken to minimize any structure present on the 461 nm Zeeman beam in order to maximize the amount of stopping force which can be derived from this beam.
+Fig. \ref{fig:461zeemanBeam} shows the Zeeman beam just before entering the chamber.
+The cause of the intensity asymmetry which can be seen to the right is unknown, but has been confirmed to be present even directly out of the doubling cavity.
+	\begin{figure}
+		\centerline{
+		\includegraphics[height=0.3\textheight]{zeeman_IMG_20171213_13048.jpg}}
+		\caption{Characteristic beam quality of the Zeeman laser}
+		\label{fig:461zeemanBeam}
+	\end{figure}
 
 Zeeman path
-	Description
-		construction outlined in chapter 2 of AAron's Saenz's masters thesis
 	Components
 		TA
 		Cavity
@@ -406,8 +486,6 @@ Zeeman path
 		Shutters
 	
 	Zeeman TA
-		Description
-			who built
 		Components
 			Mounts
 			Optics
@@ -420,40 +498,81 @@ Zeeman path
 			out power
 			TA current
 			TA temp
-		Tips
-			power drops occasionally, flip on and off
-			alignment can be difficult, try to stabilize in a lower mode
-		History
-			water got on TA so it might be finicky
 		
 	Cavity
-		Description
-			who built
 		Components
 			Optics
-			Circuits
-				PDH lock
 		Typical running
-		Tips
-
+		
 \subsubsection{MOT subsystem}
 
-The MOT path generates light used for a multitude of processes including the first MOT stage, the 2D collimator, the absorption imaging, and the blow away beam, as shown in fig blah. 
+The MOT path generates light used for a multitude of processes as shown in Fig \ref{fig:461blockSys}.
+This section will detail simplified optical schematics for those systems required for laser cooling while details of the blow away pulser and absorption imaging are discussed in Sec. \ref{ssec:op_tools}.
+
+Before delving into the sub-components of the MOT system, let us first cover the generation of the 461 nm light along this path.
+Fig. \hl{something} shows a simplified optical schematic of the MOT subsystem which is modeled after the Zeeman setup described previously.
+Light from the 922 nm is shaped, amplified, and coupled into the doubling cavity where the same feedback mechanism shown in Fig. \ref{fig:922cavityLock} is also used to stabilize the cavity length.
+
+When striving to achieve qunautm degeneracy it was observed that stray blue light from the MOT system caused significant heating of the ultracold sample. 
+Since the MOT system is situated close to the experimental chamber, a "blackhouse" wall and shroud were constructed to minimize stray reflections.
+\footnote{Even stray reflected light off the glossy ceiling of the experimental enclosure has been found to cause atom heating!}
+Part of this enclosure is a fast ($\sim$2 ms) shutter (model: Uniblitz CS45) used to block the 461 nm light during the red MOT and evaporation stages.
+Additional hard drive (HDD) shutters are also placed along the MOT path behind the blackhouse shutter as leakage light through the blue MOT AOM specifically was seen to cause additional heating when utilizing the blow away pulser.
+
+\paragraph{Historical notes and tips for usage}
+\subparagraph{Daily alignment:}
+The simplified optical schematic shown above does not reflect the approx. two meter lever arm which is present between the Zeeman split AOM and the input to the MOT TA due to the relative positions of the cavities.
+This leads us to peak up the alignment of the 922 master beam into the MOT TA on a daily basis and is hypothesized to be the cause of large long time power variations ($\sim$15\%) on the output power of the MOT cavity which we observe throughout the course of the day.
+Typically with an input power of approx. 300 mW of 922 nm light we get between 100 - 115 mW out on a daily basis.
+Refer to the daily statistics table in Sec. \ref{sec:dailyStats} for more detail.
+
+\paragraph{461 nm MOT}
+
+\hl{fig} Simplified optical schematic and component detail.
+The 461 nm MOT beams are combined with the 689 MOT beams and propogate through custom-made half wave plates \hl{detail somewhere?}
+
+\hl{fig}
+Characteristic power in each beam
+MOT beams are power controlled via the feedback system shown in fig.
+The custom power lock integrated circuit is given in \hl{figure in appendix}.
+This design is based off the work report by Ying Huang but with several modifcations for adding a transimpedence amplifier as the input stage.
+The power setpoint is a controlled input from the 
+
+\paragraph{2D collimator}
+Straight-forward system previously described in Sec. \ref{sec:trapping}.
+
+Power is coupled between the blue MOT and the 2D collimator so there is an optimum power that may change with laser detuning. 
+
+Simplified optical schematic and components
+
+Give resonance condition and the resulting lock point
+
+Scan of error signal and doppler bowl
+	\begin{figure}
+		\centerline{
+		\includegraphics[height=0.2\textheight]{461_example_errorSig.jpg}}
+		\caption{461 nm saturated absorption signals}{a) Example error signal. The cause of the asymmetry is unknown but occurs around approx. $\pm$1.7A drive. The offset seen here can be nulled by balancing the amplification applied to the differential photodiode inputs. b) Example of the Doppler bowl where the Lamb dip can be seen. Note that the Lamb dip interacts with a specific velocity class determined by $\delta_{SA}$.}
+		\label{fig:461zeemanBeam}
+	\end{figure}
+
+\paragraph{Saturated absorption}
+
+A detailed walkthrough of the construction and relevant physics of a blue sat. abs. cell can be found in the undergraduate report of Michael Viray \cite{MichaelViray2014}.
+
+Simplifed optical schematic
+Details on how to change isotopes outlined in \ref{para:change_iso}
+While realigning the sat. abs. is not always necessary
+
+Give calibration plot?
 
 MOT light path
-	Description
 	Components
 		TA
 		Cavity
 		AOMs
 		Shutters
-	Tips
-		advisable to peak up alignment on a daily basis 		
-		fairly robust but must keep an eye on as power may fluctuate by as much as 15 percent over the course of a day
 	
 	MOT TA
-		Description
-			who built
 		Components
 			Mounts
 			Optics
@@ -466,17 +585,11 @@ MOT light path
 			out power
 			TA current
 			TA temp
-		Tips
 		
 	Cavity
-		Description
-			who built
 		Components
 			Optics
-			Circuits
-				PDH lock
 		Typical running
-		Tips
 		
 
 
