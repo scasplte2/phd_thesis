@@ -297,7 +297,8 @@ In particular, future experiments on the Neutral apparatus aim to explore quantu
 \label{ssec:461sys}
 
 \subsubsection{Overview}
-As discussed in the experimental overview, the majority of our laser cooling is done using 461 nm light. We generate and control these photons by amplifying and frequency doubling 922 nm light from a master ECDL diode laser. 
+As discussed in the experimental overview, the majority of our laser cooling is done using 461 nm light. 
+We generate and control these photons by amplifying and frequency doubling 922 nm light from a master ECDL diode laser. 
 Fig.\ref{fig:461blockSys} shows an overview of how we generate the 461 nm light. 
 We will cover the 922 master, Zeeman sub-system, and MOT sub-systems in detail below.
 As we can see from the figure, the MOT sub-system is the basis for many different components of the overall 461 generation.
@@ -309,9 +310,10 @@ These separate systems will also be addressed in the MOT sub-system section belo
 		\label{fig:461blockSys}
 	\end{figure} 
 
-In conjunction with the block diagram, Table \ref{tab:461AOM} shows the details of the frequency shifts and AOMs. The position of these AOMs is represented by the numbered black circles while the labeled red squares define the various system frequencies.
+In conjunction with the block diagram, Table \ref{tab:461AOM} shows the details of the frequency shifts and AOMs. 
+The position of these AOMs is represented by the numbered black circles while the labeled red squares define the various system frequencies.
 These frequency relations are schematically represented in Fig. \ref{fig:461blockSys}b) and can be recreated via Eq. \ref{eq:461freqs}.
-Table \ref{tab:461AOM} gives defines the shift variables used in these equations.
+Table \ref{tab:461AOM} defines the shift variables used in these equations.
 \begin{landscape}
 \begin{table}[]
 \centering
@@ -334,39 +336,12 @@ Sat. abs. shifter & 6 & Sat. abs & $\delta_{SA}$ & +317.3 & \begin{tabular}[c]{@
 	&f_{\text{motSys}}  = 2f_{922}          & &f_{\text{zeeSys}}  = 2(f_{922} + \delta_{\text{zeeman}}) \nonumber \\
 	&f_{\text{2dColl}}  = f_{\text{motSys}} & &f_{\text{bMOT}}    = f_{\text{motSys}} + \delta_{\text{bMOT}} \nonumber \\
 	&f_{\text{img}}     = f_{\text{motSys}} + \delta_{\text{img2}} + \delta_{\text{img1}} & &f_{\text{SA}} = f_{\text{motSys}} + \delta_{\text{SA}} \nonumber \\
-	&f_{\text{BA}} = f_{\text{motSys}} + \delta_{\text{img2}} + \delta_{\text{BA}}
+	&f_{\text{BA}}      = f_{\text{motSys}} + \delta_{\text{img2}} + \delta_{\text{BA}}
 \end{align}
 
 Overall frequency control, $f_{922}$, is determined via the magnetically tunable saturated absorption cell.
 This magnetic tunability to control the 461 nm light frequency is well documented in section 2.2.1 of Natali's thesis \cite{MartinezdeEscolar2010} and section 2.1.1 of Pascal's thesis \cite{Mickelson2010b}.
 A more recent undergraduate project explored optimizations of this scheme for the Rydberg apparatus as well \cite{MichaelViray2014}.
-
-\paragraph{Changing isotopes} \label{para:change_iso}
-While the basic setup has not changed over the many years, we have recently moved away from the original current source based on a home built high-current FET amplifier to a Bi-polar current source (BOP) model blah. 
-This change allows for more expansive coverage of the $^1S_0\,\rightarrow\,^1P_1$ isotopes shifts. The previous current source limited our dual trapping capability to 87+88, and required an AOM to be tweaked and the sat. abs. to be realigned for trapping 84 and 86. 
-Using the BOP, we can now easily shift the transition frequency over approx. $\sim$200 MHz which allows us to span the range between 84 and 87 within a single experimental cycle.
-Given the geometry of our solenoid, large currents are required to apply such large Zeeman shifts.
-This imparts a heat load 
-
-Give the direction of shift with sign of current increase
- 
-However, trapping of 88 still requires the realignment of the sat. abs. 
-Care should be taken when adjusting this alignment as the paths are highly coupled as can be seen in Fig \hl{blah}. 
-Below we outline a straightforward algorithm for adjusting this alignment
-
-\begin{enumerate}
-\item Change the sat. abs AOM detuning using the potentiometer attached to the sat. abs. VCO. 
-\item Peak up the AOM alignment to maximize power into the diffracted order
-\item
-\item Check depth of doppler profile
-\item Lock 922 master
-\item egin looking for atom flourescence in the chamber.
-\item scan image freq
-\item scan trapping freq
-
-\end{enumerate}
-
-
 
 \subsubsection{922 nm master}
 The master 922 laser is derived from Sacher Lynx 922 nm IR diode laser in a Littrow ECDL configuration.
@@ -556,13 +531,22 @@ Scan of error signal and doppler bowl
 	\end{figure}
 
 \paragraph{Saturated absorption}
+The saturated absorption cell is used to interrogate the $^1S_0\,\rightarrow\,^1P_1$ transition in order to lock the frequency of the 922 master.
+App. \ref{ch:dopSpec} outlines a brief derivation for determining the lock point when a constant offset is added to the laser frequency, as is the case here.
+As outlined in the derivation, by utilizing the Zeeman tunability of magnetic sublevels, we can shift the resonance frequency of the atoms in the heat pipe.
+Thus, by interrogating and locking to the transition frequency of the most abundant isotope, $^{88}$Sr, we can shift it's resonance to cover the isotope shifts of the other strontium isotopes.
+This provides a simple method for trapping various isotopes and mixtures of strontium.
+Details on how to change isotopes is outlined below.
 
 A detailed walkthrough of the construction and relevant physics of a blue sat. abs. cell can be found in the undergraduate report of Michael Viray \cite{MichaelViray2014}.
+Additionally, the original construction of the Neutral cell is covered in section 2.2.1 of Natali's thesis.
 
-App. \ref{ch:dopSpec}
+Fig. \hl{something} shows the optical schematic.
+
+
 
 Simplifed optical schematic
-Details on how to change isotopes outlined in \ref{para:change_iso}
+
 While realigning the sat. abs. is not always necessary
 
 Give calibration plot?
@@ -593,6 +577,31 @@ MOT light path
 			Optics
 		Typical running
 		
+\subparagraph{Changing isotopes:} \label{para:change_iso}
+While the basic setup has not changed over the many years, we have recently moved away from the original current source based on a home built high-current FET amplifier to a Bi-polar current source (BOP) model blah. 
+This change allows for more expansive coverage of the $^1S_0\,\rightarrow\,^1P_1$ isotopes shifts. The previous current source limited our dual trapping capability to 87+88, and required an AOM to be tweaked and the sat. abs. to be realigned for trapping 84 and 86. 
+Using the BOP, we can now easily shift the transition frequency over approx. $\sim$200 MHz which allows us to span the range between 84 and 87 within a single experimental cycle.
+Given the geometry of our solenoid, large currents are required to apply such large Zeeman shifts.
+We have observed that these large currents change the heat load on the cell, which can lead to a reduction in the error signal.
+We mitigate this additional heating by varying the heater current to maintain approx. 50\% absorption of the pump beam.
+As we expect, the timescale for these effects are minutes, so short term variations (i.e. when doing spectroscopy) do cause significant heating when the duty cycle is kept low.
+
+Due to the heating from the Zeeman coil, we chose to balance the currents needed to trap 84 and 87 by "centering" the pump-probe beams frequency such that the magnitude of the currents needed for both isotopes is similar, but with 84 requiring a $(+)$ current and 87 a $(-)$ current.
+This balancing means that shifting the 
+However, trapping of 88 still requires the realignment of the sat. abs. pump-probe beams as this shift is just beyond the capabilities of the current drive. 
+Care should be taken when adjusting this alignment as the paths are highly coupled as can be seen in Fig \hl{blah}. 
+Below we outline a straightforward algorithm for adjusting this alignment
+\begin{enumerate}[nolistsep]
+\item Change the sat. abs AOM detuning using the potentiometer attached to the sat. abs. VCO. 
+\item Peak up the AOM alignment to maximize power into the diffracted order
+\item
+\item Check depth of doppler profile
+\item Lock 922 master
+\item egin looking for atom flourescence in the chamber.
+\item scan image freq
+\item scan trapping freq
+\end{enumerate}
+		
 
 
 
@@ -607,22 +616,61 @@ Discuss the change with the EOM
 Data on picking the timescale?
 	I know I choose like 40ms (including delay, but did I take data on this)
 
+This system is based on a Toptica DL-100 littrow laser which produces about 8mW of power at 481 nm. 
+Excitation to a doubly excited state is an eay way to do the repumping.
+As it is difficult to create and maintain a population of atoms in the $^3P_2$ state, we use a telerium oven to lock the laser.
+The original setup of this system was done by Pakorn \hl{ref} who setup a side of peak locking scheme. 
+Ten by dithering the laser current we can broaden that laser and extend to the strontium transition.
+
+Recently, we have begun to trap multiple isotopes across the different labs and have found our naive appraoch to locking the repumper to be inadequate.
+Working with the Rydberg apparatus, we performed spectroscopy of the repumping transition by counting the number of atoms which were returned to the ground sate as a function of repumping frequency.
+During these experimens we found that very small amounts of power, on the order of $\mu$W's, is needed to obtain large ground sate populations when the laser is tuned precisely to the isotopic transtion energy. 
+Fig. \hl{something} shows the result of this spectroscopy for multiple strontium iotopes.
+It was not feasible to dither the current across the GHz of detuning needed without mode hoping the laser so we decided to use an EOM driven at high power to place multiple orders of sidebands onto the laser light.
+
+What frequency is the EOM running at?
+What frequecnies do we aim to hit precisely?
+
+The current setup uses the EOM in addition to dithering the laser current a small amount to address these transitions.
+With this finding we decided to use an EOM to place multiple orders of sidebands on the laser light
+This allows us to address multiple transitions more precisly
+
+Optical schematic
+Light from this laser is split into five paths.
+One for each experiment, another for monitoring the wavelength, and the last for probing the tellerium transtion.
+
+Feedback diagram
+We have found
+
+\subparagraph{Historical note:}
+The lead screw, which is part of the internal alignment mechanism of the Littrow ECDL, was nearly stripped at some point when attempting to peak up the frequency stability. 
+Extreme care should therefore be taken when using this adjustment as the brass baseplate of the DL-pro is soft and there is a potential to strip out the remaining threads.
+ 
+Place picture showing screw
+
 
 \subsection{Narrowband cooling stage: 689 nm} \label{ssec:689sys}
 \subsubsection{Overview}
+The work horse transition of strontium is the $^1S_0\,\rightarrow\,^3P_1$ intercombination line transition at 689 nm. 
 
-Notably, the AC stark shift due to the IR laser is strong enough to require optimization of the red MOT parameters  in the presence of the light.
-This coupling introduces 
+We generate and control 
 
-Generation of 689 nm
-	Overview
-	Components
-		Toptica Master
-		Boson setup
-		Fermion setup
-		Sat Abs
-	Diagram
-		AOMs
+Fig.\ref{fig:689blockSys} shows an overview of how we generate the 689 nm light. 
+Additionally, sec \hl{something} will outline the various spectroscopy setups currently in use to probe our atomic samples.
+	\begin{figure}
+		\centerline{
+		\includegraphics[width=\textwidth]{461_sys_overview.jpg}}
+		\caption{461 nm light generation system}{a) Block diagram of showing the relations of the various systems, AOMs, and frequencies used to lock the system for 461 nm trapping and spectroscopy. See Table \ref{tab:461AOM} for information on the AOMs. b) Relative frequencies at various stages of the 461 system.}
+		\label{fig:689blockSys}
+	\end{figure} 
+
+In conjunction with the block diagram, Table \ref{tab:461AOM} shows the details of the frequency shifts and AOMs. 
+The position of these AOMs is represented by the numbered black circles while the labeled red squares define the various system frequencies.
+These frequency relations are schematically represented in Fig. \ref{fig:461blockSys}b) and can be recreated via Eq. \ref{eq:461freqs}.
+Table \ref{tab:461AOM} defines the shift variables used in these equations.
+
+Notably, the AC stark shift due to the IR laser is strong enough to require optimization of the red MOT parameters in the presence of the light.
+The optimization is complicated by the influence of gravity on the red MOT which causes the single frequency stage to "sag" which must be overlapped wit the IR light in order to load most efficiently.
 	
 Throughout the course of this PhD, the Neutral 689 nm system has grown significantly and been almost entirely restructured. The master laser system is now shared between the Rydberg and Neutral laboratories and therefore a more modular approach was adopted to ensure independence of the labs experimental schedules. This process began with the replacement of our homemade Littman-Metcalf ECDL 689 master with a Toptica DL-Pro system. Additionally, at the time of this writing (spring 2019) we are currently in the process of migrating from the original high-finesse cavity used for the last 15 years \cite{Nagel2004} of the experiment to an ultra-low expansion cavity system. 
 
