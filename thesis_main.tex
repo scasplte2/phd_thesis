@@ -20,7 +20,12 @@
 \usepackage[square,numbers,sort&compress]{natbib}		   % Formats references
 \usepackage[colorlinks,citecolor=darkgray,linkcolor=.]{hyperref} % Hyperlinks references
 \usepackage[normalem]{ulem} % allows for highlighting, use normalem to protect \emph
-\usepackage{enumitem }% Enumerate has too much white space
+\usepackage{enumitem}% Enumerate has too much white space
+	\setenumerate[1]{label=\Roman*.}
+	\setenumerate[2]{label=\Alph*.}
+	\setenumerate[3]{label=\roman*.}
+	\setenumerate[4]{label=\alph*.}
+\usepackage{outlines} % for displaying outlines
 
 \interfootnotelinepenalty=10000 % make maintaining a single footnote a higher priority, default is 100
 
@@ -148,6 +153,7 @@
 \include{./text/append-circuits}
 \include{./text/append-misc}
 \include{./text/append-dopSpec}
+\include{./text/append-boseHub}
 \end{appendices}
 
 
