@@ -483,7 +483,7 @@ Zeeman path
 \subsubsection{MOT subsystem}
 
 The MOT path generates light used for a multitude of processes as shown in Fig \ref{fig:461blockSys}.
-This section will detail simplified optical schematics for those systems required for laser cooling while details of the blow away pulser and absorption imaging are discussed in Sec. \ref{ssec:op_tools}.
+Here we detail those systems required for laser cooling while details of the blow away pulser and absorption imaging are discussed in Sec. \ref{ssec:op_tools}.
 
 Before delving into the sub-components of the MOT system, let us first cover the generation of the 461\,nm light along this path.
 Fig. \hl{something} shows a simplified optical schematic of the MOT subsystem which is modeled after the Zeeman setup described previously.
@@ -520,16 +520,7 @@ Straight-forward system previously described in Sec. \ref{sec:trapping}.
 Power is coupled between the blue MOT and the 2D collimator so there is an optimum power that may change with laser detuning. 
 
 Simplified optical schematic and components
-
-Give resonance condition and the resulting lock point
-
-Scan of error signal and doppler bowl
-	\begin{figure}
-		\centerline{
-		\includegraphics[height=0.2\textheight]{461_example_errorSig.jpg}}
-		\caption{461\,nm saturated absorption signals}{a) Example error signal. The cause of the asymmetry is unknown but occurs around approx. $\pm$1.7A drive. The offset seen here can be nulled by balancing the amplification applied to the differential photodiode inputs. b) Example of the Doppler bowl where the Lamb dip can be seen. Note that the Lamb dip interacts with a specific velocity class determined by $\delta_{SA}$.}
-		\label{fig:461zeemanBeam}
-	\end{figure}
+	
 
 \paragraph{Saturated absorption}
 The saturated absorption cell is used to interrogate the $^1S_0\,\rightarrow\,^1P_1$ transition in order to lock the frequency of the 922 master.
@@ -537,10 +528,17 @@ App. \ref{ch:dopSpec} outlines a brief derivation for determining the lock point
 As outlined in the derivation, by utilizing the Zeeman tunability of magnetic sublevels, we can shift the resonance frequency of the atoms in the heat pipe.
 Thus, by interrogating and locking to the transition frequency of the most abundant isotope, $^{88}$Sr, we can shift it's resonance to cover the isotope shifts of the other strontium isotopes.
 This provides a simple method for trapping various isotopes and mixtures of strontium.
-Details on how to change isotopes is outlined below.
+Details on how to change isotopes are outlined below.
 
 A detailed walkthrough of the construction and relevant physics of a blue sat. abs. cell can be found in the undergraduate report of Michael Viray \cite{MichaelViray2014}.
 Additionally, the original construction of the Neutral cell is covered in section 2.2.1 of Natali's thesis.
+
+	\begin{figure}
+		\centerline{
+		\includegraphics[height=0.2\textheight]{461_example_errorSig.jpg}}
+		\caption{461\,nm saturated absorption signals}{a) Example error signal. The cause of the asymmetry is unknown but occurs around approx. $\pm$1.7A drive. The offset seen here can be nulled by balancing the amplification applied to the differential photodiode inputs. b) Example of the Doppler bowl where the Lamb dip can be seen. Note that the Lamb dip interacts with a specific velocity class determined by $\delta_{SA}$.}
+		\label{fig:461zeemanBeam}
+	\end{figure}
 
 Fig. \hl{something} shows the optical schematic.
 
@@ -583,12 +581,12 @@ While the basic setup has not changed over the many years, we have recently move
 This change allows for more expansive coverage of the $^1S_0\,\rightarrow\,^1P_1$ isotopes shifts. The previous current source limited our dual trapping capability to 87+88, and required an AOM to be tweaked and the sat. abs. to be realigned for trapping 84 and 86. 
 Using the BOP, we can now easily shift the transition frequency over approx. $\sim$200 MHz which allows us to span the range between 84 and 87 within a single experimental cycle.
 Given the geometry of our solenoid, large currents are required to apply such large Zeeman shifts.
-We have observed that these large currents change the heat load on the cell, which can lead to a reduction in the error signal.
+We have observed that these large currents increase the heat load on the cell, which can lead to a reduction in the error signal.
 We mitigate this additional heating by varying the heater current to maintain approx. 50\% absorption of the pump beam.
-As we expect, the timescale for these effects are minutes, so short term variations (i.e. when doing spectroscopy) do cause significant heating when the duty cycle is kept low.
+As we expect, the timescale for these effects are minutes, so short term variations (i.e. when doing spectroscopy) do not cause significant heating when the duty cycle is kept low.
 
 Due to the heating from the Zeeman coil, we chose to balance the currents needed to trap 84 and 87 by "centering" the pump-probe beams frequency such that the magnitude of the currents needed for both isotopes is similar, but with 84 requiring a $(+)$ current and 87 a $(-)$ current.
-This balancing means that shifting the 
+
 However, trapping of 88 still requires the realignment of the sat. abs. pump-probe beams as this shift is just beyond the capabilities of the current drive. 
 Care should be taken when adjusting this alignment as the paths are highly coupled as can be seen in Fig \hl{blah}. 
 Below we outline a straightforward algorithm for adjusting this alignment
@@ -646,16 +644,17 @@ We have found
 \subparagraph{Historical note:}
 The lead screw, which is part of the internal alignment mechanism of the Littrow ECDL, was nearly stripped at some point when attempting to peak up the frequency stability. 
 Extreme care should therefore be taken when using this adjustment as the brass baseplate of the DL-pro is soft and there is a potential to strip out the remaining threads.
+	\begin{figure}
+		\centerline{
+		\includegraphics[height=0.2\textheight]{481_IMAG0022.jpg}}
+		\caption{Internal view of the 481\,nm ECDL}{The red box denotes the alignment screw that should be varied with caution.}
+		\label{fig:481internal}
+	\end{figure}
  
-Place picture showing screw
-
 
 \subsection{Narrowband cooling stage: 689\,nm} \label{ssec:689sys}
 \subsubsection{Overview}
 The work horse transition of strontium is the $^1S_0\,\rightarrow\,^3P_1$ intercombination line transition at 689\,nm. 
-
-All precision frequencies of the 689 system are derived from digital synthesizers with mHz accuracy.
-The one exception to this is during the broadband red MOT operation when we use voltage controlled oscillators to effectively broaden the laser linewidth.
 
 Fig.\ref{fig:689blockSys} shows an overview of how we generate the 689\,nm light. 
 Additionally, sec \hl{something} will outline the various spectroscopy setups currently in use to probe our atomic samples.
@@ -666,10 +665,11 @@ Additionally, sec \hl{something} will outline the various spectroscopy setups cu
 		\label{fig:689blockSys}
 	\end{figure} 
 
-In conjunction with the block diagram, Table \ref{tab:461AOM} shows the details of the frequency shifts and AOMs. 
+In conjunction with the block diagram, Table \ref{tab:689AOM_1} \& \ref{tab:689AOM_2} show the details of the frequency shifts and AOMs. 
 The position of these AOMs is represented by the numbered black circles while the labeled red squares define the various system frequencies.
-These frequency relations are schematically represented in Fig. \ref{fig:461blockSys}b) and can be recreated via Eq. \ref{eq:461freqs}.
-Table \ref{tab:461AOM} defines the shift variables used in these equations.
+
+All precision frequencies of the 689 system are derived from digital synthesizers with mHz accuracy.
+The one exception to this is during the broadband red MOT operation when we use voltage controlled oscillators to effectively broaden the laser linewidth.
 
 The boson and fermion sub-systems allow us to simultaneously trap and cool mixtures of a single bosonic isotope and the fermionic 87.
 The isotope selector AOM determines which bosonic isotope this system can trap.
@@ -885,7 +885,12 @@ Discuss how our only method for evaporative cooling is through light traps since
 
 Addres hisotry o laser and say that the current IPg died in fall of last year. 
 
-How much power roughly is split between the arms? AOMs are back to back which couples the power stability of the two arms. This setup allows us to more fully utilize the available power from the IPG and in practice while two completely decoupled independent arms may add a slight complication, when accounted for this has generally not been a major source of concern. We have found it useful though to continously monitor the evaporation trajectory from shot to shot though. As a problem, say with a misbehaving power lock, along one arm may result in intensity fluctuations of both arms.
+How much power roughly is split between the arms?
+
+AOMs are back to back which couples the power stability of the two arms. 
+This setup allows us to more fully utilize the available power from the IPG and in practice while two completely decoupled independent arms may add a slight complication, when accounted for this has generally not been a major source of concern. 
+Although, we have found it useful to continuously monitor the evaporation trajectory from shot to shot. 
+As a problem, say with a misbehaving power lock, along one arm are is now coupled and may result in intensity fluctuations along both arms if the power lock cannot account for this perturbation.
 
 Several diffferent types of traps have been formed, ref Ying thesis. There are two paths split, named the loading arm and the sheet/dimple arm. Give stats on the loading path The loading path has the ability to be recycled on itself but we have not utilized this capability in many years due to complications of measuring the trap frequencies. 
 
@@ -980,11 +985,9 @@ These traps are extremely versatile and have enabled the observation of the supe
 They are among the most well-established techniques for controlling a quantum state and have proven to be great tools for exploring the connection between few- and many-body systems \cite{Bloch2008}.
 
 Until recently, experiments on the Neutral apparatus were confined to work with bulk gases in an optical dipole trap.
-While optical dipole traps are useful for efficient evaporation and thermalization of an ultracold gas, experiments with Feshbach molecules in ODTs suffer from a high rate of inelastic collisions. \cite{Kohler2006}. 
-The association of these molecules in an optical lattice has been shown to slow these processes since atoms must tunnel from site to site and can be pinned in sufficiently deep potentials \cite{Thalhammer2006,Syassen2007}.
-In order to gain a quantitative understanding of these processes we will briefly outline the relevant lattice physics for ultracold bosons in an optical lattice.
+While optical dipole traps are useful for efficient evaporation and thermalization of an ultracold gas, optical lattices are useful for studying ultracold molecules and novel many-body quantum states \hl{give some refs}.
 
-\paragraph{Background}
+\paragraph{Background} \label{sec:latBackground}
 An optical lattice is created by counterpropagating two laser beams to form a standing wave pattern, which for two plane waves in one dimension results in a periodic potential given by 
 	\begin{equation}
 		 V(x) = V_{lat} \; \sin^2(k_L x)
@@ -1037,13 +1040,7 @@ Our optical lattice operates at $\lambda=532\,$nm and is derived from a Coherent
 We label these arm A, B, \& C as noted in Fig. \hl{chamber ref}.
 The horizontal arms of the lattice ($x$ and $y$) have $1/e^2$ waists of approx $200\,\mu$m x $200\,\mu$m and their polarization is linear and aligned along the $z$ direction, parallel to gravity. 
 The vertically propagating beam has a $1/e^2$ waist size of approx $300\,\mu$m x $300\,\mu$m and polarization aligned orthogonal to the polarization of the horizontal beams. 
-With this configuration we estimate a maximum depth of  >$30$E$_r$ is achievable in an isotropic lattice. 
-	\begin{figure} 
-		\centerline{
-		\includegraphics[width=\textwidth]{lattice_depth.png}}
-		\caption{Lattice depth calibration}{Calibration was performed using the 2-band Kapitza-Dirac technique. Maximum photodiode voltage for each arm is 10\,V}
-		\label{fig:latDepth}
-	\end{figure}
+With this configuration we estimate we can achieve lattice depths >$30$E$_r$ in an isotropic lattice. 
 
 \paragraph{Aligning the first pass:}
 The following is a technique conveyed to our lab from Trey Porto.
@@ -1079,19 +1076,48 @@ We have found that around the minimum in the oscillation amplitude, we are able 
 This phase flip along with the emergence of breathing mode oscillation are robust measures of good overlap between the beams.
 \end{outline}
 
+Fig. \ref{fig:latFirtPass} shows an example of the above process.
+Here we can clearly see that the amplitude of the oscillation is suppressed as we vary the beam pointing.
+As taking this time series data is arduous, we would fix the wait time and observe the suppression as outlined above.
+	\begin{figure} 
+		\centerline{
+		\includegraphics[width=\textwidth]{lattice_first_pass.png}}
+		\caption{Center-of-mass amplitude suppression when overlapping traps}{Each subsequent scan is a single "step" in the pointing of the last mirror before the chamber. Note that the Y-axis is in arbitrary units.}
+		\label{fig:latFirtPass}
+	\end{figure}
+	
+\hl{Need to fix plot} Additional support for this method is seen in Fig. \ref{fig:latBreatheMode} which shows the emergence of a breathing mode when the traps are well overlapped.
+In particular, we also see how reproducible this behavior is over a short time period (here about 20 minutes).
+Day to day variation has not been found to be a limitation but further work must be done to ascertain the long term stability of the trap overlap.
+	\begin{figure} 
+		\centerline{
+		\includegraphics[height=0.8\textheight]{latBreatheMode.png}}
+		\caption{Emergence of breathing mode oscillation}{The measured radius and cloud centers in each axis of the absorption image. Observation of oscillatory behavior in X-axis without significant variation of the cloud center is a robust measure of the overlap of the 532 and 1064 traps. Once again, the Y-axis are given in arbitrary units.}
+		\label{fig:latBreatheMode}
+	\end{figure}
+
 \paragraph{Aligning the retro-reflection:}
-The retro-reflection is optiized via the kapitza-dirac method.
-For shallow lattice depths, the amplitude of the population in the $\pm$1 plane waves is linear vs lattice depth.
-This requires an iterative appraoch to ensure that you have 
+The retro-reflection is optimized via the 2-band Kapitza-Dirac method which is discussed below.
+In short, for a quantum degenerate gas in shallow lattice depths, <10\,E$_r$, only the $\pm$1 plane waves will be populated.
+Furthermore, for short pulses the amplitude of the population in these plane waves is linearly increasing with lattice depth.
+This provides a simple single point measurement which can be used for optimizing the lattice depth.
+However, an iterative approach may be needed to ensure that the alignment is only optimized during the first quarter period before the population of the orders is maximized.
+Fig. \ref{fig:KDoscillations} shows an example oscillation.
 
-As our lattice is free space, the first order alignment of the retroreflection is to look over a long distance and overlap the incoming and return beam s best as possible.
-This tens to be close enough that you are able to observe some diffraction effects when performing Kapitza-Dirac s 
+As our lattice is free space, the first order alignment of the retro-reflection is to look over a long distance and overlap the incoming and return beam as best as possible.
+This tends to overlap the two beams closely enough in the region of the atoms so as to observe some diffraction effects when performing a short high intensity pulse of the 532\,nm light.
 
+Second, once we can observe diffraction, the gimbal mount retro mirrors are adjusted to maximize the population of the diffracted plane waves.
+This alignment is extremely sensitive and may ultimately benefit from a more reproducible method of adjustment as mount backlash can strongly effect this process.
+As the diffracted population is oscillatory and depends on laser intensity we have found that using an exposure time of approx 2 - 3 $\mu$s and varying the laser intensity has led to the most successful alignments of the retro.
+We generally start at this short time pulse of a few microseconds with the highest intensity pulse possible and then systematically decrease the laser power into the lattice arm as the alignment is improved.
+Finally we note that, as Kapitza-Dirac happens on very short timescales, the power stabilization circuits must be bypassed for this procedure.
+Instead, we directly drive the RF sources with fast analog IC switches (switching time on the order of 10's ns) to apply the desired power to the lattice arm.
 
 \subsubsection{Measurement and results}
 \paragraph{Kaptiza-Dirac Scattering}
 Kapitza-Dirac diffraction can be viewed as a diabatic projection from an initial eigenstate to a new set of eigenstates which results in an oscillation of the wavefunctions probability amplitudes over the new eigenstates of the system \cite{Denschlag2002}.
-As was discusses in Sec.\;\ref{sec:lattice}, the free space eigenstates are not the eigenstates of the lattice Hamiltonian. 
+As was discusses in Sec.\;\ref{sec:latBackground}, the free space eigenstates are not the eigenstates of the lattice Hamiltonian. 
 Thus a pure $p=0$ plane wave, $\ket{\phi_{p=0}}$, suddenly loaded into an optical lattice can be written as a superposition of the Bloch states given by Eq.\;\ref{eq:blochFunc}, here denoted by \ket{n,q}.
 	\begin{equation} \label{eq:p0inBloch}
 		\ket{\Psi(t=0)} = \sum_{n=0}^{\infty} \ket{n,q} \innerProd{n,q}{\phi_{p=0}}
@@ -1107,10 +1133,26 @@ Where $E_i$ is the band energy of the i$^{th}$ band with $q=0$ as is the case wh
 
 Fig.\;\ref{fig:KDoscillations} shows a typical Kapitza-Dirac oscillation pattern which we use to maximize beam overlap near the atoms and calibrate our achievable lattice depths. 
 Kapitza-Dirac is useful as an alignment tool since measurement of the population oscillation frequency can be highly accurate and directly relates to the bandgap energy in the lattice, shown in Fig.\;\ref{fig:bandStructure}. 
-\begin{figure} \label{fig:KDoscillations}
+\begin{figure}
 	\includegraphics[width=\textwidth]{lattice_kdOsc.pdf}
 	\caption{Evolution of plane wave population using Kapitza-Dirac}{Left: Time of flight slices for several realizations of Kapitza-Dirac with varying hold time in the lattice. Right: Normalized population from fits of time-of-flight images. Oscillations are fit with a decaying sinusoidal and the best-fit frequency is used to determine the lattice depth.}
+	 \label{fig:KDoscillations}
 \end{figure}
+For reference, Fig. \ref{fig:latDepth} shows the resulting lattice depth calibration for our most recent alignment.
+	\begin{figure} 
+		\centerline{
+		\includegraphics[width=\textwidth]{lattice_depth.png}}
+		\caption{Lattice depth calibration}{Calibration was performed using the two-band Kapitza-Dirac technique. Maximum photodiode voltage for each arm is 10\,V}
+		\label{fig:latDepth}
+	\end{figure}
+	
+\subparagraph{Higher order Kapitza-Dirac:}
+The simple two-band model given above is a straightforward method for determining the lattice depth but one that requires a time-series measurement over varying lattice depths.
+Gadway et. al. \cite{Gadway2009} derived a complimentary depth calibration method which requires only a single time-series measurement at high lattice depth.
+This process relies on the quantum interference of the oscillating populations which produces a complex beat note.
+An undergraduate report from Alex Wikner \cite{Wikner2017}, follows the original Gadway construction to develop an algorithm using Matlab$^{TM}$ for applying this technique to the Neutral apparatus.
+The cited report provides sample code as well as benchmark calculations for comparison.
+However, application of this work to calibrate the lattice depth has been stymied by a consistent heating concern we have observed when applying the lattice beams for significant periods at high lattice depths.
 
 \paragraph{Heating of a quantum degenerate gas}
 While Kapitza-Dirac diffraction is useful as a characterization tool, we typically wish to maintain equilibrium when loading condensates into the lattice. 
@@ -1118,7 +1160,13 @@ Thus slowly ramping up the lattice laser intensity will adiabatically transform 
 Strictly speaking, in order to adiabatically connect the free space eigenstates and the lattice eigensates, the lattice must be turned on infinitely slowly due to the infinitesimal bandgaps which open near the band edges. 
 Although near the band center, $q=0$, the adiabaticity requirement relaxes to $dV_{lat}/dt \ll 16E_r^2/ \hbar$, \cite{Denschlag2002} which for strontium in a 532\,nm lattice is $\approx 5\,\mu$s$/E_r$. However, in practice we find that our condensate fraction is reduced during fast ramps into the lattice. 
 
-Instead, we exponentially ramp on the lattice over 100\,ms which reduces heating caused by the ramp. As shown in Fig.\;\ref{fig:heatingRates}, we observe a large condensate fraction after similarly ramping the lattice back down. 
+Instead, we slowly ramp on the lattice over 100\,ms which reduces heating caused by the ramp. 
+We have experimented with various functional forms of this pulse shape and currently rely on an S-shaped curve given by Eq.\hl{somthing}.
+\begin{equation}
+	tanh
+\end{equation}
+
+As shown in Fig.\;\ref{fig:heatingRates}, we observe a large condensate fraction after similarly ramping the lattice back down. 
 Additionally, by holding in a deep lattice after an adiabatic ramp, we can measure the effects of off-resonant scatter of lattice photons as a reduction of atom population over time.
 For our red detuned optical lattice we expect the off-resonant scattering rate to be well approximated by a simple two level approach. In this model, the effective scattering rate is given by \cite{Jaksch2005}
 	\begin{equation} \label{eq:offResScatter}
@@ -1128,18 +1176,17 @@ where $\Gamma$ is linewidth of the dipole transition between the two states, $V_
 In strontium, the $^1S_0\!\rightarrow\!^1P_1$ transition strongly dominates the polarizability of the ground state and therefore can be used to estimate the effective off-resonant scattering rate.
 For this transition $\Gamma = 2 \pi \times 30.5\,$MHz and a 532\,nm lattice is detuned by $\delta_{lat} \approx 2 \pi \times 87\,$THz.
 With a lattice depth of $V_{lat}=10\,$E$_r$ we expect a scattering rate of $\Gamma_{eff} \approx 2\e{-1}\,$s$^{-1}$, which is negligible for the timescales of our proposed experiments.
-From Fig.\;\ref{fig:heatingRates}, we see that there is not an appreciable loss of atoms over a one second timescale, supporting our estimate that off-resonant scattering is unimportant on these timescales.
+From Fig.\;\ref{fig:heatingRates}, we see that there is not an appreciable loss of atoms over a one second timescale, which at first would support our estimate that off-resonant scattering is unimportant on these timescales.
 	\begin{figure}
 	\centerline{
 		\includegraphics[width=\textwidth]{lattice_heatRates.pdf}}
 		\caption{Characterization of heating in the optical lattice}{Evolution of condensate fraction over time after adiabatically ramping on the lattice to 9\,E$_r$. a,b) Comparison of total number and condensate fraction for a sample held in the optical dipole trap (red squares) or in a deep lattice (blue circles). c) Time of flight images after ramping on the lattice and diabatically projecting back to plane wave states.}
 		 \label{fig:heatingRates}
-	\end{figure} 
-
-Causes for concern
-	thermal lensing (both optical power and RF power)
-	
-Formula for tanh ramp
+	\end{figure}
+Unfortunately, we have recently found that attempts to load a degenerate gas into a deep lattice, $\gtrsim 10$\,E$_r$, leading to unacceptable heating of the atomic sample.
+Currently, we hypothesize that this may result from the freespace nature of the lattice or an intrinsic instability (frequency or power) of the Verdi.
+The latter of these has been tested by monitoring the 532\,nm light in a spectrum analyzer where no obvious deficiencies have been observed.
+To test the former hypothesis, we are currently investigating fiber coupling one of the arms of the lattice but as of spring 2019, this project is ongoing.
 
 \subsection{Optical toolbox} \label{ssec:op_tools}
 
@@ -1226,8 +1273,11 @@ Primary method of control is analog voltage control or serial connections.
 We recently revamped the software 
 
 \subsection{Computer control and measurement system} \label{ssec:comp_sys}
+The primary control software is a custom built Labview application based on a synchronous state machine \hl{ref} \footnote{Currently this project can be found at \texttt{https://github.com/KillianRice/neuKlein}}.
+The Neutral implementation of this software is called neuKLEIN (Neutral Killian Lab Experimental Interface) and is based on a major overhaul of the original control software undertaken by Joe Whalen.
+A detailed overview of the capabilities, limitations, and instructions for use is available in App. \ref{app:neuKLEIN}.
 
-Software is a custom built Labview appication which implements a synchronous state machine.
+
 Primary hardware is digitl aquisition cards from National instruments.
 Experimental clock is based on the Pulseblaster from SpinCore.
 
@@ -1275,7 +1325,7 @@ The blue MOT utilizes 42 Amps through the coils while the red MOT needs on the o
 This large range is 
 
 We need to have both a large range and good resolution.
-This is tough to acheive and led to the Rydbberg apparatus using separate coils for the red and blue MOTs.
+This is tough to achieve and led to the Rydbberg apparatus using separate coils for the red and blue MOTs.
 We have discussed changging out the supply using a sort of H-bridge configuration as discussed in Melissa Revelle's thesis \hl{ref}.
 
 \subsubsection{Trim coils}
@@ -1291,29 +1341,53 @@ Model numbers for Gwinstek drivers on Z and Y. Reference something about the Bio
 Beware of the high sensitivty of the 3P1 state to B fields. Small changes in current can affect the position of the MOT. Particularly noticable when attempting to zero the field as there may be unknown offsets. It is recommended to 
 
 \subsubsection{Zero crossing AC line trigger}
+Fig.\,\ref{fig:zeroCrossTrig} shows the circuit used to start the Neutral experimental sequence.
+	\begin{figure}
+		\centerline{
+		\includegraphics[width=\textwidth]{PB_TriggerJitter.png}}
+		\caption{Circuit diagram of the zero crossing AC line trigger}
+		\label{fig:zeroCrossTrig}
+	\end{figure} 
+It based on deriving a TTL pulse at the positive-going zero crossing of the 60\,Hz building line.
+Manual triggering is essential since we do not share the same clock source between the two independent pulseblasters (PB0\,\&\,PB1).
+Instead relying on their relative precision and low timing jitter to maintain experimental synchronicity when triggered from a shared source.
+Fig.\,\ref{pbTimingJitter} shows a comparison of the timing uncertainty when a short 200\,ns pulse is output from both pulseblasters and the oscilloscope is triggered from the zero crossing of the AC line.
+	\begin{figure}
+		\centerline{
+		\includegraphics[width=\textwidth]{PB_TriggerJitter.png}}
+		\caption{Comparison of pulseblaster timing jitter}{A persistent oscilloscope trace showing repeated measurements of a 200\,ns logic pulse from each pulseblaster. The upper signal is PB0 and the lower is PB1. The scope is externally triggered by the zero crossing AC line trigger.}
+		\label{fig:pbTimingJitter}
+	\end{figure} 
+While this measurement does not reveal what the cause of the relative instability between the three sources (PB0, PB1, or AC line) we do observe a relative instability of approx. 1\,$\mu$s.
+For most use cases with ultracold matter, this timing uncertainty is entirely reasonable and presents no practical limitation.
+However, this behavior does preclude the usage of cross-triggers between the pulseblasters when performing experiments with the optical lattice.
+In this context, cross-triggers are defined as the mixing of timing signals between the two pulseblasters.
+For instance, using PB0 to trigger the turn on of lattice arm A and PB1 to trigger arm B.
+This timing difference results in a similar consideration as the discrete timing issue discussed previously whereby, dependent on the dynamics under investigation, even small timing difference can lead to significant variation in the observed phenomena.
+We mitigate this effect by taking care to trigger all related processes from the same pulseblaster where the timing jitter is reduced to 50\,ns.
 
-Give circuit diagram and the logic gates needed to correctly trigger both pulseblasters.
+We choose to trigger off the building wide 60 Hz line in order to maintain a fixed phase relationship from shot to shot.
+This is thought to act as a common-mode rejection of electrical noise which could couple into our measurements via intensity or frequency noise.
+However, we have not rigorously evaluated this hypothesis and no significant change was observed when changing the global experimental trigger.
 
-Give data showing that the pulseblasters are synced (if I have it)
-
- This circuit will trigger the experiment to run with a similar phase relationship to the 60 Hz line from shot to shot in an attempt to common-mode reject noise that may originate from stray electrical noise. The additional logic gates ensure that the pulseblaster trigger at the same time.
+Finally, the additional logic gates ensure that the pulseblasters trigger at the same time since they are programmed serially by the neuKLEIN software.
+This process is enabled by a WAIT signal that each pulseblaster outputs when in this state which is used to ensure proper initialization of the system before starting an experimental sequence.
 
 \subsubsection{Pneumatic actuated mirror mounts}
-
-One challenge of using a 532\,nm opticl lattice is that this wavelength is right in the middle of the 461\,nm and 689\,nm MOT beams and must operate at high power.
-This places prohibitive constraints of the availability of passive optical components which might combine these three wavelengths.
-Tnstead we use a couple of pneumatic actuators to pull out the senesitive optics before using the 532\,nm lattice.
-We only have to do this in the vertical direction becuae we can sneak by along the horizontal paths but vertically the optical access is restricted so we must pull back the specialty waveplate as well as both MOT mirrors on either side of the chamber. 
-
-As expected, this does impart phonons to the table but in practice we find that the system is fairly robust against these small "kicks".
-However, occasiaonlly the air pressure has to adjusted if the lasers are misbehaving.
-
-The electronic and air system used for driving this syste is given in \hl{some fig}.
-
-Any references?
-
-Diagram
-Description
-Components
-	Circuits
-	
+One challenge of using a 532\,nm optical lattice is that this wavelength is between the 461\,nm and 689\,nm wavelengths used for our MOT beams and the 532\,nm must operate at high power.
+For the lattice arms in the plane of the atoms (A \& B) we combine and separate the lattice light along the 1064\,nm ODT path using common harmonic beamsplitters.
+However, the vertical path (arm C) presents a significant challenge as the numerical aperture along this path into the chamber is restricted by the MOT coils.
+Moreover, maintaining clean polarization of the MOT beams requires us to place the MOT waveplate along the vertical axis so as to avoid mirror reflections which may rotate the polarization.
+This places prohibitive constraints on the availability of passive optical components which might combine the MOT and lattice traps.
+Currently, our solution has been to use industrial pneumatic valves (model: \hl{model}) with actuators (model: \hl{moel}) to move the waveplates and requisite MOT mirrors out of the path before turning on the 532\,nm light.
+Fig.\,\ref{fig:pnuSys} shows the trigger circuit and flow diagram for this system.
+	\begin{figure}
+		\centerline{
+		\includegraphics[width=\textwidth]{461_sys_overview.jpg}}
+		\caption{Pneumatic actuators diagram}
+		\label{fig:pnuSys}
+	\end{figure} 
+As one might expect, this movement does impart vibrations into to the table which we dampen by slowing the movement and cushioning the stops.
+In practice we find that the system is fairly robust against these small "kicks" though occasionally the air pressure has to adjusted if the lasers are misbehaving.
+We have also observed a settling of the actuators when extended as this is this default position.
+Future improvements may aim to provide a rail system for guiding the movement and supporting the actuators against gravity for smoother movement.
