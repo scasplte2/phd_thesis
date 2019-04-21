@@ -20,7 +20,7 @@ Furthermore, we will conclude with an outline of recent software implementations
 Detailed guides for this software can also be found in App. \ref{app:neuKLEIN}.
 
 \section{Experimental procedure} \label{sec:trapping}
-
+\setcounter{footnote}{0}
 % Intro
 Our experiments begin by cooling and trapping atomic strontium utilizing well-established atomic physics techniques \cite{Metcalf1999,Katori1999,Ido2000,Nagel2003,Mukaiyama2003a,Loftus2004,mmy09a,sth09a,Mickelson2010ja,Tey2010a,dym10a,stg10}. 
 Fig. \;\ref{fig:energyLevels} shows the simplified energy level diagram employed in our cooling process. 
@@ -122,10 +122,10 @@ Where the heck does that calibration for the MOT coils come from??
 \paragraph{Daily statistics} \label{sec:dailyStats}
 The following is a table of daily measurements and selected values for evaluating the long-term performance of the apparatus.
 This partial list is shown here to document those parameters which should be recorded on days the apparatus will performing trapping.
-Some columns do not contain data as the requisite measurements have evolved over the years\footnote{The full spreadsheet is currently located at \texttt{KillianDrobo:\textbackslash Neutral\textbackslash Daily Statistics.xlsx}}.
+Some columns do not contain data as the requisite measurements have evolved over the years\footnote{The full spreadsheet is currently located at \texttt{KillianDrobo:\textbackslash\textbackslash Neutral\textbackslash Daily Statistics.xlsx}}.
 
 \section{Vacuum system and atom source} \label{sec:vac}
-
+\setcounter{footnote}{0}
 \paragraph{Overview}
 	
 The Neutral apparatus is built around a custom stainless steel chamber positioned above the table to facilitate optical access. Typical pressures are in the ultrahigh vacuum regime, $<1\times10^{-10}$ torr. 
@@ -288,7 +288,7 @@ This allows the shutter to only be open during the times that we are actively tr
 Details of the servo motor trigger integration into the neuKLEIN control system are available in App \hl{somewhere}.
 
 \section{Laser systems}\label{sec:laser_systems}
-
+\setcounter{footnote}{0}
 The heart of any atomic physics experiment are the laser systems which are the basis for laser cooling and various probes.
 Our lab has transitioned to mainly using diode lasers and we rely heavily upon the use of injection locked master - slave setups. \hl{ref}
 Below we will outline the specifics of our light generation systems.
@@ -415,6 +415,9 @@ This light is sent through a final beam expander and into the chamber where we h
 
 This system was originally constructed by Aaron Saenz \cite{AaronDSaenz2005} with additional details available in App A.8 of Natali's thesis \cite{MartinezdeEscolar2010}.
 
+\hl{Be sure to note the folder with all the TA info on the drobo}
+Zeeman is 10.5in
+
 As mentioned previously, we use PDH to feedback to the length of the cavity. 
 Fig. \ref{fig:922cavityLock} shows a shcematic block diagram of the negative feedback path as well as details about the components currently in use.
 	\begin{figure}
@@ -449,7 +452,7 @@ Fig. \ref{fig:461zeemanBeam} shows the Zeeman beam just before entering the cham
 The cause of the intensity asymmetry which can be seen to the right is unknown, but has been confirmed to be present even directly out of the doubling cavity.
 	\begin{figure}
 		\centerline{
-		\includegraphics[height=0.3\textheight]{zeeman_IMG_20171213_13048.jpg}}
+		\includegraphics[height=0.25\textheight]{zeeman_IMG_20171213_13048.jpg}}
 		\caption{Characteristic beam quality of the Zeeman laser}
 		\label{fig:461zeemanBeam}
 	\end{figure}
@@ -979,7 +982,6 @@ Need to discuss this
 Give formulas and then approx on harmonic potential and methods for estimating the oscillation freq
 
 \subsection{Optical lattice trap: 532\,nm} \label{ssec:532sys}
-
 Optical lattices are formed by a standing wave of light which creates a defect free periodic potential.
 These traps are extremely versatile and have enabled the observation of the superfluid - Mott insulator transition \cite{Greiner2002}, artificial gauge fields for neutral atoms \cite{Lin2011}, quantum microscopy with single-site resolution \cite{Bakr2009}, and investigations of quantum magnetism \cite{Hart2015,Greif2015}. 
 They are among the most well-established techniques for controlling a quantum state and have proven to be great tools for exploring the connection between few- and many-body systems \cite{Bloch2008}.
@@ -1266,17 +1268,30 @@ Example, we can drive population to the m$_F=+9/2$ using $\sigma+$ polarization,
 
 Outline path, discuss LCR, reference Josh's masters
 
-\section{Experimental control and electronics} \label{sec:electronics}
+\section{Apparatus interface} \label{sec:electronics}
+\setcounter{footnote}{0}
+The Neutral apparatus interfaces to our digital infrastructure via a plenitude of specialized hardware implementations and custom written software.
+Over the last seven years nearly all of this digital infrastructure has been refactored, upgraded, or replaced.
+Therefore, the following sections will briefly outline these new constructs, providing references to code repositories when possible.
+However, detailed discussions on the usage of this infrastucture will be relegated to their respective appendices.
 
-Huge amount of electronic needed to run this experiment. 
-Primary method of control is analog voltage control or serial connections. 
-We recently revamped the software 
+\subsection{Software} \label{ssec:soft_sys}
+The primary control software is a custom built Labview application based on a synchronous state machine\footnote{Currently this project can be found at \texttt{https://github.com/KillianRice/neuKlein}}\hl{ref}.
+The Neutral implementation of this software is called neuKLEIN (Neutral Killian Lab Experimental Interface) and is based on a major overhaul, by Joe Whalen, of the original control software.
+A detailed overview of the capabilities, limitations, and instructions for use of neuKLEIN is available in App. \ref{app:neuKLEIN}.
 
-\subsection{Computer control and measurement system} \label{ssec:comp_sys}
-The primary control software is a custom built Labview application based on a synchronous state machine \hl{ref} \footnote{Currently this project can be found at \texttt{https://github.com/KillianRice/neuKlein}}.
-The Neutral implementation of this software is called neuKLEIN (Neutral Killian Lab Experimental Interface) and is based on a major overhaul of the original control software undertaken by Joe Whalen.
-A detailed overview of the capabilities, limitations, and instructions for use is available in App. \ref{app:neuKLEIN}.
+In short, an experimental sequence begins with serially programming each voltage output device.
+The pulseblasters are programmed last and are triggered via the global experimental trigger discussed in \ref{sec:expTrig} below.
+Once all devices are ready the pulseblasters become the global clock and the neuKLEIN software begins polling the PixelFly camera waiting for a new image.
+Once an image is received various experimental parameters are recorded into text files and saved to disk.
+This process continues within the primary While loop of the state machine and steps through the predetermined experimental settings array.
+Primary exit conditions are encountering an error, conclusion of the settings array, or manual abortion.
 
+Once the files are written to disk, we perform image analysis using a Matlab$^{TM}$ routine, unimaginatively named Neutral imagefit routine\footnote{Currently this project can be found at \texttt{https://github.com/KillianRice/neutral\_imagefit\_routine}}.
+
+\subsection{Hardware control and measurement systems} \label{ssec:comp_sys}
+
+series of National Instruments$^{TM}$ (NI) data acquisition cards, a reconfigurable FPGA  and custom written image analysis and experimental control software.
 
 Primary hardware is digitl aquisition cards from National instruments.
 Experimental clock is based on the Pulseblaster from SpinCore.
@@ -1308,39 +1323,46 @@ Measurement
 	wavemeter
 
 \subsection{Ancillary laboratory systems} \label{ssec:misc_sys}
-
 \subsubsection{MOT coils}
+The Neutral MOT coils are a complementary pair of custom made solenoids which, in an anti-helmholtz configuration, can generate magnetic field gradients on the order of 150\,G/cm.
+Fig.\,\hl{something} shows the on-axis magnetic field.
+In the center of the chamber, along the Z axis, the field gradient varies with current as 19.1\,(G/cm)/A.
+\begin{figure}
+		\centerline{
+		\includegraphics[width=0.75\textwidth]{MOT_B_Field Profile.jpg}}
+		\caption{MOT coil on-axis magnetic field}{The expected and measured B-field along the Z-axis. The measured field gradient calibration is 19.1\,(G/cm)/A}
+		\label{fig:pbTimingJitter}
+	\end{figure} 
 
-Find reference for circuit
-
-What is the current source
-
-Calibration and where it comes from.
+\subparagraph{Historical:} 
+\setcounter{footnote}{0}
+MOT coils were wrapped by Natali and Pascal in June of 2004.
+They are wrapped using \hl{something} hollow core wire which is water cooled.
+The current source in use is a \hl{something} which uses a high power FET switch to drop current across the coils.
+A high-precision low resistance current sensing configuration is then used to actively feedback and maintain constant current through the coils \footnote{Further information and detailed notes on the wrapping can be found in \texttt{KillianDrobo:\textbackslash\textbackslash Neutral\textbackslash Laboratory Systems\textbackslash MOT Coils}}.
 
 \subparagraph{Potential improvement:}
-Currently we use the some coils and supply for both the blue and red MOTs.
-However, due to the $S=1$ of the triplet system, the zeeman shift is signifcantly more effective.
-Therefore we need much less current running in the MOT coils.
-The blue MOT utilizes 42 Amps through the coils while the red MOT needs on the order of 10 Amps.
-This large range is 
-
-We need to have both a large range and good resolution.
-This is tough to achieve and led to the Rydbberg apparatus using separate coils for the red and blue MOTs.
-We have discussed changging out the supply using a sort of H-bridge configuration as discussed in Melissa Revelle's thesis \hl{ref}.
+Currently the Neutral apparatus uses the same coils and supply for both the blue and red MOTs.
+However, due to the $S=1$ of the triplet system, the Zeeman shift is significantly stronger for the $^3P_1$ state. \hl{check this reasoning, the different is 1.4 MHz/G vs 2.1 MHz/G so can't be only factor}
+Consequently, we need much less current running in the MOT coils for red MOT operation.
+The blue MOT utilizes approx. 42\,Amps ($\sim$ 76\,G/cm) while the red MOT needs on the order of 100\,mAmps ($\sim 2$\,G/cm).
+These small currents for the red MOT are observed to be near the noise floor of the circuit.
+For this reason the Rydberg apparatus implemented separate red and blue MOT coils.
+We have investigated wrapping a new set of coils to follow this example but have not found a feasible to solution.
+Alternatively, we have discussed changing out the current supply dynamically between MOT operation using an H-bridge configuration as discussed in Melissa Revelle's thesis \hl{ref}.
+We have not currently pursued this option at this time.
 
 \subsubsection{Trim coils}
+Cubic trim coil cage (\hl{size?}) with the coils in a helmholtz configuration.
+This is used to trim out static residual B-fields and to apply dynamic and well controlled external magnetic fields.
+We commonly use the coils along the Z-direction to apply bias magnetic fields during spectroscopy as shown in Fig.\hl{something}.
+We find that along the vertical direction, the field on the atoms varies as $\sim$1\,G/A.
 
-Standard trim coil apparatus with the coils in a helmholtz configuration.
+The bosonic magnetic sub-levels of the $^3P_1$ state vary with B-field as 2.1\,MHz/G.
+Compared to the natural linewidth of 7.5\,kHz, this splitting of the $^3P_1$ state provides a very senstivie probe for precisely zeroing of the residual magnetic field.
+Fig.\hl{something} shows an example of tracking the peak loss position as a function of applied B-field, where the intersection is taken as the zero field value.
 
-Used to trim out static residual B-fields and to apply dynamic and well controlled external magnetic fields.
-
-Should include the trim coils in here somewhere and discuss how to zero the B field as well as provide what the calibration factor is for the coils
-
-Model numbers for Gwinstek drivers on Z and Y. Reference something about the BioChip for the X box and give a model number for its current source.
-
-Beware of the high sensitivty of the 3P1 state to B fields. Small changes in current can affect the position of the MOT. Particularly noticable when attempting to zero the field as there may be unknown offsets. It is recommended to 
-
-\subsubsection{Zero crossing AC line trigger}
+\subsubsection{Zero crossing AC line trigger} \label{sec:expTrig}
 Fig.\,\ref{fig:zeroCrossTrig} shows the circuit used to start the Neutral experimental sequence.
 	\begin{figure}
 		\centerline{
@@ -1358,7 +1380,7 @@ Fig.\,\ref{pbTimingJitter} shows a comparison of the timing uncertainty when a s
 		\caption{Comparison of pulseblaster timing jitter}{A persistent oscilloscope trace showing repeated measurements of a 200\,ns logic pulse from each pulseblaster. The upper signal is PB0 and the lower is PB1. The scope is externally triggered by the zero crossing AC line trigger.}
 		\label{fig:pbTimingJitter}
 	\end{figure} 
-While this measurement does not reveal what the cause of the relative instability between the three sources (PB0, PB1, or AC line) we do observe a relative instability of approx. 1\,$\mu$s.
+While this measurement does not reveal the cause of the relative instability between the three sources (PB0, PB1, or AC line), we do observe a relative instability of approx. 1\,$\mu$s.
 For most use cases with ultracold matter, this timing uncertainty is entirely reasonable and presents no practical limitation.
 However, this behavior does preclude the usage of cross-triggers between the pulseblasters when performing experiments with the optical lattice.
 In this context, cross-triggers are defined as the mixing of timing signals between the two pulseblasters.

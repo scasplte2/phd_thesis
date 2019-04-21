@@ -1,6 +1,8 @@
 \chapter{neuKLEIN - Killian lab experimental interface} 
 \label{app:neuKLEIN}
-During my time working on the neutral apparatus, Joe Whalen began a rewrite of the Labview based experimental control software which had grown organically through the first decade of the neutral apparatus' existence. Following this refactor, the user interface was also revamped to help reduce human errors and improve overall data collection efficiency. This chapter will outline the major components of the neuKLEIN software package and how this system integrates with the hardware control system and the software analysis algorithm.
+During my time working on the neutral apparatus, Joe Whalen began a rewrite of the Labview based experimental control software which had grown organically through the first decade of the neutral apparatus' existence. 
+Following this refactor, the user interface was also revamped to help reduce human errors and improve overall data collection efficiency. 
+This chapter will outline the major components of the neuKLEIN software package and how this system integrates with the hardware control system and the software analysis algorithm.
 
 \section{Labview code}
 Need to have description of state machine.
@@ -23,14 +25,28 @@ This was originally a project started by a summer student named Weixuan Li in su
 
 Talk about special programs (the custom operation builder specifically)
 
-\section{Possible future improvements}
-Specifically thinking about the ability to do network shared variables. Then we could dedicate a mahcine to an instrument and share the data using a networking layer instead of a hard connection.
+\section{Possible improvements}
+There are a number of possible improvements which I have realized through the usage of the systems.
+Here I'll detail the ones that I believe are the most straightforward and/or those things that have frustrated me most.
 
-Movement to full state machine
+\paragraph{Asynchronous state machine}
+While conceptually simple, the synchronous state machine which neuKLEIN is based on has one significant drawback.
+The linear nature of this design pattern leads to two drawbacks in particular.
+First, changes to the state variables are only read at the start of the while loop.
+Here, state variables refers to the value of all variables in the scope of neuKLEIN and should not be confused with the specific state flag enum for determining execution.
+While static state variable are desirable for the experimental parameters, neuKLEIN currently makes no distinction between program control variables and experimental parameters.
+An example where improved state handling would be useful is in the behavior of the "shutdown" button.
+Currently, when in the primary while loop and the shutdown flag triggered, this action does not exit the primary loop at the conclusion of the current cycle as might be expected.
+Instead, neuKLEIN continues execution for a number of cycles before exiting.
 
-Standardization of the triggered waveform VI
+The second drawback is that sub-processes which take a long time block the overall progression of the program.
+This is most noticeable when program execution hangs due to an attempt to fit a cloud image when there is insufficient data to fit (or worse no atoms).
 
-implementation of coupled scanning mechanism (how is this currently handled)
+A straightforward solution would be to migrate to an asynchronous state machine.
+However, this is a fairly significant refactor and the above challenges have mostly presented inconveniences rather than practical limitations.
 
+\paragraph{Network shared variables}
 
+\paragraph{Standardize triggerable waveform VI}
 
+\paragraph{Coupled scan parameters}

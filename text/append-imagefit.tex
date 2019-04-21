@@ -1,6 +1,4 @@
 \chapter{Imagefit analysis routine} \label{app:imagefitManual}
-"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
-
 General procedure, should probably suggest moving to Github and warn about software migration breaking older versions of code.
 
 Currently everything is working in 2015b? Can it work in a newer version?
@@ -37,6 +35,24 @@ Covers \emph{imagefit\_ParamEval}
 
 \subsection{Suggested improvement}
 
-Move all data structures (or at least the experimental plugin ones) to be table based so that everything is held at the same level. This would make it much easier to be flexible with different analyses (since you're not imposing a structure that might be restrictive later)
+The primary upgrade to this software would be an overhaul of the internal state variables.
+A complete rewrite of the imagefit routine was one of the first projects undertaken during this PhD, during such a time as the meanings of precise variable names was not well known.
+Unfortunately, this has led to vestigial variable names such as "imagevco\_ atom" for the primary independent variable used for scan analysis.
+Additionally, while the plug-in nature of the ParamEval routine has proven to be incredibly useful for the development flexible experiment specific analysis routines, we have found the heavy reliance on structs \hl{ref} for variable passing and storage to be prohibitively restrictive.
 
-One of the key lessons I've learned is to be flexible when starting new projects. You don't know where the data is going to take you or what may come up as an interesting/useful perspective for developing and questioning hypotheses. Tables are a scheme that I've have realized are very common in data management and analysis. The popular python package Pandas, uses datatables exclusively and was the impetus for my interest in the data structure. Tables also make it easy to export and share your data via spreadsheet applications (assuming you use simple datatypes within each cell) Lastly, this is a warning that no matter what you end up doing with the data, you will inevitably have to spend time organizing and reorganizing it at times. With less structure imposed on the data you'll be able to manipulate things more easily and (most importantly to Tom) more quickly.
+The imagefit routine was primarily written with the streamlining of first order image analysis as the design goal.
+We consider this to be the extraction of atom number and temperature versus a single scanned variable.
+However, the natural extension is to look for variations across higher dimensions, or what we deem second order analysis.
+Here is where structs are not useful since they tend to force a hierarchical variable relationship which complicates analysis where the variable of interest was not the explicit independent variable scanned.
+With this in mind, we highly recommend any future improvements to this process focus on the usage of tables \hl{ref} for storing and passing data.
+These data structures consider all data at the same level and are widely used in data science.
+Finally, we note that this issue is not a new problem on the Neutral apparatus. 
+But recent advancements to the experimental stability and control software have ballooned the amount of data we have been generating which is noticeably exacerbating this concern.
+
+One of the key lessons I've learned is to be flexible when starting new projects. 
+You don't know where the data is going to take you or what may come up as an interesting/useful perspective for developing and questioning hypotheses. 
+Tables are a scheme that I've have realized are very common in data management and analysis. 
+The popular python package Pandas, uses datatables exclusively and was the impetus for my interest in the data structure. 
+Tables also make it easy to export and share your data via spreadsheet applications (assuming you use simple datatypes within each cell).
+Lastly, this is a warning that no matter what you end up doing with the data, you will inevitably have to spend time organizing and reorganizing it at times. 
+With less structure imposed on the data you'll be able to manipulate things more easily and (most importantly to Tom) more quickly.
