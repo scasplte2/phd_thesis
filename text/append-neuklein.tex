@@ -25,6 +25,15 @@ This was originally a project started by a summer student named Weixuan Li in su
 
 Talk about special programs (the custom operation builder specifically)
 
+Cycle time is 50 $\mu$s.
+Uses a cRIO real time controller for managing the control layer and the FPGA exeutes the custom logic.
+Example of the flexiblity this provides is the dynamic control of the blue frequency.
+Multiple voltage outputs define the different frequencies of the blue light.
+Originally acheived this same fuctionality by sing a series of digitally controlled analog switches, but can recreate this in software.
+Additionally, the BOP has a weird behavior when you attempt to jump its frequency over large ranges. To alleviate this, we can add in logic that will ramp the set point if the change is bigger than some amount.
+This flexibility was not easily accessible before.
+Details on the interface boards and program software is available somewhere.
+
 \section{Possible improvements}
 There are a number of possible improvements which I have realized through the usage of the systems.
 Here I'll detail the ones that I believe are the most straightforward and/or those things that have frustrated me most.
@@ -50,3 +59,5 @@ However, this is a fairly significant refactor and the above challenges have mos
 \paragraph{Standardize triggerable waveform VI}
 
 \paragraph{Coupled scan parameters}
+
+\paragraph{Update PicoScope VIs}

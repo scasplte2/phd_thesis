@@ -795,7 +795,7 @@ The 689 combiner + MOT path outlined in the figure is elaborated in figure.
 This component is for overlapping the various laser beams which for the bosonic MOT, the fermionic trap and stir MOTs.
 
 In order to change isotopes the aom of the boson selector must be changed according to something.
-When swtiching between 8 and 84 this requires that the Aom be flipped around.
+When swtiching between 88 and 84 this requires that the OMm be flipped around.
 We have tested the reproducibility of this scheme and found it to be a simple of effective means for switching between various isotopes.
 The MOT aom is run at a constant -82 MHz, therefore the three frequncies for choosing between the various isotopes are to land the input light to the blue of the the atomic trantion by 82 MHz.
 
@@ -1191,82 +1191,145 @@ The latter of these has been tested by monitoring the 532\,nm light in a spectru
 To test the former hypothesis, we are currently investigating fiber coupling one of the arms of the lattice but as of spring 2019, this project is ongoing.
 
 \subsection{Optical toolbox} \label{ssec:op_tools}
-
 \subsubsection{Absorption imaging system}
+Absorption imaging is a destructive measurement process which is predicated on measuring the spatially distributed attenuation of laser light after passing through an atomic cloud. 
+In this section we will discuss the technical details of the Neutral absorption system and reserve the theoretical description of the process to Sec.\ref{ssec:tof}.
+Additionally, we will reserve the discussion of image processing for App. \ref{app:imagefitManual} which details how to analyze the images and extract our physical measurements.
 
-Description
-Diagram
-Components
+Fig. \hl{something} shows a simplified schematic of the absorption imaging system.
+Light is derived from the MOT path sub-system and guided to the atom chamber via freespace propagation. 
+After passing through the atoms an imaging system shapes and focuses the image onto a Cooke PixelFly CCD camera.
+The PixelFly is a 12\,bit 1280x1024 CCD with a pixel size of 6\,$\mu$m.
+The imaging system after the atomic sample was developed by Mi Yan and is outlined in detail in App. A of his PhD thesis \cite{Yan2013d}. 
+Much of the imaging sequence is a standard procedure that does not change day to day.
+However, there are a couple of technical issues that may affect the operation of this system which we'll outline below.
 
-Give ref to appendix for in-depth technical discussion of image processing
+First, it is important to not overexpose the image through saturating the camera's pixels by applying the imaging laser for too long.
+We typically expose for 5\,$\mu$s with sample optical depths around one.
+Due to drifts in the power output of the MOT cavity, we must occasionally increase the exposure time.
+The figure of merit we use for determining the exposure time, is to be just below saturation around the edges of the image\footnote{The auto-ranging color axis in the Labview VI is useful for quantitatively determining what the maximum pixel count is, then just keep it near but just below $2^{12}=4096$}.
 
-Ref to Mi App A on imaging system
+The second consideration for taking good images is related to how we extract data from images, the physics of which is discussed in Sec. \ref{something}.
+For now, we will take for granted that each experimental sequence requires one image with the atoms in frame and another background image without the atoms.
+Ideally these images would be simultaneous but as we have to wait for the atoms to exit the frame, we instead aim to minimize the time between the consecutive images.
+For this reason we utilize a special feature of the PixelFly called "double-shutter" mode.
+This particular imaging mode of the camera utilizes a second hidden set of pixels that are interleaved with the active pixels of the CCD.
+Typically the acquisition time between consecutive images taken with a CCD are limited by the analog-to-digital conversion time needed to readout the image from the pixels into the camera's memory.
+However, the PixelFly's set of hidden pixels lets the first image that is taken simply shift one row down from the active pixels into the hidden ones once the externally triggered exposure time has elapsed.
+Once shifted down, the active pixels are free to be exposed again, reducing the time between consecutive images from tens of milliseconds to something \hl{double check}.
+The drawback of this scheme is that for exposure times less than the readout time of an image, the second image is forced to have a minimum exposure of the readout time.
+This presents a challenge as the exposure time is about four orders of magnitude faster than the readout time.
+To overcome this, we rely on the fast response of the imaging system AOMs, a high extinction ratio of the 461\,nm photons, and a narrow line filter centered at 461\,nm placed attached directly to font face of the CCD.
+Fig. \hl{something} shows two AOM's along the imaging path before the atoms.
+We found two AOM's necessary to attenuate leakage light along the path to acceptable levels while maintaining fast response times which a physical shutter cannot replicate.
 
-Discuss time of flight pixel calibration as well as the optical magnification system put in place by Mi
+We care about the timing since the laser intensity and frequency might drift between the atom and background images. 
+Variations in intensity have straightforward implications for errors since the measurement of the atomic number density assumes the only difference between the images is due to the presence of scatters, Sec.\hl{some sec}, and does not account for fluctuating photon number. 
+Very occasionally, the Neutral apparatus will experience an underexposed shot (of either the atom or background image) that must be discarded due to large, noticeable, fluctuations. 
+We hypothesize that these occurrences are the result of environmental perturbations (acoustic noise, vibrations through the table, spurious ground or electrical noise). 
+However, the precise cause is unknown as the absorption imaging happens very quickly at the end of the experimental cycle when multiple systems begin to reset for the next sequence and in practice, these fluctuations do not occur often enough to be a major cause for concern.
 
-Give timing diagram, name the first pulse the atom pulse and the second the background pulse.
+The more insidious source of error in absorption imaging is variation of the optical frequency. 
+Coherent, frequency stabilized radiation is used to illuminate the atom cloud so that we may control the optical absorption cross section and accurately measure the atomic number density. 
+However, this laser light is passed through many optical components on it's path to the atoms and ultimately the imaging camera. 
+Small reflections along this path result in a multitude of interferometers which causes small scale spatial intensity variation across the beam. 
+Exacerbating this problem are short time frequency drifts that may occur between the atom and background images which result in slightly different fringe patterns in the atom and background images. 
+Fringes patterns are a well known nuisance in experimental AMO images and it has become routine to use linear algebra techniques to create a composite background image for each atom image during analysis \cite{Segal2009}. 
+A brief discussion of the principal component analysis (PCA) algorithm employed by the Neutral analysis routine is outlined below, while a more discussion can be found in Sec. \hl{some sec}. 
 
-Actualy diagram of the imaging system, the light path and the relation of the beam to the chamber
-
-Give reference to section with theory but discuss the technical limitations
- 
-Absorption imaging is a destructive measurement process which is predicated on measuring the spatially distributed attenuation of laser light after passing through an atomic cloud. In this section we will discuss the technical details of the Neutral absorption system and reserve the theoretical description of the process to Sec.\ref{ssec:tof}. 
-
-We must consider the bit depth of the camera's pixels, which in turn influences the number of photons (the intensity) we can illuminate the cloud with over a certain time. \hl{this must be related to the thinness of the sample right? Thick clouds also mean multiple scatters? Find someone that discusses this idea}.
- 
-The number of photons needs to be in a certain range, not to little but not too much. \hl{perhaps discuss the real world implication of counting photons (changing the exposure time)} 
-
-This consideration means we generally aim for an optical depth around unity which is an order of magnitude difference the atom and background pulse. 
-
-We use \hl{such and such} camera \hl{include datasheet in appendix since it is hard to find} which has a double shutter function. More details can be found in the appendix \hl{some sec}. We care about the timing since the laser intensity and frequency might drift between the atom and background images. Variations in intensity have straightforward implications for errors since the measurement of the atomic number density assumes the only difference between the images is due to the presence of scatters, Sec.\hl{some sec}, and does not account for fluctuating photon number. Very occasionally, the Neutral apparatus will experience an underexposed shot (of either the atom or background image) that must be discarded due to large, noticeable, fluctuations. We hypothesize that these occurrences are the result of environmental perturbations (acoustic noise, vibrations through the table, spurious ground or electrical noise). However, the precise cause is unknown as the absorption imaging happens very quickly at the end of the experimental cycle when multiple systems begin to reset for the next sequence and in practice, these fluctuations do not occur often enough to be a major cause for concern.
-
-The more insidious source of error in absorption imaging is variation of the optical frequency. Coherent, frequency stabilized radiation is used to illuminate the atom cloud so that we may control the optical absorption cross section and accurately measure the atomic number density. However, this laser light is passed through many optical components on it's path to the atoms and ultimately the imaging camera. Small reflections along this path result in a multitude of interferometers which causes small scale spatial intensity variation across the beam. Exacerbating this problem are short time frequency drifts that may occur between the atom and background images which result in slightly different fringe patterns in the atom and background images. Fringes patterns are a well known nuisance in experimental AMO images and it has become routine to use linear algebra techniques to create a composite background image for each atom image during analysis \cite{Segal2009}. A brief discussion of the principal component analysis (PCA) algorithm employed by the Neutral analysis routine is outlined below, while a more discussion can be found in Sec. \hl{some sec}. Briefly, this approach is as follows:
-\begin{enumerate}
-\item Find a basis set of background images from a large set of raw background images.
-\item For a single atom image, construct an initial guess at a composite background image using coefficients to weight each basis image resulting in a superposition of the basis images.
-\item Segment the atom image into multiple regions by separating out the region of interest around the atom cloud.
-\item Comparing similar regions between the composite background and the atom background region, perform a least-squares minimization by tweaking the weighting coefficients of the composite background.
-\item Once a suitable composite background has been found, calculate the optical depth using the atomic region of interest and the corresponding region of the minimized composite background image.
-\end{enumerate}
-This procedure is repeated for each atom image using a static background basis set that is periodically recalculated using recent background images to account for long term drifts of the apparatus. may be numerically intensive as it is done for each atom image but the results have proven remarkable for even modest computational resources. 
-
-\hl{add picture showing the fringe removal}
-
-\subsubsection{Chirped blow away pulser}
-
-
-
-Reference Josh's master for construction
-
-Reference Natali's(?) thesis for shelving
-
-Discuss usage in measuring Rabi frequencies (add appendix discussing the fitting of the optical bloch equations?)
+Briefly, the PCA approach is as follows:
+\begin{outline}[enumerate]
+	\1 Find a basis set of background images from a large set of raw background images.
+	\1 For a single atom image, construct an initial guess at a composite background image using coefficients to weight each basis image resulting in a superposition of the basis images.
+	\1 Segment the atom image into multiple regions by separating out the region of interest around the atom cloud.
+	\1 Comparing similar regions between the composite background and the atom background region, perform a least-squares minimization by varying the weighting coefficients of the composite background.
+	\1 Once a suitable composite background has been found, calculate the optical depth using the atomic region of interest and the corresponding region of the minimized composite background image.
+\end{outline}
+This procedure is repeated for each atom image using a static background basis set that is computed for each scan.
+Fig. \ref{fig:PCAcomp} shows an example of using this technique with a background set of 20 other images (not shown).
+	\begin{figure}
+	\centerline{
+		\includegraphics[width=\textwidth]{PCAcomp.png}}
+		\caption{Comparison of background subtraction methods}{Background subtraction on the same image performed using two different methods and plotted on the same color scale. a) The partner-in-time background to the atom image is used. b) A composite background image formed via PCA is used.}
+		 \label{fig:PCAcomp}
+	\end{figure}
+While PCA does not completely eliminate the visible fringe patterns, there is a noticeable reduction of the fringes in the PCA image versus the partner-in-time method.
 
 \subsubsection{Highly tunable 689\,nm spectroscopy system}
+The spectroscopy laser is derived from a dedicated slave diode and is our primary 689\,nm probe for bosonic isotopes, with the spin manipulation laser below being used for fermions.
+This laser system is used for general intercombination line spectroscopy, photoassociation, Bragg scattering, and Rabi oscillation measurements.
 
-Discuss all the ways this guy can be injection locked.
+Fig. \ref{fig:689specSch} shows a simplified optical diagram along with a component table.
+As this is our primary spectroscopy laser its optical setup has been consistently in flux but a couple of noteworthy innovations have been implemented in recent years.
+One such process is the development of an infinite sample and hold circuit to allow for intensity stabilized "chirped" pulses on timescales much faster then the acquisition time of the intensity lock circuitry.
+The process and related circuits are discussed in \hl{somewhere}.
+	\begin{figure}
+	\centerline{
+		\includegraphics[width=\textwidth]{689specLaser.jpg}}
+		\caption{Optical schematic: 689 spectroscopy laser}
+		 \label{fig:689specSch}
+	\end{figure}
 
-Reference Weixuan's writeup. Did he leave a writeup?
+Furthermore, a versatile injection locking scheme allows us to change the seed laser frequency via three different methods outlined below.
+\begin{outline}[enumerate]
+	\1 Directly following slave 0
+		\2 A small amount of light from slave 0 is coupled directly into the rejected port of the spectroscopy slave, resulting in the frequency of spectroscopy slave and slave 1 being shared. 
+		Fig. \hl{something} shows the position of this pick-off before the boson red MOT AOM. 
+		Recalling that slave 0 is always positioned +82\,MHz of the bosonic isotope of interest, the direct method will position the frequency of the spec. slave to also be +82\,MHz.
+	\1 Slave 0 minus 40\,MHz
+		\2 The light sent from slave 0 is shifted down 40\,MHz by the spec. offset AOM. This positions the spec. slave frequency at +42\,MHz of the intercombination line of interest.
+	\1 Programmable offset
+		\2 In 2018 we re-purposed the original homemade 689 master ECDL described in Natali's thesis as a slave ECDL and directed light from this setup as a tertiary method for tuning the frequency of the spec. slave. 
+\end{outline}
+There are several things to note concerning the above descriptions.
+First, to reiterate, the "of interest" designation specifically refers to the variability of the laser frequency of slave 0 which is dependent on the configuration of the isotope selector AOM as discussed in Sec. \hl{somewhere}.
+Second, switching between case I and II is surprisingly trivial given the realized setup on the table.
+In practice, a flipper mirror and clever optical path alignment allow us to switch between these two injection methods in a matter of seconds and has demonstrated remarkable stability.
+Thirdly, while the programmable offset is the most versatile of the presented schemes, it also has the greatest frequency uncertainty and is fundamentally a different approach that we are still in the process of exploring.
 
-Default boson probe beam
-	Used for general spectroscopy of 3P1, PAS, and rabi oscillations.
-Discuss various configurations and the frequencies resulting in their usage
-Bragg beam inputs and reference to Brian’s thesis
-Figure - outline various light paths for each config
-Outline the inputs and the outputs for the spectroscopy slave
+\hl{ask Josh to publish work to Github at some point}
+The slave ECDL, beatnote generation, and phase locked loop (PLL) integrated circuit was a project begun by a visited student, Weixuan \hl{lastname?}, and later completed by Josh Hill.
+We will leave the detailed description of the Neutral implementation for Josh's forthcoming thesis and instead reserve our current discussion to an overview of the technique.
+It is based on the 2009 work of Appel et. al. \cite{zfr08expansion} which outlines a versatile optical phase locked loop with a claimed frequency range of sub-MHz to 7\,GHz.
+
+As a brief reminder, phase locking is a feedback scheme which seeks to maintain the frequency difference between two sources.
+This process is heavily used in the telecommunications industry and analog phase locking is a common technique in atomic physics laboratories as well.
+In atomic physics, the general idea is to generate a beatnote by interfering two single frequency lasers on a high bandwidth photodiode.
+From this optical beatnote we intrinsically observe the difference frequency of the two lasers as the summing frequency is well outside the bandwidth of photodiodes.
+The difference frequency can then be further interfered against an RF reference frequency and low-passed to generate an error signal which can be used to stabilize the difference frequency against the RF reference.
+
+The versatile OPLL is a digital realization of this approach which we have used to lock the relative frequency difference between the Toptica master and slave ECDL from approx. 1\,MHz to 1.2\,GHz.
+The upper limited is currently bandwidth limited by our AC coupled photodiode and not by the circuitry.
+Fig. \ref{fig:offsetDetails} shows an example of the optical beatnote monitored via an RF spectrum analyzer.
+Notably, while we do observe suppression of frequency components around the set point which is characteristic of locking, we also see resonant peaking instead of a single narrow frequency peak as expected.
+Further investigations showed that the individual frequencies were fairly narrow as shown in Fig. \hl{something}b) where we observed atom loss on the $F=9/2\,\rightarrow\,F=11/2$ transition with linewidths on the order of 60\,kHz.
+	\begin{figure}
+	\centerline{
+		\includegraphics[width=\textwidth]{offsetLockDetails.png}}
+		\caption{Characterization of the OPLL performance}{a) RF spectrum of the optical beatnote when the OPLL is engaged. Resonant peaking can be seen in the 500\,kHz band around the center frequency. b) Atom loss spectrum which shows that the resonant features are at discrete frequencies. Differences between the AOM detuning shown and the center frequency of the OPLL are due to various AOM shifts between components.}
+		 \label{fig:offsetDetails}
+	\end{figure}
+
+Finally, we note that this system has also been used to perform Bragg spectroscopy as reported in the PhD thesis of Brian DeSalvo.
+Detailed drawings of the optical setup used for shallow angle Bragg scattering can be found in App. \hl{something}.
 
 
 \subsubsection{Spin-manipulation laser with dynamic polarization control}
+Fermionic strontium 87 has become of major interest for experiments studying quantum magnetism in a highly degenerate SU(N) system. \hl{rephrease}.
+Key to these studies is the creation and manipulation of arbitrary spin mixtures.
+We have recently implemented a spin manipulation laser probe (spin-man) acting on the $F=9/2\,\rightarrow\,F=11/2$ hyperfine transition of the intercombination transition for the purpose of creating well defined spin mixtures.
+Preliminary investigations using this system are reported in Ch. \ref{ch:chap6}.
 
-Optical schematic
-Output side built by Josh Hill and outlined in his master thesis.
+Fig.\hl{something} shows a simplified optical schematic of the spin-man system which is derived from slave 1 and is related to the stir MOT system outlined above in Sec. \hl{something}.
+The original construction of the output optics is outlined in Ch. 5 of Josh Hill's masters work \cite{Hill2017} and is part of the layered optical systems added to the top of the optical chamber in 2017.
 
-LCR voltage figure
+A major component of this layered system is the liquid crystal retarder (model: MeadowLark Optics LV-300 LCR) which allows us to dynamically control the polarization incident on the atoms.
+Additionally, a configurable high precision RF system for dynamically changing the spin-man laser frequency has allowed us to demonstrate optical pumping in a magnetic field using $\sigma+$ light and addressing each sub-level transition independently.
+Then once spin polarized we can flip the light polarization and probe using $\sigma-$.
+Details of these experiments and further characterization of this system are presented in Ch. \ref{ch:chap6}. 
 
-Liquid crystal reatrder is essentially a variable waveplate that we can use to dynamically change polarization of spin polarization beam.
-Example, we can drive population to the m$_F=+9/2$ using $\sigma+$ polarization, then flip the polarization to interrogate $\sigma-$
-
-Outline path, discuss LCR, reference Josh's masters
+The RF tunability for optical pumping is based on the "table mode" feature of the Novatech 409B digital synthesizers which can be externally triggered to progress through a table of configured frequencies.
+These synthesizers are discussed in greater detail in \hl{somewhere}.
 
 \section{Apparatus interface} \label{sec:electronics}
 \setcounter{footnote}{0}
@@ -1290,37 +1353,31 @@ Primary exit conditions are encountering an error, conclusion of the settings ar
 Once the files are written to disk, we perform image analysis using a Matlab$^{TM}$ routine, unimaginatively named Neutral imagefit routine\footnote{Currently this project can be found at \texttt{https://github.com/KillianRice/neutral\_imagefit\_routine}}.
 
 \subsection{Hardware control and measurement systems} \label{ssec:comp_sys}
+The hardware control system is composed of several components.
+We use a series of National Instruments$^{TM}$ (NI) data acquisition cards and a reconfigurable FPGA for generating output voltages.
+The experimental clock is based on a set of SpinCore PulseBlaster pulsers and a Cooke PixelFly camera is used for absorption imaging.
+We also have access to a PicoScope 5000 digital oscilloscope for high resolution signal monitoring and recording. Typically this is used for recording high importance photodiode signals for later analysis.
 
-series of National Instruments$^{TM}$ (NI) data acquisition cards, a reconfigurable FPGA  and custom written image analysis and experimental control software.
+Table \hl{blank} gives the models of the NI DAQ cards in use, their FIFO (first-in, first out) buffer sizes, and the variation of their sample rates with number of channels enabled.
+Though these cards are known as acquisition cards, we rarely use this functionality.
+Instead we heavily utilize the arbitrary waveform generation capabilities for dynamically generating analog output voltages.
+Furthermore, we do not stream data to cards during the experimental sequence but use only the on-board FIFO buffer for storing the arbitrary waveform.
 
-Primary hardware is digitl aquisition cards from National instruments.
-Experimental clock is based on the Pulseblaster from SpinCore.
+It is important to remember that the finite buffer size and maximum sample rate define two extremes for time based waveform generation due to the discretization of the waveform.
+For short times, the maximum sample rate sets the minimum possible time step between two points on the voltage output.
+At long times, a fixed number of points between the start and end points may lead to unacceptably large voltage steps between two points on the voltage output.
+As with most things, balancing these two tradeoffs is essential and is the primary driver for the plethora of various cards so that we may dedicate their finite resources to specific tasks.
 
-Table of the Daq cards and their fifo conts.
-Discuss discretization of time when using eally large time spans.
-This lef s to want to develop more dynamic static voltage.
+While arbitrary waveform generation is useful for dynamically varying voltages during an experimental sequence, there are a number of applications where a static voltage is needed or smoothly varying between two or more voltages is not required.
+Until recently, the NI-6713 was our only sources of experimentally controlled static voltages (in contrast to a static voltage from a supply) and switching between driving voltages was done via a bank of standalone fast analog IC switches (primarily the ADG419).
+Switching the set point voltage is how we control a number of systems through their feedback.
+For example, the 922\,nm frequency is jumped from the optimal trapping frequency to the optimal imaging frequency at the end of the experimental sequence.
+Therefore, it is imperative to retain this functionality but the NI-6713\,$+$\,switch bank was limited in the number of controlled static voltages to eight and the simple standalone switches were insufficient for applying application logic for dynamically choosing driving voltages.
 
-Recently added a FPGA control system for custom reconfigurable logic.
-Cycle time is 50 $\mu$s.
-Uses a cRIO real time controller for managing the control layer and the FPGA exeutes the custom logic.
-Example of the flexiblity this provides is the dynamic control of the blue frequency.
-Multiple voltage outputs define the different frequencies of the blue light.
-Originally acheived this same fuctionality by sing a series of digitally controlled analog switches, but can recreate this in software.
-Additionally, the BOP has a weird behavior when you attempt to jump its frequency over large ranges. To alleviate this, we can add in logic that will ramp the set point if the change is bigger than some amount.
-This flexibility was not easily accessible before.
-Details on the interface boards and program software is available somewhere.
-
-Control
-	Pulseblaster for timing
-	NI cards for voltage control
-		make a table with model number and importnat characteristics
-		discuss limitations that must be watched out for
-	FPGA system
-
-Measurement
-	Pico scope
-	pixelfly
-	wavemeter
+These shortcomings led us to develop a real-time based NI-FPGA (model: something) for the development of custom reconfigurable logic and static voltage output.
+This system is based on NI's cRIO real-time controller for managing the control layer of the system and the FPGA executes the user-defined logic.
+This device provides 32 logic inputs and 16 analog voltage outputs which can be configured on the fly to be static or conditionable via the logic inputs.
+Detailed schematics of the input/output conditioning circuits as well as limitations, capabailites, and usage instructions are available in App. \hl{somethign}.
 
 \subsection{Ancillary laboratory systems} \label{ssec:misc_sys}
 \subsubsection{MOT coils}

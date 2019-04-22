@@ -24,6 +24,32 @@ Here is where I need to introduce and characterize the \hl{LCR}
 
 Averaging images together (how to use this code specifcally)
 
+don't forget to talk about optimizing the polarization of the fixed waveplate
+
+Fig. \hl{something} shows the variation of the retardance angle for 689\,nm light.
+
+For reference, Fig. \ref{fig:mF87} reproduces the Clebsch-Gordan coefficient diagrams originally created by Pascal.
+From this diagram we can easily see how optical pumping works.
+Let us consider an atom starting in the $m_F=-9/2$ ground state and being exposed to $sigma+$ photons acting on the $F=9/2\,\rightarrow\,F=11/2$ hyperfine transition.
+Absorbing a photon promotes the atom to the $F=11/2, m_F=-7/2$ state.
+From here we can consult Fig. \ref{fig:mF87} to find the dominate decay path to be to the $F=9/2, m_F=-5/2$ state due to the Clebsch-Gordan coefficients.
+
+Now we have a couple of options, by taking advanatage of the CG coefficents we see that we will probabilitically promote population towards a polarized state.
+In the absecene of a bias field the magnetic sub-levels are degenerate so this oculd be an efficeint process.
+In practice we find this to heat the atom population significantly.
+Therefore, in a bias field, we split out the levels by approx. 200\,kHz to and address each sub-level transition individually.
+This allows us to minimize the number of photon scattering events which we hypothesize to be the cause of the observed heating.
+
+can individually address the separate hyperfine sub-level transitions and sequentially pump population towards one a polarized state 
+	\begin{figure}
+		\centerline{
+		\includegraphics[height=\textheight]{87_CG_coeffs.png}}
+		\caption{$^{87}$Sr $^1S_0 \, \rightarrow \, ^3P_1$ hyperfine structure}
+		\label{fig:mF87}
+	\end{figure} 
+	
+Be sure to define convention for what we determined was plus and minus
+
 \section{Search for narrowline PA molecules using various spin mixtures}
 \label{sec:87PAS}
 
