@@ -178,7 +178,7 @@ Figures \ref{fig:sourceSideView} - \ref{fig:cryoTower} also show various views o
 	\end{figure}
 From left to right, the system starts with an oven source based around a custom nozzle design which uses a rod heater to vaporize elemental strontium.
 Next, there is a 6 way tee used for the optical molasses step which we refer to as the 2D collimator. 
-From here atoms pass through a narrow differential pumping tube and into the entry port of the Zeeman slower where a majority of the laser cooling takes places. 
+From here atoms pass through a narrow differential pumping tube and into the entry port of the Zeeman slower where a majority of the laser cooling takes places as atoms traverse the 10.5\,in one dimensional cooling stage. 
 Following the Zeeman slower, atoms enter the science chamber where a plethora of lasers are used to manipulate and probe their behavior.
 Chief among these are the MOT sequences and the high intensity far off-resonant optical dipole traps used for the final stage of confinement.
 Lastly, the body of the science chamber is supported by the cryo tower which houses a titanium sublimation catridge (model: Varian 916-0061 series) and is the entry point for the Zeeman laser.
@@ -416,7 +416,6 @@ This light is sent through a final beam expander and into the chamber where we h
 This system was originally constructed by Aaron Saenz \cite{AaronDSaenz2005} with additional details available in App A.8 of Natali's thesis \cite{MartinezdeEscolar2010}.
 
 \hl{Be sure to note the folder with all the TA info on the drobo}
-Zeeman is 10.5in
 
 As mentioned previously, we use PDH to feedback to the length of the cavity. 
 Fig. \ref{fig:922cavityLock} shows a shcematic block diagram of the negative feedback path as well as details about the components currently in use.
@@ -878,13 +877,34 @@ Runnign characteristics
 Optical schematic of the combiner showing how the beams skirt by one another.
 Long path lengths ensure fairly good co-propagation but it is not perfect.
 
+The 689 combiner is a series of cloesly aligned mirrors for combining the boson, stir, and trap MOT beams before sending into the red MOT path and ultimately to the atoms.
+Another popular way this is acheived is via fiber coupling but this is a lossy process.
+Not perfectly aligned but it is good enough.
+
+Give schematic
+
 
 
 \subsection{Optical dipole trap: 1064\,nm} \label{ssec:1064sys}
+\begin{outline}[enumerate]
+\1 intro
+\1 path 
+	\2 config with split power
+\1 load trap over view
+\1 sheet/dimple overview
+\1 Forced evaporation discussion
+	\2 ref to Mi's thesis
+	\2 ref to section in ch. 3 for describing the desnity distribution
+	\2 ramp formula
+\1 history
+\end{outline}
 
+The 104\,nm optical dipole trap is our primary science trap.
+Since strontium has a J=0 ground state, magnetic traps that are common to alkali's are not useful.
 Discuss how our only method for evaporative cooling is through light traps since we do not have a magnetically sensitive ground state.
 
-Addres hisotry o laser and say that the current IPg died in fall of last year. 
+There are two paths split, named the loading arm and the sheet/dimple arm as shown in Fig. \hl{some fig}.
+Several diffferent types of traps have been formed, ref Ying thesis. 
 
 How much power roughly is split between the arms?
 
@@ -893,91 +913,137 @@ This setup allows us to more fully utilize the available power from the IPG and 
 Although, we have found it useful to continuously monitor the evaporation trajectory from shot to shot. 
 As a problem, say with a misbehaving power lock, along one arm are is now coupled and may result in intensity fluctuations along both arms if the power lock cannot account for this perturbation.
 
-Several diffferent types of traps have been formed, ref Ying thesis. There are two paths split, named the loading arm and the sheet/dimple arm. Give stats on the loading path The loading path has the ability to be recycled on itself but we have not utilized this capability in many years due to complications of measuring the trap frequencies. 
+Give stats on the loading path The loading path has the ability to be recycled on itself but we have not utilized this capability in many years due to complications of measuring the trap frequencies. 
 
 The sheet/dimple arm can take two configurations as it's name suggests. The sheet trap is an approx. 400 x 40um sheet with the short axis parallel along gravity. This geometry is useful for the low densities needed for Sr 86 to minimize the effecs of three body recombination. Alternatively, by switching out a mirror we can direct this power
 
+evaporation and description of density distribution
 Formula for ramp
+ref for where we get the formula and what it's purpose is
+
+\subparagraph{Historical note:}
+In the fall of 2018, the original IPG YLRsomething, which had been in use for about a decade, died due to a thermal issue which led the internal fiber amplifier to overheat and burn up.
+As of April 2019, this laser is being replaced by \hl{something} and Josh Hill is reconstructing some elements of the paths reported here and in Ying's thesis.
+Therefore, as his forthcoming thesis will outline this work in detail, we will focus our discussions on the general usage and procedures of the 1064\,nm trap.
+
 
 \paragraph{Alignment Procedure} \label{sssec:1064_align}
-
 Will focus on independent arm alignment of loading trap and sheet trap
-
 Also useful to imagine three orthogonal axes with their origin set at the center of the chamber.
+Fig. \hl{something} shows the propagation of the IR beams with respect to the science chamber
 
-Need a figure showing the beam prop directions and the setup I'm envisioning.
 
 %% Loading
-
-From the figure, we see that the loading trap propagates primarily along the X-direction. We start by aligning loading trap since it is generally less sensitive and the ports that it goes through are equidistance from the ori
+From the figure, we see that the loading trap propagates primarily along the X-direction. 
+We start by aligning loading trap since it is generally less sensitive and the ports that it goes through are equidistance from the origin
 
 Can generally get away with centering vertically on the chamber windows. 
-
 goal is to rotate about the center point, can verify this by equalizing the distance from the edge of the window on both sides of the chamber
-
 Letting the atoms extend along a single dimension of the trap. 
-
 Moving the red MOT up and down with the z-trim. Dynamic control of z-trim is useful here as you can define a loading b field value then a science b field value.
 
+As a secondary option, there are shortpass dichroic in place with fiber launchers positioned behind htem.
 Use the shortpass dichoric mirrors to counter propagate a red loss beam. Alignment of the red beam follows the usual procedure making sure to reduce the exposure time and power as low as possible while maintaining a loss signal which should maximize alignment.
-
-%%%% Scratch
-
-
-%%%% Peaking up
 
 
 %% Sheet
 
 %%%% Scratch
-
-%%%% Peaking up
+Best method is to copropagate with 689
 
 The sheet trap propagates primarily along the y-axis. This direction has one port extended away from the main chamber body due to the ion gauge. This can complicate the alignment. You
 
-is a little more complicated because it 
+is a little more complicated because it is very sensitive
 
-
-
-For peaking up the the sheet trap alignment, hit the red MOT with the loading trap, then extinguish the red MOT away and hold in the single arm loading trap for approx 10-20ms. This allows the red MOT to fall away and the atoms caught in the ODT will expand along the arm, mapping out the spatial profile. Once the untrapped atoms have fallen away, image the the atoms in situ (i.e. without a time-of-flight). With the spatial profile outlined you should be able to scan the sheet trap vertically looking for horizontal confinement along the loading trap. As the sheet is so tight along the vertical direction, this alignment is done using the last cylindrical lens before the chamber. 
+For peaking up the the sheet trap alignment, hit the red MOT with the loading trap, then extinguish the red MOT away and hold in the single arm loading trap for approx 10-20ms. 
+This allows the red MOT to fall away and the atoms caught in the ODT will expand along the arm, mapping out the spatial profile.
+Once the untrapped atoms have fallen away, image the the atoms in situ (i.e. without a time-of-flight). 
+With the spatial profile outlined you should be able to scan the sheet trap vertically looking for horizontal confinement along the loading trap. As the sheet is so tight along the vertical direction, this alignment is done using the last cylindrical lens before the chamber. 
 
 Dimple trap follows the same process as the sheet alignment but there is a Newport Pico motor for finely adjusting instead of a lens.
 
 
 \subsubsection{Trap frequency calibration} \label{sssec:1064_trap_freq}
+Measurement of trap frequencies had previously relied upon parametric heating via intensity modulation of the optical dipole trap \hl{cite Ying thesis}. 
+This process would observe atom loss via resonant heating when the modulation frequency matched a trap oscillation frequency. 
+While this is a convenient and simple process it can lead to quite a complicated spectrum since the heating process does not discriminate directional information and may lead to coupling of higher harmonics of the trap frequencies. 
 
-Measurement of trap frequencies had previously relied upon parametric heating via intensity modulation of the optical dipole trap \hl{cite Ying thesis}. This process would observe atom loss via resonant heating when the modulation frequency matched a trap oscillation frequency. While this is a convenient and simple process it can lead to quite a complicated spectrum since the heating process does not discriminate directional information and may lead to coupling of higher harmonics of the trap frequencies. 
+Recently, we have found excitation of center-of-mass (COM) oscillations to be a more reliable mechanism for measuring trap frequencies.
+Fig. \hl{something} shows an example of trap frequency measurements taken via center-of-mass oscillations.
 
-Cover both methods, moving the laser beam itself and snapping back or using the 532 beam to pull.
+Vertical trap frequencies is a straightforward process whereby we can excite oscillations by quickly extinguishing the trap for $\approx$1-2\,ms before turning them back on.
+By varying the evolution time once the trap is restored followed by a typical time-of-flight and absorption imaging, then we can observe the oscillations and fit the variation of the cloud center position over time to extract the frequency.
+On a technical note, we find that this rapid on-off of the beams results in a brief overshoot of the power locks when turned back on.
+However, the power lock equilibrium is restored after a few milliseconds and therefore we evolve for a time long compared to this perturbative behavior.
 
-Primarily have used the kicking method for the measurement of trap frequencies using independent arm ODT (combination of the loading and sheet/dimple trap). 
-
-With the recent addition of the high power 532\,nm for the optical lattice, we have explored an alternative method of inducing a center-of-mass oscillation. This method uses a single pass of the green light purposely misaligned to the equilibrium position of the ODT to pull the atoms and excite an oscillation.
+Exciting oscillations along the horizontal directions, X and Y, is a bit more challenging.
+We have developed two mechanisms for exciting these modes which we call the kicking method and the pulling method.
+The following sections will provide further detail.
 
 \subparagraph{Kicking method:}
-Primarily have used this For the loading trap. Keep the sheet the 
+The kicking method has been primarily used for measuring the trap frequencies of the independent arm ODT.
+In this configuration the two ODT beams are in plane and orthogonal.
+This method is useful in this scenario since the excitation of the center-of-mass oscillation via an abrupt step of the AOM drive frequency.
+This changes the deflection angle of the IR beam out of the AOM and "kicks" the cloud.
+Briefly, the kicking procedure is 
+\begin{outline}[enumerate]
+	\1 During the ODT loading phase, load into a trap with one beam offset
+		\2 The beam which is offset will excite oscillations along the opposite beam and measure the confinement due to the beam being shifted.
+		\2 We have found that, in our current configuration, an offset of $\approx$1\,MHz results in a reasonable excitation amplitude.
+	\1 Once the red MOT is extinguished and ODT loading is complete, we evaporate down to the trap of interest in the offset trap.
+		\2 Here we find it useful to follow the evaporation trajectory for the experiment at hand. This is done so we can adequately model the potential and evaluate the trap depth.
+	\1 After evaporation, we let the atoms equilibrate for $\approx$250\,ms then suddenly switch the frequency of the trap and hold for a variable evolution time before releasing and imaging.
+\end{outline}
 
-Use the RF meter to measure the output frequency (eliminates any offset in voltage readings)
-Use a dynamic voltage output to load into a trap that is slightly misaligned. Both the 
-
-The process for measuring the horizontal is 
-For the current configurations of traps we have found an approx 1 MHz change to the overall RF frequency of 82 (?) MHz to provide a reasonable amplitude. 
-
-Vertical oscillation can be excited by flashing off the sheet trap for 1-2 ms. 
-
-Example time dynamics
+We achieve the frequency shift that excites the kick by stepping the input of a voltage controlled oscillator (VCO) which is typically fixed by a static voltage source.
+During the experimental setup, we account for any voltage offsets between sources by measuring the output frequency of the VCO using an RF meter.
+This is also ow we determine the needed voltage change for the $\apprx$1\,MHz shift.
 
 \subparagraph{Pulling method:}
+With the recent addition of the high power 532\,nm for the optical lattice, we have explored an alternative method of inducing a center-of-mass oscillation. 
+This method uses a single pass of vertically propagating green light (Arm C) to pull the atoms out of equilibrium and excite an oscillation.
+Details of the setup are are given below in \ref{p:armCFirstPass}.
 
-As alluded to above
-
-we have installed an absolute positioning pico motor mirror mount 
+The pulling method has become our preferred method as it does not require us to change any AOM frequency sources as the kicking method has\footnote{Loading trap uses VCO so changing the voltage source is enough. However, the sheet/dimple is run from a IntraAction driver with a fixed digital synthesizer as the input. For this measurement we temporarily replace the synth with a VCO, but be careful as this will also change the gain of the power lock circuit (Synth outputs $\approx$0\,dbm but VCO outputs $\approx$10\,dbm)}.
+Additionally, the pulling method can be applied to traps where the 1064\,nm light is recycled whereas previously our only recourse was te intensity modulation previsouly described.
 
 \subsubsection{Modeling the potential} \label{sssec:1064_modeling}
+Optical dipole traps result from the spatial dependence of the AC stark shift present whenever an atom interacts with a light field \cite{Grimm1999a}.
+In the simple two-level dressed atom model, the AC stark shift originates from the diagonalization of the atom-photon system which results in an avoided crossing when the photon is nearly resonant with the difference between energy levels \hl{ref on dipole force as avoided crossing, CT book?}
+Fig. shows a schematic avoided crossing where the separation between states is defined as %2\Omega%, or twice the abi frequency.
+The separation between states is intensity dependent and from here we see the origin of optical dipole trap.
 
-Need to discuss this
+Fig b shows the case of red tuning, as intensity is increased the separation between stats is increased and thus the ground state energy is overall lowered.
+This results in a varying potential energy surface which produces a force directing the atoms to the region of highest tintensites.
+Conversely, when blue detuned, the energy between states is decreased as the atom moves away from the laser intensity. 
+Interesting traps can be made using novel blue-detuned traps |hl{ref on blue detuned lattice}
 
-Give formulas and then approx on harmonic potential and methods for estimating the oscillation freq
+
+
+ 
+
+Basic theory
+	ac stark shift depends on intensity
+	gaussian beam intensity is spatially dependent
+		Formula for gaussian beam
+	this translates into a spatially dependent potential which can trap
+	must account for gravity
+		1D fig defining trap depth
+Applied
+	With this in mind we can use the above formulas to model the 3D potential from known parameters
+		get the polarizability from previous work by Pascal
+		reference appendix with explanation of program to do this
+	Make the harmonic approximation and solve for expected trap frequencies
+		compare expected and measured, typically get agreement within 10\%.
+	Once we have an accurate model we can find the trap depth
+		3D trap depth is a little more complex then the 1D analysis suggests
+		Fig of one deep 3D potential and one shallow 3D potential
+
+
+
+
+What is Li's different method?
+	he uses builtin jacobian function for finding the gradient matricies 
 
 \subsection{Optical lattice trap: 532\,nm} \label{ssec:532sys}
 Optical lattices are formed by a standing wave of light which creates a defect free periodic potential.
@@ -1095,6 +1161,16 @@ Day to day variation has not been found to be a limitation but further work must
 		\caption{Emergence of breathing mode oscillation}{The measured radius and cloud centers in each axis of the absorption image. Observation of oscillatory behavior in X-axis without significant variation of the cloud center is a robust measure of the overlap of the 532 and 1064 traps. Once again, the Y-axis are given in arbitrary units.}
 		\label{fig:latBreatheMode}
 	\end{figure}
+	
+\subparagraph{Arm C:} \label{p:armCFirstPas}
+The vertical path is special in all this.
+We installed a special mirror as one of the last turning mirrors (give mode).
+We have recently used this mirror to controllable pull the atom cloud in the 1064\,nm for performing trap oscillation measurements.
+Describe using the separate program and it's limitations.
+It is difficult to know we the beam is moving orthogonal to the IR beams but preliminary investigations show that small movements of the mirror axes couple predominantly along the independent IR arms.
+This was deduced by performing a qualitative single point in time two-dimensional search where the in-situ cloud position was observed as the mirror position was varied.
+A more quantitatively rigorous might be able to reveal the coupling between mirror axis by studying the time-series variation of the cloud center at each point of a two-dimensional mirror axis scan.
+
 
 \paragraph{Aligning the retro-reflection:}
 The retro-reflection is optimized via the 2-band Kapitza-Dirac method which is discussed below.
