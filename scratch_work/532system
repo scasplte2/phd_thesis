@@ -1,0 +1,28 @@
+Main beam
+	Main PBS			- 
+	main halfwave		- 
+	isolator			- 
+	splitting halfwave	- 
+	spliting PBSs		- 
+	
+Arm A
+	AOM					- IntraAction AFM-804A1
+	cleanup PBS			- Thorlabs PBS12-532-HP
+	first pass lens		- CVI PLCX-25.4-772.6-UV-532
+	beamsplitter		- Thorlabs HBSY12
+	retro mirror		- CVI Y2-1025-0-0.30CC
+	
+Arm B
+	AOM					- IntraAction AFM-803A1
+	cleanup PBS			- Newport PBS-5811
+	first pass lens		- CVI PLCX-25.4-772.6-UV-532
+	beamsplitter		- Thorlabs HBSY12
+	retro mirror		- CVI Y2-1025-0-0.30CC
+
+Arm C
+	AOM					- IntraAction AFM-803A1
+	cleanup PBS			- Thorlabs PBS12-532-HP
+	first pass lens		- CVI PLCX-25.4-772.6-UV-532
+	retro lens			- CVI PLCX-25.4-149.9-UV-532
+	retro mirror		- CVI Y2-1025-0
+	
