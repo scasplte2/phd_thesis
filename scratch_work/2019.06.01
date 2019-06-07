@@ -1,0 +1,113 @@
+Ch. 3 -> motivate collisons and how to characterize molecules
+Ch. 4 -> measuring bound-bound coupling and other novel effects
+Ch. 5 -> precise determination of C6 coefficient and scattering lengths
+
+########################################################################################
+CH 4
+
+# Probing the 86Sr halo state
+	- What do we want to do in this paper?
+		probe halo state
+		vary delta_1 to extract the bound bound coupling
+	- Why are we doing it?
+		first test to see how the coupling work out
+			asym -> asym, -1, and -2
+			halo -> aysm, -1, and -2
+		BJ model also makes assumptions about couplings, so want to test validity
+	- What work has been done before and what are we adding?
+		check calcium refs and refs from our paper
+	- Reference to pulished work
+	
+	- FIG: potential (maybe with defs of directions)
+	
+	
+# Experimental Setup
+	- ind arm odt setup presented in ch. 2
+		give typical densities, number, and temp
+		
+	- PA light
+	- FIG: optical setup
+
+# Theoretical description
+
+## 3-level model
+	- Describe theoretical model
+	
+	- FIG: spectra with fit
+		Sample halo spectra fit using the two-photon method described in Ch. 3. 
+	- FIG: model and predictions
+		discuss deviation at higher intensity
+
+## Extending to 4-levels
+	- further detuning, can see clear deviation so simplest extension of theory is to add in a fourth level
+	- motivated by the nearby -1 and asym
+
+	- FIG: varyDetuning
+	
+	conclusion here about BJ coupling model?
+		not too bad to think of as two separate processes
+		acheived best prediction with a floquet model that predicts the binding energies
+			develoed and dicussed in paper
+			somewhere need to address that this model does not incorporate thermal effects so all of our analysis uses the more simple three level model originally developed by BJ.
+			Can we incorporate thermal effecs into floquet model?
+	
+# Higher order peaks
+	- observation of novel higher order peaks, also predicted by the simple theory
+		simply multi-photon processes
+		
+	- FIG: higher order model
+
+
+########################################################################################
+CH 5
+
+# Overview
+	In our first experiments probing the 86 halo, prsented in the previous chapter, we probed the regime of strong coupling and observed large AC stark shifts and higher order Raman processes.
+	These processes strongly perturbed the bare halo molecular state.
+	Therefore, our next experiments choose to examine the weak coupling regime by applying low intensity excitations.
+	This allows us to apply a simple isolated resonance model and precisely determine the effects of excitation lasers via intensity variation.
+	Furthermore, we explored the 
+
+# Experimental setup
+	Fixed Detuning
+	Varied 689 and IR
+
+	Give brief description of sample and how it is achieved
+	Discuss how photoassociation is performed
+
+# Modeling the PA spectra
+## Consideration of trap depth
+	introduce the problem with the trap
+	
+	FIG: - Combined fig showing the change in distribution and the variation of the spectral fitting as the trap depth is varied
+		other figs go into appendix
+	
+## Fitting the thermal lineshape
+	
+
+# Determining perturbations on the halo state
+	account for local truncation of collision energy but not a local AC stark shift due to intensity (make sure of this)
+
+## AC Stark shift due to excitation lasers
+
+## Density dependent shift
+	NEED TO DOUBLE CHECK HIS DENSITY SUSC. WITH NEW C6
+
+## AC stark shift due to trapping lasers
+
+# Unperturbed halo binding energy
+## Chin method to extract
+
+## Modification of the potential
+ways to get scattering length from potential
+	WKB method - integrate up from bottom of the potential to calculate the phase shift then apply GF form
+	Wavefunction - Numerically solve and extrapolate the linear portion to zero crossing
+
+All methods are generally self consisten in the end
+
+
+
+########################################################################################
+CH 7
+
+Using large bound-bound stark shifts for OFR
