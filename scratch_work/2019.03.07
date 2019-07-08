@@ -571,6 +571,9 @@ huge simplifying thing in cold AMO, we mostly care about the the long-range wave
 		it is the phase shift that is the important bit! 
 Possible discussion about phase shift in terms of length
 
+
+
+
 define open and close channel somewhere
 
 address somewhere that these types of problems are generally solved via coupled-channel methods which follow the same recipe for the scattering problem as in the single channel case but does so considering all channels simultaneously through matricies defining potentials and their couplings to one another.

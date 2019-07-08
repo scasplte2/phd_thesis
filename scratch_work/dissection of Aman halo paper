@@ -1,7 +1,7 @@
 # CH. 3 -- #######################################################################################
 
 ############ TWO PHOTON ##########################################################################
-just past eq. 3
+theoretical description to just past eq. 3
 
 
 # CH. 4 -- #######################################################################################
@@ -10,13 +10,6 @@ Eq. 1-3
 
 
 ############ EXPERIMENTAL SETUP ##################################################################
-In this work, we probe the halo state in 86Sr using twophoton Raman photoassociation (PA) [16], in which two laser
-fields couple colliding atoms to the least-bound state of the
-ground molecular potential. We tune near resonance with an
-intermediate state that is bound in the 0u potential corresponding to the 1
-S0 + 3
-P1 asymptote at long range [17] (Fig. 1). 
-
 Two-photon spectroscopy is performed on ultracold 86Sr
 atoms in a single-beam optical dipole trap (ODT) generated
 from a 1064-nm laser propagating perpendicular to gravity
@@ -81,7 +74,7 @@ are determined by measuring dipole and breathing collective
 mode frequencies, which allow determination of trap volume
 and sample density.
 
-
+40728578
 
 ############ THEORY ##############################################################################
 ## Trap bit
