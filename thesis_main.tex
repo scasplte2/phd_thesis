@@ -10,6 +10,9 @@
 \usepackage{bm}			% bold math
 \usepackage{amssymb}	% math package
 \usepackage{amsmath}	% math package
+\usepackage{array}
+\usepackage{mathtools}
+	\newcolumntype{d}{>{\displaystyle}c}
 \usepackage{booktabs}
 \usepackage{lscape}
 %\usepackage{parskip}	% helps tidy up paragraphs
@@ -83,8 +86,8 @@
 \renewcommand{\exp}[1]{\ensuremath{\text{exp}\left( {#1} \right)}} % simplify writing exp(x)
   
 %%%---%%%---%%%---%%%---%%%---%%%---%%%---%%%---%%%---%%%---%%%---%%%---%%%---%%%---%%%---%%%---%%%---%%%---%%%---
-\title{One- and two-photon photoassociative spectroscopy using ultracold strontium}
-\ctitle{One- and two-photon photoassociative spectroscopy using ultracold strontium}
+\title{One- and two-photon photoassociative spectroscopy of ultracold strontium}
+\ctitle{One- and two-photon photoassociative spectroscopy of ultracold strontium}
 \author{James Allen Aman}
 \department{Physics and Astronomy}
 \school{Rice University}
@@ -122,7 +125,7 @@
   \end{frontmatter}
   
 \pagenumbering{arabic}
-\linespacing{1.8}
+\linespacing{1.7}
 
 %Main chapters
 \include{./text/chap1}
@@ -144,17 +147,18 @@
 % Appendices
 \begin{appendices}
 \include{./text/append-momDist}
-\include{./text/append-imagefit}
-\include{./text/append-neuklein}
-\include{./text/append-expHW}
-\include{./text/append-vacuum}
-\include{./text/append-gaussBeam}
-\include{./text/append-effVolume}
-\include{./text/append-922}
-\include{./text/append-dopSpec}
-\include{./text/append-boseHub}
+%\include{./text/append-imagefit}
+%\include{./text/append-neuklein}
+%\include{./text/append-expHW}
+%\include{./text/append-vacuum}
+%\include{./text/append-gaussBeam}
+%\include{./text/append-effVolume}
+%\include{./text/append-922}
+%\include{./text/append-dopSpec}
+%\include{./text/append-boseHub}
+%\include{./text/append-bragg}
+
 %\include{./text/append-MOTwrap}
-\include{./text/append-bragg}
 \end{appendices}
 
 

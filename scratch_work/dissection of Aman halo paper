@@ -1,0 +1,220 @@
+# CH. 3 -- #######################################################################################
+
+############ TWO PHOTON ##########################################################################
+theoretical description to just past eq. 3
+
+
+# CH. 4 -- #######################################################################################
+############ INTRO ###############################################################################
+Eq. 1-3
+
+
+############ EXPERIMENTAL SETUP ##################################################################
+Two-photon spectroscopy is performed on ultracold 86Sr
+atoms in a single-beam optical dipole trap (ODT) generated
+from a 1064-nm laser propagating perpendicular to gravity
+with beam waists of 260 and 26μm [17,22]. The tight waist
+provides vertical confinement. The trap depth after an evaporative cooling stage determines the sample temperature, which
+is set between 30 and 1000 nK. Typical atom numbers are
+several hundred thousand and peak densities are as high as
+2×1012 cm−3. The number of atoms and sample temperature
+are measured using time-of-flight absorption imaging operating on the 1
+S0-
+1
+P1 transition. Trap oscillation frequencies
+are determined by measuring dipole and breathing collective
+mode frequencies, which allow determination of trap volume
+and sample density
+
+The entire PA section from halo paper
+Setup
+Physics of generating signal
+What we measure
+
+############ THEORY ##############################################################################
+simple fitting method as described in ch. 3
+
+4-level model
+section 5 from the halo binding energy paper
+
+
+# CH. 5 -- #######################################################################################
+############ INTRO ###############################################################################
+For potentials that asymptote
+to a van der Waals form, an additional parameter, the van
+der Waals length lvdW, can be introduced for a more accurate description. Efimov trimers also exist in systems near a
+scattering resonance, influencing dimer and atomic scattering
+properties and introducing additional universal phenomena
+[4,5]. 
+** This provides a straightforward method for relating the halo state binding energy to properties of the nderlying atom
+
+We
+accurately determine the 86Sr2 binding energy, considering
+possible collisional frequency shifts and ac Stark shifts due to
+trapping and excitation lasers. Using the universal prediction
+for the binding energy, including corrections derived for a
+van der Waals potential [18–20], we derive a more accurate
+value of the s-wave scattering length for 86Sr atomic collisions
+[17,21].
+
+############ EXPERIMENTAL SETUP ##################################################################
+Two-photon spectroscopy is performed on ultracold 86Sr
+atoms in a single-beam optical dipole trap (ODT) generated
+from a 1064-nm laser propagating perpendicular to gravity
+with beam waists of 260 and 26μm [17,22]. The tight waist
+provides vertical confinement. The trap depth after an evaporative cooling stage determines the sample temperature, which
+is set between 30 and 1000 nK. Typical atom numbers are
+several hundred thousand and peak densities are as high as
+2×1012 cm−3. The number of atoms and sample temperature
+are measured using time-of-flight absorption imaging operating on the 1
+S0-
+1
+P1 transition. Trap oscillation frequencies
+are determined by measuring dipole and breathing collective
+mode frequencies, which allow determination of trap volume
+and sample density.
+
+40728578
+
+############ THEORY ##############################################################################
+## Trap bit
+Equation (4) provides the correct thermal average when
+the collision-energy distribution does not need to be truncated
+(max → ∞). For our data, however, the ratio of sample
+temperature to trap depth is kBT/Udepth ≈ 3 for samples with
+temperature above 100 nK and drops to unity for 30 nK samples, so truncation effects are important. If the single-particle
+kinetic-energy distribution function is a Boltzmann truncated
+at Udepth − U(r), then the collision-energy distribution follows a Boltzmann distribution at low energies [ 	 Udepth −
+U(r)] and falls off more quickly at larger energies, reaching
+zero at 2[Udepth − U(r)]. We find that this treatment predicts
+a narrower distribution on the red side of the spectral line than
+we observe in our data, suggesting the presence of atoms in
+nonergodic orbits with energies above the saddle point of the
+trap. This is not surprising given the large collisional loss rate
+associated with near-resonant scattering in this isotope. Fortunately, the molecular binding energy is strongly determined
+by the sharp edge of the spectrum on the blue side of the line,
+which is relatively insensitive to the description of the red tail.
+
+## Spectral fit
+EQ. 4
+which is itself a thermal average of the scattering probability for loss (|S(,ω1,ω2,..., r)|
+2) over the collision energy , with an energy cutoff max to be discussed momentarily. The trapping potential is given by U(r) = mgz +
+hχ1064,gI1064(r) − U˜min, where mgz is the gravitational potential at height z, I1064(r) is the intensity of the trapping
+light, and χ1064,g = 11 Hz/(W/cm2) [24] is proportional to
+the polarizability of ground state atoms due to 1064 nm light.
+U˜min is subtracted to set the potential at the trap minimum
+to zero. The spatial integral is restricted to regions around
+the trapping local minimum with U(r) less than the trap
+depth [25]. Downhill regions on the other side of the saddle
+point defining the trap depth are excluded.
+
+Our data is fit well with a truncated Boltzmann distribution
+of collision energies [Eq. (4)]. To estimate the systematic
+uncertainty introduced by this treatment, we perform fits with
+max equal to 2[Udepth − U(r)] and Udepth − U(r) and take the
+mean of the two results as the best value for the binding
+energy and half the difference as a systematic uncertainty
+σmax ≈ 100 Hz. This procedure does not correctly represent
+the overall normalization of K, but we are not concerned
+with overall signal amplitude in this study. Atom temperatures
+vary by no more than 20% during the interaction time, so
+assuming a constant sample temperature is reasonable
+
+Bohn and Julienne [26] provide an expression for
+|S(,ω1,ω2,... )|
+2 for a collision on the open channel of
+two ground-state atoms (g) with total energy  leading to
+loss-producing decay from the excited state b1 with rate γ1
+(Fig. 1),
+Eq. 5
+
+For simplicity we have omitted the light shift of b1 due to
+coupling to the scattering continuum [27]. This approach
+was found to be sufficient for describing two-photon spectroscopy to a more deeply bound molecular level in 88Sr [17].
+Equation (5) neglects all light shifts due to the trapping laser.
+Light shifts due to the photoassociation lasers coupling to
+states outside our model (Fig. 1) are also neglected. The
+thermal energy is much greater than the zero-point energy
+for trap motion, T 
+ hνtrap/kB, so confinement effects are
+negligible [28]. γ1 = 2γatomic, where γatomic = 4.7×104 s−1 is
+the decay rate of the atomic 3
+P1 level. γs() is the stimulated
+width of b1 due to coupling to the initial scattering state by
+laser 1, which for low energy can be expressed as [9,23,29]
+EQ. 6
+
+where the optical length (lopt ∝ I1) is related to the overlap
+between the initial colliding state and b1, and k = (2μ)
+1/2/h¯.
+We take the intermediate state b1 as the ν = −2 state, for
+which lopt/I = (1.5 ± 0.3)×104 a0/(W/cm2 ) [23], where
+a0 = 5.29×10−11 m is the Bohr radius.
+
+EQ. 7 - 9 (maybe I should move this stuff to ch. 3 though and pick up at Eq. 10)
+For the experiments reported here, we maintain significant intermediate-state detuning 1 for which |1|
+|2,12|.
+Thus we are in a Raman configuration, and not in the
+Autler-Townes regime [17]. In the Raman regime, Eq. (5)
+shows a maximum near two-photon resonance at 2 + /h¯ =
+2
+2,12/41. Following a treatment discussed recently for a
+similar experiment in calcium [9], if the detuning is restricted
+to near two-photon resonance, then |S|
+2 can be approximated
+as a Lorentzian
+In practice, the variation of collision energy is negligible
+compared to the one-photon detuning 1.
+
+There are several concerns regarding the rigorous application of the Bohn and Julienne theory [26] to our experiment.
+The obvious one is that it assumes an isolated intermediate
+state, which is not always a good approximation because of
+the proximity of state b1 to the 1
+S0 + 3
+P1 asymptote and
+to the ν = −1 state. Because of the small decay rate γ1 of
+the intermediate molecular state associated with metastable
+3
+P1 atomic state, we also expect that loss from the ground
+molecular state cannot be neglected.
+The more subtle issue is that Eq. (7) is derived assuming
+only a single laser beam is near resonant with each leg of
+the two-photon transition, which is not a good approximation
+for two-photon spectroscopy of a halo state and the resulting
+small laser-frequency difference ω1 − ω2 ≈ −Eb2 	 |1|.
+We can expect that coupling between pairs of states due to
+both photoassociation lasers will contribute to the transition
+strength and light shifts of the levels induced by the photoassociation lasers [26,27].
+
+In the absence of a more complete theory treating these
+effects, we analyze loss spectra using the effective expression
+given by Eq. (10), where the observed molecular binding
+energy (E
+b2) includes any perturbations due to ac Stark or
+collisional shifts:
+Eq. 10
+
+EQ. 11
+Light shifts (ac Stark shifts) due to the trapping lasers
+and collisions with ground-state atoms (density n) should
+contribute to shifts of molecular resonance. Similar effects
+were taken into account in a recent, high-precision study of
+weakly bound molecular states of ultracold ytterbium atoms
+[30]. In addition, we expect that both 689-nm excitation
+lasers will shift the line, not just I2 ∝ 2
+2,12. We model the
+relationship between the measured resonance positions and
+the unperturbed binding energy Eb2 as
+
+The susceptibilities, in Hz per unit intensity or density, will be
+determined from experimental data or theoretical considerations. The variation with position of the trapping laser intensity (I1064) and the density give rise to the spatial dependence
+of |S|
+2 and the need for a spatial average in Eq. (4). We take
+I689 as twice the single-beam intensity I689 = 2I . The 689-nm
+excitation beam is large enough compared to the atom sample
+to neglect spatial variation. The functional form for the ac
+Stark shift due to the excitation lasers is discussed in Sec. V.
+
+
+At this point everything between the theory section and the determination of the couplig should go into this chapter. In addition need to have a section devoted to the discussion on the C6 calculation.
+

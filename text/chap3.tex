@@ -1,667 +1,747 @@
-\chapter{Photoassociation in ultracold gases}
-\label{ch:chap3}
+\chapter{Photoassociation in ultracold gases} \label{ch:chap3}
+\section{Introduction} \label{sec:pas_intro}
+Photoassociation is the process by which colliding atoms, illuminated by resonant laser light, absorb photons and associate to form a bound molecule.
+Shown in Fig.\,\ref{fig:3pasSch}a, one-photon photoassociation results in the creation of an excited weakly-bound molecular state when the laser frequency is appropriately tuned.
+\begin{figure}
+\label{fig:3pasSch}
+	\centerline{
+	\includegraphics[width=\textwidth]{model_PAS.PNG}}
+	\caption{Schematic of the photoassociation process}{}
+\end{figure} 
+Photoassociation is primarily concerned with long-range weakly bound molecules since the excitation rate to these states depends on the overlap of the initial scattering state and the bound state.
+Fig.\,a shows that primary interparticle spacing which contributes to the overlap integral is situated around the classical turning point of the molecule, this point is known as the Condon point, $R_c$.
+Contribution to the overlap is negligible for nearly the entire region $r < R_c$ due to the fast oscillations in the inner parts of the both wavefunctions.
+Furthermore, the Condon point moves inward as the binding energy of the bound state molecules is increased. 
+This causes overlap with the initial scattering state to decrease and correspondingly a decrease in the rate of molecule formation.
+Thus, photoassociation may be considered a long-range probe which can be used to measure and determine characteristics about the complex short-range potential.
 
-\section{Introduction}
-\label{sec:pas_intro}
-
-% Intro
-This part needs to be brief and really should motivate the idea of PAS.
-
-PA is not unique to atomic physics, chemists have been using light to interrogate molecular structure for a long time
-
-%Usefulness
-physicists molecule
-
-PA can come in many forms (in a lattice, in a bulk gas, via dissociating molecules) Experimentally we observe PA by looking for trap loss \hl{doublon paper}.
-
-There are multiple flavors of PAS. Can do one-photon or two-photon.
-
-Can even be used to modify the scattering length of atoms through mixing of atomic eigenstates. 
-
-%history
-Pioneering work done in the early 90's used PA to interrogate the sturucture of interatomic potentials to deduce the scattering lengths between atoms.
-
-a photoassociation experiment can be used to map the square of the scattering wave function in the ground electronic state at the Condon points corresponding to the different excited bound levels. \cite{Borkowski2009}
-What about the history of scattering? 
-Most of what we know about quantum mechanics comes from either scattering experiments of spectroscopy. 
-Definitely need some BS about how simple scattering theory has been a hallmark of atomic physics and 
-Photoassociation spectroscopy is an important field which relies on both of these properties.
-
-Alkaline earth atoms, such as Sr, were hypothesized to take advantage of OFR's since there is a narrow transition easily accessible which could provide large changes in the elastic cross section while minimizing the losses due to the inelastic contribution. This was thought to be possible by controllable detuning the closed channel from the incoming open channel and balancing the loss rate (check this). While there were observations of a strontium OFR, notably work done on this very apparatus (citations), they were accompanied by unexpectedly high loss rates. Recent work by Nicholson et. al. were able to explain some of this behavior through a quantum interference effect whereby the elastic loss rate returns to zero between bound states as the effects of bound states cancel each other out. They used a coupled-channel description to describe the physics.
- 
-% recent experiments
-rabi oscilations between atomic and molecular condensates (cite ours and the lattice experiment that followed)
-
-short-range PA
-This work is focused on long-range PA but in recent years groups have also developed short-range PA techniques for the creation of rovibrational ground state molecules. These techniques rely heavily on favorable overlap integrals betwwen molecular wavefunctions and typically searching for favorable intermediate states is a pain (that is why our large FCF might be useful)
+Fig.\,b shows an alternative view of photoassociation in the dressed-state picture.
+In this formulation, photoassociation is naturally described by resonant scattering theory whereby bound states are considered embedded in a continuum of thermally distributed scattering states.
+Collisions between atoms are altered by the presence of light-field coupling that may, in general, lead to modification of the elastic scattering between atoms or introduce loss due to inelastic scattering  \cite{Jones2006} \hl{[Fan61, Tho87]}.
 
 % Summary
-While the general idea of photoassociation is straightforward, a rigorous theoretical understanding of the process requires discussion of several key topics related to the behavior of ultracold gases. \hl{fix this segue}
-The photoassociation process is effected by the residual kinetic energy of the atoms, external potential energy from trapping potentials, and the internal potential energy due to inter-particle scattering between atoms.
-In the following sections we will introduce how to determine the spatial and momentum density distributions of bulk atomic gases using a statistical mechanics approach. Next, we'll explore the two-body problem of cold collisions physics which is essential to understanding the photoassociation process. This approach will develop a quantum mechanical model describing interacting atomic particles. Finally, we'll extend this fully quantum theory with the addition of external fields and subsequently apply simplifying assumptions to formulate analytic expressions for modeling photoassociation spectra.
+While the idea of photoassociation is fairly straightforward, a rigorous theoretical understanding of the process requires discussion of several key topics related to the behavior of ultracold gases.
+In particular, the rate of photoassociation of a trapped gas is sensitive to a number of energetic effects including the gases thermal kinetic energy, external potential energy from trapping potentials, and internal interaction energy due to inter-particle scattering \cite{Krems2009b}.
+The remainder of this chapter will discuss each of these in turn and end by formulating an approachable analytic description for modeling photoassociation spectra.	
 
+\section{Theory of trapped boson gases} \label{sec:trapped_gases}
+This section will briefly cover the statistical mechanics describing a trapped thermal bosonic gas.
+From this description we discuss the evolution of these densities under free expansion and discern how to extract physical parameters of the gas from absorption images.
 
-%In the following sections we will cover the statistical mechanics linking the atom temperature and distribution in parabolic potentials.
-%Next we'll move to cold collisions and see the importance of the scattering wavefunction and how external fields can lead to tunable properties.
-%Finally, we'll pull it all together and develop analytic expressions which can be used to fit spectral lineshapes and extract meaningful information from these experiments.
-
-\section{Theoretical description of trapped boson gases} \label{sec:trapped_gases}
-
-Add equations Itrans from page 51 of natali's thesis
-
-This section will briefly discuss the 
-
-Need to know the spatial and momentum distribution of atoms in the trap. Concerned with space as the liklihood of PA is dependent on the interatomic separation and and the overlap integral between wavefunctions plays a big role. Highest probability of excitation is near the Condon point \hl{citations?}
-
-Momentum distribution needs to be known as this effects how the wavefunction looks as well as the distribution of energies within the cloud which can lead to line-broadening and asymmetric lineshapes
-
-Essentailly first part of chapter 2 from Res
-
-We need 
-
-Since photoassociation is a two-body process, an accurate description of the spatial
-
-\hl{Ben}
-This chapter will briefly cover the statistical mechanics of trapped atomic gases,
-both both at thermal temperatures and at near-zero temperatures for bosons and fermions. In our experiment, we typically acquire data by imaging the atomic density profile either in-situ or after releasing the atoms and allowing them to freely expand for a variable time-of-flight (TOF). I will discuss the expected density profiles for these various regimes and the related fit functions that we use to extract physical information from our samples. To illustrate the properties of trapped atomic gases, let us first consider a system
-in the grand canonical ensemble. For non-interacting particles at a temperature T, the average occupation of the state i with energy Ei is
-
-\hl{James}
-Typically our samples have a fixed number of particles, N, so the chemical potential, $\mu$, is constrained such that
-
-In the limit of large particle number we can describe the gas semi-classically asssuming that the occupation of the ground state is negligble.
-
-The semi-classical distribution is defined such that the average number of particles in the phase-space volume dpdr is given by f(r, p)dpdr/(2$\pi$)3 and
-
-\hl{check the equation numbers in pethick and smith}
-Consider the number density of atoms per phase space volume $(2 \pi \hbar)^3$ integrated from $\epsilon > 0$
-\begin{equation}
-	n(\vec{r}) = \int \frac{d\vec{p}}{2\pi\hbar^3}\frac{1}{\exp(E_r(\vec{r} - \mu/k_BT) - 1}
+In the limit of large, fixed particle number, the trapped density distribution $n(\vec{r})$ is given by
+\begin{equation} \label{eq:2thermDist}
+	n_{th}(\vec{r}) = \int \frac{d\vec{p}}{2\pi\hbar^3} \frac{1}{\exp{(E_p(\vec{r}) - \mu)/k_BT} - 1}
 \end{equation}
-where we are neglecting the full quantum nature of the atoms and considering them as point masses with free particle energy $E_r(\vec{r}) = \frac{p^2}{2m} + V(\vec{r})$
-
-next we define the quantities 
+where $E_p(\vec{r}) = \frac{p^2}{2m} + V(\vec{r})$.
+This semi-classical description assumes negligible occupation of the trap ground state.
+This integral can be evaluated by defining the quantities
+\begin{equation*}
+	x = \frac{p^2}{2mk_BT} \quad\quad z(\vec{r}) = e^{[\mu - V(\vec{r})]/k_BT} = \xi e^{-V(\vec{r})/k_BT}
+\end{equation*}
+where $\xi$ is known as the fugacity \cite{psm02}.
+After a change of variables from $p$ to the dimensionless quantity $x$, Eq.\,\ref{eq:2thermDist} reduces to
 \begin{equation}
-x=\frac{p^2}{2mk_BT} \\
-z(\vec{r}) = e^{\mu - V(\vec{r})/k_BT}
+	n_{th}(\vec{r}) = \frac{2}{\sqrt{\pi}}\frac{1}{\lambda_T^3}\int dx \frac{\sqrt{x}}{z^{-1}e^x-1}
 \end{equation}
-
-\hl{define $\xi$}
-
-then performing a change of variables and plugging into \hl{above eq} we find
-	\begin{equation}
-	n(\vec{r}) = \frac{2}{\sqrt{\pi} \lambda_T^3}\int dx \frac{\sqrt{x}}{z^{-1}e^x-1}
-	\end{equation}
-where $\lambda_T = \sqrt{\frac{2 \pi \hbar^2}{m k_B T}}$ is the de Broglie wavelength \hl{cite}?. This integral is of a certain form and can be rewritten using \hl{cite Demarco pg 237 footnote}
-
-\hl{need to put bound on these integrals from 0 to inf}
-\hl{where does the 3/2 come from?}
-
-	\begin{equation}
-	\begin{split}
-	\int_0^{\inf}dx\frac{x^{\gamma-1}}{z^{-1}e^x-1} &= \sum_{n=1}^{\inf}\int_0^{\inf}dx x^{\gamma-1}e^{-nx}z^n \\
+where $\lambda_T = \sqrt{\frac{2 \pi \hbar^2}{m k_B T}}$ is the de Broglie wavelength.
+This is a common integral in problems of this type and may be rewritten as \cite{Demarco1998, Ketterle1999, psm02}
+\begin{equation}
+\begin{split}
+	\int_0^{\infty}dx\frac{x^{\gamma-1}}{z^{-1}e^x-1} &= \sum_{n=1}^{\inf}\int_0^{\infty}dx x^{\gamma-1}e^{-nx}z^n \\
 	&=\Gamma(\gamma)\text{Li}_{\gamma}[z]
-	\end{split}
-	\end{equation}
-where $\text{Li}_{\gamma}[z]$ is the polylogarithm function defined by \hl{cite something}
-	\begin{equation} \label{eq:polylog_def}
-	\text{Li}_{\gamma}[z] = \sum_{n=1}^{\inf}\frac{z^n}{n^{\gamma}}
-	\end{equation}
-This function is also known as the bose enhancement function \hl{cite ketterle} and describes the bunching of bosonic particles near degeneracy
-
-Using this identity we can write the thermal distribution as
-	\begin{equation}
+\end{split}
+\end{equation}
+where $\text{Li}_{\gamma}[z]$ is the polylogarithm function defined by $\text{Li}_{\gamma}[z] = \sum_{n=1}^{\inf}\frac{z^n}{n^{\gamma}}$.
+This function is also known as the Bose enhancement function \cite{Ketterle1999} and describes the bunching of bosonic particles near degeneracy.
+The thermal distribution is then given by
+\begin{equation}
 	\begin{split}
-	n(\vec{r}) &= \frac{\Li{\ssfrac{3}{2}}{z(\vec{r})}}{\lambda_T^3} \\
-				 &= \frac{1}{\lambda_T^3}\Li{\ssfrac{3}{2}}{\exp{\mu-V(\vec{r})/k_BT}}
+	n_{th}(\vec{r}) &= \frac{\Li{\ssfrac{3}{2}}{z(\vec{r})}}{\lambda_T^3} \\
+				 &= \frac{1}{\lambda_T^3}\Li{\ssfrac{3}{2}}{\,\xi \exp{-V(\vec{r})/k_BT}}
 	\end{split}
-	\end{equation}
-
-For harmonic traps $V(\vec{r}) = \frac{m}{2}\displaystyle\sum_i\omega_i^2r_i^2$ where $r_i$ represents the Cartesian coordinates. Plugging this into \hl{previous eq} then the \textit{in-situ} density profile is given by
-\begin{equation}
-n(\vec{r}) = \frac{1}{\lambda_T^3}\Li{\ssfrac{3}{2}}{\xi \,\exp{\sum_i\frac{-m\omega_i^2r_i^2}{2 k_B T}}}
 \end{equation}
-
-Argue what z is \hl{what is it's range?}, then say that it is small when T is large. Therefore, writing the first few terms of the series expansion of Eq.\ref{eq:polylog_def}
-	\begin{equation}
-	\text{Li}_{\gamma}[z] = z + \frac{z^2}{2^{\gamma}} + \frac{z^3}{3^{\gamma}} + \cdots
-	\end{equation}
-we see that Li$_{\gamma}[z] \approx z$ for $z \ll 1$. This corresponds to the high temperature limit which should result in recovery of the MB solution and indeed it does.
-In the classical, or high-temperature, limit $\Li{\ssfrac{3}{2}}{z(\vec{r})} \approx z(\vec{r})$. From Eq. we see that this that in the limiting case we get the expected Maxwell-Boltzmann density profile \hl{what happens with $\xi$}. In the following we will continue to use the full expressions with an explicit dependence on the polylogarithm as it is the most general form, however, we will use this approximation to ensure our expressions match those expected from a classical Maxwell-Boltzmann description of the gas.
-
-\hl{this can be simplified}
-\begin{equation}
-n(\vec{r}) = \frac{\xi}{\lambda_T^3}\exp{\sum_i\frac{-m\omega_i^2r_i^2}{2 k_B T}}
+For harmonic traps $V(\vec{r}) = \frac{m}{2}\displaystyle\sum_i\omega_i^2r_i^2$ and the \textit{in-situ} density profile is
+\begin{equation} \label{eq:harmTrapDist}
+	n_{th}(\vec{r}) = \frac{1}{\lambda_T^3}\Li{\ssfrac{3}{2}}{\xi \,\exp{\sum_i\frac{-m\omega_i^2r_i^2}{2 k_B T}}}
 \end{equation}
-
-\hl{I'd like to put in something about the momentum distribution}
-
-
-MI
-PA [33] is a phenomenon in which two colliding atoms absorb a photon to create a bound, electronically excited molecule. 
-Figure 1.1 shows the PA process of Sr: the bottom one is the 1S0+1S0 ground state potential, the long-range part of which is described by the R-6 van de Waals term, and the top one is the excited molecular 1S0+3P1 potential whose interaction at large separation is given by the R-3 dipole term. 
-Two free ultracold Sr atoms in the ground state 1S0 with the thermal collision energy of Eg approach each other, and absorb a photon with the energy of hv to photoassociate to a molecular bound state of the excited potential around the Condon point Rc. 
-The bound state psie? has the binding energy of Eb, and the Condon point Rc is the interatomic separation where PA occurs most likely which is characterized by the Franck-Condon overlap integral discussed later. 
-The formation of the molecule is followed by spontaneous or stimulated decays, usually creating either two free atoms with high kinetic energy or ground state molecule, both of which usually are lost due to extra high energies. 
-Detecting the loss of atoms is a typical method to perform PA.
-According to the conventional treatment [33, 34], the strength of the PA transition is proportional to the Franck-Condon overlap integral between wave functions of ground-collisional and excited bound state. 
-Since the wave functions oscillate fast at the short interatomic separation, the Franck-Condon overlap integral is dominated by the amplitude of the ground-state wave function near the Condon point Rc [33]. 
-It is noticed that in 88Sr the Franck-Condon overlap between the second least bound state on the 1S0+3P1 potential and the ground-collisional state is large, which is a crucial feature to the applicability of experiments discussed in this thesis. 
-PA has proven to be a very powerful tool in ultracold physics, such as determining absolute binding energies, extracting atomic collisions information, modifying collision strength, and making ultracold molecules [33].
+In the classical, or high-temperature limit, $\Li{\ssfrac{3}{2}}{z(\vec{r})} \approx z(\vec{r})$ and we recover the classical Maxwell-Boltzmann description
+\begin{equation}
+	n_{MB}(\vec{r}) = \frac{\xi}{\lambda_T^3}\exp{\sum_i\frac{-m\omega_i^2r_i^2}{2 k_B T}}
+\end{equation}
 
 \subsection{Extracting data from column densities} \label{ssec:tof}
-
-This description of the atoms in the trapping potential is useful but we need to go a step further because we use absorption imaging to determine properties of the atom after a time of flight.
-
-Maybe put in something about different measurement techniques and reference the ketterle and pethick and smith again.
-
-Removing the trap results in ballistic expansion with the above spatial density profile as the initial conditions. 
-To derive how we find the properties of the atoms, consider the above spatial density profile as the initial conditions.
-
-Atoms expand ballistically according to
+This description of thermal bosons in a trapping potential is useful but we must continue a step further and see how Eq.\,\ref{eq:harmTrapDist} evolve in free space. 
+Once the trapping potential is removed, neglecting any collisions, atoms will expand according to
 \begin{equation}
-\frac{d\vec{r}}{dt}=\frac{\vec{p}}{m} \text{and} \frac{d\vec{p}}{dt}=0
+	\frac{d\vec{r}}{dt}=\frac{\vec{p}}{m} \quad \text{and} \quad \frac{d\vec{p}}{dt}=0
 \end{equation}
-Thus, an atom measured at position $\vec{r}$ after the time-of-flight, $t$, will have moved a distance $\brcurs = \frac{\vec{p}t}{m}=\vec{r} - \vec{r}_0$ from its initial position $\vec{r}_0$
-
+Thus, an atom measured at position $\vec{r}$ after the time-of-flight, $t$, will have traveled a distance $\brcurs = \frac{\vec{p}t}{m}=\vec{r} - \vec{r}_0$ from its initial position $\vec{r}_0$.
+This is shown schematically in Fig.\,\ref{fig:ballisticExp}.
 \begin{figure} 
 	\centerline{
 	\includegraphics[width=0.7\textwidth]{ballisticExpansion.png}}
 	\caption{Ballistic expansion of particles}{Schematic representation particle displacement vectors used to determine how time-of-flight expansion transforms the initial density distibution}
 	\label{fig:ballisticExp}
 \end{figure}
-
-\hl{make the tof density n'}
-the spatial density evolves then \hl{double check $2\pi \hbar$ denom}
+The spatial density evolves then
 \begin{equation}
 \begin{split}
-n(\vec{r},t) &= \int \frac{d^3\vec{r}\,d^3\vec{p}}{(2\pi\hbar)^3}\frac{1}{\exp{\left[\frac{p^2}{2m} + V(\vec{r}') - \mu\right]\frac{1}{k_BT}}-1}\delta^3\left(\vec{r}-\frac{\vec{p}t}{m}-\vec{r}'\right) \\
-&= \int \frac{d^3\vec{p}}{(2\pi\hbar)^3}\frac{1}{\exp{\left[\frac{p^2}{2m} + V\left(\vec{r}-\frac{\vec{p}t}{m}\right)) - \mu\right]\frac{1}{k_BT}}-1} 
+	n_{th}(\vec{r},t)' &= \int \frac{d^3\vec{r}\,d^3\vec{p}}{(2\pi\hbar)^3}\frac{1}{\exp{\left[\frac{p^2}{2m} + V(\vec{r}') - \mu\right]\frac{1}{k_BT}}-1}\delta^3\left(\vec{r}-\frac{\vec{p}t}{m}-\vec{r}'\right) \\
+	&= \int \frac{d^3\vec{p}}{(2\pi\hbar)^3}\frac{1}{\exp{\left[\frac{p^2}{2m} + V\left(\vec{r}-\frac{\vec{p}t}{m}\right)) - \mu\right]\frac{1}{k_BT}}-1} 
 \end{split}
 \end{equation}
-
-Plugging in the harmonic potential we find that free expansion after release from a harmonic trap is self-similar and amounts to rescaling the the spatial coordinates by \hl{check Demarco's thesis}. Thus the scaled spatial profile is given by
-\begin{equation}
-n_{th}'(\vec{r},t) = \frac{1}{\lambda_T^3} 
+Adding the harmonic potential, the free expansion after release from a harmonic trap is found to be self-similar and amounts to rescaling the the spatial coordinates \cite{Demarco1998}.
+Thus the scaled spatial profile is given by
+\begin{equation} \label{eq:thermalFit}
+	n_{th}'(\vec{r},t) = \frac{1}{\lambda_T^3} 
 \left(\, \prod_{j=1}^3 \frac{1}{1+\omega_j^2 t^2} \right) 
 \Li{\ssfrac{3}{2}}{ \xi \, \exp{\sum_{i=1}^3 \frac{-m\omega_i^2r_i^2}{2k_BT} \frac{1}{1+\omega_i^2t^2}} }
 \end{equation}
+Using this description of the spatial distribution after time-of-flight expansion, we must now consider how to relate our absorption images to the physically relevant variables of the gas.
 
-Using this description of the spatial distribution after time-of-flight expansion, we must now consider how to relate our absorption measurement to the physically relevant variables of the gas.
+Absorption imaging is the process of illuminating a gas of atoms with resonant (or near resonant) laser light and taking a spatially resolved image of the laser beam.
+When illuminated, the atoms will absorb and scatter photons out of the laser beam resulting in a "shadow".
+Using Beer's law \hl{cite}, we can relate the total absorption of photons to the number density of scattering particles along the optical path multiplied by the absorption cross section. 
+This results in a measurement of the "optical depth" of the gas along a column density. 
+Measurement along a particular direction limits our description of the gas to the two-dimensional plane orthogonal to the laser beam.
 
-Finally we must consider the column density along one direction since we are taking absorption images of the atoms. A brief description of absorption imaging and system used for this process is given in \hl{some sec}. 
+Experimentally, the optical depth is computed by taking the natural logarithm of the ratio of the images obtained from the camera.
+Using the analytic form of the expanded density profile in Eq.\,\ref{eq:thermalFit}, the optical depth can be fit to extract physical quantities.
+We equate this OD image to be proportional to the spatial density profile after the time-of-flight expansion integrated along the optical path through the atoms.
+\begin{equation} \label{eq:polyLogExp}
+\begin{split}
+	\text{OD} = \text{ln} \left( \frac{\text{Atom Image}}{\text{Background Image}} \right) &= \sigma_{abs} \int_{-\inf}^{\inf} dz \, n_{th}'(\vec{r},t) \\ 
+&= \frac{\sigma_{abs}}{\lambda_T^3} \left( \, \prod_{j=1}^3 \frac{1}{1+\omega_i^2t^2}\right) \int_{-\inf}^{\inf} dz\,\Li{\ssfrac{3}{2}}{\xi \,\exp{\sum_{i=1}^3 \frac{-r_i^2}{2\sigma_i^2}}}
+\end{split}
+\end{equation}
+where $\sigma_i^2 = \frac{k_BT}{m\omega_i^2}(1+\omega_i^2t^2)$ and $\sigma_{\text{abs}}(\omega_{img})$ is the optical absorption cross section dependent on the imaging laser frequency, $\omega_{img}$.
 
-Simply stated, absorption imaging is the process of illuminating a gas of atoms with resonant (or near resonant) laser light and taking a spatially resolved image of the laser beam. As the light is tuned near a resonant transition, the atoms will absorb and scatter photons out of the original laser beam resulting in a "shadow" which is proportional to the number of scatters within a certain spatial region. This shadow image is then normalized by taking another picture of the laser after the atoms have fallen out of the imaging region. This relation of the light attenuation to the number density of scattering particles is known as Beer's law and results 
-
-Using Beer's law \hl{cite}, we can relate the total absorption of photons to the number density of scattering particles along the optical path multiplied by the absorption cross section. This results in a measurement of the "optical depth" of the gas along a column density. Measurement along a particular direction limits our description of the gas to the two-dimensional plane orthogonal to the laser beam as shown in \hl{some fig from ch 2}.
-
-Experimentally, the optical depth is trivially computed by taking the natural logarithm of the ratio of the images obtained from the camera. We then equate this OD image to be proportional to the spatial density profile after the time-of-flight expansion integrated along the optical path through the atoms.
+Before proceeding, we'll rewrite the polylogarithm in terms of it's series representation and integrate over a particular direction to replicate the column density image of the experimental data.
+\begin{equation}
+	\int_{-\inf}^{\inf} dz\,\Li{\ssfrac{3}{2}}{\xi \,\exp{\sum_{i=1}^3 \frac{-r_i^2}{2\sigma_i^2}}} = 
+	\int_{-\inf}^{\inf} dz\, \sum_{n=1}^{\inf} \frac{\xi^n}{n^{3/2}}\exp{\frac{-x^2}{2\sigma_x^2} - \frac{y^2}{2\sigma_y^2} - \frac{z^2}{2\sigma_z^2}}^n
+\end{equation}
+Defining $\rho=\exp{\frac{-x^2}{2\sigma_x^2} - \frac{y^2}{2\sigma_y^2}}$ and expanding
+\begin{equation} \label{eq:polyFullExp}
+	=\int_{-\inf}^{\inf} dz\, \xi\,\rho\,e^{\frac{-z^2}{2\sigma_z^2}} + 
+ \frac{\xi^2}{2^{3/2}}\rho^2\,e^{\left(\frac{-z^2}{2\sigma_z^2}\right)^2} + 
+ \frac{\xi^3}{3^{3/2}}\rho^3\,e^{\left(\frac{-z^2}{2\sigma_z^2}\right)^3} + \cdots
+\end{equation}
+This expansion readily shows the dependence on $z$ which we can integrate along this direction, noting $\displaystyle\int_{-\inf}^{\inf} dz\, \sum_{n=1}^{\inf}\exp{\frac{-z^2}{2\sigma_2^2}} = \frac{\sqrt{2\pi}}{n^{1/2}}\sigma_z$, Eq.\, \ref{eq:polyFullExp} then reduces to
 \begin{equation}
 \begin{split}
-\text{OD} = \text{ln} \left( \frac{\text{Atom Image}}{\text{Background Image}} \right) &= \sigma_{abs} \int_{-\inf}^{\inf} dz \, n_{th}'(\vec{r},t) \\ 
-&= \frac{\sigma_{abs}}{\lambda_T^3} \left( \prod_{j=1}^3 \frac{1}{1+\omega_i^2t^2}\right) \int_{-\inf}^{\inf} dz\,\Li{\ssfrac{3}{2}}{\xi \,\exp{\sum_{i=1}^3 \frac{-r_i^2}{2\sigma_i^2}}}
+	&=\int_{-\inf}^{\inf} dz\, \sum_{n=1}^{\inf}\frac{\xi^2\rho^n}{n^{3/2}}\exp{\frac{-z^2}{2\sigma_2^2}} \\
+	&=\sqrt{2\pi}\sigma_z\underbrace{\sum_{n=1}^{\inf}\frac{\xi^n\rho^n}{n^2}}_{\displaystyle\Li{2}{\xi\,\rho}}
 \end{split}
 \end{equation}
 
-where $\sigma_i^2 = \frac{k_BT}{m\omega_i^2}(1+\omega_i^2t^2$. Need to say something about the integral in Eq.\hl{prev} and evaluating the integral along z so going to write out the explicit spatial dependence in cartesian coordinates. Additionally, we'll rewrite the polylogarithm in terms of it's series representation in order to see an identity
+Returning to Eq.\,\label{eq:thermalFit} and using the result of integration.
 \begin{equation}
-\int_{-\inf}^{\inf} dz\,\Li{\ssfrac{3}{2}}{\xi \,\exp{\sum_{i=1}^3 \frac{-r_i^2}{2\sigma_i^2}}} = 
-\int_{-\inf}^{\inf} dz\, \sum_{n=1}^{\inf} \frac{\xi^n}{n^{3/2}}\exp{\frac{-x^2}{2\sigma_x^2} - \frac{y^2}{2\sigma_y^2} - \frac{z^2}{2\sigma_z^2}}^n
+	OD(x,y) = \frac{\sqrt{2\pi}}{\lambda_T^3}\frac{\sigma_{\text{abs}} \sigma_z}{(1+\omega_x^2t^2)(1+\omega_y^2t^2)(1+\omega_z^2t^2)} \Li{2}{\xi\,\exp{\frac{-x^2}{2\sigma_x^2} - \frac{y^2}{2\sigma_y^2}}}
 \end{equation}
-Defining $\rho=\exp{\frac{-x^2}{2\sigma_x^2} - \frac{y^2}{2\sigma_y^2}}$ and expanding the series out, Eq.\hl{above} becomes
+This equation still has one unknown, $\sigma_z$, that we cannot readily measure.
+This is solved by measuring a specific value of the optical depth, namely the peak optical depth, $OD_\text{peak}(x=0,y=0)$.
 \begin{equation}
-=\int_{-\inf}^{\inf} dz\, \xi\rho\exp{\frac{-z^2}{2\sigma_z^2}} + 
- \frac{\xi^2}{2^{3/2}}\rho^2\exp{\frac{-z^2}{2\sigma_z^2}}^2 + 
- \frac{\xi^3}{3^{3/2}}\rho^3\exp{\frac{-z^2}{2\sigma_z^2}}^3 + \cdots
+	OD_{\text{peak}} = \frac{\sqrt{2\pi}}{\lambda_T^3}\frac{\sigma_{abs} \sigma_z}{(1+\omega_x^2t^2)(1+\omega_y^2t^2)(1+\omega_z^2t^2)} \Li{2}{\xi}
 \end{equation}
-In this form we can readily separate out the dependence on $z$ and perform the integral making use of the following identity \hl{check identity} $\displaystyle\int_{-\inf}^{\inf} dz\, \sum_{n=1}^{\inf}\exp{\frac{-z^2}{2\sigma_2^2}} = \frac{\sqrt{2\pi}}{n^{1/2}}\sigma_z$. Eq.\hl{above} then reduces to
+Thus the relation between the measured optical depth and the spatial density distribution is given by
+\begin{equation} \label{eq:OD}
+	OD(x,y) = \frac{OD_{\text{peak}}}{\Li{2}{\xi}}\Li{2}{\xi\,\exp{\frac{-x^2}{2\sigma_x^2} - \frac{y^2}{2\sigma_y^2}}}
+\end{equation}
+with $\sigma_i^2 = \frac{k_BT}{m\omega_i^2}(1+\omega_i^2t^2)$.
+In the limit of long expansion time during time-of-flight, namely $t \gg \omega_x^{-1}, \omega_y^{-1}, \omega_z^{-1}$ then the width approach $\sigma_i^2\rightarrow\frac{k_BT}{m}t^2$.
+From long-time expansion, the atom temperature is given along each axis by
 \begin{equation}
-\begin{split}
-&=\int_{-\inf}^{\inf} dz\, \sum_{n=1}^{\inf}\frac{\xi^2\rho^n}{n^{3/2}}\exp{\frac{-z^2}{2\sigma_2^2}} \\
-&=\sqrt{2\pi}\sigma_z\underbrace{\sum_{n=1}^{\inf}\frac{\xi^n\rho^n}{n^2}}_{\displaystyle\Li{2}{\xi\rho}}
-\end{split}
+	T_i=\frac{m \sigma_i^2}{k_Bt^2}
 \end{equation}
 
-We are now ready to plug this result for the integral back into the full expression for the optical depth. Retaining the explicit expression in cartesian coordinates, Eq.\hl{above} becomes
-\begin{equation}
-OD(x,y) = \frac{\sqrt{2\pi}}{\lambda_T^3}\frac{\sigma_{abs} \sigma_z}{(1+\omega_x^2t^2)(1+\omega_y^2t^2)(1+\omega_z^2t^2)} \Li{2}{\xi\,\exp{\frac{-x^2}{2\sigma_x^2} - \frac{y^2}{2\sigma_y^2}}}
-\end{equation}
-This equation still has one unknown, $\sigma_z$, that we cannot readily measure. This problem is solved by recognizing that we can readily calculate and measure a specific value of Eq.\hl{something}, namely the peak optical depth (OD$_\text{peak}$) located at $x=0,y=0$.
-\begin{equation}
-OD_{\text{peak}} = \frac{\sqrt{2\pi}}{\lambda_T^3}\frac{\sigma_{abs} \sigma_z}{(1+\omega_x^2t^2)(1+\omega_y^2t^2)(1+\omega_z^2t^2)} \Li{2}{\xi}
-\end{equation}
-thus the relation between the measured optical depth and the spatial density distribution is given by
-\begin{equation}
-OD(x,y) = \frac{\text{OD}_{\text{peak}}}{\Li{2}{\xi}}\Li{2}{\xi\,\exp{\frac{-x^2}{2\sigma_x^2} - \frac{y^2}{2\sigma_y^2}}}
-\end{equation}
-and in the limit of long expansion time during time-of-flight, namely $t \gg \omega_x^{-1}, \omega_y^{-1}, \omega_z^{-1}$ then the measured widths reduce to $\sigma_i^2=\frac{k_BT}{m}t^2$ and the atom temperature is given along each axis by
-\begin{equation}
-T_i=\frac{m \sigma_i^2}{k_Bt^2}
-\end{equation}
-Regarding the assumption that the expansion time is much greater then the trap frequencies, we should note that limiting factors in the expansion time are due to center of mass motion of the cloud under the influence of gravity. In the Neutral apparatus we typically utilize drop times are $\approx$ 30 ms. For shallow traps, where $\omega_i$ is be small, then the atoms may not have enough time during expansion to achieve fully ballistic expansion. In these cases it is typical to quote temperatures of the sample as measured along the tightest axis of confinement.
+The generally limiting factor in the allowed expansion time is due to center of mass motion of the cloud under the influence of gravity. 
+In the Neutral apparatus we typically utilize drop times $\approx 30$\,ms before we can no longer view the atoms.
+For shallow traps, $\omega_i$ on the order of $<10$\,Hz, the applicability of the above approximation should be validated as cold atoms may not achieve fully ballistic expansion, $\omega_i^2t^2 \gg 1$, before falling out of frame.
 
-Last thing to do is to relate our expression for optical depth and number density to the total number of atoms in the trap. This task is straightforward by recalling the boson normalization requriement
+Finally, we can also determine the total number of atoms in the trapping potential by requiring the particle number to be fixed as $n_{th}(\vec{r})\,\Rightarrow\,n_{th}'(\vec{r},t)$.
 \begin{equation}
 \begin{split}
-N&=\int_{-\inf}^{\inf} d^3\vec{r} n_th(\vec{r}) = \int_{-\inf}^{\inf} d^3\vec{r} n_th'(\vec{r},t) \\
-&=\int_{-\inf}^{\inf} d^3\vec{r} \frac{\sigma_{abs}}{\lambda_T^3}\frac{1}{(1+\omega_x^2t^2)(1+\omega_y^2t^2)(1+\omega_z^2t^2)} \sum_{n=1}^{\inf} \frac{\xi^n}{n^{3/2}} \exp{\frac{-x^2}{2\sigma_x^2} - \frac{y^2}{2\sigma_y^2} - \frac{z^2}{2\sigma_z^2}}^n
+	N&=\int_{-\inf}^{\inf} d^3\vec{r}\, n_{th}(\vec{r}) = \int_{-\inf}^{\inf} d^3\vec{r}\, n_{th}'(\vec{r},t) \\
+&=\int_{-\inf}^{\inf} d^3\vec{r}\, \frac{\sigma_{abs}}{\lambda_T^3}\frac{1}{(1+\omega_x^2t^2)(1+\omega_y^2t^2)(1+\omega_z^2t^2)} \sum_{n=1}^{\inf} \frac{\xi^n}{n^{3/2}} \exp{\frac{-x^2}{2\sigma_x^2} - \frac{y^2}{2\sigma_y^2} - \frac{z^2}{2\sigma_z^2}}^n
 \end{split}
 \end{equation}
-This equation is the same probem we saw above but integrated over all axes instead of just one. Therefore we can apply the same expansion and identity we employed to solve for the optical depth to find
+Applying the same expansion and identity as in Eq.\,\ref{eq:polyFullExp}, we find
 \begin{equation}
-N=\frac{(2\pi)^{3/2}}{\lambda_T^3} \frac{\sigma_x \sigma_y \sigma_z}{(1+\omega_x^2t^2)(1+\omega_y^2t^2)(1+\omega_z^2t^2))}\Li{3}{\xi}
-\end{equation}
-From our expression for the optical depth, Eq.\hl{some}, we can simply this to
-\begin{equation}
-N=\frac{2\pi\sigma_x\sigma_y}{\sigma_{abs}}\text{OD}_{\text{peak}}\frac{\Li{3}{\xi}}{\Li{2}{\xi}}
+	N=\frac{(2\pi)^{3/2}}{\lambda_T^3} \frac{\sigma_x \sigma_y \sigma_z}{(1+\omega_x^2t^2)(1+\omega_y^2t^2)(1+	\omega_z^2t^2)} \Li{3}{\xi} 
+	= 2\pi \frac{\sigma_x \sigma_y}{\sigma_{abs}} OD_{\text{peak}}\frac{\Li{3}{\xi}}{\Li{2}{\xi}}
 \end{equation}
 
-Eq.\hl{above} 
+\section{Atomic collisions} \label{sec:cold_collisions}
+Atomic collisions may be envisioned as an interferometer of the incoming and outgoing waves due to reflection by the short-range interatomic potential \cite{Jones2006}.
+Through their interference a standing wave pattern is established that extends out to infinity.
+With this picture, we can begin to understand how the effects of short-range couplings between atoms can influence their long-range behavior as any small change in the "interferometer" is reflected across the entire wave. 
+A notable achievement of atomic collision theory has been the successful separation of length scales into regions that exhibit very different characteristic length and energy scales.
+Through this separation, a great deal of insight has led to the development of many practical methods for studying the scattering states and weakly bound molecular states near zero-energy \hl{ch.6 - [3, 4, 5, 6, 7, 8, 9, 10, 11]}.
 
+\subsection{Single channel scattering near threshold} \label{ssec:low_energy}
+Consider the collision of two structureless atoms interacting by a single adiabatic Born-Oppenheimer potential, which at long-range is given by $V(r)_{\text{long}} \sim -\frac{C_6}{r^6}$.
+We are interested in understanding the van der Waals interaction as it is the dominant term in the long-range interaction between two ground state neutral atoms.
+This potential has a characteristic length, $R_{vdW} = \frac{1}{2} \left(\frac{2 \mu C_6}{\hbar^2}\right)^{1/6}$, and energy, $E_{vdW}=\frac{\hbar^2}{2\mu R_{vdW}^2}$.
+However, the closely related characteristic scales from Gribakin and Flambaum \cite{gfl93} prove to be more useful 
+\begin{equation}
+	\bar{a} = \frac{4 \pi}{\Gamma(1/4)^2}R_{vdW} \quad\quad \bar{E}=\frac{\hbar^2}{2\mu\bar{a}^2}
+\end{equation}
+where $\Gamma(x)$ is the Gamma function.
 
-All of our information comes from taking pictures of our atomic clouds and inferring the physical properties of the gas before the time-of-flight expansion. This is possible since we know the density profile of the gas in-situ. In the absence of external fields, other than gravity, turning off the trapping potential results in ballistic expansion described by $\vec{r} = \vec{r}_0 + \frac{p^2}{2m}t$, where $\vec{r}_0$ and $p$ are the position and momentum at the moment of release from the trap and $t$ is the expansion time. Neglecting the center-of-mass motion due to gravity and assuming long expansion times, then we can easily find a regime where $\frac{p^2}{2m}t \gg \vec{r}_0$ and therefore
-	\begin{equation}
-		\vec{r} \approx \frac{p^2}{2m}t
-	\end{equation}
-This 
+The wavefunction for relative motion is found by solving the radial Schr\"{o}dinger equation
+\begin{equation} \label{eq:3radSE}
+	-\frac{\hbar^2}{2 \mu}\frac{d^2 \phi_{\ell}}{dr^2} \left( V(r) + \frac{\hbar^2\ell(\ell+1)}{2\mu r^2} \right) \phi_{\ell}=E\phi_{\ell}
+\end{equation}
+Solutions of Eq.\ref{eq:3radSE}, for energies $E>0$ are the scattering states $\phi_{\ell}(E)$ with collision wavevector $k=\sqrt{2\mu E/\hbar^2}$.
+In the region $r\gg\bar{a}$, the scattering states approach the free particle state
+\begin{equation} \label{eq:3asymwf}
+	\phi_{\ell}(E)\,\rightarrow\,\frac{\sin(kR-\pi\ell/2+\eta_{\ell})}{\sqrt{k}}
+\end{equation}
+with de Broglie wavelength $\lambda = 2\pi/k$.
 
- \cite{Ketterle1999} \hl{get demarco thesis?}. Thus, for atoms 
-
-Thus, for atoms starting at a position $\vec{r_0}$ 
-
-Density profile expands self-similarly 
-
-Time of flight is essentially a Fourier transform which turns the initial momentum information into spatial information.
-
-
-
-\section{Characterizing collisions} \label{sec:cold_collisions}
-understand how to treat quantum two-body problem with external field coupling
-
-Collisions are one of the key ways we learn things about atoms 
-
-In atomic physics, our low density gases are mainly within the regime of small interactions. 
-
-Here is where I cite sources of some of the original PA work, feshbach stuff
-
-collisions as an interferometer of the incoming and outgoing off the barrier, but also of different partial waves.
-
-I want the reader to know that PA dis concerning the scattering wavefunction, that it comes from the overlap integral of the tweo wavefunctions (why do I need to know this? nbecause this means that it is sensitive to positions of the nodes and can be used to map out the potentials. \hl{this will motivate discussing low energy physics}
-
-This spatial dependence is mapped onto the internal energy levels of each atom. I want to say dressed state model here (review atom-photon coupling, atomic physics book).
-
-
-\subsection{Classical} \label{ssec:classical}
-cross sections
-			as a measure of the time between collisions
-			
-		potentials
-			where they come from
-		centrifugal barrier
-			analog - slide 16 Julienne
-			just rxp of particles
-			
-		center of mass coordinates
-			only care  about relative (generally)
-			simplifies calculations
-
-\subsection{Single channel scattering} \label{ssec:single_chan}
-quantum
-	solve time0independent SE
-	just need potential, basis set, and boundary conditions
-		
-structureless pasrticles scattering
-	free space
-		plane waves
-		de Broglie wavelength
-			strontium de Broglie at 1uK
-	
-	delta function
-		unitarity limit
-		supports one bound state - the true halo state
-		where the wavefunction comes from
-
-	r-dependent potential
-		show 1.1 from Hutson
-		gneerally very complicated between atoms
-			long-range part is typically has a power law drop off
-			important that V->0 as R-> inf
-		for ground state atoms dominant long-range part is R6
-		
-	scattering states (E>0)
-		replusive barrier - particle scatter
-		attrative well - particles accelerate
-		
-	bound states
-		boundary conditions dictate
-		might have quasibound states (shape resonances)
-		
-	wavefunctions
-		General appraoch is incoming plane wave plus spherical wave
-			
-		common appraoch to expansion of wavefunction in partial wave expansion
-			redefine SE in terms of partial waves
-				Asymtotic solution from WKB
-					V->0 so must go to plane wave
-					See phase shift
-					
-		total cross section as sum over all partial waves
-
-%%%%%%%%%%%%%
-this results in a poitential that supports bound states. 
-
-consider the two particle system as a single entagled particle
-	long range part of this quasi-particle is just the eigenstates of the separate particles themselves (only composed of two parts)
-	but the short range part is going to be determined by some complex physics (new eigenstates, what is the coupling mechanism?)
-		the vdW point is the boundary distance?
-		coupling is due to the interatomic potential, there is at least the long-range part falling off as R6, what are the types of interactions which make up the internal wall?
-
-\subsubsection{Low energy results} \label{sssec:sold_single_chan}
-
-Simple form for scattering length
-	gives limits on cross sections
-	slide 24 (not sure I get the upper bound bit)
-
-scattering length is a phase accumulation
-	scattering length is very sensitive to details of potential
-		can't really calculate ab initio
-		
-	a number that represent all the complex physics within the interaction region
-	
-	simple interpretation as peak shift at long range
-		slide 12 julienne
-	
-Another way of seeing the origin of a is as the collisional E goes to zero
-	wavefunction should go to a straight line
-		plot from bertlett
-	a is the intercept of that line on the internuclear axis
-		this is one of the methods of actually determining a
-
-the scattering length as a coupling parameter in length units
-	The mean field energy (I think I had a reference on this)
-	slide 26
-
-Determmining a is not so easy because the interatomic potential is not known
-	this was one of the pioneering use for photoassociation
-	PA is sensitive to the collisional wavefunction and therefore can help to map out the spatial distribution of the ground state
-Simple WKB estimation predicts zero-energy bound state as E->0
-	every atom would have infinite scattering length at low energy
-	obviously not the case, GF first to determine analytic corrections due to long-range vdW interaction
-		comes about because of phase contribution from the long-range part
-This is the regime we explored with our work in chapter 4
-	probing a bound state just near the dissociation threshold makes us extremely sensitive to the entire phase of the well
-
-
-free atoms
-scatering as single particle state (differnet eigenstate)
-	interaction determined by some gnarly stuff
-From scattering theory we know that the long range behavior is determined by short range physics
-	how do we know this? (the dalibard intro)
-Can we come up with good enough pseudo potentials to describe the short range physics and then solve the schrodinger equation to extract wavefunctions?
-	we want wavefunctions because that is the full characterization
-	we don't know the right eigenbasis for the short range part but we can make some guesses (in particular Hund cases setup eigen states for various possible internal states)
-	Bohn and Julienne theory guessed based on using quantum defect theory
-		this pre-supposes that the bound and free wavefunctions are similar (I forget in what respect) but that the bound ones must go to zero as R->Inf
-If we have some notion of the wf then we can construct matricies which define interactions once we add additional coupling to the scattering problem
-
-
-now in a position where I need to connect scattering theory and the PAS
-
-
-Once we have the ground state wavefunction of our new particle we can construct the internal structure by considering the internal energy strucutrue of the constituent atoms
-	Can I make a connnection that since it is a composite particle we must consider all the various configurations available?
-	
-\begin{figure} \label{fig:ch3_sr_scat_wf}
+\begin{figure} \label{fig:3collwf}
 	\centerline{
-	\includegraphics[height=0.25\textheight]{strontium_properties.pdf}}
-	\caption{Strontium interatomic wavefunctions}{Res 6.3}
+	\includegraphics[width=\textwidth]{examplesOfCollWF.PNG}}
+	\caption{Examples of scattering state solutions}{}
 \end{figure} 
+The origin of the phase shift $\eta_{\ell}$ in Eq.\,\ref{eq:3asymwf} can be seen by considering the scattering state $\phi_{\ell}$ for several different energies as shown in Fig.\,\label{fig:3collwf}.
+In this figure we see that, for low energy, as atoms near $r\sim\bar{a}$ they are accelerated by the interatomic potential.
+This results in a shortening of the local de Broglie wavelength to $\lambda_{\text{local}} = 2\pi\hbar/\sqrt{2\mu(E-V(R))}$ and a change in the overall phase of the wavefunction as it is pulled inward.
+In the limit $E\rightarrow0$, $V(R)$ becomes the dominant energy scale and the local de Broglie wavelength becomes independent of the incident energy.
+Thus near threshold, small changes in the collision energy do not change the oscillation frequency and the imparted phase shift, due to acceleration by the potential, is constant.
+This results in the s-wave scattering length, $a$.
+The scattering phase shift is related to $a$ by
+\begin{equation}
+	a = -\frac{\tan \eta_0(k)}{k}
+\end{equation}
+where $\eta_{\ell}$ is the additional phase in Eq.\,\ref{eq:3asymwf} and $k=\sqrt{2 \mu E/\hbar^2}$ is the collision wavevector.
+Finally, as energy is increased, the effect of the potential on the scattering state is reduced and the de Broglie wavelength once more remains constant for all interatomic distances.
 
-\subsection{Multichannel scattering} \label{ssec:multi_chan}
-Everything we discussed was for unstructured particles
-	this is the power of the scattering length
-	
-this would be the end of the story if all of these potentials were "separable" (or independent)
-	you'd find your configuration, describe the potential, solve it, and you're done
-of course this isn't actually the case because the eigenstates of the separate potentials couple to one another.
-Even understanding the natural coupling between coupling between potentials is not easy
-	tie back to complexity of understanding short range physics
-		We don't really know what coupling exist and which energy levels are most important
-	mostly effects the bound states of the system
-	strontium example of the D state coupling in the 3P1 potential
-		references to Res and other work
+From this simple picture, we see that changing the atom's reduced mass $\mu$ and keeping $V(r)$ fixed will also lead to a change in the local de Broglie wavelength when $r<\bar{a}$.
+This mass-scaling then appears like a change in the s-wave scattering length.
+This method has been highly successful in determining the scattering lengths of many isotopes \cite{Krems2009b}.
 
-address somewhere that these types of problems are generally solved via coupled-channel methods which follow the same recipe for the scattering problem as in the single channel case but does so considering all channels simultaneously through matricies defining potentials and their couplings to one another.
-coupled equations are complicated
-	point out references from Julienne, Mies, Bao, Hutson
-	
-But can match at aymptotic wavefunction again and get a lot of insight
-	
-example: multichannel use to describe atom-diatom coupling
-	mutli-channel model (normal MFR diagram)
-		other potentials are due to different combinations of atoms in hyperfine states
-	these potentials can have different magnetic moments
-		means that addition of a magnetic field can tune them relative to one another
-MFR has been extensively studied and is a common tool used in atomic physics
-	
-scattering resonances are due to off diagonal coupling between bound closed channels and scattering open channels
-	give picture
-hand wavy expalanation is that bringing a bound state close will modify the open channel (potential?)
-	this results in a tweak of the phase shift which results in a change in scattering length
-can describe this as a change in the elastic cross section of the incoming open channel
-in general there is also an inelastic cross section that may contribute if the bound state has a finite lifetime.
-	
-define open and close channels		
+A change in the reduced mass is not isolated to effecting the scattering states.
+In general, the binding energies of the bound states at $E<0$ will also change.
+In some case this may lead to changing the number of supported states in the potential.
+Gribakin and Flambaum \cite{gfl93} calculated the relationship between the scattering length and the potential as
+\begin{equation}
+	a = \bar{a} \left[ 1 - \tan(\Phi - \frac{\pi}{8}) \right]
+\end{equation} 
+where
+\begin{equation}
+	\Phi = \int_{R_i}^{\infty} \sqrt{\frac{-2\mu V(R)}{\hbar^2}}
+\end{equation}
 
-S matrix - defines scattering phases and ampltiudes due to couplings between various open and closed channels
-	S found from the asymptotic solutions
-
-if single channel then S reprodcues above results
-if inelastic then get complex scattering length (need better way to segue, Julienne 2014 slide 19 - unitarity argument maybe)
-complex scat
-	Real part is the elastic cross section
-	Imag part if the inelastic
-
-
-
-Also the Chin '10 review on feshbach resonances
-
-Follow the Nicholson 15 paper method of introing the elastic and inelastic cross sections
-
-The use of a laser field as the coupling scheme in a Feshbach resonance introduces several advantages and complexities that must be considered when determining the expected properties of optical Feshbach molecules. In order to understand these differences, we will briefly outline the key concepts behind Feshbach resonances and the distinctions between optical and magnetic Feshbach resonances.
-
-
-\begin{figure} \label{fig:FeshbachCartoon}
+\begin{figure} \label{fig:longRange}
 	\centerline{
-	\includegraphics[width=\textwidth]{feshbachCartoon.pdf}}
-	\caption{Schematic representation of a Feshbach resonance}{(a) Potentials for the open ($^1S_0\!+\!^1S_0$) and closed ($^3P_1\!+\!^1S_0$) channel of an optically coupled Feshbach resonance in strontium. (b) The same coupling shown in (a) in the dressed state model. Tuning of the excited potential is achieved by varying the laser frequency detuning, $\delta = \omega_p - \omega_{bound}$, and $\omega_{free}$ is the $^1S_0\!\rightarrow\!^3P_1$ atomic transition frequency.}
+	\includegraphics[width=\textwidth]{longRangePhaseShift.PNG}}
+	\caption{Long range phase shift}{ \hl{note fast oscillations and that the amplitude goes as sqrt(k)}}
 \end{figure} 
-	
+Fig.\,\ref{fig:longRange} shows the effect of mass-scaling on a sample system.
+The change in the s-wave scattering length can be seen as a shift of the asymptotic wavefunctions at long-range.
 
-The basic idea of a Feshbach resonance is outlined in Fig.\;\ref{fig:FeshbachCartoon}. Consider a simple two channel system, denoted by the open channel and the closed channel. The open channel is generally a ground state potential for two free atoms near threshold. Atoms occupying this state can undergo elastic collisions and, in the absence of any external perturbation, will remain in the open channel. Conversely, the closed channel is a bound state of a higher lying potential who's energy can be tuned relative to the open channel. In the absence of coupling between the states, the open and closed channel remain eigenstates of the system as the tuning parameter, and therefore the energy of the closed channel, is changed. However, in the presence of coupling between the channels, the original eigenstates are mixed and develop an avoided crossing between the bare open and closed channels, when tuned across the resonance. The power of Feshbach resonances comes from the ability to externally manipulate the degree of state mixing, which results in control of the s-wave scattering length and the creation of low energy Feshbach molecules.
 
-Magnetic Feshbach resonances (MFR) are used extensively in alkali metal systems to tune the scattering properties of ultracold gases since the ground states of these systems feature a magnetic moment due to an unpaired electron in the valence shell. Thus, MFRs utilize interactions between low lying ground state molecular potentials via spin-dependent couplings. Since both the open and closed channel are ground state potentials, MFRs often exhibit extraordinarily long lifetimes \cite{Chin2010,Kohler2006}. Conversely, in strontium the ground state is a $^1S_0$ state, as shown in Fig.\;\ref{fig:energy_level_diagram}. This state is not magnetically sensitive, so no MFRs exist near the $^1S_0\!+\!^1S_0$ interatomic potential. Fortunately, optical Feshbach resonances (OFR) serve as another method to introduce coupling between the ground state potential (open channel) and a molecular state of an electronically excited potential (closed channel). Our work has utilized coupling between the $^1S_0\!+\!^1S_0$ and  $^3P_1\!+\!^1S_0$ two-body potentials via the narrow $^1S_0\!\rightarrow\!^3P_1$ atomic transition at 689nm. Fig.\;\ref{fig:FeshbachCartoon} shows a schematic of the potentials involved in the OFR of strontium in both the bare atomic and dressed state pictures. In the dressed basis we consider the combined atom + photon field system such that the channels become $\ket{^1S_0\!+\!^1S_0\!+\!n_p\hbar\omega_p}$ as the open channel and $\ket{^3P_1\!+\!^1S_0\!+\!(n_p-1)\hbar\omega_p}$ for the closed channel. As the light field frequency, $\omega_p$, is varied the excited closed channel potential will experience an energy shift relative to the open channel, resulting in resonant coupling between the open and closed channels. \cite{Ciuryo2005,Bohn1997,Fedichev1996a}
+Bound states also play an important role in scattering.
+In particular, in the simplest approximation, the binding energy of the least bound state is given by
+\begin{equation}
+	E_{-1} = -\frac{\hbar^2}{2 \mu a^2} \; as \; a\,\rightarrow\,+\infty
+\end{equation}
+However, accounting for the phase accumulation due to the long-range part of the van der Waals potential modifies the binding energy with $\bar{a}$ \cite{gfl93}.
+\begin{equation}
+	E_{-1} = -\frac{\hbar^2}{2\mu(a-\bar{a})^2}
+\end{equation}
+This approaches the universality limit when $a >> \bar{a}$.
+Remarkably, a higher order correction to the van der Waals potential gives the binding energy as 
+\begin{equation}
+	E_{-1} = -\frac{\hbar^2}{2\mu(a-\bar{a})^2}\left[1 + \frac{g_1 \bar{a}}{a-\bar{a}} + \frac{g_2 \bar{a}^2}{(a-\bar{a})^2}+\dots \right]
+\end{equation}
+where $g_1=\frac{\Gamma(1/4)^4}{6 \pi^2} - 2$ and $g_2 = \frac{5 g_1^2}{4} - 2$ \cite{gao04}.
+Ch.\,\ref{ch:chap5} will employ each of these estimates in analysis of the $^{86}$Sr halo molecule.
 
-Both MFRs and OFRs can be treated by the same theoretical formalism, as a modification of the collisional properties between two particles \cite{Nicholson2015a,Chin2010}. One of the hallmarks of ultracold physics is the simplicity of atomic collisions. As bosonic atoms get colder they can only collide via $\ell=0$ partial waves and thus the elastic collision rate between two atoms becomes energy independent and can be parameterized by a single fixed quantity, $a_s$. This parameter is known as the s-wave scattering length and is determined by the short range molecular potential between two colliding atoms. Through a similar approach, collisions near Feshbach resonances can be modeled by introducing a complex s-wave scattering length, $\tilde{\alpha}$. In this model, the magnitude of $\tilde{\alpha}$ influences the elastic scattering rate between particles while the imaginary part describes losses through inelastic scattering. Under an isolated Feshbach resonance model at low energies, this complex scattering length is given by \cite{Chin2010}
-	\begin{equation} \label{eq:complexScatter_constant}
-		\tilde{\alpha} = a - ib = \frac{a_s \Gamma_0}{-E_0 + \imath (\gamma/2)}
-	\end{equation}
-where $E_0$ and $\Gamma_0$ are the energy independent parameters for, respectively, the resonance position and coupling strength between channels, and $\gamma$ is a general decay term associated with loss from the closed channel. Using Eq.\;\ref{eq:complexScatter_constant}, we can note the two main differences between MFRs and OFRs. Most experimentally useful MFRs, such as in Li and K, have negligible closed channel decay, $\gamma = 0$, and a fixed coupling strength between the open and closed channels. Thus, the change in the s-wave scattering length takes on a particularly simple form, 
-	\begin{equation} \label{eq:MFRscatter}
-		\tilde{\alpha} = a_s \left( 1- \frac{\Delta}{B - B_0} \right)
-	\end{equation}
-where $B_0$ is the resonance position and the coupling strength is parameterized by a magnetic width $\Delta$, such that $\Gamma_0 = \delta \mu \Delta$ with $\delta \mu$ the difference in magnetic moments between the open and closed channel. 
+\addtocontents{toc}{\protect\setcounter{tocdepth}{1}}
+\subsection{Remarks on $S$-matrix}
+In the previous section, we focused on interactions restricted to a single channel without any decay mechanism.
+Such interactions are necessarily elastic as the two-body scattering wavefunction cannot couple outside of its channel.
+However, most atoms used in laser-cooling exhibit a high degree of internal structure and a quantitative description of their collisions at short-range $r <\sim \bar{a} $, requires consideration of coupling among many different channels.
+While a full characterization of such methods is left to Refs.\cite{Hutson2007a} \hl{refs}, here we give the primary results which will be useful for describing photoassociation in the next section.
 
-Conversely, OFRs offer the possibility to tune the coupling strength between the open and closed channel, since the coupling depends on the transition matrix element which varies with the square root of laser intensity. Furthermore, since OFRs utilize electronically excited states which have a natural lifetime, $\gamma$ is nonzero. This results in inelastic loss processes for OFRs. Similar to MFRs, we can define the change in scattering length as \cite{Nicholson2015a,Yan2013c,Blatt}
-	\begin{equation} \label{eq:OFRscatter}
-		\tilde{\alpha} = a_s \left( 1 - \frac{w \delta}{\delta^2 + \gamma^2/4} + \frac{i}{2} \frac{w \gamma}{\delta^2 + \gamma^2/4} \right)
-	\end{equation}
-where $\delta=\omega - \omega_0$ is the detuning from the chosen photoassociation resonance at $\omega_0$ as shown in Fig.\;\ref{fig:FeshbachCartoon}, and the width of the resonance is defined by $w = -\ell_{opt} \, \gamma / a_s$. Typically, the strength of OFRs are characterized by their optical length \cite{Nicholson2015a,Chin2010} given by $\ell_{opt} = a_s \Gamma_0 / \gamma = \frac{\lambda_{OFR}^3}{16 \pi c} \frac{ \left| \left< n | E \right> \right|^2}{k} I$. Here $c$ is the speed of light, $\lambda_{OFR}$ is the wavelength of the coupling laser, and $\left| \left< n | E \right> \right|^2$ is the free-bound Frank-Condon factor between the bound state $\bra{n}$ and scattering state $\ket{E}$. Additionally, it is useful to identify the real and imaginary parts of Eq.\;\ref{eq:OFRscatter} as defined in Eq.\;\ref{eq:complexScatter_constant}.
-	\begin{equation} \label{eq:OFRparts}
-		 a_{\scriptscriptstyle OFR} = a_s + \ell_{opt} \gamma \frac{\delta}{\delta^2+\gamma^2/4} \qquad
-		 b_{\scriptscriptstyle OFR} = \frac{\ell_{opt}}{2} \frac{\gamma^2}{\delta^2+\gamma^2/4}
-	\end{equation}
+In this formalism, the atoms are consider in one of several quantum states, labeled the entrance channel and defined to have energy $E=0$.
+Scattering channels are specified by a collective set of quantum numbers, $\alpha$, representing the state of each atom.
+Channels with $E>0$ are labeled closed, while those with $E<0$ are open.
+Upon solving a matrix formulation of Schr\"{o}dinger equation, the effect of all short-range interactions during a collision with $E > 0$ is summarized in the unitary $S$-matrix, and reflected in the scattering wavefunction for $r\rightarrow\infty$. 
+Thus the $S$-matrix is the generalization of the energy-dependent phase shift, $\eta_{\ell}(k)$, across all the channels.
 
-Our previous work exploring the use of an optical Feshbach resonance took advantage of photoassociation transitions with large optical lengths to control the scattering length of an $^{88}$Sr BEC as described by Eq.\;\ref{eq:OFRscatter}. However, all studies of OFR to date have been limited by large atom loss rates \cite{Thalhammer2005,Theis2004,Fatemi2000,Blatt,Yan2013c} which can be modeled as a density evolution, $\dot{n} = -K_{in}n^2$, where $K_{in}$ is the two-body inelastic loss rate constant. In the low energy limit, $k\!\rightarrow\!0$, the inelastic loss rate is given by
-	\begin{equation} \label{eq:K_in}
-		K_{in} = \frac{8 \pi \hbar}{\mu_{r}} b_{\scriptscriptstyle OFR} = \frac{4 \pi \hbar}{\mu_r} \frac{\ell_{opt} \gamma^2}{\delta^2 + \gamma^2 / 4}
-	\end{equation}
-where $\mu_r$ is the reduced mass, $\delta$ is the laser detuning as shown in Fig.\;\ref{fig:FeshbachCartoon}.
+In the case of a single open channel scattering near threshold the $S$-matrix is reduced to a single element $S_(k)=e^{2i\eta(k)}$ represented by the complex energy-dependent phase shift $\eta(k)$.
+This phase shift also defines a complex energy-dependent scattering length
+\begin{equation}
+	\alpha(k) = a(k) - i b(k) = -\frac{\tan \eta_0(k)}{k} = \frac{1}{ik} \frac{1-S(k)}{1+S(k)}
+\end{equation}
+which is incredibly useful in the theory of magnetic and optical feshbach resonances, which are closely related to photoassociation \hl{refs}.
+
+Finally, the $S$-matrix is also related to the elastic and inelastic cross sections by
+\begingroup
+\addtolength{\jot}{1em}
+\begin{align}
+	\sigma^{\text{el}}_{\alpha}(k) &= \frac{\pi g_{\alpha}}{k^2} \vert 1 - S_{\alpha \alpha}(k) \vert^2 \\
+	\label{eq:sigin}	
+	\sigma^{\text{in}}_{\alpha}(k) &= \frac{\pi g_{\alpha}}{k^2} \left( 1 - \vert S_{\alpha \alpha}(k) \vert^2 \right)
+\end{align}	
+\endgroup
+where $g_{\alpha}$ is a channel specific collisional symmetry factor which is equal to $2$ for describing inelastic collisions in a Maxwellian gas of two atoms of the same species in identical spin states \cite{Chin2010}.
+\addtocontents{toc}{\protect\setcounter{tocdepth}{2}}
 
 
 \section{Modeling of photoassociation lineshapes} \label{sec:bohn_and_julienne}
 
-This section will concern the general theory used to describe photoassociative spectra. While a full quantum close-coupling calculation is the most complete and rigorous method for analyzing cold quantum scattering problems, useful approximations can be applied to realize relatively more "simple" closed analytic formulas describing photoassociation spectra. 
+With the  section develops the theory we use to describe one- and two-photon photoassociative spectra with a focus on developing the equations necessary for modeling lineshapes presented in the following chapters.
 
-This section will cover the theory of lineshapes in PAS.
+Recall the classical result for the rate of two-body collisions in a monoenergetic gas is given by $\Gamma = v \,\sigma n = K n$, where $v$ is the velocity of each particle, $\sigma$ is the scattering cross-section, and $n$ is the particle density.
+Here $K$ is identified as the two-body collision rate constant which for inelastic collisions governs the evolution of the density through $\dot{n} = K n^2$.
 
-Somewhere I read about three regimes of PAS as a comparison of relevant energy scales. Should explore that here
+Similarly, for scattering of quantum particles, the inelastic collision rate constant\footnote{also called the loss rate constant in literature} for a specific channel $\alpha$, is given by \cite{Nicholson2015a}
+\begin{equation} \label{eq:simpleK}
+	K^{in}_{\alpha}(k) = v\,\sigma^{in}_{\alpha}(k)
+\end{equation}
+where $v=\frac{\hbar k}{\mu}$ is the relative collision velocity in the center-of-mass frame for the atom pair with reduced mass $\mu$ and $\sigma^{in}_{\alpha}(k)$ is given by Eq.\,\ref{eq:sigin}.
+We see that the inelastic cross section simply characterizes the coupling of channel $\alpha$ to all other channels by recalling that the scattering $S$-matrix is unitary and thus
+\begin{equation}
+	1 - \vert S_{\alpha \alpha} \vert^2 = \sum_{\alpha' \neq \alpha}\vert S_{\alpha \alpha'} \vert^2
+\end{equation}
 
-Pretty much have everything needed from our previous section.
-Relation of rate constant to cross sections is nice and simple
-		Julienne 14 - slide 21
-These fully coupled-channel models are not straightforward to evaluate.
-	Can make assumption to simplify
+%In general, when several partial waves are needed to describe collisions between particles, then the partial loss rate constants, $K^{in}_{\alpha_i}$, must be summed over each partial wave.
+In the case of ultracold photoassociation, we are concerned with the evolution of a single ground state undergoing s-wave collisions that is coupled to one or few internal states leading to decay.
+Thus, at a fixed collision energy $\epsilon = \hbar^2 k^2 / 2\mu$, the loss rate constant due to inelastic collisions may be written as 
+\begin{equation}
+	K_{\text{loss}}(k) = g \frac{\pi \hbar}{\mu k} \sum_{\alpha' \neq \alpha}\vert S_{\alpha \alpha'} \vert^2
+\end{equation}
+Finally, in order to compare to experimental data, we must consider a thermal average of the loss rate constant given by \cite{Julienne2009, Julienne2014, Krems2009b}
+\begin{align} \label{eq:kLoss}
+  \langle K_{\text{loss}} \rangle &= \int_0^{\infty} dv f_T(v)\,v\,\sigma_{in} \\
+                                  &= \int_0^{\infty} d\epsilon  f_T(\epsilon)\, g \frac{\pi \hbar}{\mu} \frac{\hbar}{\sqrt{2 \mu \epsilon}} \sum_{\alpha' \neq \alpha}\vert S_{\alpha \alpha'} \vert^2 \\
+                                  &= \frac{g}{h\,Q_{T}} \int_{0}^{\infty} d\epsilon \sum_{\alpha' \neq \alpha}\vert S_{\alpha \alpha'} \vert^2 \,e^{-\epsilon/k_{B}T}
+\end{align}
+where $Q_T=(2 \pi k_B T \mu/h^2)^{3/2}$ is the partition function
+Here we have performed a change of variables using $\mu v^2/2=\epsilon$.
+Eq.\,\ref{eq:kLoss} assumes the relative collision energy distribution, $f_T(\epsilon)$, is a Maxwell-Boltzmann distribution.
+\begin{equation}
+	f_T(\epsilon) = 2 \sqrt{\frac{\epsilon}{\pi}} \left( \frac{1}{k_B T} \right)^{3/2} e^{-\epsilon/k_B T}
+\end{equation}
 
+With the expression for $K_{\text{loss}}$ in Eq.\,\ref{eq:kLoss}, a description of photoassociation reduces to determining the relevant channel couplings and matrix elements needed from the scattering $S$-matrix and plugging them in.
+The most general approach for evaluating the $S$-matrix for scattering problems involving two or more channels is the coupled-channel method.
+Alternatively, analytic approximations for $S$ exist if the scattering problem is in the isolated resonance regime.
+The isolated resonance approximation assumes that each molecular bound state is far from any molecular states and can be described by a local strength parameter independent of energy and molecular detuning \cite{Nicholson2015a}.
+Photoassociation is well described by an isolated resonance treatment as specific resonances are targeted and the number of relevant channels is relatively few.
+For the case of one- and two-color photoassociation, Bohn and Julienne derive approximate analytic expressions of the $S$-matrix elements using a multi-channel description of resonant scattering and applying a quantum defect treatment to approximate the wavefunctions in all channels \cite{Bohn1999, Bohn1996, Julienne2006}.
 
-
-
-\subsection{One-photon excitation of free to bound transitions} \label{ssec:one_color_pa}
-
-Can recreate the type of model for MFR in a field dressed approach
-	plot showing photon + potential
-	
-
-	
-ANalytic forms for modeling
-	compare all the forms of K
-		the crazy one from BJ 99
-		the simple one with f(p)
-		nicholson 42
-	
-
-show plot with all the terms defined
-
-give loss rate (will need to have introduced before)
-	define terms
-		gammaStim as overlap
-		gamma as molecular lifetime
-		delta as detuning
-		A as coupling strength
-	
-introduce reflection approximation
-	evaluation of overlap
-	reference BJ 99
-	
-give relative momentum distribution
-	this results in an asymmetric profile
-	give plot
-	
-Number equation vs. time
-
-segue to narrow lines
-
-
-\subsubsection{PAS near narrow intercombination transitions} \label{sssec:narrow_pa}
-
-quick note on the usage of the relative momentum distribution
-			usually this is all we care about since the CoM part results in doppler shifts which would be neglible on the energy scales of broad dipole-allowed transtions
-			using narrow intercombinations lines, the photon recoil energy is comparable to the bound state lifetime
-				this means that indivual lorentzians might be shifted (each by a different amount) in addition to the total line shape being asymmetric
-			Integration over both degrees of freedom will be an important discussion in the next chapter as we fit spectra and determine the halo binding energy
-
-ideas of limiting cases that can be explored with PAS \cite{Ciuryo2004}
-
-\subsection{Extension to two-color spectra} \label{ssec:two_color_pa}
-
-Pretty much the same things
-		
-Show new picture with all the couplings defined
-
-
-Now that we have the theory of PAS covered. 
-
-
-
+We model both one- and two-photon PAS of ultracold atoms by first considering the evolution of a local density given by
+\begin{equation}
+	\dot{n} = -2 K n^2 - \Gamma n
+\end{equation}
+where $\Gamma$ is the one-body lass rate due to background collisions and $K$ is the loss rate constant.
+By integrating over the trapping volume, we find the evolution of the total number of trapped atoms is given by
 \begin{equation}\label{eq:number}
    N(t)={N_0 \rm{e}^{-\Gamma t} \over 1+
    {2 N_0 \langle K \rangle V_2\over \Gamma V_1^2}(1-\rm{e}^{-\Gamma t})}
 \end{equation}
-where  $N_0$  is the number  at the beginning of the PAS interaction
-time, and $\langle K \rangle$ indicates a spatial average of collision event rate constant $K$ (Eq.\ \ref{equationKeffective}). The one-body loss rate, $\Gamma$, is due to background
-collisions and off-resonant scattering from the PA lasers.
-
-PA loss is described with a local equation for the evolution of the atomic density [Eq.~(\ref{densitydecay})]. Integrating Eq.~(\ref{densitydecay}) over the trap volume yields the time evolution of the number of trapped atoms [Eq.~(\ref{number})]. The effective volumes used throughout this analysis are defined by
+where $N_0$ is the initial number of trapped atoms, $\langle K \rangle$ is the trap-averaged loss rate constant, and $V_q$ is the effective trap volume given by
 \begin{equation}\label{eq:effectivevolumes}
-	V_{\text{q}}=\int_{\mathrm{V}} d^3r \, e^{-\frac{qU(\mathbf{r})}{k_{B}T}},
+	V_{\text{q}}=\int_{\mathrm{V}} d^3r \, \exp{-\frac{qU(\mathbf{r})}{k_{B}T}},
 \end{equation}
-for trapping potential $U(\mathbf{r})$. The collision event rate constant can be expressed as a thermal average of the scattering probability for loss, $\vert S(\epsilon,\omega_1,\omega_2,...,\mathbf{r})\vert^2$, over the collision energy $\epsilon$. We also average over the trap volume to allow for the possibility that the scattering probability can vary with position in the trap due to inhomogeneity of laser intensity profiles and the density distribution [Eq.~(\ref{equationKeffective})].
+for trapping potential $U(\vec{r})$.
 
-%This yields
-\begin{eqnarray} \label{equationKeffective}
-% \nonumber to remove numbering (before each equation)
-  \langle K \rangle&=& \frac{1}{V_{2}}\int_{\mathrm{V}}
-d^3r \,
-          e^{-\frac{2U(\vec{r})}{k_{B}T}} \nonumber \\
-         &&\times \frac{1}{h\,Q_{T}}
-\int_{0}^{U_{max}-U(r)}d\epsilon \vert S\vert^2
-   \,e^{-\epsilon/k_{B}T}.
-\end{eqnarray}
+In one-color photoassociation, a single laser at frequency $\omega_1$ couples pairs of colliding ground-state atoms with relative kinetic energy $\epsilon$ to an excited bound state $b_1$ with energy $E_{b1}$ and decay rate $\gamma_1$.
+Here, $\Delta_1 = \omega_1 - E_{b1}/\hbar$ is used to characterize the single photon detuning from the target state.
+Following the approach of Bohn and Julienne \cite{Bohn1999}, the theoretical description of the bound state $b_1$ is paired with an artificial, purely repulsive, potential $a_1$ used to simulate decay from the bound state.
+State $b_1$ is then allowed to couple to both the artificial channel and the ground state, while the ground state is defined to only couple to state $b_1$ \footnote{This is discussed near Eq.\,3.1 for one-photon PA scattering matrix in \cite{Bohn1999}}.
+Thus the scattering probability $\vert S_{\epsilon, a_1} \vert^2$ is the only relevant $S$-matrix element for describing inelastic loss due to one-photon PAS.
+This matrix element characterizes the probability that an atom pair in the ground state with relative collision energy $\epsilon$ scatters into the artificial loss channel $a_1$ and is given by
+\begin{equation}
+	\vert  S_{\epsilon, a_1} \vert^2 = \frac{\gamma_1 \gamma_s(\epsilon)}{(\Delta_1 + \epsilon/ \hbar)^2 + \left( \frac{\gamma_1 + \gamma_s(\epsilon)}{2} \right)^2}
+\end{equation}
+where ${\gamma}_{s}(\epsilon)$ is the stimulated width of $b_1$ due to coupling to the initial scattering state by the PAS lasers, which for low energy can be expressed as \cite{ctj06,bmc14,Pachomow2017a}
+\begin{equation}\label{equationstimulatedwidth}
+	{\gamma}_{s}(\epsilon) = 2 k \ell_{\text{opt}} \gamma_1,
+\end{equation}
+The optical length $\ell_{\text{opt}}$ characterizes the strength of coupling bound state $b_1$ and is related to the overlap between the initial colliding state and $b_1$, and $k=(2\mu \epsilon)^{1/2}/\hbar$.
+Plugging $\vert S_{\epsilon, a_1} \vert^2$ into Eq.\,\ref{eq:kLoss} then the thermally averaged loss rate constant for one-photon PA is given by
+\begin{equation} \label{eq:onePhotonK}
+	\langle K_{\text{loss}} \rangle = \frac{2}{h\,Q_{T}} \int_{0}^{\infty} d\epsilon \,e^{-\epsilon/k_{B}T} \frac{\gamma_1 \gamma_s(\epsilon)}{(\Delta_1 + \epsilon/ \hbar)^2 + \left( \frac{\gamma_1 + \gamma_s(\epsilon)}{2} \right)^2} 
+\end{equation}
+
+Similarly, two-color photoassociation also consider pairs of colliding atoms undergoing collisions in the presence of external fields.
+Here an additional laser at frequency $\omega_2$ is also applied to couple a transition between state $b_1$ and another bound state $b_2$ with energy $E_{b2}$ and decay rate $\gamma_2$.
+However, whereas in one-color PAS the frequency $\omega_1$ is swept across the resonant energy of the bound state $b_1$, two-color PAS is most commonly performed in the Raman regime with a fixed intermediate state detuning $\Delta_1 = \omega_1 - E_{b1}/\hbar$ from $b_1$.
+The two-photon detuning is given by $\Delta_2 = \omega_1 - \omega_2 - E_{b2}/\hbar$.
+As before, the bound states $b_1$ and $b_2$ are paired with artificial loss channels $a_1$ and $a_2$ respectively.
+Thus the relevant scattering probabilities for two-color PAS are $\vert S_{\epsilon, a_1} \vert^2$ and $\vert S_{\epsilon, a_2} \vert^2$.
+Plugging these into $\langle K_{\text{loss}} \rangle$, a formal form of the loss rate constant is specified by
+\begin{equation} \label{eq:kLoss2Ph}
+  \langle K_{\text{loss}} \rangle = \frac{2}{h\,Q_{T}} \int_{0}^{\infty} d\epsilon \left[ \vert S_{\epsilon, a_1} \vert^2 + \vert S_{\epsilon, a_2} \vert^2 \right] \,e^{-\epsilon/k_{B}T}
+\end{equation}
+where the explicit form of the matrix elements, $S_{\epsilon, a_i}(\epsilon,\gamma_1,\gamma_2,\omega_1,\omega_2,\cdots)$, may be found in equations 4.8 and 4.9 of \cite{Bohn1999}.
+
+Typically, a simplifying assumption is applied at this point by considering loss from the state $b_2$ at a rate $\gamma_2$ to be negligible on the timescales of the experiment or in comparison to loss due to scattering from $b_1$.
+While this is usually an accurate assumption for PAS in alkali systems, it is not necessarily true in alkaline-earth system when using bound states of a narrow intercombination line transition as the two-photon intermediate state.
+However, taking $\gamma_2=0$, we recover the standard expressions for two-photon PA with scattering probability
+\begin{equation} \label{eq:twoPhotonSe1}
+	\vert  S_{\epsilon, a_1} \vert^2 = \frac{(\Delta_2 + \epsilon/\hbar)^2 \gamma_1 \gamma_s}{
+  	\left[ (\Delta_1+\epsilon/\hbar+\delta_1) (\Delta_2+\epsilon/\hbar)-\frac{\Omega_{12}^{2}}{4}\right]^2 + \left[ \frac{\gamma_1 + \gamma_s}{2}\right]^2 (\Delta_2+\epsilon/\hbar)^2}
+\end{equation}
+which includes a shift of the intermediate state $\delta_1$ induced by laser 1 and the molecular Rabi frequency between states $b_1$ and $b_2$.
+Finally, the thermally averaged loss rate constant simplifies to
+\begin{equation} \label{eq:twoPhotonKavg}
+	\langle K_{\text{loss}} \rangle = \frac{2}{h\,Q_{T}} \int_{0}^{\infty} d\epsilon \vert  S_{\epsilon, a_1} \vert^2 \,e^{-\epsilon/k_{B}T}
+\end{equation}
+
+
+
+\subsubsection{PAS near narrow intercombination transitions} \label{sssec:narrow_pa}
+In the previous section, Eq.\,\ref{eq:kLoss} was presented with an implicit assumption that the loss rate is dependent only on the relative collision energy distribution.
+Once again, this is a good approximation for photoassociation with alkali atoms using dipole-allowed transitions.
+However, PAS using narrow intercombination line transitions may also be sensitive to Doppler broadening due to the center-of-mass momentum of the colliding pair \cite{Ciuryo2004}.
+To see this, we once again consider Eq.\,\ref{eq:kLoss} written as a thermal average.
+\begin{equation} \label{eq:onePasMom}
+	 \langle K \rangle = \int_0^{\infty} d^3\vec{p}_1 \int_0^{\infty} d^3\vec{p}_2 \frac{2 \pi \hbar^2}{|\vec{p}_1 - \vec{p}_2| \mu} f_2( \vec{p}_1, \vec{p}_2 ) \vert S(\vec{p}_1, \vec{p}_2, \omega_1, \omega_2, \cdots) \vert^2  
+\end{equation}
+If we assume that particle collisions are not correlated, or equivalently, that collisions occur rapidly enough that $\vec{p}_1$ and $\vec{p}_2$ are independent then we can write the two-particle momentum distribution function, $f_2( \vec{p}_1, \vec{p}_2 )$, as the product of two single particle distributions. 
+\begin{equation}
+\label{eq:3two_particle_prob}
+\begin{split}
+		 f_2( \vec{p}_1, \vec{p}_2 ) &= f^1( \vec{p}_1 ) f^1( \vec{p}_2 ) \\
+		  &= \left(\frac{1}{2 \pi m k_B T}\right)^3 \exp{\frac{-(p_1^2 + p_2^2)}{2 m k_B T}}
+\end{split}
+\end{equation}
+where $m$ is the single particle mass for a sample at temperature $T$.
+
+Eq.\,\ref{eq:onePasMom} may be reduced to the earlier equations for $\langle K_{\text{loss}} \rangle$ by performing a coordinate transform into center-of-mass and relative coordinates and integrating over the center-of-mass.
+We will consider a special case of this procedure in Ch.\,\ref{ch:chap5} when discussing the truncation of the relative collision energies of particles in a trapped gas.
+
+Ref.\,\cite{Ciuryo2004} develops a rigorous extension of the standard Bohn and Julienne theory for one-photon photoassociation near an intercombination line which accounts for Doppler broadening and the photon recoil.
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%The wavefunction of a low-energy scattering state limits our ability
+%Long-range photoassociation is 
+%Weakly bound molecules since these give the best overlap.
+%
+%When an ultracold gas of atoms is produced, the atoms are prepared in specific quantum states, and collisions between the atoms occur with an extremely precisely defined energy close to the E = 0 collision threshold of the interacting atoms, where E denotes energy. 
+%This permits extraordinary spectral accuracy in probing near-threshold level positions (order of E/h = 10 kHz accuracy for 1 muK atoms)
+%Highest probability of excitation is near the Condon point \hl{citations?}
+%
+%
+%PA lets us get at the complexity of the atom internals
+%yield info on atomic collisions
+%Consequently, understanding the near-threshold bound and scattering states is essential for understanding the collisions and interactions of ultracold atoms. 
+%Understanding collisions is essential to the study of cold atoms.
+%
+%
+%I want the reader to know that PA is concerning the scattering wavefunction, that it comes from the overlap integral of the two wavefunctions because this means that it is sensitive to positions of the nodes and can be used to map out the potentials.
+
+%PAS is naturally described in this model, as the formation of molecules often leads directly to atom loss from the ground state population.
+
+%This has led to a 
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% scattering gives phase shift which effects wavefunction
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+%
+%
+%
+%%%%% Jones 06
+%Photoassociation modifies atomic collisions The scattering wave function which describes the collision of two cold atoms at a particular energy and angular momentum has a fixed pattern of nodes. 
+%This wave function can be viewed as a standing- wave pattern set up between an incoming wave and the wave reflected by the short-range interatomic potential. 
+%As discussed in the previous section, this nodal pattern is directly related to the scattering length for the system and hence to the scattering properties of cold atoms. 
+%Any process which changes this standing-wave interference pattern changes the scattering properties of the atoms.
+%
+%
+%
+%scattering length represent all the complex physics within the interaction region
+%	it effects thermalization through cross sections
+%	mean field energy
+%	Thus once A is known, all of the long-range be- havior of the wave function is determined. - jones 06
+
+
+%consider the two particle system as a single quasi particle
+%long range part of this quasi-particle is just the eigenstates of the separate particles themselves (only composed of two parts) 
+%but the short range part is going to be determined by some complex physics (new eigenstates, what is the coupling mechanism?)
+%		the vdW point is the boundary distance?
+%		coupling is due to the interatomic potential, there is at least the long-range part falling off as R6, what are the types of interactions which make up the internal wall?
+
+
+%%%%%
+%In the limit 
+%
+%
+%However, photoassociation results in the creation of bound states using 
+%In atomic system, this mean forming a bound state or having some interaction with the atoms around you.
+%In the previo
+%
+%
+%Through the manipulation of these applied fields, we have the ability to control the evolution of atomic samples and determine detailed information about the natural 
+%
+%
+%easiest way to explain complex scattering length?
+%
+%
+%%% julienne
+%Using the complex the scattering length a-ib to represent the s-wave S-matrix Saa = exp [−2ik(a − ib)] in the limit E to 0
+%Schrodinger equation also determines the bound states with discrete energies Ei < 0.
+%In the special case where a goes to inf, the energy of the last bound s-wave state of the system depends only on a nd mu with the universal form
+%
+%S matrix - defines scattering phases and ampltiudes due to couplings between various open and closed channels
+%	S found from the asymptotic solutions
+%	S is unitary - makes it easy to define channel coupling
+%	The S-matrix is the generalization of the phase shift relation across all the channels. It is what is needed to understand the interactions because the interactions lead to coupling phase shifts which will change the cross section!!! - Julienne CM
+%
+%if single channel then S reprodcues above results
+%if inelastic then get complex scattering length (need better way to segue, Julienne 2014 slide 19 - unitarity argument maybe)
+%complex scat
+%	Real part is the elastic cross section
+%	Imag part if the inelastic
+%
+%last bound state and low E scatter wf look very similar
+%	change bound state -> change scatter wf
+%WKB arguement to prove
+%	Jones 06 version of WKB
+%at low E, WKB can describe the wavefunctions well, see that you get the sqrt(k) from this
+%inportant for reflection approx?
+%mention sqrt(k)
+
+%scattering length is very sensitive to details of potential
+%Determmining a is not so easy because the interatomic potential is not known
+%	this was one of the pioneering use for photoassociation
+%	
+%		
+%	
+%eta = -ka as k goes to zero
+%given by exp(2idel) for S?
+%
+%\subsection{Multichannel scattering} \label{ssec:multi_chan}
+%oh... connect the S matrix formalism to Fano resonance scattering
+%
+%Everything we discussed was for unstructured particles
+%	this is the power of the scattering length
+%	
+%this would be the end of the story if no coupling
+%	you'd find your configuration, describe the potential, solve it, and you're done
+%of course this isn't actually the case because the eigenstates of the separate potentials couple to one another.
+%Even understanding the natural coupling between coupling between potentials is not easy
+%
+%address somewhere that these types of problems are generally solved via coupled-channel methods which follow the same recipe for the scattering problem as in the single channel case but does so considering all channels simultaneously through matricies defining potentials and their couplings to one another.
+%coupled equations are complicated
+%	point out references from Julienne, Mies, Bao, Hutson
+%	
+%But can match at aymptotic wavefunction again and get a lot of insight
+%	
+%example: multichannel use to describe atom-diatom coupling
+%	mutli-channel model (normal MFR diagram)
+%		other potentials are due to different combinations of atoms in hyperfine states
+%	these potentials can have different magnetic moments
+%		means that addition of a magnetic field can tune them relative to one another
+%MFR has been extensively studied and is a common tool used in atomic physics
+%	
+%scattering resonances are due to off diagonal coupling between bound closed channels and scattering open channels
+%	give picture
+%hand wavy expalanation is that bringing a bound state close will modify the open channel (potential?)
+%	this results in a tweak of the phase shift which results in a change in scattering length
+%can describe this as a change in the elastic cross section of the incoming open channel
+%in general there is also an inelastic cross section that may contribute if the bound state has a finite lifetime.
+%	
+%define open and close channels		
+%
+%Also the Chin '10 review on feshbach resonances
+%
+%Follow the Nicholson 15 paper method of introing the elastic and inelastic cross sections
+
+%Simple WKB estimation predicts zero-energy bound state as E->0
+%	every atom would have infinite scattering length at low energy
+%	obviously not the case, GF first to determine analytic corrections due to long-range vdW interaction
+%		comes about because of phase contribution from the long-range part
+%		
+%This is the regime we explored with our work in chapter 5
+%	probing a bound state just near the dissociation threshold makes us extremely sensitive to the entire phase of the well
+
+
+%gives limits on cross sections
+%So the limits of cross section are the unitarity limit at incoming energy high enough that the particles only see a delta function and the zero energy scattering length due to the phase shift of the molecular potential.
+%	slide 24 (not sure I get the upper bound bit)
+
+%free atoms
+%scatering as single particle state (differnet eigenstate)
+%	interaction determined by some gnarly stuff
+%From scattering theory we know that the long range behavior is determined by short range physics
+%	how do we know this? (the dalibard intro)
+%Can we come up with good enough pseudo potentials to describe the short range physics and then solve the schrodinger equation to extract wavefunctions?
+%	we want wavefunctions because that is the full characterization
+%	we don't know the right eigenbasis for the short range part but we can make some guesses (in particular Hund cases setup eigen states for various possible internal states)
+%	Bohn and Julienne theory guessed based on using quantum defect theory
+%		this pre-supposes that the bound and free wavefunctions are similar (I forget in what respect) but that the bound ones must go to zero as R->Inf
+%If we have some notion of the wf then we can construct matricies which define interactions once we add additional coupling to the scattering problem
+
+
+%the scattering length as a coupling parameter in length units
+%	The mean field energy (I think I had a reference on this)
+%	slide 26
+
+%While a full quantum close-coupling calculation is the most complete and rigorous method for analyzing cold quantum scattering problems, useful approximations can be applied to realize relatively more "simple" closed analytic formulas describing photoassociation spectra. 
+
+%This section will cover the theory of lineshapes in PAS.
+%
+%Somewhere I read about three regimes of PAS as a comparison of relevant energy scales. Should explore that here
+%
+%Pretty much have everything needed from our previous section.
+%Relation of rate constant to cross sections is nice and simple
+%		Julienne 14 - slide 21
+%These fully coupled-channel models are not straightforward to evaluate.
+%	Can make assumption to simplify
+
+
+%\subsection{One-photon excitation of free to bound transitions} \label{ssec:one_color_pa}
+%Can recreate the type of model for MFR in a field dressed approach
+%	plot showing photon + potential
+%	
+%
+%	
+%ANalytic forms for modeling
+%	compare all the forms of K
+%		the crazy one from BJ 99
+%		the simple one with f(p)
+%		nicholson 42
+%	
+%
+%show plot with all the terms defined
+%
+%give loss rate (will need to have introduced before)
+%	define terms
+%		gammaStim as overlap
+%		gamma as molecular lifetime
+%		delta as detuning
+%		A as coupling strength
+%	
+%introduce reflection approximation
+%	evaluation of overlap
+%	reference BJ 99
+%	
+%give relative momentum distribution
+%	this results in an asymmetric profile
+%	give plot
+%	
+%Number equation vs. time
+% The one-body loss rate, $\Gamma$, is due to background
+%collisions and off-resonant scattering from the PA lasers.
+%
+%segue to narrow lines
+
 %\begin{equation}\label{Kintegral}
 %   K=\frac{1}{h\,Q_{T}} \int \vert S(\epsilon,\omega_1,\omega_2,...)\vert^2
 %   \,e^{-\epsilon/k_{B}T} \; d\epsilon,
 %\end{equation}
-where the partition function is $Q_{T}=\left({2\pi k_{B}T \mu \over
-h^2}\right) ^{3/2}$ for reduced mass $\mu$.
 
 
-Bohn and Julienne \cite{bju96} provide an expression for $\vert S(\epsilon,\omega_1,\omega_2,...)\vert^2$ for a collision on the open channel of two ground state atoms (g) with total energy $\epsilon$ leading to loss-producing decay from the excited state $b_1$ with rate $\gamma_1$. (See Fig.\ \ref{PASDiagram}.) It yields
-\begin{eqnarray}\label{equationSprob}
-  \vert S\vert^2 =   \hspace{2.5in}&&\\
-  {(\Delta_2+\epsilon/\hbar)^2{\gamma}_1{\gamma}_s \over
-  	\left[(\Delta_1+\epsilon/\hbar)(\Delta_2+\epsilon/\hbar)-\frac{\Omega_{12}^{2}}{4}\right]^2+\left[ \frac{\gamma_1+\gamma_s}{2}\right]^2(\Delta_2+		 	\epsilon/\hbar)^2}, &&\nonumber
-\end{eqnarray}
-where all quantities are defined in the main text. For simplicity, we have omitted the light shift of $b_1$ due to coupling to the scattering continuum \cite{bju99}. Equation (\ref{equationSprob}) neglects all light shifts due to the trapping laser. Light shifts due to the photoassociation lasers coupling to states outside our model (Fig.\ \ref{PASDiagram}) are also neglected. The thermal energy is much greater than the zero-point energy for trap motion, $T\gg h\nu_{\text{trap}}/k_B$, so confinement effects are negligible \cite{zbl06}.
 
-%$\Delta_1=\omega_1-E_{b1}/\hbar$ and $\Delta_2=\omega_1-\omega_2-E_{b2}/\hbar$ are the one-photon detuning from state $b_1$ and two-photon detuning from state $b_2$ respectively for initial scattering state with $\epsilon=0$.
 
-%, which is a good approximation for our experiment because the light shift of state 1 is small compared to the detuning $\hbar \Delta_1$,
-and lights shifts of states 0 and 2 are approximately equal and will cancel in the determination of the binding energy of the halo state, $E_2$ \cite{rbm04,rfk87}. Neglecting
 
-%We record spectra by varying $\Delta_2$ at fixed detuning from the intermediate state $\Delta_1$
+%
+%quick note on the usage of the relative momentum distribution
+%			usually this is all we care about since the CoM part results in doppler shifts which would be neglible on the energy scales of broad dipole-allowed transtions
+%			using narrow intercombinations lines, the photon recoil energy is comparable to the bound state lifetime
+%				this means that indivual lorentzians might be shifted (each by a different amount) in addition to the total line shape being asymmetric
+%			Integration over both degrees of freedom will be an important discussion in the next chapter as we fit spectra and determine the halo binding energy
+%
+%ideas of limiting cases that can be explored with PAS \cite{Ciuryo2004}
+%
+%
+%
 
-For the experiments reported here, we maintain significant intermediate-state detuning, $|\Delta_1|\gg |\Omega_{12}|$. Thus we are in a Raman configuration, and near two-photon resonance the expression for the scattering probability for a given initial scattering energy Eq.~(\ref{equationSprob}) can be approximated as a Lorentzian
-\begin{eqnarray}\label{equationSprobLorentzian}
- \vert S\vert^2 \approx {A(\epsilon) \over
- \left(\Delta_2+\epsilon/\hbar-\frac{\Omega_{12}^{2}}{4(\Delta_1+\epsilon/\hbar)}\right)^2+\left[ {\Gamma_L(\epsilon)}/{2}\right]^2},
-\end{eqnarray}
-where $A$ and $\Gamma_L$ are defined in Eqs.\ (\ref{ApproxLorentzianQuantitiesMain}) and (\ref{ApproxLorentzianQuantities-2Main}).
-
-As discussed in the text, we analyze loss spectra using the effective expression, Eq.\ (\ref{equationApproxLorentzian}) to account for possible deviations from the single-channel theory \cite{bju96}.
-
-%\section{AC Stark shift due to excitation lasers}
-\label{App:ACStark}
-The total 689-nm intensity oscillates with 100\% contrast according to
-$I_{total}=I_1+I_2+2\sqrt{I_1I_2}\cos \left[(\omega_1-\omega_2)t \right]=2I\left\{1+\cos \left[(\omega_1-\omega_2)t \right]\right\}$.
-Equation \ref{Eq:ACStarkFullModel}
-The form of the AC Stark shift
-due to excitation lasers in Eq.\ \ref{Eq:GlobalFit}
- reflects the time average of the intensity and neglects the interference term. To confirm that this is the correct description, we numerically solved the time-evolution for a three-level system with similar optical couplings and oscillating optical intensity as present during halo photoassociation. The Hamiltonian is
-\begin{eqnarray}\label{Eq:ThreeLevelHamiltonian}
-H= \hspace{3in} \\
- \nonumber\\
-\left(
-    \begin{array}{ccc}
-      0 & \Omega_{01}\left[\mathrm{cos}(\omega_1 t)+ \mathrm{cos}(\omega_2 t)\right] & 0 \\
-      . & E_{b1} & \Omega_{12}\left[\mathrm{cos}(\omega_1 t)+ \mathrm{cos}(\omega_2 t)\right] \\
-      . & . & E_{b2} \\
-    \end{array}
-  \right)
-\nonumber
-\end{eqnarray}
-For  $\Omega_{01}\ll \Omega_{12} \ll \Delta_{1}\equiv E_{b1}/\hbar-\omega_1$, which is analogous to the  experimental conditions used here
-
-, the shift of the two-photon resonance condition follows $\delta={\Omega_{12}^{2}}/{2\Delta_{1}}$ in agreement with Eq. \ref{Eq:ACStarkFullModel}.
+%\subsection{Extension to two-color spectra} \label{ssec:two_color_pa}
+%
+%Pretty much the same things
+%		
+%Show new picture with all the couplings defined
+%
+%
+%Now that we have the theory of PAS covered. 
+%
+%
+%
+%
+%
+%PA loss is described with a local equation for the evolution of the atomic density [Eq.~(\ref{densitydecay})]. Integrating Eq.~(\ref{densitydecay}) over the trap volume yields the time evolution of the number of trapped atoms [Eq.~(\ref{number})]. The effective volumes used throughout this analysis are defined by
+%
+%for trapping potential $U(\mathbf{r})$. The collision event rate constant can be expressed as a thermal average of the scattering probability for loss, $\vert S(\epsilon,\omega_1,\omega_2,...,\mathbf{r})\vert^2$, over the collision energy $\epsilon$. We also average over the trap volume to allow for the possibility that the scattering probability can vary with position in the trap due to inhomogeneity of laser intensity profiles and the density distribution [Eq.~(\ref{equationKeffective})].
+%
+%%This yields
+%\begin{eqnarray} \label{equationKeffective}
+%% \nonumber to remove numbering (before each equation)
+%  \langle K \rangle&=& \frac{1}{V_{2}}\int_{\mathrm{V}}
+%d^3r \,
+%          e^{-\frac{2U(\vec{r})}{k_{B}T}} \nonumber \\
+%         &&\times \frac{1}{h\,Q_{T}}
+%\int_{0}^{U_{max}-U(r)}d\epsilon \vert S\vert^2
+%   \,e^{-\epsilon/k_{B}T}.
+%\end{eqnarray}
+%%\begin{equation}\label{Kintegral}
+%%   K=\frac{1}{h\,Q_{T}} \int \vert S(\epsilon,\omega_1,\omega_2,...)\vert^2
+%%   \,e^{-\epsilon/k_{B}T} \; d\epsilon,
+%%\end{equation}
+%where the partition function is $Q_{T}=\left({2\pi k_{B}T \mu \over
+%h^2}\right) ^{3/2}$ for reduced mass $\mu$.
+%
+%
+%Bohn and Julienne \cite{bju96} provide an expression for $\vert S(\epsilon,\omega_1,\omega_2,...)\vert^2$ for a collision on the open channel of two ground state atoms (g) with total energy $\epsilon$ leading to loss-producing decay from the excited state $b_1$ with rate $\gamma_1$. (See Fig.\ \ref{PASDiagram}.) It yields
+%\begin{eqnarray}\label{equationSprob}
+%  \vert S\vert^2 =   \hspace{2.5in}&&\\
+%  {(\Delta_2+\epsilon/\hbar)^2{\gamma}_1{\gamma}_s \over
+%  	\left[(\Delta_1+\epsilon/\hbar)(\Delta_2+\epsilon/\hbar)-\frac{\Omega_{12}^{2}}{4}\right]^2+\left[ \frac{\gamma_1+\gamma_s}{2}\right]^2(\Delta_2+		 	\epsilon/\hbar)^2}, &&\nonumber
+%\end{eqnarray}
+%where all quantities are defined in the main text. For simplicity, we have omitted the light shift of $b_1$ due to coupling to the scattering continuum \cite{bju99}. Equation (\ref{equationSprob}) neglects all light shifts due to the trapping laser. Light shifts due to the photoassociation lasers coupling to states outside our model (Fig.\ \ref{PASDiagram}) are also neglected. The thermal energy is much greater than the zero-point energy for trap motion, $T\gg h\nu_{\text{trap}}/k_B$, so confinement effects are negligible \cite{zbl06}.
+%
+%%$\Delta_1=\omega_1-E_{b1}/\hbar$ and $\Delta_2=\omega_1-\omega_2-E_{b2}/\hbar$ are the one-photon detuning from state $b_1$ and two-photon detuning from state $b_2$ respectively for initial scattering state with $\epsilon=0$.
+%
+%%, which is a good approximation for our experiment because the light shift of state 1 is small compared to the detuning $\hbar \Delta_1$,
+%and lights shifts of states 0 and 2 are approximately equal and will cancel in the determination of the binding energy of the halo state, $E_2$ \cite{rbm04,rfk87}. Neglecting
+%
+%%We record spectra by varying $\Delta_2$ at fixed detuning from the intermediate state $\Delta_1$
+%
+%For the experiments reported here, we maintain significant intermediate-state detuning, $|\Delta_1|\gg |\Omega_{12}|$. Thus we are in a Raman configuration, and near two-photon resonance the expression for the scattering probability for a given initial scattering energy Eq.~(\ref{equationSprob}) can be approximated as a Lorentzian
+%\begin{eqnarray}\label{equationSprobLorentzian}
+% \vert S\vert^2 \approx {A(\epsilon) \over
+% \left(\Delta_2+\epsilon/\hbar-\frac{\Omega_{12}^{2}}{4(\Delta_1+\epsilon/\hbar)}\right)^2+\left[ {\Gamma_L(\epsilon)}/{2}\right]^2},
+%\end{eqnarray}
+%where $A$ and $\Gamma_L$ are defined in Eqs.\ (\ref{ApproxLorentzianQuantitiesMain}) and (\ref{ApproxLorentzianQuantities-2Main}).
+%
+%As discussed in the text, we analyze loss spectra using the effective expression, Eq.\ (\ref{equationApproxLorentzian}) to account for possible deviations from the single-channel theory \cite{bju96}.
+%
+%
+%
+%
+%The one-body loss rate, $\Gamma$, is due to background collisions and off-resonant scattering from the PA lasers.
+%
+%By integrating this equation over the trap volume, we can obtain the evolution of the total number of trapped atoms
+%\begin{equation}\label{number}
+%   N(t)={N_0 \rm{e}^{-\Gamma t} \over 1+
+%   {2 N_0 \langle K \rangle V_2\over \Gamma V_1^2}(1-\rm{e}^{-\Gamma t})}
+%\end{equation}
+%
+%where $N_0$ is the number of trapped atoms at the beginning of the PAS interaction time. The effective trap volumes $V_q$ are 
+%\begin{equation}
+%	V_{\text{q}}=\int_{\mathrm{V}} d^3r \, e^{-\frac{qU(\mathbf{r})}{k_{B}T}},
+%\end{equation}
+%
+%for trapping potential $U(\mathbf{r})$. 
+%
+%$\langle K \rangle$ is the trap-averaged collision event rate constant
+%\begin{eqnarray}
+%  \langle K \rangle&=& \frac{1}{V_{2}}\int_{\mathrm{V}} d^3r \,e^{-\frac{2U(\mathbf{r})}{k_{B}T}} \nonumber \\
+%  &&\times \frac{1}{h\,Q_{T}} \int_{0}^{\epsilon_{\text{max}}({\mathbf{r}})}d\epsilon \vert S\vert^2 \,e^{-\epsilon/k_{B}T},
+%\end{eqnarray}
+%
+%which is itself a thermal average of the scattering probability for loss ($\vert S(\epsilon,\omega_1,\omega_2,...,\mathbf{r})\vert^2$) over the collision energy $\epsilon$, with an energy cutoff $\epsilon_{\text{max}}$ to be discussed momentarily.
 
 
 %% ARCHIVE
@@ -674,3 +754,139 @@ For  $\Omega_{01}\ll \Omega_{12} \ll \Delta_{1}\equiv E_{b1}/\hbar-\omega_1$, wh
 %	to get qf I have to go back to scattering theory
 
 %ideas of the wavefunction become that basis for how you want to talk about interacting potentials
+
+
+%
+%\begin{figure} \label{fig:FeshbachCartoon}
+%	\centerline{
+%	\includegraphics[width=\textwidth]{feshbachCartoon.pdf}}
+%	\caption{Schematic representation of a Feshbach resonance}{(a) Potentials for the open ($^1S_0\!+\!^1S_0$) and closed ($^3P_1\!+\!^1S_0$) channel of an optically coupled Feshbach resonance in strontium. (b) The same coupling shown in (a) in the dressed state model. Tuning of the excited potential is achieved by varying the laser frequency detuning, $\delta = \omega_p - \omega_{bound}$, and $\omega_{free}$ is the $^1S_0\!\rightarrow\!^3P_1$ atomic transition frequency.}
+%\end{figure} 
+%	
+%
+%The basic idea of a Feshbach resonance is outlined in Fig.\;\ref{fig:FeshbachCartoon}. 
+%Consider a simple two channel system, denoted by the open channel and the closed channel. 
+%The open channel is generally a ground state potential for two free atoms near threshold. 
+%Atoms occupying this state can undergo elastic collisions and, in the absence of any external perturbation, will remain in the open channel. 
+%Conversely, the closed channel is a bound state of a higher lying potential who's energy can be tuned relative to the open channel. 
+%In the absence of coupling between the states, the open and closed channel remain eigenstates of the system as the tuning parameter, and therefore the energy of the closed channel, is changed. 
+%However, in the presence of coupling between the channels, the original eigenstates are mixed and develop an avoided crossing between the bare open and closed channels, when tuned across the resonance. 
+%The power of Feshbach resonances comes from the ability to externally manipulate the degree of state mixing, which results in control of the s-wave scattering length and the creation of low energy Feshbach molecules.
+%
+%Magnetic Feshbach resonances (MFR) are used extensively in alkali metal systems to tune the scattering properties of ultracold gases since the ground states of these systems feature a magnetic moment due to an unpaired electron in the valence shell. 
+%Thus, MFRs utilize interactions between low lying ground state molecular potentials via spin-dependent couplings. 
+%Since both the open and closed channel are ground state potentials, MFRs often exhibit extraordinarily long lifetimes \cite{Chin2010,Kohler2006}. 
+%Conversely, in strontium the ground state is a $^1S_0$ state, as shown in Fig.\;\ref{fig:energy_level_diagram}. 
+%This state is not magnetically sensitive, so no MFRs exist near the $^1S_0\!+\!^1S_0$ interatomic potential. 
+%Fortunately, optical Feshbach resonances (OFR) serve as another method to introduce coupling between the ground state potential (open channel) and a molecular state of an electronically excited potential (closed channel). 
+%Our work has utilized coupling between the $^1S_0\!+\!^1S_0$ and  $^3P_1\!+\!^1S_0$ two-body potentials via the narrow $^1S_0\!\rightarrow\!^3P_1$ atomic transition at 689nm. 
+%Fig.\;\ref{fig:FeshbachCartoon} shows a schematic of the potentials involved in the OFR of strontium in both the bare atomic and dressed state pictures. 
+%In the dressed basis we consider the combined atom + photon field system such that the channels become $\ket{^1S_0\!+\!^1S_0\!+\!n_p\hbar\omega_p}$ as the open channel and $\ket{^3P_1\!+\!^1S_0\!+\!(n_p-1)\hbar\omega_p}$ for the closed channel. 
+%As the light field frequency, $\omega_p$, is varied the excited closed channel potential will experience an energy shift relative to the open channel, resulting in resonant coupling between the open and closed channels. \cite{Ciuryo2005,Bohn1997,Fedichev1996a}
+%
+%The use of a laser field as the coupling scheme in a Feshbach resonance introduces several advantages and complexities that must be considered when determining the expected properties of optical Feshbach molecules. In order to understand these differences, we will briefly outline the key concepts behind Feshbach resonances and the distinctions between optical and magnetic Feshbach resonances.
+%
+%
+%Both MFRs and OFRs can be treated by the same theoretical formalism, as a modification of the collisional properties between two particles \cite{Nicholson2015a,Chin2010}. 
+%
+%
+%One of the hallmarks of ultracold physics is the simplicity of atomic collisions. 
+%
+%
+%As bosonic atoms get colder they can only collide via $\ell=0$ partial waves and thus the elastic collision rate between two atoms becomes energy independent and can be parameterized by a single fixed quantity, $a_s$. 
+%This parameter is known as the s-wave scattering length and is determined by the short range molecular potential between two colliding atoms. 
+
+
+%Through a similar approach, collisions near Feshbach resonances can be modeled by introducing a complex s-wave scattering length, $\tilde{\alpha}$. 
+%In this model, the magnitude of $\tilde{\alpha}$ influences the elastic scattering rate between particles while the imaginary part describes losses through inelastic scattering. 
+%Under an isolated Feshbach resonance model at low energies, this complex scattering length is given by \cite{Chin2010}
+%	\begin{equation} \label{eq:complexScatter_constant}
+%		\tilde{\alpha} = a - ib = \frac{a_s \Gamma_0}{-E_0 + \imath (\gamma/2)}
+%	\end{equation}
+%where $E_0$ and $\Gamma_0$ are the energy independent parameters for, respectively, the resonance position and coupling strength between channels, and $\gamma$ is a general decay term associated with loss from the closed channel. 
+
+
+%Using Eq.\;\ref{eq:complexScatter_constant}, we can note the two main differences between MFRs and OFRs. Most experimentally useful MFRs, such as in Li and K, have negligible closed channel decay, $\gamma = 0$, and a fixed coupling strength between the open and closed channels. 
+%Thus, the change in the s-wave scattering length takes on a particularly simple form, 
+%	\begin{equation} \label{eq:MFRscatter}
+%		\tilde{\alpha} = a_s \left( 1- \frac{\Delta}{B - B_0} \right)
+%	\end{equation}
+%where $B_0$ is the resonance position and the coupling strength is parameterized by a magnetic width $\Delta$, such that $\Gamma_0 = \delta \mu \Delta$ with $\delta \mu$ the difference in magnetic moments between the open and closed channel. 
+%
+%Conversely, OFRs offer the possibility to tune the coupling strength between the open and closed channel, since the coupling depends on the transition matrix element which varies with the square root of laser intensity.
+%Furthermore, since OFRs utilize electronically excited states which have a natural lifetime, $\gamma$ is nonzero. 
+%This results in inelastic loss processes for OFRs. Similar to MFRs, we can define the change in scattering length as \cite{Nicholson2015a,Yan2013c,Blatt}
+%	\begin{equation} \label{eq:OFRscatter}
+%		\tilde{\alpha} = a_s \left( 1 - \frac{w \delta}{\delta^2 + \gamma^2/4} + \frac{i}{2} \frac{w \gamma}{\delta^2 + \gamma^2/4} \right)
+%	\end{equation}
+%where $\delta=\omega - \omega_0$ is the detuning from the chosen photoassociation resonance at $\omega_0$ as shown in Fig.\;\ref{fig:FeshbachCartoon}, and the width of the resonance is defined by $w = -\ell_{opt} \, \gamma / a_s$. 
+%Typically, the strength of OFRs are characterized by their optical length \cite{Nicholson2015a,Chin2010} given by $\ell_{opt} = a_s \Gamma_0 / \gamma = \frac{\lambda_{OFR}^3}{16 \pi c} \frac{ \left| \left< n | E \right> \right|^2}{k} I$. Here $c$ is the speed of light, $\lambda_{OFR}$ is the wavelength of the coupling laser, and $\left| \left< n | E \right> \right|^2$ is the free-bound Frank-Condon factor between the bound state $\bra{n}$ and scattering state $\ket{E}$. 
+
+
+%Additionally, it is useful to identify the real and imaginary parts of Eq.\;\ref{eq:OFRscatter} as defined in Eq.\;\ref{eq:complexScatter_constant}.
+%	\begin{equation} \label{eq:OFRparts}
+%		 a_{\scriptscriptstyle OFR} = a_s + \ell_{opt} \gamma \frac{\delta}{\delta^2+\gamma^2/4} \qquad
+%		 b_{\scriptscriptstyle OFR} = \frac{\ell_{opt}}{2} \frac{\gamma^2}{\delta^2+\gamma^2/4}
+%	\end{equation}
+%
+%Our previous work exploring the use of an optical Feshbach resonance took advantage of photoassociation transitions with large optical lengths to control the scattering length of an $^{88}$Sr BEC as described by Eq.\;\ref{eq:OFRscatter}. 
+%However, all studies of OFR to date have been limited by large atom loss rates \cite{Thalhammer2005,Theis2004,Fatemi2000,Blatt,Yan2013c} which can be modeled as a density evolution, $\dot{n} = -K_{in}n^2$, where $K_{in}$ is the two-body inelastic loss rate constant. 
+%In the low energy limit, $k\!\rightarrow\!0$, the inelastic loss rate is given by
+%	\begin{equation} \label{eq:K_in}
+%		K_{in} = \frac{8 \pi \hbar}{\mu_{r}} b_{\scriptscriptstyle OFR} = \frac{4 \pi \hbar}{\mu_r} \frac{\ell_{opt} \gamma^2}{\delta^2 + \gamma^2 / 4}
+%	\end{equation}
+%where $\mu_r$ is the reduced mass, $\delta$ is the laser detuning as shown in Fig.\;\ref{fig:FeshbachCartoon}.
+
+%\subsection{Classical} \label{ssec:classical}
+%	\begin{figure} 
+%	\centerline{
+%	  \includegraphics[width=0.5\textwidth]{classicalBalls.PNG}}
+%	  \caption{Classical collision}{}
+%	  \label{fig:3classical}
+%	\end{figure}
+%
+%Cold atom collisions must be treated quantum mechanically but a some useful information can be determined from classical collisions.
+%
+%Consider $N$ particles each with radius $d$ and velocity $\vec{v}$ confined to a volume $V$, as shown in Fig.\,\ref{fig:3classical}.
+%To determine the rate of collisions imagine freezing all but one of the particles.
+%Then in a time $t$, this particle will sweep out a collision volume $V_c = t |\vec{v}| \sigma$ with cross-section $\sigma = \pi d^2$.
+%
+%
+%
+%Classically, the number of collisions experienced by a single particle in a time $t$ for a gas of density $n$ where each particle is moving with velocity $\vec{v}$ is given by $ t |\vec{v}| \sigma n$.
+%Thus, the rate of collisions is $\Gamma = |\vec{v}| \sigma n = K n$, with $K = |\vec{v}| \sigma$ the two-body collision rate constant.
+%When there is a distribution of relative velocities a sum over contributions from all velocities is required, namely
+%\begin{equation}
+%	\vert K \vert^2 = \int_0^{\infty}\vec{v}\,f(\vec{v})\sigma d^3\vec{v}
+%\end{equation}
+%
+%
+%
+%
+%hmm.. collisiion in each case
+%
+%setup coordinates immediately, just say relative 
+%
+%1. need description of cross section - comes from physical description
+%2. description of potential
+%
+%
+%Cross section is a measure of the time between collisions.
+%cross sections
+%	as a measure of the time between collisions
+%	in general energy dependent
+%	
+%rate coefficient
+%	rate from i -> j given by k = sig v
+%	when there is a distribution of relative velocities (CM 1.6)
+%		dist is normalized
+%		maxwell-boltzmann usually the most important
+%
+%			
+%potentials
+%	consider how a particle undergoes a collision
+%
+%
+%centrifugal barrier
+%	analog - slide 16 Julienne
+%	just rxp of particles
