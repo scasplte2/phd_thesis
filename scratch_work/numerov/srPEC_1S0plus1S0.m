@@ -38,6 +38,8 @@ for i = 1:length(varargin);
     end
 end
 
+%test%
+
 %% Decide model to use
 % Choose whether to use the recommended model or the freely varied model
 % Aman '18 value from halo binding energy, Tiemann 2010 value from fourier spec.
