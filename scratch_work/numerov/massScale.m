@@ -59,14 +59,16 @@ srM = [ funcMu(m84, m84) funcMu(m84, m86) funcMu(m84, m87) funcMu(m84, m88) ...
 homoMix   = [1 5 8 10];
 heteroMix = [2 3 4 6 7 9];
 
-srVec = nan(length(srM));
+srVec = nan(1,length(srM));
 for i = 1:length(srM);
     srVec(i) = a(srM(i));
 end
 
 %% Plotting
 % Use this mask to avoid plotting the asymptotic line
-avoidAsym = aVec < -300 & aVec > 2500;
+part1 = 2*muVec/amu2au > 83.5 & 2*muVec/amu2au < 85.7;
+part2 = 2*muVec/amu2au > 85.85 & 2*muVec/amu2au < 88.5;
+part3 = 2*muVec/amu2au > 88.6 & 2*muVec/amu2au < 90.5;
 
 % Create figure
 figure1 = figure;
@@ -76,8 +78,12 @@ axes1 = axes('Parent',figure1);
 hold(axes1,'on');
 
 % Want to plot the x-axis in isotopic 
-plHan = plot(2*muVec(avoidAsym)/amu2au, aVec(avoidAsym));
-plHan.LineWidth = 1.5;
+plHan = plot(2*muVec(part1)/amu2au, aVec(part1),...
+             2*muVec(part2)/amu2au, aVec(part2),...
+             2*muVec(part3)/amu2au, aVec(part3));
+plHan(1).LineWidth = 1.5;
+plHan(2).LineWidth = 1.5;
+plHan(3).LineWidth = 1.5;
 
 % Create plot
 plot(2*srM(homoMix)/amu2au, srVec(homoMix),...

@@ -1,5 +1,5 @@
 function genGsPEC
-% Function to calculate the excited state potential and save to output files
+% Function to calculate the ground state potential and save to output files
 % This script assumes as el=0 interaction (this only saves the electronic potential and neglects any centrifugal contribution)
 
 %% Problem specifics
@@ -8,7 +8,7 @@ units = 'cgs'; % valid options are ['cgs', 'au']
 
 % define region of interest (always specified in atomic units)
 % NOTE: Length input for the PEC evaluation is expected in AU
-r_roi  = (0.01:0.005:5300)'; 
+r_roi  = (0.01:0.01:5300)'; 
 
 % Base output path and filenames
 basePath  = 'Z:\';
@@ -34,7 +34,7 @@ end
 %% Solve for the potential
 % Must query potential in atomic units
 % input distance in bohr, return energy in hartree
-V = srPEC_1S0plus1S0(r_roi*lenConv)*enConv;
+V = srPEC_1S0plus1S0(r_roi*lenConv, 'C6', 1.526593545404851*1e7)*enConv;
 
 %% Save output
 % Save files and convert from atomic units to chemist units of Angstrom and eV

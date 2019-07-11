@@ -33,14 +33,31 @@ T    = 10e-9;
 mass = [m86 m86];
 
 maxRad = 2*dBLambda(prod(mass)/sum(mass)*amu2Au, T*kel2Ha); 
-range1 = maxRad/1000; % 1500 for 86 real potential, default to 150 for 84
+% Good values of range for Sr 84 (only affects plotting, not calc)
+%range1 = maxRad/1e3;
+%range2 = maxRad/10;
+
+% Good values of range for Sr 86 (only affects plotting, not calc)
+range1 = maxRad/100;
 range2 = maxRad/10;
 
 %% Evaluate wavefunction
 tic; 
-%t = sr_1S0_scatter(T, 0, [5 maxRad], mass, 'plot', 1, 'region', [range1 range2]); 
+% C6 value from Aman (2018), freely varying piecewise model from Tiemann (2010)
+%t = sr_1S0_scatter(T, 0, [5 maxRad], mass, 'plot', 1, 'region', [range1 range2], 'srModel', 'AF'); 
+
+% C6 value from Aman (2018), recommended piecewise model from Tiemann (2010)
+t = sr_1S0_scatter(T, 0, [5 maxRad], mass, 'plot', 1, 'region', [range1 range2], 'srModel', 'AR');
+
+% complete freely varying piecewise model from Tiemann (2010)
+%t = sr_1S0_scatter(T, 0, [5 maxRad], mass, 'plot', 1, 'region', [range1 range2], 'srModel', 'TF'); 
+
+% complete recommended piecewise model from Tiemann (2010)
+%t = sr_1S0_scatter(T, 0, [5 maxRad], mass, 'plot', 1, 'region', [range1 range2], 'srModel', 'TR'); 
+
+% Playing with other potentials
 %t = sr_1S0_scatter(T, 0, [5 maxRad], mass, 'plot', 1, 'region', [range1 range2], 'funcPEC', mod_LJ);
-t = sr_1S0_scatter(T, 0, [0.1 maxRad], mass, 'plot', 1, 'region', [range1 range2], 'funcPEC', LJ); 
+%t = sr_1S0_scatter(T, 0, [0.1 maxRad], mass, 'plot', 1, 'region', [range1 range2], 'funcPEC', LJ); 
 toc
 
 %% Estimate scattering length
@@ -53,4 +70,4 @@ subplot(2,1,1); hold on
 plot(ov.r(1:rLim), polyval(P, ov.r(1:rLim)))
 
 tmp = polyfit(ov.numR(fitInds), ov.r(fitInds), 1);
-sprintf('Estimated scattering length: %g', tmp(2))
+fprintf('\n\nEstimated scattering length: %g\n\n', tmp(2))
