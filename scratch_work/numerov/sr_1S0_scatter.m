@@ -3,6 +3,9 @@ function solOut = sr_1S0_scatter(Tinc, el, rRange, masses, varargin)
 % The calculation is done in atomic units but some inputs are specified in easier to use 
 % (or more typical AMO) units. See the INPUTS section for details.
 %
+% While the function will default to solving the strontium ground state, the Numerov propagator
+% is generalized such that a trial PEC may also be specified.
+%
 % Reference on atomic units
 % https://onlinelibrary.wiley.com/doi/pdf/10.1002/9781118229101.app5
 % Be careful of masses, mass in atomic units (a.u.) is electron mass. Atomic mass units (a.m.u.) specifies proton mass
@@ -24,8 +27,10 @@ function solOut = sr_1S0_scatter(Tinc, el, rRange, masses, varargin)
 % Optional inputs: (for use with varargin, make a cell array of strings followed by the argument. See example above)
 %   coeffs  | (arb)       | Coefficients from normalizing the wavefunctions. This can save on propagation time once you've gotten the coefficients once.
 %   plot    | boolean     | flag for plotting
-%   figNum  | integer     | if plotting, use this figure number to plot on (useful for combining)
+%   figNum  | integer     | if plotting, use this figure number to plot on (useful for combining figures)
 %   region  | Bohr        | two element vector to specifying the region for plotting
+%   srModel | string      | Specify model to use for the PEC. Valid options {'Tiemann - Free', 'Tiemann - Rec',  'Aman - Free', 'Aman - Rec'}
+%   funcPEC | function    | Specify a PEC function other then the strontium potential. Only use if srModel is not used.
 %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % OUTPUTS:
@@ -36,7 +41,6 @@ function solOut = sr_1S0_scatter(Tinc, el, rRange, masses, varargin)
 %   V       | Hartree     | potential energy curve evaluated at V(x)
 %   R       | (arb)       | radial wavefunction, normalization is arbitrary
 %   C       | (arb)       | asymptotic solution coefficients, see discussion below for details
-%           |             | 
 
 %% Function setup
 % Conversions
@@ -59,12 +63,14 @@ for i = 1:2:length(varargin)
         case 'plot'
             flagPlot = varargin{i+1};
         case 'figNum'
-            flagFig = 1;
-            figNum  = varargin{i+1};
+            flagFig  = 1;
+            figNum   = varargin{i+1};
         case 'region'
-            region  = varargin{i+1};
+            region   = varargin{i+1};
         case 'funcPEC'
-            interV  = varargin{i+1};
+            interV   = varargin{i+1};
+        case 'srModel'
+            interV   = @(r) srPEC_1S0plus1S0(r, varargin{i+1})';
     end
 end
 
@@ -158,7 +164,7 @@ if flagPlot;
     
     if flagFig; figure(figNum); else figure; end
     axHan = subplot(2,1,1); hold on
-    plot(r(scatPart), V(scatPart) ,...
+    plot(r(scatPart), 5*V(scatPart) ,...
          r(scatPart), numR(scatPart))
    
     xlim([0 scatRegion]);
@@ -170,7 +176,7 @@ if flagPlot;
     axHan.YTick    = [];
     axHan.TickLabelInterpreter = 'latex';
     legend({'V(r)', sprintf('$%g\\,+\\,%g, l = %g, \\frac{E_{inc}}{k_B} = %g\\times10^{%g}$ K',...
-                            masses, el, Tinc/10^(floor(log10(Tinc))), floor(log10(Tinc)))},...
+                            round(masses), el, Tinc/10^(floor(log10(Tinc))), floor(log10(Tinc)))},...
         'Interpreter' , 'latex' ,...
         'Location'    , 'best'  )
     
