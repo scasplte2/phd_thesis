@@ -65,8 +65,9 @@
 \def\rcurs{{\mbox{$\resizebox{.09in}{.08in}{\includegraphics[trim= 1em 0 14em 0,clip]{ScriptR}}$}}}
 \def\brcurs{{\mbox{$\resizebox{.09in}{.08in}{\includegraphics[trim= 1em 0 14em 0,clip]{BoldR}}$}}} 
 
-\newcommand{\hl}{\bgroup\markoverwith
-  {\textcolor{yellow}{\rule[-.5ex]{2pt}{2.5ex}}}\ULon} % creates a highlight command \hl
+%\newcommand{\hl}{\bgroup\markoverwith
+%  {\textcolor{yellow}{\rule[-.5ex]{2pt}{2.5ex}}}\ULon} % creates a highlight command \hl
+\newcommand\hl[1]{\colorbox{yellow}{\textcolor{red}{#1}}}
 \newcommand{\ket}[1]{\ensuremath{\left| {#1} \right>}} % for Dirac kets
 \newcommand{\bra}[1]{\ensuremath{\left< {#1} \right|}} % for Dirac bras
 \newcommand{\innerProd}[2]{\ensuremath{\left< {#1} | {#2} \right>}} % for writing the inner product between states
@@ -86,8 +87,8 @@
 \renewcommand{\exp}[1]{\ensuremath{\text{exp}\left( {#1} \right)}} % simplify writing exp(x)
   
 %%%---%%%---%%%---%%%---%%%---%%%---%%%---%%%---%%%---%%%---%%%---%%%---%%%---%%%---%%%---%%%---%%%---%%%---%%%---
-\title{One- and two-photon photoassociative spectroscopy of ultracold strontium}
-\ctitle{One- and two-photon photoassociative spectroscopy of ultracold strontium}
+\title{Two-photon photoassociative spectroscopy of ultracold strontium-86}
+\ctitle{Two-photon photoassociative spectroscopy of ultracold strontium-86}
 \author{James Allen Aman}
 \department{Physics and Astronomy}
 \school{Rice University}
@@ -103,7 +104,7 @@
 }
 
 \address{Houston, Texas}
-\donemonth{April} \doneyear{2019} 
+\donemonth{July} \doneyear{2019} 
 
 \makeindex
 
@@ -147,16 +148,15 @@
 % Appendices
 \begin{appendices}
 \include{./text/append-momDist}
-%\include{./text/append-imagefit}
-%\include{./text/append-neuklein}
+\include{./text/append-imagefit}
+\include{./text/append-neuklein}
 %\include{./text/append-expHW}
-%\include{./text/append-vacuum}
+\include{./text/append-vacuum}
 %\include{./text/append-gaussBeam}
-%\include{./text/append-effVolume}
-%\include{./text/append-922}
-%\include{./text/append-dopSpec}
-%\include{./text/append-boseHub}
-%\include{./text/append-bragg}
+\include{./text/append-effVolume}
+\include{./text/append-922}
+\include{./text/append-dopSpec}
+\include{./text/append-bragg}
 
 %\include{./text/append-MOTwrap}
 \end{appendices}

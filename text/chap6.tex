@@ -1,79 +1,114 @@
-\chapter{Progress towards studies of quantum magnetism}
-\label{ch:chap6}
-
-A straightforward extension of the work presneted in this thesis would be to control interparticle spacing via an optical lattice. For these and additional experiments using quantum degenerate fermionic strontium we purchased and installed an optical lattice system. Our lattice is implemented using a Coherent Verdi V-18 which is shapped and propagated to our science chamber in free space. \hl{Fig} shows the optical path for each arm of our cubic lattice. 
-
-Unfortunately, complications due to heating when loading the lattice has limited our success in this optical trap. I want to go over what we have been able to do so far with the lattice.
-
-How did we characterize?
-	Kaptiza-dirac extension
+\chapter{Installation of a 532\,nm lattice} \label{ch:chap6}
+%What are some ideas we could do in the lattice?
+%	Zeno
+%	faster cooling via stimulated raman potentailly? (can I model this somehow?)
+%	repulzively bound molecules?
+%	use interaction control in lattice with the zeno thing
 	
-What convinced us we were having problems?
+Optical lattices are formed by a standing wave of light which creates a defect free periodic potential.
+These traps are extremely versatile and have enabled the observation of the superfluid - Mott insulator transition \hl{\cite{Greiner2002}}, artificial gauge fields for neutral atoms \hl{\cite{Lin2011}}, quantum microscopy with single-site resolution \hl{\cite{Bakr2009}}, and investigations of quantum magnetism \hl{\cite{Hart2015,Greif2015}}. 
+They are among the most well-established techniques for controlling a quantum state and have proven to be great tools for exploring the connection between few- and many-body systems \hl{\cite{Bloch2008}}.
 
-What are some ideas we could do in the lattice?
-	Zeno
-	faster cooling via stimulated raman potentailly? (can I model this somehow?)
-	repulzively bound molecules?
-	use interaction control in lattice with the zeno thing
-	
-\section{Optical lattice trap: 532\,nm} \label{ssec:532sys}
 Until recently, experiments on the Neutral apparatus were confined to work with bulk gases in an optical dipole trap.
 While optical dipole traps are useful for efficient evaporation and thermalization of an ultracold gas, optical lattices greatly extend our capabilities for studying ultracold molecules and novel many-body quantum states \hl{give some refs}.
+A straightforward extension of the work presented in this thesis would be to control interparticle spacing via an optical lattice. 
+For these and additional experiments using quantum degenerate fermionic strontium, we purchased and installed an optical lattice system. 
+This chapter will detail our installation and characterization of this laser system.
 
-Optical lattices are formed by a standing wave of light which creates a defect free periodic potential.
-These traps are extremely versatile and have enabled the observation of the superfluid - Mott insulator transition \cite{Greiner2002}, artificial gauge fields for neutral atoms \cite{Lin2011}, quantum microscopy with single-site resolution \cite{Bakr2009}, and investigations of quantum magnetism \cite{Hart2015,Greif2015}. 
-They are among the most well-established techniques for controlling a quantum state and have proven to be great tools for exploring the connection between few- and many-body systems \cite{Bloch2008}.
-
-\subsubsection{Background} \label{sec:latBackground}
-An optical lattice is created by counterpropagating two laser beams to form a standing wave pattern, which for two plane waves in one dimension results in a periodic potential given by 
-	\begin{equation}
+\section{Background} \label{sec:latBackground}
+An optical lattice is created by counterpropagating two laser beams to form a standing wave pattern, which for two plane waves in one-dimension results in a periodic potential given by 
+	\begin{equation} \label{eq:1dlattice}
 		 V(x) = V_{lat} \; \sin^2(k_L x)
 	\end{equation}
 where $V_{lat}$ is the lattice depth determined by the polarizability of the atom for a given trapping wavelength $\lambda$ and laser intensity $I$, and $k_L$ is the lattice wavevector.
 This potential can be readily extended to three dimensions using two additional pairs of counterpropagating laser beams along the $y$ and $z$ directions which results in a 3D cubic lattice.
 Depth of the trapping potential, $V_{lat}$, is controlled by varying the intensity of the lattice beams.
 
-Periodic potentials are powerful because they break the translational invariance of space which results in the formation of band structure and the opening of bandgaps or disallowed particle energies \cite{Ashcroft1976}.
+Periodic potentials are powerful because they break the translational invariance of space which results in the formation of band structure and the opening of bandgaps or disallowed particle energies \hl{\cite{Ashcroft1976}}.
 Because of this broken invariance, $p$ is no longer a good quantum number and must be replaced by two new quantum numbers: the band index, $n$, and the quasimomentum, $q$.
-In one dimension, quasimomentum is specified by $q = p - nG$, where $G=2\pi/a$ is a reciprocal lattice vector, and $a$ is the real space lattice constant.
+In one-dimension, quasimomentum is specified by $q = p - nG$, where $G=2\pi/a$ is a reciprocal lattice vector, and $a$ is the real space lattice constant.
 Fig.\;\ref{fig:bandStructure} shows how the band structure varies as the lattice depth is increased.
 Optical lattices have a lattice spacing $a = \lambda /2$ which determines the reciprocal lattice vector $G = 4\pi / \lambda = 2 \hbar k_L$ and a natural energy scale $E_r = \frac{\hbar^2 k_L^2}{2m}$ where $m$ is the atomic mass and $k_L$ is the lattice wavevector, $k_L = 2\pi / \lambda$.
 From the band structure, we see that the bandwidth of each band, given by $\Delta E = E_{q=\hbar k_L} - E_{q=0}$, decreases as the lattice depth is increased.
 In the limit that $V_{lat}\!\rightarrow\!\infty$ the band structure reduces to a ladder of harmonic oscillator levels spaced by $\hbar \omega_{ho} = \sqrt{4 V_{lat} E_r}$.
-Although, for moderately deep lattices, $V_{lat} \gtrsim 5\,$E$_r$, this approximation is valid near the center of the Brillioun zone, $q = 0$, and provides a simple form to estimate the energy gaps between bands \hl{\cite{Jaksch1998,Jaksch2005}.}
+Although, for moderately deep lattices, $V_{lat} \gtrsim 5\,$E$_r$, this approximation is valid near the center of the Brillioun zone, $q = 0$, and provides a simple form to estimate the energy gaps between bands \hl{\hl{\cite{Jaksch1998,Jaksch2005}}.}
 	\begin{figure} \label{fig:bandStructure}
 		\centerline{
 		\includegraphics[width=\textwidth]{lattice_bandStructure.pdf}}
-		\caption{1D band structure as a function of lattice depth}{One dimensional band structure for an optical lattice as the lattice depth is increased. The band energies are found by solving the Schr\"{o}dinger equation using the Bloch functions of Eq.\;\ref{eq:blochFunc}.}
+		\caption{1D band structure as a function of lattice depth}{One-dimensional band structure for an optical lattice as the lattice depth is increased. The band energies are found by solving the Schr\"{o}dinger equation using the Bloch functions of Eq.\;\ref{eq:blochFunc}.}
 	\end{figure}
 
-Solutions to the Schr\"{o}dinger equation in a periodic potential are given by the Bloch functions \cite{Ashcroft1976}
+Solutions to the Schr\"{o}dinger equation in a periodic potential are given by the Bloch functions \hl{\cite{Ashcroft1976}}
 	\begin{equation} \label{eq:blochFunc}
 		 \phi_q^{(n)}(x) = e^{iqx/ \hbar} \; u_q^{(n)}(x)
 	\end{equation}
 These eigenstate wavefunctions are specified for a given quasimomentum $q$, and band index $n$. 
 Their corresponding energy eigenvalues define the band structure of the lattice shown in Fig.\,\ref{fig:bandStructure}.
-From Eq.\,\ref{eq:blochFunc} we see that the Bloch functions are the product of plane waves modulated by a function $u_q^{(n)}(x)$, which shares the periodicity of the underlying lattice potential \cite{Ashcroft1976}.
-For an optical lattice this modulating function can be expanded in a basis of plane waves through a Fourier decomposition of the lattice potential in Eq.\,\ref{eq:1dlattice}, which gives \cite{Greiner2003},
+From Eq.\,\ref{eq:blochFunc} we see that the Bloch functions are the product of plane waves modulated by a function $u_q^{(n)}(x)$, which shares the periodicity of the underlying lattice potential \hl{\cite{Ashcroft1976}}.
+For an optical lattice this modulating function can be expanded in a basis of plane waves through a Fourier decomposition of the lattice potential in Eq.\,\ref{eq:1dlattice}, which gives \hl{\cite{Greiner2003}},
 	\begin{equation} \label{eq:blochMod}
 		 u_q^{(n)}(x) = \sum_l c_l^{(n,q)} \; e^{i2lk_Lx}
 	\end{equation}
-Here $c_l^{(n,q)}$ are the coefficients for each plane wave in the basis expansion that are found by diagonalizing the lattice Hamiltonian \cite{Greiner2003}.
+Here $c_l^{(n,q)}$ are the coefficients for each plane wave in the basis expansion that are found by diagonalizing the lattice Hamiltonian \hl{\cite{Greiner2003}}.
 
 Often, we are interested in the dynamics of particles on a particular lattice site, but since Bloch functions are delocalized over the entire lattice, it is useful to instead use the Wannier functions. 
 These functions provide an orthogonal and normalized set of wavefunctions that are maximally localized to a specific lattice site. 
-The Wannier function for a localized particle in the n$^{th}$ band of a lattice site located at position x$_i$ is given by \cite{Jaksch2005}
+The Wannier function for a localized particle in the n$^{th}$ band of a lattice site located at position x$_i$ is given by \hl{\cite{Jaksch2005}}
 	\begin{equation} \label{eq:wannier}
 		 w_{n}(x - x_i) = \mathcal{N}^{-1/2} \sum_q e^{iqx_i/ \hbar} \; \phi_q^{(n)}(x)
 	\end{equation}
 where $\mathcal{N}$ is a normalization constant and $\phi_q^{(n)}(x)$ are the Bloch functions of Eq.\;\ref{eq:blochFunc}.
 This localized description of particles allows us to calculate important physical quantities which govern dynamical properties of the lattice such as the tunneling rate, $J/ \hbar$, and on-site interaction energy, $U$. 
-As $V_{lat}\!\rightarrow\!\infty$, the Wannier functions approach the eigenfunctions of the harmonic oscillator, which allows us to estimate the spatial extent of an atomic wavefunction by $a_{ho} = \sqrt{\frac{\hbar}{m \omega_{ho}}}$ \cite{Jaksch2005}.
+As $V_{lat}\!\rightarrow\!\infty$, the Wannier functions approach the eigenfunctions of the harmonic oscillator, which allows us to estimate the spatial extent of an atomic wavefunction by $a_{ho} = \sqrt{\frac{\hbar}{m \omega_{ho}}}$ \hl{\cite{Jaksch2005}}.
 
-\subsubsection{Setup and alignment} \label{sssec:532_align}
+When bosons are confined to the lowest energy band of a lattice, a particularly simple model known as the Bose-Hubbard Hamiltonian is used to describe the lattice system \hl{\cite{Jaksch1998}}. 
+	\begin{equation} \label{eq:boseHubbard}
+		 H_{BH} = -J \sum_{\left< i,j \right>} \left(\hat{b}^{\dagger}_i \hat{b}_j + \hat{b}^{\dagger}_j \hat{b}_i \right)
+		 		  + \frac{U}{2} \sum_i \hat{n}_i(\hat{n}_i - 1)
+	\end{equation}
+Where $\left< i,j \right>$ denotes a sum over nearest-neighbors. This model is the simplest example of a non-trivial interacting many-body system for dynamics in a lattice.
+The first term describes hopping of bosons from site to site at a rate $J/ \hbar$. 
+The second term describes an interaction energy which is related to the $s$-wave contact interaction term, $g = 4 \pi \hbar^2 a_s/m$, where $a_s$, is the $s$-wave scattering length of the particles. 
+$J$ and $U$ can be calculated directly using the Wannier functions of Eq.\;\ref{eq:wannier} and are given by \hl{\cite{Jaksch2005}}
+	\begin{equation} \label{eq:JandU}
+	\begin{aligned}
+		 J_{ij} &= - \int d^3x \; w_0(x-x_i) \left( \frac{p^2}{2m}+V(x) \right) w_0(x-x_j)\\
+		 U &= \frac{4 \pi \hbar^2 a_s}{m} \int d^3x \; \left| w_0(x-x_i)\right|^4
+	\end{aligned}
+	\end{equation}
+Using Eq.\;\ref{eq:JandU} the expected tunneling rates and interaction energies for atomic strontium are shown in Fig.\,\ref{fig:fig_JandU} for homonuclear samples of strontium as a function of lattice depth. 
+This single band calculation is valid under the assumption that the interaction energy of a site is smaller than the bandgap between the $n= 0$ and $1$ bands, namely $U N \lesssim \hbar \omega_{ho}$ where $N$ is the mean number of particles per site and $\hbar \omega_{ho}$ is the approximate energy spacing between bands \hl{\cite{Rey2004}}. 
+	\begin{figure}
+		\centerline{
+		\includegraphics[width=\textwidth]{JandU.pdf}}
+		\caption{Calculation of $J$ and $U$ in a $532$\,nm optical lattice}{Calculated tunneling rate of strontium and interaction energies for homonuclear pairs of each bosonic isotope. The interaction energy shows a large variation due to its dependence on the $s$-wave scattering length.}
+		\label{fig:fig_JandU}
+	\end{figure}
+Alternatively, Eq.\,\ref{eq:JandU} can be simplified through considering appropriate limits to the Bose-Hubbard model. In the limit that $U\!\rightarrow\!0$, the Bose-Hubbard model becomes exactly solvable and the energy of the $n=0$ band is given by $E_q^{(0)}=-2J \cos(q a)$ \hl{\cite{Jaksch2005}}.
+Thus, the tunneling rate, $J$, can be related to the bandwidth of the lowest band as expressed in Eq.\,\ref{eq:JandU_simple}.
+Under a separate limit, $V_{lat}\,\rightarrow\,\infty$, then the tunneling rate goes to zero and the localized wavefunctions can be approximated by a Gaussian wavefunction which yields the form for the on-site interaction $U$ given in Eq.\,\ref{eq:JandU_simple} \hl{\cite{Rey2004}}.
+	\begin{equation} \label{eq:JandU_simple}
+	\begin{aligned}
+		 J &= \frac{E_{q=\hbar k_L} - E_{q=0}}{4}\\
+		 U &= \frac{\hbar a_s}{\sqrt{2 \pi}}\frac{\bar{\omega}_{ho}}{\bar{a}_{ho}}
+	\end{aligned}
+	\end{equation}
+Here $\bar{a}_{ho}$ and $\bar{\omega}_{ho}$ are the geometric means of the one-dimensional harmonic oscillator length and frequency given previously.
+
+%The tunability of an optical lattice would prove useful for the study of Feshbach molecules.
+%By controlling the lattice depth and/or atomic density, we can efficiently create molecules when there are two or more atoms per site. 
+%Using the volume of a unit cell we can estimate the densities needed to reach average on-site occupancy of 2, which is ideal for forming isolated molecules.
+%For a lattice wavelength of 532\,nm in a simple cubic configuration, the volume for each lattice site is 1.9 $\times 10^{-14}\,$cm$^3$, so we must achieve densities on the order of $4 \times 10^{14}\,$cm$^{-3}$ to expect significant conversion.
+%A more detailed approach to estimate our conversion efficiency would entail: 1) calculating the variation in chemical potential across the trap due to the inhomogeneous confinement of the trapping potential, 2) finding the average particle number per site as a function of $J/U$ to estimate the distribution of $\mu / U$ on the superfluid - Mott insulating phase diagram \hl{\cite{Fisher1989}}, and 3) integrating the density distribution from the center of the trap to a limiting value of $\mu / U$, where the local density is too dilute for efficient molecule conversion.
+%Such a calculation is beyond the scope of this proposal, it is worth noting that the shell structure found near the Mott insulating regime inhibits complete molecular conversion of the atomic gas.
+%Therefore, molecules are accompanied by a large number of unconverted remnant atoms.
+%Previous investigators have shown that it is beneficial to clear non-molecule atoms out of the lattice through a sequence of light and/or microwave pulses.
+%Such a cleaning sequence will need to be investigated in our system since tunneling from single atoms can lead to a reduction of the molecular lifetime \hl{\cite{Kohler2006,Thalhammer2006}}.
+
+\section{Setup and alignment} \label{sssec:532_align}
 \paragraph{Setup}\label{ssec:lattice_setup}
 
-Our optical lattice operates at $\lambda=532\,$nm and is derived from a Coherent Verdi V-18 single mode laser which is sent through separate AOMs for intensity control of each arm before propagating in free space to the atoms. 
+Our optical lattice operates at $\lambda=532\,$nm and is derived from a Coherent Verdi V-18 single-mode laser which is sent through separate AOMs for intensity control of each arm before propagating in free space to the atoms. 
 We label these arms A, B, \& C as noted in Fig.\,\ref{fig:532schematic}.
 Figs.\,\ref{fig:532armAProfile} - \ref{fig:532armCProfile} show the detailed beam profiles for the lattice and specify the spot size at the atoms for each pass of all three arms.
 The horizontal arms are linearly polarized with the polarization vector aligned along the $z$ direction, parallel to gravity. 
@@ -112,7 +147,7 @@ With this configuration we can achieve lattice depths >$30$E$_r$ in an isotropic
  &  &  &  & Atoms$\,\rightarrow\,$CRM & 18.2 \\ \bottomrule
 \end{tabular}%
 }}
-\caption{Lattice optics details}{All measurements are specified in centimeters. The optics position is given with respect to zero defined at the atom position. Distances are referenced to the optics labels given in Fig.\,\ref{fig:532schematic}.}
+\caption{Inventory of $532\,\text{nm}$ lattice optics}{All distances are specified in centimeters and are labeled by the optics labels given in Fig.\,\ref{fig:532schematic}. Optical path position is given with respect to zero defined at the atoms.}
 \label{tab:532sys}
 \end{table}
 
@@ -152,7 +187,7 @@ This process relies on co-locating the trapping regions of the 532\,nm and 1064\
 %When aligning, we use the 532\,nm light to cause a sudden shift in the trap minimum position, and thereby induce center-of-mass (COM) oscillation around the new minimum.
 %These center-of-mass (COM) oscillations are distinct from breathing mode oscillations where the center-of-mass stays fixed and the atomic density expands and contracts about this point. 
 %Breathing modes occur when the atoms are released from the lattice (though still confined to the ODT) and the change in potential depth causes the atoms to pick up energy/velocity and oscillate.
-Additionally, we have observed breathing mode oscillations when the 532\,nm and 1064\,nm traps are well overlapped due to the change in trap depth, and correspondingly the potential energy of the atoms, when flashing off the 532\,nm light.
+Additionally, we have observed breathing mode oscillations when the $532$\,nm and $1064$\,nm traps are well overlapped due to the change in trap depth, and correspondingly the potential energy of the atoms, when flashing off the $532$\,nm light.
 
 Below is our prescription for overlapping the first pass of the lattice with the IR trap.
 \begin{outline}[enumerate]
@@ -162,22 +197,22 @@ We achieve this through the following experimental sequence:
 	\2 After loading the ODT, evaporate to a reasonable depth for the given loading time.
 	Note that we have observed thermal effects from the ODT which may lead to inconsistent spatial behavior.
 	Therefore, the point where the beam overlap should be optimized is at or near the desired IR trap depth for the proposed experiments.
-	\2 Following the forced evaporation, hold in the 1064\,nm trap while ramping up the lattice arm being studied to full power.
-	We generally find a ramp of $\sim$200 - 300\,ms worked best for strontium 84. 
-	\2 Once the green is at full power, we additionally hold for $\sim$250\,ms in the combined 532 + Crossed IR ODT trap to allow for the equilibration of the atoms in the modified trapping potential.
-	\2 After the 250\,ms hold, the green is flashed off to excite an oscillation within the IR ODT.
+	\2 Following the forced evaporation, hold in the $1064$\,nm trap while ramping up the lattice arm being studied to full power.
+	We generally find a ramp of $\sim200 - 300$\,ms worked best for strontium-$84$. 
+	\2 Once the green is at full power, we additionally hold for $\sim250$\,ms in the combined $532$ + Crossed IR ODT trap to allow for the equilibration of the atoms in the modified trapping potential.
+	\2 After the $250$\,ms hold, the green is flashed off to excite an oscillation within the IR ODT.
 	\2 Image the cloud as it oscillates
-\1 To evaluate the procedure above, first focus on in-situ images of the cloud, where atoms are held in the combined 1064 + 532\,nm trap\footnote{
+\1 To evaluate the procedure above, first focus on in-situ images of the cloud, where atoms are held in the combined $1064$ + $532$\,nm trap\footnote{
 Start by moving the VI cursor positions to be on the cloud center and drawing a box around the cloud location.
 This will help to identify small movements of the cloud as well as recording your start position.}.  
-\1 When turning off the lattice and allowing the cloud to oscillate, identify the 1/4th period time of the oscillation. 
+\1 When turning off the lattice and allowing the cloud to oscillate, identify the quarter-period time of the oscillation. 
 This is the point of maximum displacement and provides the most sensitive probe for observing how changes to the alignment may vary the oscillation amplitude.
 As the alignment is improved the maximum displacement is minimized, this is the signature of improving the overlap.
-If unsure about the oscillation period, vary the evolution time after extinguishing the 532\,nm and observe the dynamics of the cloud to resolve a full oscillation.
+If unsure about the oscillation period, vary the evolution time after extinguishing the $532$\,nm and observe the dynamics of the cloud to resolve a full oscillation.
 \1 Each lattice arm (A,B,C) can then be varied along both dimensions (horizontal and vertical) while monitoring the oscillation amplitude. 
 Lower amplitude indicates better alignment, but one must be extremely careful, as it is possible to obtain a flat response of the oscillation amplitude when severely misaligned.
-We have found that around the minimum in the oscillation amplitude, we are able to flip the phase of the 1/4 period oscillation as we move through the minimum.
-This phase flip along with the emergence of breathing mode oscillation are robust measures of good overlap between the beams.
+We have found that around the minimum in the oscillation amplitude, we are able to flip the phase of the quarter-period oscillation as we move through the minimum.
+This phase flip along with the emergence of breathing mode oscillation are robust measures of good overlap between the two traps.
 \end{outline}
 
 Fig.\,\ref{fig:latFirtPass} shows an example of the above process where for each scan we have varied the beam alignment slightly and can clearly observe a suppression of the oscillation amplitude.
@@ -191,7 +226,7 @@ However, extended time series data in this fashion is arduous and we have found 
 	
 Additionally, Fig.\,\ref{fig:latBreatheMode} shows the emergence of a breathing mode when the traps are well overlapped.
 %We see that while there is significant variation in the size of the atomic cloud, the center position stay relatively constant.
-Observation of oscillatory behavior of the cloud radius with reduced deviation of the cloud center is a robust measure of the overlap of the 532 and 1064 traps.
+Observation of oscillatory behavior of the cloud radius with reduced deviation of the cloud center is a robust measure of the overlap of the $532$\,nm and $1064$\,nm traps.
 %We note the reproduciblity of the  over a short time period, $\sim$20 minutes, over the complete timescale of these
 %We have not found day to day variation in alignment to be a significant source of  but further work remains to ascertain the long term stability of the trap overlap.
 	\begin{figure} 
@@ -214,24 +249,25 @@ Observation of oscillatory behavior of the cloud radius with reduced deviation o
 
 \paragraph{Aligning the retro-reflection:}
 The retro-reflection is optimized via the 2-band Kapitza-Dirac method.
-For a quantum degenerate gas in shallow lattice depths, <10\,E$_r$, only the $\pm$1 plane waves will be populated.
+For a quantum degenerate gas in shallow lattice depths, $<10$\,E$_r$, only the $\pm1$ plane waves are needed to describe the eigenstates of the lattice potential \hl{ref bill}.
+This will be discussed further in the next section.
 Furthermore, for short pulses the amplitude of the population in these plane waves is linearly increasing with lattice depth.
-This provides a simple single point measurement which can be used for optimizing the lattice depth.
-However, an iterative approach may be needed to ensure that the alignment is only optimized during the first quarter period before the population of the orders is maximized.
+This provides a simple single-point measurement which can be used for optimizing the lattice depth.
+However, an iterative approach may be needed to ensure that the alignment is only optimized during the first quarter-period before the population of the orders is maximized.
 Fig.\,\ref{fig:KDoscillations} shows an example oscillation.
 
-As our lattice is free space, the first order alignment of the retro-reflection is to overlap the incoming and retro-reflected beam over a long distance.
-This tends to overlap the two beams closely enough in the region of the atoms so as to begin observing diffraction effects when performing a short high intensity pulse of the 532\,nm light.
+As our lattice is in free space, the first order alignment of the retro-reflection is to overlap the incoming and retro-reflected beam over a long distance.
+This tends to overlap the two beams closely enough in the region of the atoms so as to begin observing diffraction effects when performing a short high-intensity pulse of the $532$\,nm light.
 
-Second, once we can observe diffraction, the gimbal mounted retro mirrors are adjusted to maximize the population of the diffracted plane waves\footnote{This alignment is extremely sensitive and may ultimately benefit from a more reproducible method of adjustment as mount backlash can strongly effect this process.}.
-As the diffracted population is oscillatory and depends on laser intensity we have found that using an exposure time of approximately 2 - 3\,$\mu$s and varying the laser intensity has led to the most successful alignments of the retro.
-We generally start with this short time pulse of a few microseconds using the highest intensity pulse possible and systematically decrease the laser power into the lattice arm as the alignment is improved.
-Finally we note that, as Kapitza-Dirac happens on very short timescales, the power stabilization circuits must be bypassed for this procedure.
-Instead, we directly drive the RF sources with fast analog IC switches (switching time on the order of 10's ns) to apply the desired power to the lattice arm.
+Second, once we can observe diffraction, gimbal mounted retro mirrors are adjusted to maximize the population of the diffracted plane waves\footnote{This alignment is extremely sensitive and may ultimately benefit from a more reproducible method of adjustment as mount backlash can strongly effect this process.}.
+As the diffracted population is oscillatory and depends on laser intensity, we have found that using an exposure time of approximately $2 - 3$\,$\mu$s and varying the laser intensity leads to the most successful alignments of the retro mirror.
+We generally start with this short time pulse of a few microseconds using the highest intensity pulse possible and systematically decrease the laser power of the particular lattice arm as the alignment is improved.
+Finally, we note that, as Kapitza-Dirac happens on very short timescales, the power stabilization circuits must be bypassed for this procedure.
+Instead, we directly drive the RF sources with fast analog IC switches (switching time on the order of $10$\,ns) to apply the desired power to the lattice arm.
 
-\subsubsection{Measurement and results}
+\section{Measurement and results}
 \paragraph{Kaptiza-Dirac Scattering}
-Kapitza-Dirac diffraction can be viewed as a diabatic projection from an initial eigenstate to a new set of eigenstates which results in an oscillation of the wavefunctions probability amplitudes over the new eigenstates of the system \cite{Denschlag2002}.
+Kapitza-Dirac diffraction can be viewed as a diabatic projection from an initial eigenstate to a new set of eigenstates which results in an oscillation of the wavefunction probability amplitudes over the new eigenstates of the system \hl{\cite{Denschlag2002}}.
 As was discusses in Sec.\;\ref{sec:latBackground}, the free space eigenstates are not the eigenstates of the lattice Hamiltonian. 
 Thus a pure $p=0$ plane wave, $\ket{\phi_{p=0}}$, suddenly loaded into an optical lattice can be written as a superposition of the Bloch states given by Eq.\;\ref{eq:blochFunc}, here denoted by \ket{n,q}.
 	\begin{equation} \label{eq:p0inBloch}
@@ -270,18 +306,35 @@ For reference, Fig.\,\ref{fig:latDepth} shows the resulting lattice depth calibr
 	
 \subparagraph{Higher order Kapitza-Dirac:}
 The simple two-band model is a straightforward method for determining the lattice depth but one that requires a time-series measurement over varying lattice depths.
-Gadway et. al. \cite{Gadway2009} derived a complimentary depth calibration method which requires only a single time-series measurement at high lattice depth.
+Gadway et al.\,\hl{\cite{Gadway2009}} derived a complimentary depth calibration method which requires only a single time-series measurement at high lattice depth.
 This process relies on the quantum interference of the oscillating populations which produces a complex beat note.
-An undergraduate report from Alex Wikner \cite{Wikner2017}, follows the original Gadway construction to develop an algorithm using Matlab$^{TM}$ for applying this technique to the Neutral apparatus.
+An undergraduate student from our lab, Alex Wikner \hl{\cite{Wikner2017}}, developed an algorithm using Matlab$^{TM}$ for applying this technique to the Neutral apparatus.
 The cited report provides sample code as well as benchmark calculations for comparison.
 However, application of this work to calibrate the lattice depth has been stymied by a consistent heating concern we have observed when applying the lattice beams for significant periods at high lattice depths.
 
+\subparagraph{Observation of Mott insulator transition:}
+Competition between $J$ and $U$ results in a phase transition known as the superfluid - Mott insulator transition \hl{\cite{Fisher1989,Greiner2002}}.
+When $J/U \gg 1$ atoms are free to delocalize over the lattice and the many-body ground state is a superfluid.
+In the opposite limit that $J/U \ll 1$, particle fluctuations between sites are no longer energetically accessible and the system transitions into an interaction induced insulating state.
+This state is characterized by fixed particle number per site and in a 3D cubic lattice near unit filling, this phase transition occurs at $U/J \approx 35$ \hl{Blakie2004}.
+For $^{84}$Sr this corresponds to a lattice depth of $V_{lat} \approx 13E_r$ \hl{\cite{Fisher1989}}.
+Fig.\,\ref{fig:mottSFTransition} shows an observation of this transition using a lattice depth of $16$\,E$_r$.
+In this procedure the lattice is ramped up linearly for $200\,$ms before being immediately ramped down for an additional $200\,$ms.
+The figure shows absorption images at several points along this trajectory.
+	\begin{figure} 
+		\centerline{
+		\includegraphics[width=\textwidth]{lattice_depth.png}}
+		\caption{Superfluid to Mott insulator transiton}{A Bose-Einstein condensate of $^{84}$Sr is adiabatically loaded into the lattice potential using a linear ramp over $200$\,ms. Each absorption image is the result of a time-of-flight expansion after diabatically projecting the lattice eigenstates back to free plane wave states. At low lattice depth, in the superfluid regime, the coherence of the lattice states causes quantum interference during the time-of-flight and spatially resolved momentum peaks are visible. In the insulating state, this coherence is lost and the resulting momentum states do not interfere. This is the classic signature of this quantum phase transition.}
+		\label{fig:mottSFTransition}
+	\end{figure}
+
 \paragraph{Heating of a quantum degenerate gas}
 While Kapitza-Dirac diffraction is useful as a characterization tool, we typically wish to maintain equilibrium when loading condensates into the lattice. 
-Thus slowly ramping up the lattice laser intensity will adiabatically transform a plane wave ground state into the ground Bloch state of the lattice \cite{Sakurai2010}. 
+Thus slowly ramping up the lattice laser intensity will adiabatically transform a plane wave ground state into the ground Bloch state of the lattice \hl{\cite{Sakurai2010}}. 
 Strictly speaking, in order to adiabatically connect the free space eigenstates and the lattice eigensates, the lattice must be turned on infinitely slowly due to the infinitesimal bandgaps which open near the band edges. 
-Although near the band center, $q=0$, the adiabaticity requirement relaxes to $dV_{lat}/dt \ll 16E_r^2/ \hbar$, \cite{Denschlag2002} which for strontium in a 532\,nm lattice is $\approx 5\,\mu$s$/E_r$. However, in practice we find that our condensate fraction is reduced during fast ramps into the lattice. 
-Instead, we slowly ramp on the lattice over 100\,ms which reduces heating caused by the ramp. 
+Although near the band center, $q=0$, the adiabaticity requirement relaxes to $dV_{lat}/dt \ll 16E_r^2/ \hbar$, \hl{\cite{Denschlag2002}} which for strontium in a 532\,nm lattice is $\approx 5\,\mu$s$/E_r$. 
+However, in practice we find that our condensate fraction is reduced during fast ramps into the lattice. 
+Instead, we slowly ramp on the lattice over 100\,ms which reduces heating \cite{Blakie2004}. 
 We have experimented with various functional forms of this pulse shape and currently rely on an S-shaped curve given by Eq.\,\ref{eq:sCurve}
 \begin{equation} \label{eq:sCurve}
 	V_{sCurve}(A,B,C,t) = \frac{A-C}{2} \left[ \, \tanh (2 \pi B[t-1])+1 \, \right] + C
@@ -290,13 +343,14 @@ where A is the overall amplitude starting from zero, B is the timescale for one 
 
 As shown in Fig.\;\ref{fig:heatingRates}, we observe a large condensate fraction after ramping the lattice up and back down in this manner to demonstrate restoration of BEC coherence.
 Further characterization of the lattice required us to measure the reduction of atom population over long times due off-resonant light scatter.
-For our red detuned optical lattice we expect the off-resonant scattering rate to be well approximated by a simple two level approach. In this model, the effective scattering rate is given by \cite{Jaksch2005}
+For our red detuned optical lattice, we expect the off-resonant scattering rate to be well approximated by a simple two level approach. 
+In this model, the effective scattering rate is given by \hl{\cite{Jaksch2005}}
 	\begin{equation} \label{eq:offResScatter}
 		\Gamma_{eff} \approx \frac{\Gamma V_{lat}}{\hbar \delta_{lat}}
 	\end{equation}
 where $\Gamma$ is linewidth of the dipole transition between the two states, $V_{lat}$ is the lattice depth, and $\delta_{lat}$ is the detuning of the optical lattice from the two level transition frequency.
 In strontium, the $^1S_0\!\rightarrow\!^1P_1$ transition strongly dominates the polarizability of the ground state and therefore can be used to estimate the effective off-resonant scattering rate.
-For this transition $\Gamma = 2 \pi \times 30.5\,$MHz and a 532\,nm lattice is detuned by $\delta_{lat} \approx 2 \pi \times 87\,$THz.
+For this transition $\Gamma = 2 \pi \times 30.5\,$MHz and a $532$\,nm lattice is detuned by $\delta_{lat} \approx 2 \pi \times 87\,$THz.
 With a lattice depth of $V_{lat}=10\,$E$_r$ we expect a scattering rate of $\Gamma_{eff} \approx 2\e{-1}\,$s$^{-1}$, which is negligible for the timescales of our proposed experiments.
 From Fig.\;\ref{fig:heatingRates}, we see that there is not an appreciable loss of atoms over a one second timescale.
 	\begin{figure}
@@ -305,45 +359,48 @@ From Fig.\;\ref{fig:heatingRates}, we see that there is not an appreciable loss 
 		\caption{Characterization of heating in the optical lattice}{Evolution of condensate fraction over time after adiabatically ramping on the lattice to 9\,E$_r$. a,b) Comparison of total number and condensate fraction for a sample held in the optical dipole trap (red squares) or in a deep lattice (blue circles). c) Time of flight images after ramping on the lattice and diabatically projecting back to plane wave states.}
 		 \label{fig:heatingRates}
 	\end{figure}
-Unfortunately, we have recently observed that attempts to load a degenerate gas into a deep lattice, $\gtrsim 15$\,E$_r$, and hold over long timescales leads to unacceptable heating of the atomic sample.
-Currently, we hypothesize that this may result from the freespace nature of the lattice or an intrinsic instability (frequency or power) of the Verdi.
-The latter of these has been tested by monitoring the 532\,nm light in a spectrum analyzer where no obvious deficiencies have been observed.
-To test our stability hypothesis, we are currently investigating fiber coupling one of the arms of the lattice but as of spring 2019, this project is ongoing.
+We have recently observed that attempts to load a degenerate gas into a deep lattice, $\gtrsim 15$\,E$_r$, and hold over long timescales leads to unacceptable heating of the atomic sample.
+We hypothesize that this may stem from alignment instability of the free space lattice or an intrinsic instability (frequency or power) of the Verdi laser.
+The latter hypothesis has been tested by monitoring the $532$\,nm light in a spectrum analyzer and no obvious deficiencies have been observed.
+To test the stability hypothesis, we are currently investigating fiber coupling one of the arms of the lattice but as of spring 2019, this project is ongoing.
 
-\section{Spin manipulation of $^{87}$Sr}
-\label{sec:spin_pol}
 
-Here is where I need to introduce and characterize the \hl{LCR}
 
-Averaging images together (how to use this code specifcally)
-
-don't forget to talk about optimizing the polarization of the fixed waveplate
-
-Fig. \hl{something} shows the variation of the retardance angle for 689\,nm light.
-
-For reference, Fig. \ref{fig:mF87} reproduces the Clebsch-Gordan coefficient diagrams originally created by Pascal.
-From this diagram we can easily see how optical pumping works.
-Let us consider an atom starting in the $m_F=-9/2$ ground state and being exposed to $sigma+$ photons acting on the $F=9/2\,\rightarrow\,F=11/2$ hyperfine transition.
-Absorbing a photon promotes the atom to the $F=11/2, m_F=-7/2$ state.
-From here we can consult Fig. \ref{fig:mF87} to find the dominate decay path to be to the $F=9/2, m_F=-5/2$ state due to the Clebsch-Gordan coefficients.
-
-Now we have a couple of options, by taking advanatage of the CG coefficents we see that we will probabilitically promote population towards a polarized state.
-In the absecene of a bias field the magnetic sub-levels are degenerate so this oculd be an efficeint process.
-In practice we find this to heat the atom population significantly.
-Therefore, in a bias field, we split out the levels by approx. 200\,kHz to and address each sub-level transition individually.
-This allows us to minimize the number of photon scattering events which we hypothesize to be the cause of the observed heating.
-
-can individually address the separate hyperfine sub-level transitions and sequentially pump population towards one a polarized state 
-	\begin{figure}
-		\centerline{
-		\includegraphics[height=\textheight]{87_CG_coeffs.png}}
-		\caption{$^{87}$Sr $^1S_0 \, \rightarrow \, ^3P_1$ hyperfine structure}
-		\label{fig:mF87}
-	\end{figure} 
-	
-Be sure to define convention for what we determined was plus and minus
-
-\section{Search for narrowline PA molecules using various spin mixtures}
-\label{sec:87PAS}
-
-"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\section{Spin manipulation of $^{87}$Sr}
+%\label{sec:spin_pol}
+%
+%Here is where I need to introduce and characterize the \hl{LCR}
+%
+%Averaging images together (how to use this code specifcally)
+%
+%don't forget to talk about optimizing the polarization of the fixed waveplate
+%
+%Fig. \hl{something} shows the variation of the retardance angle for 689\,nm light.
+%
+%For reference, Fig. \ref{fig:mF87} reproduces the Clebsch-Gordan coefficient diagrams originally created by Pascal.
+%From this diagram we can easily see how optical pumping works.
+%Let us consider an atom starting in the $m_F=-9/2$ ground state and being exposed to $sigma+$ photons acting on the $F=9/2\,\rightarrow\,F=11/2$ hyperfine transition.
+%Absorbing a photon promotes the atom to the $F=11/2, m_F=-7/2$ state.
+%From here we can consult Fig. \ref{fig:mF87} to find the dominate decay path to be to the $F=9/2, m_F=-5/2$ state due to the Clebsch-Gordan coefficients.
+%
+%Now we have a couple of options, by taking advanatage of the CG coefficents we see that we will probabilitically promote population towards a polarized state.
+%In the absecene of a bias field the magnetic sub-levels are degenerate so this oculd be an efficeint process.
+%In practice we find this to heat the atom population significantly.
+%Therefore, in a bias field, we split out the levels by approx. 200\,kHz to and address each sub-level transition individually.
+%This allows us to minimize the number of photon scattering events which we hypothesize to be the cause of the observed heating.
+%
+%can individually address the separate hyperfine sub-level transitions and sequentially pump population towards one a polarized state 
+%	\begin{figure}
+%		\centerline{
+%		\includegraphics[height=\textheight]{87_CG_coeffs.png}}
+%		\caption{$^{87}$Sr $^1S_0 \, \rightarrow \, ^3P_1$ hyperfine structure}
+%		\label{fig:mF87}
+%	\end{figure} 
+%	
+%Be sure to define convention for what we determined was plus and minus
+%
+%\section{Search for narrowline PA molecules using various spin mixtures}
+%\label{sec:87PAS}
+%
+%"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."

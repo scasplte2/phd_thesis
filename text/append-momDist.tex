@@ -5,7 +5,7 @@ Derivation of two particle relative momentum probability distribution function.
 Starting with the single particle Maxwell-Boltzmann momentum probability distribution function
 \begin{equation} 
 \label{eq:single_particle_prob}
-		 f^1( \vec{p} ) = \left(\frac{1}{2 \pi k_B T}\right)^{3/2} e^{\left(\frac{-p^2}{2 m k_B T}\right)}
+		 f^1( \vec{p} ) = \left(\frac{1}{2 \pi m k_B T}\right)^{3/2} e^{\left(\frac{-p^2}{2 m k_B T}\right)}
 \end{equation}
 Extension of this simple Boltzmann equation into the two-particle regime can be complicated if their is a dependence of each particle on the others. 
 If however, we make the assumption that particle collisions are rapid, we can approximate the two particle momentum distribution as the product of two single particle functions. 
@@ -46,7 +46,7 @@ Two particle momentum distribution \hl{for correcting notation, use C and R when
 We have introduced a normalization constant $A$ here to ensure the that integration over the truncated probability distribution remains equal to one.
 The meaning of $_r$ is such that f should be evaluated at each point in space. Furthermore since the atoms are held in a trapping potential, each point in space has a local trap depth relative to the lip at the top of the trap as shown in Fig.\,\ref{fig:haloTrapModel}
 
-We want the distribution of relative momenta so integrate out the center of mass. \hl{Going to drop the two and trunc for now}
+We want the distribution of relative momenta so integrate out the center-of-mass. \hl{Going to drop the two and trunc for now}
 \begin{equation}
 \begin{split}
 	 \tilde{f}_{\vec{r}}(\vec{p}_{rel}) & = \int d^3 \vec{P}_c \; f_{\vec{r}} (\vec{p}_1, \vec{p}_2) \\
@@ -129,13 +129,21 @@ With the normalization, the complete expression for $\hat{f}_{\vec{r}}(\tilde{\e
 	\hat{f}_{\vec{r}}(\tilde{\epsilon}) = \frac{2}{\sqrt{\pi}} \sqrt{\tilde{\epsilon}} \, e^{-\tilde{\epsilon}} \hat{\mathcal{G}}(\eta_{\vec{r}}, \tilde{\epsilon})
 \end{equation}
 where all the effects of the truncation have been moved to $\hat{\mathcal{G}}$, given by 
-\begin{equation*}
+\begin{equation} \label{eq:truncWeighting}
+\hspace*{-1cm} 
 	\hat{\mathcal{G}}(\eta_{\vec{r}}, \tilde{\epsilon}) = \frac{\displaystyle
 	\int_0^1 dX \frac{2}{\sqrt{\pi}} \int_0^\infty d \tilde{E} e^{-\tilde{E}}\sqrt{\tilde{E}} \; \heaviside{\eta(\vec{r}) - \frac{\tilde{E}}{2} - \frac{\tilde{\epsilon}}{2} - X \sqrt{\tilde{E}\tilde{\epsilon}}}}
 	{\displaystyle \int_0^{2\eta(\vec{r})} d \tilde{\epsilon} \frac{2}{\sqrt{\pi}} \sqrt{\tilde{\epsilon}} \, e^{-\tilde{\epsilon}} \int_0^1 dX \frac{2}{\sqrt{\pi}} \int_0^\infty d \tilde{E} e^{-\tilde{E}}\sqrt{\tilde{E}} \; \heaviside{\eta(\vec{r}) - \frac{\tilde{E}}{2} - \frac{\tilde{\epsilon}}{2} - X \sqrt{\tilde{E}\tilde{\epsilon}}}}
-\end{equation*}
-we can check the limiting behavior of this equation since we expect when $$\lim_{\eta \rightarrow \infty} \hat{\mathcal{G}}(\eta_{\vec{r}}, \tilde{\epsilon}) = 1$$. 
-Using $$ \int_0^{\infty} dx \sqrt{x} e^{-x} = \frac{\sqrt{\pi}}{2}$$ then this requirement is fulfilled. 
+\end{equation}
+we can check the limiting behavior of this equation since we expect when 
+\begin{equation}
+	\lim_{\eta \rightarrow \infty} \hat{\mathcal{G}}(\eta_{\vec{r}}, \tilde{\epsilon}) = 1 
+\end{equation}
+Using
+\begin{equation}
+	\int_0^{\infty} dx \sqrt{x} e^{-x} = \frac{\sqrt{\pi}}{2}
+\end{equation}
+then this requirement is fulfilled. 
 
 
 \begin{figure}
@@ -144,18 +152,17 @@ Using $$ \int_0^{\infty} dx \sqrt{x} e^{-x} = \frac{\sqrt{\pi}}{2}$$ then this r
 	\includegraphics[width=\textwidth]{relativeColDistribution.png}}
 	\caption{2D Surface plot of the relative collision likelihood}{}
 \end{figure} 
+
 \begin{figure}
-\label{fig:momSurfRelCol}
+\label{fig:relColvsColE}
 	\centerline{
 	\includegraphics[width=\textwidth]{cutAcrossColE.png}}
 	\caption{Behavior of $G(\epsilon,\eta)$ vs. collision energy}{}
 \end{figure} 
+
 \begin{figure}
-\label{fig:momSurfRelCol}
+\label{fig:relColvsEta}
 	\centerline{
 	\includegraphics[width=\textwidth]{cutAcrossEta.png}}
 	\caption{Behavior of $G(\epsilon,\eta)$ vs. $\eta$}{}
 \end{figure} 
-
-
-
