@@ -6,11 +6,11 @@
 %	use interaction control in lattice with the zeno thing
 	
 Optical lattices are formed by a standing wave of light which creates a defect free periodic potential.
-These traps are extremely versatile and have enabled the observation of the superfluid - Mott insulator transition \hl{\cite{Greiner2002}}, artificial gauge fields for neutral atoms \hl{\cite{Lin2011}}, quantum microscopy with single-site resolution \hl{\cite{Bakr2009}}, and investigations of quantum magnetism \hl{\cite{Hart2015,Greif2015}}. 
-They are among the most well-established techniques for controlling a quantum state and have proven to be great tools for exploring the connection between few- and many-body systems \hl{\cite{Bloch2008}}.
+These traps are extremely versatile and have enabled the observation of the superfluid - Mott insulator transition \cite{Greiner2002}, artificial gauge fields for neutral atoms \cite{Lin2011a}, quantum microscopy with single-site resolution \cite{Bakr2009}, and investigations of quantum magnetism \cite{Hart2015,Greif2015}. 
+They are among the most well-established techniques for controlling a quantum state and have proven to be great tools for exploring the connection between few- and many-body systems \cite{bdz08}.
 
 Until recently, experiments on the Neutral apparatus were confined to work with bulk gases in an optical dipole trap.
-While optical dipole traps are useful for efficient evaporation and thermalization of an ultracold gas, optical lattices greatly extend our capabilities for studying ultracold molecules and novel many-body quantum states \hl{give some refs}.
+While optical dipole traps are useful for efficient evaporation and thermalization of an ultracold gas, optical lattices greatly extend our capabilities for studying ultracold molecules and novel many-body quantum states \cite{mtj00,Thalhammer2006,mob06,lsb08,Cappellini2014,zbb14}
 A straightforward extension of the work presented in this thesis would be to control interparticle spacing via an optical lattice. 
 For these and additional experiments using quantum degenerate fermionic strontium, we purchased and installed an optical lattice system. 
 This chapter will detail our installation and characterization of this laser system.
@@ -24,44 +24,44 @@ where $V_{lat}$ is the lattice depth determined by the polarizability of the ato
 This potential can be readily extended to three dimensions using two additional pairs of counterpropagating laser beams along the $y$ and $z$ directions which results in a 3D cubic lattice.
 Depth of the trapping potential, $V_{lat}$, is controlled by varying the intensity of the lattice beams.
 
-Periodic potentials are powerful because they break the translational invariance of space which results in the formation of band structure and the opening of bandgaps or disallowed particle energies \hl{\cite{Ashcroft1976}}.
+Periodic potentials are powerful because they break the translational invariance of space which results in the formation of band structure and the opening of bandgaps or disallowed particle energies \cite{Ashcroft1976}.
 Because of this broken invariance, $p$ is no longer a good quantum number and must be replaced by two new quantum numbers: the band index, $n$, and the quasimomentum, $q$.
 In one-dimension, quasimomentum is specified by $q = p - nG$, where $G=2\pi/a$ is a reciprocal lattice vector, and $a$ is the real space lattice constant.
-Fig.\;\ref{fig:bandStructure} shows how the band structure varies as the lattice depth is increased.
+Fig.\,\ref{fig:bandStructure} shows how the band structure varies as the lattice depth is increased.
 Optical lattices have a lattice spacing $a = \lambda /2$ which determines the reciprocal lattice vector $G = 4\pi / \lambda = 2 \hbar k_L$ and a natural energy scale $E_r = \frac{\hbar^2 k_L^2}{2m}$ where $m$ is the atomic mass and $k_L$ is the lattice wavevector, $k_L = 2\pi / \lambda$.
 From the band structure, we see that the bandwidth of each band, given by $\Delta E = E_{q=\hbar k_L} - E_{q=0}$, decreases as the lattice depth is increased.
 In the limit that $V_{lat}\!\rightarrow\!\infty$ the band structure reduces to a ladder of harmonic oscillator levels spaced by $\hbar \omega_{ho} = \sqrt{4 V_{lat} E_r}$.
-Although, for moderately deep lattices, $V_{lat} \gtrsim 5\,$E$_r$, this approximation is valid near the center of the Brillioun zone, $q = 0$, and provides a simple form to estimate the energy gaps between bands \hl{\hl{\cite{Jaksch1998,Jaksch2005}}.}
+Although, for moderately deep lattices, $V_{lat} \gtrsim 5\,$E$_r$, this approximation is valid near the center of the Brillioun zone, $q = 0$, and provides a simple form to estimate the energy gaps between bands \cite{Jaksch2005, jbc98,Jaksch2005}.
 	\begin{figure} \label{fig:bandStructure}
 		\centerline{
 		\includegraphics[width=\textwidth]{lattice_bandStructure.pdf}}
-		\caption{1D band structure as a function of lattice depth}{One-dimensional band structure for an optical lattice as the lattice depth is increased. The band energies are found by solving the Schr\"{o}dinger equation using the Bloch functions of Eq.\;\ref{eq:blochFunc}.}
+		\caption{1D band structure as a function of lattice depth}{One-dimensional band structure for an optical lattice as the lattice depth is increased. The band energies are found by solving the Schr\"{o}dinger equation using the Bloch functions of Eq.\,\ref{eq:blochFunc}.}
 	\end{figure}
 
-Solutions to the Schr\"{o}dinger equation in a periodic potential are given by the Bloch functions \hl{\cite{Ashcroft1976}}
+Solutions to the Schr\"{o}dinger equation in a periodic potential are given by the Bloch functions \cite{Ashcroft1976}
 	\begin{equation} \label{eq:blochFunc}
 		 \phi_q^{(n)}(x) = e^{iqx/ \hbar} \; u_q^{(n)}(x)
 	\end{equation}
 These eigenstate wavefunctions are specified for a given quasimomentum $q$, and band index $n$. 
 Their corresponding energy eigenvalues define the band structure of the lattice shown in Fig.\,\ref{fig:bandStructure}.
-From Eq.\,\ref{eq:blochFunc} we see that the Bloch functions are the product of plane waves modulated by a function $u_q^{(n)}(x)$, which shares the periodicity of the underlying lattice potential \hl{\cite{Ashcroft1976}}.
-For an optical lattice this modulating function can be expanded in a basis of plane waves through a Fourier decomposition of the lattice potential in Eq.\,\ref{eq:1dlattice}, which gives \hl{\cite{Greiner2003}},
+From Eq.\,\ref{eq:blochFunc} we see that the Bloch functions are the product of plane waves modulated by a function $u_q^{(n)}(x)$, which shares the periodicity of the underlying lattice potential \cite{Ashcroft1976}.
+For an optical lattice this modulating function can be expanded in a basis of plane waves through a Fourier decomposition of the lattice potential in Eq.\,\ref{eq:1dlattice}, which gives \cite{Greiner2003},
 	\begin{equation} \label{eq:blochMod}
 		 u_q^{(n)}(x) = \sum_l c_l^{(n,q)} \; e^{i2lk_Lx}
 	\end{equation}
-Here $c_l^{(n,q)}$ are the coefficients for each plane wave in the basis expansion that are found by diagonalizing the lattice Hamiltonian \hl{\cite{Greiner2003}}.
+Here $c_l^{(n,q)}$ are the coefficients for each plane wave in the basis expansion that are found by diagonalizing the lattice Hamiltonian \cite{Greiner2003}.
 
 Often, we are interested in the dynamics of particles on a particular lattice site, but since Bloch functions are delocalized over the entire lattice, it is useful to instead use the Wannier functions. 
 These functions provide an orthogonal and normalized set of wavefunctions that are maximally localized to a specific lattice site. 
-The Wannier function for a localized particle in the n$^{th}$ band of a lattice site located at position x$_i$ is given by \hl{\cite{Jaksch2005}}
+The Wannier function for a localized particle in the n$^{th}$ band of a lattice site located at position x$_i$ is given by \cite{Jaksch2005}
 	\begin{equation} \label{eq:wannier}
 		 w_{n}(x - x_i) = \mathcal{N}^{-1/2} \sum_q e^{iqx_i/ \hbar} \; \phi_q^{(n)}(x)
 	\end{equation}
 where $\mathcal{N}$ is a normalization constant and $\phi_q^{(n)}(x)$ are the Bloch functions of Eq.\;\ref{eq:blochFunc}.
 This localized description of particles allows us to calculate important physical quantities which govern dynamical properties of the lattice such as the tunneling rate, $J/ \hbar$, and on-site interaction energy, $U$. 
-As $V_{lat}\!\rightarrow\!\infty$, the Wannier functions approach the eigenfunctions of the harmonic oscillator, which allows us to estimate the spatial extent of an atomic wavefunction by $a_{ho} = \sqrt{\frac{\hbar}{m \omega_{ho}}}$ \hl{\cite{Jaksch2005}}.
+As $V_{lat}\!\rightarrow\!\infty$, the Wannier functions approach the eigenfunctions of the harmonic oscillator, which allows us to estimate the spatial extent of an atomic wavefunction by $a_{ho} = \sqrt{\frac{\hbar}{m \omega_{ho}}}$ \\cite{Jaksch2005}.
 
-When bosons are confined to the lowest energy band of a lattice, a particularly simple model known as the Bose-Hubbard Hamiltonian is used to describe the lattice system \hl{\cite{Jaksch1998}}. 
+When bosons are confined to the lowest energy band of a lattice, a particularly simple model known as the Bose-Hubbard Hamiltonian is used to describe the lattice system \cite{jbc98}. 
 	\begin{equation} \label{eq:boseHubbard}
 		 H_{BH} = -J \sum_{\left< i,j \right>} \left(\hat{b}^{\dagger}_i \hat{b}_j + \hat{b}^{\dagger}_j \hat{b}_i \right)
 		 		  + \frac{U}{2} \sum_i \hat{n}_i(\hat{n}_i - 1)
@@ -69,24 +69,24 @@ When bosons are confined to the lowest energy band of a lattice, a particularly 
 Where $\left< i,j \right>$ denotes a sum over nearest-neighbors. This model is the simplest example of a non-trivial interacting many-body system for dynamics in a lattice.
 The first term describes hopping of bosons from site to site at a rate $J/ \hbar$. 
 The second term describes an interaction energy which is related to the $s$-wave contact interaction term, $g = 4 \pi \hbar^2 a_s/m$, where $a_s$, is the $s$-wave scattering length of the particles. 
-$J$ and $U$ can be calculated directly using the Wannier functions of Eq.\;\ref{eq:wannier} and are given by \hl{\cite{Jaksch2005}}
+$J$ and $U$ can be calculated directly using the Wannier functions of Eq.\;\ref{eq:wannier} and are given by \cite{Jaksch2005}
 	\begin{equation} \label{eq:JandU}
 	\begin{aligned}
 		 J_{ij} &= - \int d^3x \; w_0(x-x_i) \left( \frac{p^2}{2m}+V(x) \right) w_0(x-x_j)\\
 		 U &= \frac{4 \pi \hbar^2 a_s}{m} \int d^3x \; \left| w_0(x-x_i)\right|^4
 	\end{aligned}
 	\end{equation}
-Using Eq.\;\ref{eq:JandU} the expected tunneling rates and interaction energies for atomic strontium are shown in Fig.\,\ref{fig:fig_JandU} for homonuclear samples of strontium as a function of lattice depth. 
-This single band calculation is valid under the assumption that the interaction energy of a site is smaller than the bandgap between the $n= 0$ and $1$ bands, namely $U N \lesssim \hbar \omega_{ho}$ where $N$ is the mean number of particles per site and $\hbar \omega_{ho}$ is the approximate energy spacing between bands \hl{\cite{Rey2004}}. 
+Using Eq.\;\ref{eq:JandU}, the expected tunneling rates and interaction energies for atomic strontium are shown in Fig.\,\ref{fig:fig_JandU} for homonuclear samples of strontium as a function of lattice depth. 
+This single band calculation is valid under the assumption that the interaction energy of a site is smaller than the bandgap between the $n= 0$ and $1$ bands, namely $U N \lesssim \hbar \omega_{ho}$ where $N$ is the mean number of particles per site and $\hbar \omega_{ho}$ is the approximate energy spacing between bands \cite{Rey2004}. 
 	\begin{figure}
 		\centerline{
 		\includegraphics[width=\textwidth]{JandU.pdf}}
 		\caption{Calculation of $J$ and $U$ in a $532$\,nm optical lattice}{Calculated tunneling rate of strontium and interaction energies for homonuclear pairs of each bosonic isotope. The interaction energy shows a large variation due to its dependence on the $s$-wave scattering length.}
 		\label{fig:fig_JandU}
 	\end{figure}
-Alternatively, Eq.\,\ref{eq:JandU} can be simplified through considering appropriate limits to the Bose-Hubbard model. In the limit that $U\!\rightarrow\!0$, the Bose-Hubbard model becomes exactly solvable and the energy of the $n=0$ band is given by $E_q^{(0)}=-2J \cos(q a)$ \hl{\cite{Jaksch2005}}.
+Alternatively, Eq.\,\ref{eq:JandU} can be simplified through considering appropriate limits to the Bose-Hubbard model. In the limit that $U\!\rightarrow\!0$, the Bose-Hubbard model becomes exactly solvable and the energy of the $n=0$ band is given by $E_q^{(0)}=-2J \cos(q a)$ \cite{Jaksch2005}.
 Thus, the tunneling rate, $J$, can be related to the bandwidth of the lowest band as expressed in Eq.\,\ref{eq:JandU_simple}.
-Under a separate limit, $V_{lat}\,\rightarrow\,\infty$, then the tunneling rate goes to zero and the localized wavefunctions can be approximated by a Gaussian wavefunction which yields the form for the on-site interaction $U$ given in Eq.\,\ref{eq:JandU_simple} \hl{\cite{Rey2004}}.
+Under a separate limit, $V_{lat}\,\rightarrow\,\infty$, then the tunneling rate goes to zero and the localized wavefunctions can be approximated by a Gaussian wavefunction which yields the form for the on-site interaction $U$ given in Eq.\,\ref{eq:JandU_simple} \cite{Rey2004}.
 	\begin{equation} \label{eq:JandU_simple}
 	\begin{aligned}
 		 J &= \frac{E_{q=\hbar k_L} - E_{q=0}}{4}\\
@@ -249,7 +249,7 @@ Observation of oscillatory behavior of the cloud radius with reduced deviation o
 
 \paragraph{Aligning the retro-reflection:}
 The retro-reflection is optimized via the 2-band Kapitza-Dirac method.
-For a quantum degenerate gas in shallow lattice depths, $<10$\,E$_r$, only the $\pm1$ plane waves are needed to describe the eigenstates of the lattice potential \hl{ref bill}.
+For a quantum degenerate gas in shallow lattice depths, $<10$\,E$_r$, only the $\pm1$ plane waves are needed to describe the eigenstates of the lattice potential \cite{Fallani2005,Denschlag2002}.
 This will be discussed further in the next section.
 Furthermore, for short pulses the amplitude of the population in these plane waves is linearly increasing with lattice depth.
 This provides a simple single-point measurement which can be used for optimizing the lattice depth.
@@ -267,7 +267,7 @@ Instead, we directly drive the RF sources with fast analog IC switches (switchin
 
 \section{Measurement and results}
 \paragraph{Kaptiza-Dirac Scattering}
-Kapitza-Dirac diffraction can be viewed as a diabatic projection from an initial eigenstate to a new set of eigenstates which results in an oscillation of the wavefunction probability amplitudes over the new eigenstates of the system \hl{\cite{Denschlag2002}}.
+Kapitza-Dirac diffraction can be viewed as a diabatic projection from an initial eigenstate to a new set of eigenstates which results in an oscillation of the wavefunction probability amplitudes over the new eigenstates of the system \cite{Denschlag2002}.
 As was discusses in Sec.\;\ref{sec:latBackground}, the free space eigenstates are not the eigenstates of the lattice Hamiltonian. 
 Thus a pure $p=0$ plane wave, $\ket{\phi_{p=0}}$, suddenly loaded into an optical lattice can be written as a superposition of the Bloch states given by Eq.\;\ref{eq:blochFunc}, here denoted by \ket{n,q}.
 	\begin{equation} \label{eq:p0inBloch}
@@ -306,33 +306,33 @@ For reference, Fig.\,\ref{fig:latDepth} shows the resulting lattice depth calibr
 	
 \subparagraph{Higher order Kapitza-Dirac:}
 The simple two-band model is a straightforward method for determining the lattice depth but one that requires a time-series measurement over varying lattice depths.
-Gadway et al.\,\hl{\cite{Gadway2009}} derived a complimentary depth calibration method which requires only a single time-series measurement at high lattice depth.
+Gadway et al.\,\cite{Gadway2009} derived a complimentary depth calibration method which requires only a single time-series measurement at high lattice depth.
 This process relies on the quantum interference of the oscillating populations which produces a complex beat note.
-An undergraduate student from our lab, Alex Wikner \hl{\cite{Wikner2017}}, developed an algorithm using Matlab$^{TM}$ for applying this technique to the Neutral apparatus.
+An undergraduate student from our lab, Alex Wikner \cite{Wikner2017}, developed an algorithm using Matlab$^{TM}$ for applying this technique to the Neutral apparatus.
 The cited report provides sample code as well as benchmark calculations for comparison.
 However, application of this work to calibrate the lattice depth has been stymied by a consistent heating concern we have observed when applying the lattice beams for significant periods at high lattice depths.
 
 \subparagraph{Observation of Mott insulator transition:}
-Competition between $J$ and $U$ results in a phase transition known as the superfluid - Mott insulator transition \hl{\cite{Fisher1989,Greiner2002}}.
+Competition between $J$ and $U$ results in a phase transition known as the superfluid - Mott insulator transition \cite{Fisher1989,Greiner2002}.
 When $J/U \gg 1$ atoms are free to delocalize over the lattice and the many-body ground state is a superfluid.
 In the opposite limit that $J/U \ll 1$, particle fluctuations between sites are no longer energetically accessible and the system transitions into an interaction induced insulating state.
-This state is characterized by fixed particle number per site and in a 3D cubic lattice near unit filling, this phase transition occurs at $U/J \approx 35$ \hl{Blakie2004}.
-For $^{84}$Sr this corresponds to a lattice depth of $V_{lat} \approx 13E_r$ \hl{\cite{Fisher1989}}.
+This state is characterized by fixed particle number per site and in a 3D cubic lattice near unit filling, this phase transition occurs at $U/J \approx 35$ \cite{Blakie2004}.
+For $^{84}$Sr this corresponds to a lattice depth of $V_{lat} \approx 13E_r$ \cite{Fisher1989}.
 Fig.\,\ref{fig:mottSFTransition} shows an observation of this transition using a lattice depth of $16$\,E$_r$.
 In this procedure the lattice is ramped up linearly for $200\,$ms before being immediately ramped down for an additional $200\,$ms.
 The figure shows absorption images at several points along this trajectory.
 	\begin{figure} 
 		\centerline{
-		\includegraphics[width=\textwidth]{lattice_depth.png}}
+		\includegraphics[width=\textwidth]{SF2Mott.png}}
 		\caption{Superfluid to Mott insulator transiton}{A Bose-Einstein condensate of $^{84}$Sr is adiabatically loaded into the lattice potential using a linear ramp over $200$\,ms. Each absorption image is the result of a time-of-flight expansion after diabatically projecting the lattice eigenstates back to free plane wave states. At low lattice depth, in the superfluid regime, the coherence of the lattice states causes quantum interference during the time-of-flight and spatially resolved momentum peaks are visible. In the insulating state, this coherence is lost and the resulting momentum states do not interfere. This is the classic signature of this quantum phase transition.}
 		\label{fig:mottSFTransition}
 	\end{figure}
 
 \paragraph{Heating of a quantum degenerate gas}
 While Kapitza-Dirac diffraction is useful as a characterization tool, we typically wish to maintain equilibrium when loading condensates into the lattice. 
-Thus slowly ramping up the lattice laser intensity will adiabatically transform a plane wave ground state into the ground Bloch state of the lattice \hl{\cite{Sakurai2010}}. 
+Thus slowly ramping up the lattice laser intensity will adiabatically transform a plane wave ground state into the ground Bloch state of the lattice \cite{Sakurai2010}. 
 Strictly speaking, in order to adiabatically connect the free space eigenstates and the lattice eigensates, the lattice must be turned on infinitely slowly due to the infinitesimal bandgaps which open near the band edges. 
-Although near the band center, $q=0$, the adiabaticity requirement relaxes to $dV_{lat}/dt \ll 16E_r^2/ \hbar$, \hl{\cite{Denschlag2002}} which for strontium in a 532\,nm lattice is $\approx 5\,\mu$s$/E_r$. 
+Although near the band center, $q=0$, the adiabaticity requirement relaxes to $dV_{lat}/dt \ll 16E_r^2/ \hbar$, \cite{Denschlag2002} which for strontium in a 532\,nm lattice is $\approx 5\,\mu$s$/E_r$. 
 However, in practice we find that our condensate fraction is reduced during fast ramps into the lattice. 
 Instead, we slowly ramp on the lattice over 100\,ms which reduces heating \cite{Blakie2004}. 
 We have experimented with various functional forms of this pulse shape and currently rely on an S-shaped curve given by Eq.\,\ref{eq:sCurve}
@@ -344,7 +344,7 @@ where A is the overall amplitude starting from zero, B is the timescale for one 
 As shown in Fig.\;\ref{fig:heatingRates}, we observe a large condensate fraction after ramping the lattice up and back down in this manner to demonstrate restoration of BEC coherence.
 Further characterization of the lattice required us to measure the reduction of atom population over long times due off-resonant light scatter.
 For our red detuned optical lattice, we expect the off-resonant scattering rate to be well approximated by a simple two level approach. 
-In this model, the effective scattering rate is given by \hl{\cite{Jaksch2005}}
+In this model, the effective scattering rate is given by \cite{Jaksch2005}
 	\begin{equation} \label{eq:offResScatter}
 		\Gamma_{eff} \approx \frac{\Gamma V_{lat}}{\hbar \delta_{lat}}
 	\end{equation}

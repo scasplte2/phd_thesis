@@ -2,7 +2,7 @@
 \section{Introduction} \label{sec:pas_intro}
 Recall from Ch.\,\ref{ch:intro} that photoassociation is primarily concerned with long-range weakly bound molecules.
 This is due to the excitation rate to these states depending on the overlap of the initial scattering state and the bound state.
-Fig.\,\ref{fig:3pasSch}a shows that primary interparticle spacing which contributes to the overlap integral is situated around the classical turning point of the molecule, known as the Condon point, $R_c$ \hl{ref}.
+Fig.\,\ref{fig:3pasSch}a shows that primary interparticle spacing which contributes to the overlap integral is situated around the classical turning point of the molecule, known as the Condon point, $R_c$ \cite{Bohn1999,bav00}.
 \begin{figure}
 	\centerline{
 	\includegraphics[width=\textwidth]{model_PAS.PNG}}
@@ -12,7 +12,7 @@ Fig.\,\ref{fig:3pasSch}a shows that primary interparticle spacing which contribu
 Contribution to the overlap in the region $r < R_c$ is negligible due to the fast oscillations in the inner parts of the both wavefunctions.
 Furthermore, the Condon point moves inward as the binding energy of the bound state molecules is increased. 
 This causes overlap with the initial scattering state to decrease and consequently a decrease in the rate of molecule formation may be observed.
-Thus, photoassociation is considered a long-range probe used to measure and determine characteristics about the complex short-range potential \hl{ref}.
+Thus, photoassociation is considered a long-range probe used to measure and determine characteristics about the complex short-range potential \cite{Krems2009a,Julienne2009a,nse06,Jones2006}.
 
 Fig.\,\ref{fig:3pasSch}b shows an alternative view of photoassociation in the dressed-state picture.
 In this formulation, photoassociation is naturally described by resonant scattering theory whereby bound states are considered embedded in a continuum of thermally distributed scattering states.
@@ -243,7 +243,7 @@ where
 \begin{equation}
 	\Phi = \int_{R_i}^{\infty} \sqrt{\frac{-2\mu V(R)}{\hbar^2}}
 \end{equation}
-
+and $R_i$ is the inner turning point of the potential where $V(R_i)=0$.
 The binding energy of the least-bound state of a potential plays an important role in the characterization of scattering from a potential.
 In the simplest approximation, the $s$-wave scattering length and the binding energy of the least-bound state are related by
 \begin{equation}
@@ -266,14 +266,14 @@ Ch.\,\ref{ch:chap5} will employ each of these estimates in analysis of the $^{86
 In the previous section, we focused on interactions restricted to a single channel without any decay mechanism.
 Such interactions are necessarily elastic as the two-body scattering wavefunction cannot couple outside of its originating channel.
 However, most atoms used in laser-cooling exhibit a high degree of internal structure and a quantitative description of their collisions at short-range $r \lesssim \bar{a} $, requires consideration of coupling among many different channels.
-While a full characterization of such methods is left to Refs.\hl{\cite{Hutson2007a}} \hl{refs}, here we give the high-level results which will be useful for describing photoassociation in the next section.
+While a full characterization of such methods is left to Refs.\cite{Nicholson2015a,Hutson2007a,Quemener2012,Chin2010,Alexander2014,Vaillant2014}, here we give the high-level results which will be useful for describing photoassociation in the next section.
 
-In this formalism, atoms are considered to be initailly prepared in a single quantum state, which may be characterized by several quantum numbers.
+In this formalism, atoms are considered to be initially prepared in a single quantum state, which may be characterized by several quantum numbers.
 This state is labeled the entrance channel and defined to have energy $E=0$ in the limit $r\rightarrow\infty$.
 Scattering channels are specified by a collective set of quantum numbers, $\alpha$, which represents the state of both atoms in the collision.
 Channels with $E>0$ are labeled closed, while those with $E<0$ are open.
 Upon solving a matrix formulation of the Schr\"{o}dinger equation, the effect of all short-range interactions due to scattering with relative collision energy $E > 0$ is summarized in the unitary $S$-matrix, and reflected in the scattering wavefunctions as $r\rightarrow\infty$. 
-Thus the $S$-matrix is the generalization of the energy-dependent phase shift, $\eta_{\ell}(k)$, across all the channels.
+Thus the $S$-matrix is the generalization of the energy-dependent phase shift, $\eta_{\ell}(k)$, across all the channels \cite{Julienne2009a}.
 
 In the case of a single open channel scattering near threshold the $S$-matrix is reduced to a single element $S_(k)=e^{2i\eta(k)}$ represented by the complex energy-dependent phase shift $\eta(k)$.
 This phase shift also defines a complex energy-dependent scattering length
@@ -282,7 +282,7 @@ This phase shift also defines a complex energy-dependent scattering length
 \end{equation}
 This is an incredibly useful result in the theory of magnetic and optical feshbach resonances, the latter of which is closely related to photoassociation \cite{Chin2010,Nicholson2015a}.
 
-Finally, the $S$-matrix is related to the elastic and inelastic cross sections by
+Finally, the $S$-matrix is related to the elastic and inelastic cross sections by \cite{Pachomov2017}
 \begingroup
 \addtolength{\jot}{1em}
 \begin{align}
@@ -299,13 +299,13 @@ where $g_{\alpha}$ is a channel specific collisional symmetry factor which is eq
 This section develops the theory used to describe one- and two-photon photoassociative spectra with a focus on developing the equations necessary for modeling atomic-loss lineshapes presented in the following chapters.
 
 Recall the classical result for the rate of two-body collisions in a monoenergetic gas is given by $\Gamma = v \,\sigma n = K n$, where $v$ is the velocity of each particle, $\sigma$ is the scattering cross-section, and $n$ is the particle density.
-Here $K$ is identified as the two-body collision rate constan, which for inelastic collisions governs the evolution of the density through $\dot{n} = -2 K n^2$.
+Here $K$ is identified as the two-body collision rate constant, which for inelastic collisions governs the evolution of the density through $\dot{n} = -K n^2$.
 
 Similarly, for scattering of quantum particles, the inelastic collision rate constant\footnote{also called the loss rate constant in literature} for a specific channel $\alpha$, is given by \cite{Nicholson2015a}
 \begin{equation} \label{eq:simpleK}
 	K^{in}_{\alpha}(k) = v\,\sigma^{in}_{\alpha}(k)
 \end{equation}
-where $v=\frac{\hbar k}{\mu}$ is the relative collision velocity in the center-of-mass frame for the atom pair with reduced mass $\mu$ and $\sigma^{in}_{\alpha}(k)$ is given by Eq.\,\ref{eq:sigin}.
+where $v=\hbar k \mu$ is the relative collision velocity in the center-of-mass frame for the atom pair with reduced mass $\mu$ and $\sigma^{in}_{\alpha}(k)$ is given by Eq.\,\ref{eq:sigin}.
 We see that the inelastic cross section simply characterizes the coupling of channel $\alpha$ to all other channels by recalling that the scattering $S$-matrix is unitary and thus
 \begin{equation}
 	1 - \vert S_{\alpha \alpha} \vert^2 = \sum_{\alpha' \neq \alpha}\vert S_{\alpha \alpha'} \vert^2
@@ -317,13 +317,15 @@ Thus, at a fixed collision energy $\epsilon = \hbar^2 k^2 / 2\mu$, the loss rate
 \begin{equation}
 	K_{\text{loss}}(k) = g \frac{\pi \hbar}{\mu k} \sum_{\alpha' \neq \alpha}\vert S_{\alpha \alpha'} \vert^2
 \end{equation}
-Finally, in order to compare to experimental data, we must consider a thermal average of the loss rate constant given by \hl{\cite{Julienne2009, Julienne2009a, Julienne2009a}}
+Finally, in order to compare to experimental data, we must consider a thermal average of the loss rate constant given by \cite{Julienne2009, Julienne2009a, Krems2009a}
 \begin{align} \label{eq:kLoss}
+\nonumber
   \langle K \rangle_\text{thermal} &= \int_0^{\infty} dv f_T(v)\,v\,\sigma_{in} \\
+  \nonumber
                                   &= \int_0^{\infty} d\epsilon  f_T(\epsilon)\, g \frac{\pi \hbar}{\mu} \frac{\hbar}{\sqrt{2 \mu \epsilon}} \sum_{\alpha' \neq \alpha}\vert S_{\alpha \alpha'} \vert^2 \\
                                   &= \frac{g}{h\,Q_{T}} \int_{0}^{\infty} d\epsilon \sum_{\alpha' \neq \alpha}\vert S_{\alpha \alpha'} \vert^2 \,e^{-\epsilon/k_{B}T}
 \end{align}
-where $Q_T=(2 \pi k_B T \mu/h^2)^{3/2}$ is the partition function.
+where $Q_T=\left( \frac{2 \pi k_B T \mu}{h^2} \right)^{3/2}$ is the partition function.
 Here we have performed a change of variables using $\epsilon = \mu v^2/2$.
 Eq.\,\ref{eq:kLoss} assumes the relative collision energy distribution, $f_T(\epsilon)$, is a Maxwell-Boltzmann distribution.
 \begin{equation}
@@ -339,7 +341,7 @@ For the case of one- and two-color photoassociation, Bohn and Julienne derive ap
 
 We model both one- and two-photon PAS of ultracold atoms by first considering the evolution of a local density given by
 \begin{equation}
-	\dot{n} = -2 K n^2 - \Gamma n
+	\dot{n} = - K n^2 - \Gamma n
 \end{equation}
 where $\Gamma$ is the one-body lass rate due to background collisions and $K$ is the two-body loss rate constant.
 Integrating over the trapping volume, the evolution of the total number of trapped atoms is then
@@ -370,7 +372,7 @@ where ${\gamma}_{s}(\epsilon)$ is the stimulated width of $b_1$ due to coupling 
 The optical length $\ell_{\text{opt}}$ characterizes the strength of coupling bound state $b_1$ and is related to the overlap between the initial colliding state and $b_1$, and $k=(2\mu \epsilon)^{1/2}/\hbar$.
 Plugging $\vert S_{\epsilon, a_1} \vert^2$ into Eq.\,\ref{eq:kLoss} then the thermally averaged loss rate constant for one-photon PA is given by
 \begin{equation} \label{eq:onePhotonK}
-	\langle K \rangle_\text{thermal} \rangle = \frac{2}{h\,Q_{T}} \int_{0}^{\infty} d\epsilon \,e^{-\epsilon/k_{B}T} \frac{\gamma_1 \gamma_s(\epsilon)}{(\Delta_1 + \epsilon/ \hbar)^2 + \left( \frac{\gamma_1 + \gamma_s(\epsilon)}{2} \right)^2} 
+	\langle K \rangle_\text{thermal} = \frac{g}{h\,Q_{T}} \int_{0}^{\infty} d\epsilon \,e^{-\epsilon/k_{B}T} \frac{\gamma_1 \gamma_s(\epsilon)}{(\Delta_1 + \epsilon/ \hbar)^2 + \left( \frac{\gamma_1 + \gamma_s(\epsilon)}{2} \right)^2} 
 \end{equation}
 
 Similarly, two-color photoassociation also considers pairs of colliding atoms undergoing collisions in the presence of external fields.
@@ -381,7 +383,7 @@ As before, the bound states $b_1$ and $b_2$ are coupled to artificial loss chann
 Thus the relevant scattering probabilities for two-color PAS are $\vert S_{\epsilon, a_1} \vert^2$ and $\vert S_{\epsilon, a_2} \vert^2$.
 Plugging these into $\langle K \rangle_\text{thermal}$, a formal form of the loss rate constant is specified by
 \begin{equation} \label{eq:kLoss2Ph}
-  \langle K \rangle_\text{thermal} = \frac{2}{h\,Q_{T}} \int_{0}^{\infty} d\epsilon \left[ \vert S_{\epsilon, a_1} \vert^2 + \vert S_{\epsilon, a_2} \vert^2 \right] \,e^{-\epsilon/k_{B}T}
+  \langle K \rangle_\text{thermal} = \frac{g}{h\,Q_{T}} \int_{0}^{\infty} d\epsilon \left[ \vert S_{\epsilon, a_1} \vert^2 + \vert S_{\epsilon, a_2} \vert^2 \right] \,e^{-\epsilon/k_{B}T}
 \end{equation}
 where the explicit form of the matrix elements, $S_{\epsilon, a_i}(\epsilon,\gamma_1,\gamma_2,\omega_1,\omega_2,\cdots)$, may be found in equations 4.8 and 4.9 of \cite{Bohn1999}.
 
@@ -395,7 +397,7 @@ However, taking $\gamma_2=0$, we recover the standard expressions for two-photon
 which includes a shift of the intermediate state $\Delta_1$ induced by laser 1 and the molecular Rabi frequency between states $b_1$ and $b_2$.
 Finally, the thermally averaged loss rate constant simplifies to
 \begin{equation} \label{eq:twoPhotonKavg}
-	\langle K \rangle_\text{thermal}  = \frac{2}{h\,Q_{T}} \int_{0}^{\infty} d\epsilon \vert  S_{\epsilon, a_1} \vert^2 \,e^{-\epsilon/k_{B}T}
+	\langle K \rangle_\text{thermal}  = \frac{g}{h\,Q_{T}} \int_{0}^{\infty} d\epsilon \vert  S_{\epsilon, a_1} \vert^2 \,e^{-\epsilon/k_{B}T}
 \end{equation}
 
 
@@ -406,12 +408,12 @@ Once again, this is a good approximation for photoassociation with alkali atoms 
 However, PAS near narrow intercombination line transitions may also be sensitive to Doppler broadening due to the center-of-mass momentum of the colliding pair \cite{Ciuryo2004,Reschovsky,Borkowski2014a}.
 To see this, we once again consider Eq.\,\ref{eq:kLoss} written as a thermal average.
 \begin{equation} \label{eq:onePasMom}
-	 \langle K \rangle = \int_0^{\infty} d^3\vec{p}_1 \int_0^{\infty} d^3\vec{p}_2 \frac{2 \pi \hbar^2}{|\vec{p}_1 - \vec{p}_2| \mu} f_2( \vec{p}_1, \vec{p}_2 ) \vert S(\vec{p}_1, \vec{p}_2, \omega_1, \omega_2, \cdots) \vert^2  
+	 \langle K \rangle = \int_0^{\infty} d^3\vec{p}_1 \int_0^{\infty} d^3\vec{p}_2 \,\frac{2 \pi \hbar^2}{|\vec{p}_1 - \vec{p}_2| \mu} \, f( \vec{p}_1, \vec{p}_2 )_\text{two} \, \vert  S(\vec{p}_1, \vec{p}_2, \omega_1, \omega_2, \cdots) \vert^2  
 \end{equation}
 If we assume that particle collisions are not correlated, or equivalently, that collisions occur rapidly enough that $\vec{p}_1$ and $\vec{p}_2$ are independent then we can write the two-particle momentum distribution function, $f_2( \vec{p}_1, \vec{p}_2 )$, as the product of two single particle distributions \cite{Ehrenfest2015,Chliamovitch2017,Brown2008}. 
 \begin{equation} \label{eq:3two_particle_prob}
 \begin{split}
-		 f_2( \vec{p}_1, \vec{p}_2 ) &= f^1( \vec{p}_1 ) f^1( \vec{p}_2 ) \\
+		 f( \vec{p}_1, \vec{p}_2 )_\text{two} &= f( \vec{p}_1 )_\text{one} f( \vec{p}_2 )_\text{one} \\
 		  &= \left(\frac{1}{2 \pi m k_B T}\right)^3 \exp{\frac{-(p_1^2 + p_2^2)}{2 m k_B T}}
 \end{split}
 \end{equation}

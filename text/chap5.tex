@@ -5,21 +5,21 @@ Despite this, the theoretical treatment of atomic collisions may be greatly simp
 The character of a dilute ultracold gas is one in which individual atoms are primarily in the long-range region relative to other atoms and their thermal energy is just above the $E=0$ threshold. 
 %defined by the short-range interaction potential.
 In this regime, the dominant interaction between atoms is the van der Waals interaction.
-Ref.\,\hl{\cite{gfl93}} subsequently demonstrated that a length scale, given by $\bar{a}=\frac{2 \pi}{\Gamma(1/4)^2} \frac{(2 \mu C_6)^{1/4}}{\hbar^2}$, may be defined that separates the short- and long-range portions of the potential.
-Using this approximation, one can construct scattering and bound state wavefunctions and relate the binding energy of the most weakly bound state in the potential to the $s$-wave scattering length.
+Ref.\,\cite{gfl93} subsequently demonstrated that a length scale, given by $\bar{a}=\frac{2 \pi}{\Gamma(1/4)^2} \left( \frac{2 \mu C_6}{\hbar^2} \right)^{1/4}$, may be defined that separates the short- and long-range portions of the potential.
+Using this approximation, scattering and bound state wavefunctions may be constructed that relate the binding energy of the most weakly bound state in the potential to the $s$-wave scattering length \cite{fks96,gao04,Julienne2006}.
+For $^{86}$Sr$_2$ the extremely small binding energy of the halo state is nearly entirely dependent on the behavior of the long-range van der Waals portion of the potential.
 
-In $^{86}$Sr$_2$ the extremely small binding energy of the halo state is nearly entirely dependent on the behavior of the long-range van der Waals portion of the potential.
 In the previous chapter, we explored the coupling of the intermediate state and halo state via measuring the halo molecule's susceptibility as a function of the light intensity and detuning from the intermediate state.
 These measurements probed a strongly coupled regime and were found to produce large AC stark shifts and multi-photon Raman loss processes. 
-In order to determine a precise value of the natural binding energy of the halo molecular state, we repeated similar experiments as before but with much lower excitation beam intensity at a fixed intermediate state detuning.
+To determine a precise value of the natural binding energy of the halo molecular state, we repeated similar experiments as before but with much lower excitation beam intensity at a fixed intermediate state detuning.
 
-When describing two-photon spectroscopy to a weakly-bound ground state molecule, it is typical to neglect any potential AC Stark shift between the free ground state atoms and the bound state dimer caused by far off-resonant trapping lasers since the dimerized atoms contribute to the overall polarizability approximately as free atoms.
-However, in general AC Stark shifts due to the trapping lasers and collisions with ground state atoms should also be considered to shift the molecular resonance as was taken into account in a recent, high-precision study of weakly bound molecular states of ultracold ytterbium atoms \hl{\cite{bbc17}}.
+When describing two-photon spectroscopy to a weakly-bound ground state molecule, it is typical to neglect any potential AC Stark shift between the free ground state atoms and the bound state dimer caused by far off-resonant trapping lasers since the dimerized atoms contribute to the overall polarizability approximately as free atoms \cite{Jones2006}.
+However, in general AC Stark shifts due to the trapping lasers and collisions with ground state atoms should also be considered to shift the molecular resonance as was taken into account in a recent, high-precision study of weakly bound molecular states of ultracold ytterbium atoms \cite{bbc17}.
 
 % what we did in comparison to last chater
 In this chapter, we accurately determine the $^{86}$Sr$_2$ halo state binding energy, considering possible collisional frequency shifts and AC Stark shifts due to trapping and excitation lasers.
-Then using the universal prediction for the binding energy, including corrections derived for a van der Waals potential \hl{\cite{gfl93,Gao01,gao04}}, we derive new estimates for the value of the strontium $C_6$ coefficient of the X$^1\Sigma_g^+$ potential from Ref.\,\hl{\cite{Stein2010}}.
-This modified version of the potential is then used to estimate improved scattering lengths for all strontium isotopes via mass scaling.
+Then using the universal prediction for the binding energy, including corrections derived for a van der Waals potential \cite{gfl93,Gao01,gao04}, we derive new estimates for the value of the strontium $C_6$ coefficient of the X$^1\Sigma_g^+$ potential from Ref.\,\cite{Stein2010}.
+This modified version of the potential is then used to calculate improved scattering lengths for all strontium isotopes via mass scaling.
 
 %We also varied the trap depth to look for any differences in susceptibility between the halo state and the asymptote.
 %Efimov trimers also exist in systems near a scattering resonance, influencing dimer and atomic scattering properties and introducing additional universal phenomena \hl{\cite{bha07,nen17}}.
@@ -34,7 +34,7 @@ This modified version of the potential is then used to estimate improved scatter
 %This provided a way to estimate the binding energy for weakly bound molecular states.
 %For system which exists near a scattering resonance, the analytic approximations of GF are expected to be quite accurate.
 % $s$-wave scattering lengths and 
-%we derive a more accurate value of the $s$-wave scattering length for $^{86}$Sr atomic collisions \hl{\cite{skt10,mmp08}}.
+%we derive a more accurate value of the $s$-wave scattering length for $^{86}$Sr atomic collisions \hl{\cite{Stein10,mmp08}}.
 %Using this binding energy we can compare to 
 %say how we changed Eb2 from previous chapter
 %The known scattering properties of strontium are mass scaled from 88 \hl{is this somehow not as good for 86? Also, where are the most up to date scattering lengths for Sr from?
@@ -64,9 +64,10 @@ The large volume of this single-beam optical trap allowed us to maintain peak de
 For each trap intensity, two-photon spectroscopy was performed to search for a differential AC Stark shift at $1064\,\text{nm}$ between the free-atom asymptote of scattering states and the halo molecule state.
 
 The experiments in the previous chapter revealed that photoassociation using high-intensity and/or large intermediate state detuning led to shifts of the halo molecular resonance that could not be explained by a simple three-level model.
-Therefore, in this study, the $689$\,nm excitation beam intensity was kept extremely low, such that the AC Stark shift remained proportional to $I_{689}$.
+In this study, the $689$\,nm excitation beam intensity was kept extremely low, such that the AC Stark shift remained proportional to $I_{689}$.
 Additionally, the intermediate state detuning was fixed at $\Delta_1/2 \pi = -9$\,MHz.
-Thus, a model considering only a single intermediate state should be sufficient.
+Thus, these experiments are in the Raman regime with $\Delta_1 \gg \Omega_{12}$ and a theoretical description considering only a single intermediate state should be sufficient.
+
 
 %%%% recap from before 
 Loss spectra are modeled using the previously developed lineshape formulas of Bohn and Julienne, Sec.\,\ref{sec:highE_paLoss}.
@@ -136,40 +137,49 @@ Subsequent analysis of the trapping potential and PA spectra leads us to hypothe
 Lacking a detailed microscopic model of the atomic density and momentum distribution in this shallow trap, we proceed by assuming the single-particle kinetic energy may be described by a truncated Maxwell-Boltzmann distribution such that energies above a particular cut-off, $\epsilon_\text{max}$, do not contribute to the scattering probability in the photoassociation process.
 Furthermore, we assume the density does not change during the excitation time.
 This is a reasonable assumption given that our exposure times were short compared to any background change in density and the sample temperature varied by no more than $15$\% for all values of $\Delta_2$.
-\hl{Cite Mi's paper somewhere}
 
 %We consider the effects of truncation due to the extreme shallowness of the trap and the slow rate of thermalization observed over the course of these experiments.
 %Due to the shallowness of the trap and the slow rate of thermalization observed during the experiments, we model the non-equilibrium kinetic energy distribution of the gas 
 
-The equilibrium relative momentum distribution, $f(|\vec{p}_R|)$, of a gas of particles with reduced mass $\mu$ at temperature $T$, is given by a Maxwell-Boltzmann distribution.
+The equilibrium relative momentum distribution, $f(|\vec{p}_\text{R}|)$, of a gas of particles with reduced mass $\mu$ at temperature $T$, is given by a Maxwell-Boltzmann distribution.
 A derivation of this may be found in App.\,\ref{app:momDistDer}.
-\begin{align*}
-	 f( \vec{p}_R ) &= \left( \frac{1}{2 \pi \mu k_B T} \right)^{3/2} e^{\frac{-\vec{p}_R^2}{2 \mu k_B T}} \\
-	 f( |\vec{p}_R| ) &= \frac{4 \pi p_R^2}{\left( 2 \pi \mu k_B T \right)^{3/2}}e^{\frac{-p_R^2}{2 \mu k_B T}}
-\end{align*}
+
+\begingroup
+\addtolength{\jot}{1em}
+\begin{align}
+\label{eq:5mbmom}
+	 f( \vec{p}_\text{R} ) &= \left( \frac{1}{2 \pi \mu k_B T} \right)^{3/2} \exp{\frac{-p_\text{Rx}^2-p_\text{Ry}^2-p_\text{Rz}^2}{2 \mu k_B T}} \\
+	 \label{eq:5mben}
+	 f( |\vec{p}_\text{R}| ) &= \frac{4 \pi \, p_\text{R}^2}{\left( 2 \pi \mu k_B T \right)^{3/2}}\,\exp{\frac{-p_\text{R}^2}{2 \mu k_B T}}
+\end{align}
+\endgroup
 Additionally, the relative collision energy distribution is given by
-\begin{align*}
-	 f( \epsilon ) &= \frac{2}{\sqrt{\pi}} \sqrt{\epsilon} \left( \frac{1}{ k_B T} \right)^{3/2} e^{\frac{-\epsilon}{k_B T}}
-\end{align*}
+\begin{equation}
+	 f( \epsilon ) = \frac{2}{\sqrt{\pi}} \sqrt{\epsilon} \left( \frac{1}{ k_B T} \right)^{3/2} \exp{\frac{-\epsilon}{k_B T}}
+\end{equation}
 These distributions describe gases with momentum and energy formally extending to infinity.
 However, for systems with finite maximum kinetic energies, these descriptions are still valid if the ratio of the maximum energy and the characteristic energy is $\gg 1$.
-Fig.\,\ref{fig:singleBoltz} shows a Maxwell-Boltzmann distribution using scaled units in terms of the system's characteristic momentum $\sqrt{2 m k_B T}$.
+Fig.\,\ref{fig:singleBoltz} shows a Maxwell-Boltzmann distribution using scaled units in terms of the system's characteristic momentum $\sqrt{2 \mu k_B T}$.
 	\begin{figure} 
 		\centerline{
 		\includegraphics[width=\textwidth]{boltzmannFunc.pdf}}
-		\caption{Two-particle Boltzmann distributions}{Equilibrium distributions of (blue) the momentum distribution and (red) the collision energy distribution. Here $|\vec{p}|$ and $\epsilon$ are given in units of $\sqrt{2 m k_B T}$ to emphasize the generality of the distribution. Importantly, the likelihood of finding a particle with a momentum $|\vec{p}| > 4 \times \sqrt{2 m k_B T}$ is extremely small. This is corroborated by the inset which shows the integral of the relative likelihood, also known as the cumulative distribution function of $f(|\vec{p}|)$, gives the probability that a particle will take a value between $0 \rightarrow p_i$ for any specified $p_i$. Thus the probability for a particle to have momentum $|\vec{p}| < 4 \times \sqrt{2 m k_B T}$ is $\approx 1$.}
+		\caption{Two-particle Boltzmann distributions}{Equilibrium distributions of the momentum distribution Eq.\,\ref{eq:5mbmom} (blue) and the relative collision energy distribution \ref{eq:5mben}(red). Here $|\vec{p}|$ and $\epsilon$ are given in units of $\sqrt{2 \mu k_B T}$ to emphasize the generality of the distribution. Importantly, the likelihood of finding a particle with a momentum $|\vec{p}| > 4\sqrt{2 \mu k_B T}$ is extremely small. This is corroborated by the inset which shows the integral of the relative likelihood, also known as the cumulative distribution function of $f(|\vec{p}|)$. This gives the probability that a particle will take a value between $0 \rightarrow p_i$ for any specified $p_i$. Thus the probability for a particle to have momentum $|\vec{p}| < 4\sqrt{2 \mu k_B T}$ is $\approx\,1$.}
 		\label{fig:singleBoltz}
 	\end{figure}
-We see that the occupation of momentum states $> 4 \times \sqrt{2 \mu k_B T}$ is very small.
-Therefore, in deep traps, when modeling photoassociation and calculating the scattering probability $\vert S(\epsilon) \vert^2$ over the relative collision energies, the unit probability remains conserved since nearly all possible collision energies are accounted.
+We see that the occupation of momentum states $> 4\,\sqrt{2 \mu k_B T}$ is very small.
+Therefore, in deep traps, when modeling photoassociation and calculating the scattering probability $\vert S(\epsilon) \vert^2$ over the relative collision energies, the unit probability remains conserved since nearly all possible collision energies are integrated over.
 Conversely, a naive truncation of the Maxwell-Boltzmann integral when evaluating $\langle K \rangle_\text{thermal} \propto \displaystyle \int_0^{\epsilon_{max}} \vert S(\epsilon) \vert^2 d\epsilon$, will neglect the scattering probability of relative collision energy states above the integration limit $\epsilon_{max}$.
-These collision energies are properly accounted for by applying a truncation to the single-particle kinetic energies and propagating this truncation through the derivation of the relative collision energy distribution needed to model photoassociation lineshapes.
+The likelihood of collisions at each relative energy is properly weighted by applying the energy cutoff to the single-particle kinetic energy distributions and then deriving the two-body relative energy distribution using the truncated forms of the single-particle distributions.
+The modified form of the relative energy distribution will then be used in the thermal averaging of the two-body loss rate constant, $K$.
 
-Before proceeding, we note that when describing one-photon photoassociation using alkali atoms along dipole-allowed transition, the consideration of single-particle kinetic energy may be neglected due to the natural width of the transition dominating any small shifts due to Doppler shifts from center-of-mass motion or photon recoil.
-For narrow-line one-photon PAS, shifts due to both the Doppler shift and photon recoil may become important \cite{Ciuryo2004, Borkowski2014a, Nicholson2015a, Reschovsky2018, Pachomov2017}.
-Therefore, accurate enumeration of all contributions from the scattering probability must consider and integrate over both the center-of-mass and relative kinetic energy distributions.
-This previous work motivated our approach to the treatment of the truncation.
-Despite the two-photon excitation process being insensitive to Doppler shifts or photon recoil.
+Before proceeding, we note that for descriptions of one-photon photoassociation with alkali atoms using dipole-allowed transitions, the consideration of single-particle kinetic energy may be neglected due to the natural width of the transition dominating any small shifts due to Doppler effect from center-of-mass motion or photon recoil.
+For narrow-line one-photon PAS, Doppler shifts and photon recoil can become important due to the long-lifetime of the excited state \cite{Ciuryo2004, Borkowski2014a, Nicholson2015a, Reschovsky2018, Pachomov2017}.
+Therefore, accurate enumeration of the scattering probability must consider and average over both the center-of-mass and relative kinetic energy distributions.
+Our approach to the treatment of the truncation, outlined below, was informed and motivated by this common consideration for one-photon intercombination line PAS in strontium.
+We emphasize that for these particular two-photon experiments, we are not sensitive to Doppler shifts or photon recoil.
+%In
+%
+%however, the two-photon excitation process for these experiments being insensitive to Doppler shifts or photon recoil.
 
 %For the experiments in this chapter, we are not sensitive to Doppler effects or photon recoil as the two-photon spectroscopy was performed with beams sharing a common wavevector.
 %The previous work of Ref.\,\hl{\cite{Ciuryo2004, Borkowski2014a, Nicholson2015a, Reschovsky2018, Pachomov2017}} informed the approach taken here.
@@ -177,39 +187,39 @@ Despite the two-photon excitation process being insensitive to Doppler shifts or
 %the consideration of single-particle momenta and kinetic energies is commonly applied to the case of one-photon photoassociation performed near long-lived transitions where the narrow transition linewidth results in PAS that is sensitive to Doppler broadening and photon recoil \hl{\cite{Ciuryo2004, Borkowski2014a, Nicholson2015a, Reschovsky2018, Pachomov2017}}.
 
 
-App.\,\ref{sec:truncDist} also details the derivation of a normalized truncation function $\hat{\mathcal{G}}$, given by Eq.\,\ref{eq:truncWeighting}, which properly weights the possible collision energies.
+App.\,\ref{sec:truncDist} details the complete derivation of a normalized truncation function $\hat{\mathcal{G}}$, given by Eq.\,\ref{eq:truncWeighting}, which properly weights the possible collision energies.
 With this weighting function, the distribution of relative energies is given in terms of dimensionless variables $\eta_\vec{r}$ and $\tilde{\epsilon}$ by
 \begin{equation} \label{eq:truncRelBolz}
 	\hat{f}_{\vec{r}}(\tilde{\epsilon}) = \frac{2}{\sqrt{\pi}} \sqrt{\tilde{\epsilon}} \, e^{-\tilde{\epsilon}} \hat{\mathcal{G}}(\eta_{\vec{r}}, \tilde{\epsilon})
 \end{equation}
 where
 \begin{equation}
-	\eta_\vec{r} = \frac{U_\text{depth} - U(\vec{r})}{k_B T} \quad \quad \tilde{\epsilon} = \frac{p_{R}^2}{2 \mu k_B T} 
+	\eta_\vec{r} = \frac{U_\text{depth} - U(\vec{r})}{k_B T} \quad \quad \tilde{\epsilon} = \frac{p_\text{R}^2}{2 \mu k_B T} 
 \end{equation}
 Here $\eta_\vec{r}$ is a scaled variable that defines the local maximum single-particle kinetic energy at a point $U(\vec{r})$ in the trap.
 Similarly, $\tilde{\epsilon}$ gives the relative collision energy scaled by the temperature.
-For each point in the trap $\tilde{\epsilon}$ may take on the range of available energies $[ 0 \rightarrow 2\,\eta_\vec{r} ]$ where the upper bound on collision energy considers the case that both particles involved in the collision have kinetic energy $\displaystyle \frac{(U_\text{depth} - U(\vec{r}))}{k_B T}$.
-The Heaviside function is used in $\hat{\mathcal{G}}(\eta_{\vec{r}}, \tilde{\epsilon})$ to ensure the collision energy cannot exceed $2\,\eta_\vec{r}$.
+For each point in the trap, $\tilde{\epsilon}$ may take on the range of available energies $[ 0 \rightarrow 2\eta_\vec{r} ]$ where the upper bound on collision energy considers the case that both particles involved in the collision have kinetic energy $\displaystyle \frac{(U_\text{depth} - U(\vec{r}))}{k_B T}$.
+The Heaviside function is used in $\hat{\mathcal{G}}(\eta_{\vec{r}}, \tilde{\epsilon})$ to ensure the collision energy cannot exceed $2\eta_\vec{r}$.
 
 Fig.\,\ref{fig:relativeCollProb} plots the relative likelihood of collision energies for several values of $\eta_\text{trap}$.
 	\begin{figure} 
 	\centerline{
 	  \includegraphics[width=\textwidth]{1DrelativeCollProbvsCollEn.png}}
-	  \caption{Relative collision energy distributions for various trap depths}{The effects of energy truncation on the likelihood of collisions at different various trap depths where the total collision probability for each curve is normalized to unity. Energy is specified in units of $\eta = U_{\text{depth}}/k_B T$. Each trap has a maximum collision energy of $2\,\eta_{trap}$ between two particles each with maximum kinetic energy $\eta$.}
+	  \caption{Relative collision energy distributions for various trap depths}{The effects of energy truncation on the likelihood of collisions at different various trap depths where the total collision probability for each curve is normalized to unity. Energy is specified in units of $\eta = U_{\text{depth}}/k_B T$. Each trap has a maximum collision energy of $2\eta_{trap}$ between two particles each with maximum kinetic energy $\eta$.}
 	  \label{fig:relativeCollProb}
 	\end{figure}
 In this plot, the collision energy is specified in units of $\eta$ such that $\eta=1=U_\text{depth}/k_B T$.
-We see that for the case of $\eta_\text{trap}=1$ (blue curve), the maximum collision energy is $2\,\eta_\text{trap}$ and the likelihood falls to zero for higher energies as required by our definition of the truncation.
+We see that for the case of $\eta_\text{trap}=1$ (blue curve), the maximum collision energy is $2\eta_\text{trap}$ and the likelihood falls to zero for higher energies as required by our definition of the truncation.
 Furthermore, the relative energy distribution converges to a Maxwell-Boltzmann for trap depths $\eta_\text{trap} \gtrsim 4$.
 This is in agreement with the expectations from the equilibrium distribution discussed at the beginning of this section.
 Additional tests of the normalization and behavior of $\hat{\mathcal{G}}(\eta_{\vec{r}}, \tilde{\epsilon})$ are given with the derivation in the appendix.
 
 \subsection{Fitting the thermally averaged spectra} \label{sec:lowIntSpectra}
-The consideration of the relative collision energy likelihood is incorporated into the PAS lineshape equations by modifying the thermal average of $\langle K \rangle_\text{thermal}$.
+The consideration of the relative collision energy likelihood is incorporated into the PAS lineshape equations by modifying the thermal average, $\langle K \rangle_\text{thermal}$.
 Recall from Sec.\,\ref{sec:bohn_and_julienne}, that the two-body loss rate is simply given by $K= v \sigma_{in}$ and the thermal average is $\langle K \rangle_{\text{thermal}} = \int_0^{\infty} dv f(v)\,v\,\sigma_{in}$.
 By replacing $f(v)$ with Eq.\,\ref{eq:truncRelBolz} and modifying the integration bounds, the truncated thermal average may be given by
 \begin{equation}
-	\langle K \rangle_\text{thermal} = \frac{1}{h\,Q_{T}} \int_{0}^{2\,\eta} d\epsilon \vert S(\epsilon) \vert^2 \, \hat{\mathcal{G}}(\eta, \tilde{\epsilon})\,e^{-\epsilon/k_{B}T}
+	\langle K \rangle_\text{thermal} = \frac{1}{h\,Q_{T}} \int_{0}^{2\,\eta} d\epsilon \vert S(\epsilon) \vert^2 \, \hat{\mathcal{G}}(\eta, \tilde{\epsilon})\,\exp{\frac{-\epsilon}{k_{B}T}}
 \end{equation}
 where $\tilde{\epsilon} = \epsilon/k_{B}T$ and $\eta$ is the single-particle truncation energy.
 This integral is limited to $\epsilon = 2\,\eta$ to account for both particles having the maximum energy $\eta$ while undergoing a collision.
@@ -217,9 +227,9 @@ Note that, while this discussion began by considering the effects of shallow tra
 The complete two-body loss rate with averages over collision energy and space and incorporating the effects of local collision energy truncation becomes
 \begin{align} \label{eq:chap5avgTruncK}
 \hspace*{-1cm} 
-	\langle K \rangle_\text{trunc, trap} = \frac{1}{V_2} \int_V &e^{-2 U(\vec{r})/k_{B}T} \\ 
+	\langle K \rangle_\text{trunc, trap} = \frac{1}{V_2} \int_V &\exp{\frac{-2 U(\vec{r})}{k_{B}T}} \\ 
 	\nonumber
-	&\times \frac{1}{h\,Q_{T}} \int_{0}^{2\,U_{\text{depth}}(\vec{r})} d\epsilon \vert S(\epsilon, \vec{r}) \vert^2 \,\hat{\mathcal{G}} \left[\frac{U_\text{depth}-U(\vec{r})}{k_B T}, \frac{\epsilon}{k_{B}T}  \right]  \,e^{-\epsilon/k_{B}T}
+	&\times \frac{1}{h\,Q_{T}} \int_{0}^{2\,U_{\text{depth}}(\vec{r})} d\epsilon \vert S(\epsilon, \vec{r}) \vert^2 \,\hat{\mathcal{G}} \left[\frac{U_\text{depth}-U(\vec{r})}{k_B T}, \frac{\epsilon}{k_{B}T}  \right]  \,\exp{\frac{-\epsilon}{k_{B}T}}
 \end{align}
 where $U_\text{depth}$ is a global parameter describing the trap depth and we have explicitly stated the inputs to the function $\hat{\mathcal{G}}(\eta_{\vec{r}}, \tilde{\epsilon})$.
 
@@ -288,25 +298,24 @@ We hypothesize that this width reflects decay of molecules in the electronic gro
 \subsection{Density-dependent frequency shift}
 A shift of the two-photon resonance position is possible due to differing mean-field shifts of initial atomic and final molecular states arising from interaction with the background of ground-state atoms.
 Such a shift would be proportional to the atom density and depend upon the $s$-wave scattering lengths for atom-atom and atom-dimer collisions, $a_{86}$ and $a_{\text{ad}}$ respectively.
-This was observed in a Rb Bose-Einstein condensate in Ref.\,\hl{\cite{wfh00}}. 
+This was observed in a Rb Bose-Einstein condensate in Ref.\,\cite{wfh00}. 
 For a non-degenerate gas, this effect yields $\chi_n=\hbar (\frac{a_{\text{ad}}}{\mu_{\text{ad}}}-4\frac{a_{86}}{\mu_{\text{aa}}})=\frac{\hbar}{m} (\frac{3 }{2}a_{\text{ad}}-8 a_{86})$, where $\mu_{\text{ad}}$ and $\mu_{\text{aa}}$ are the reduced masses for molecule-atom and atom-atom collisions respectively.
 Note that the shift would vanish for $a_{\text{ad}}=(16/3) a_{86}$.
-
 The largest densities used in these experiments was $\sim 1-2\times 10^{12}\,\mathrm{cm}^{-3}$.
 This is relatively low compared to typical BEC densities, and at this time we are unable to accurately measure a variation of resonance position with density.
-However, the atom-atom scattering is close to resonance and thus Efimov physics can provide information on $a_{\text{ad}}$ \hl{\cite{bha07,nen17}} and an estimate of the systematic error introduced by any residual density-dependent frequency shifts.
-For a zero-range interaction, the atom-dimer scattering length is related to the atom-atom scattering length through the three-body Efimov parameter $\kappa_*$ according to \hl{\cite{bha07}}
+However, the atom-atom scattering is close to resonance and thus Efimov physics can provide information on $a_{\text{ad}}$ \cite{bha07,nen17} and an estimate of the systematic error introduced by any residual density-dependent frequency shifts.
+For a zero-range interaction, the atom-dimer scattering length is related to the atom-atom scattering length through the three-body Efimov parameter $\kappa_*$ according to \cite{bha07}
 \begin{equation}\label{Eq:EfimovMoleculAtomScatteringLength}
   a_{\text{ad}}=a_{86}\left\{1.46 + 2.15 \mathrm{cot}[s_0 \mathrm{ln} (14.1\kappa_* a_{86}) ]\right\}
 \end{equation}
 where $s_0=1.006$ \footnote{The Efimov parameter is related to $E^0_{3b}$ through $\kappa_*=(m|E^0_{3b}|/\hbar^2)^{1/2}$, where $E^0_{3b}$ is the binding energy the lowest Efimov trimer would have in the case of resonant atom-atom interactions.}.
 
 In principle, the atom-dimer scattering length can take any value.
-However, for a deep atom-atom potential, such as for the ground-state strontium dimer \hl{\cite{skt10}}, there is a universality of the three-body physics that sets $\kappa_*=0.226(2)/R_{\mathrm{vdW}}$ \hl{\cite{wie12}}.
+However, for a deep atom-atom potential, such as for the ground-state strontium dimer \cite{Stein2010}, there is a universality of the three-body physics that sets $\kappa_*=0.226(2)/R_{\mathrm{vdW}}$ \cite{wie12}.
 Here, $R_{\mathrm{vdW}}=\left({2\mu C_6}/{\hbar^2}\right)^{1/4}/2=74.6$\,$a_0$ is the van der Waals length associated with the $C_6$ coefficient of the long-range Sr$_2$ ground-state potential.
-Using $C_6=3164$a.u.\;from a fit of potential parameters to spectroscopic data \hl{\cite{skt10}}, yields $\kappa_*=5.72\times 10^7$\,m$^{-1}=(330\,a_0)^{-1}$.
+Using $C_6=3164$a.u.\;from a fit of potential parameters to spectroscopic data \cite{Stein2010}, yields $\kappa_*=5.72\times 10^7$\,m$^{-1}=(330\,a_0)^{-1}$.
 Eq.\,\ref{Eq:EfimovMoleculAtomScatteringLength} then predicts $a_{\text{ad}}=6.4\, a_{86}$, which leads to a small density-dependent frequency shift parameter of $\chi_n=50\,\mathrm{Hz}/(10^{12}\,\mathrm{cm}^{-3})$.
-A numerical calculation including a finite-range correction for the atom-atom interaction \hl{\cite{mwc17}} results in $a_{\text{ad}}=3.5\, a_{86}$ and $\chi_n=-90\,\mathrm{Hz}/(10^{12}\,\mathrm{cm}^{-3})$.
+A numerical calculation including a finite-range correction for the atom-atom interaction \cite{mwc17} results in $a_{\text{ad}}=3.5\, a_{86}$ and $\chi_n=-90\,\mathrm{Hz}/(10^{12}\,\mathrm{cm}^{-3})$.
 Thus, a very small shift is expected for the densities used here.
 
 We incorporate $\chi_n=0\pm 90 \,\mathrm{Hz}/(10^{12}\,\mathrm{cm}^{-3})$ as a set parameter in our model of the spectrum, where we set the systematic uncertainty to reflect the spread of theory predictions.
@@ -346,27 +355,26 @@ The resulting value for the unperturbed binding energy is $E_{b2}/h=-83.00(7)(20
 We estimate a susceptibility to $I_{1064}$ of $\chi_{1064}=0\pm 10$\,Hz/(kW/cm$^2$).
 
 \section{Discussion of the halo binding energy} \label{sec:lowE_alt}
-In the limit of extremely small binding energy and resonant atom-atom interactions, the binding energy of a halo molecule is approximately given by \hl{\cite{Kohler2006, hle57,Chin2010}}
+In the limit of extremely small binding energy and resonant atom-atom interactions, the binding energy of a halo molecule is approximately given by \cite{Kohler2006, hle57, Chin2010}
 \begin{equation} \label{Eq:HaloEnergyNoCorrections}
 	E_b=\frac{\hbar^2/}{2\mu a^2}
 \end{equation}
-For interactions described at long-range by a van der Waals potential $V(r)=-C_6/r^6$, as with ultracold atoms, a convenient figure of merit for quantifying how accurate Eq.\,\ref{Eq:HaloEnergyNoCorrections} should be is given by the ratio of the $s$-wave scattering length to the interaction range $\bar{a}$ that is closely related to the van der Waals length \hl{\cite{gfl93,cju05}}.
+For interactions described at long-range by a van der Waals potential $V(r)=-C_6/r^6$, as with ultracold atoms, a convenient figure of merit for quantifying how accurate Eq.\,\ref{Eq:HaloEnergyNoCorrections} should be is given by the ratio of the $s$-wave scattering length to the interaction range $\bar{a}$ that is closely related to the van der Waals length \cite{gfl93,cju05}.
 \begin{equation} \label{Eq:InteractionRangevdW}
   \bar{a} = \frac{4 \pi}{\Gamma(1/4)^2}R_\mathrm{vdW}
 \end{equation}
-
-Slightly away from resonance, corrections to the binding energy for the van der Waals potential were worked out in \hl{\cite{Gao01,gao04}}, yielding
+Slightly away from resonance, corrections to the binding energy for the van der Waals potential were worked out in \cite{Gao01,gao04}, yielding
 \begin{equation} \label{Eq:BindingEnergyGao}
 	E_{b2}=-\frac{\hbar^2}{2\mu(a-\bar{a})^2}\left[1+\frac{g_1\bar{a}}{a-\bar{a}}+\frac{g_2\bar{a}^2}{(a-\bar{a})^2} + ... \right],
 \end{equation}
 where $g_1=\Gamma(1/4)^4/6\pi^2-2=0.918...$ and $g_2=(5/4)g_1^2-2=-0.947...$. 
 The range of validity of this expression is $a \gtrsim 2 \bar{a}$.
-The accuracy of the first term in this expansion has been experimentally confirmed for various systems such as $^{85}$Rb \hl{\cite{ckt03,kgb03}}, $^{40}$K \hl{\cite{rtb03,msg05}} and $^{6}$Li \hl{\cite{bar05}}.
+The accuracy of the first term in this expansion has been experimentally confirmed for various systems such as $^{85}$Rb \cite{ckt03,kgb03}, $^{40}$K \cite{rtb03,msg05} and $^{6}$Li \cite{bar05}.
 The derivation of Eq.\,\ref{Eq:BindingEnergyGao} assumes that the influence of short-range physics, which can be expressed through a quantum defect, varies negligibly from threshold to the molecular binding energy.
-We expect this to be an excellent approximation, since, as shown in Ref.\,\hl{\cite{Gao01}} the corrections are typically less than about $1\%$ even for GHz binding energies.
+We expect this to be an excellent approximation, since, as shown in Ref.\,\cite{Gao01} the corrections are typically less than about $1\%$ even for GHz binding energies.
 
 For ground-state $^{86}$Sr atoms, $\bar{a}=71.3$\,$a_0$.
-The most accurate value available for the $s$-wave scattering length is $a=798 (12)$\,$a_0$ \hl{\cite{skt10}}, satisfying the requirement of $a\gg \bar{a}$ for the least-bound state on the ground molecular potential to be a halo molecule.
+The most accurate value available for the $s$-wave scattering length is $a=798 (12)$\,$a_0$ \cite{Stein2010}, satisfying the requirement of $a\gg \bar{a}$ for the least-bound state on the ground molecular potential to be a halo molecule.
 Nonetheless, ${\bar{a}}/({a-\bar{a}})=.10$, and the corrections given by Eq.\,\ref{Eq:BindingEnergyGao} are seen to be significant in Fig.\,\ref{fig:HaloBindingEnergy}.
 	\begin{figure} 
 	\centerline{
@@ -374,30 +382,31 @@ Nonetheless, ${\bar{a}}/({a-\bar{a}})=.10$, and the corrections given by Eq.\,\r
 	  \caption{Determination of 86 $s$-wave scattering length}{Halo binding energy versus $s$-wave atom-atom scattering length for $^{86}$Sr . The shaded region indicates our experimental measurement. The lines are predictions of Eq.\,\ref{Eq:BindingEnergyGao} retaining up to the first, second, and third terms as indicated in the legend [$x_0={\bar{a}}/({a-\bar{a}})$]. The data point is the prediction of Eq.\,\ref{Eq:BindingEnergyGao} for the recommended value of the measured binding energy.}
 	  \label{fig:HaloBindingEnergy}
 	\end{figure}
-Using the previous best value of the scattering length \hl{\cite{Stein2010}}, Eq.\,\ref{Eq:BindingEnergyGao} predicts a binding energy of $E_{b2}=-86(3)$\,kHz.
+Using the previous best value of the scattering length, Eq.\,\ref{Eq:BindingEnergyGao} predicts a binding energy of $E_{b2}=-86(3)$\,kHz.
 This agrees with our measurement, but by inverting Eq.\,\ref{Eq:BindingEnergyGao}, we can use our increased accuracy in $E_{b2}$ to extract an improved value of the scattering length of $a=810.6(3)(9)$\,$a_0$, where uncertainties reflect statistical and systematic uncertainties in $E_{b2}$ respectively.
 The next higher-order term in $x_0={\bar{a}}/({a-\bar{a}})$ is likely to introduce a correction on the order of $100$\,Hz in Eq.\,\ref{Eq:BindingEnergyGao}, creating a systematic uncertainty in $a$ that is about one third of the uncertainty from our measurement.
 
 This binding energy can also be used to estimate the value of the ground state potential $C_6$ parameter for strontium.
 As previously discussed in Sec.\,\ref{ssec:low_energy}, the relationship between the scattering length and the potential is given by
 \begin{equation} \label{eq:5scatterLeng}
-	a = \bar{a} \left[ 1 - \tan(\Phi - \frac{\pi}{8}) \right] \quad \quad \Phi = \int_{R_i}^{\infty} \sqrt{\frac{-2\mu V(R)}{\hbar^2}}
+	a = \bar{a} \left[ 1 - \tan(\Phi - \frac{\pi}{8}) \right] \quad \quad \Phi = \int_{R_i}^{\infty} dR \sqrt{\frac{-2\mu V(R)}{\hbar^2}}
 \end{equation} 
-where $R_i$ is the inner turning point of the potential.
+where $R_i$ is the inner turning point of the potential such that $V(R_i)=0$.
 Therefore, given the potential, we can use these equations to calculate the $s$-wave scattering length and then use Eq.\,\ref{Eq:BindingEnergyGao} to estimate the binding energy of the halo state.
 
-Ref.\,\hl{\cite{Stein2010}} gives two piece-wise estimates of the strontium ground state X$^1\Sigma_g^+$ potential determined from fitting spectroscopic data and comparing long-range coefficients to $\textit{ab initio}$ calculations.
+Stein et al. (2010) \cite{Stein2010}, gives two piece-wise estimates of the strontium ground state X$^1\Sigma_g^+$ potential determined from molecular spectroscopy data.
 The two model potentials are labeled "freely varied" and "recommended".
-The "freely varied" model is determined by allowing the long-range coefficients $C_6$, $C_8$, and $C_{10}$ to be treated as fit parameters.
-The "recommended" model is an average over several different fits of molecular transition data.
-In each consideration, the value of $C_6$ or $C_8$ was fixed to one of several different values while the unconstrained coefficients were estimated from the data. \hl{get refs for this from Tiemann}.
+Each model is derived from estimating long-range coefficients by fitting the transition data and subsequently comparing to $\textit{ab initio}$ calculations.
+The "freely varied" model results from allowing all long-range coefficients to be treated as fit parameters and subsequently estimated by the fitting routine routine.
+The "recommended" model is an averaged model where the value of either $C_6$ or $C_8$ was fixed to estimates from Refs.\,\cite{Porsev2006, ykt06}.
+After fixing the parameter, the remaining unconstrained coefficients were estimated by fitting.
 
 Using these forms of the potential, the estimated binding energy for the halo state can be determined by numerical integration of $\Phi$ to find $a$ and applying Eq.\,\ref{Eq:BindingEnergyGao}.
 Fig.\,\ref{fig:c6estimates} shows the predicted binding energy when varying $C_6$ and holding all other parameters of each model constant.
 	\begin{figure} 
 	\centerline{
 	  \includegraphics[width=\textwidth]{compOfC6.pdf}}
-	  \caption{Comparison of C$_6$ coefficient estimates}{The $^{86}$Sr halo state binding energy is calculated using Eq.\,\ref{Eq:BindingEnergyGao} and numerical integration of the piece-wise potentials from Ref.\,\hl{\cite{Stein2010}}. Comparing the measured halo state binding energy to these predictions gives an estimate of the underlying $C_6$ value.}
+	  \caption{Comparison of C$_6$ coefficient estimates}{The $^{86}$Sr halo state binding energy is calculated using Eq.\,\ref{Eq:BindingEnergyGao} and numerical integration of the piece-wise potentials from Stein et al. (2010) \cite{Stein2010}. Comparing the measured halo state binding energy to these predictions gives an estimate of the underlying $C_6$ underlying value.}
 	  \label{fig:c6estimates}
 	\end{figure}
 From these plots we can determine a $C_6$ value for each form of the potential.
@@ -409,16 +418,16 @@ We have included both of our values for completeness and show that they are in a
 \resizebox{\textwidth}{!}{%
 \begin{tabular}{lll}
 $C_6$ [a.u.] & Reference & Type \\ \hline
-$3212$ & Stanton (1994) \hl{\cite{Stanton1994}} & Theory \\
-$3170\pm197$ & Porsev et al.\,(2002) \hl{\cite{Porsev2002}} & Theory \\
-$3249$ & Mitroy et al.\,(2003) \hl{\cite{mbr03}} & Theory \\
-$3131\pm41$ & Lima et al.\,(2005) \hl{\cite{Lima2005}} & Theory \\
-$3103\pm7$ & Porsev et al.\,(2006) \hl{\cite{Porsev2006}} & Theory \\
-$3130\pm20$ & Martinez de Escobar et al.\,(2008) \hl{\cite{MartinezDeEscobar2008}} & Experiment \\
-$3164\pm10$ & Stein et al.\,(2010) \hl{\cite{Stein2010}} & Experiment \\
-$3142$ & Skomorowski et al.\,(2012) \hl{\cite{Skomorowski2012}} & Theory \\
-$3107\pm30$ & Zhang et al.\,(2014) \hl{\cite{zbb14}} & Theory \\
-\begin{tabular}[c]{@{}l@{}}$3162.16\pm0.03$ - Freely varied\\ $3167.61\pm0.03$ - Recommended\end{tabular} & Aman et al.\,(2018) \hl{\cite{Aman2018}} & Experiment
+$3212$ & Stanton (1994) \cite{Stanton1994} & Theory \\
+$3170\pm197$ & Porsev et al.\,(2002) \cite{Porsev2002} & Theory \\
+$3249$ & Mitroy et al.\,(2003) \cite{mbr03} & Theory \\
+$3131\pm41$ & Lima et al.\,(2005) \cite{Lima2005} & Theory \\
+$3103\pm7$ & Porsev et al.\,(2006) \cite{Porsev2006} & Theory \\
+$3130\pm20$ & Martinez de Escobar et al.\,(2008) \cite{MartinezDeEscobar2008} & Experiment \\
+$3164\pm10$ & Stein et al.\,(2010) \cite{Stein2010} & Experiment \\
+$3142$ & Skomorowski et al.\,(2012) \cite{Skomorowski2012} & Theory \\
+$3107\pm30$ & Zhang et al.\,(2014) \cite{zbb14} & Theory \\
+\begin{tabular}[c]{@{}l@{}}$3162.16\pm0.03$ - Freely varied\\ $3167.61\pm0.03$ - Recommended\end{tabular} & Aman et al.\,(2018) \cite{Aman2018} & Experiment
 \end{tabular}%
 }
 \caption{Comparison of $C_6$ values from literature}{All values are given in atomic units. Note that the uncertainty of the present measurement reflects the uncertainty in the binding energy of the halo molecule.}
@@ -582,13 +591,13 @@ Finally, taking the value and error estimates from both models the quoted scatte
 %To prove this assumption I want to show that using the square step I can get the same equations like in Eq. 1 of the 99 paper. Then once we know the infinite energy behavior (valid for only a particular portion of energy due to $s$-wave constraint) then we can ask what happens if f(p) is truncated. 
 
 
-%The long-range form of the interaction for $s$-wave collisions, which determines many aspects of atomic scattering at ultracold temperatures,  can be described with a van der Waals form, $V(r)=-C_6/r^6$. %where $C_6=3.03(1) \times 10^{-76} J m^6$  for Sr \hl{\cite{skt10}}.
+%The long-range form of the interaction for $s$-wave collisions, which determines many aspects of atomic scattering at ultracold temperatures,  can be described with a van der Waals form, $V(r)=-C_6/r^6$. %where $C_6=3.03(1) \times 10^{-76} J m^6$  for Sr \hl{\cite{Stein2010}}.
 %Details of low energy scattering and near-threshold states for  a van der Waals potential have been well studied, and an important length scale was defined in \hl{\cite{gfl93}} as the mean scattering length or interaction range \hl{\cite{cju05}}
 %\begin{equation}\label{Eq:InteractionRangevdW}
 %  \bar{a}=2^{-3/2}\frac{\Gamma\left(\frac{3}{4}\right)}{\Gamma\left(\frac{5}{4}\right)}\left(\frac{2\mu C_6}{\hbar^2}\right)^{1/4},
 %\end{equation}
 %where $\mu$ is the reduced mass  and $\hbar$ is the reduced Planck's constant.
-%$C_6=3.03(1) \times 10^{-76} J m^6$ \hl{\cite{skt10}} and
+%$C_6=3.03(1) \times 10^{-76} J m^6$ \hl{\cite{Stein2010}} and
 %, where $a_0=5.29\times 10^{-11}$\,m is the Bohr radius.
 %This value of $C_6$ is consistent with a recent \textit{ab initio} calculation \hl{\cite{zbb14}}.
 %\begin{equation}\label{Eq:InteractionRangevdW}
