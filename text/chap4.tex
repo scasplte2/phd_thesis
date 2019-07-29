@@ -147,8 +147,8 @@ Each spectra are averaged over several scans and the error bars give the standar
 We model the rate of atom loss following the two-color PA theory of Bohn and Julienne and introduced in Sec.\,\ref{sec:bohn_and_julienne}.
 Recall that the time-evolution of the total number of trapped atoms is given by Eq.\,\ref{eq:number}
 \begin{equation*} \label{eq:4num}
-   N(t)= \frac{N_0 \rm{e}^{-\Gamma t}}
-   		{ 1 + \frac{2 N_0 \langle K \rangle V_2}{\Gamma V_1^2}(1-\rm{e}^{-\Gamma t}) }
+   N(t)= \frac{ \displaystyle N_0 \rm{e}^{-\Gamma t}}
+   		{ \displaystyle 1 + \frac{2 N_0 \langle K \rangle V_2}{\Gamma V_1^2}(1-\rm{e}^{-\Gamma t}) }
 \end{equation*}
 with $\Gamma$ the one-body loss rate, $N_0$ the initial number of trapped atoms before applying the PAS lasers, and $V_q$ the effective volumes defined in Eq.\,\ref{eq:effectivevolumes}.
 When fitting to experiments, we calculate the two-body average density distribution within the trap by considering the thermally averaged $\langle K \rangle_{\text{thermal}}$ (Eq.\,\ref{eq:twoPhotonKavg}) at each $\vec{r}$ contained within the trapping volume.
@@ -324,11 +324,11 @@ The results of these simulations are shown in Fig.\,\ref{fig:3LvlModel}.
 		\label{fig:3LvlModel}
 	\end{figure} 
 The predicted halo resonance energies generally agrees with experimental data and reproduces a linear scaling of the binding energy consistent with the experimental observations.
-This indicates that effects missing from this theory – the motion of the atoms \cite{Bohn1996,Bohn1999}, interaction shifts due to molecules and atoms scattering off of other molecules and atoms \cite{wfh00}, and the varying density within the trap \cite{MartinezDeEscobar2008} – are not necessarily relevant for considering the effects of the two-frequency drive and determination of the internal interaction strengths.
+This indicates that effects missing from this theory – the motion of the atoms \cite{Bohn1996,Bohn1999}, interaction shifts due to molecules and atoms scattering off of other molecules and atoms \cite{Wynar2000}, and the varying density within the trap \cite{MartinezDeEscobar2008} – are not necessarily relevant for considering the effects of the two-frequency drive and determination of the internal interaction strengths.
 %For some combinations of intensity and $\Delta_1$ there is reasonable agreement between the model and the data.
 
 However, as intensity is increased the model begins to deviate from the experimental data, limiting its regime of applicability.
-Fig.\,\ref{fig:highIntSpectra}b shows an example where the three-level model tends to underestimate the resonance energy at higher intensities.
+Fig.\,\ref{fig:3LvlModel}b shows an example where the three-level model tends to underestimate the resonance energy at higher intensities.
 This behavior is suggestive of additional interactions between the halo molecule state and one or more levels outside of our model.
 
 We expect the predictive capability of the three-level system to prove useful for future studies of the $^{86}$Sr halo molecule.

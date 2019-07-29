@@ -2001,7 +2001,9 @@
 % test if is a for a figure or table
 \ifx\@captype\@IEEEtablestring%
 % if a table, do table caption
-\begin{center}{\footnotesize #1}\\{\footnotesize\scshape #2}\end{center}%
+%\begin{center}
+{\footnotesize #1}\\{\footnotesize\scshape #2}%
+%\end{center}%
 \@IEEEtablecaptionsepspace% V1.6 was a hard coded 8pt
 % if not a table, format it as a figure
 \else
