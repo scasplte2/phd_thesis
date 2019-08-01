@@ -31,12 +31,12 @@ Thus in $^{86}$Sr, the large $s$-wave scattering length of $\sim\!800\text{a}_0$
 %For $^{86}$Sr$_2$ the extremely small binding energy of the halo state is nearly entirely dependent on the behavior of the long-range van der Waals portion of the potential.
 
 In the previous chapter, we explored the coupling of the intermediate state and halo state via measuring the halo molecule's susceptibility as a function of the light intensity and detuning from the intermediate state.
-These measurements probed a strongly coupled regime and were found to produce large AC stark shifts and multi-photon Raman loss processes. 
+These measurements probed a strongly perturbed regime and were found to produce large AC stark shifts and multi-photon Raman loss processes. 
 To determine a precise value of the natural binding energy of the halo molecular state, we repeated similar experiments as before but with much lower excitation beam intensity at a fixed intermediate state detuning.
 
 When describing two-photon spectroscopy to a weakly-bound ground state molecule, it is typical to neglect any potential AC Stark shift between the free ground state atoms and the bound state dimer caused by far off-resonant trapping lasers since the dimerized atoms contribute to the overall polarizability approximately as free atoms \cite{Jones2006}.
-However, in general, AC Stark shifts due to the trapping lasers and collisions with ground state atoms may also shift the molecular resonance as was taken into account in a recent, high-precision study of weakly bound molecular states of ultracold ytterbium atoms \cite{bbc17}.
-Another recent study in calcium also probed weakly-bound excited ground state molecular states using an intercombination line transition as the intermediate state as is used in this work \cite{Pachomow2017a}.
+However, in general, AC Stark shifts due to the trapping lasers and collisions with ground state atoms may also shift the molecular resonance, as was considered in a recent, high-precision study of weakly bound molecular states of ultracold ytterbium atoms \cite{bbc17}.
+Another recent study in calcium also probed several weakly-bound excited ground state molecules using an intercombination line transition as the intermediate state as is used in this work \cite{Pachomow2017a}.
 
 % what we did in comparison to last chater
 In this chapter, we accurately determine the $^{86}$Sr$_2$ halo state binding energy, considering possible collisional frequency shifts and AC Stark shifts due to trapping and excitation lasers.
@@ -97,7 +97,7 @@ Here we restate the main results needed for evaluating the current experiments.
 \begingroup
 \addtolength{\jot}{1em}
 \begin{equation} \label{eq:chap5avgK}
-	\langle K \rangle_\text{trap} = \frac{1}{V_2} \int_V \exp{-2 U(\vec{r})/k_{B}T} \frac{1}{h\,Q_{T}} \int_{0}^{\epsilon_{\text{max}}(\vec{r})} d\epsilon \vert S(\epsilon, \vec{r}) \vert^2 \,\exp{-\epsilon/k_{B}T}
+	\langle K \rangle_\text{trap} = \frac{1}{V_2} \int_V \exp{\frac{-2 U(\vec{r})}{k_{B}T}} \frac{1}{h\,Q_{T}} \int_{0}^{\epsilon_{\text{max}}(\vec{r})} d\epsilon \vert S(\epsilon, \vec{r}) \vert^2 \,\exp{\frac{-\epsilon}{k_{B}T}}
 \end{equation}
 \begin{equation}\label{5equationApproxLorentzian}
   \vert S(\epsilon, \vec{r}) \vert^2 = \frac{\Gamma_L(\epsilon)+\gamma_{\text{eff}}}{\Gamma_L(\epsilon)} \frac{\eta  A(\epsilon)} {\left(\omega_1-\omega_2+\epsilon/\hbar-E'_{b2}(\vec{r})/\hbar\right)^2+\left[
@@ -167,19 +167,18 @@ This is a reasonable assumption given that our exposure times were short compare
 	\begin{figure} 
 		\centerline{
 		\includegraphics[width=\textwidth]{boltzmannFunc.pdf}}
-		\caption{Two-particle Maxwell-Boltzmann distribution}{Relative momentum distribution Eq.\,\ref{eq:5mbmom}. Here $|\vec{p}_\text{R}|$ is given in units of $\sqrt{2 \mu k_B T}$ to emphasize the generality of the distribution. Importantly, the likelihood of finding a particle with a momentum $|\vec{p}_\text{R}| > 4\sqrt{2 \mu k_B T}$ is extremely small. This is corroborated by the inset which shows the integral of the relative likelihood, also known as the cumulative distribution function of $f(|\vec{p}_\text{R}|)$. This gives the probability two particles will have relative momentum between $0 \rightarrow p_i$ for any specified $p_i$. Thus the probability for a two particles to have relative momentum $|\vec{p}_\text{R}| < 4\sqrt{2 \mu k_B T}$ is $\approx\,1$.}
+		\caption{Two-particle Maxwell-Boltzmann distribution}{Relative momentum distribution Eq.\,\ref{eq:5mbmom}. Here $|\vec{p}_\text{R}|$ is given in units of $\sqrt{2 \mu k_B T}$ to emphasize the generality of the distribution. Importantly, the likelihood of finding a particle with a momentum $|\vec{p}_\text{R}| > 4\sqrt{2 \mu k_B T}$ is extremely small. This is corroborated by the inset which shows the integral of the relative likelihood, also known as the cumulative distribution function of $f(\vec{p}_\text{R})$. This gives the probability two particles will have relative momentum between $0 \rightarrow p_i$ for any specified $p_i$. Thus the probability for a two particles to have relative momentum $|\vec{p}_\text{R}| < 4\sqrt{2 \mu k_B T}$ is $\approx\,1$.}
 		\label{fig:singleBoltz}
 	\end{figure}
 	
 It is helpful to begin our discussion of the truncated relative-momentum distribution by first considering how to treat the simple case of an untruncated gas.
 Such a system is described by a single-particle momentum distribution $f_\text{p,one}(\vec{p})$ for a gas at temperature $T$ of particles with mass $m$ given by 
 \begin{equation}  \label{eq:5single_particle_prob}
-		 f_\text{p,one}( \vec{p} ) = \left(\frac{1}{2 \pi m k_B T}\right)^{3/2} \exp{\frac{-p^2}{2 m k_B T}}
+		 f_\text{p,one}( \vec{p} ) = \frac{1}{(2 \pi m k_B T)^{3/2}} \exp{\frac{-p^2}{2 m k_B T}}
 \end{equation}
 The two-particle relative momentum distribution, $f_\text{p,two}(\vec{p}_\text{R})$, for two similar particles with reduced mass $\mu = m/2$, is also given by a Maxwell-Boltzmann distribution.
 A derivation of this may be found in App.\,\ref{app:momDistDer}.
-\begin{equation}
-\label{eq:5mbmom}
+\begin{equation} \label{eq:5mbmom}
 	 f_\text{p,two}( \vec{p}_\text{R} ) = \frac{1}{\left( 2 \pi \mu k_B T \right)^{3/2}}\,\exp{\frac{-p_\text{R}^2}{2 \mu k_B T}}
 \end{equation}
 Through a change of variables, the relative collision energy distribution is found to be
@@ -187,7 +186,7 @@ Through a change of variables, the relative collision energy distribution is fou
 	 f_\text{E,two}( \epsilon ) = \frac{2}{\sqrt{\pi}} \frac{\sqrt{\epsilon}}{(k_B T)^{3/2}} \exp{\frac{-\epsilon}{k_B T}}
 \end{equation}
 These distributions describe gases with momentum and energy formally extending to infinity.
-Fig.\,\ref{fig:singleBoltz} shows the Maxwell-Boltzmann distributions in Eq.\,\ref{eq:5mbmom} using scaled units in terms of the system's characteristic momentum $\sqrt{2 \mu k_B T}$.
+Fig.\,\ref{fig:singleBoltz} shows the Maxwell-Boltzmann distribution in Eq.\,\ref{eq:5mbmom} using scaled units in terms of the system's characteristic momentum $\sqrt{2 \mu k_B T}$.
 This shows that the occupation of momentum states $>\!4\!\times$ the characteristic scale is very small.
 Therefore, if the ratio of maximum single-particle kinetic energy and sample temperature is greater than four, the relative-momentum and collision energy distributions will be given by a Maxwell-Boltzmann.
 In trapping of ultracold atoms, we define the ratio of trap depth to sample temperature as $\eta_\text{trap} = U_\text{depth}/k_B T$ where the trap depth specifies the maximum allowed single-particle kinetic energy.
@@ -212,10 +211,11 @@ When modeling photoassociation performed in deep traps, it is sufficient to use 
 %and then why is it wrong
 
 For the case of shallow traps, the ratio of single-particle kinetic energy to sample temperature is by definition $\eta_\text{trap} < 4$ and the relative-momentum and collision energy distributions are not given by a Maxwell-Boltzmann.
-Furthermore, a naive truncation of $\langle K \rangle$ such that $\langle K \rangle_\text{thermal} \propto \displaystyle \int_0^{\epsilon_\text{max}} \exp{\frac{-\epsilon}{k_B T}}\,\vert S(\epsilon) \vert^2 \, d\epsilon$, is incorrect as $\displaystyle \int_0^{U_\text{depth}} \exp{\frac{-\epsilon}{k_B T}}\, d\epsilon \neq 1$, which omits contributions from relative collision energy states above the integration limit $\epsilon_\text{max}$ \cite{MartinezDeEscobar2008}.
+Furthermore, a naive truncation of $\langle K \rangle$ such that $\langle K \rangle_\text{thermal} \propto \displaystyle \int_0^{\epsilon_\text{max}} \exp{\frac{-\epsilon}{k_B T}}\,\vert S(\epsilon) \vert^2 \, d\epsilon$, is incorrect as $\displaystyle \int_0^{U_\text{depth}} \exp{\frac{-\epsilon}{k_B T}}\,\vert S(\epsilon) \vert^2 \,d\epsilon \neq 1$. 
+Thus a naive truncation omits contributions from relative collision energy states above the integration limit $\epsilon_\text{max}$ \cite{MartinezDeEscobar2008}.
 %Thus, for a truncated single particle kinetic energy distribution, the relative collision energy distribution is not given by a Maxwell-Boltzmann. 
 
-Appendix \ref{sec:truncDist} presents a derivation of the relative-momentum distribution $\hat{f}_\text{p,two}(\vec{p}_\text{R})$, and the relative collision energy distribution $\hat{f}_\text{E,two}(\epsilon)$, when the single-particle kinetic energies are truncated.
+Appendix section \ref{sec:truncDist} presents a derivation of the relative-momentum distribution $\hat{f}_\text{p,two}(\vec{p}_\text{R})$, and the relative collision energy distribution $\hat{f}_\text{E,two}(\epsilon)$, when the single-particle kinetic energies are truncated.
 The average over collision energies in $\langle K \rangle_\text{thermal}$ is then weighted by the distribution $\hat{f}_\text{E,two}(\epsilon)$, given by
 \begin{align} \label{eq:5truncRelBolz}
 	\hat{f}_\text{E,two}(\epsilon) &= \frac{2}{\sqrt{\pi}} \frac{\sqrt{\epsilon}}{(k_B T)^{3/2}} \, \exp{\frac{-\epsilon}{k_B T}} \hat{\mathcal{G}}_\text{E}(\epsilon_\text{max},\epsilon) \\
@@ -233,11 +233,11 @@ The functions $\hat{f}_\text{E,two}$ and $\hat{\mathcal{G}}_\text{E}$ are implic
 	  \label{fig:relativeCollProb}
 	\end{figure}
 Fig.\,\ref{fig:relativeCollProb} plots the truncated relative collision energy distribution, $\hat{f}_\text{E,two}$, for several values of maximum single-particle energy $\epsilon_\text{max}$ as specified in the legend.
-Here we have once more scaled the distribution by the characteristic energy $k_B T$ and defined a dimensionless variable $\eta = \displaystyle \frac{\epsilon}{k_B T}$ that is similarly related to our trap characterization variable $\eta_\text{trap} = \displaystyle \frac{U_\text{depth}}{k_B T}$.
-For each value of $U_\text{depth}$, the collision energy $\epsilon$ may take on the range of available energies $[ 0 \rightarrow 2\,U_\text{depth} ]$.
-The upper bound on collision energy, $2\,U_\text{depth}$, considers the case that both particles have maximum kinetic energy $U_\text{depth}$.
-We see that for the case of maximum single-particle kinetic energy $U_\text{depth}=1$ (blue curve), the maximum collision energy is $2\,U_\text{depth}$ (or $2\,\eta$ in dimensionless terms) and the likelihood of collision energies falls to zero for higher energies as required by our definition of the truncation.
-Furthermore, the relative collision energy distribution converges to the Maxwell-Boltzmann distribution, $f_\text{E,two}$, of Eq.\,\ref{eq:5mben} for trap depths $U_\text{depth} \gtrsim 4$.
+%Here we have once more scaled the distribution by the characteristic energy $k_B T$ and defined a dimensionless variable $\eta = \displaystyle \frac{\epsilon}{k_B T}$ that is similarly related to our trap characterization variable $\eta_\text{trap} = \displaystyle \frac{U_\text{depth}}{k_B T}$.
+For each value of $\epsilon_\text{max}$, the collision energy $\epsilon$ may take on the range of available energies $[ 0 \rightarrow 2\,\epsilon_\text{max} ]$.
+The upper bound on collision energy, $2\,\epsilon_\text{max}$, considers the case that both particles have maximum kinetic energy $\epsilon_\text{max}$.
+We see that for the case of maximum single-particle kinetic energy $\epsilon_\text{max}/k_B T=1$ (blue curve), the maximum collision energy is $2\,\epsilon_\text{max}/k_B T$ and the likelihood of collision energies falls to zero for higher energies as required by our definition of the truncation.
+Furthermore, the relative collision energy distribution converges to the Maxwell-Boltzmann distribution, $f_\text{E,two}$, of Eq.\,\ref{eq:5mben} for cutoff energies $\epsilon_\text{max} \gtrsim 4$.
 This is in agreement with our expectation discussed previously, that for deep traps the single-particle distribution is accurately accounted for and therefore the relative collision energy distribution is given by a Maxwell-Boltzmann.
 Additional tests of the normalization and behavior of $\hat{\mathcal{G}}_\text{E}$ are given with the derivation in the appendix.
 
@@ -327,7 +327,7 @@ Furthermore, using only the values from the edge fit method does not substantive
 		12 & $-84.11\,\pm\,0.07$ & $-84.04\,\pm\,0.02$ & $-84.06\,\pm\,0.01$ \\ \hline
 		\end{tabular}%
 		}
-		\caption{Comparison of fitted resonance energies}{The fit resonance position $E_{b2}'/h$, is given for each type of fitting routine used to analyze the data shown in Figures \ref{fig:ShiftWith689Intensity} and \ref{fig:ShiftWithTrapIntensity}. The scan label column corresponds to the same label used in Table \ref{tab:5expParams} that provides more detailed experimental conditions and the "Truncated" columns give the maximum single-particle kinetic energy $\epsilon_\text{max}$ that was allowed when fitting. Comparison of the "edge fit" method to the truncated method shows the "edge" method typically falls between the two limiting cases. Note that the quoted uncertainty is statistical.}
+		\caption{Comparison of fitted resonance energies}{The fit resonance position $E_{b2}'/h$, is given for each type of fitting routine used to analyze the data shown in Figures \ref{fig:ShiftWith689Intensity} and \ref{fig:ShiftWithTrapIntensity}. The scan label column corresponds to the same label used in Table \ref{tab:5expParams} that provides more detailed experimental conditions and the "Truncated" columns give the maximum single-particle kinetic energy $\epsilon_\text{max}$ that was allowed when fitting. Comparison of the "edge fit" method to the truncated method shows the edge method typically falls between the two limiting cases. Note that the quoted uncertainty is statistical.}
 		\label{tab:ComparisonFitting}
 	\end{table}
 
@@ -379,7 +379,7 @@ The most significant perturbation to the resonance position is the AC Stark shif
 We fit each spectrum to find the binding energies with fixed parameters, temperature ($T=30$\,nK), initial peak sample density ($n_0=2\times 10^{12}$\,cm$^{-3}$), and excitation time 50\,ms.
 Fig.\,\ref{fig:ShiftWith689Intensity} gives the best fit value of the binding energies versus the single-beam intensity where we varied the single-beam excitation intensity from $I=0.02-0.06$\,mW/cm$^{-2}$.
 The susceptibility to $689$\,nm intensity, in Hz per unit intensity, is determined from Fig.\,\ref{fig:ShiftWith689Intensity} by taking $I_{689}$ as twice the single-beam intensity $I_{689}=2I$ and the functional form for the AC Stark shift due to the excitation lasers as discussed in Sec.\,\ref{sec:highE_theory}.
-The observed shifts are comparable to the thermal width of the spectrum, allowing a precise determination of $\chi_{689}=-21(1)(2)$\,kHz/(W/cm$^{2})$ from a linear fit to the resonance positions, $\Delta E'_{b2}\propto h\chi_{689} I_{689}$ as shown in Fig.\,\ref{fig:ShiftWith689Intensity}).
+The observed shifts are comparable to the thermal width of the spectrum, allowing a precise determination of $\chi_{689}=-21(1)(2)$\,kHz/(W/cm$^{2})$ from a linear fit to the resonance positions, $\Delta E'_{b2}\propto h\chi_{689} I_{689}$ as shown in Fig.\,\ref{fig:ShiftWith689Intensity}.
 This value of the susceptibility is in agreement with the estimate of the Floquet model presented in Sec.\,\ref{sec:highE_theory}.
 The first quoted uncertainty is statistical and it arises from variations in parameters and fluctuations in the measured intensity during the scans.
 The second value is systematic, reflecting uncertainty in laser-beam size and intensity profile at the atoms.

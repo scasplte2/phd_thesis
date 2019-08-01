@@ -6,9 +6,10 @@ Previous studies of the molecular states of the X$^1\Sigma_g^+$ ground state pot
 This work presents the first two-photon photoassociation study of the ground state of $^{86}$Sr.
 All previous PA experiments with this isotope have been one-photon photoassociation to excited electronic states \cite{Mickelson2005,Borkowski2014a,Reschovsky2018}.
 The large $s$-wave scattering length, $\sim$800\,a$_0$, for this isotope is indicative of a near-threshold bound state known as a halo molecule.
-Direct photoassociation to this halo state revealed several unanticipated phenomena discussed in this chapter including AC Stark shifts comparable to the halo molecule binding energy and multi-photon resonance processes \cite{Kon2018}.
+Direct photoassociation to this halo state revealed several unanticipated phenomena including AC Stark shifts comparable to the halo molecule binding energy and multi-photon resonance processes \cite{Kon2018}.
 
-This work is expanded upon in Ch.\,\ref{ch:chap5} with a low-intensity study that precisely determined the halo binding energy and using this measurement, improves upon the previous best determinations of the scattering lengths of all strontium isotopes via mass-scaling.
+The experiments presented in this chapter are expanded upon in Ch.\,\ref{ch:chap5} with a low-intensity study that precisely determined the halo binding energy. 
+% and using this measurement, improves upon the previous best determinations of the scattering lengths of all strontium isotopes via mass-scaling.
 In these initial experiments, we explore some of the novel effects of photoassociation to a halo state with a focus on understanding the AC Stark shifts and developing a useful theoretical framework for describing this unique photoassociation regime.
 
 As discussed in previous chapters, two-photon PAS can be used to directly populate molecular levels and may be described with the formalism of Bohn and Julienne \cite{Bohn1999}.
@@ -46,7 +47,7 @@ Fig.\,\ref{fig:haloResProcess}a shows the two scenarios which lead to resonance 
 	\hspace*{-0.05\textwidth}  
 	\centerline{
 	  \includegraphics[width=1.1\textwidth]{excitationScheme.pdf}}
-	  \caption{Accessible halo resonance PAS processes}{Effects of fixing $\omega_1$ and varying $\omega_2$. Consider the state \ket{b2} to be fixed. a) The left and right panels illustrate scanning $\omega_2$ relative to $\omega_1$. Within each panel, the lasers start with $\omega_1 = \omega_2$ and $\Delta_2 = -E_b/\hbar$. Scanning $\omega_2$ will fulfill the resonance condition in both scenarios but also lead to a change in $\Delta_1$ if $\omega_1 > \omega_2$.  b) Example simulated spectra compared with experimental PAS. The development of the model is described in Sec.\,\ref{sec:highE_theory}. For both simulations, the "positive" axis is the configuration where $\omega_2 \geq \omega_1$ and the negative axis is the opposite. Note the asymmetry in the resonance frequency for $I=0.66$\,W/cm$^2$.}
+	  \caption{Accessible halo resonance PAS processes}{Effects of fixing $\omega_1$ and varying $\omega_2$. Consider the state \ket{b2} to be fixed. a) The left and right panels illustrate scanning $\omega_2$ relative to $\omega_1$. Within each panel, the lasers start with $\omega_1 = \omega_2$ and $\Delta_2 = -E_b/\hbar$. Scanning $\omega_2$ will fulfill the resonance condition in both scenarios but also lead to a change in $\Delta_1$ if $\omega_1 > \omega_2$.  b) Example simulated spectra compared with experimental PAS. The development of the model is described in Sec.\,\ref{sec:highE_theory}. For both simulations, the "positive" axis is the configuration where $\omega_2 \geq \omega_1$ and the negative axis is the opposite. An asymmetry in resonance frequencies is noticeable for the largest loss features of the $I=0.66\,\text{W/cm}^2$ data.}
 	  \label{fig:haloResProcess}
 	\end{figure}
 The left panel, when $\omega_2 \geq \omega_1$, shows $\Delta_1$ remains fixed while scanning the two-photon energy.
@@ -56,7 +57,7 @@ This behavior is equivalent to fixing $\omega_2$ and scanning $\omega_1$ in a ty
 
 The latter configuration, which couples $\omega_2$ and $\Delta_1$, was used during our photoassociation experiments.
 The effects on the observable spectra between these two schemes was considered using a three-level model, Sec.\,\ref{sec:highE_theory}, to evaluate both scenarios of laser detuning across the complete range of our data.
-Fig.\,\ref{fig:haloResProcess}b shows two simulated spectra in the regime of strongest coupling accessible by our experiments.
+Fig.\,\ref{fig:haloResProcess}b shows two simulated spectra in the regime of strongest perturbation accessible by our experiments.
 The higher intensity spectrum, $I=0.66$\,W/cm$^2$, shows that coupling between $\Delta_1$ and $\omega_2$ can noticeably shift the resonance energy of the halo state. 
 Importantly, this prediction is in a regime where E$_{b2} \sim \Delta_1$, which applies to only a small subset of our measurements.
 Most of our data is in a regime where $\Delta_2 \ll \Delta_1$ thus we neglect variation of the AC Stark shift with $\omega_2$.
@@ -147,10 +148,10 @@ Each spectra are averaged over several scans and the error bars give the standar
 We model the rate of atom loss following the two-color PA theory of Bohn and Julienne and introduced in Sec.\,\ref{sec:bohn_and_julienne}.
 Recall that the time-evolution of the total number of trapped atoms is given by Eq.\,\ref{eq:number}
 \begin{equation*} \label{eq:4num}
-   N(t)= \frac{ \displaystyle N_0 \rm{e}^{-\Gamma t}}
-   		{ \displaystyle 1 + \frac{2 N_0 \langle K \rangle V_2}{\Gamma V_1^2}(1-\rm{e}^{-\Gamma t}) }
+   N(t)= \frac{ \displaystyle N_0 \rm{e}^{-\Gamma_1 t}}
+   		{ \displaystyle 1 + \frac{2 N_0 \langle K \rangle V_2}{\Gamma_1 V_1^2}(1-\rm{e}^{-\Gamma_1 t}) }
 \end{equation*}
-with $\Gamma$ the one-body loss rate, $N_0$ the initial number of trapped atoms before applying the PAS lasers, and $V_q$ the effective volumes defined in Eq.\,\ref{eq:effectivevolumes}.
+with $\Gamma_1$ the one-body loss rate, $N_0$ the initial number of trapped atoms before applying the PAS lasers, and $V_q$ the effective volumes defined in Eq.\,\ref{eq:effectivevolumes}.
 When fitting to experiments, we calculate the two-body average density distribution within the trap by considering the thermally averaged $\langle K \rangle_{\text{thermal}}$ (Eq.\,\ref{eq:twoPhotonKavg}) at each $\vec{r}$ contained within the trapping volume.
 The trap averaged $\langle K \rangle_\text{trap}$ is given by
 \begin{equation} \label{eq:chap4avgK}
@@ -303,15 +304,15 @@ The Hamiltonian for this system is
 	H=
     \begin{bmatrix}
       0 & \Omega_{1,01}\mathrm{cos}(\omega_1 t) + \Omega_{2,01}\mathrm{cos}(\omega_2 t) & 0 \\
-      \Omega_{1,01}\mathrm{cos}(\omega_1 t)+ \Omega_{2,01}\mathrm{cos}(\omega_2 t) & E_{b1} - \imath \frac{\Gamma_1}{2} & \Omega_{1,12}\mathrm{cos}(\omega_1 t)+ \Omega_{2,12}\mathrm{cos}(\omega_2 t) \\
-      0 & \Omega_{1,12}\mathrm{cos}(\omega_1 t)+ \Omega_{2,12}\mathrm{cos}(\omega_2 t) & E_{b2} - \imath \frac{\Gamma_2}{2} \\
+      \Omega_{1,01}\mathrm{cos}(\omega_1 t)+ \Omega_{2,01}\mathrm{cos}(\omega_2 t) & E_{b1} - \imath \frac{\gamma_1}{2} & \Omega_{1,12}\mathrm{cos}(\omega_1 t)+ \Omega_{2,12}\mathrm{cos}(\omega_2 t) \\
+      0 & \Omega_{1,12}\mathrm{cos}(\omega_1 t)+ \Omega_{2,12}\mathrm{cos}(\omega_2 t) & E_{b2} - \imath \frac{\gamma_2}{2} \\
     \end{bmatrix}
 \end{equation}
 
 \bigskip
 Unlike the typical $\Lambda$-model considered in the Bohn and Julienne formalism, Eq.\,\ref{eq:3LvlModel} considers both lasers 1 and 2 to drive the transition $\ket{0}\,\rightarrow\,\ket{b1}$ and $\ket{b1}\,\rightarrow\,\ket{b2}$.
 %We denote the coupling of a specific laser acting on a particular transition with the notation $\Omega_{\text{laser, initial}\,\rightarrow\,\text{final}}$.
-Decay terms are included to describe atom loss with $\Gamma_1$ representing spontaneous emission from the intermediate bound state due to natural decay and $\Gamma_2$ representing loss from the halo state due to collisions with background atoms.
+Decay terms are included to describe atom loss with $\gamma_1$ representing spontaneous emission from the intermediate bound state due to natural decay and $\gamma_2$ representing loss from the halo state due to collisions with background atoms.
 
 The time-evolution of Eq.\,\ref{eq:3LvlModel} begins in \ket{0} and proceeds for a time $\tau$ using similar optical couplings and oscillating optical intensity as present during the photoassociation experiments.
 The model is numerically solved to generate a simulated spectrum as shown in Fig.\,\ref{fig:haloResProcess}.
@@ -320,16 +321,16 @@ The results of these simulations are shown in Fig.\,\ref{fig:3LvlModel}.
 	\begin{figure}
 		\centerline{
 		\includegraphics[width=\textwidth]{threeLevelModel.png}}
-		\caption{Comparison of a three-level model to experimental halo PAS}{a) The resonance energies, E$_{b2}'$, determined from  the experiments as well as the corresponding predicted resonance position from numerical simulation of three-level model given by Eq.\,\ref{eq:3LvlModel}. This is the same data and linear fits as shown in Fig.\,\ref{fig:neuHalo}. b) Binding energy positions for $\Delta_1/2 \pi = -$1.5\,MHz data over a larger range of intensities for which the experimental results are not well described by linear scaling as predicted by the three-level model. Quadratic fits are shown as a guide to the eye.}
+		\caption{Comparison of a three-level model to experimental halo PAS}{a) The resonance energies, E$_{b2}'$, determined from the experiments is compared to the predicted resonance frequency determined from numerical simulation of the three-level model given by Eq.\,\ref{eq:3LvlModel}. This is the same data and linear fits as shown in Fig.\,\ref{fig:neuHalo}. b) The resonance energy positions for $\Delta_1/2 \pi = -$1.5\,MHz data over a larger range of intensities for which the experimental results are not well described by linear scaling as predicted by the three-level model. Quadratic fits are shown as a guide to the eye. The experimental spectra for all six intensities plotted here are given in Fig.\,\ref{fig:highIntMultiPhoton}.}
 		\label{fig:3LvlModel}
 	\end{figure} 
 The predicted halo resonance energies generally agrees with experimental data and reproduces a linear scaling of the binding energy consistent with the experimental observations.
-This indicates that effects missing from this theory – the motion of the atoms \cite{Bohn1996,Bohn1999}, interaction shifts due to molecules and atoms scattering off of other molecules and atoms \cite{Wynar2000}, and the varying density within the trap \cite{MartinezDeEscobar2008} – are not necessarily relevant for considering the effects of the two-frequency drive and determination of the internal interaction strengths.
+This indicates that effects missing from this theory – the motion of the atoms \cite{Bohn1996,Bohn1999}, interaction shifts due to molecules and atoms scattering off of other molecules and atoms \cite{Wynar2000}, and the varying density within the trap \cite{MartinezDeEscobar2008} – are not necessarily relevant for considering the gross effects of the two-frequency drive and determination of the internal interaction strengths.
 %For some combinations of intensity and $\Delta_1$ there is reasonable agreement between the model and the data.
 
-However, as intensity is increased the model begins to deviate from the experimental data, limiting its regime of applicability.
+Using this model, we find that as intensity is increased the predicted resonance energy begins to deviate significantly from the experimental data, limiting its regime of applicability.
 Fig.\,\ref{fig:3LvlModel}b shows an example where the three-level model tends to underestimate the resonance energy at higher intensities.
-This behavior is suggestive of additional interactions between the halo molecule state and one or more levels outside of our model.
+This behavior is suggestive of additional interactions between the halo molecule state and one or more levels outside of the model as it is formulated.
 
 We expect the predictive capability of the three-level system to prove useful for future studies of the $^{86}$Sr halo molecule.
 Although, the numerical time-evolution is intensive and would require solving multiple simulations when including the halo resonance energy in the development of future theories.
@@ -406,7 +407,7 @@ This yields $f_{\text{FCF}} = 0.03$.
 	  \caption{Observation of higher order Raman processes}{}
 	  \label{fig:highIntMultiPhoton}
 	\end{figure}
-In the regime of strongest coupling between the halo state and intermediate excited molecular state, we observe the emergence of higher order loss features absent in the typical $\Lambda$-model due to the separability of the excitation lasers. %where the lasers are well separated in frequency and therefore drive each transition independently.
+In the regime of strongest perturbation between the halo state and intermediate excited molecular state, we observe the emergence of higher order loss features absent in the typical $\Lambda$-model due to the separability of the excitation lasers. %where the lasers are well separated in frequency and therefore drive each transition independently.
 Fig.\,\ref{fig:highIntMultiPhoton} shows a series of spectra close to resonance which demonstrates the appearance of these loss features.
 At low-intensity a single prominent PAS lineshape around $\Delta_2 \approx -100$\,kHz is observed.
 Then, as the intensity is increased, the resonance energy of the primary loss feature, defined as $E_{b2}$, shifts significantly more deeply into the ground state potential.
@@ -426,17 +427,17 @@ This compliments previous work on the use of optical Feshbach resonances in stro
 
 Second, consideration of the peak loss positions in Fig.\,\ref{fig:highIntMultiPhoton} shows that each higher order process is related to the position of the primary loss by approximately $E_{b2}/2$. $E_{b2}/3$, $\dots$.
 This scaling suggests a non-linear process whereby multiple photons from the excitation light fields are absorbed and emitted to reach the final state.
-This is possible because of the small overall detuning, $\Delta_2$, and strong coupling between the halo and intermediate state.
+This is possible because of the small overall detuning, $\Delta_2$, and favorable coupling between the halo and intermediate state.
 This hypothesis can be tested using time-evolution of the three-level model to predict the spectra under similar conditions.
-Fig.\,\ref{fig:multiPhotonTheory} shows a schematic example of the multi-photon process as well as the result of the numerical evaluation for a selection of the strongly coupled spectra shown in the previous figure.
+Fig.\,\ref{fig:multiPhotonTheory} shows a schematic example of the multi-photon process as well as the result of the numerical evaluation for a selection of the spectra shown in Fig.\,\ref{fig:highIntMultiPhoton}.
 Despite its simplicity, the three-level model captures the relevant physics and accurately predicts the emergence of multi-photon loss features near the positions of the experimentally measured loss.
 %Such higher order process are therefore inherent in similar systems and are not due to the excitation to the halo molecule.
 Furthermore, at high-intensity, this model reproduces the symmetric lineshape profile indicating that power broadening is becoming the dominant source of the width.
 This shows that at high-intensity, the scattering nature of the problem, in which the initial state is embedded in a continuum of free atoms, is relatively unimportant.
 	\begin{figure} 
 	\centerline{
-	  \includegraphics[width=\textwidth]{higherOrderModel.pdf}}
-	  \caption{Multi-photon Raman processes}{a) The excitation process for observing multi-photon Raman processes. Shown is a 6-photon process which results in atom loss at $E_{b2}/3$ where $E_{b2}$ is the AC stark shifted halo molecule resonance energy of the fundamental process. b) Numerical simulation of the three-level model which reproduces the observed higher order loss processes.}
+	  \includegraphics[width=0.7\textwidth]{higherOrderModel.pdf}}
+	  \caption{Multi-photon Raman processes}{a) The excitation process for observing multi-photon Raman processes. Shown is a 6-photon process which results in atom loss at $E_{b2}'/3$ where $E_{b2}'$ is the AC stark shifted halo molecule resonance energy of the fundamental process. b) Numerical simulation of the three-level model which reproduces the observed higher order loss processes.}
 	  \label{fig:multiPhotonTheory}
 	\end{figure}
 
