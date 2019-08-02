@@ -1,6 +1,6 @@
 \chapter{Two-particle momentum probability distribution} \label{app:momDistDer}
 \section{Standard form} \label{sec:standardDist}
-The following is a derivation of two particle relative momentum probability distribution function when the single-particle kinetic energies are allowed to extend to infinity.
+The following is a derivation of two-particle relative-momentum probability distribution function when the single-particle kinetic energies are allowed to extend to infinity.
 A quick note on notation conventions, $f_p$ and $f_E$ are used to refer to the momentum and energy forms of the distributions respectively.
 Additionally, since we will be discussing the single-particle and two-particle distributions at length, each distribution is labeled by a subscript one or two so it is apparent what the physical system under consideration is.
 Function with hat accents ($\,\hat{ }\,$) are used to denote that they are truncated forms of the equation.
@@ -17,8 +17,8 @@ This distribution is valid for any momentum $\vec{p}$ under the requirement that
 \end{equation}
 
 Extension of this distribution into the two-particle regime may generally be complicated if a particle's trajectory is dependent on other particles trajectories (i.\,e.\;particles retain a "memory" of past collisions.) 
-If, however, we assume that particle collisions are rapid and therefore largely independent of one another, we can approximate the two-particle momentum distribution as the product of two single particle functions \cite{Chliamovitch2017,Ehrenfest2015}. 
-The two particle momentum distribution for a homogeneous system is then
+If, however, we assume that particle collisions are rapid and therefore largely independent of one another, we can approximate the two-particle momentum distribution as the product of two single-particle functions \cite{Chliamovitch2017,Ehrenfest2015}. 
+The two-particle momentum distribution for a homogeneous system is then
 \begin{equation}
 \label{eq:two_particle_prob}
 \begin{split}
@@ -37,7 +37,7 @@ From these equations we can use conservation of energy to determine the quadratu
 	\frac{p_1^2}{2m} + \frac{p_2^2}{2m} &= \frac{p_\text{C}^2}{2M} + \frac{p_\text{R}^2}{2\mu} \\
 	p_1^2 + p_2^2 &= \frac{p_\text{C}^2}{2} + 2 p_\text{R}^2
 \end{align*}
-Thus the two particle momentum probability distribution takes the form
+Thus the two-particle momentum probability distribution takes the form
 \begin{equation} \label{eq:two_particle_prob_inf_atomFrame}
 		 f_\text{p,two}( \vec{p}_\text{C}, \vec{p}_\text{R} ) = \left(\frac{1}{2 \pi M k_B T}\right)^{3/2} \left(\frac{1}{2 \pi \mu k_B T}\right)^{3/2} 
 		 \exp{\frac{-p_\text{C}^2}{2 M k_B T}} \exp{\frac{-p_\text{R}^2}{2 \mu k_B T}}
@@ -46,7 +46,7 @@ The relative collision energy distribution is found by integrating over the cent
 \begin{equation}
 \label{eq:relEnergy_inf}
 \begin{split}
-	\hat{f}_\text{p,two}(\vec{p}_{\text{R}}) &= \int d^3\vec{p}_\text{C} \, f_\text{p,two}(\vec{p}_\text{C},\vec{p}_\text{R}) \\
+	f_\text{p,two}(\vec{p}_{\text{R}}) &= \int d^3\vec{p}_\text{C} \, f_\text{p,two}(\vec{p}_\text{C},\vec{p}_\text{R}) \\
 	&= \left( \frac{1}{2 \pi \mu k_B T} \right)^{3/2} \exp{\frac{-p_\text{R}^2}{2 \mu k_B T}}
 \end{split}
 \end{equation}
@@ -60,7 +60,7 @@ Starting from Eq.\,\ref{eq:two_particle_prob}, the two-particle momentum distrib
 	\hat{f}_\text{p,two} (\vec{p}_1, \vec{p}_2) &= \mathcal{N} \left(\frac{1}{2 \pi m k_B T}\right)^3 \exp{ \frac{-(p_1^2 + p_2^2)}{2 m k_B T}} \\ &\quad\quad \times \heaviside{\epsilon_\text{max} - \frac{p_1^2}{2m}} \heaviside{\epsilon_\text{max} - \frac{p_2^2}{2m}}
 \end{split}
 \end{equation}
-We have modified the continuous distribution with a normalization constant $\mathcal{N}$ and Heaviside functions to enforce the truncation for each single particle kinetic energy.
+We have modified the continuous two-particle distribution, $f_\text{p,two}(\vec{p}_1,\vec{p}_2)$, with a normalization constant $\mathcal{N}$ and Heaviside functions to enforce the truncation for each single-particle kinetic energy.
 The truncation energy, $\epsilon_\text{max}$, is here consider to be the same for both particles.
 The normalization constant $\mathcal{N}$ is included to ensure that integration over the truncated probability distribution remains equal to one and will be found explicitly at the end of the derivation.
 %The Heaviside function also 
@@ -107,7 +107,7 @@ However, since $\cos\theta$ is symmetric we may eliminate one of the Heaviside's
 	 &\quad\quad \times \; \int_{0}^1 dX \int_0^{\infty} dp_\text{C} \; p_\text{C}^2 \; \exp{\frac{-p_\text{C}^2}{2 M k_B T}} \; \heaviside{\epsilon_\text{max} - \frac{p_\text{C}^2}{8m} - \frac{p_\text{R}^2}{2m} - \frac{p_\text{C} \, p_\text{R} X}{2m}}
 \end{split}
 \end{equation}
-At this point we can group the effects of truncation into a new function $\hat{\mathcal{G}}_\text{p}$ and rewrite using the continuous relative momentum probability distribution $f_\text{p,two}(\vec{p}_\text{R})$, Eq.\,\ref{eq:relEnergy_inf}.
+At this point we can group the effects of truncation into a new function $\hat{\mathcal{G}}_\text{p}$ and rewrite using the continuous relative-momentum probability distribution $f_\text{p,two}(\vec{p}_\text{R})$, Eq.\,\ref{eq:relEnergy_inf}.
 \begin{equation}
 \begin{split}
 	 \hat{f}_\text{p,two}(\vec{p}_{\text{R}}) &= \left(\frac{1}{2 \pi \mu k_B T}\right)^{3/2} \exp{\frac{-p_\text{R}^2}{2 \mu k_B T}} \hat{\mathcal{G}}_\text{p}(\epsilon_\text{max}, \vec{p}_\text{R}) \\
@@ -150,7 +150,10 @@ We can now determine the normalization constant $\mathcal{N}$ by requiring that
 where we have used an energy cutoff of $2 \, \epsilon_\text{max}$ since either particle may have an energy in the range $[0 \rightarrow \epsilon_\text{max}]$. 
 With the normalization, the complete expression for $\hat{f}_\text{E,two}(\epsilon)$ is then
 \begin{equation} \label{eq:truncRelDist}
-	\hat{f}_\text{E,two}(\epsilon) = \frac{2}{\sqrt{\pi}} \, \frac{\sqrt{\epsilon}}{(k_B T)^{3/2}} \, \exp{\frac{-\epsilon}{k_B T}} \, \hat{\mathcal{G}}_E(\epsilon_\text{max}, \epsilon)
+\begin{split}
+	\hat{f}_\text{E,two}(\epsilon) &= \frac{2}{\sqrt{\pi}} \, \frac{\sqrt{\epsilon}}{(k_B T)^{3/2}} \, \exp{\frac{-\epsilon}{k_B T}} \, \hat{\mathcal{G}}_E(\epsilon_\text{max}, \epsilon) \\
+	 &= f_\text{E,two}(\epsilon)\,\hat{\mathcal{G}}_E(\epsilon_\text{max}, \epsilon)
+\end{split}
 \end{equation}
 where all the effects of the truncation have been moved to $\hat{\mathcal{G}}_E$, given by 
 \begin{equation} \label{eq:truncWeighting}
@@ -160,7 +163,7 @@ where all the effects of the truncation have been moved to $\hat{\mathcal{G}}_E$
 	{\displaystyle \int_0^{2\,\epsilon_\text{max}} d \epsilon \frac{2}{\sqrt{\pi}} \, \frac{\sqrt{\epsilon}}{(k_B T)^{3/2}} \, e^{-\epsilon/k_B T} \int_0^1 dX \int_0^\infty d \mathcal{E} \, \frac{2}{\sqrt{\pi}} \, \frac{\sqrt{\mathcal{E}}}{(k_B T)^{3/2}} \, e^{-\mathcal{E} / k_B T} \heaviside{\epsilon_\text{max} - \frac{\mathcal{E} - \epsilon}{2} - X \sqrt{\mathcal{E} \,  \epsilon}}}
 \end{equation}
 As a check of the limiting behavior of $\hat{\mathcal{G}}_E$, we expect that $ \displaystyle \lim_{\epsilon_\text{max} \rightarrow \infty} \hat{\mathcal{G}}_E = 1$.
-This is simply a requirement that for single-particle distributions where the truncation is large, then the truncated distribution should approach the untruncated distribution. 
+This is simply a requirement that for single-particle distributions where the truncation value is large, then the truncated two-particle relative collision energy distribution should approach the continuous two-particle relative collision energy distribution. 
 This is trivial to verify, recalling that 
 \begin{equation}
 	\int_0^{\infty} dx \sqrt{x} e^{-x/x_0} = \frac{\sqrt{\pi}}{2} (x_0)^{3/2}
