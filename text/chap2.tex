@@ -27,22 +27,22 @@ Experiments begin by cooling and trapping atomic strontium utilizing well-establ
 Fig.\,\ref{fig:energyLevels} shows the simplified energy level diagram employed in our cooling process.
 The majority of cooling is done using 461\,nm light acting on the strong $5s^2\,^1S_0\,\rightarrow\,5s5p\,^1P_1$ transition.
 The excited state lifetime of 5\,ns ($\Gamma=1.9 \times 10^8$\,s$^{-1}$) and large energy separation between the states results in a hefty saturation intensity of 40.5 mW/cm$^2$ for this transition.
-Therefore laser powers on the order of $100\,$mW are necessary to produce large optical forces and rapid cooling rates.
+Therefore laser powers on the order of $100\,$mW are typically used to produce large optical forces and rapid cooling rates.
 Subsequent laser cooling on the narrow 689\,nm intercombination line along the $5s^2\,^1S_0\,\rightarrow\,5s5p\,^3P_1$ transition allows us to reach temperatures on the order of $1-2\,\mu$K using only optical forces.
 The $^3P_1$ state has a long lifetime of $21\,\mu$s ($\Gamma=4.7 \times 10^4$\,s$^{-1}$).
 Following the two laser cooling stages, we perform forced evaporation to obtain bulk samples in an optical dipole trap containing on the order of $10^6$ atoms at temperatures $<1\mu$K and densities between $10^{12} - 10^{15}\,$cm$^{-3}$ depending upon the isotope. 
 
 The laser cooling procedure is generally consistent for trapping all isotopes of strontium with the major difference being timescales and laser frequencies.
-The trapping protocol for the bosonic isotopes of strontium is nearly identical while fermionic $^{87}$Sr presents a greater challenge due to its high nuclear spin, $\vec{I}=9/2$.
+The trapping protocols for the bosonic isotopes of strontium are nearly identical while fermionic $^{87}$Sr presents a greater challenge due to its high nuclear spin, $\vec{I}=9/2$.
 For a thorough and detailed discussion of the relevant physics of trapping $^{87}$Sr, we refer the interested reader to the fermion portion of section 2.7.3 in the PhD thesis of Simon Stellmer \cite{SimonStellmer2013} and section 2.2.1 of Pascal Mickelson's PhD thesis \cite{Mickelson2010b}.
 
 %\noindent \rule{75pt}{0.5pt} \newline
-The trapping process begins with heating solid strontium in an oven to approximately 400 $^{\circ}$C. 
+In detail, the trapping process begins with heating solid strontium in an oven to approximately 400 $^{\circ}$C. 
 The resulting strontium vapor escapes through collimating tubes to produce a partially collimated beam with a mean velocity of $\sim$450\,m/s \cite{Mazurenko2010}.
 To aid in collimation, the atoms undergo a stage of transverse two dimensional optical molasses, this stage is known as 2D collimation.
 We typically observe a $7\times$ improvement in trapped atom number with the 2D collimator versus without.
 
-Upon entering the magnetic field of the Zeeman slower, the highest velocity atoms begin to scatter photons from the Zeeman beam, which is red detuned from the $^1S_0\,\rightarrow\,^1P_1$ transition by $\sim$16$\times$ the natural linewidth.
+Upon entering the magnetic field of the Zeeman slower, atoms begin to scatter photons from the Zeeman beam, which is red detuned from the $^1S_0\,\rightarrow\,^1P_1$ transition by $\sim$16$\times$ the natural linewidth.
 Large detunings help to eliminate unwanted photon scattering from the Zeeman beam once atoms have been sufficiently cooled and are accumulating in the MOT fields of the science chamber. 
 After reducing the atoms velocity down to $\sim$30 m/s, the atoms exit the Zeeman slower, pass through a minimum in the magnetic field\footnote{
 While the functioning of a Zeeman slower only relies on the magnitude of the B-field, the anti-Helmholtz MOT field and the decaying field outside of the Zeeman slower may lead to a local maximum or zero near the interface of the Zeeman and science chamber dependent on the orientation of the Zeeman B-field.
@@ -71,7 +71,7 @@ Repumping from the $^3P_2$ state is achieved via a $481\,$nm transition along th
 During the repumping exposure we continue to illuminate the cloud with $461\,$nm light but reduce the light intensity by an order of magnitude.
 We refer to this stage as the "cold" blue MOT and find that reduction of the intensity, while maintaining consistent laser detuning, significantly increases the transfer efficiency into the red MOT stage\footnote{We have explored ramping the laser intensity closer to atomic resonance as we expected reduced intensity at farther red-detuning to result in a weakened trapping force.
 However, we did not find any improvement with the added complexity of varying the blue laser frequency during this stage.}.
-At the conclusion of the $461\,$nm MOT and repumping phase, we typically have samples of a few million atoms at $\approx1\,$mK.
+At the conclusion of the $461\,$nm MOT and repumping phase, we typically obtain samples on the order of tens of millions of atoms at $\approx1\,$mK.
 
 Once the atoms have been returned to the ground state, we begin a second MOT stage using the intercombination transition $^1S_0\,\rightarrow\,^3P_1$ to cool below 1\,mK.
 Operation of this narrow-line MOT is quite different compared to typical dipole allowed MOTs due to the long lifetime of the excited state.
@@ -248,7 +248,8 @@ From here atoms pass through a narrow differential pumping tube and into the ent
 Following the Zeeman slower, atoms enter the science chamber where a plethora of lasers are used to manipulate and probe their behavior.
 Chief among these laser systems are the MOT beams and high-intensity far off-resonant optical dipole traps used for the final stage of confinement.
 Lastly, the body of the science chamber is supported by the cryo tower which houses a titanium sublimation cartridge (model: Varian 916-0061 series) and is the entry point for the Zeeman laser.
-It is worth explicitly noting that this Zeeman window is necessarily directly opposite the atomic source and therefore is subject to a flux of hot atomic strontium which will eventually coat the vacuum side. A brief note on a possible solution to this problem is explored at the end of this section.
+%It is worth explicitly noting that this Zeeman window is necessarily directly opposite the atomic source and therefore is subject to a flux of hot atomic strontium which will eventually coat the vacuum side. 
+%A brief note on a possible solution to this problem is explored at the end of this section.
 
 While the source and science chamber have remained largely unchanged since the publication of Natali de Escobar's thesis, several key improvements and events have occurred over the last few years\footnote{As of April 2019, the most up to date CAD drawing for the Neutral apparatus is located at \texttt{KillianDrobo:\textbackslash Neutral\textbackslash Laboratory Systems\textbackslash Vacuum Chamber\textbackslash Neutral Chamber\textbackslash 2017.12.26\_strontiumvacuum35\_latticetable.dwg}. Additionally, please consult the README file located in this folder for further information.}.
 The original drawings of these components can be found in App. A.10 of \cite{MartinezdeEscolar2010} along with detailed information on the window coatings.
@@ -306,7 +307,7 @@ While aligning we observed an unexpected partial occlusion of the Zeeman beam an
 We were not able to determine the severity of the misalignment since the tube is not easily accessible and replacement is problematic as the tube is attached to a copper gasket held between flanges connecting the atom source chamber and the 6-way tee of the 2D collimator. 
 The main readily measurable symptom is the occlusion of the Zeeman beam, which with an input power of $\sim$120\,mW before expansion optics and entering the chamber, only measures $\sim$60\,mW of transmitted power through the length of the vacuum system. 
 %A solution to bend the soft copper with a rod was proposed but abandoned due to concerns of cracking the thin copper.
-However, full repair of the tube would necessitate a drastic and practically infeasible deconstruction of the vacuum system.
+However, full repair of the tube would necessitate a drastic and practically infeasible reconstruction of the vacuum system.
 %our goal here is to document the issue for future students.
 %It is currently hypothesized that this problem is the primary cause of the much longer load times needed in the Neutral apparatus compared to the newly designed Rydberg machine.
 
@@ -353,7 +354,7 @@ The original assembly of this oven also incorporated a heat shield that would in
 \pagebreak
 \section{Laser systems}\label{sec:laser_systems}
 \setcounter{footnote}{0}
-The heart of any atomic physics experiment is the laser systems which form the basis for laser cooling and various probes.
+The heart of any atomic physics experiment is the laser systems that form the basis for laser cooling and various probes.
 Our lab has transitioned to primarily using diode laser system and relies heavily upon the use of injection locked master - slave setups.
 Below we will outline the specifics of our light generation setups.
 %In particular, future experiments on the Neutral apparatus aim to explore quantum magnetism using strontium 87 and as such we will emphasize several key changes which have been made to the 461 locking and 689 trapping systems to facilitate these experiments.
@@ -378,7 +379,7 @@ Table \ref{tab:461AOM} defines the shift variables used in these equations.
 \begin{landscape}
 \begin{table}[]
 \centerline{
-\resizebox{1.5\textwidth}{!}{%
+\resizebox{1.2\textwidth}{!}{%
 \begin{tabular}{@{}|l|c|c|c|c|l|l|l|@{}}
 \toprule
 \multicolumn{1}{|c|}{\textbf{Label}} & \textbf{Ind.} & \textbf{System} & \textbf{\begin{tabular}[c]{@{}c@{}}Shift\\ variable\end{tabular}} & \textbf{\begin{tabular}[c]{@{}c@{}}Nominal \\ Freq. {[}MHz{]}\end{tabular}} & \multicolumn{1}{c|}{\textbf{Freq. Source}} & \multicolumn{1}{c|}{\textbf{Freq. control}} & \multicolumn{1}{c|}{\textbf{AOM Model}} \\ \midrule
@@ -417,7 +418,7 @@ Fig.\,\ref{fig:922optical}\footnote{This figure, and related optical schematics 
 	\end{figure} 
 	
 Starting at the master output, the beam is shaped and sent through two optical isolators before it is coupled into an optical fiber.
-The fiber output immediately goes through an AOM which detunes the diffracted order by approximately 250\,MHz.
+The fiber output immediately goes through an AOM that detunes the diffracted order by approximately 250\,MHz.
 The diffracted and zeroth order are then separated with the unshifted beam sent towards the MOT generation subsystem and the shifted light towards the Zeeman subsystem.
 We find it necessary to include dual isolators in front of the master laser and have found that inadequate alignment of these isolators can lead to significant instability in the frequency of the master, which in turn may lead the doubling cavities to be unable to maintain a lock.
 
@@ -466,8 +467,8 @@ Details and pictures of the PZT replacement are available in App.\,\ref{app:922r
 \subparagraph{Sacher temperature setpoint:}
 %Unfortunately, the woes of the Sacher equipment have not been limited to their PZT controller.
 Care must be taken when attempting to change the set temperature of the laser diode as the internal potentiometer does not maintain full contact such that when attempting to turn it ever so slightly, the set point temperature may jump from $\sim$16 \degreeC to 11 \degreeC.
-Worse yet, we have observed that after changing the temperature there is a settling time during which the temperature setpoint may change while not be monitored.
-For these reasons we generally avoid touching this control as the present setpoint of 16.1 \degreeC is adequate and no major improvements have been found when changing this temperature.
+Worse yet, we have observed that after changing the temperature there is a settling time during which the temperature setpoint may change while not being monitored.
+For these reasons, we generally avoid adjusting this control, as the present setpoint of 16.1\,\degreeC is adequate and no major improvements have been found when verying this temperature setpoint.
 
 \subparagraph{Daily alignment:}
 The input coupler for the 922 cleanup fiber is not a reliable mount and tends to drift significantly from day-to-day.
@@ -699,7 +700,7 @@ Care should be taken when adjusting this alignment as the paths are highly coupl
 \subsubsection{Overview}
 Arguably the most important transition for strontium is the $^1S_0\,\rightarrow\,^3P_1$ intercombination line transition at 689\,nm.
 %The narrow linewidth of the intercombination transition makes it attractive for use in a variety of applications since it light scatter off this transtion can be detuned by thousands of %linewidths using conventional acouto-optic modulators.
-In addition to cooling and trapping, most experiments performed in our lab utilize this transition as the primary spectroscopic probe owing to the long lifetime of the excited states.
+In addition to cooling and trapping, most experiments performed in our lab utilize this transition as the primary spectroscopic probe owing to the long lifetime of the excited state.
 This allows for high precision measurements and large detunings using conventional techniques.
 This section describes the generation and trapping setups in use on the Neutral apparatus.
 The primary spectroscopy probe system and spin manipulation setup are outlined in section \ref{ssec:op_tools}.
@@ -762,20 +763,20 @@ From each choice of input frequency, the output of slave 0 is also shown relativ
 %This approach to sharing the 689 light is based on fixing the lock point of the 689 light and fiber coupling this fixed frequency light to the separate experiments. 
 
 	
-\subsubsection{689\,nm Master}
+\subsubsection{689\,nm master}
 Our master 689\,nm source is a Toptica DL-pro.
 This is a Littrow configuration ECDL which outputs $\sim$30\,mW of usable 689\,nm light past it's internal optical isolator.
 Fig.\,\ref{fig:689master}a shows how this power is distributed amongst the various subsystems and directed towards each laboratory.
-From the figure we see that the gigahertz AOM (AO1  is the first optic the light passes through since this AOM has a diffraction efficiency around $\sim$20\%.
+From the figure we see that the gigahertz AOM (AO1)  is the first optic the light passes through since this AOM has a diffraction efficiency around $\sim$20\%.
 The $\sim$6\,mW of shifted light is then split between the Neutral and Rydberg experiments where it is used to injection lock a dedicated slave diode used for the trapping MOT light needed for strontium-87.
 
 Following the GHz AOM, a series of waveplates and PBS cubes are used to apportion light to various fiber paths and laboratories.
 A beam sampler along the path directs light into a mode-cleaning fiber that outputs to the high-finesse cavity system and the remaining power ($\sim$2\,mW) is sent to a long heat pipe in order to interrogate the intercombination line transition.
 
-The moderate finesse cavity is used to narrow the laser linewidth using the Pound-Drever-Hall (PDH) technique.
-The cavity length is varied with a PZT to lock the laser laser frequency to the atomic transition via saturated absorption, as illustrated in Fig.\,\ref{fig:689master}b.
+The narrow linewidth cavity is used to narrow the laser linewidth using the Pound-Drever-Hall (PDH) technique.
+The cavity length is varied with a PZT to lock the laser frequency to the atomic transition via saturated absorption, as illustrated in Fig.\,\ref{fig:689master}b.
 The atomic error signal is generated using standard frequency modulated Doppler-free saturated absorption where frequency modulation is performed via fast switching ($\sim$11\,kHz) of the RF drive frequency applied to AO2.
-The narrowing cavity is discussed in detail in Natali de Escobar's thesis and has remained unchanged since her publication\footnote{As of April 2019, a ultra-low expansion cavity system is being implemented and tested to replace our homemade HF cavity.}.
+The narrowing cavity is discussed in detail in Natali de Escobar's thesis and is unchanged since her publication\footnote{As of April 2019, a ultra-low expansion cavity system is being implemented and tested to replace our homemade HF cavity.}.
 %
 %A major difference compared to the 461 sat. abs. is the absence of a second probe beam used to subtract off the Doppler broadened profile.
 %This is possible since the Doppler broadened profile is approx. 1 GHz compared to the natural line width of 7.5 kHz so any curvature due to the Doppler profile is not significant over the narrow linewidth.
@@ -997,7 +998,7 @@ Comparing Eqs.\,\ref{eq:potProp} \& \ref{eq:scatRateProp}, we find a favorable s
 
 The spatial dependence of $U(\vec{r})$ derives from the TEM$_{00}$ Gaussian intensity profile of the incident lasers given by
 \begin{equation} \label{eq:gaussInt}
-	I(r,z) = \frac{2P}{\pi w(z)^2} \exp{\frac{-2 r^2}{w(z)^2}}
+	I(r,z) = \frac{2P}{\pi w(z)^2} \, \exp{\frac{-2 r^2}{w(z)^2}}
 \end{equation}
 where $z$ is oriented along the beam propagation axis and $r$ is transverse to this axis.
 Additionally, $P$ is the incident laser power, $w_0$ is the waist radius at $z=0$, and the axial profile $w(z)$ is given by
@@ -1009,8 +1010,8 @@ where $\lambda$ is the laser wavelength.
 Combining Eqs.\,\ref{eq:potProp} \& \ref{eq:gaussInt} we find the three dimensional potential generated by two orthogonal lasers to be
 \begin{equation} \label{eq:indArmPot}
 \begin{split}
-	U(x,y,z) = m g z + \frac{\alpha(\lambda)}{2 \epsilon_0 c} \frac{2}{\pi} \left[ \frac{P_1}{w_1^y(x)\, w_1^z(x)} \exp{\frac{-2 (y^2+z^2)}{[w_1^y(x)]^2 \,[w_1^z(x)]^2}} + \right. \\
-	\left. \frac{P_2}{w_2^x(y)\, w_2^z(y)} \exp{\frac{-2 (x^2+z^2)}{[w_2^x(y)]^2\,[w_2^z(y)]^2}} \right]
+	U(x,y,z) = m g z + \frac{\alpha(\lambda)}{2 \epsilon_0 c} \frac{2}{\pi} \left[ \frac{P_1}{w_1^y(x)\, w_1^z(x)} \, \exp{\frac{-2 (y^2+z^2)}{[w_1^y(x)]^2 \,[w_1^z(x)]^2}} + \right. \\
+	\left. \frac{P_2}{w_2^x(y)\, w_2^z(y)} \,\exp{\frac{-2 (x^2+z^2)}{[w_2^x(y)]^2\,[w_2^z(y)]^2}} \right]
 \end{split}
 \end{equation}
 where $mgz$ accounts for the influence of gravity on the atoms of mass $m$, labels $1,2$ specify the two intersecting laser, i.e. the load and sheet traps as illustrated in Fig.\,\ref{fig:odtSchematic}, $\alpha(\lambda)$ is the AC polarizability of the ground state at a given wavelength, $\epsilon_0$ is the vacuum permittivity, and $c$ is the speed of light.
@@ -1023,12 +1024,12 @@ Fig.\,\ref{fig:trapDepth}a shows the effects of gravity considering a simple one
 	\begin{figure} 
 		\centerline{
 		\includegraphics[width=\textwidth]{1064_trapDefs.pdf}}
-		\caption{Modeling an optical dipole potential}{a) A one-dimensional view along the trap axis parallel to gravity. The trap depth is defined between the trap minimum and the nearest saddle point. Also shown is the harmonic approximation used for defining trap frequencies. b) A pseudo-color volumetric plot of a three-dimensional potential. Here we see a saddle point similar to the 1D case along $X=0$ but there is also a lower saddle point indicated by the black arrows.}
+		\caption{Modeling an optical dipole potential}{a) A one-dimensional view along the trap axis parallel to gravity. The trap depth is defined between the trap minimum and the nearest saddle point. Also shown is the harmonic approximation used for defining trap frequencies. b) A pseudo-color volumetric plot of a three-dimensional potential. Here we see a saddle point similar to the 1D case along $X=0$ (dashed black line) but there is also a lower saddle point indicated by the black arrows.}
 		\label{fig:trapDepth}
 	\end{figure}
 Here we've chosen a general form of the Gaussian for illustrative purposes.
 From the figure we see that, due to gravity, there is a maximum energy of the trap at $U_{\text{max}}$.
-Particles with energy above $U_{\text{max}}$ are not effected by the trapping potential and will fall under the influence of gravity.
+Particles with energy above $U_{\text{max}}$ will fall under the influence of gravity.
 We may then define a trap depth $U_{\text{depth}} = U_{\text{max}} - U_{\text{min}}$, where $U_{\text{min}}$ is the minimum energy of the trap.
 Fig.\,\ref{fig:trapDepth}b illustrates a realistic three-dimensional profile of an optical trap.
 From the 3D profiles, we find the maximum trappable energy $U_{\text{max}}$ is given by a saddle point that may not be along the $X=0$ line.
@@ -1227,9 +1228,9 @@ Much of the imaging sequence is a standard procedure, however, day to day operat
 When taking images, we measure the optical depth to extract the properties of the atomic cloud.
 Sec.\,\ref{ssec:tof} will develop the theoretical approach for determining these properties.
 For now, we take as a given that each experimental sequence acquires one image with the atoms in frame and another background image without the atoms.
-In the ideal scenario these two images would be identical except in the region of the atom cloud, allowing us to easily fit an infer properties about the gas.
+In the ideal scenario, these two images would be identical except in the region of the atom cloud, allowing us to easily fit and infer properties about the gas.
 Practically, we must wait for the atoms to exit the frame before taking a background image.
-This introduce a time delay between the consecutive images, which we seek to minimize.
+This introduces a time delay between the consecutive images, which we seek to minimize.
 For this reason we utilize a special feature of the PixelFly called "double-shutter" mode.
 This particular imaging mode of the camera utilizes a second hidden set of pixels that are interleaved with the active pixels of the CCD.
 Typically the acquisition time between consecutive images taken with a CCD is limited by the analog-to-digital conversion time needed to readout the image from the pixels into the camera's memory.
@@ -1252,10 +1253,11 @@ We found two AOM's necessary to attenuate leakage light along the path to accept
 Great care is taken to reduce the time between images since the laser intensity and frequency might drift between the atom and background images. 
 Variations in intensity have straightforward implications for errors in measuring the optical depth since the characterization of the atomic number density assumes the only difference between the images is due to the presence of scattering particles and does not account for fluctuating photon number. 
 
-A more insidious source of error in is variation of the optical frequency. 
-Coherent, frequency-stabilized radiation is used to illuminate the atom cloud so that we may control the optical absorption cross section and accurately model the atomic number density. 
-However, this laser light is passed through many optical components on it's path to the atoms and ultimately the imaging camera. 
-Small reflections along this path result in a multitude of interferometers that cause small scale spatial intensity variation across the beam. 
+A more insidious source of error is the appearance of fringes in the images that are processed.
+These fringes are caused by the use of coherent, frequency-stabilized radiation that is used to illuminate the atom cloud in order to control the optical absorption cross section.
+This laser light may interfere with itself through a variety of processes due to being passed through numerous optical components on it's path to the atoms and ultimately the imaging camera.
+Most readily, slight variation of the optical path length due to vibrations of optical elements during imaging may result in interference patterns as the optics must move only on the order of the wavelength of the imaging light to cause interference.
+Additionally, small reflections along the path can result in a multitude of interference paths that cause small scale spatial intensity variation across the beam. 
 Exacerbating this problem are short time frequency drifts that may occur between the atom and background images that result in slightly different fringe patterns in the atom and background images. 
 Fringes patterns are a well known nuisance in experimental AMO images and it has become routine to use linear algebra techniques (PCA, ICA, etc.) to create a composite background image for each atom image during analysis in order to create a higher quality image of the optical depth \cite{Segal2009}.
 A brief discussion of the principal component analysis (PCA) algorithm employed by the Neutral analysis routine is outlined below.
@@ -1296,7 +1298,7 @@ These include the development of an infinite sample and hold for intensity stabi
 
 \subparagraph{Infinite sample and hold:} \label{sec:infSH}
 The infinite sample and hold (ISH) circuit is used in conjunction with an intensity stabilization lock circuit and was built to allow for intensity stabilized pulses on timescales much faster then the acquisition time of the intensity lock circuitry, typically $\sim$70\,ms.
-This circuit was developed and built by Josh Hill and is based on the LTC1417 which is a low power 14-bit 400\,kS/s ADC.
+This circuit was developed and built by Josh Hill and is based on the LTC1417, which is a low power 14-bit 400\,kS/s ADC.
 %Details of the circuit construction and characterization are left to Josh's forthcoming thesis.
 
 The ISH is currently placed on our spectroscopy probe and is situated between the intensity stabilization lock circuit and RF voltage controlled attenuator.
@@ -1307,7 +1309,7 @@ A timing diagram of the infinite sample and hold usage is outlined in Fig.\,\ref
 	\begin{figure}
 	\centerline{
 		\includegraphics[height=0.25\textheight]{689_specInfSH.png}}
-		\caption{Infinite sample and holding timing diagram}{The HDD shutter in use has a full open time of $\sim$15\,ms and the acquisition time of the sample and hold chip is on the order of $\sim$500\,ns.}
+		\caption{Infinite sample and holding timing diagram}{The HDD shutter in use has a full open time of $\sim$15\,ms and the acquisition time of the sample and hold chip is on the order of $\sim$3\,$\mu$s.}
 		 \label{fig:689specInfSH}
 	\end{figure}
 Following our typical preparation sequence we place the ISH in sample mode and enable the spectroscopy probe with the HDD shutter blocking the beam. 
@@ -1339,13 +1341,13 @@ The slave ECDL, beatnote generation, and phase locked loop (PLL) integrated circ
 %We will leave the detailed description of the Neutral implementation for Josh's forthcoming thesis and instead reserve our current discussion to an overview of the technique.
 It is based on the 2009 work of Appel et al.\,\cite{Appel2009} which outlines a versatile optical phase locked loop with a claimed frequency range of sub-MHz to 7\,GHz.
 
-As a brief reminder, phase locking is a feedback scheme which seeks to maintain the a fixed and phase relationship frequency between two sources.
+As a brief reminder, phase locking is a feedback scheme that seeks to maintain a fixed phase relationship (and frequency difference) between two frequency sources.
 This process is heavily used in the telecommunications industry and analog phase locking is a common technique in atomic physics laboratories as well.
 In atomic physics, the general idea is to generate a beatnote by interfering two single frequency lasers on a high bandwidth photodiode.
 From this optical beatnote we observe the difference frequency of the two lasers as the summing frequency is well outside the bandwidth of photodiodes.
 The difference frequency can then be further interfered against an RF reference frequency and low-passed to generate an error signal that can be used to stabilize the difference frequency against the RF reference.
 
-The versatile OPLL is a digital realization of this approach which, we have used to lock the relative frequency difference between the Toptica master and slave ECDL from approximately 1\,MHz to 1.2\,GHz.
+The versatile OPLL is a digital realization of this approach that we have used to lock the relative frequency difference between the Toptica master and slave ECDL from approximately 1\,MHz to 1.2\,GHz.
 The upper limit is currently bandwidth limited by our AC coupled photodiode and not by the OPLL circuitry.
 Fig.\,\ref{fig:offsetDetails}a shows an example of the optical beatnote monitored via an RF spectrum analyzer.
 Notably, while we do observe suppression of frequency components around the set point which is characteristic of locking, we also see resonant peaking instead of a single narrow frequency peak as expected.
@@ -1353,7 +1355,7 @@ Further investigations showed that the individual frequencies were fairly narrow
 	\begin{figure}
 	\centerline{
 		\includegraphics[width=\textwidth]{689_offsetLockCharacterization.png}}
-		\caption{Characterization of the OPLL performance}{a) RF spectrum of the optical beatnote when the OPLL is engaged. Resonant peaking can be seen in the 500\,kHz band around the center frequency. b) Atom loss spectrum which shows that the central peak is narrow. Differences between the AOM detuning shown and the center frequency of the OPLL are due to various AOM shifts between components.}
+		\caption{Characterization of the OPLL performance}{a) RF spectrum of the optical beatnote when the OPLL is engaged. Resonant peaking can be seen in the 500\,kHz band around the center frequency. b) Atom loss spectrum showing that the central peak is narrow. Differences between the AOM detuning shown and the center frequency of the OPLL are due to various AOM shifts between components.}
 		 \label{fig:offsetDetails}
 	\end{figure}
 
@@ -1377,9 +1379,9 @@ The RF tunability for optical pumping is based on the "table mode" feature of th
 In concert, these devices allow us to, for instance, polarize to the $^1S_0\,(F=9/2, m_F=9/2)$ using $\sigma+$ and once polarized use the LCR to rotate the light polarization to $\sigma-$ and probe the polarized ground state along the $^1S_0\,(F=9/2,m_F=9/2)\,\rightarrow\,^3P_1\,(F'=9/2,m_F=7/2)$.
 
 An example spectrum where we demonstrate optical pumping of 6 states is given in Fig.\,\ref{fig:spinPolSpectra}. 
-For this experiment we applied a large bias field $\sim5\,G$ and performed optical pumping on each $m_F$ level for 2\,ms with a $1\,$ms hold between each level.
-Thus, the spin-polarization laser was stepped through 6 different $m_F$ resonance frequencies as determined by the "no pumping" spectrum.
-After pumping, the laser was then set to a frequency as shown along the x-axis to probe the population of each level via shelving population to the $^3P_1 (F=9/2)$ state for $9\,mu$s and blowing away the remaining ground state atoms with a $1\,mu$s pulse of $461\,$nm light\footnote{More details may be found in OneNote under 87Sr Spin Manipulation. These experiments were performed on 2018.02.22.}.
+For this experiment, we applied a large bias field of $\sim5\,G$ and performed optical pumping on 6 $m_F$ levels for 2\,ms with a $1\,$ms decay time between pumping each level.
+The spin-polarization laser frequency was stepped through the 6 different $m_F$ resonance frequencies in the "pump experiment" as was determined from the "no pumping" spectrum.
+After pumping, the laser was then set to a frequency as shown along the x-axis in order to probe the population of each level via shelving population to the $^3P_1 (F=9/2)$ state for $9\,\mu$s and blowing away the remaining ground state atoms with a $1\,\mu$s pulse of $461\,$nm light\footnote{More details may be found in OneNote under $^{87}$Sr Spin Manipulation. These experiments were performed on 2018.02.22.}.
 	\begin{figure}
 	\centerline{
 		\includegraphics[width=\textwidth]{misc_spinPolarization.png}}
@@ -1397,22 +1399,7 @@ After pumping, the laser was then set to a frequency as shown along the x-axis t
 The Neutral apparatus interfaces to our digital infrastructure via specialized hardware implementations and custom written software.
 Over the last seven years nearly all of this digital infrastructure has been refactored, upgraded, or replaced.
 Therefore, the following sections will briefly outline these new constructs, providing references to code repositories when possible.
-However, detailed discussions on the usage of this infrastructure will be relegated to their respective appendices.
-
-\subsection{Software} \label{ssec:soft_sys}
-The primary control software is a custom built Labview application based on a synchronous state machine\footnote{Currently this project can be found at \texttt{https://github.com/KillianRice/neuKlein}}.
-The Neutral implementation of this software is called neuKLEIN (Neutral Killian Lab Experimental Interface) and is based on a major overhaul, by Joe Whalen, of the original control software.
-%A detailed overview of the capabilities, limitations, and instructions for use of neuKLEIN is available in App. \ref{app:neuKLEIN}.
-
-In short, an experimental sequence begins with serially programming each voltage output device.
-The pulseblasters are programmed last and are triggered via the global experimental trigger discussed in \ref{sec:expTrig} below.
-Once all devices are ready the pulseblasters become the global clock and the neuKLEIN software begins polling the PixelFly camera waiting for a new image.
-Once an image is received various experimental parameters are recorded into text files and saved to disk.
-This process continues within the primary WHILE loop of the state machine and steps through the predetermined experimental settings array.
-Primary exit conditions for the loop are encountering an error, conclusion of the settings array, or manual abortion.
-
-Once the files are written to disk, we perform image analysis using a custom Matlab$^{TM}$ routine imaginatively named Neutral imagefit routine\footnote{Currently this project can be found at \texttt{https://github.com/KillianRice/neutral\_imagefit\_routine}}.
-%An in-depth discussion on the usage, extensibility, limitations, and feature improvements is available in App.\,\ref{app:imagefitManual}.
+%However, detailed discussions on the usage of this infrastructure will be relegated to their respective appendices.
 
 \subsection{Hardware control and measurement systems} \label{ssec:comp_sys}
 The hardware control system is composed of several primary components including the experimental clock, voltage output devices, and measurement instruments.
@@ -1453,7 +1440,7 @@ For short times, the maximum sample rate sets the minimum possible time step bet
 At long times, a fixed number of points between the start and end points may lead to unacceptably large voltage steps between two points on the voltage output.
 Balancing these two tradeoffs is essential and is the primary driver for the plethora of various cards so that we may dedicate their finite resources to specific tasks.
 
-While arbitrary waveform generation is useful for dynamically varying voltages during an experimental sequence, there are a number of applications where a static voltage is needed or smoothly varying between two or more voltages is not required.
+While arbitrary waveform generation is useful for dynamically varying voltages during an experimental sequence, there are a number of applications where a static voltage is needed, or smoothly varying between two or more voltages is not required.
 Until recently, the NI-6713 was our only source of experimentally controlled static voltages (in contrast to a static voltage from a supply) and switching between driving voltages was done via a bank of standalone fast analog IC switches (primarily the ADG419).
 Fast switching of the set point voltage has traditionally been how we control a number of systems through their feedback circuitry.
 For example, the 922\,nm frequency is jumped from the optimal trapping frequency to the optimal imaging frequency at the end of the experimental sequence via the saturated absorption cell solenoid current.
@@ -1464,10 +1451,25 @@ These shortcomings led us to develop a real-time based NI-FPGA for the developme
 This system is based on a NI cRIO-9063 with integrated Artix-7 FPGA, a NI-9403 32ch TTL input/output (I/O) module, and a NI-9264 16ch analog output module.
 The cRIO device manages the control layer of the system, hosts the embedded operating system and allows us to easily develop, compile, and deploy our custom control logic to the FPGA via Labview.
 The FPGA (field programmable gate array) executes the user-defined logic on a user-defined loop-time (minimum 50\,$\mu$s.) with the 32 TTL I/O channels and 16 analog output available for reading and writing each cycle.
-We typically do not use the output functionality of the TTL channels and instead opt for 32 input channels which can be dynamically assigned to control the 16 analog outputs.
+We typically do not use the output functionality of the TTL channels and instead opt for 32 input channels that can be dynamically assigned to control the 16 analog outputs.
 These analog outputs may be conditioned as static, simple switched, cascading switched, or simple boolean controlled outputs all configurable via software.
 Additional features include logic inputs which can be shared to multiple outputs and simple waveform generation such as linear ramps.
 %Detailed schematics of the input/output conditioning circuits as well as limitations, capabilities, and usage instructions are available in App. \hl{somethign}.
+
+\subsection{Software} \label{ssec:soft_sys}
+The primary control software is a custom built Labview application based on a synchronous state machine\footnote{Currently this project can be found at \texttt{https://github.com/KillianRice/neuKlein}}.
+The Neutral implementation of this software is called neuKLEIN (Neutral Killian Lab Experimental Interface) and is based on a major overhaul, by Joe Whalen, of the original control software.
+%A detailed overview of the capabilities, limitations, and instructions for use of neuKLEIN is available in App. \ref{app:neuKLEIN}.
+
+In short, an experimental sequence begins with serially programming each voltage output device.
+The PulseBlasters are programmed last and are triggered via the global experimental trigger discussed in \ref{sec:expTrig} below.
+Once all devices are ready the PulseBlasters become the global clock and the neuKLEIN software begins polling the PixelFly camera waiting for a new image.
+Once an image is received various experimental parameters are recorded into text files and saved to disk.
+This process continues within the primary WHILE loop of the state machine and steps through the predetermined experimental settings array.
+Primary exit conditions for the loop are encountering an error, conclusion of the settings array, or manual abortion.
+
+Once the files are written to disk, we perform image analysis using a custom Matlab$^{TM}$ routine imaginatively named Neutral imagefit routine\footnote{Currently this project can be found at \texttt{https://github.com/KillianRice/neutral\_imagefit\_routine}}.
+%An in-depth discussion on the usage, extensibility, limitations, and feature improvements is available in App.\,\ref{app:imagefitManual}.
 
 \subsection{Ancillary laboratory systems} \label{ssec:misc_sys}
 %\subsubsection{MOT coils}
@@ -1524,14 +1526,14 @@ Fig.\,\ref{fig:zeroCrossTrig} shows the circuit used to start the Neutral experi
 	\begin{figure}
 		\centerline{
 		\includegraphics[width=\textwidth]{misc_acZeroCrossingSyncTrigger.png}}
-		\caption{Circuit diagram of the zero crossing AC line trigger}{Top - 120\,Hz square wave pulser which generates a short pulse on the 60\,Hz zero crossing. Bottom - Synchronizer circuit between both pulseblasters, an optional experiment-ready trigger (which ensures the atom shutter is open), and the AC zero-crossing trigger. Trigger input is from the top circuit and is used with the 555 timer in a one-shot configuration. This ensures only every other pulse from the AC trigger produces a TTL high output past the AND gate V1/3.}
+		\caption{Circuit diagram of the zero crossing AC line trigger}{Top - 120\,Hz square wave pulser which generates a short pulse on the 60\,Hz zero crossing. Bottom - Synchronizer circuit between both PulseBlasters, an optional experiment-ready trigger (which ensures the atom shutter is open), and the AC zero-crossing trigger. Trigger input is from the top circuit and is used with the 555 timer in a one-shot configuration. This ensures only every other pulse from the AC trigger produces a TTL high output past the AND gate V1/3.}
 		\label{fig:zeroCrossTrig}
 	\end{figure} 
-It is based on deriving a TTL pulse at the positive-going zero crossing of the 60\,Hz building line.
-Manual triggering is essential since we do not share the same clock source between the two independent pulseblasters (PB0\,\&\,PB1).
+It is based on deriving a TTL pulse at the positive-going zero crossing of the 60\,Hz building-wide line.
+Manual triggering is essential since we do not share the same clock source between the two independent PulseBlasters (PB0\,\&\,PB1).
 Instead relying on their relative precision and low timing jitter to maintain experimental synchronicity when triggered from a shared source.
 
-Fig.\,\ref{fig:pbTimingJitter} shows a comparison of the timing uncertainty when a short $200$\,ns pulse is output from both pulseblasters and the oscilloscope is triggered from the zero crossing of the AC line.
+Fig.\,\ref{fig:pbTimingJitter} shows a comparison of the timing uncertainty when a short $200$\,ns pulse is output from both PulseBlasters and the oscilloscope is triggered from the zero crossing of the AC line.
 	\begin{figure}
 		\centerline{
 		\includegraphics[width=\textwidth]{misc_PB_TriggerJitter.png}}
@@ -1548,7 +1550,7 @@ We account for and mitigate this instability by taking care to trigger all relat
 This is similarly related to the discretization and finite sampling rate of the DAQ cards, whereby dependent on the dynamics under investigation, small errors in timing between the DAQ clock or sampling rate and PulseBlaster clock(s) may lead to significant variation in the observed behavior of the sample.
 
 
-%this behavior precludes the usage of cross-triggers\footnote{Cross-triggers are defined as the mixing of timing signals between the two pulseblasters.} between the pulseblasters when performing experiments with the optical lattice.
+%this behavior precludes the usage of cross-triggers\footnote{Cross-triggers are defined as the mixing of timing signals between the two PulseBlasters.} between the PulseBlasters when performing experiments with the optical lattice.
 %This is due to the short timescales which 
 %For instance, using PB0 to trigger the turn off lattice arm A and PB1 to trigger arm B.
 
@@ -1556,7 +1558,7 @@ We choose to trigger off the building wide $60$\,Hz line in order to maintain a 
 This is thought to act as a common-mode rejection of electrical noise that could couple into our measurements via intensity or frequency noise.
 Although, we have not rigorously evaluated this hypothesis and no significant change was observed when changing the global experimental trigger.
 
-Finally, the additional logic gates ensure that the pulseblasters trigger at the same time since they are programmed serially by the neuKLEIN software.
+Finally, the additional logic gates ensure that the PulseBlasters trigger at the same time since they are programmed serially by the neuKLEIN software.
 This process is enabled by a WAIT signal that each PulseBlaster outputs when in this state, which is used to ensure proper initialization of the system before starting an experimental sequence.
 
 \subsubsection{Pneumatic actuated mirror mounts}

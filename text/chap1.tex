@@ -4,7 +4,7 @@ When approaching any new problem or system, a great deal of insight may be achie
 For the field of ultracold atomic physics, this extreme has been the pursuit of near zero-energy atomic and molecular gases, which has proven to be an incredibly fruitful endeavor.
 Specifically, the development of ultracold and quantum degenerate neutral gases has allowed us to consider the quantum nature of matter, and its interaction with external fields, in the few-body and many-body regimes \cite{gps08,Kohler2006,wbz99,ccg11,swm10,bdz08,Chin2010,Bertelson2007,mmn11,bdz08}.
 
-Rapid advancement in the ability to laser cool and trap atoms \cite{mvs99,mvs99,psm02} has led to a number of notable achievements in recent years, including the creation of novel macroscopic states of quantum matter such as Bose-Einstein condensates (BEC) and degenerate Fermi gases \cite{aem95,Bradley1995,dma95,DeMarco1999,zhg03,MartinezdeEscolar2010,Mickelson2010ja,dym10,stg10}, the observation of the BEC-BCS crossover and quantum phase transitions \cite{rgj04,zss04,cba04Science,Bourdel2004,grj03,gme02,jsg08,Snoke2002,zbb14}, as well as the formation of macroscopic ensembles of ro-vibrational ground state molecules \cite{rtb03,Jones2006, Reinaudi2012,Stellmer2012,nom08,Lang2008}.
+Rapid advancement in the ability to laser cool and trap atoms \cite{mvs99,mvs99,psm02} has led to a number of notable achievements in recent years, including the creation of novel macroscopic states of quantum matter such as Bose-Einstein condensates (BEC) and degenerate Fermi gases \cite{Truscott2001,aem95,Bradley1995,dma95,DeMarco1999,zhg03,MartinezdeEscolar2010,Mickelson2010ja,dym10,stg10}, the observation of the BEC-BCS crossover and quantum phase transitions \cite{rgj04,zss04,cba04Science,Bourdel2004,grj03,gme02,jsg08,Snoke2002,zbb14}, as well as the formation of macroscopic ensembles of ro-vibrational ground state molecules \cite{rtb03,Jones2006, Reinaudi2012,Stellmer2012,nom08,Lang2008}.
 
 Each of these successes has been enabled by taking advantage of the precision control and manipulability that is accessible in ultracold atomic gases.
 In particular, the use of external fields to dynamically influence the evolution and occupation of quantum states within an atomic gas has become an invaluable addition to the atomic physicist's toolbox \cite{Chin2010}.
@@ -14,7 +14,7 @@ By absorbing one or more photons from the light field(s), the initially free ato
 	\begin{figure} 
 		\centerline{
 		\includegraphics[width=0.6\textwidth]{PAschematic.pdf}}
-		\caption{The photoassociation process}{Two atoms colliding with energy, E$_\text{atom}$, on a ground state potential in the presence of a photoassociation light field of frequency, $\omega_p$. This process will associate the two free atoms when the photoassociation light energy matches the energy difference between the incoming state and excited molecular state, $\hbar \omega_\text{p} = \hbar \omega_\text{free} - \hbar \omega_\text{bound}$.}
+		\caption{The photoassociation process}{Two atoms colliding with energy, E$_\text{atom}$, on a ground state potential in the presence of a photoassociation light field of frequency, $\omega_p$. This process will associate the two free atoms when the photoassociation light energy matches the energy difference between the incoming state and excited molecular state. The binding energy of the excited molecular state s defined with respect to the free-particle asymptote as $E_\text{bind} = \hbar (\omega_\text{free} - \omega_\text{bound})$.}
 		\label{fig:1pasSch}
 	\end{figure}
 For neutral atoms, interactions between particles occur primarily at interparticle separations $<\!100\,\text{a}_0$, where $\text{a}_0$ is the Bohr radius \cite{Chin2010}.
@@ -34,15 +34,15 @@ Using photoassociative spectroscopy in ultracold gases, the binding energy of mo
 These measurements reveal details about the short-range interaction potential between atoms and may be used to determine parameters such as the interparticle scattering length that characterizes the free-atom scattering behavior.
 
 By adding an additional light field, two-photon photoassociation may be used to populate excited molecular states of the ground state potential.
-This technique has proven to be an incredibly precise way to discern information about the collisional properties of ultracold atomic gases \cite{MartinezDeEscobar2008, Aman2018}.
+This technique has proven to be an incredibly precise way to discern information about the collisional properties of ultracold atomic gases \cite{PhysRevLett.74.1315,MartinezDeEscobar2008, Aman2018}.
 
 However, the direct coupling of free atoms to the most deeply bound molecular states is not an efficient process and generally requires the use of additional photoassociative steps.
-These may include STIRAP or preferential decay from excited-molecular states as has been recently demonstrated \cite{Reinaudi2012, cbc17, Stellmer2012, Ciamei2017}.
+These may include stimulated raman adibatic passage STIRAP or preferential decay from excited-molecular states as has been recently demonstrated \cite{Reinaudi2012, cbc17, Stellmer2012, Ciamei2017, RevModPhys.89.015006}.
 Ro-vibrational ground state molecules are interesting as their use has been proposed for precision measurements of variations of the proton-electron mass ratio \cite{zky08, Kotochigova2009} and the fine structure constant \cite{Beloy2011}. 
 
 
 \section{Halo molecules} \label{sec:halo}
-For some atomic species, external magnetic fields may be used to create weakly-bound molecular states through the use of magnetic Feshbach resonances \cite{Kohler2006, Chin2010}.
+For some atomic species, external magnetic fields may be used to create weakly-bound ground state molecular states through the use of magnetic Feshbach resonances \cite{Kohler2006, Chin2010}.
 These scattering resonances are the result of coupling between free scattering states (called open channels) and bound states (closed channels) where the scattering and bound states lie on two separate atomic interaction potentials with differential magnetic moments.
 When the closed channel is swept through the threshold energy of the open channel, a weakly-bound molecular state known as a Feshbach molecule is formed \cite{cbk03, grj03,hkm03,rtb03,sph03}.
 Additionally, if these Feshbach molecules are created with the closed channel just below threshold they behave as exotic long-range molecules known as halo molecules \cite{Kohler2006}.
@@ -56,7 +56,7 @@ where $\mu$ is the reduced mass of the atom pair.
 	\begin{figure}
 		\centerline{
 		\includegraphics[width=\textwidth]{86halo.pdf}}
-		\caption{$^{86}$Sr$_2$ halo radial wavefunction}{The extent of the strontium-86 halo radial wavefunction, $R(r)$, is shown compared to ground state potential. The complete bound state wavefunction is given by $\psi(\vec{r})=Y_{0,0}(\theta,\phi)\frac{R(r)}{r}$, where $Y_{l,m}(\theta,\phi)$ is the spherical harmonic. The radial Schr\"{o}dinger equation is solved for $R(r)$ using the Johnson renormalized Numerov method \cite{Gibson2016, Johnson1978} with the X$^1\Sigma_g^+$ potential from Ref.\,\cite{Stein2010}. The vertical dashed line is placed at the classical turning point $r_\text{classical} \approx 260$\,a$_0$. Note, the difference in energy scales between the top and bottom plots. The wavefunction normalization applied to each plot is arbitrary and only for illustrative purposes.}
+		\caption{$^{86}$Sr$_2$ halo radial wavefunction}{The extent of the strontium-86 halo radial wavefunction, $R(r)$, is shown compared to the ground state potential. The complete bound state wavefunction is given by $\psi(\vec{r})=Y_{0,0}(\theta,\phi)\frac{R(r)}{r}$, where $Y_{l,m}(\theta,\phi)$ are the spherical harmonics. The radial Schr\"{o}dinger equation is solved for $R(r)$ using the Johnson renormalized Numerov method \cite{Gibson2016, Johnson1978} with the X$^1\Sigma_g^+$ potential from Ref.\,\cite{Stein2010}. The vertical dashed line is placed at the classical turning point $r_\text{classical} \approx 260$\,a$_0$. Note, the difference in energy scales between the top and bottom plots. The wavefunction normalization applied to each plot is arbitrary and only for illustrative purposes.}
 		\label{fig:86halo}
 	\end{figure} 
 This concept of a spatially extended, few-particle, halo system is well-known and has been applied in various fields such as nuclear and molecular physics, with the most well known examples being the deuteron and $^4$He$_2$ molecules \cite{lmk93,sto94,Kohler2006}.
@@ -67,7 +67,7 @@ Such halo systems are notable for their universality, whereby molecular properti
 Additionally, Efimov trimers may also exist in systems near a scattering resonance, influencing dimer and atomic scattering properties and introducing additional universal phenomena \cite{bha07,nen17}.
 
 %Ultracold halo molecules are often associated with magnetic Feshbach resonances \cite{Chin2010}.
-In this work, we probe the naturally occurring halo state which exists in the absence of tuning with a magnetic Feshbach resonance. 
+In this work, we probe the naturally occurring halo state that exists in the absence of tuning with a magnetic Feshbach resonance. 
 This extremely weakly-bound molecular state depends strongly on the long-range portion of the strontium interaction potential between atoms that determines atom-atom scattering properties.
 %measurement of the binding energy should provide a precise estimate of the long-range $C_6$ coefficient.
 
@@ -98,7 +98,7 @@ These laser cooling transitions, as well as required repumping transitions, are 
 The isotopic differences in strontium have important implications for their use in certain experiments.
 In particular, the bosonic isotopes of strontium $^{88}$Sr, $^{86}$Sr, and $^{84}$Sr have no nuclear spin, $\vec{I}=0$.
 This lack of hyperfine structure results in a single ground state potential, which greatly simplifies the treatment of collisions and scattering for these atoms.
-Conversely, the fermionic isotope $^{87}$Sr has a large nuclear spin, $\vec{I}=9/2$, which when combined with the lack of electronic angular momentum in the ground state, results in a high degree of symmetry that must be considered when considering the behavior of these atoms during collisions.
+Conversely, the fermionic isotope $^{87}$Sr has a large nuclear spin, $\vec{I}=9/2$, which when combined with the lack of electronic angular momentum in the ground state, results in a high degree of symmetry that must be considered when investigating the behavior of these atoms during collisions.
 This $SU(N)$ symmetry of $^{87}$Sr has led it to become a popular candidate for proposals exploring exotic phases of quantum magnetism \cite{Beverland2016,cre14,Chen2015}.
 
 %From this measurement we derive estimates of the strontium scattering lengths (Table \ref{tab:sWaveComp}) \cite{Aman2018}.
@@ -110,19 +110,19 @@ Two-photon PAS experiments were also performed in $^{88}$Sr using this transitio
 Additionally, related techniques have produced more deeply bound vibrationally excited molecules in the electronic ground state using $^{88}$Sr \cite{Reinaudi2012, McGuyer2014, McGuyer2015a, rom12} and $^{84}$Sr \cite{Stellmer2012} trapped in optical lattices.
 Finally, one-photon photoassociation spectroscopy has been used to probe the excited state molecular binding energies in bulk trapped gases near the intercombination transition in $^{86}$Sr \cite{Borkowski2014a, Reschovsky} and $^{84}$Sr \cite{Stellmer2012, Reschovsky}.
 
-\section{Thesis Outline} \label{sec:outline}
+\section{Thesis outline} \label{sec:outline}
 This thesis will describe our work probing the weakly-bound halo state of strontium-86.
 Chapter 2 will outline our standard laser cooling and trapping procedures for producing samples of ultracold strontium at $\approx1\,\mu$K in an optical dipole trap. 
 Additionally, the experimental apparatus and systems for trapping will be discussed.
-Chapter 3 will develop the theoretical underpinnings of the photoassociation process that has a rate dependent on the spatial and thermal distribution of the atoms as well as the dynamical coupling provided by the applied PAS light fields.
+Chapter 3 will develop the theoretical underpinnings of the photoassociation process, which has a rate dependent on the spatial and thermal distribution of the atoms.
 Furthermore, this chapter explores atomic collisions and the importance of short-range interactions in determining the long-range behavior of scattering states.
 In chapters 4 and 5, we present our findings from experiments probing the $^{86}$Sr$_2$ halo molecule.
 The first experiments are performed in a high-intensity regime where we observed non-linear scaling of loss features and AC Stark shifts on the order of the binding energy of the halo molecule.
 Following this, we performed a complimentary set of experiments, being careful to stay in a weakly perturbing regime, where we precisely determined the binding energy of the halo molecule accounting for several different possible shifts of the resonance energy.
 This binding energy is then used to estimate improved scattering lengths for all isotopes of strontium.
 Chapter 6 describes the installation and characterization of a $532$\,nm lattice laser system.
-This system will be indispensable for our future work investigating quantum magnetism with fermionic strontium-87 as well as for studies of the properties of halo molecules and future work.
-Further discussion of our proposed work will be given in chapter 7, along with concluding remarks.
+This system will be indispensable for our future work investigating quantum magnetism with fermionic strontium-87 as well as for further studies of the properties of halo molecules.
+An overview discussion of our proposed work in these areas will be given in chapter 7, along with concluding remarks.
 
 
 
@@ -130,6 +130,8 @@ Further discussion of our proposed work will be given in chapter 7, along with c
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%as well as the dynamical coupling provided by the applied PAS light fields
+
 %In  through short-range collisions.
 %
 %

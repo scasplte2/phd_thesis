@@ -9,9 +9,9 @@ If instead one restricts to the experimentally reasonable conditions of high-$\e
 
 Starting with the definition of effective volumes
 \begin{equation}
-	V_q = \frac{1}{n_\text{peak}^q} \int d^3\vec{r} [n(\vec{r})]^q
+	V_q = \frac{1}{n_\text{peak}^q} \int d^3\vec{r}\,[n(\vec{r})]^q
 \end{equation}
-Defining $\eta = \epsilon_t / k_B T$, and integrating over all space we can formally write the number distribution as
+Defining $\eta = \epsilon_t / k_B T$ (with $\epsilon_t$ being the trap depth), and integrating over all space we can formally write the number distribution as
 \begin{align}
 	n(\vec{r}) &= n_\text{peak} A \,\exp{\frac{-U(\vec{r})}{k_B T}} \left[ \text{erf}\left( \sqrt{\eta - \frac{U(\vec{r})}{k_B T}} \right) - 2 \sqrt{\frac{1}{\pi}\left( \eta - \frac{U(\vec{r})}{k_B T} \right)}\,\exp{-\eta +  \frac{U(\vec{r})}{k_B T}} \right] \\
 	n_\text{peak} &= n_0 \left[ \text{erf}\left( \sqrt{\eta} \right) - 2 \sqrt{\frac{\eta}{\pi}}\,\exp{-\eta} \right]
@@ -23,7 +23,7 @@ where A is a normalization constant defined by
 \end{align*}
 Plugging these equations into the expression for the effective volume we find
 \begin{equation}
-	V_q = \frac{1}{[\mathcal{P}(\eta,3/2)]^q} \int d^3\vec{r}\, \exp{-q \frac{U(\vec{r})}{k_B T}} \left[ \mathcal{P}(\eta - \frac{U(\vec{r})}{k_B T}, 3/2) \right]^q
+	V_q = \frac{1}{[\mathcal{P}(\eta,3/2)]^q} \int d^3\vec{r}\, \exp{-q \frac{U(\vec{r})}{k_B T}} \left[ \mathcal{P}\left( \eta - \frac{U(\vec{r}}{k_B T}, 3/2 \right) \right]^q
 \end{equation}
 where $\mathcal{P}(\eta, a)$ is the incomplete Gamma function.
 It is easily verifiable in Mathematica that for $\eta \geq 4$ then $\mathcal{P}(\eta,a)\rightarrow1$.
