@@ -1,7 +1,7 @@
 \chapter{Binding energy of the $^{86}$Sr$_2$ halo molecule} \label{ch:chap5}
 %% ab initio calc are hard
 Atomic interactions are generally quite complex and difficult to accurately calculate for all but the simplest of systems.
-Nonetheless, a parameterization of atomic interactions in ultracold atomic gases is possible using a single quantity known as the $s$-wave scattering length, $a$, that characterizes the complete interatomic potential \cite{Julienne2009a}.
+Nonetheless, a parameterization of atomic interactions in ultracold atomic gases is possible using a single quantity known as the $s$-wave scattering length, $a$, which characterizes the complete interatomic potential \cite{Julienne2009a}.
 For ground state atoms at large distances, interactions between atoms are well described by the van der Waals form, $V(r)=-C_6/r^6$. 
 Therefore, once the effects of the overall potential are known through the $s$-wave scattering length, the threshold bound state and scattering properties are determined mainly by the long-range portion of the potential \cite{Jones2006}.
 
@@ -34,7 +34,7 @@ In the previous chapter, we explored the coupling of the intermediate state and 
 These measurements probed a strongly perturbed regime and were found to produce large AC stark shifts and multi-photon Raman loss processes. 
 To determine a precise value of the natural binding energy of the halo molecular state, we repeated similar experiments as before but with much lower excitation beam intensity at a fixed intermediate state detuning.
 
-When describing two-photon spectroscopy to a weakly-bound ground state molecule, it is typical to neglect any potential AC Stark shift between the free ground state atoms and the bound state dimer caused by far off-resonant trapping lasers since the dimerized atoms contribute to the overall polarizability approximately as free atoms \cite{Jones2006}.
+When describing two-photon spectroscopy to a weakly-bound ground state molecule, it is typical to neglect any potential AC Stark shift between the free ground state atoms and the bound state dimer caused by far off-resonant trapping lasers since the weakly bound atoms contribute to the overall polarizability approximately as free atoms \cite{Jones2006}.
 However, in general, AC Stark shifts due to the trapping lasers and collisions with ground state atoms may also shift the molecular resonance, as was considered in a recent, high-precision study of weakly-bound molecular states of ultracold ytterbium atoms \cite{bbc17}.
 Another recent study in calcium also probed several weakly-bound excited ground state molecules using an intercombination line transition as the intermediate state as is used in this work \cite{Pachomow2017a}.
 
@@ -79,7 +79,7 @@ This modified version of the potential is then used to calculate improved scatte
 Excitation of the halo state proceeded using the same methodology as described in Sec.\,\ref{sec:highE_methods}, with the only difference being that the experiments reported here were performed in a single-beam optical dipole trap to produce a large trapping volume.
 The trap is generated from a $1064\,\text{nm}$ laser that is aligned perpendicular to gravity with beam waists $260\,\mu\text{m}\,\times\,26\,\mu\text{m}$.
 Following forced evaporation, typical atom numbers were several hundred thousand and typical atom temperatures were between $30\,\text{nK} - 1000\,\text{nK}$.
-The atom number and sample temperature are measured using time-of-flight absorption imaging and trap oscillation frequencies are determined by measuring dipole and breathing collective mode frequencies.
+The atom number and sample temperature are measured using time-of-flight absorption imaging, and trap oscillation frequencies are determined by measuring dipole and breathing collective mode frequencies.
 These trap frequencies are confirmed against an independent model of the trapping potential.
 
 The large volume of this single-beam optical trap allowed us to maintain peak densities $\approx\!\peakDens{1-2}{12}$, comparable to our previous work, over a range of various $1064$\,nm intensities.
@@ -97,7 +97,7 @@ Here we restate the main results needed for evaluating the current experiments.
 \begingroup
 \addtolength{\jot}{1em}
 \begin{equation} \label{eq:chap5avgK}
-	\langle K \rangle_\text{trap} = \frac{1}{V_2} \int_V \exp{\frac{-2 U(\vec{r})}{k_{B}T}} \frac{1}{h\,Q_{T}} \int_{0}^{\epsilon_{\text{max}}(\vec{r})} d\epsilon \vert S(\epsilon, \vec{r}) \vert^2 \,\exp{\frac{-\epsilon}{k_{B}T}}
+	\langle K \rangle_\text{trap} = \frac{1}{V_2} \int_V \exp{\frac{-2 U(\vec{r})}{k_{B}T}} \frac{2}{h\,Q_{T}} \int_{0}^{\epsilon_{\text{max}}(\vec{r})} d\epsilon \vert S(\epsilon, \vec{r}) \vert^2 \,\exp{\frac{-\epsilon}{k_{B}T}}
 \end{equation}
 \begin{equation}\label{5equationApproxLorentzian}
   \vert S(\epsilon, \vec{r}) \vert^2 = \frac{\Gamma_L(\epsilon)+\gamma_{\text{eff}}}{\Gamma_L(\epsilon)} \frac{\eta  A(\epsilon)} {\left(\omega_1-\omega_2+\epsilon/\hbar-E'_{b2}(\vec{r})/\hbar\right)^2+\left[
@@ -119,7 +119,7 @@ Here we have subtracted off the trap minimum, $U_{\text{min}}$, such that the ma
 
 The inclusion of a spatially dependent energy cutoff, $\epsilon_{\text{max}}(\vec{r})$, in Eq.\,\ref{eq:chap5avgK} is a result of the shallow trapping potentials used for these experiments.
 Whether a trap is consider deep or shallow is determined by the ratio of trap depth to sample temperature, $\eta_{\text{trap}} = U_\text{depth}/k_B T$, where $\eta_{\text{trap}} \gtrsim 4$ is the approximate transition as will be shown in the next section.
-The experiments in this chapter were performed in shallow traps where $\eta_\text{trap} \sim 1$ for the lowest temperature samples $T \approx 30$\,nK and $\eta_\text{trap} \sim 3$ for $T \approx 1000$\,nK\footnote{In the previous experiments at high-intensity, $\eta_\text{trap} > 6$ for all data, therefore a harmonic approximation was appropriately applied.}.
+The experiments in this chapter were performed in shallow traps where $\eta_\text{trap} \sim 1$ for the lowest temperature samples $T \approx 30$\,nK and $\eta_\text{trap} \sim 3$ for $T \approx 1000$\,nK\footnote{In the experiments at high-intensity, described in Ch.\,\ref{ch:chap4}, $\eta_\text{trap} > 6$ for all data. Therefore a harmonic approximation was appropriately applied.}.
 Thus, the harmonic approximation is not a valid description of the trapping potential and the full form of the Gaussian beam profile must be used to evaluate $\langle K \rangle_\text{trap}$ (Eq.\,\ref{eq:chap5avgK}).
 This requires several factors to be assessed for their spatial dependence when modeling photoassociation in a shallow trap, including $U(\vec{r})$, $\epsilon_\text{max}(\vec{r})$, and $E'_{b2}(\vec{r})$.
 %Given that we can determine $U(\vec{r})$ from beam parameters, we'll now consider the remaining two quantities.
@@ -156,7 +156,7 @@ The rapid expansion of the beam intensity in the vertical direction along the Ra
 In addition to the abnormal trajectory required to leave the trap, atoms trapped in the central region near $X=0$ see a larger barrier to leaving the trap due to the local maximum.
 Analysis of the trap revealed that this maximum is $\sim 2 \, U_\text{depth}$.
 Thus atoms at kinetic energies higher than $U_\text{depth}$ may remain trapped for a significant period of time before eventually finding a path to leave.
-This is further confirmed by photoassociation spectra that demonstrated a larger thermal tail then was expected based on the temperature measured by time-of-flight (this will be shown shortly).
+This is further confirmed by photoassociation spectra that demonstrated a larger thermal tail than was expected based on the temperature measured by time-of-flight (this will be shown shortly).
 Consideration of the trapping potential and the spectra suggests that our sample was non-ergodic.
 
 Lacking a detailed microscopic model of the atomic density and momentum distribution in this shallow trap, we proceed by assuming the single-particle kinetic energy may be described by a truncated Maxwell-Boltzmann distribution such that energies above a particular cut-off, $\epsilon_\text{max}$, do not contribute to the scattering probability in the photoassociation process.
@@ -254,7 +254,7 @@ The consideration of the relative collision energy distribution for truncated si
 Recall from Sec.\,\ref{sec:bohn_and_julienne}, that the two-body loss rate is simply given by $K= v \sigma_{in}$ and the thermal average is $\langle K \rangle_{\text{thermal}} = \displaystyle \int_0^{\infty} dv f(v)\,v\,\sigma_{in}$.
 By replacing $f(v)$ with Eq.\,\ref{eq:5truncRelBolz} and modifying the integration bounds, the truncated thermal average is given by
 \begin{equation}
-	\langle K \rangle_\text{thermal} = \frac{1}{h\,Q_{T}} \int_{0}^{2\,\epsilon_{\text{max}}} d\epsilon \vert S(\epsilon) \vert^2 \, \hat{\mathcal{G}}(\epsilon_\text{max}, \epsilon)\,\exp{\frac{-\epsilon}{k_{B}T}}
+	\langle K \rangle_\text{thermal} = \frac{2}{h\,Q_{T}} \int_{0}^{2\,\epsilon_{\text{max}}} d\epsilon \vert S(\epsilon) \vert^2 \, \hat{\mathcal{G}}(\epsilon_\text{max}, \epsilon)\,\exp{\frac{-\epsilon}{k_{B}T}}
 \end{equation}
 Note that the above expression only concerns the energy integral.
 The complete two-body loss rate with average over collision energy, space, and incorporating the effects of localized single-particle kinetic energy truncation becomes
@@ -262,7 +262,7 @@ The complete two-body loss rate with average over collision energy, space, and i
 \hspace*{-1cm} 
 	\langle \hat{K} \rangle_\text{trap} = \frac{1}{V_2} \int_V &\exp{\frac{-2 U(\vec{r})}{k_{B}T}} \\ 
 	\nonumber
-	&\times \frac{1}{h\,Q_{T}} \int_{0}^{2\,\epsilon_{\text{max}}(\vec{r})} d\epsilon \vert S(\epsilon, \vec{r}) \vert^2 \,\hat{\mathcal{G}} ( \epsilon_\text{max}(\vec{r}), \epsilon)  \,\exp{\frac{-\epsilon}{k_{B}T}}
+	&\times \frac{2}{h\,Q_{T}} \int_{0}^{2\,\epsilon_{\text{max}}(\vec{r})} d\epsilon \vert S(\epsilon, \vec{r}) \vert^2 \,\hat{\mathcal{G}} ( \epsilon_\text{max}(\vec{r}), \epsilon)  \,\exp{\frac{-\epsilon}{k_{B}T}}
 \end{align}
 where $\epsilon_\text{max}(\vec{r}) = U_\text{depth}-U(\vec{r})$ and $U_\text{depth}$ is a global parameter describing the trap depth.
 The energy integral is now evaluated at each position within the trapping volume, $\vec{r}$, and the maximum single-particle kinetic energy is the difference $U_{\text{depth}} - U(\vec{r})$.
@@ -297,14 +297,14 @@ This "edge only" method provides a good estimate of the binding energy since bro
 Thus the binding energy is strongly determined by this edge and is relatively insensitive to the description of the thermal portion of the spectrum.
 An example of such a fit is shown in Fig.\,\ref{fig:truncatedSpectraFit}b where the analysis neglects any effects of truncation and assumes the relative collision energy distribution is given by an unmodified Maxwell-Boltzmann.
 The long lifetime of the excited state and the significant detuning $\Delta_1$ result in a width $\Gamma_L(\epsilon) < 5\,\text{Hz}$ for all conditions.
-This is extremely small compared to the observed width, which is determined by the fit of $\gamma_{\text{eff}}$ to be on the order of $300\,\text{Hz}$.
+This is extremely small compared to the observed width, which is determined by the fit of $\gamma_{\text{eff}}$ to be on the order of several hundred hertz.
 We hypothesize that the observed width reflects decay of molecules in the electronic ground state due to collisions with background atoms.
 
 Table \ref{tab:ComparisonFitting} gives a comparison of the resonances frequencies from each of these fitting methods.
 Here we give the estimated resonance position found by fitting the individual spectra for each set of experimental parameters (approximately 10 scans per row) and calculating the mean and standard error for the set.
-We see that the resulting estimates of the edge fit generally lie between the two values found via truncation.
+We see that the resulting estimate from the edge fit generally lie between the two values found via truncation.
 Note that the quoted uncertainty is statistical as no systematic error has been applied at this point.
-This provides confidence that our approach may reasonably estimate the $^{86}$Sr$_2$ binding energy.
+This provides confidence that our approach reasonably estimates the $^{86}$Sr$_2$ binding energy.
 Furthermore, using only the values from the edge fit method does not substantively change our conclusions in the following sections.
 	\begin{table}[]
 		\centering
@@ -395,7 +395,7 @@ We thus obtain an accurate measure of $\chi_{689}$ without attempting to account
 
 \subsection{Density-dependent frequency shift}
 A shift of the two-photon resonance position is possible due to differing mean-field shifts of initial atomic and final molecular states arising from interaction with the background of ground state atoms.
-Such a shift would be proportional to the atom density, $\Delta E_{b2} \propto h \chi_n\,n$, where $chi_N$ depends upon the $s$-wave scattering lengths for atom-atom and atom-dimer collisions, $a_{86}$ and $a_{\text{ad}}$ respectively.
+Such a shift would be proportional to the atom density, $\Delta E_{b2} \propto h \chi_n\,n$, where $\chi_N$ depends upon the $s$-wave scattering lengths for atom-atom and atom-dimer collisions, $a_{86}$ and $a_{\text{ad}}$ respectively.
 This was observed in a Rb Bose-Einstein condensate in Ref.\,\cite{Wynar2000}. 
 For a non-degenerate gas, this effect yields $\chi_n=\hbar (\frac{a_{\text{ad}}}{\mu_{\text{ad}}}-4\frac{a_{86}}{\mu_{\text{aa}}})=\frac{\hbar}{m} (\frac{3 }{2}a_{\text{ad}}-8 a_{86})$, where $\mu_{\text{ad}}$ and $\mu_{\text{aa}}$ are the reduced masses for molecule-atom and atom-atom collisions respectively.
 Note that the shift would vanish for $a_{\text{ad}}=(16/3) a_{86}$.
@@ -561,7 +561,7 @@ $88\,+\,88$ & -2.025 & -2.019 & -2.022$\,\pm\,$0.025
 \end{table}
 Next, using our values of $C_6$ given in Table \ref{tab:c6comp} we compute the $s$-wave scattering lengths for each isotopic combination of strontium through mass-scaling, Table \ref{tab:sWaveComp}.
 Interestingly, despite our estimated values for $C_6$ being model dependent, the calculated scattering lengths from each model are found to be nearly identical, differing by $< 0.5$\% across all isotopes.
-The scattering length for each model are given in Table \ref{tab:sWaveComp} and Fig.\,\ref{fig:massScaling} plots the mass-scaled scattering lengths as a function of the reduced mass.
+The scattering lengths for each model are given in Table \ref{tab:sWaveComp} and Fig.\,\ref{fig:massScaling} plots the mass-scaled scattering lengths as a function of the reduced mass.
 The quoted values of $a$ are calculated for each model using the appropriate value of $C_6$ as given in Table \ref{tab:c6comp}.
 These $C_6$ estimates are used to construct and numerically integrate the potential from $R_i\rightarrow\infty$ according to Eq.\,\ref{eq:5scatterLeng}, where $R_i=7.5$\,a$_0$ is the inner turning point of both models (as given in Ref.\,\cite{Stein2010}).
 Finally, the average estimate of the scattering length (given in the last column of Table \ref{tab:sWaveComp}) is calculated by taking the average of the two scattering lengths as the quoted value and the difference of the scattering lengths as a systematic uncertainty.

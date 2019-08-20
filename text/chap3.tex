@@ -1,18 +1,18 @@
 \chapter{Photoassociation in ultracold gases} \label{ch:chap3}
 \section{Introduction} \label{sec:pas_intro}
-Recall from Ch.\,\ref{ch:intro} that photoassociation describes the process of creating molecular states from colliding free atoms.
-This process tends to create long-range weakly-bound molecules due to the excitation rate of photoassociation depending on the overlap of the initial scattering state and the bound state.
+Recall from Ch.\,\ref{ch:intro} that photoassociation is the process of creating molecular states from colliding free atoms.
+This technique tends to create long-range weakly-bound molecules due to the excitation rate depends on the overlap of the initial scattering state and the bound state.
 Fig.\,\ref{fig:3pasSch} illustrates the PA process outlined previously and adds schematic wavefunctions.
-This highlights the interparticle spacing with the strongest contribution to the overlap integral, known as the Condon point (radius) $R_c$, which is situated around the classical turning point of the molecule \cite{Bohn1999,bav00}.
+This highlights that the outer lobe of the wave function makes the largest contribution to the overlap integral, which is situated around the classical turning point of the molecule, $R_c$ \cite{Bohn1999,bav00}.
 \begin{figure}
 	\centerline{
 	\includegraphics[width=\textwidth]{PASwithWF.pdf}}
-	\caption{Schematic of the photoassociation process}{The photoassociation process relies on favorable overlap between the initial free particle state and the final bound state. An example incoming wavefunction at collision energy $\epsilon > 0$ is shown in yellow along the lower potential. This state is then coupled to a vibrationally excited bound-state wavefunction in the upper potential using a photoassociation laser at frequency $\omega_\text{p}$. The inset shows the probability density of the excited states and the Condon point (radius) for each bound state.}
+	\caption{Schematic of the photoassociation process}{The photoassociation process relies on favorable overlap between the initial free particle state and the final bound state. An example incoming wavefunction at collision energy $\epsilon > 0$ is shown in yellow along the lower potential. This state is then coupled to a vibrationally excited bound-state wavefunction in the upper potential using a photoassociation laser at frequency $\omega_\text{p}$. The inset shows the probability density of the excited states and the classical turning point for each bound state.}
 	\label{fig:3pasSch}
 \end{figure}
 Contribution to the overlap in the region $r < R_c$ is negligible due to the fast oscillations in the interior region of either wavefunction.
-Furthermore, the Condon point moves inward as the binding energy of the bound state molecules is increased. 
-This causes overlap with the initial scattering state to decrease and consequently a reduction in the rate of molecular formation may be observed \cite{Krems2009a,Julienne2009a,nse06,Jones2006}.
+Furthermore, the outer lobe moves inward as the binding energy of the bound state molecules is increased. 
+This causes a decrease of the overlap with the initial scattering state and consequently a reduction in the rate of molecular formation may be observed \cite{Krems2009a,Julienne2009a,nse06,Jones2006}.
 %By comparing the amplitude rhotoassociation is considered a long-range probe used to measure and determine characteristics about the complex short-range potential .
 
 %Fig.\,\ref{fig:3pasSch}b shows an alternative view of photoassociation in the dressed-state picture.
@@ -28,7 +28,7 @@ The remainder of this chapter will discuss these considerations and end by formu
 This section briefly covers the statistical mechanics describing a trapped thermal bosonic gas.
 From this description we discuss the evolution of the atomic densities during free expansion and discern how to extract physical parameters of the gas from absorption images.
 
-In the limit of large, fixed particle number, the trapped density distribution $n(\vec{r})$ is given by
+In the limit of large, fixed particle number and thermal equilibrium, the trapped density distribution $n(\vec{r})$ is given by
 \begin{equation} \label{eq:2thermDist}
 	n_{th}(\vec{r}) = \int \frac{d\vec{p}}{(2\pi\hbar)^3} \frac{1}{\exp{(E_p(\vec{r}) - \mu)/k_BT} - 1}
 \end{equation}
@@ -41,7 +41,7 @@ This integral can be evaluated by defining the quantities
 where $\xi$ is known as the fugacity \cite{psm02}.
 After a change of variables from $p$ to the dimensionless quantity $x$, Eq.\,\ref{eq:2thermDist} reduces to
 \begin{equation}
-	n_{th}(\vec{r}) = \frac{2}{\sqrt{\pi}}\frac{1}{\lambda_T^3}\int dx \frac{\sqrt{x}}{z^{-1}e^x-1}
+	n_{th}(\vec{r}) = \frac{2}{\sqrt{\pi}}\frac{1}{\lambda_T^3}\int dx \frac{\sqrt{x}}{z(\vec{r})^{-1}e^x-1}
 \end{equation}
 where $\lambda_T = \sqrt{\frac{2 \pi \hbar^2}{m k_B T}}$ is the de Broglie wavelength.
 This is a common integral in problems of this type and may be rewritten as \cite{Demarco1998, Ketterle1999, psm02}
@@ -70,7 +70,7 @@ In the classical, or high-temperature limit, $\Li{\ssfrac{3}{2}}{z(\vec{r})} \ap
 \end{equation}
 
 \subsection{Extracting data from column densities} \label{ssec:tof}
-This description of thermal bosons in a trapping potential is useful but we must continue a step further and see how Eq.\,\ref{eq:harmTrapDist} evolves when released from the trap and allowed to expand in free space. 
+This description of thermal bosons in a trapping potential is useful but we must continue a step further and see how Eq.\,\ref{eq:harmTrapDist} evolves when atoms are released from the trap and allowed to expand in free space. 
 Once the trapping potential is removed, neglecting any collisions, atoms will follow trajectories according to
 \begin{equation}
 	\frac{d\vec{r}}{dt}=\frac{\vec{p}}{m} \quad \text{and} \quad \frac{d\vec{p}}{dt}=0
@@ -135,7 +135,7 @@ Rewriting Eq.\,\ref{eq:polyFullExp} and using this result
 \addtolength{\jot}{1em}
 \begin{equation}
 \begin{split}
-	&=\int_{-\inf}^{\inf} dz\, \sum_{n=1}^{\inf}\frac{\xi^2\rho^n}{n^{3/2}}\exp{\frac{-n z^2}{2\sigma_2^2}} \\
+	&=\int_{-\inf}^{\inf} dz\, \sum_{n=1}^{\inf}\frac{\xi^2\rho^n}{n^{3/2}}\,\exp{\frac{-n z^2}{2\sigma_2^2}} \\
 	&=\sqrt{2\pi}\sigma_z\underbrace{\sum_{n=1}^{\inf}\frac{\xi^n\rho^n}{n^2}}_{\displaystyle\Li{2}{\xi\,\rho}}
 \end{split}
 \end{equation}
@@ -190,7 +190,7 @@ Fig.\,\ref{fig:3collwf} shows several examples of scattering state wavefunctions
 	\label{fig:3collwf}
 \end{figure} 
 
-A notable achievement of atomic collision theory has been the successful separation of the scattering interaction into regions that exhibit very different characteristic length and energy scales \cite{Julienne2009a}.
+Atomic collision theory separates the scattering interaction into regions that exhibit very different characteristic length and energy scales \cite{Julienne2009a}.
 Through this separation, a great deal of insight has led to the development of many practical methods for studying the scattering states and weakly-bound molecular states near zero-energy \cite{wbz99,Gao01,gao04,Bohn1999,Julienne2009a,Vogels1998,Moerdijk1995,Julienne1989}.
 In the following, we will outline the critical results of these treatments of atomic collisions.
 
@@ -203,7 +203,7 @@ However, the closely related characteristic scales from Gribakin and Flambaum \c
 	\bar{a} = \frac{4 \pi}{\Gamma(1/4)^2}R_{\mathrm{vdW}} \quad\quad \bar{E}=\frac{\hbar^2}{2\mu\bar{a}^2}
 \end{equation}
 where $\Gamma(x)$ is the Euler Gamma function.
-The wavefunction for relative motion is found by solving the radial Schr\"{o}dinger equation
+The wavefunction for the equivalent 1D system describing the radial motion is found by solving the radial Schr\"{o}dinger equation
 \begin{equation} \label{eq:3radSE}
 	-\frac{\hbar^2}{2 \mu}\frac{d^2 \phi_{\ell}}{dr^2} \left( V(r) + \frac{\hbar^2\ell(\ell+1)}{2\mu r^2} \right) \phi_{\ell}=E\phi_{\ell}
 \end{equation}
@@ -282,7 +282,7 @@ Ch.\,\ref{ch:chap5} will employ each of these estimates in analysis of the $^{86
 In the previous section, we focused on interactions restricted to a single channel without any decay mechanism.
 Such interactions are necessarily elastic as the two-body scattering wavefunction cannot couple outside of its originating channel.
 However, most atoms used in laser-cooling exhibit a high degree of internal structure and a quantitative description of their short-range interactions requires consideration of coupling among many different channels.
-While a full characterization of such methods is left to Refs.\cite{Nicholson2015a,Hutson2007a,Quemener2012,Chin2010,Alexander2014,Vaillant2014}, here we give the high-level results which will be useful for describing photoassociation in the next section.
+While a full characterization of such methods is left to Refs.\cite{Nicholson2015a,Hutson2007a,Quemener2012,Chin2010,Alexander2014,Vaillant2014}, here we give the high-level results that will be useful for describing photoassociation in the next section.
 
 In this formalism, atoms are considered to be initially prepared in a single quantum state, which may be characterized by several quantum numbers.
 This state is labeled the entrance channel and defined to have energy $E=0$ in the limit $r\rightarrow\infty$.
@@ -307,7 +307,7 @@ Finally, the $S$-matrix is related to the elastic and inelastic cross sections b
 	\sigma^{\text{in}}_{\alpha}(k) &= \frac{\pi g_{\alpha}}{k^2} \left( 1 - \vert S_{\alpha \alpha}(k) \vert^2 \right)
 \end{align}	
 \endgroup
-where $g_{\alpha}$ is a channel specific collisional symmetry factor which is equal to $2$ for describing inelastic collisions in a Maxwellian gas of two atoms of the same species in identical spin states \cite{Chin2010}.
+where $g_{\alpha}$ is a channel specific collisional symmetry factor that is equal to $2$ for describing inelastic collisions in a Maxwellian gas of two atoms of the same species in identical spin states \cite{Chin2010}.
 \addtocontents{toc}{\protect\setcounter{tocdepth}{2}}
 
 
@@ -357,19 +357,19 @@ For the case of one- and two-color photoassociation, Bohn and Julienne have deri
 
 One- and two-photon PAS of ultracold atoms may be modeled by first considering the evolution of a local density given by
 \begin{equation}
-	\dot{n} = - 2 K n^2 - \Gamma_1 n
+	\dot{n} = - K n^2 - \Gamma_1 n
 \end{equation}
 where $\Gamma_1$ is the one-body lass rate due to background collisions and $K$ is the two-body loss rate constant.
 Integrating over the trapping volume, the evolution of the total number of trapped atoms is then
 \begin{equation}\label{eq:number}
    N(t)= \frac{N_0 \rm{e}^{-\Gamma_1 t}}
-   		{\displaystyle 1 + \frac{2 N_0 \langle K \rangle V_2}{\Gamma V_1^2}(1-\rm{e}^{-\Gamma_1 t}) }
+   		{\displaystyle 1 + \frac{N_0 \langle K \rangle V_2}{\Gamma V_1^2}(1-\rm{e}^{-\Gamma_1 t}) }
 \end{equation}
 where $N_0$ is the initial number of trapped atoms, $\langle K \rangle$ is an averaged loss rate constant, and $V_q$ is the effective trap volume given by
 \begin{equation}\label{eq:effectivevolumes}
 	V_{\text{q}}=\int_{\mathrm{V}} d^3\vec{r} \, \exp{-\frac{qU(\mathbf{r})}{k_{B}T}},
 \end{equation}
-for trapping potential $U(\vec{r})$.
+for trapping potential $U(\vec{r})$\footnote{Note that Eq.\,\ref{eq:number} is typically stated with the factor $2 N_0 \langle K \rangle$ in the denominator. This additional factor of $2$ is from the collisional symmetry factor, $g_\alpha$, mentioned previously. In our notation, the value of $\langle K \rangle$ incorporates this additional factor of $2$.}.
 A derivation of these trapping volumes is given in App.\,\ref{app:effective_volumes}.
 
 In one-color photoassociation, a single laser at frequency $\omega_1$ couples pairs of colliding ground state atoms with relative kinetic energy $\epsilon$ to an excited bound state $b_1$ with energy $E_{b1}$ and decay rate $\gamma_1$.
@@ -393,7 +393,7 @@ Plugging $\vert S_{\epsilon, a_1} \vert^2$ into Eq.\,\ref{eq:kLoss} then the the
 
 Similarly, two-color photoassociation also considers pairs of colliding atoms undergoing collisions in the presence of light fields.
 In this scenario, an additional laser at frequency $\omega_2$ is applied to couple a transition between state $b_1$ and another bound state $b_2$ with energy $E_{b2}$ and decay rate $\gamma_2$.
-However, whereas in one-color PAS the frequency $\omega_1$ is swept across the resonant energy of the bound state $b_1$, two-color PAS is most commonly performed in the Raman regime with a fixed intermediate state detuning $\Delta_1 = \omega_1 - E_{b1}/\hbar$ from $b_1$.
+However, whereas in one-color PAS the frequency $\omega_1$ is swept across the resonant energy of the bound state $b_1$, two-color PAS is commonly performed in the Raman regime with a fixed intermediate state detuning $\Delta_1 = \omega_1 - E_{b1}/\hbar$ from $b_1$.
 The two-photon detuning is given by $\Delta_2 = \omega_1 - \omega_2 - E_{b2}/\hbar$.
 As before, the bound states $b_1$ and $b_2$ are coupled to artificial loss channels $a_1$ and $a_2$ respectively.
 Thus the relevant scattering probabilities for two-color PAS are $\vert S_{\epsilon, a_1} \vert^2$ and $\vert S_{\epsilon, a_2} \vert^2$.
@@ -422,8 +422,8 @@ This is, once again, typically a good approximation for photoassociation with al
 On the other hand, photoassociation to bound states near a narrow intercombination line transitions may exhibit sensitivity to Doppler shifts and photon recoil due to the long-lifetime of the excited molecular state, which will effect the observed photoassociative lineshape \cite{Ciuryo2004, Borkowski2014a, Nicholson2015a, Reschovsky2018, Pachomov2017}.
 %The narrow natural transition linewidth, may then be on the order of the Doppler and photon recoil shifts, 
 
-PAS lineshapes utilizing such transitions is described by considering both the center-of-mass momentum of particle pairs in addition to the relative-momentum.
-We proceed by considering the individual momenta of each particle using Eq.\,\ref{eq:kLoss} written as a thermal average,
+PAS lineshapes utilizing such transitions are described by considering both the center-of-mass momentum of particle pairs in addition to the relative-momentum.
+We proceed by considering the individual momentum of each particle using Eq.\,\ref{eq:kLoss} written as a thermal average,
 \begin{equation} \label{eq:onePasMom}
 	 \langle K \rangle_\text{thermal} = \int_0^{\infty} d^3\vec{p}_1 \int_0^{\infty} d^3\vec{p}_2 \,\frac{2 \pi \hbar^2}{\mu |\vec{p}_1 - \vec{p}_2|} \, f_\text{p,two}( \vec{p}_1, \vec{p}_2 ) \, \vert  S(\vec{p}_1, \vec{p}_2, \omega_1, \omega_2, \cdots) \vert^2  
 \end{equation}
@@ -439,8 +439,8 @@ where $m$ is the single-particle mass for a sample at temperature $T$.
 Eq.\,\ref{eq:onePasMom} may be reduced to the earlier equations for $\langle K \rangle_\text{thermal}$ by performing a coordinate transform into center-of-mass and relative coordinates and integrating over the center-of-mass, as shown in App.\,\ref{sec:standardDist}.
 We will consider a special case of this procedure in Ch.\,\ref{ch:chap5} when discussing the truncation of the single-particle kinetic energy and how this truncation effects the relative collision energy distribution in a trapped gas.
 
-We've taken care to note this specific example of considering the center-of-mass momentum, as our approach to the treatment of single-particle kinetic energy truncation was informed and motivated by this common consideration for one-photon intercombination line PAS in strontium.
-Although, we emphasize that for these particular two-photon experiments, we are not sensitive to Doppler shifts or photon recoil.
+We've taken care to include consideration of the center-of-mass momentum, which is important for describing one-photon intercombination line PAS in strontium.
+Although, we emphasize that for the two-photon experiments discussed in this thesis, we are not sensitive to Doppler shifts or photon recoil.
 Refs.\,\cite{Ciuryo2004, Borkowski2014a} develop a rigorous extension of the standard Bohn and Julienne theory for one-photon photoassociation near an intercombination line which accounts for Doppler broadening and photon recoil.
 
 

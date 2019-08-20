@@ -17,15 +17,15 @@ It would also enable studies of $SU(N)$ quantum magnetism with fermionic stronti
 This chapter will detail our installation and characterization of this laser system.
 
 \section{Background} \label{sec:latBackground}
-An optical lattice is created by counter-propagating two laser beams to form a standing wave pattern, which for two plane waves if the same polarization in one-dimension results in a periodic potential given by 
+An optical lattice is created by counter-propagating two laser beams to form a standing wave pattern, which for two plane waves of the same polarization in one-dimension results in a periodic potential given by 
 	\begin{equation} \label{eq:1dlattice}
 		 V(x) = V_{lat} \; \sin^2(k_L x)
 	\end{equation}
 where $V_{lat}$ is the lattice depth determined by the polarizability of the atom for a given trapping wavelength $\lambda$ and laser intensity $I$, and $k_L = 2\pi / \lambda$ is the lattice wavevector.
-This potential can be readily extended to three dimensions using two additional pairs of counter-propagating laser beams along the $y$ and $z$ directions which results in a 3D cubic lattice.
+This potential can be readily extended to three dimensions using two additional pairs of counter-propagating laser beams along the $y$ and $z$ directions, which results in a 3D cubic lattice.
 Depth of the trapping potential, $V_{lat}$, is controlled by varying the intensity of the lattice beams.
 
-Periodic potentials are powerful because they break the translational invariance of space which results in the formation of band structure and the opening of bandgaps or disallowed particle energies \cite{Ashcroft1976}.
+Periodic potentials are powerful because they break the translational invariance of space, which results in the formation of band structure and the opening of bandgaps or disallowed particle energies \cite{Ashcroft1976}.
 Because of this broken invariance, $p$ is no longer a good quantum number and must be replaced by two new quantum numbers: the band index, $n$, and the quasimomentum, $q$.
 In one-dimension, quasimomentum is specified by $q = p - nG$, where $G=2\pi/a$ is a reciprocal lattice vector, and $a$ is the real space lattice constant.
 Fig.\,\ref{fig:bandStructure} shows how the band structure varies as the lattice depth is increased.
@@ -60,7 +60,7 @@ The Wannier function for a localized particle in the n$^{th}$ band of a lattice 
 		 w_{n}(x - x_i) = \mathcal{N}^{-1/2} \sum_q e^{iqx_i/ \hbar} \; \phi_q^{(n)}(x)
 	\end{equation}
 where $\mathcal{N}$ is a normalization constant and $\phi_q^{(n)}(x)$ are the Bloch functions of Eq.\;\ref{eq:blochFunc}.
-This localized description of particles allows us to calculate important physical quantities which govern dynamical properties of the lattice such as the tunneling rate, $J/ \hbar$, and on-site interaction energy, $U$. 
+This localized description of particles allows us to calculate important physical quantities that govern dynamical properties of the lattice such as the tunneling rate, $J/ \hbar$, and on-site interaction energy, $U$. 
 As $V_{lat}\!\rightarrow\!\infty$, the Wannier functions approach the eigenfunctions of the harmonic oscillator, which allows us to estimate the spatial extent of an atomic wavefunction by $a_{ho} = \sqrt{\frac{\hbar}{m \omega_{ho}}}$ \cite{Jaksch2005}.
 
 When bosons are confined to the lowest energy band of a lattice, a particularly simple model known as the Bose-Hubbard Hamiltonian is used to describe the lattice system \cite{jbc98}. 
@@ -70,7 +70,7 @@ When bosons are confined to the lowest energy band of a lattice, a particularly 
 	\end{equation}
 Where $\left< i,j \right>$ denotes a sum over nearest-neighbors. This model is the simplest example of a non-trivial interacting many-body system for dynamics in a lattice.
 The first term describes hopping of bosons from site to site at a rate $J/ \hbar$. 
-The second term describes an interaction energy which is related to the $s$-wave contact interaction term, $g = 4 \pi \hbar^2 a_s/m$, where $a_s$, is the $s$-wave scattering length of the particles. 
+The second term describes an interaction energy that is related to the $s$-wave contact interaction term, $g = 4 \pi \hbar^2 a_s/m$, where $a_s$, is the $s$-wave scattering length of the particles. 
 $J$ and $U$ can be calculated directly using the Wannier functions of Eq.\;\ref{eq:wannier} and are given by \cite{Jaksch2005}
 	\begin{equation} \label{eq:JandU}
 	\begin{aligned}
@@ -79,7 +79,7 @@ $J$ and $U$ can be calculated directly using the Wannier functions of Eq.\;\ref{
 	\end{aligned}
 	\end{equation}
 Using Eq.\,\ref{eq:JandU}, the expected tunneling rates and interaction energies for atomic strontium are shown in Fig.\,\ref{fig:fig_JandU} for homonuclear samples of strontium as a function of lattice depth. 
-This single band calculation is valid under the assumption that the interaction energy of a site is smaller than the bandgap between the $n= 0$ and $1$ bands, namely $U N \lesssim \hbar \omega_{ho}$ where $N$ is the mean number of particles per site and $\hbar \omega_{ho}$ is the approximate energy spacing between bands \cite{Rey2004}. 
+This single-band calculation is valid under the assumption that the interaction energy of a site is smaller than the bandgap between the $n= 0$ and $1$ bands, namely $U N \lesssim \hbar \omega_{ho}$ where $N$ is the mean number of particles per site and $\hbar \omega_{ho}$ is the approximate energy spacing between bands \cite{Rey2004}. 
 	\begin{figure}
 		\centerline{
 		\includegraphics[width=\textwidth]{JandU.pdf}}
@@ -88,7 +88,7 @@ This single band calculation is valid under the assumption that the interaction 
 	\end{figure}
 Alternatively, Eq.\,\ref{eq:JandU} can be simplified through considering appropriate limits to the Bose-Hubbard model. In the limit that $U\!\rightarrow\!0$, the Bose-Hubbard model becomes exactly solvable and the energy of the $n=0$ band is given by $E_q^{(0)}=-2J \cos(q a)$ \cite{Jaksch2005}.
 Thus, the tunneling rate, $J$, can be related to the bandwidth of the lowest band as expressed in Eq.\,\ref{eq:JandU_simple}.
-Under a separate limit, $V_{lat}\,\rightarrow\,\infty$, then the tunneling rate goes to zero and the localized wavefunctions can be approximated by a Gaussian wavefunction which yields the form for the on-site interaction $U$ given in Eq.\,\ref{eq:JandU_simple} \cite{Rey2004}.
+Under a separate limit, $V_{lat}\,\rightarrow\,\infty$, then the tunneling rate goes to zero and the localized wavefunctions can be approximated by a Gaussian wavefunction, which yields the form for the on-site interaction $U$ given in Eq.\,\ref{eq:JandU_simple} \cite{Rey2004}.
 	\begin{equation} \label{eq:JandU_simple}
 	\begin{aligned}
 		 J &= \frac{E_{q=\hbar k_L} - E_{q=0}}{4}\\
@@ -117,7 +117,7 @@ where $E_n(q)$ is the energy of the Bloch state at a specified $q$ and $n$ shown
 The exponential factor of Eq.\,\ref{eq:KDtime} introduces the oscillations among Bloch states and after the second diabatic projection back to the plane wave basis, we relate evolution of plane wave populations to the lattice bandgap energy at $q=0$.
 From this analysis we find that for relatively weak lattices, $V_{lat} \lesssim 10 E_r$, the plane wave population will be constrained to the $n=0$ and $n = \pm 2 \hbar k_L$ plane waves and their population will vary as $\omega_{osc} = (E_2 - E_0) / \hbar$, where $E_i$ is the band energy of the $i^{th}$ band at $q=0$.
 
-Fig.\,\ref{fig:KDoscillations} shows a typical Kapitza-Dirac oscillation pattern which we use to maximize retro-reflected beam overlap near the atoms and use to calibrate our achievable lattice depths. 
+Fig.\,\ref{fig:KDoscillations} shows a typical Kapitza-Dirac oscillation pattern, which we use to maximize retro-reflected beam overlap near the atoms and use to calibrate our achievable lattice depths. 
 Kapitza-Dirac is useful as an alignment tool since measurement of the population oscillation frequency can be highly accurate and directly relates to the bandgap energy in the lattice, shown in Fig.\,\ref{fig:bandStructure}.
 This bandgap energy is in turn is related to the lattice depth.
 	\begin{figure}
@@ -145,7 +145,7 @@ This bandgap energy is in turn is related to the lattice depth.
 
 \section{Setup and alignment} \label{sssec:532_align}
 \paragraph{Setup}\label{ssec:lattice_setup}
-Our optical lattice operates at $\lambda=532\,$nm and is derived from a Coherent Verdi V-18 single-mode laser which is sent through separate AOMs for intensity control of each arm before propagating in free space to the atoms. 
+Our optical lattice operates at $\lambda=532\,$nm and is derived from a Coherent Verdi V-18 single-mode laser, which is sent through separate AOMs for intensity control of each arm before propagating in free space to the atoms. 
 We label these arms A, B, \& C as noted in Fig.\,\ref{fig:532schematic}.
 Figs.\,\ref{fig:532armAProfile} - \ref{fig:532armCProfile} show the detailed beam profiles for the lattice and specify the spot size at the atoms for each pass of all three arms.
 All three arms are linearly polarized with the polarization vector aligned along the $z$ direction, parallel to gravity.
@@ -301,7 +301,7 @@ Observation of oscillatory behavior of the cloud radius with reduced deviation o
 \paragraph{Aligning the retro-reflection:}
 The lattice retro-reflection is optimized via the 2-band Kapitza-Dirac method described in Sec.\,\ref{sec:latKD}.
 For this, we pulse the lattice on to project a $p=0$ BEC onto the $q=0$ Bloch states, let it evolve for a short time in the lattice, turn off the lattice to project the state back onto the plane wave basis, and then image after a time-of-flight to resolve the different momentum states.
-For a quantum degenerate gas in shallow lattice depths, $<10$\,E$_r$, only the $\pm1$ plane waves are populated following the second diabatic projection from the Block states to free plane wave \cite{Fallani2005,Denschlag2002}.
+For a quantum degenerate gas in shallow lattice depths, $<10$\,E$_r$, only the $0$ and $\pm1$ plane waves are populated following the second diabatic projection from the Block states to free plane wave \cite{Fallani2005,Denschlag2002}.
 Furthermore, for short pulses the amplitude of the population in these plane waves is linearly increasing with lattice depth.
 This provides a simple single-point measurement which can be used for optimizing the lattice depth.
 However, an iterative approach may be needed to ensure that the alignment is only optimized during the first quarter-period before the population of the orders is maximized.
@@ -320,7 +320,7 @@ Instead, we directly drive the RF sources with fast analog IC switches (switchin
 \subparagraph{Higher order Kapitza-Dirac:}
 The simple two-band model in Sec.\,\ref{sec:latKD} is a straightforward method for determining the lattice depth but one that requires a time-series measurement over varying lattice depths.
 Gadway et al.\,\cite{Gadway2009} derived a complimentary depth calibration method which requires only a single time-series measurement at high lattice depth.
-This process relies on the quantum interference of the oscillating populations which produces a complex beat note.
+This process relies on the quantum interference of the oscillating populations, which produces a complex beat note.
 An undergraduate student from our lab, Alex Wikner \cite{Wikner2017}, developed an algorithm using Matlab$^{TM}$ for applying this technique to the Neutral apparatus.
 The cited report provides sample code as well as benchmark calculations for comparison.
 However, application of this work to calibrate the lattice depth has been stymied by a consistent heating concern we have observed when applying the lattice beams for significant periods at high lattice depths.

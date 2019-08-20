@@ -30,6 +30,7 @@
 	\setenumerate[4]{label=\alph*.}
 \usepackage{outlines} % for displaying outlines
 \usepackage{pdfpages} % insert pdf pages from other pdfs
+\usepackage{setspace}
 
 \interfootnotelinepenalty=10000 % make maintaining a single footnote a higher priority, default is 100
 
@@ -118,7 +119,9 @@
    \include{./text/abstract}
    
    \phantomsection
-   %\include{./text/acknowledgements}
+   \begin{singlespacing}
+   \include{./text/acknowledgements}
+   \end{singlespacing}
    
    \tableofcontents
    \listoffigures
