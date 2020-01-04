@@ -16,7 +16,10 @@
 *.mp4
 
 # Directories
+archive/
+scratch_work/
 generators/
+possible/
 notes/
 presentation/
 sentOutVersion/
